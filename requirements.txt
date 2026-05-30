@@ -1,0 +1,6 @@
+openai
+python-dotenv
+pdfplumber
+langgraph
+tqdm
+pubchempy

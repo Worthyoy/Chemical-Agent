@@ -1,0 +1,44 @@
+# Secrets
+.env
+*.env
+
+# Python caches
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Runtime outputs
+output/
+output*/
+filtered/
+filtered*/
+intermediate/
+intermediate*/
+benchmark_eval*/
+o/
+page_cache/
+entity_context/
+symbol_resolved/
+
+# LangGraph workflow run artifacts
+langgraph_workflow/output/
+langgraph_workflow/output*/
+langgraph_workflow/**/output/
+langgraph_workflow/**/output*/
+langgraph_workflow/**/filtered/
+langgraph_workflow/**/intermediate/
+langgraph_workflow/**/chemeagle/
+langgraph_workflow/**/symbol_resolved/
+
+# Local data and generated archives
+*.pdf
+*.zip
+*.docx
+*.xlsx
+*.log
+*.tmp
+*.backup*
+
+# Local scratch folders
+新建文件夹/
