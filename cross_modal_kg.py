@@ -48,23 +48,6 @@ EDGE_FIELDNAMES = [
     "dr",
     "source_modality",
     "source_image",
-    "text_reaction_id",
-    "image_reaction_id",
-    "match_method",
-    "confidence",
-    "evidence_type",
-    "text_role",
-    "image_role",
-    "original_role",
-    "refined_role",
-    "role_source",
-    "role_confidence",
-    "resolution_source",
-    "resolution_method",
-    "resolution_confidence",
-    "text_iupac_name",
-    "image_smiles",
-    "image_iupac_name",
 ]
 
 
@@ -140,6 +123,14 @@ def is_uncertain_text(value: Any) -> bool:
 def paper_name_from_source(source: Any, fallback: str) -> str:
     raw = clean_text(source) or fallback
     return Path(raw).stem.replace("_si", "")
+
+
+def paper_name_from_payload(data: Dict[str, Any], fallback: str) -> str:
+    metadata = data.get("metadata") if isinstance(data.get("metadata"), dict) else {}
+    explicit = clean_text(data.get("paper_key") or metadata.get("paper_key") or data.get("source_paper"))
+    if explicit:
+        return explicit
+    return paper_name_from_source(data.get("source"), fallback)
 
 
 def looks_like_smiles(value: Any) -> bool:
@@ -222,8 +213,7 @@ def condition_refined_role(condition: Dict[str, Any]) -> str:
 def effective_condition_role(condition: Dict[str, Any]) -> str:
     refined = condition_refined_role(condition)
     original = condition_original_role(condition)
-    confidence = clean_text(condition.get("role_confidence")).casefold()
-    if refined and refined != "unknown" and confidence != "low":
+    if refined and refined != "unknown":
         return refined
     if original:
         return original
@@ -294,23 +284,6 @@ def make_triple(
         "dr": clean_text(dr),
         "source_modality": clean_text(source_modality),
         "source_image": clean_text(source_image),
-        "text_reaction_id": clean_text(text_reaction_id),
-        "image_reaction_id": clean_text(image_reaction_id),
-        "match_method": clean_text(match_method),
-        "confidence": clean_text(confidence),
-        "evidence_type": clean_text(evidence_type),
-        "text_role": clean_text(text_role),
-        "image_role": clean_text(image_role),
-        "original_role": clean_text(original_role),
-        "refined_role": clean_text(refined_role),
-        "role_source": clean_text(role_source),
-        "role_confidence": clean_text(role_confidence),
-        "resolution_source": clean_text(resolution_source),
-        "resolution_method": clean_text(resolution_method),
-        "resolution_confidence": clean_text(resolution_confidence),
-        "text_iupac_name": clean_text(text_iupac_name),
-        "image_smiles": clean_text(image_smiles),
-        "image_iupac_name": clean_text(image_iupac_name),
     }
 
 
@@ -380,7 +353,7 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
     seen: Set[Tuple[str, ...]] = set()
 
     for path, data in iter_text_reaction_payloads(text_paths):
-        source_paper = paper_name_from_source(data.get("source"), path.stem)
+        source_paper = paper_name_from_payload(data, path.stem)
         reactions = data.get("reactions") or []
         for rxn_index, raw_rxn in enumerate(reactions, start=1):
             if not isinstance(raw_rxn, dict):
@@ -499,7 +472,7 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
 def extract_text_compounds(paths: Iterable[Path]) -> List[Entity]:
     entities: List[Entity] = []
     for path, data in iter_text_reaction_payloads(paths):
-        source_paper = paper_name_from_source(data.get("source"), path.stem)
+        source_paper = paper_name_from_payload(data, path.stem)
         for rxn_index, rxn in enumerate(data.get("reactions") or [], start=1):
             if not isinstance(rxn, dict):
                 continue
@@ -610,7 +583,7 @@ def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[s
     seen: Set[Tuple[str, ...]] = set()
 
     for path, data in iter_image_reaction_payloads(chemeagle_paths):
-        default_paper = paper_name_from_source(data.get("source"), path.stem)
+        default_paper = paper_name_from_payload(data, path.stem)
         for rxn_index, rxn in enumerate(data.get("reactions") or [], start=1):
             if not isinstance(rxn, dict):
                 continue
@@ -650,7 +623,6 @@ def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[s
                         original_role=condition_original_role(entity) if entity else "",
                         refined_role=condition_refined_role(entity) if entity else "",
                         role_source=clean_text(entity.get("role_source")) if entity else "",
-                        role_confidence=clean_text(entity.get("role_confidence")) if entity else "",
                         resolution_source=clean_text(entity.get("resolution_source")) if entity else "",
                         resolution_method=clean_text(entity.get("resolution_method")) if entity else "",
                         resolution_confidence=clean_text(entity.get("resolution_confidence")) if entity else "",
@@ -771,7 +743,7 @@ def make_image_compound(
 def extract_chemeagle_compounds(paths: Iterable[Path]) -> List[Entity]:
     entities: List[Entity] = []
     for path, data in iter_image_reaction_payloads(paths):
-        default_paper = paper_name_from_source(data.get("source"), path.stem)
+        default_paper = paper_name_from_payload(data, path.stem)
         for rxn_index, rxn in enumerate(data.get("reactions") or [], start=1):
             if not isinstance(rxn, dict):
                 continue
@@ -843,6 +815,8 @@ def align_compounds(text_entities: List[Entity], image_entities: List[Entity]) -
         if not key:
             continue
         for text in text_by_iupac.get(key, []):
+            if text.source_paper != image.source_paper:
+                continue
             method = "smiles_to_iupac_exact_match" if image.smiles else "iupac_name"
             dedupe_key = (text.entity_id, image.entity_id, method)
             if dedupe_key in seen:
@@ -923,6 +897,8 @@ def find_candidate_matches(
             if not key:
                 continue
             for text in lookup.get(key, []):
+                if text.source_paper != image.source_paper:
+                    continue
                 dedupe_key = (text.entity_id, image.entity_id, method)
                 if dedupe_key in seen:
                     continue
@@ -988,11 +964,17 @@ def build_cross_modal_kg(
     text_reaction_paths: Iterable[Path | str],
     chemeagle_raw_iupac_paths: Iterable[Path | str],
     output_dir: Path | str,
+    kg_output_dir: Path | str | None = None,
+    alignments_output_dir: Path | str | None = None,
 ) -> Dict[str, Any]:
     text_paths = [Path(path) for path in text_reaction_paths]
     image_paths = [Path(path) for path in chemeagle_raw_iupac_paths]
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+    kg_output_dir = Path(kg_output_dir) if kg_output_dir is not None else output_dir
+    alignments_output_dir = Path(alignments_output_dir) if alignments_output_dir is not None else output_dir
+    kg_output_dir.mkdir(parents=True, exist_ok=True)
+    alignments_output_dir.mkdir(parents=True, exist_ok=True)
 
     text_triples = build_text_reaction_triples(text_paths)
     image_triples = build_image_reaction_triples(image_paths)
@@ -1014,10 +996,10 @@ def build_cross_modal_kg(
     for alignment in strong_alignments:
         add_unique(triples, seen, alignment_to_triple(alignment))
 
-    alignments_path = output_dir / "cross_modal_alignments.json"
-    candidates_path = output_dir / "cross_modal_alignment_candidates.json"
-    reaction_candidates_path = output_dir / "reaction_alignment_candidates.json"
-    unified_kg_path = output_dir / "kg_triples_unified_multimodal.csv"
+    alignments_path = alignments_output_dir / "cross_modal_alignments.json"
+    candidates_path = alignments_output_dir / "cross_modal_alignment_candidates.json"
+    reaction_candidates_path = alignments_output_dir / "reaction_alignment_candidates.json"
+    unified_kg_path = kg_output_dir / "kg_triples_unified_multimodal.csv"
 
     write_json(
         alignments_path,

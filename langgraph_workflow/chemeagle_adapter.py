@@ -92,9 +92,29 @@ Rules:
 - If evidence is insufficient, use reagent or unknown.
 
 Return this JSON shape:
-{{"reaction_id":"...","conditions":[{{"condition_index":0,"original_role":"reagent","text":"CuI (5 mol%)","refined_role":"catalyst","confidence":"high","reason":"short reason"}}]}}
+{{"reaction_id":"...","conditions":[{{"condition_index":0,"original_role":"reagent","text":"CuI (5 mol%)","refined_role":"catalyst","reason":"short reason"}}]}}
 
 Reaction:
+{payload}
+"""
+ROLE_REFINEMENT_BATCH_USER_PROMPT = """Classify only the existing ChemEagle condition rows for multiple reactions from one image.
+
+Rules:
+- Use only the provided reactants, products, conditions, and additional_info.
+- Do not use text-extraction results or general procedure text.
+- Do not create, delete, merge, split, rename, or reorder reactions or conditions.
+- Do not change SMILES, IUPAC names, labels, or text.
+- Choose each refined_role from this exact set:
+  catalyst, ligand, additive, base, reagent, solvent, temperature, time, concentration, volume, atmosphere, yield, ee, er, dr, unknown.
+- If a metal salt, ligand, or named catalyst is used in mol%, prefer catalyst or ligand when supported.
+- If a base or additive is used in equiv, prefer base or additive when supported.
+- If evidence is insufficient, use reagent or unknown.
+- Return one condition row for every condition_index listed in conditions_to_classify for every reaction.
+
+Return this JSON shape:
+{{"reactions":[{{"reaction_index":0,"reaction_id":"...","conditions":[{{"condition_index":0,"original_role":"reagent","text":"CuI (5 mol%)","refined_role":"catalyst","reason":"short reason"}}]}}]}}
+
+Image payload:
 {payload}
 """
 
@@ -350,6 +370,11 @@ def refine_chemeagle_condition_roles(
         "conditions_llm_requested": 0,
         "conditions_llm_refined": 0,
         "conditions_fallback": 0,
+        "role_refinement_llm_batch_requests": 0,
+        "role_refinement_llm_fallback_requests": 0,
+        "role_refinement_reactions_batched": 0,
+        "role_refinement_reactions_fallback": 0,
+        "role_refinement_batch_errors": [],
         "failed_reactions": [],
     }
 
@@ -362,35 +387,35 @@ def refine_chemeagle_condition_roles(
         reactions = record.get("reactions") or []
         if not isinstance(reactions, list):
             continue
+        pending_reactions = []
         for reaction_index, reaction in enumerate(reactions):
             if not isinstance(reaction, dict):
                 continue
             stats["total_reactions"] += 1
-            refine_reaction_condition_roles(
-                client=client,
-                model=model,
-                record=record,
-                reaction=reaction,
-                record_index=record_index,
-                reaction_index=reaction_index,
-                stats=stats,
-            )
+            pending_indexes = prepare_reaction_condition_roles(reaction, stats)
+            if pending_indexes:
+                pending_reactions.append(
+                    {
+                        "reaction": reaction,
+                        "reaction_index": reaction_index,
+                        "pending_indexes": pending_indexes,
+                    }
+                )
+        refine_record_condition_roles(
+            client=client,
+            model=model,
+            record=record,
+            record_index=record_index,
+            pending_reactions=pending_reactions,
+            stats=stats,
+        )
     return refined_payload, stats
 
 
-def refine_reaction_condition_roles(
-    *,
-    client,
-    model: str,
-    record: Dict[str, Any],
-    reaction: Dict[str, Any],
-    record_index: int,
-    reaction_index: int,
-    stats: Dict[str, Any],
-) -> None:
+def prepare_reaction_condition_roles(reaction: Dict[str, Any], stats: Dict[str, Any]) -> List[int]:
     conditions = reaction.get("conditions") or []
     if not isinstance(conditions, list):
-        return
+        return []
     condition_dicts = [condition for condition in conditions if isinstance(condition, dict)]
     stats["conditions_total"] += len(condition_dicts)
     for condition in condition_dicts:
@@ -399,7 +424,6 @@ def refine_reaction_condition_roles(
         if role_refinement_can_keep(original_role):
             condition["refined_role"] = role_refinement_normalize_direct_role(original_role)
             condition["role_source"] = "original_chemeagle_role"
-            condition["role_confidence"] = "high"
             condition["role_reason"] = "Original ChemEagle role is already specific."
             stats["conditions_direct"] += 1
 
@@ -409,34 +433,129 @@ def refine_reaction_condition_roles(
         if isinstance(condition, dict) and not condition.get("refined_role")
     ]
     stats["conditions_llm_requested"] += len(pending_indexes)
-    if not pending_indexes:
+    return pending_indexes
+
+
+def refine_record_condition_roles(
+    *,
+    client,
+    model: str,
+    record: Dict[str, Any],
+    record_index: int,
+    pending_reactions: List[Dict[str, Any]],
+    stats: Dict[str, Any],
+) -> None:
+    if not pending_reactions:
         return
 
+    stats["role_refinement_llm_batch_requests"] += 1
+    stats["role_refinement_reactions_batched"] += len(pending_reactions)
+    fallback_reactions = []
+    try:
+        batch_rows = call_role_refinement_batch_llm(
+            client=client,
+            model=model,
+            record=record,
+            pending_reactions=pending_reactions,
+        )
+        fallback_reactions = apply_role_refinement_batch_rows(
+            pending_reactions,
+            batch_rows,
+            stats=stats,
+        )
+    except Exception as exc:
+        stats.setdefault("role_refinement_batch_errors", []).append(
+            {
+                "record_index": record_index,
+                "pdf_name": record.get("pdf_name"),
+                "image_name": record.get("image_name"),
+                "error": f"{type(exc).__name__}: {exc}",
+            }
+        )
+        fallback_reactions = pending_reactions
+
+    for item in fallback_reactions:
+        refine_reaction_condition_roles_with_fallback(
+            client=client,
+            model=model,
+            record=record,
+            reaction=item["reaction"],
+            record_index=record_index,
+            reaction_index=item["reaction_index"],
+            pending_indexes=item["pending_indexes"],
+            stats=stats,
+        )
+
+
+def refine_reaction_condition_roles_with_fallback(
+    *,
+    client,
+    model: str,
+    record: Dict[str, Any],
+    reaction: Dict[str, Any],
+    record_index: int,
+    reaction_index: int,
+    pending_indexes: List[int],
+    stats: Dict[str, Any],
+) -> None:
+    unresolved_indexes = [
+        index
+        for index in pending_indexes
+        if index < len(reaction.get("conditions") or [])
+        and isinstance((reaction.get("conditions") or [])[index], dict)
+        and not (reaction.get("conditions") or [])[index].get("refined_role")
+    ]
+    if not unresolved_indexes:
+        return
+
+    stats["role_refinement_llm_fallback_requests"] += 1
+    stats["role_refinement_reactions_fallback"] += 1
     try:
         llm_rows = call_role_refinement_llm(
             client=client,
             model=model,
             record=record,
             reaction=reaction,
-            pending_indexes=pending_indexes,
+            pending_indexes=unresolved_indexes,
         )
-        applied = apply_role_refinement_rows(conditions, llm_rows, allowed_indexes=set(pending_indexes))
+        conditions = reaction.get("conditions") or []
+        applied = apply_role_refinement_rows(conditions, llm_rows, allowed_indexes=set(unresolved_indexes))
         stats["conditions_llm_refined"] += applied
-        fallback_unrefined_conditions(conditions, pending_indexes, reason="llm_missing_or_invalid_rows")
-        stats["conditions_fallback"] += max(0, len(pending_indexes) - applied)
+        fallback_unrefined_conditions(conditions, unresolved_indexes, reason="llm_missing_or_invalid_rows")
+        stats["conditions_fallback"] += max(0, len(unresolved_indexes) - applied)
     except Exception as exc:
-        fallback_unrefined_conditions(conditions, pending_indexes, reason=f"{type(exc).__name__}: {exc}")
-        stats["conditions_fallback"] += len(pending_indexes)
-        stats["failed_reactions"].append(
-            {
-                "record_index": record_index,
-                "reaction_index": reaction_index,
-                "pdf_name": record.get("pdf_name"),
-                "image_name": record.get("image_name"),
-                "reaction_id": reaction.get("reaction_id") or reaction.get("id"),
-                "error": f"{type(exc).__name__}: {exc}",
-            }
+        conditions = reaction.get("conditions") or []
+        fallback_unrefined_conditions(conditions, unresolved_indexes, reason=f"{type(exc).__name__}: {exc}")
+        stats["conditions_fallback"] += len(unresolved_indexes)
+        record_role_refinement_failure(
+            stats,
+            record=record,
+            record_index=record_index,
+            reaction=reaction,
+            reaction_index=reaction_index,
+            error=f"fallback {type(exc).__name__}: {exc}",
         )
+
+
+def record_role_refinement_failure(
+    stats: Dict[str, Any],
+    *,
+    record: Dict[str, Any],
+    record_index: int,
+    reaction: Dict[str, Any],
+    reaction_index: int,
+    error: str,
+) -> None:
+    stats["failed_reactions"].append(
+        {
+            "record_index": record_index,
+            "reaction_index": reaction_index,
+            "pdf_name": record.get("pdf_name"),
+            "image_name": record.get("image_name"),
+            "reaction_id": reaction.get("reaction_id") or reaction.get("id"),
+            "error": error,
+        }
+    )
 
 
 def role_refinement_can_keep(role: str) -> bool:
@@ -468,7 +587,6 @@ def fallback_unrefined_conditions(conditions: List[Any], indexes: List[int], *, 
         condition["original_role"] = original_role
         condition["refined_role"] = fallback_role
         condition["role_source"] = "original_chemeagle_role"
-        condition["role_confidence"] = "low"
         condition["role_reason"] = f"Role refinement fallback: {reason}"
 
 
@@ -496,17 +614,128 @@ def apply_role_refinement_rows(
         refined_role = adapter_clean_text(row.get("refined_role")).casefold().replace("_", " ")
         if refined_role not in ROLE_REFINEMENT_ROLES:
             continue
-        confidence = adapter_clean_text(row.get("confidence")).casefold()
-        if confidence not in {"high", "medium", "low"}:
-            confidence = "low"
         condition["original_role"] = adapter_clean_text(condition.get("original_role") or condition.get("role")).casefold().replace("_", " ")
         condition["refined_role"] = refined_role
         condition["role_source"] = "llm_role_refinement"
-        condition["role_confidence"] = confidence
         condition["role_reason"] = adapter_clean_text(row.get("reason")) or "LLM role refinement"
         applied += 1
         seen_indexes.add(index)
     return applied
+
+
+def apply_role_refinement_batch_rows(
+    pending_reactions: List[Dict[str, Any]],
+    rows: List[Dict[str, Any]],
+    *,
+    stats: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    rows_by_reaction_index: Dict[int, Dict[str, Any]] = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        reaction_index = row.get("reaction_index")
+        if isinstance(reaction_index, int):
+            rows_by_reaction_index[reaction_index] = row
+
+    fallback_reactions = []
+    for item in pending_reactions:
+        reaction = item["reaction"]
+        reaction_index = item["reaction_index"]
+        pending_indexes = item["pending_indexes"]
+        response_row = rows_by_reaction_index.get(reaction_index)
+        if not isinstance(response_row, dict):
+            fallback_reactions.append(item)
+            continue
+
+        conditions = reaction.get("conditions") or []
+        condition_rows = response_row.get("conditions")
+        if not isinstance(condition_rows, list):
+            fallback_reactions.append(item)
+            continue
+
+        accepted_rows = validated_role_refinement_rows(
+            condition_rows,
+            conditions=conditions,
+            allowed_indexes=set(pending_indexes),
+        )
+        accepted_indexes = {row["condition_index"] for row in accepted_rows}
+        if accepted_indexes != set(pending_indexes):
+            fallback_reactions.append(item)
+            continue
+
+        applied = apply_role_refinement_rows(conditions, accepted_rows, allowed_indexes=set(pending_indexes))
+        if applied != len(pending_indexes):
+            fallback_reactions.append(item)
+            continue
+        stats["conditions_llm_refined"] += applied
+    return fallback_reactions
+
+
+def validated_role_refinement_rows(
+    rows: List[Dict[str, Any]],
+    *,
+    conditions: List[Any],
+    allowed_indexes: set,
+) -> List[Dict[str, Any]]:
+    accepted = []
+    seen_indexes = set()
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        index = row.get("condition_index")
+        if not isinstance(index, int) or index < 0 or index >= len(conditions):
+            continue
+        if index not in allowed_indexes or index in seen_indexes:
+            continue
+        if not isinstance(conditions[index], dict):
+            continue
+        refined_role = adapter_clean_text(row.get("refined_role")).casefold().replace("_", " ")
+        if refined_role not in ROLE_REFINEMENT_ROLES:
+            continue
+        normalized = dict(row)
+        normalized["condition_index"] = index
+        normalized["refined_role"] = refined_role
+        accepted.append(normalized)
+        seen_indexes.add(index)
+    return accepted
+
+
+def call_role_refinement_batch_llm(
+    *,
+    client,
+    model: str,
+    record: Dict[str, Any],
+    pending_reactions: List[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    payload = {
+        "pdf_name": record.get("pdf_name"),
+        "image_name": record.get("image_name"),
+        "reactions": [
+            compact_reaction_for_role_refinement(
+                item["reaction"],
+                reaction_index=item["reaction_index"],
+                pending_indexes=item["pending_indexes"],
+            )
+            for item in pending_reactions
+        ],
+    }
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": ROLE_REFINEMENT_SYSTEM_PROMPT},
+            {
+                "role": "user",
+                "content": ROLE_REFINEMENT_BATCH_USER_PROMPT.format(
+                    payload=json.dumps(payload, ensure_ascii=False, indent=2)
+                ),
+            },
+        ],
+        temperature=0.0,
+        max_tokens=8000,
+    )
+    data = load_json_response(response.choices[0].message.content or "")
+    rows = data.get("reactions", []) if isinstance(data, dict) else []
+    return rows if isinstance(rows, list) else []
 
 
 def call_role_refinement_llm(
@@ -548,6 +777,27 @@ def call_role_refinement_llm(
     data = load_json_response(response.choices[0].message.content or "")
     rows = data.get("conditions", []) if isinstance(data, dict) else []
     return rows if isinstance(rows, list) else []
+
+
+def compact_reaction_for_role_refinement(
+    reaction: Dict[str, Any],
+    *,
+    reaction_index: int,
+    pending_indexes: List[int],
+) -> Dict[str, Any]:
+    return {
+        "reaction_index": reaction_index,
+        "reaction_id": reaction.get("reaction_id") or reaction.get("id"),
+        "reactants": compact_chemeagle_items(reaction.get("reactants")),
+        "products": compact_chemeagle_items(reaction.get("products")),
+        "conditions": [
+            compact_condition_for_role_refinement(condition, index)
+            for index, condition in enumerate(reaction.get("conditions") or [])
+            if isinstance(condition, dict)
+        ],
+        "conditions_to_classify": pending_indexes,
+        "additional_info": reaction.get("additional_info") or [],
+    }
 
 
 def compact_chemeagle_items(value: Any) -> List[Dict[str, Any]]:
@@ -615,6 +865,7 @@ def normalize_chemeagle_payload(
     *,
     pdf_path: Path,
     artifact_stem: str,
+    source_paper: Optional[str] = None,
 ) -> Dict[str, Any]:
     records = raw_payload if isinstance(raw_payload, list) else [raw_payload]
     reactions: List[Dict[str, Any]] = []
@@ -644,6 +895,7 @@ def normalize_chemeagle_payload(
                 reaction,
                 pdf_path=pdf_path,
                 artifact_stem=artifact_stem,
+                source_paper=source_paper,
                 image_name=image_name,
                 image_path=image_path,
                 image_index=image_index,
@@ -655,6 +907,7 @@ def normalize_chemeagle_payload(
 
     return {
         "source": str(pdf_path),
+        "paper_key": source_paper,
         "extracted_at": datetime.now().isoformat(),
         "extractor": "ChemEagle",
         "source_modality": "image",
@@ -670,6 +923,7 @@ def normalize_chemeagle_reaction(
     *,
     pdf_path: Path,
     artifact_stem: str,
+    source_paper: Optional[str],
     image_name: str,
     image_path: Optional[str],
     image_index: int,
@@ -697,7 +951,7 @@ def normalize_chemeagle_reaction(
         "source_modality": "image",
         "source_image": image_name,
         "source_image_path": image_path,
-        "source_paper": pdf_path.stem,
+        "source_paper": source_paper or pdf_path.stem,
         "source_artifact": artifact_stem,
     }
 
@@ -753,6 +1007,13 @@ def text_values(value: Any) -> List[str]:
 
 def clean_text(value: Any) -> str:
     return "; ".join(text_values(value))
+
+
+def effective_condition_role(condition: Dict[str, Any]) -> str:
+    refined_role = clean_text(condition.get("refined_role")).casefold().replace("_", " ")
+    if refined_role and refined_role != "unknown":
+        return refined_role
+    return clean_text(condition.get("role")).casefold().replace("_", " ")
 
 
 def valid_smiles(smiles: Any) -> str:
@@ -819,7 +1080,7 @@ def apply_condition(
     if not isinstance(condition, dict):
         return
 
-    role = clean_text(condition.get("role")).casefold()
+    role = effective_condition_role(condition)
     text = clean_text(condition.get("text")) or clean_text(condition.get("label"))
     if not role:
         parse_free_text_condition(text, normalized)
@@ -840,7 +1101,7 @@ def apply_condition(
         return
 
     compounds = normalize_condition_compounds(condition)
-    if role in {"catalyst", "catalysts"}:
+    if role in {"catalyst", "catalysts", "ligand", "precatalyst"}:
         append_unique_compounds(normalized["catalysts"], compounds)
     elif role in {"additive", "additives", "base"}:
         append_unique_compounds(normalized["additives"], compounds)
@@ -908,7 +1169,16 @@ def normalize_condition_compound(condition: Dict[str, Any]) -> Dict[str, Any]:
         compound["resolved_name"] = resolved_name
     if label:
         compound["symbol"] = label
-    for key in ("resolution_source", "resolution_method", "resolution_confidence", "resolution_evidence"):
+    for key in (
+        "original_role",
+        "refined_role",
+        "role_source",
+        "role_reason",
+        "resolution_source",
+        "resolution_method",
+        "resolution_confidence",
+        "resolution_evidence",
+    ):
         if condition.get(key):
             compound[key] = condition[key]
     amount = clean_text(condition.get("amount")) or parse_amount(text) or parse_amount(notation) or parse_amount(label)

@@ -229,12 +229,17 @@ class ReactionFilter:
         Path(output_path).parent.mkdir(parents=True, exist_ok=True)
         with open(input_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
+        metadata = data.get('metadata') if isinstance(data.get('metadata'), dict) else {}
 
         reactions = data.get('reactions', [])
         if not reactions:
             print(f"  No reactions found in: {input_path}")
             output_data = {
                 "source": data.get('source', input_path),
+                "paper_key": data.get('paper_key') or metadata.get('paper_key'),
+                "source_modality": data.get('source_modality') or metadata.get('source_modality'),
+                "source_pdf": data.get('source_pdf') or metadata.get('source_pdf'),
+                "metadata": metadata,
                 "extracted_at": data.get('extracted_at'),
                 "total_reactions": 0,
                 "filtered_reactions": 0,
@@ -249,6 +254,10 @@ class ReactionFilter:
 
         output_data = {
             "source": data.get('source', input_path),
+            "paper_key": data.get('paper_key') or metadata.get('paper_key'),
+            "source_modality": data.get('source_modality') or metadata.get('source_modality'),
+            "source_pdf": data.get('source_pdf') or metadata.get('source_pdf'),
+            "metadata": metadata,
             "extracted_at": data.get('extracted_at'),
             "total_reactions": len(reactions),
             "filtered_reactions": len(filtered),

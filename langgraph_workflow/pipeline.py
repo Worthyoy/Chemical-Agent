@@ -25,7 +25,6 @@ from langgraph_workflow.pipeline_agents import (  # noqa: E402
     BenchmarkAgent,
     CollectResultsAgent,
     CrossModalKGAgent,
-    KnowledgeGraphAgent,
     PipelineConfig,
     PrepareJobsAgent,
     ProcessPDFAgent,
@@ -72,7 +71,6 @@ class PipelineState(TypedDict, total=False):
     q2_benchmark: Optional[str]
     q1_benchmark_review: Optional[str]
     q1_benchmark_report: Optional[str]
-    kg_path: Optional[str]
     workflow_report: str
     has_successful_pdfs: bool
     steps: Dict
@@ -149,7 +147,6 @@ def build_graph(config: PipelineConfig):
     )
     graph.add_node("q1q2_split", with_agent_log("q1q2_split", Q1Q2SplitAgent(config).run))
     graph.add_node("benchmark", with_agent_log("benchmark", BenchmarkAgent(config).run))
-    graph.add_node("knowledge_graph", with_agent_log("knowledge_graph", KnowledgeGraphAgent(config).run))
     graph.add_node("skip_downstream", with_agent_log("skip_downstream", SkipDownstreamAgent(config).run))
     graph.add_node("report", with_agent_log("report", ReportAgent(config).run))
 
@@ -165,8 +162,7 @@ def build_graph(config: PipelineConfig):
         ["q1q2_split", "skip_downstream"],
     )
     graph.add_edge("q1q2_split", "benchmark")
-    graph.add_edge("benchmark", "knowledge_graph")
-    graph.add_edge("knowledge_graph", "report")
+    graph.add_edge("benchmark", "report")
     graph.add_edge("skip_downstream", "report")
     graph.add_edge("report", END)
     return graph.compile()
@@ -177,6 +173,8 @@ def parse_args():
         description="LangGraph pipeline for SI reaction extraction."
     )
     parser.add_argument("--si_folder", default=None)
+    parser.add_argument("--pdf_folder", default=None)
+    parser.add_argument("--paper_map", default=None)
     parser.add_argument("--output", default=None)
     parser.add_argument("--filtered", default=None)
     parser.add_argument("--intermediate", default=None)
@@ -185,6 +183,7 @@ def parse_args():
     parser.add_argument("--screen_model", default="gpt-4o-mini")
     parser.add_argument("--extract_model", default="gpt-4o")
     parser.add_argument("--split_model", default="gpt-4o")
+    parser.add_argument("--chemeagle_role_refinement_model", default="gpt-5-mini")
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--no_resume", action="store_true")
     parser.add_argument("--limit", type=int, default=None)
@@ -201,7 +200,7 @@ def parse_args():
     parser.add_argument(
         "--skip_downstream_build",
         action="store_true",
-        help="Skip Q1/Q2 split, benchmark generation, and KG construction.",
+        help="Skip Q1/Q2 split and benchmark generation. Multimodal KG still runs when --enable_multimodal_kg is enabled.",
     )
     parser.add_argument(
         "--enable_chemeagle_iupac_enrichment",
@@ -226,13 +225,13 @@ def parse_args():
     parser.add_argument(
         "--enable_multimodal_structure_enrichment",
         action="store_true",
-        help="Before multimodal KG, use an LLM to add substrate scaffold/substituent fields to filtered text and ChemEagle reactions.",
+        help="Compatibility flag. Structure enrichment runs automatically whenever --enable_multimodal_kg is enabled.",
     )
     parser.add_argument(
         "--input_mode",
-        choices=("auto", "supporting_information", "pdf_folder"),
+        choices=("auto", "supporting_information", "pdf_folder", "dual_folder"),
         default="auto",
-        help="auto keeps supporting_information text-only and other PDF folders text+ChemEagle.",
+        help="auto keeps supporting_information text-only and other PDF folders text+ChemEagle; dual_folder uses SI for text and PDF folder for ChemEagle.",
     )
     parser.add_argument(
         "--enable_chemeagle",
@@ -284,7 +283,7 @@ def resolve_use_chemeagle(input_mode: str, enable_chemeagle: str) -> bool:
         return True
     if enable_chemeagle == "never":
         return False
-    return input_mode == "pdf_folder"
+    return input_mode in {"pdf_folder", "dual_folder"}
 
 
 def config_from_args(args) -> PipelineConfig:
@@ -296,16 +295,28 @@ def config_from_args(args) -> PipelineConfig:
         raise ValueError("Set OPENAI_API_KEY in .env or pass --api_key.")
 
     si_folder = Path(args.si_folder) if args.si_folder else EXTRACT_DIR.parent / "supporting_information"
+    pdf_folder = Path(args.pdf_folder) if args.pdf_folder else None
+    paper_map = Path(args.paper_map) if args.paper_map else None
     output_dir = Path(args.output) if args.output else WORKFLOW_DIR / "output" / "output"
     filtered_dir = Path(args.filtered) if args.filtered else WORKFLOW_DIR / "output" / "filtered"
     intermediate_dir = Path(args.intermediate) if args.intermediate else WORKFLOW_DIR / "output" / "intermediate"
     input_mode = resolve_input_mode(si_folder, args.input_mode)
+    if not si_folder.exists():
+        raise ValueError(f"--si_folder does not exist: {si_folder}")
+    if input_mode == "dual_folder" and pdf_folder is None:
+        raise ValueError("--pdf_folder is required when --input_mode dual_folder is used.")
+    if pdf_folder is not None and not pdf_folder.exists():
+        raise ValueError(f"--pdf_folder does not exist: {pdf_folder}")
+    if paper_map is not None and not paper_map.exists():
+        raise ValueError(f"--paper_map does not exist: {paper_map}")
     use_chemeagle = resolve_use_chemeagle(input_mode, args.enable_chemeagle)
     chemeagle_dir = Path(args.chemeagle_dir) if args.chemeagle_dir else default_chemeagle_dir()
 
     token_usage_run_id = make_run_id()
     return PipelineConfig(
         si_folder=si_folder,
+        pdf_folder=pdf_folder,
+        paper_map=paper_map,
         output_dir=output_dir,
         filtered_dir=filtered_dir,
         intermediate_dir=intermediate_dir,
@@ -314,6 +325,7 @@ def config_from_args(args) -> PipelineConfig:
         screen_model=args.screen_model,
         extract_model=args.extract_model,
         split_model=args.split_model,
+        chemeagle_role_refinement_model=args.chemeagle_role_refinement_model,
         overwrite=args.overwrite,
         resume=not args.no_resume,
         limit=args.limit,
@@ -364,7 +376,7 @@ def main():
             summarize_token_usage(config.token_usage_events_path, config.token_usage_report_path)
     print("\nPipeline complete.")
     print(f"  Report: {final_state.get('workflow_report')}")
-    print(f"  KG CSV: {final_state.get('kg_path')}")
+    print(f"  Multimodal KG CSV: {final_state.get('kg_unified_multimodal_path')}")
 
 
 if __name__ == "__main__":

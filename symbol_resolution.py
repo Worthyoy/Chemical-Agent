@@ -415,10 +415,16 @@ def resolve_cross_modal_symbols(text_payload: Dict[str, Any], image_payload: Any
     resolved_text = copy.deepcopy(text_payload)
     resolved_image = copy.deepcopy(image_payload)
 
-    text_key = canonical_paper_key(text_payload.get("source") or "")
+    text_metadata = text_payload.get("metadata") if isinstance(text_payload.get("metadata"), dict) else {}
+    text_key = canonical_paper_key(
+        text_payload.get("paper_key")
+        or text_metadata.get("paper_key")
+        or text_payload.get("source")
+        or ""
+    )
     image_records = resolved_image if isinstance(resolved_image, list) else [resolved_image]
     image_keys = {
-        canonical_paper_key(record.get("pdf_name") or "")
+        canonical_paper_key(record.get("paper_key") or record.get("pdf_name") or "")
         for record in image_records
         if isinstance(record, dict)
     }

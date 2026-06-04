@@ -1,3 +1,4 @@
+import csv
 import hashlib
 import json
 import re
@@ -9,14 +10,13 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from batch_si_extractor import SIExtractor
-from kg_to_csv import build_kg_csv
 from merge_filtered import merge_filtered_reactions_from_files
 from normalize_reaction_types_llm import normalize_reaction_types_file
 from reaction_filter import filter_reaction_file
 from split_by_substrate import batch_llm_parse, split_reactions
 from cross_modal_kg import build_cross_modal_kg
 from multimodal_structure_enrichment import enrich_multimodal_structure
-from symbol_resolution import resolve_cross_modal_symbols, write_resolution_outputs
+from symbol_resolution import canonical_paper_key, resolve_cross_modal_symbols, write_resolution_outputs
 from langgraph_workflow.chemeagle_adapter import (
     enrich_chemeagle_raw_with_iupac,
     normalize_chemeagle_payload,
@@ -48,10 +48,13 @@ class PipelineConfig:
     filtered_dir: Path
     intermediate_dir: Path
     api_key: str
+    pdf_folder: Optional[Path] = None
+    paper_map: Optional[Path] = None
     pages_per_chunk: int = 5
     screen_model: str = "gpt-4o-mini"
     extract_model: str = "gpt-4o"
     split_model: str = "gpt-4o"
+    chemeagle_role_refinement_model: str = "gpt-5-mini"
     overwrite: bool = False
     resume: bool = True
     limit: Optional[int] = None
@@ -90,6 +93,34 @@ class PipelineConfig:
     @property
     def entity_context_dir(self) -> Path:
         return self.intermediate_dir / "entity_context"
+
+    @property
+    def pipeline_cache_dir(self) -> Path:
+        return self.intermediate_dir / "cache"
+
+    @property
+    def text_filtered_dir(self) -> Path:
+        return self.filtered_dir / "text"
+
+    @property
+    def merged_dir(self) -> Path:
+        return self.filtered_dir / "merged"
+
+    @property
+    def kg_dir(self) -> Path:
+        return self.filtered_dir / "kg"
+
+    @property
+    def alignments_dir(self) -> Path:
+        return self.filtered_dir / "alignments"
+
+    @property
+    def reports_dir(self) -> Path:
+        return self.filtered_dir / "reports"
+
+    @property
+    def benchmark_dir(self) -> Path:
+        return self.filtered_dir / "benchmark"
 
     @property
     def chemeagle_output_root(self) -> Path:
@@ -157,7 +188,7 @@ class PipelineConfig:
 
     @property
     def token_usage_report_path(self) -> Path:
-        return self.filtered_dir / "token_usage_report.json"
+        return self.reports_dir / "token_usage_report.json"
 
     @property
     def chemeagle_timing_events_path(self) -> Path:
@@ -165,7 +196,7 @@ class PipelineConfig:
 
     @property
     def chemeagle_timing_report_path(self) -> Path:
-        return self.filtered_dir / "chemeagle_timing_report.json"
+        return self.reports_dir / "chemeagle_timing_report.json"
 
     @property
     def multimodal_structure_enriched_dir(self) -> Path:
@@ -173,11 +204,11 @@ class PipelineConfig:
 
     @property
     def multimodal_structure_parse_cache_path(self) -> Path:
-        return self.filtered_dir / "multimodal_structure_parse_cache.json"
+        return self.pipeline_cache_dir / "multimodal_structure_parse_cache.json"
 
     @property
     def multimodal_structure_enrichment_report_path(self) -> Path:
-        return self.filtered_dir / "multimodal_structure_enrichment_report.json"
+        return self.reports_dir / "multimodal_structure_enrichment_report.json"
 
 
 def make_extractor(config: PipelineConfig) -> SIExtractor:
@@ -216,14 +247,58 @@ def safe_artifact_stem(raw_stem: str, max_prefix_len: int = 48) -> str:
     return f"{prefix}_{digest}"
 
 
+def list_folder_pdf_files(folder: Optional[Path]) -> List[Path]:
+    if folder is None or not folder.exists():
+        return []
+    return sorted(folder.glob("*.pdf"))
+
+
 def list_pdf_files(config: PipelineConfig) -> List[Path]:
-    pdfs = sorted(config.si_folder.glob("*.pdf"))
+    pdfs = list_folder_pdf_files(config.si_folder)
     if config.paper_name:
         needle = config.paper_name.lower()
         pdfs = [p for p in pdfs if needle in p.name.lower()]
     if config.limit is not None:
         pdfs = pdfs[: config.limit]
     return pdfs
+
+
+def file_lookup(files: List[Path]) -> Dict[str, Path]:
+    lookup: Dict[str, Path] = {}
+    for path in files:
+        for key in (path.name, path.stem, canonical_paper_key(path.name)):
+            key = (key or "").casefold()
+            if key and key not in lookup:
+                lookup[key] = path
+    return lookup
+
+
+def find_mapped_file(value: str, lookup: Dict[str, Path]) -> Optional[Path]:
+    token = (value or "").strip()
+    if not token:
+        return None
+    for key in (token, Path(token).name, Path(token).stem, canonical_paper_key(token)):
+        key = (key or "").casefold()
+        if key in lookup:
+            return lookup[key]
+    return None
+
+
+def job_matches_filter(job: Dict, paper_name: Optional[str]) -> bool:
+    if not paper_name:
+        return True
+    needle = paper_name.casefold()
+    haystack = " ".join(
+        str(job.get(key) or "")
+        for key in ("paper_key", "pdf_name", "text_pdf_name", "image_pdf_name")
+    ).casefold()
+    return needle in haystack
+
+
+def modality_artifact_stem(paper_key: str, modality: str, path: Optional[Path]) -> str:
+    base = paper_key or (path.stem if path else "paper")
+    path_hint = path.stem if path else "missing"
+    return safe_artifact_stem(f"{base}__{modality}__{path_hint}")
 
 
 def iter_with_progress(items, desc: str, unit: str):
@@ -242,6 +317,7 @@ def source_metadata(pdf_path: Path, config: PipelineConfig) -> Dict:
         "screen_model": config.screen_model,
         "extract_model": config.extract_model,
         "split_model": config.split_model,
+        "chemeagle_role_refinement_model": config.chemeagle_role_refinement_model,
         "pages_per_chunk": config.pages_per_chunk,
         "enable_stage2_audit": config.enable_stage2_audit,
     }
@@ -335,12 +411,22 @@ def build_pdf_job(pdf_path: Path, config: PipelineConfig) -> Dict:
     return {
         "pdf_path": str(pdf_path),
         "pdf_name": pdf_path.name,
+        "paper_key": canonical_paper_key(pdf_path.name) or pdf_path.stem,
+        "mode": "legacy_joint",
+        "run_text": True,
+        "run_chemeagle": config.use_chemeagle,
+        "text_pdf_path": str(pdf_path),
+        "text_pdf_name": pdf_path.name,
+        "image_pdf_path": str(pdf_path),
+        "image_pdf_name": pdf_path.name,
         "artifact_stem": artifact_stem,
+        "text_artifact_stem": artifact_stem,
+        "image_artifact_stem": artifact_stem,
         "page_cache_path": str(config.page_cache_dir / f"{artifact_stem}.json"),
         "context_path": str(config.entity_context_dir / f"{artifact_stem}.json"),
         "reaction_output_path": str(config.output_dir / f"{artifact_stem}.json"),
         "text_symbol_resolved_output_path": str(config.text_symbol_resolved_dir / f"{artifact_stem}.json"),
-        "filtered_output_path": str(config.filtered_dir / f"{artifact_stem}.json"),
+        "filtered_output_path": str(config.text_filtered_dir / f"{artifact_stem}.json"),
         "chemeagle_image_dir": str(config.chemeagle_image_root / artifact_stem),
         "chemeagle_raw_result_path": str(config.chemeagle_raw_dir / f"{artifact_stem}.json"),
         "chemeagle_symbol_resolved_output_path": str(config.chemeagle_symbol_resolved_dir / f"{artifact_stem}.json"),
@@ -351,6 +437,168 @@ def build_pdf_job(pdf_path: Path, config: PipelineConfig) -> Dict:
     }
 
 
+def build_paper_job(
+    *,
+    paper_key: str,
+    text_pdf_path: Optional[Path],
+    image_pdf_path: Optional[Path],
+    config: PipelineConfig,
+    mode: Optional[str] = None,
+) -> Dict:
+    resolved_key = paper_key or canonical_paper_key(
+        (text_pdf_path or image_pdf_path).name if (text_pdf_path or image_pdf_path) else "paper"
+    )
+    text_stem = modality_artifact_stem(resolved_key, "text", text_pdf_path)
+    image_stem = modality_artifact_stem(resolved_key, "image", image_pdf_path)
+    primary_path = text_pdf_path or image_pdf_path
+    if primary_path is None:
+        raise ValueError("paper job requires at least one text or image PDF path")
+    run_text = text_pdf_path is not None
+    run_chemeagle = image_pdf_path is not None and config.use_chemeagle
+    if mode is None:
+        if run_text and run_chemeagle:
+            mode = "dual_source"
+        elif run_text:
+            mode = "text_only"
+        else:
+            mode = "image_only"
+    return {
+        "pdf_path": str(primary_path),
+        "pdf_name": resolved_key or primary_path.name,
+        "paper_key": resolved_key,
+        "mode": mode,
+        "run_text": run_text,
+        "run_chemeagle": run_chemeagle,
+        "text_pdf_path": str(text_pdf_path) if text_pdf_path else None,
+        "text_pdf_name": text_pdf_path.name if text_pdf_path else None,
+        "image_pdf_path": str(image_pdf_path) if image_pdf_path else None,
+        "image_pdf_name": image_pdf_path.name if image_pdf_path else None,
+        "artifact_stem": safe_artifact_stem(resolved_key or primary_path.stem),
+        "text_artifact_stem": text_stem,
+        "image_artifact_stem": image_stem,
+        "page_cache_path": str(config.page_cache_dir / f"{text_stem}.json"),
+        "context_path": str(config.entity_context_dir / f"{text_stem}.json"),
+        "reaction_output_path": str(config.output_dir / f"{text_stem}.json"),
+        "text_symbol_resolved_output_path": str(config.text_symbol_resolved_dir / f"{text_stem}.json"),
+        "filtered_output_path": str(config.text_filtered_dir / f"{text_stem}.json"),
+        "chemeagle_image_dir": str(config.chemeagle_image_root / image_stem),
+        "chemeagle_raw_result_path": str(config.chemeagle_raw_dir / f"{image_stem}.json"),
+        "chemeagle_symbol_resolved_output_path": str(config.chemeagle_symbol_resolved_dir / f"{image_stem}.json"),
+        "chemeagle_raw_iupac_output_path": str(config.chemeagle_raw_iupac_dir / f"{image_stem}.json"),
+        "chemeagle_role_refined_output_path": str(config.chemeagle_role_refined_dir / f"{image_stem}.json"),
+        "chemeagle_normalized_output_path": str(config.chemeagle_normalized_dir / f"{image_stem}.json"),
+        "chemeagle_filtered_output_path": str(config.chemeagle_filtered_dir / f"{image_stem}.json"),
+    }
+
+
+def build_dual_folder_jobs(config: PipelineConfig) -> tuple[List[Dict], Dict]:
+    text_files = list_folder_pdf_files(config.si_folder)
+    image_files = list_folder_pdf_files(config.pdf_folder)
+    report = {
+        "mode": "dual_folder",
+        "si_folder": str(config.si_folder),
+        "pdf_folder": str(config.pdf_folder) if config.pdf_folder else None,
+        "paper_map": str(config.paper_map) if config.paper_map else None,
+        "text_pdf_count": len(text_files),
+        "image_pdf_count": len(image_files),
+        "matched_papers": [],
+        "text_only_papers": [],
+        "image_only_papers": [],
+        "unmatched_si_files": [],
+        "unmatched_pdf_files": [],
+        "duplicate_paper_keys": [],
+    }
+    jobs: List[Dict] = []
+    used_text: set[Path] = set()
+    used_image: set[Path] = set()
+
+    if config.paper_map and config.paper_map.exists():
+        text_lookup = file_lookup(text_files)
+        image_lookup = file_lookup(image_files)
+        with open(config.paper_map, "r", encoding="utf-8-sig", newline="") as f:
+            for row_index, row in enumerate(csv.DictReader(f), start=1):
+                paper_key = (row.get("paper_key") or "").strip()
+                text_path = find_mapped_file(row.get("si_file") or row.get("text_file") or "", text_lookup)
+                image_path = find_mapped_file(row.get("pdf_file") or row.get("image_file") or "", image_lookup)
+                if not paper_key:
+                    paper_key = canonical_paper_key(
+                        (row.get("si_file") or row.get("pdf_file") or f"paper_{row_index}")
+                    )
+                if text_path:
+                    used_text.add(text_path)
+                if image_path:
+                    used_image.add(image_path)
+                if text_path or image_path:
+                    jobs.append(
+                        build_paper_job(
+                            paper_key=paper_key,
+                            text_pdf_path=text_path,
+                            image_pdf_path=image_path,
+                            config=config,
+                        )
+                    )
+
+    if not jobs:
+        text_by_key: Dict[str, List[Path]] = {}
+        image_by_key: Dict[str, List[Path]] = {}
+        for path in text_files:
+            text_by_key.setdefault(canonical_paper_key(path.name) or path.stem.casefold(), []).append(path)
+        for path in image_files:
+            image_by_key.setdefault(canonical_paper_key(path.name) or path.stem.casefold(), []).append(path)
+        for key in sorted(set(text_by_key) | set(image_by_key)):
+            texts = text_by_key.get(key, [])
+            images = image_by_key.get(key, [])
+            if len(texts) > 1 or len(images) > 1:
+                report["duplicate_paper_keys"].append(
+                    {
+                        "paper_key": key,
+                        "text_files": [p.name for p in texts],
+                        "image_files": [p.name for p in images],
+                    }
+                )
+            for index in range(max(len(texts), len(images), 1)):
+                text_path = texts[index] if index < len(texts) else None
+                image_path = images[index] if index < len(images) else None
+                job_key = key if max(len(texts), len(images), 1) == 1 else f"{key}_{index + 1}"
+                jobs.append(
+                    build_paper_job(
+                        paper_key=job_key,
+                        text_pdf_path=text_path,
+                        image_pdf_path=image_path,
+                        config=config,
+                    )
+                )
+                if text_path:
+                    used_text.add(text_path)
+                if image_path:
+                    used_image.add(image_path)
+
+    for path in text_files:
+        if path not in used_text:
+            jobs.append(build_paper_job(paper_key=canonical_paper_key(path.name), text_pdf_path=path, image_pdf_path=None, config=config))
+    for path in image_files:
+        if path not in used_image:
+            jobs.append(build_paper_job(paper_key=canonical_paper_key(path.name), text_pdf_path=None, image_pdf_path=path, config=config))
+
+    jobs = [job for job in jobs if job_matches_filter(job, config.paper_name)]
+    jobs.sort(key=lambda item: (item.get("paper_key") or "", item.get("mode") or ""))
+    if config.limit is not None:
+        jobs = jobs[: config.limit]
+
+    for job in jobs:
+        if job["mode"] == "dual_source":
+            report["matched_papers"].append(job["paper_key"])
+        elif job["mode"] == "text_only":
+            report["text_only_papers"].append(job["paper_key"])
+            if job.get("text_pdf_name"):
+                report["unmatched_si_files"].append(job["text_pdf_name"])
+        elif job["mode"] == "image_only":
+            report["image_only_papers"].append(job["paper_key"])
+            if job.get("image_pdf_name"):
+                report["unmatched_pdf_files"].append(job["image_pdf_name"])
+    return jobs, report
+
+
 class PrepareJobsAgent:
     def __init__(self, config: PipelineConfig):
         self.config = config
@@ -359,8 +607,15 @@ class PrepareJobsAgent:
         for path in (
             self.config.page_cache_dir,
             self.config.entity_context_dir,
+            self.config.pipeline_cache_dir,
             self.config.output_dir,
             self.config.filtered_dir,
+            self.config.text_filtered_dir,
+            self.config.merged_dir,
+            self.config.kg_dir,
+            self.config.alignments_dir,
+            self.config.reports_dir,
+            self.config.benchmark_dir,
         ):
             path.mkdir(parents=True, exist_ok=True)
         if self.config.enable_cross_modal_symbol_resolution:
@@ -379,13 +634,25 @@ class PrepareJobsAgent:
             for path in paths:
                 path.mkdir(parents=True, exist_ok=True)
 
-        pdf_files = list_pdf_files(self.config)
-        jobs = [build_pdf_job(pdf_path, self.config) for pdf_path in pdf_files]
+        dual_input_report = None
+        if self.config.input_mode == "dual_folder":
+            jobs, dual_input_report = build_dual_folder_jobs(self.config)
+            pdf_files = [
+                Path(path)
+                for job in jobs
+                for path in (job.get("text_pdf_path"), job.get("image_pdf_path"))
+                if path
+            ]
+        else:
+            pdf_files = list_pdf_files(self.config)
+            jobs = [build_pdf_job(pdf_path, self.config) for pdf_path in pdf_files]
         state["pdf_files"] = [str(p) for p in pdf_files]
         state["jobs"] = jobs
         state.setdefault("steps", {})["prepare_jobs"] = {
             "pdf_count": len(jobs),
             "si_folder": str(self.config.si_folder),
+            "pdf_folder": str(self.config.pdf_folder) if self.config.pdf_folder else None,
+            "paper_map": str(self.config.paper_map) if self.config.paper_map else None,
             "paper_name": self.config.paper_name,
             "limit": self.config.limit,
             "max_parallel_pdfs": self.config.max_parallel_pdfs,
@@ -398,6 +665,11 @@ class PrepareJobsAgent:
             "enable_chemeagle_role_refinement": self.config.enable_chemeagle_role_refinement,
             "enable_multimodal_kg": self.config.enable_multimodal_kg,
             "enable_multimodal_structure_enrichment": self.config.enable_multimodal_structure_enrichment,
+            "multimodal_structure_enrichment_effective": (
+                "required_by_multimodal_kg" if self.config.enable_multimodal_kg else "disabled"
+            ),
+            "dual_input_report": dual_input_report,
+            "jobs": jobs,
         }
         return {
             "pdf_files": state["pdf_files"],
@@ -413,32 +685,37 @@ class ProcessPDFAgent:
     def run(self, state: Dict) -> Dict:
         job = state["job"]
         started_at = time.perf_counter()
+        run_text = bool(job.get("run_text", True))
+        run_chemeagle = bool(job.get("run_chemeagle", self.config.use_chemeagle))
+        can_symbol_resolve = run_text and run_chemeagle and self.config.enable_cross_modal_symbol_resolution
         result = {
             "pdf": job["pdf_path"],
             "pdf_name": job["pdf_name"],
+            "paper_key": job.get("paper_key"),
+            "mode": job.get("mode", "legacy_joint"),
+            "text_pdf": job.get("text_pdf_path"),
+            "image_pdf": job.get("image_pdf_path"),
             "artifact_stem": job["artifact_stem"],
             "status": "failed",
-            "text_status": "failed",
-            "chemeagle_status": "skipped" if not self.config.use_chemeagle else "pending",
-            "chemeagle_raw_status": "skipped" if not self.config.use_chemeagle else "pending",
+            "text_status": "pending" if run_text else "skipped",
+            "chemeagle_status": "pending" if run_chemeagle else "skipped",
+            "chemeagle_raw_status": "pending" if run_chemeagle else "skipped",
             "symbol_resolution_status": (
-                "skipped"
-                if not self.config.use_chemeagle or not self.config.enable_cross_modal_symbol_resolution
-                else "pending"
+                "pending" if can_symbol_resolve else "skipped"
             ),
             "chemeagle_iupac_status": (
                 "skipped"
-                if not self.config.use_chemeagle or not self.config.enable_chemeagle_iupac_enrichment
+                if not run_chemeagle or not self.config.enable_chemeagle_iupac_enrichment
                 else "pending"
             ),
             "chemeagle_role_refinement_status": (
                 "skipped"
-                if not self.config.use_chemeagle or not self.config.enable_chemeagle_role_refinement
+                if not run_chemeagle or not self.config.enable_chemeagle_role_refinement
                 else "pending"
             ),
             "chemeagle_normalization_status": (
                 "skipped"
-                if not self.config.use_chemeagle or self.config.skip_chemeagle_normalization
+                if not run_chemeagle or self.config.skip_chemeagle_normalization
                 else "pending"
             ),
             "paths": {
@@ -463,138 +740,172 @@ class ProcessPDFAgent:
             "error": None,
         }
 
-        try:
-            pdf_path = Path(job["pdf_path"])
-            metadata = source_metadata(pdf_path, self.config)
-            extractor = make_extractor(self.config)
-
-            page_cache_path = Path(job["page_cache_path"])
-            if self.config.resume and not self.config.overwrite and metadata_matches(page_cache_path, metadata):
-                page_payload = read_json(page_cache_path)
-                pages = page_payload.get("pages", [])
-                result["cache"]["page_cache"] = "hit"
-            else:
-                pages = extractor.extract_text_by_pages(str(pdf_path))
-                write_json(
-                    page_cache_path,
+        errors = []
+        reaction_output_path = Path(job["reaction_output_path"])
+        if run_text:
+            try:
+                reaction_output_path = self._run_text_branch(job, result)
+            except Exception as exc:
+                result["text_status"] = "failed"
+                errors.append(
                     {
-                        "source": str(pdf_path),
-                        "cached_at": datetime.now().isoformat(),
-                        "total_pages": len(pages),
-                        "pages": pages,
-                        "metadata": metadata,
-                    },
+                        "stage": "text",
+                        "type": type(exc).__name__,
+                        "message": str(exc),
+                        "traceback": traceback.format_exc(limit=8),
+                    }
                 )
-                result["cache"]["page_cache"] = "miss"
-            result["counts"]["pages"] = len(pages)
-
-            context_path = Path(job["context_path"])
-            if self.config.resume and not self.config.overwrite and metadata_matches(context_path, metadata):
-                entity_context = read_json(context_path)
-                result["cache"]["entity_context"] = "hit"
-            else:
-                with token_usage_context("text_name_registry", pdf_path.name):
-                    registry = extractor.extract_name_registry(
-                        pages,
-                        max_scan_pages=60,
-                        pages_per_chunk=5,
-                    )
-                gp_texts = extractor.extract_general_procedure_texts(pages)
-                symbol_index = build_symbol_index(registry)
-                with token_usage_context("text_registry_scaffold_parse", pdf_path.name):
-                    scaffold_mapping = build_scaffold_mapping(registry, self.config)
-                entity_context = {
-                    "source": str(pdf_path),
-                    "created_at": datetime.now().isoformat(),
-                    "name_registry": registry,
-                    "general_procedures": gp_texts,
-                    "substrate_index": symbol_index,
-                    "product_index": symbol_index,
-                    "symbol_name_mapping": registry,
-                    "scaffold_substituent_mapping": scaffold_mapping,
-                    "stats": {
-                        "total_pages": len(pages),
-                        "registry_size": len(registry),
-                        "gp_templates": len(gp_texts),
-                        "scaffold_mappings": len(scaffold_mapping),
-                    },
-                    "metadata": metadata,
-                }
-                write_json(context_path, entity_context)
-                result["cache"]["entity_context"] = "miss"
-            result["counts"]["registry_size"] = len(entity_context.get("name_registry", {}))
-            result["counts"]["gp_templates"] = len(entity_context.get("general_procedures", {}))
-
-            reaction_output_path = Path(job["reaction_output_path"])
-            if self.config.resume and not self.config.overwrite and metadata_matches(reaction_output_path, metadata):
-                reaction_payload = read_json(reaction_output_path)
-                reactions = reaction_payload.get("reactions", [])
-                result["cache"]["reaction_output"] = "hit"
-            else:
-                entity_context = dict(entity_context)
-                entity_context["_context_path"] = str(context_path)
-                with token_usage_context("text_reaction_extraction", pdf_path.name):
-                    reactions = extractor.process_pages_with_context(
-                        str(pdf_path),
-                        pages,
-                        entity_context,
-                        self.config.output_dir,
-                        output_path=reaction_output_path,
-                    )
-                if reactions is None:
-                    reactions = []
-                    if not reaction_output_path.exists():
-                        write_json(
-                            reaction_output_path,
-                            {
-                                "source": str(pdf_path),
-                                "extracted_at": datetime.now().isoformat(),
-                                "total_reactions": 0,
-                                "name_registry": entity_context.get("name_registry", {}),
-                                "general_procedures": entity_context.get("general_procedures", {}),
-                                "entity_context_path": str(context_path),
-                                "stats": {"no_reaction_chunks": True},
-                                "reactions": [],
-                            },
-                        )
-                add_metadata(reaction_output_path, metadata)
-                result["cache"]["reaction_output"] = "miss"
-            result["counts"]["reactions"] = len(reactions)
-            reaction_payload_for_counts = reaction_payload if "reaction_payload" in locals() else {}
-            if not reaction_payload_for_counts and reaction_output_path.exists():
-                try:
-                    reaction_payload_for_counts = read_json(reaction_output_path)
-                except Exception:
-                    reaction_payload_for_counts = {}
-            result["counts"]["stage2_audit_recovered"] = (
-                reaction_payload_for_counts.get("stats", {}).get("stage2_audit_recovered", 0)
-                if isinstance(reaction_payload_for_counts, dict)
-                else 0
+        if run_chemeagle:
+            self._run_chemeagle_branch(job, result)
+        if run_text and result.get("text_status") == "success":
+            filter_input_path = (
+                Path(job["text_symbol_resolved_output_path"])
+                if can_symbol_resolve and Path(job["text_symbol_resolved_output_path"]).exists()
+                else reaction_output_path
             )
-
-            result["text_status"] = "success"
-            result["status"] = "success"
-            defer_text_filter = self.config.use_chemeagle and self.config.enable_cross_modal_symbol_resolution
-            if not defer_text_filter:
-                self._run_text_filter(job, result, reaction_output_path)
-            if self.config.use_chemeagle:
-                self._run_chemeagle_branch(job, result, metadata)
-            if defer_text_filter:
-                filter_input_path = (
-                    Path(job["text_symbol_resolved_output_path"])
-                    if Path(job["text_symbol_resolved_output_path"]).exists()
-                    else reaction_output_path
-                )
+            try:
                 self._run_text_filter(job, result, filter_input_path)
-        except Exception as exc:
-            result["error"] = {
-                "type": type(exc).__name__,
-                "message": str(exc),
-                "traceback": traceback.format_exc(limit=8),
-            }
+            except Exception as exc:
+                result["text_status"] = "failed"
+                errors.append(
+                    {
+                        "stage": "text_filter",
+                        "type": type(exc).__name__,
+                        "message": str(exc),
+                        "traceback": traceback.format_exc(limit=8),
+                    }
+                )
+        if errors:
+            result["error"] = {"branches": errors}
+        if (
+            result.get("text_status") == "success"
+            or result.get("chemeagle_raw_status") == "success"
+            or result.get("chemeagle_normalization_status") == "success"
+        ):
+            result["status"] = "success"
 
         result["elapsed_seconds"] = round(time.perf_counter() - started_at, 3)
         return {"pdf_results": [result]}
+
+    def _run_text_branch(self, job: Dict, result: Dict) -> Path:
+        pdf_path = Path(job.get("text_pdf_path") or job["pdf_path"])
+        metadata = source_metadata(pdf_path, self.config)
+        metadata["paper_key"] = job.get("paper_key")
+        metadata["source_modality"] = "text"
+        metadata["source_pdf"] = str(pdf_path)
+        extractor = make_extractor(self.config)
+
+        page_cache_path = Path(job["page_cache_path"])
+        if self.config.resume and not self.config.overwrite and metadata_matches(page_cache_path, metadata):
+            page_payload = read_json(page_cache_path)
+            pages = page_payload.get("pages", [])
+            result["cache"]["page_cache"] = "hit"
+        else:
+            pages = extractor.extract_text_by_pages(str(pdf_path))
+            write_json(
+                page_cache_path,
+                {
+                    "source": str(pdf_path),
+                    "cached_at": datetime.now().isoformat(),
+                    "total_pages": len(pages),
+                    "pages": pages,
+                    "metadata": metadata,
+                },
+            )
+            result["cache"]["page_cache"] = "miss"
+        result["counts"]["pages"] = len(pages)
+
+        context_path = Path(job["context_path"])
+        if self.config.resume and not self.config.overwrite and metadata_matches(context_path, metadata):
+            entity_context = read_json(context_path)
+            result["cache"]["entity_context"] = "hit"
+        else:
+            with token_usage_context("text_name_registry", pdf_path.name):
+                registry = extractor.extract_name_registry(
+                    pages,
+                    max_scan_pages=60,
+                    pages_per_chunk=5,
+                )
+            gp_texts = extractor.extract_general_procedure_texts(pages)
+            symbol_index = build_symbol_index(registry)
+            with token_usage_context("text_registry_scaffold_parse", pdf_path.name):
+                scaffold_mapping = build_scaffold_mapping(registry, self.config)
+            entity_context = {
+                "source": str(pdf_path),
+                "paper_key": job.get("paper_key"),
+                "source_modality": "text",
+                "source_pdf": str(pdf_path),
+                "created_at": datetime.now().isoformat(),
+                "name_registry": registry,
+                "general_procedures": gp_texts,
+                "substrate_index": symbol_index,
+                "product_index": symbol_index,
+                "symbol_name_mapping": registry,
+                "scaffold_substituent_mapping": scaffold_mapping,
+                "stats": {
+                    "total_pages": len(pages),
+                    "registry_size": len(registry),
+                    "gp_templates": len(gp_texts),
+                    "scaffold_mappings": len(scaffold_mapping),
+                },
+                "metadata": metadata,
+            }
+            write_json(context_path, entity_context)
+            result["cache"]["entity_context"] = "miss"
+        result["counts"]["registry_size"] = len(entity_context.get("name_registry", {}))
+        result["counts"]["gp_templates"] = len(entity_context.get("general_procedures", {}))
+
+        reaction_output_path = Path(job["reaction_output_path"])
+        reaction_payload = {}
+        if self.config.resume and not self.config.overwrite and metadata_matches(reaction_output_path, metadata):
+            reaction_payload = read_json(reaction_output_path)
+            reactions = reaction_payload.get("reactions", [])
+            result["cache"]["reaction_output"] = "hit"
+        else:
+            entity_context = dict(entity_context)
+            entity_context["_context_path"] = str(context_path)
+            with token_usage_context("text_reaction_extraction", pdf_path.name):
+                reactions = extractor.process_pages_with_context(
+                    str(pdf_path),
+                    pages,
+                    entity_context,
+                    self.config.output_dir,
+                    output_path=reaction_output_path,
+                )
+            if reactions is None:
+                reactions = []
+                if not reaction_output_path.exists():
+                    write_json(
+                        reaction_output_path,
+                        {
+                            "source": str(pdf_path),
+                            "paper_key": job.get("paper_key"),
+                            "source_modality": "text",
+                            "source_pdf": str(pdf_path),
+                            "extracted_at": datetime.now().isoformat(),
+                            "total_reactions": 0,
+                            "name_registry": entity_context.get("name_registry", {}),
+                            "general_procedures": entity_context.get("general_procedures", {}),
+                            "entity_context_path": str(context_path),
+                            "stats": {"no_reaction_chunks": True},
+                            "reactions": [],
+                        },
+                    )
+            add_metadata(reaction_output_path, metadata)
+            result["cache"]["reaction_output"] = "miss"
+        result["counts"]["reactions"] = len(reactions)
+        if not reaction_payload and reaction_output_path.exists():
+            try:
+                reaction_payload = read_json(reaction_output_path)
+            except Exception:
+                reaction_payload = {}
+        result["counts"]["stage2_audit_recovered"] = (
+            reaction_payload.get("stats", {}).get("stage2_audit_recovered", 0)
+            if isinstance(reaction_payload, dict)
+            else 0
+        )
+        result["text_status"] = "success"
+        return reaction_output_path
 
     def _run_text_filter(self, job: Dict, result: Dict, input_path: Path) -> None:
         filter_result = filter_reaction_file(
@@ -616,7 +927,7 @@ class ProcessPDFAgent:
         else:
             result["counts"]["filtered_reactions"] = filter_result.get("reactions", 0)
 
-    def _run_chemeagle_branch(self, job: Dict, result: Dict, metadata: Dict) -> None:
+    def _run_chemeagle_branch(self, job: Dict, result: Dict) -> None:
         chemeagle_result = {
             "status": "failed",
             "raw_status": "pending",
@@ -636,7 +947,11 @@ class ProcessPDFAgent:
         try:
             if not self.config.chemeagle_dir:
                 raise ValueError("ChemEagle directory is not configured.")
-            pdf_path = Path(job["pdf_path"])
+            pdf_path = Path(job.get("image_pdf_path") or job["pdf_path"])
+            metadata = source_metadata(pdf_path, self.config)
+            metadata["paper_key"] = job.get("paper_key")
+            metadata["source_modality"] = "image"
+            metadata["source_pdf"] = str(pdf_path)
             text_raw_path = Path(job["reaction_output_path"])
             text_symbol_resolved_path = Path(job["text_symbol_resolved_output_path"])
             raw_path = Path(job["chemeagle_raw_result_path"])
@@ -681,11 +996,28 @@ class ProcessPDFAgent:
 
             chemeagle_iupac_input_payload = raw_payload
             chemeagle_iupac_input_path = raw_path
-            if self.config.enable_cross_modal_symbol_resolution:
+            can_symbol_resolve = (
+                self.config.enable_cross_modal_symbol_resolution
+                and bool(job.get("run_text", True))
+                and text_raw_path.exists()
+            )
+            if can_symbol_resolve:
                 try:
+                    text_payload_for_symbol = read_json(text_raw_path)
+                    if isinstance(text_payload_for_symbol, dict):
+                        text_payload_for_symbol.setdefault("paper_key", job.get("paper_key"))
+                    image_payload_for_symbol = raw_payload
+                    image_records = (
+                        image_payload_for_symbol
+                        if isinstance(image_payload_for_symbol, list)
+                        else [image_payload_for_symbol]
+                    )
+                    for record in image_records:
+                        if isinstance(record, dict):
+                            record.setdefault("paper_key", job.get("paper_key"))
                     resolved_text, resolved_image, symbol_report = resolve_cross_modal_symbols(
-                        read_json(text_raw_path),
-                        raw_payload,
+                        text_payload_for_symbol,
+                        image_payload_for_symbol,
                     )
                     symbol_report["cache"] = "refreshed"
                     write_resolution_outputs(
@@ -729,6 +1061,15 @@ class ProcessPDFAgent:
                         },
                     }
                     result["symbol_resolution_status"] = "failed"
+            elif self.config.enable_cross_modal_symbol_resolution:
+                chemeagle_result["symbol_resolution_status"] = "skipped"
+                chemeagle_result["symbol_resolution"] = {
+                    "status": "skipped",
+                    "reason": "no_text_pair",
+                    "text_output": str(text_symbol_resolved_path),
+                    "image_output": str(symbol_resolved_path),
+                }
+                result["symbol_resolution_status"] = "skipped"
 
             if self.config.enable_chemeagle_iupac_enrichment:
                 try:
@@ -771,13 +1112,18 @@ class ProcessPDFAgent:
             if role_refinement_input is None:
                 role_refinement_input = chemeagle_iupac_input_payload
 
+            chemeagle_normalization_input = role_refinement_input
+            chemeagle_normalization_input_path = role_refinement_input_path
             if self.config.enable_chemeagle_role_refinement:
                 try:
                     if self.config.resume and not self.config.overwrite and role_refined_path.exists():
+                        refined_payload = read_json(role_refined_path)
+                        chemeagle_normalization_input = refined_payload
+                        chemeagle_normalization_input_path = role_refined_path
                         role_stats = {
                             "status": "success",
                             "cache": "hit",
-                            "model": self.config.extract_model,
+                            "model": self.config.chemeagle_role_refinement_model,
                             "conditions_total": 0,
                             "conditions_llm_refined": 0,
                             "conditions_fallback": 0,
@@ -786,11 +1132,13 @@ class ProcessPDFAgent:
                         with token_usage_context("chemeagle_role_refinement", pdf_path.name):
                             refined_payload, role_stats = refine_chemeagle_condition_roles(
                                 role_refinement_input,
-                                model=self.config.extract_model,
+                                model=self.config.chemeagle_role_refinement_model,
                                 api_key=self.config.api_key,
                                 base_url=self.config.base_url,
                             )
                         write_json(role_refined_path, refined_payload)
+                        chemeagle_normalization_input = refined_payload
+                        chemeagle_normalization_input_path = role_refined_path
                         role_stats["cache"] = "miss"
                     chemeagle_result["role_refinement_status"] = "success"
                     chemeagle_result["role_refinement"] = {
@@ -831,15 +1179,17 @@ class ProcessPDFAgent:
                 return
 
             normalized_payload = normalize_chemeagle_payload(
-                role_refinement_input,
+                chemeagle_normalization_input,
                 pdf_path=pdf_path,
                 artifact_stem=job["artifact_stem"],
+                source_paper=job.get("paper_key"),
             )
             normalized_payload["metadata"] = {
                 **metadata,
                 "extractor": "ChemEagle",
                 "chemeagle_pdf_model_size": self.config.chemeagle_pdf_model_size,
                 "chemeagle_model_name": self.config.chemeagle_model_name,
+                "role_refinement_input": str(chemeagle_normalization_input_path),
             }
             write_json(normalized_path, normalized_payload)
 
@@ -954,6 +1304,7 @@ class CollectResultsAgent:
             "status": "success" if self.config.enable_chemeagle_role_refinement else "skipped",
             "created_at": datetime.now().isoformat(),
             "enabled": self.config.enable_chemeagle_role_refinement,
+            "model": self.config.chemeagle_role_refinement_model,
             "output_dir": str(self.config.chemeagle_role_refined_dir),
             "successful_outputs": chemeagle_role_refined_paths,
             "failed": [
@@ -1145,7 +1496,7 @@ class ReactionReorganizationAgent:
         self.config = config
 
     def run(self, state: Dict) -> Dict:
-        merged_path = self.config.filtered_dir / "merged_filtered_reactions.json"
+        merged_path = self.config.merged_dir / "all_filtered_reactions.json"
         input_paths = state.get("successful_filtered_paths", [])
         merge_result = merge_filtered_reactions_from_files(
             input_paths,
@@ -1181,41 +1532,37 @@ class CrossModalKGAgent:
         else:
             text_paths = state.get("successful_text_filtered_paths", [])
             chemeagle_paths = state.get("successful_chemeagle_kg_input_paths", [])
-            if not text_paths:
+            if not text_paths and not chemeagle_paths:
                 result = {
                     "status": "skipped",
-                    "reason": "missing_text_filtered_inputs",
+                    "reason": "missing_filtered_inputs",
                     "text_inputs": text_paths,
                     "chemeagle_inputs": chemeagle_paths,
                     "input_policy": "multimodal KG uses filtered text and filtered ChemEagle reactions only",
                 }
             else:
-                kg_text_paths = text_paths
-                kg_chemeagle_paths = chemeagle_paths
-                structure_result = {
-                    "status": "skipped",
-                    "reason": "enable_multimodal_structure_enrichment_false",
-                }
-                if self.config.enable_multimodal_structure_enrichment:
-                    if OpenAI is None:
-                        raise ImportError("openai is required for multimodal structure enrichment")
-                    client = OpenAI(api_key=self.config.api_key, base_url=self.config.base_url)
-                    with token_usage_context("multimodal_structure_enrichment"):
-                        structure_result = enrich_multimodal_structure(
-                            text_reaction_paths=text_paths,
-                            chemeagle_reaction_paths=chemeagle_paths,
-                            output_dir=self.config.multimodal_structure_enriched_dir,
-                            cache_path=self.config.multimodal_structure_parse_cache_path,
-                            client=client,
-                            model=self.config.split_model,
-                            batch_size=30,
-                        )
-                    kg_text_paths = structure_result.get("text_outputs") or text_paths
-                    kg_chemeagle_paths = structure_result.get("chemeagle_outputs") or chemeagle_paths
+                if OpenAI is None:
+                    raise ImportError("openai is required for multimodal structure enrichment")
+                client = OpenAI(api_key=self.config.api_key, base_url=self.config.base_url)
+                with token_usage_context("multimodal_structure_enrichment"):
+                    structure_result = enrich_multimodal_structure(
+                        text_reaction_paths=text_paths,
+                        chemeagle_reaction_paths=chemeagle_paths,
+                        output_dir=self.config.multimodal_structure_enriched_dir,
+                        cache_path=self.config.multimodal_structure_parse_cache_path,
+                        report_path=self.config.multimodal_structure_enrichment_report_path,
+                        client=client,
+                        model=self.config.split_model,
+                        batch_size=30,
+                    )
+                kg_text_paths = structure_result.get("text_outputs") or text_paths
+                kg_chemeagle_paths = structure_result.get("chemeagle_outputs") or chemeagle_paths
                 result = build_cross_modal_kg(
                     text_reaction_paths=kg_text_paths,
                     chemeagle_raw_iupac_paths=kg_chemeagle_paths,
                     output_dir=self.config.filtered_dir,
+                    kg_output_dir=self.config.kg_dir,
+                    alignments_output_dir=self.config.alignments_dir,
                 )
                 result["structure_enrichment"] = structure_result
 
@@ -1249,7 +1596,7 @@ class ReactionTypeNormalizationAgent:
 
     def run(self, state: Dict) -> Dict:
         merged_path = Path(state["merged_reactions_path"])
-        report_path = self.config.filtered_dir / "reaction_type_normalization_report.json"
+        report_path = self.config.reports_dir / "reaction_type_normalization_report.json"
 
         if self.config.skip_reaction_type_normalization:
             result = {
@@ -1290,8 +1637,8 @@ class Q1Q2SplitAgent:
         with token_usage_context("q1q2_scaffold_parse"):
             split_result = split_reactions(
                 input_path=state["merged_reactions_path"],
-                output_dir=self.config.filtered_dir,
-                cache_path=self.config.filtered_dir / "substrate_parse_cache.json",
+                output_dir=self.config.benchmark_dir,
+                cache_path=self.config.pipeline_cache_dir / "substrate_parse_cache.json",
                 model=self.config.split_model,
                 batch_size=30,
                 api_key=self.config.api_key,
@@ -1325,10 +1672,10 @@ class BenchmarkAgent:
         q1_report = q1_package["report"]
         q2_benchmark = generate_q2_benchmark(q2_data)
 
-        q1_output = self.config.filtered_dir / "Q1_benchmark.json"
-        q1_review_output = self.config.filtered_dir / "Q1_benchmark_review.json"
-        q1_report_output = self.config.filtered_dir / "Q1_benchmark_report.json"
-        q2_output = self.config.filtered_dir / "Q2_benchmark.json"
+        q1_output = self.config.benchmark_dir / "Q1_benchmark.json"
+        q1_review_output = self.config.benchmark_dir / "Q1_benchmark_review.json"
+        q1_report_output = self.config.benchmark_dir / "Q1_benchmark_report.json"
+        q2_output = self.config.benchmark_dir / "Q2_benchmark.json"
         write_json(q1_output, q1_benchmark)
         write_json(q1_review_output, q1_review)
         write_json(q1_report_output, q1_report)
@@ -1357,21 +1704,6 @@ class BenchmarkAgent:
         }
 
 
-class KnowledgeGraphAgent:
-    def __init__(self, config: PipelineConfig):
-        self.config = config
-
-    def run(self, state: Dict) -> Dict:
-        kg_path = self.config.filtered_dir / "kg_triples.csv"
-        kg_result = build_kg_csv(state["q1_path"], state["q2_path"], kg_path)
-        state.setdefault("steps", {})["knowledge_graph"] = kg_result
-        state["kg_path"] = str(kg_path)
-        return {
-            "kg_path": state["kg_path"],
-            "steps": state["steps"],
-        }
-
-
 class SkipDownstreamAgent:
     def __init__(self, config: PipelineConfig):
         self.config = config
@@ -1385,7 +1717,6 @@ class SkipDownstreamAgent:
         }
         state.setdefault("steps", {})["q1q2_split"] = dict(skipped)
         state["steps"]["benchmark"] = dict(skipped)
-        state["steps"]["knowledge_graph"] = dict(skipped)
         for key in (
             "q1_path",
             "q2_path",
@@ -1393,7 +1724,6 @@ class SkipDownstreamAgent:
             "q2_benchmark",
             "q1_benchmark_review",
             "q1_benchmark_report",
-            "kg_path",
         ):
             state[key] = None
         return {
@@ -1403,7 +1733,6 @@ class SkipDownstreamAgent:
             "q2_benchmark": None,
             "q1_benchmark_review": None,
             "q1_benchmark_report": None,
-            "kg_path": None,
             "steps": state["steps"],
         }
 
@@ -1413,7 +1742,7 @@ class ReportAgent:
         self.config = config
 
     def run(self, state: Dict) -> Dict:
-        report_path = self.config.filtered_dir / "workflow_report.json"
+        report_path = self.config.reports_dir / "workflow_report.json"
         pdf_results = state.get("pdf_results", [])
         successful = [r for r in pdf_results if r.get("status") == "success"]
         failed = [r for r in pdf_results if r.get("status") != "success"]
@@ -1451,14 +1780,31 @@ class ReportAgent:
             "created_at": datetime.now().isoformat(),
             "pipeline_version": self.config.pipeline_version,
             "si_folder": str(self.config.si_folder),
+            "pdf_folder": str(self.config.pdf_folder) if self.config.pdf_folder else None,
+            "paper_map": str(self.config.paper_map) if self.config.paper_map else None,
             "output_dir": str(self.config.output_dir),
             "filtered_dir": str(self.config.filtered_dir),
+            "filtered_subdirs": {
+                "text": str(self.config.text_filtered_dir),
+                "merged": str(self.config.merged_dir),
+                "kg": str(self.config.kg_dir),
+                "alignments": str(self.config.alignments_dir),
+                "reports": str(self.config.reports_dir),
+                "benchmark": str(self.config.benchmark_dir),
+                "structure_enriched": str(self.config.multimodal_structure_enriched_dir),
+            },
             "intermediate_dir": str(self.config.intermediate_dir),
+            "intermediate_subdirs": {
+                "cache": str(self.config.pipeline_cache_dir),
+                "page_cache": str(self.config.page_cache_dir),
+                "entity_context": str(self.config.entity_context_dir),
+            },
             "config": {
                 "pages_per_chunk": self.config.pages_per_chunk,
                 "screen_model": self.config.screen_model,
                 "extract_model": self.config.extract_model,
                 "split_model": self.config.split_model,
+                "chemeagle_role_refinement_model": self.config.chemeagle_role_refinement_model,
                 "base_url": self.config.base_url,
                 "max_parallel_pdfs": self.config.max_parallel_pdfs,
                 "resume": self.config.resume,
@@ -1471,10 +1817,15 @@ class ReportAgent:
                 "enable_chemeagle_role_refinement": self.config.enable_chemeagle_role_refinement,
                 "enable_multimodal_kg": self.config.enable_multimodal_kg,
                 "enable_multimodal_structure_enrichment": self.config.enable_multimodal_structure_enrichment,
+                "multimodal_structure_enrichment_effective": (
+                    "required_by_multimodal_kg" if self.config.enable_multimodal_kg else "disabled"
+                ),
                 "enable_stage2_audit": self.config.enable_stage2_audit,
                 "paper_name": self.config.paper_name,
                 "limit": self.config.limit,
                 "input_mode": self.config.input_mode,
+                "pdf_folder": str(self.config.pdf_folder) if self.config.pdf_folder else None,
+                "paper_map": str(self.config.paper_map) if self.config.paper_map else None,
                 "enable_chemeagle": self.config.enable_chemeagle,
                 "use_chemeagle": self.config.use_chemeagle,
                 "chemeagle_dir": str(self.config.chemeagle_dir) if self.config.chemeagle_dir else None,
@@ -1533,12 +1884,12 @@ class ReportAgent:
                 "chemeagle_structure_enriched_kg_inputs": state.get("steps", {}).get("cross_modal_kg", {}).get("chemeagle_structure_enriched_kg_inputs"),
                 "multimodal_structure_parse_cache": (
                     str(self.config.multimodal_structure_parse_cache_path)
-                    if self.config.enable_multimodal_structure_enrichment
+                    if self.config.enable_multimodal_kg
                     else None
                 ),
                 "multimodal_structure_enrichment_report": (
                     str(self.config.multimodal_structure_enrichment_report_path)
-                    if self.config.enable_multimodal_structure_enrichment
+                    if self.config.enable_multimodal_kg
                     else None
                 ),
                 "cross_modal_alignments": state.get("cross_modal_alignments_path"),
@@ -1553,7 +1904,6 @@ class ReportAgent:
                 "q1_benchmark_review": state.get("q1_benchmark_review"),
                 "q1_benchmark_report": state.get("q1_benchmark_report"),
                 "q2_benchmark": state.get("q2_benchmark"),
-                "kg_triples": state.get("kg_path"),
                 "token_usage_events": (
                     str(self.config.token_usage_events_path)
                     if self.config.token_usage_tracking

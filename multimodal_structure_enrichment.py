@@ -294,9 +294,11 @@ def enrich_multimodal_structure(
     client: Any,
     model: str,
     batch_size: int = 30,
+    report_path: Path | str | None = None,
 ) -> Dict[str, Any]:
     output_dir = Path(output_dir)
     cache_path = Path(cache_path)
+    report_path = Path(report_path) if report_path is not None else output_dir.parent / "multimodal_structure_enrichment_report.json"
     cache = load_cache(cache_path)
     text_paths = [Path(path) for path in text_reaction_paths]
     image_paths = [Path(path) for path in chemeagle_reaction_paths]
@@ -364,6 +366,6 @@ def enrich_multimodal_structure(
         **total_stats,
         "files": file_reports,
     }
-    write_json(output_dir.parent / "multimodal_structure_enrichment_report.json", report)
+    write_json(report_path, report)
     save_cache(cache_path, cache)
     return report
