@@ -6,7 +6,7 @@ SI PDF批量提取工具 - Token节省策略全部组合
 1. Name Registry (Stage 0) - 预提取符号→完整化学名称映射表
 2. 关键词过滤 - 筛选化学相关页面，去掉参考文献/致谢等无关页
 3. 页面分块 - 按N页分块，每块独立调GPT
-4. 两阶段提取 - gpt-4o-mini先筛，gpt-4o再精提（注入registry上下文）
+4. 两阶段提取 - gpt-5-mini先筛，gpt-5-mini再精提（注入registry上下文）
 5. 后处理对齐 (Stage 5) - 用registry补全提取结果中的符号
 6. 结合去重 - 合并所有块的结果并去重
 """
@@ -197,8 +197,8 @@ Return ONLY valid JSON."""
 
     def __init__(self, api_key: Optional[str] = None,
                  pages_per_chunk: int = 5,
-                 screen_model: str = "gpt-4o-mini",
-                 extract_model: str = "gpt-4o",
+                 screen_model: str = "gpt-5-mini",
+                 extract_model: str = "gpt-5-mini",
                  base_url: str = "https://oneapi.xty.app/v1",
                  enable_stage2_audit: bool = True):
         """
@@ -207,8 +207,8 @@ Return ONLY valid JSON."""
         Args:
             api_key: OpenAI API密钥
             pages_per_chunk: 每个分块的页数（默认5页）
-            screen_model: 第一阶段筛选模型（默认gpt-4o-mini，便宜）
-            extract_model: 第二阶段提取模型（默认gpt-4o，精确）
+            screen_model: 第一阶段筛选模型（默认gpt-5-mini）
+            extract_model: 第二阶段提取模型（默认gpt-5-mini）
             base_url: OpenAI-compatible API base URL
         """
         super().__init__(api_key, base_url=base_url)
@@ -217,6 +217,13 @@ Return ONLY valid JSON."""
         self.extract_model = extract_model
         self.enable_stage2_audit = enable_stage2_audit
         self.stage2_audit_recovered = 0
+        self.last_registry_validation_stats = {
+            "registry_raw_count": 0,
+            "registry_grounded_count": 0,
+            "registry_removed_count": 0,
+            "registry_removed_entries": [],
+        }
+        self._last_registry_chunk_validation_stats = dict(self.last_registry_validation_stats)
         self.stats = {
             'total_pages': 0,
             'filtered_pages': 0,
@@ -384,9 +391,22 @@ Return ONLY valid JSON."""
         
         # --- Step 2: GPT分块提取 ---
         all_registries = []
+        validation_stats = {
+            "registry_raw_count": 0,
+            "registry_grounded_count": 0,
+            "registry_removed_count": 0,
+            "registry_removed_entries": [],
+        }
         for chunk in chunks:
             print(f"    处理分块{chunk['chunk_id']}: 页 {chunk['page_nums']}")
             registry = self.extract_registry_with_gpt(chunk['text'])
+            chunk_stats = getattr(self, "_last_registry_chunk_validation_stats", {}) or {}
+            validation_stats["registry_raw_count"] += int(chunk_stats.get("registry_raw_count", 0) or 0)
+            validation_stats["registry_grounded_count"] += int(chunk_stats.get("registry_grounded_count", 0) or 0)
+            validation_stats["registry_removed_count"] += int(chunk_stats.get("registry_removed_count", 0) or 0)
+            validation_stats["registry_removed_entries"].extend(
+                chunk_stats.get("registry_removed_entries", []) or []
+            )
             if registry:
                 print(f"      提取到 {len(registry)} 条映射")
                 all_registries.append(registry)
@@ -400,6 +420,8 @@ Return ONLY valid JSON."""
         # --- Step 4: 清理通用术语映射 ---
         print(f"  [Registry Step 4] 清理通用术语...")
         registry = self._clean_registry(merged_registry)
+        validation_stats["registry_removed_entries"] = validation_stats["registry_removed_entries"][:20]
+        self.last_registry_validation_stats = validation_stats
 
         return registry
 
@@ -488,6 +510,134 @@ Return ONLY valid JSON."""
 
         return cleaned
 
+    _REGISTRY_DEFINITION_TERMS = {
+        "compound",
+        "substrate",
+        "product",
+        "ligand",
+        "catalyst",
+        "denoted",
+        "named",
+        "abbreviated",
+        "corresponding",
+    }
+    _REGISTRY_RESULT_TERMS = {
+        "afforded",
+        "gave",
+        "yielded",
+        "obtained",
+        "isolated",
+    }
+
+    def _normalize_registry_text(self, text: str) -> str:
+        """Normalize source text for registry grounding checks."""
+        if text is None:
+            return ""
+        normalized = str(text).lower()
+        normalized = normalized.replace("\u00ad", "")
+        normalized = re.sub(r"[\u2010-\u2015\u2212]", "-", normalized)
+        normalized = re.sub(r"\s+", " ", normalized)
+        normalized = re.sub(r"\s*-\s*", "-", normalized)
+        return normalized.strip()
+
+    def _find_normalized_spans(self, source_text: str, needle: str) -> List[tuple]:
+        source_norm = self._normalize_registry_text(source_text)
+        needle_norm = self._normalize_registry_text(needle)
+        if not source_norm or not needle_norm:
+            return []
+        return [(m.start(), m.end()) for m in re.finditer(re.escape(needle_norm), source_norm)]
+
+    def _find_symbol_spans(self, source_text: str, symbol: str) -> List[tuple]:
+        source_norm = self._normalize_registry_text(source_text)
+        symbol_norm = self._normalize_registry_text(symbol)
+        if not source_norm or not symbol_norm:
+            return []
+        pattern = re.compile(rf"(?<![a-z0-9]){re.escape(symbol_norm)}(?![a-z0-9])")
+        return [(m.start(), m.end()) for m in pattern.finditer(source_norm)]
+
+    def _is_definition_window(self, window: str) -> bool:
+        return any(re.search(rf"\b{re.escape(term)}\b", window) for term in self._REGISTRY_DEFINITION_TERMS)
+
+    def _is_result_window(self, window: str) -> bool:
+        return any(re.search(rf"\b{re.escape(term)}\b", window) for term in self._REGISTRY_RESULT_TERMS)
+
+    def _is_strong_symbol_name_binding(self, symbol: str, name: str, source_text: str) -> bool:
+        source_norm = self._normalize_registry_text(source_text)
+        name_spans = self._find_normalized_spans(source_text, name)
+        symbol_spans = self._find_symbol_spans(source_text, symbol)
+        if not source_norm or not name_spans or not symbol_spans:
+            return False
+
+        for name_start, name_end in name_spans:
+            for symbol_start, symbol_end in symbol_spans:
+                if name_end <= symbol_start:
+                    separator = source_norm[name_end:symbol_start]
+                    if len(separator) <= 20 and re.fullmatch(r"[\s\(\)\[\]\{\}:,;=\-]*", separator):
+                        return True
+                elif symbol_end <= name_start:
+                    separator = source_norm[symbol_end:name_start]
+                    prefix = source_norm[max(0, symbol_start - 40):symbol_start]
+                    if len(separator) <= 20:
+                        has_definition_separator = bool(re.search(r"[:=]", separator))
+                        has_definition_prefix = bool(
+                            re.search(r"\b(?:compound|substrate|product|ligand|catalyst)\s*$", prefix)
+                        )
+                        has_named_separator = bool(
+                            re.search(r"\b(?:is|named|denoted|abbreviated(?: as)?)\b", separator)
+                        )
+                        if has_definition_separator or has_definition_prefix or has_named_separator:
+                            return True
+        return False
+
+    def _is_weak_symbol_name_binding(self, symbol: str, name: str, source_text: str) -> bool:
+        source_norm = self._normalize_registry_text(source_text)
+        name_spans = self._find_normalized_spans(source_text, name)
+        symbol_spans = self._find_symbol_spans(source_text, symbol)
+        if not source_norm or not name_spans or not symbol_spans:
+            return False
+
+        for name_start, name_end in name_spans:
+            for symbol_start, symbol_end in symbol_spans:
+                distance = max(symbol_start, name_start) - min(symbol_end, name_end)
+                if distance > 300:
+                    continue
+                window_start = max(0, min(name_start, symbol_start) - 80)
+                window_end = min(len(source_norm), max(name_end, symbol_end) + 80)
+                window = source_norm[window_start:window_end]
+                if self._is_result_window(window):
+                    continue
+                if self._is_definition_window(window):
+                    return True
+        return False
+
+    def _validate_registry_against_source(self, registry: Dict[str, str], source_text: str):
+        grounded = {}
+        removed = []
+
+        for symbol, name in (registry or {}).items():
+            symbol_str = str(symbol).strip()
+            name_str = str(name).strip()
+
+            if not symbol_str:
+                removed.append({"symbol": symbol_str, "name": name_str, "reason": "empty_symbol"})
+                continue
+            if not self._find_symbol_spans(source_text, symbol_str):
+                removed.append({"symbol": symbol_str, "name": name_str, "reason": "symbol_not_in_source"})
+                continue
+            if not self._find_normalized_spans(source_text, name_str):
+                removed.append({"symbol": symbol_str, "name": name_str, "reason": "name_not_in_source"})
+                continue
+            if self._is_strong_symbol_name_binding(symbol_str, name_str, source_text):
+                grounded[symbol_str] = name_str
+                continue
+            if self._is_weak_symbol_name_binding(symbol_str, name_str, source_text):
+                grounded[symbol_str] = name_str
+                continue
+
+            removed.append({"symbol": symbol_str, "name": name_str, "reason": "symbol_name_not_nearby"})
+
+        return grounded, removed
+
     # =====================================================================
     # Per-Chunk 精准过滤
     # =====================================================================
@@ -572,7 +722,7 @@ Return ONLY valid JSON."""
 
     def extract_registry_with_gpt(self, text: str) -> Dict[str, str]:
         """
-        用 gpt-4o-mini 从文本中提取 symbol→name 映射（正则的fallback）
+        用 gpt-5-mini 从文本中提取 symbol→name 映射（正则的fallback）
 
         Args:
             text: 要分析的文本（通常是PDF前N页）
@@ -597,9 +747,28 @@ Return ONLY valid JSON."""
                 max_tokens=1000,
             )
             raw = response.choices[0].message.content.strip()
-            return self._parse_registry_response(raw)
+            raw_registry = self._parse_registry_response(raw)
+            grounded_registry, removed_entries = self._validate_registry_against_source(raw_registry, text)
+            self._last_registry_chunk_validation_stats = {
+                "registry_raw_count": len(raw_registry),
+                "registry_grounded_count": len(grounded_registry),
+                "registry_removed_count": len(removed_entries),
+                "registry_removed_entries": removed_entries[:20],
+            }
+            if removed_entries:
+                removed_preview = ", ".join(
+                    f"{entry.get('symbol')}[{entry.get('reason')}]" for entry in removed_entries[:5]
+                )
+                print(f"      [Registry Grounding] removed {len(removed_entries)} ungrounded mappings: {removed_preview}")
+            return grounded_registry
         except Exception as e:
             print(f"  [WARN] GPT registry提取出错: {e}")
+            self._last_registry_chunk_validation_stats = {
+                "registry_raw_count": 0,
+                "registry_grounded_count": 0,
+                "registry_removed_count": 0,
+                "registry_removed_entries": [],
+            }
             return {}
 
     def _parse_registry_response(self, raw: str) -> Dict[str, str]:
@@ -905,7 +1074,7 @@ Return ONLY valid JSON."""
         return chunks
 
     # =====================================================================
-    # 第四层：Stage1 - gpt-4o-mini 快速筛选
+    # 第四层：Stage1 - gpt-5-mini 快速筛选
     # =====================================================================
 
     def stage1_screen(self, chunk_text: str, chunk_label: str) -> Dict:
@@ -957,7 +1126,7 @@ Return ONLY valid JSON."""
             return {"has_reactions": False, "relevant_pages": []}
 
     # =====================================================================
-    # 第五层：Stage2 - gpt-4o 精确提取
+    # 第五层：Stage2 - gpt-5-mini 精确提取
     # =====================================================================
 
     def _empty_metric_value(self, value):
@@ -1664,6 +1833,12 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
                 pages_per_chunk=5
             )
             file_stats['registry_size'] = len(registry)
+            file_stats.update({
+                "registry_raw_count": self.last_registry_validation_stats.get("registry_raw_count", len(registry)),
+                "registry_grounded_count": self.last_registry_validation_stats.get("registry_grounded_count", len(registry)),
+                "registry_removed_count": self.last_registry_validation_stats.get("registry_removed_count", 0),
+                "registry_removed_entries": self.last_registry_validation_stats.get("registry_removed_entries", [])[:20],
+            })
             if registry:
                 print(f"  注册表: {len(registry)} 条映射")
                 for sym, name in list(registry.items())[:5]:
@@ -1924,7 +2099,7 @@ def main():
   python batch_si_extractor.py --si_folder /path/to/si_pdfs --output /path/to/output
 
   # 调整分块大小和模型
-  python batch_si_extractor.py --pages_per_chunk 5 --screen_model gpt-4o-mini --extract_model gpt-4o
+  python batch_si_extractor.py --pages_per_chunk 5 --screen_model gpt-5-mini --extract_model gpt-5-mini
 
 环境变量:
   OPENAI_API_KEY: OpenAI API密钥（必需）
@@ -1943,10 +2118,10 @@ Token节省效果:
                         help="OpenAI API密钥 (默认从OPENAI_API_KEY环境变量读取)")
     parser.add_argument("--pages_per_chunk", type=int, default=5,
                         help="每个分块的页数 (默认: 5)")
-    parser.add_argument("--screen_model", default="gpt-4o-mini",
-                        help="Stage1筛选模型 (默认: gpt-4o-mini)")
-    parser.add_argument("--extract_model", default="gpt-4o",
-                        help="Stage2提取模型 (默认: gpt-4o)")
+    parser.add_argument("--screen_model", default="gpt-5-mini",
+                        help="Stage1筛选模型 (默认: gpt-5-mini)")
+    parser.add_argument("--extract_model", default="gpt-5-mini",
+                        help="Stage2提取模型 (默认: gpt-5-mini)")
 
     args = parser.parse_args()
 

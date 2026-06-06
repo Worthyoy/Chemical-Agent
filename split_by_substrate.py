@@ -110,7 +110,7 @@ def build_names_block(names: List[str]) -> str:
     return "\n".join(lines)
 
 
-def call_llm_parse(names: List[str], client: OpenAI, model: str = "gpt-4o",
+def call_llm_parse(names: List[str], client: OpenAI, model: str = "gpt-5-mini",
                    temperature: float = 0.0, max_retries: int = 3) -> Dict[str, dict]:
     """
     调用 LLM 批量解析化合物名称
@@ -277,7 +277,7 @@ def _extract_json_objects(raw: str) -> list:
     return results
 
 
-def batch_llm_parse(names: List[str], client: OpenAI, model: str = "gpt-4o",
+def batch_llm_parse(names: List[str], client: OpenAI, model: str = "gpt-5-mini",
                     batch_size: int = 50) -> Dict[str, dict]:
     all_results = {}
     total_batches = (len(names) + batch_size - 1) // batch_size
@@ -299,7 +299,7 @@ def batch_llm_parse(names: List[str], client: OpenAI, model: str = "gpt-4o",
 # ============================================================
 
 def classify_and_enrich_reactions(reactions: List[dict], client: OpenAI,
-                                   model: str = "gpt-4o",
+                                   model: str = "gpt-5-mini",
                                    batch_size: int = 50,
                                    cache_path: Optional[Path] = None
                                    ) -> Tuple[List[dict], List[dict]]:
@@ -415,7 +415,7 @@ def classify_and_enrich_reactions(reactions: List[dict], client: OpenAI,
 def split_reactions(input_path="filtered/merged_filtered_reactions.json",
                     output_dir="filtered",
                     cache_path=None,
-                    model: str = "gpt-4o",
+                    model: str = "gpt-5-mini",
                     batch_size: int = 30,
                     api_key: Optional[str] = None,
                     base_url: str = "https://oneapi.xty.app/v1"):

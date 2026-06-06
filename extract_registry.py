@@ -84,7 +84,7 @@ class RegistryExtractor(PDFReactionExtractor):
         'fragment', 'moiety',
     ]
 
-    def __init__(self, api_key: Optional[str] = None, screen_model: str = "gpt-4o-mini"):
+    def __init__(self, api_key: Optional[str] = None, screen_model: str = "gpt-5-mini"):
         """初始化Registry提取器
 
         Args:
@@ -288,7 +288,7 @@ class RegistryExtractor(PDFReactionExtractor):
         return cleaned
 
     def extract_registry_with_gpt(self, text: str) -> Dict[str, str]:
-        """用 gpt-4o-mini 从文本中提取 symbol→name 映射（正则的fallback）
+        """用 gpt-5-mini 从文本中提取 symbol→name 映射（正则的fallback）
 
         Args:
             text: 要分析的文本（通常是PDF前N页）
@@ -497,7 +497,7 @@ def main():
   OPENAI_API_KEY: OpenAI API密钥（必需）
 
 API消耗估算:
-  每个PDF ~$0.06 (60页, gpt-4o-mini)
+  每个PDF成本取决于页数和 gpt-5-mini 用量
 """
     )
     parser.add_argument("--input", required=True,
@@ -522,7 +522,7 @@ API消耗估算:
 
     extractor = RegistryExtractor(
         api_key=api_key,
-        screen_model="gpt-4o-mini"
+        screen_model="gpt-5-mini"
     )
 
     result = extractor.batch_process(

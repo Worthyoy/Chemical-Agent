@@ -98,14 +98,14 @@ Process this GP text:
 Return ONLY valid JSON."""
 
     def __init__(self, api_key: Optional[str] = None,
-                 screen_model: str = "gpt-4o",
+                 screen_model: str = "gpt-5-mini",
                  regex_only: bool = True):
         """
         初始化 GP 提取器
 
         Args:
             api_key: OpenAI API 密钥（regex_only=False 时必需）
-            screen_model: 用于 GP 总结的模型（默认 gpt-4o）
+            screen_model: 用于 GP 总结的模型（默认 gpt-5-mini）
             regex_only: 是否只使用正则提取（默认 True，不需要 API 密钥）
         """
         self.screen_model = screen_model
@@ -825,8 +825,8 @@ def main():
                         help="使用 GPT 总结 GP（需要 API 密钥）")
     parser.add_argument("--api_key", default=None,
                         help="OpenAI API 密钥 (默认从 OPENAI_API_KEY 环境变量读取)")
-    parser.add_argument("--screen_model", default="gpt-4o",
-                        help="GP 总结模型 (默认: gpt-4o)")
+    parser.add_argument("--screen_model", default="gpt-5-mini",
+                        help="GP 总结模型 (默认: gpt-5-mini)")
 
     args = parser.parse_args()
 

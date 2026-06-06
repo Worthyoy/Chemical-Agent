@@ -197,7 +197,7 @@ name/symbol rules
         return text
     
     
-    def call_gpt(self, pdf_text: str, model: str = "gpt-4o",
+    def call_gpt(self, pdf_text: str, model: str = "gpt-5-mini",
                  temperature: float = 0.1, max_tokens: int = 16000,
                  chunk_hint: str = "") -> str:
         """调用GPT API进行数据抽取"""
@@ -233,7 +233,7 @@ name/symbol rules
             raise Exception(f"调用GPT API时出错: {str(e)}")
 
     def call_gpt_with_image(self, image_path: str, text_prompt: str,
-                            model: str = "gpt-4o", temperature: float = 0.1,
+                            model: str = "gpt-5-mini", temperature: float = 0.1,
                             chunk_hint: str = "") -> str:
         """调用GPT多模态接口，传入单张图片"""
         base64_image = self.encode_image_base64(image_path)
@@ -335,7 +335,7 @@ name/symbol rules
             raise ValueError(f"无法解析JSON输出: {str(e)}\n原始输出:\n{json_str}")
     
     def extract_from_pdf(self, pdf_path: str, output_path: Optional[str] = None,
-                        model: str = "gpt-4o", temperature: float = 0.1) -> List[Dict]:
+                        model: str = "gpt-5-mini", temperature: float = 0.1) -> List[Dict]:
         """
         完整的PDF数据提取流程（无分块版本）
         
@@ -423,7 +423,7 @@ def main():
         reactions = extractor.extract_from_pdf(
             pdf_path=pdf_path,
             output_path=output_path,
-            model="gpt-4o",  # 可以改为 gpt-4-turbo 或其他模型
+            model="gpt-5-mini",
             temperature=0.1
         )
         

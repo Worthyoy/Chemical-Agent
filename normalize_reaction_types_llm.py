@@ -222,7 +222,7 @@ def normalize_reaction_type_labels(
 
 def normalize_reaction_types(
     reactions: List[dict],
-    model: str = "gpt-4o",
+    model: str = "gpt-5-mini",
     api_key: Optional[str] = None,
     base_url: str = "https://oneapi.xty.app/v1",
     batch_size: int = 20,
@@ -270,7 +270,7 @@ def normalize_reaction_types_file(
     input_path,
     output_path=None,
     report_path=None,
-    model: str = "gpt-4o",
+    model: str = "gpt-5-mini",
     api_key: Optional[str] = None,
     base_url: str = "https://oneapi.xty.app/v1",
     batch_size: int = 20,

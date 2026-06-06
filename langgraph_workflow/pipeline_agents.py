@@ -51,9 +51,9 @@ class PipelineConfig:
     pdf_folder: Optional[Path] = None
     paper_map: Optional[Path] = None
     pages_per_chunk: int = 5
-    screen_model: str = "gpt-4o-mini"
-    extract_model: str = "gpt-4o"
-    split_model: str = "gpt-4o"
+    screen_model: str = "gpt-5-mini"
+    extract_model: str = "gpt-5-mini"
+    split_model: str = "gpt-5-mini"
     chemeagle_role_refinement_model: str = "gpt-5-mini"
     overwrite: bool = False
     resume: bool = True
@@ -830,6 +830,7 @@ class ProcessPDFAgent:
             symbol_index = build_symbol_index(registry)
             with token_usage_context("text_registry_scaffold_parse", pdf_path.name):
                 scaffold_mapping = build_scaffold_mapping(registry, self.config)
+            registry_validation_stats = getattr(extractor, "last_registry_validation_stats", {}) or {}
             entity_context = {
                 "source": str(pdf_path),
                 "paper_key": job.get("paper_key"),
@@ -845,6 +846,10 @@ class ProcessPDFAgent:
                 "stats": {
                     "total_pages": len(pages),
                     "registry_size": len(registry),
+                    "registry_raw_count": registry_validation_stats.get("registry_raw_count", len(registry)),
+                    "registry_grounded_count": registry_validation_stats.get("registry_grounded_count", len(registry)),
+                    "registry_removed_count": registry_validation_stats.get("registry_removed_count", 0),
+                    "registry_removed_entries": registry_validation_stats.get("registry_removed_entries", [])[:20],
                     "gp_templates": len(gp_texts),
                     "scaffold_mappings": len(scaffold_mapping),
                 },
