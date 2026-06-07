@@ -297,7 +297,6 @@ Return ONLY valid JSON."""
                         )}
                     ],
                     temperature=0.0,
-                    max_tokens=1000,
                 )
                 raw = response.choices[0].message.content.strip()
                 parsed = self._parse_gp_summary(raw)

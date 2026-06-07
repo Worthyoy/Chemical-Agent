@@ -224,7 +224,6 @@ name/symbol rules
                     }
                 ],
                 temperature=temperature,
-                max_tokens=max_tokens
             )
 
             return response.choices[0].message.content
@@ -360,7 +359,6 @@ name/symbol rules
             pdf_text,
             model=model,
             temperature=temperature,
-            max_tokens=16000,  # 增加到16000以支持更多反应数据
             chunk_hint="完整PDF"
         )
 

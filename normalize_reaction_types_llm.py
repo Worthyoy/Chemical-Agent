@@ -130,7 +130,6 @@ def _chat_json(client, model: str, system_prompt: str, user_prompt: str, max_tok
             {"role": "user", "content": user_prompt},
         ],
         temperature=0.0,
-        max_tokens=max_tokens,
     )
     return _load_json_response(response.choices[0].message.content or "")
 

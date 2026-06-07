@@ -95,6 +95,14 @@ class PipelineConfig:
         return self.intermediate_dir / "entity_context"
 
     @property
+    def section_chunks_dir(self) -> Path:
+        return self.intermediate_dir / "section_chunks"
+
+    @property
+    def registry_debug_dir(self) -> Path:
+        return self.intermediate_dir / "registry_debug"
+
+    @property
     def pipeline_cache_dir(self) -> Path:
         return self.intermediate_dir / "cache"
 
@@ -424,6 +432,8 @@ def build_pdf_job(pdf_path: Path, config: PipelineConfig) -> Dict:
         "image_artifact_stem": artifact_stem,
         "page_cache_path": str(config.page_cache_dir / f"{artifact_stem}.json"),
         "context_path": str(config.entity_context_dir / f"{artifact_stem}.json"),
+        "section_debug_path": str(config.section_chunks_dir / f"{artifact_stem}.json"),
+        "registry_debug_path": str(config.registry_debug_dir / f"{artifact_stem}.json"),
         "reaction_output_path": str(config.output_dir / f"{artifact_stem}.json"),
         "text_symbol_resolved_output_path": str(config.text_symbol_resolved_dir / f"{artifact_stem}.json"),
         "filtered_output_path": str(config.text_filtered_dir / f"{artifact_stem}.json"),
@@ -478,6 +488,8 @@ def build_paper_job(
         "image_artifact_stem": image_stem,
         "page_cache_path": str(config.page_cache_dir / f"{text_stem}.json"),
         "context_path": str(config.entity_context_dir / f"{text_stem}.json"),
+        "section_debug_path": str(config.section_chunks_dir / f"{text_stem}.json"),
+        "registry_debug_path": str(config.registry_debug_dir / f"{text_stem}.json"),
         "reaction_output_path": str(config.output_dir / f"{text_stem}.json"),
         "text_symbol_resolved_output_path": str(config.text_symbol_resolved_dir / f"{text_stem}.json"),
         "filtered_output_path": str(config.text_filtered_dir / f"{text_stem}.json"),
@@ -607,6 +619,8 @@ class PrepareJobsAgent:
         for path in (
             self.config.page_cache_dir,
             self.config.entity_context_dir,
+            self.config.section_chunks_dir,
+            self.config.registry_debug_dir,
             self.config.pipeline_cache_dir,
             self.config.output_dir,
             self.config.filtered_dir,
@@ -721,6 +735,8 @@ class ProcessPDFAgent:
             "paths": {
                 "page_cache": job["page_cache_path"],
                 "context": job["context_path"],
+                "section_debug": job["section_debug_path"],
+                "registry_debug": job["registry_debug_path"],
                 "reaction_output": job["reaction_output_path"],
                 "filtered_output": job["filtered_output_path"],
                 "text_reaction_output": job["reaction_output_path"],
@@ -787,6 +803,86 @@ class ProcessPDFAgent:
         result["elapsed_seconds"] = round(time.perf_counter() - started_at, 3)
         return {"pdf_results": [result]}
 
+    def _write_section_debug(
+        self,
+        *,
+        job: Dict,
+        pdf_path: Path,
+        pages: List[Dict],
+        extractor: SIExtractor,
+        metadata: Dict,
+    ) -> Optional[Path]:
+        section_debug_path = Path(job["section_debug_path"])
+        debug = getattr(extractor, "last_section_debug", {}) or {}
+        if not debug and pages:
+            extractor.get_runtime_sections(pages)
+            debug = getattr(extractor, "last_section_debug", {}) or {}
+        if not debug:
+            return None
+        payload = {
+            "source": str(pdf_path),
+            "pdf_name": pdf_path.name,
+            "paper_key": job.get("paper_key"),
+            "source_modality": "text",
+            "created_at": datetime.now().isoformat(),
+            "section_debug_schema": "toc_section_chunks_v1",
+            "metadata": metadata,
+            "source_method": debug.get("source"),
+            "toc_page_nums": debug.get("toc_page_nums") or [],
+            "toc_page_offset": debug.get("toc_page_offset"),
+            "toc_sections": debug.get("toc_sections") or [],
+            "toc_error": debug.get("toc_error"),
+            "raw_sections": debug.get("raw_sections") or [],
+            "section_chunks": debug.get("section_chunks") or [],
+            "registry_section_selection": debug.get("registry_section_selection") or {},
+            "selected_registry_sections": debug.get("selected_registry_sections") or [],
+            "selected_registry_section_chunks": debug.get("selected_registry_section_chunks") or [],
+            "registry_selector_raw_preview": debug.get("registry_selector_raw_preview"),
+            "registry_verifier_raw_preview": debug.get("registry_verifier_raw_preview"),
+            "registry_selector_error": debug.get("registry_selector_error"),
+            "registry_verifier_error": debug.get("registry_verifier_error"),
+            "stats": debug.get("stats") or {},
+        }
+        write_json(section_debug_path, payload)
+        return section_debug_path
+
+    def _write_registry_debug(
+        self,
+        *,
+        job: Dict,
+        pdf_path: Path,
+        extractor: SIExtractor,
+        metadata: Dict,
+    ) -> Optional[Path]:
+        registry_debug_path = Path(job["registry_debug_path"])
+        debug = getattr(extractor, "last_registry_debug", {}) or {}
+        if not debug:
+            return None
+        summary = debug.get("summary") or {}
+        payload = {
+            "source": str(pdf_path),
+            "pdf_name": pdf_path.name,
+            "paper_key": job.get("paper_key"),
+            "source_modality": "text",
+            "created_at": datetime.now().isoformat(),
+            "registry_debug_schema": "registry_raw_only_v1",
+            "metadata": metadata,
+            "strategy": debug.get("strategy"),
+            "status": debug.get("status"),
+            "section_selection": debug.get("section_selection") or {},
+            "selection_stats": debug.get("selection_stats") or {},
+            "section_debug": debug.get("section_debug") or {},
+            "chunks": debug.get("chunks") or [],
+            "summary": {
+                "raw_registry_merged": summary.get("raw_registry_merged") or {},
+                "final_registry": summary.get("final_registry") or {},
+                "registry_raw_count": summary.get("registry_raw_count", 0),
+                "registry_final_count": summary.get("registry_final_count", 0),
+            },
+        }
+        write_json(registry_debug_path, payload)
+        return registry_debug_path
+
     def _run_text_branch(self, job: Dict, result: Dict) -> Path:
         pdf_path = Path(job.get("text_pdf_path") or job["pdf_path"])
         metadata = source_metadata(pdf_path, self.config)
@@ -819,11 +915,26 @@ class ProcessPDFAgent:
         if self.config.resume and not self.config.overwrite and metadata_matches(context_path, metadata):
             entity_context = read_json(context_path)
             result["cache"]["entity_context"] = "hit"
+            if not Path(job["section_debug_path"]).exists():
+                with token_usage_context("text_section_chunking_debug", pdf_path.name):
+                    section_debug_path = self._write_section_debug(
+                        job=job,
+                        pdf_path=pdf_path,
+                        pages=pages,
+                        extractor=extractor,
+                        metadata=metadata,
+                    )
+                result["cache"]["section_debug"] = "rebuilt" if section_debug_path else "skipped"
+            else:
+                result["cache"]["section_debug"] = "hit"
+            result["cache"]["registry_debug"] = (
+                "hit" if Path(job["registry_debug_path"]).exists() else "missing"
+            )
         else:
             with token_usage_context("text_name_registry", pdf_path.name):
                 registry = extractor.extract_name_registry(
                     pages,
-                    max_scan_pages=60,
+                    max_scan_pages=20,
                     pages_per_chunk=5,
                 )
             gp_texts = extractor.extract_general_procedure_texts(pages)
@@ -843,20 +954,52 @@ class ProcessPDFAgent:
                 "product_index": symbol_index,
                 "symbol_name_mapping": registry,
                 "scaffold_substituent_mapping": scaffold_mapping,
+                "section_debug_path": job["section_debug_path"],
+                "registry_debug_path": job["registry_debug_path"],
                 "stats": {
                     "total_pages": len(pages),
                     "registry_size": len(registry),
                     "registry_raw_count": registry_validation_stats.get("registry_raw_count", len(registry)),
-                    "registry_grounded_count": registry_validation_stats.get("registry_grounded_count", len(registry)),
-                    "registry_removed_count": registry_validation_stats.get("registry_removed_count", 0),
-                    "registry_removed_entries": registry_validation_stats.get("registry_removed_entries", [])[:20],
+                    "registry_final_count": registry_validation_stats.get("registry_final_count", len(registry)),
+                    "section_chunking_enabled": registry_validation_stats.get("section_chunking_enabled", False),
+                    "section_chunking_source": registry_validation_stats.get("section_chunking_source", "fixed_fallback"),
+                    "section_scope": registry_validation_stats.get("section_scope", "full_document"),
+                    "raw_section_count": registry_validation_stats.get("raw_section_count", 0),
+                    "section_chunk_count": registry_validation_stats.get("section_chunk_count", 0),
+                    "section_chunk_max_pages": registry_validation_stats.get("section_chunk_max_pages", 5),
+                    "section_chunk_max_chars": registry_validation_stats.get("section_chunk_max_chars", 8000),
+                    "section_count": registry_validation_stats.get("section_count", 0),
+                    "registry_chunk_strategy": registry_validation_stats.get("registry_chunk_strategy", "fixed_pages"),
+                    "registry_chunks_total": registry_validation_stats.get("registry_chunks_total", 0),
+                    "registry_selection_strategy": registry_validation_stats.get("registry_selection_strategy", "skipped"),
+                    "registry_selection_status": registry_validation_stats.get("registry_selection_status", "not_started"),
+                    "registry_sections_selected": registry_validation_stats.get("registry_sections_selected", 0),
+                    "registry_sections_rejected": registry_validation_stats.get("registry_sections_rejected", 0),
+                    "registry_fallback_scan_pages": registry_validation_stats.get("registry_fallback_scan_pages", 20),
+                    "registry_selector_error": registry_validation_stats.get("registry_selector_error"),
+                    "registry_verifier_error": registry_validation_stats.get("registry_verifier_error"),
                     "gp_templates": len(gp_texts),
                     "scaffold_mappings": len(scaffold_mapping),
                 },
                 "metadata": metadata,
             }
             write_json(context_path, entity_context)
+            section_debug_path = self._write_section_debug(
+                job=job,
+                pdf_path=pdf_path,
+                pages=pages,
+                extractor=extractor,
+                metadata=metadata,
+            )
+            registry_debug_path = self._write_registry_debug(
+                job=job,
+                pdf_path=pdf_path,
+                extractor=extractor,
+                metadata=metadata,
+            )
             result["cache"]["entity_context"] = "miss"
+            result["cache"]["section_debug"] = "miss" if section_debug_path else "skipped"
+            result["cache"]["registry_debug"] = "miss" if registry_debug_path else "skipped"
         result["counts"]["registry_size"] = len(entity_context.get("name_registry", {}))
         result["counts"]["gp_templates"] = len(entity_context.get("general_procedures", {}))
 
@@ -1803,6 +1946,8 @@ class ReportAgent:
                 "cache": str(self.config.pipeline_cache_dir),
                 "page_cache": str(self.config.page_cache_dir),
                 "entity_context": str(self.config.entity_context_dir),
+                "section_chunks": str(self.config.section_chunks_dir),
+                "registry_debug": str(self.config.registry_debug_dir),
             },
             "config": {
                 "pages_per_chunk": self.config.pages_per_chunk,
@@ -1855,6 +2000,16 @@ class ReportAgent:
                     r["paths"]["text_reaction_output"]
                     for r in pdf_results
                     if r.get("text_status") == "success"
+                ],
+                "section_debug_outputs": [
+                    r["paths"]["section_debug"]
+                    for r in pdf_results
+                    if r.get("text_status") == "success" and r.get("paths", {}).get("section_debug")
+                ],
+                "registry_debug_outputs": [
+                    r["paths"]["registry_debug"]
+                    for r in pdf_results
+                    if r.get("text_status") == "success" and r.get("paths", {}).get("registry_debug")
                 ],
                 "text_filtered_outputs": state.get("successful_text_filtered_paths", []),
                 "text_symbol_resolved_outputs": state.get("successful_text_symbol_resolved_paths", []),

@@ -731,7 +731,6 @@ def call_role_refinement_batch_llm(
             },
         ],
         temperature=0.0,
-        max_tokens=8000,
     )
     data = load_json_response(response.choices[0].message.content or "")
     rows = data.get("reactions", []) if isinstance(data, dict) else []
@@ -772,7 +771,6 @@ def call_role_refinement_llm(
             },
         ],
         temperature=0.0,
-        max_tokens=4000,
     )
     data = load_json_response(response.choices[0].message.content or "")
     rows = data.get("conditions", []) if isinstance(data, dict) else []

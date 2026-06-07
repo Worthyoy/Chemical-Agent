@@ -175,7 +175,6 @@ def call_structure_llm(
                     {"role": "user", "content": prompt},
                 ],
                 temperature=0,
-                max_tokens=8000,
             )
             rows = parse_llm_json(response.choices[0].message.content or "")
             result = {}

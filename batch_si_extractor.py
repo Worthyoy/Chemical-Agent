@@ -18,7 +18,7 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, Dict, List
+from typing import Optional, Dict, List, Tuple
 
 # 确保能导入同目录下的pdf_to_gpt_extractor
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -104,6 +104,32 @@ If no reaction data is found, set "has_reactions" to false and "relevant_pages" 
 Do not count references, general descriptions, instrumentation, or NMR data as reaction data. 
 Page numbers are marked as "--- Page N ---" in the text."""
 
+    TOC_DETECTION_PROMPT = """Find the table of contents in these first pages of a chemistry supporting information PDF.
+
+Return ONLY compact valid JSON. Do not explain, reason aloud, or wrap the JSON in Markdown.
+
+Return this exact shape:
+{
+  "has_toc": true,
+  "toc_page_nums": [1],
+  "sections": [
+    {
+      "title": "Preparation of Substrates",
+      "printed_page": 3,
+      "level": 1,
+      "raw_line": "2. Preparation of Substrates. .... 3"
+    }
+  ]
+}
+
+Rules:
+- Extract section titles and printed start pages only.
+- printed_page is the page number shown in the table of contents, not the PDF page index.
+- Do not extract chemical entities or symbol-name mappings.
+- Do not infer missing sections.
+- If no table of contents is present, return {"has_toc": false, "toc_page_nums": [], "sections": []}.
+"""
+
     # Stage0 registry GPT prompt
     REGISTRY_PROMPT = """Extract symbol-to-chemical-name mappings from chemistry text.
 
@@ -133,6 +159,82 @@ Example of INCORRECT extraction (AVOID):
   CORRECT: Skip 1b if no definition sentence exists nearby
 
 Return ONLY valid JSON mapping symbol to FULL chemical name. Skip any symbol without a clear definition."""
+
+    REGISTRY_PROMPT = """Extract symbol-to-chemical-name mappings from chemistry text.
+
+CRITICAL: Extract only mappings that are explicitly present in the source text.
+CRITICAL: The symbol MUST be the EXACT label as written in the source text. Never renumber, reassign, normalize, or infer symbols.
+CRITICAL: Return the FULL chemical name text that appears directly paired with the symbol.
+
+VALID patterns:
+1. "full_chemical_name (1a)" or "full_chemical_name 1a" - compound heading, name immediately before symbol
+2. "1a = full_chemical_name" or "1a: full_chemical_name" - symbol before name
+3. "Compound 1a: full_chemical_name" - explicit definition
+4. Characterization headings such as "full_product_name (3a)" followed by yield, NMR, HRMS, HPLC, or analytical data
+5. Substrate/preparation headings such as "full_substrate_name (2t)" followed by "Prepared according to..." or similar text
+
+Important:
+- A standalone heading line like "methyl (E)-3-(4-ethynylphenyl)acrylate (2t)" is a valid definition.
+- The next sentence does NOT need to repeat the full name if it refers to "compound 2t".
+- "Prepared according to a published procedure to afford compound 2t" may confirm the heading "full name (2t)".
+- Product characterization entries may define product labels such as 3a, 4, 5, or 6 when the full name appears immediately before the label.
+
+INVALID - DO NOT EXTRACT:
+- Do NOT map a substrate label to a product name. Example: "reaction of 1b afforded product_name (4)" means 4 may be product_name, but 1b is NOT product_name.
+- Do NOT infer names from distant table columns, optimization tables, or condition tables.
+- Do NOT create labels that are not present in the text.
+- Do NOT map a symbol if only the symbol appears but the full chemical name is absent nearby.
+- Do NOT map general descriptors such as "substrate 2t", "product 3a", "ligand L1", or "compound 4" as names.
+
+Example of CORRECT extraction:
+  Input: "methyl (E)-3-(4-ethynylphenyl)acrylate (2t)\nPrepared according to a published procedure to afford compound 2t."
+  Output: {"2t": "methyl (E)-3-(4-ethynylphenyl)acrylate"}
+
+Example of CORRECT extraction:
+  Input: "12,15,32,35-hexamethoxy-tetrakis(phenylethynyl)-pentabenzenacyclodecaphane (3a)\nThe reaction was performed..."
+  Output: {"3a": "12,15,32,35-hexamethoxy-tetrakis(phenylethynyl)-pentabenzenacyclodecaphane"}
+
+Example of INCORRECT extraction (AVOID):
+  Input: "product_name (4). Following GP D, reaction of 1b (32.0 mg) afforded 4..."
+  WRONG: {"1b": "product_name"}
+  CORRECT: {"4": "product_name"} if product_name is a full chemical name
+
+Return ONLY valid JSON mapping symbol to FULL chemical name. Skip any symbol without a clear definition."""
+
+    REGISTRY_SECTION_SELECTOR_PROMPT = """Select supporting-information sections that may contain symbol-to-chemical-name definition statements.
+
+Return ONLY compact valid JSON with this exact shape:
+{
+  "sections": [
+    {"section_index": 1, "decision": "include", "reason": "contains substrate synthesis definitions"}
+  ]
+}
+
+Definitions are statements where labels such as 1a, 2b, L1, cat-1, S1, or product numbers are directly paired with full chemical names.
+
+Decision rules:
+- Use "include" for sections likely to contain compound definitions, synthetic procedures, analytical data, characterization, substrate/product preparation, ligands, catalysts, or photoreactions.
+- Use "maybe" when the title is ambiguous but could contain definitions.
+- Use "exclude" for references, spectra-only sections, crystallography-only sections, computational-only sections, general instrumentation, or unrelated measurements.
+- Bias toward recall: if uncertain, use "maybe".
+- Return exactly one item for every input section_index.
+- Do not create, omit, renumber, or reorder section_index values.
+"""
+
+    REGISTRY_SECTION_VERIFIER_PROMPT = """Verify whether candidate sections may contain symbol-to-chemical-name definitions.
+
+Return ONLY compact valid JSON with this exact shape:
+{
+  "sections": [
+    {"section_index": 1, "registry_relevant": true, "reason": "opening text lists labeled compounds"}
+  ]
+}
+
+Use the section title, page range, and preview text. A section is registry_relevant if it may contain definitions pairing labels/symbols with full chemical names for substrates, products, catalysts, ligands, reagents, intermediates, or prepared compounds.
+
+Return exactly one item for every input section_index.
+Do not create, omit, renumber, or reorder section_index values.
+"""
     # General Procedure 注入到 Stage2 的 prompt 模板
     GP_INJECTION_TEMPLATE = """
 GENERAL PROCEDURE CONTEXT — apply these conditions when the entry specifies none:
@@ -219,11 +321,16 @@ Return ONLY valid JSON."""
         self.stage2_audit_recovered = 0
         self.last_registry_validation_stats = {
             "registry_raw_count": 0,
-            "registry_grounded_count": 0,
-            "registry_removed_count": 0,
-            "registry_removed_entries": [],
+            "registry_final_count": 0,
         }
-        self._last_registry_chunk_validation_stats = dict(self.last_registry_validation_stats)
+        self.last_registry_debug = {}
+        self._last_registry_chunk_debug = {}
+        self._section_cache = {}
+        self._section_debug_cache = {}
+        self._toc_cache = {}
+        self._last_toc_page_offset = None
+        self.last_section_chunking_stats = {}
+        self.last_section_debug = {}
         self.stats = {
             'total_pages': 0,
             'filtered_pages': 0,
@@ -316,33 +423,859 @@ Return ONLY valid JSON."""
         return filtered
 
     # =====================================================================
-    # Stage 0: Name Registry — 符号→完整化学名称映射
+    # Runtime section detection and section-aware chunking
     # =====================================================================
 
-    def _chunk_pages_for_registry(self, pages: List[Dict], pages_per_chunk: int = 5) -> List[Dict]:
-        """将页面按指定数量分块（用于registry提取）
-        
-        Args:
-            pages: 页列表
-            pages_per_chunk: 每块页数
-            
-        Returns:
-            [{"chunk_id": 1, "text": "...", "page_nums": [1,2,...]}, ...]
-        """
+    def _pages_cache_key(self, pages: List[Dict]) -> Tuple:
+        if not pages:
+            return ("empty", 0)
+        page_nums = tuple(p.get("page_num") for p in pages)
+        total_chars = sum(len(str(p.get("text") or "")) for p in pages)
+        return (page_nums, total_chars)
+
+    def _strip_code_fence(self, raw: str) -> str:
+        raw = (raw or "").strip()
+        if raw.startswith("```json"):
+            raw = raw[7:]
+        if raw.startswith("```"):
+            raw = raw[3:]
+        if raw.endswith("```"):
+            raw = raw[:-3]
+        return raw.strip()
+
+    def _normalize_section_title(self, value: str) -> str:
+        text = str(value or "").lower()
+        text = re.sub(r"[^a-z0-9]+", " ", text)
+        return re.sub(r"\s+", " ", text).strip()
+
+    def _section_title_matches_page(self, title: str, page_text: str) -> bool:
+        title_norm = self._normalize_section_title(title)
+        if len(title_norm) < 6:
+            return False
+        head = "\n".join(str(page_text or "").splitlines()[:12])
+        head_norm = self._normalize_section_title(head)
+        if title_norm in head_norm:
+            return True
+        words = [w for w in title_norm.split() if len(w) > 2]
+        return len(words) >= 2 and all(w in head_norm for w in words[:4])
+
+    def detect_toc_sections(self, pages: List[Dict]) -> Dict:
+        probe_pages = pages[:5]
+        if not probe_pages:
+            return {"has_toc": False, "toc_page_nums": [], "sections": []}
+
+        cache_key = self._pages_cache_key(probe_pages)
+        if cache_key in self._toc_cache:
+            return self._toc_cache[cache_key]
+
+        probe_text = "\n\n".join(
+            f"--- Page {p.get('page_num')} ---\n{p.get('text', '')}"
+            for p in probe_pages
+        )
+        try:
+            response = self.client.chat.completions.create(
+                model=self.extract_model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You extract table-of-contents metadata. Return compact valid JSON only.",
+                    },
+                    {"role": "user", "content": f"{self.TOC_DETECTION_PROMPT}\n\n{probe_text}"},
+                ],
+                temperature=0.0,
+            )
+            raw = self._strip_code_fence(response.choices[0].message.content)
+            if not raw:
+                raise ValueError("empty TOC response")
+            data = json.loads(raw)
+        except Exception as exc:
+            print(f"  [SectionChunking] TOC detection failed: {exc}")
+            result = {"has_toc": False, "toc_page_nums": [], "sections": [], "_error": str(exc)}
+            self._toc_cache[cache_key] = result
+            return result
+
+        if not isinstance(data, dict) or not data.get("has_toc"):
+            result = {"has_toc": False, "toc_page_nums": [], "sections": []}
+            self._toc_cache[cache_key] = result
+            return result
+
+        sections = []
+        for item in data.get("sections") or []:
+            if not isinstance(item, dict):
+                continue
+            title = str(item.get("title") or "").strip()
+            try:
+                printed_page = int(item.get("printed_page"))
+            except (TypeError, ValueError):
+                continue
+            if not title or printed_page <= 0:
+                continue
+            try:
+                level = int(item.get("level") or 1)
+            except (TypeError, ValueError):
+                level = 1
+            sections.append({
+                "title": title,
+                "printed_page": printed_page,
+                "level": level,
+                "raw_line": str(item.get("raw_line") or "").strip(),
+            })
+
+        result = {
+            "has_toc": bool(sections),
+            "toc_page_nums": data.get("toc_page_nums") or [],
+            "sections": sections,
+        }
+        self._toc_cache[cache_key] = result
+        return result
+
+    def _calibrate_toc_page_offset(
+        self,
+        pages: List[Dict],
+        toc_sections: List[Dict],
+        toc_page_nums: Optional[List[int]] = None,
+    ) -> Optional[int]:
+        toc_pages = {p for p in (toc_page_nums or []) if isinstance(p, int)}
+        offsets = {}
+        for section in toc_sections:
+            title = section.get("title") or ""
+            printed_page = section.get("printed_page")
+            if not isinstance(printed_page, int):
+                continue
+            for page in pages:
+                page_num = page.get("page_num")
+                if not isinstance(page_num, int):
+                    continue
+                if page_num in toc_pages:
+                    continue
+                if self._section_title_matches_page(title, str(page.get("text") or "")):
+                    offset = page_num - printed_page
+                    offsets[offset] = offsets.get(offset, 0) + 1
+                    break
+        if not offsets:
+            return None
+        return sorted(offsets.items(), key=lambda kv: (-kv[1], abs(kv[0])))[0][0]
+
+    def _sections_from_toc(self, pages: List[Dict], toc: Dict) -> List[Dict]:
+        toc_sections = toc.get("sections") or []
+        if not toc_sections:
+            return []
+
+        offset = self._calibrate_toc_page_offset(pages, toc_sections, toc.get("toc_page_nums") or [])
+        self._last_toc_page_offset = offset
+        if offset is None:
+            return []
+
+        available = [p.get("page_num") for p in pages if isinstance(p.get("page_num"), int)]
+        if not available:
+            return []
+        min_page = min(available)
+        max_page = max(available)
+
+        starts = []
+        for item in toc_sections:
+            printed_page = item.get("printed_page")
+            if not isinstance(printed_page, int):
+                continue
+            actual_start = printed_page + offset
+            if min_page <= actual_start <= max_page:
+                starts.append({
+                    "title": item.get("title") or "",
+                    "start_page": actual_start,
+                    "source": "toc",
+                })
+        starts.sort(key=lambda x: x["start_page"])
+
+        sections = []
+        for idx, item in enumerate(starts):
+            next_start = starts[idx + 1]["start_page"] if idx + 1 < len(starts) else max_page + 1
+            end_page = min(max_page, next_start - 1)
+            if item["start_page"] <= end_page:
+                sections.append({
+                    "title": item["title"],
+                    "start_page": item["start_page"],
+                    "end_page": end_page,
+                    "source": "toc",
+                })
+        return sections
+
+    def _is_likely_section_heading(self, line: str) -> bool:
+        stripped = re.sub(r"\s+", " ", str(line or "")).strip()
+        if not stripped or len(stripped) > 140:
+            return False
+        if re.match(r"^\d+(?:\.\d+)*\.?\s+[A-Z][A-Za-z0-9,()/\[\]\- ]{3,}$", stripped):
+            return True
+        heading_terms = (
+            "general information", "preparation", "synthesis", "reaction optimization",
+            "substrate scope", "reaction scope", "general procedure", "standard procedure",
+            "derivatization", "references", "spectra", "cartesian coordinates",
+            "computational", "dft",
+        )
+        lower = stripped.lower()
+        return any(term in lower for term in heading_terms) and len(stripped.split()) <= 12
+
+    def _sections_from_headings(self, pages: List[Dict]) -> List[Dict]:
+        starts = []
+        for page in pages:
+            page_num = page.get("page_num")
+            if not isinstance(page_num, int):
+                continue
+            for line in str(page.get("text") or "").splitlines()[:16]:
+                if self._is_likely_section_heading(line):
+                    starts.append({"title": line.strip(), "start_page": page_num, "source": "heading"})
+                    break
+        if not starts:
+            return []
+
+        deduped = []
+        seen_pages = set()
+        for item in sorted(starts, key=lambda x: x["start_page"]):
+            if item["start_page"] in seen_pages:
+                continue
+            seen_pages.add(item["start_page"])
+            deduped.append(item)
+
+        max_page = max(p.get("page_num") for p in pages if isinstance(p.get("page_num"), int))
+        sections = []
+        for idx, item in enumerate(deduped):
+            next_start = deduped[idx + 1]["start_page"] if idx + 1 < len(deduped) else max_page + 1
+            end_page = min(max_page, next_start - 1)
+            if item["start_page"] <= end_page:
+                sections.append({
+                    "title": item["title"],
+                    "start_page": item["start_page"],
+                    "end_page": end_page,
+                    "source": item["source"],
+                })
+        return sections
+
+    def split_sections_to_chunks(
+        self,
+        sections: List[Dict],
+        pages: List[Dict],
+        max_pages: int = 5,
+        max_chars: int = 8000,
+    ) -> List[Dict]:
+        pages_by_num = {
+            p.get("page_num"): p
+            for p in pages
+            if isinstance(p.get("page_num"), int)
+        }
+        section_chunks = []
+        for section in sections:
+            section_pages = [
+                pages_by_num[num]
+                for num in sorted(pages_by_num)
+                if section["start_page"] <= num <= section["end_page"]
+            ]
+            if not section_pages:
+                continue
+
+            parts = self._split_pages_with_limits(
+                section_pages,
+                page_limit=max_pages,
+                char_limit=max_chars,
+                section_title=section.get("title", ""),
+                chunk_strategy="section",
+            )
+            for part_index, part in enumerate(parts, 1):
+                page_nums = part.get("page_nums") or []
+                if not page_nums:
+                    continue
+                section_chunks.append({
+                    "section_title": section.get("title", ""),
+                    "section_start_page": section.get("start_page"),
+                    "section_end_page": section.get("end_page"),
+                    "start_page": page_nums[0],
+                    "end_page": page_nums[-1],
+                    "part_index": part_index,
+                    "source": section.get("source", ""),
+                })
+        return section_chunks
+
+    def get_runtime_sections(self, pages: List[Dict]) -> List[Dict]:
+        key = self._pages_cache_key(pages)
+        if key in self._section_cache:
+            self.last_section_debug = self._section_debug_cache.get(key, {})
+            self.last_section_chunking_stats = self.last_section_debug.get("stats", {})
+            return self._section_cache[key]
+
+        toc = self.detect_toc_sections(pages)
+        self._last_toc_page_offset = None
+        raw_sections = self._sections_from_toc(pages, toc)
+        source = "toc" if raw_sections else "heading"
+        if not raw_sections:
+            raw_sections = self._sections_from_headings(pages)
+        if not raw_sections:
+            source = "fixed_fallback"
+
+        section_chunks = self.split_sections_to_chunks(raw_sections, pages) if raw_sections else []
+        self.last_section_chunking_stats = {
+            "section_chunking_enabled": bool(section_chunks),
+            "section_chunking_source": source,
+            "section_scope": "full_document",
+            "raw_section_count": len(raw_sections),
+            "section_count": len(raw_sections),
+            "section_chunk_count": len(section_chunks),
+            "section_chunk_max_pages": 5,
+            "section_chunk_max_chars": 8000,
+            "toc_detected": bool(toc.get("has_toc")),
+        }
+        self.last_section_debug = {
+            "source": source,
+            "toc_page_nums": toc.get("toc_page_nums") or [],
+            "toc_page_offset": self._last_toc_page_offset,
+            "toc_sections": toc.get("sections") or [],
+            "toc_error": toc.get("_error"),
+            "raw_sections": raw_sections,
+            "section_chunks": section_chunks,
+            "stats": self.last_section_chunking_stats,
+        }
+        self._section_cache[key] = section_chunks
+        self._section_debug_cache[key] = self.last_section_debug
+        return section_chunks
+
+    def _page_range_label(self, page_nums: List[int]) -> str:
+        if not page_nums:
+            return ""
+        return f"{page_nums[0]}-{page_nums[-1]}" if len(page_nums) > 1 else str(page_nums[0])
+
+    def _format_chunk_text(self, pages: List[Dict]) -> str:
+        return "\n\n".join(f"--- Page {p['page_num']} ---\n{p['text']}" for p in pages)
+
+    def _split_pages_with_limits(
+        self,
+        pages: List[Dict],
+        page_limit: int,
+        char_limit: int = 8000,
+        section_title: str = "",
+        chunk_strategy: str = "section",
+    ) -> List[Dict]:
+        chunks = []
+        current = []
+        current_chars = 0
+        page_limit = max(1, int(page_limit or 1))
+
+        for page in pages:
+            page_chars = len(str(page.get("text") or ""))
+            if current and (len(current) >= page_limit or current_chars + page_chars > char_limit):
+                chunks.append((current, section_title))
+                current = []
+                current_chars = 0
+            current.append(page)
+            current_chars += page_chars
+
+        if current:
+            chunks.append((current, section_title))
+
+        result = []
+        for chunk_pages, title in chunks:
+            page_nums = [p["page_num"] for p in chunk_pages]
+            chunk_text = self._format_chunk_text(chunk_pages)
+            result.append({
+                "chunk_id": 0,
+                "page_range": self._page_range_label(page_nums),
+                "page_nums": page_nums,
+                "text": chunk_text,
+                "approx_tokens": len(chunk_text) // 4,
+                "section_title": title,
+                "chunk_strategy": chunk_strategy,
+            })
+        return result
+
+    def _assign_chunk_ids(self, chunks: List[Dict]) -> List[Dict]:
+        for idx, chunk in enumerate(chunks, 1):
+            chunk["chunk_id"] = idx
+        return chunks
+
+    def _chunk_pages_fixed(self, pages: List[Dict], pages_per_chunk: int) -> List[Dict]:
         chunks = []
         for i in range(0, len(pages), pages_per_chunk):
             chunk_pages = pages[i:i + pages_per_chunk]
             page_nums = [p['page_num'] for p in chunk_pages]
-            chunk_text = "\n\n".join(
-                f"--- Page {p['page_num']} ---\n{p['text']}"
-                for p in chunk_pages
-            )
+            chunk_text = self._format_chunk_text(chunk_pages)
             chunks.append({
                 "chunk_id": len(chunks) + 1,
+                "page_range": self._page_range_label(page_nums),
                 "page_nums": page_nums,
                 "text": chunk_text,
+                "approx_tokens": len(chunk_text) // 4,
+                "chunk_strategy": "fixed_pages",
             })
         return chunks
+
+    def chunk_selected_pages_by_sections(
+        self,
+        selected_pages: List[Dict],
+        all_pages: List[Dict],
+        pages_per_chunk: int,
+        task_name: str,
+    ) -> List[Dict]:
+        section_chunks = self.get_runtime_sections(all_pages)
+        if not section_chunks:
+            strategy_key = f"{task_name}_chunk_strategy"
+            self.last_section_chunking_stats = {
+                **getattr(self, "last_section_chunking_stats", {}),
+                "section_scope": "full_document",
+                strategy_key: "fixed_pages",
+            }
+            return self._chunk_pages_fixed(selected_pages, pages_per_chunk)
+
+        selected_by_num = {
+            p.get("page_num"): p
+            for p in selected_pages
+            if isinstance(p.get("page_num"), int)
+        }
+        chunks = []
+        covered = set()
+        for section_chunk in section_chunks:
+            chunk_pages = [
+                selected_by_num[num]
+                for num in sorted(selected_by_num)
+                if section_chunk["start_page"] <= num <= section_chunk["end_page"]
+            ]
+            if not chunk_pages:
+                continue
+            covered.update(p["page_num"] for p in chunk_pages)
+            page_nums = [p["page_num"] for p in chunk_pages]
+            chunk_text = self._format_chunk_text(chunk_pages)
+            chunks.append({
+                "chunk_id": 0,
+                "page_range": self._page_range_label(page_nums),
+                "page_nums": page_nums,
+                "text": chunk_text,
+                "approx_tokens": len(chunk_text) // 4,
+                "section_title": section_chunk.get("section_title", ""),
+                "section_start_page": section_chunk.get("section_start_page"),
+                "section_end_page": section_chunk.get("section_end_page"),
+                "section_part_index": section_chunk.get("part_index"),
+                "chunk_strategy": "section",
+            })
+
+        uncovered = [p for p in selected_pages if p.get("page_num") not in covered]
+        if uncovered:
+            chunks.extend(self._chunk_pages_fixed(uncovered, pages_per_chunk))
+
+        if not chunks:
+            return self._chunk_pages_fixed(selected_pages, pages_per_chunk)
+
+        strategy_key = f"{task_name}_chunk_strategy"
+        self.last_section_chunking_stats = {
+            **getattr(self, "last_section_chunking_stats", {}),
+            "section_scope": "full_document",
+            strategy_key: "section",
+        }
+        return self._assign_chunk_ids(chunks)
+
+    def chunk_pages_by_sections(self, selected_pages: List[Dict], all_pages: List[Dict]) -> List[Dict]:
+        return self.chunk_selected_pages_by_sections(
+            selected_pages=selected_pages,
+            all_pages=all_pages,
+            pages_per_chunk=self.pages_per_chunk,
+            task_name="reaction",
+        )
+
+    # =====================================================================
+    # Stage 0: Name Registry — 符号→完整化学名称映射
+    # =====================================================================
+
+    def _chunk_pages_for_registry(
+        self,
+        selected_pages: List[Dict],
+        pages_per_chunk: int = 5,
+        all_pages: Optional[List[Dict]] = None,
+    ) -> List[Dict]:
+        """将页面按指定数量分块（用于registry提取）
+
+        Args:
+            pages: 页列表
+            pages_per_chunk: 每块页数
+
+        Returns:
+            [{"chunk_id": 1, "text": "...", "page_nums": [1,2,...]}, ...]
+        """
+        return self.chunk_selected_pages_by_sections(
+            selected_pages=selected_pages,
+            all_pages=all_pages or selected_pages,
+            pages_per_chunk=pages_per_chunk,
+            task_name="registry",
+        )
+
+    def _chat_json_for_registry_selection(self, prompt: str, payload: Dict, max_tokens: int = 4000) -> Tuple[Optional[Dict], str, Optional[str]]:
+        messages = [
+            {
+                "role": "system",
+                "content": "You select chemistry document sections. Return compact valid JSON only.",
+            },
+            {
+                "role": "user",
+                "content": f"{prompt}\n\nINPUT JSON:\n{json.dumps(payload, ensure_ascii=False)}",
+            },
+        ]
+        try:
+            response = self.client.chat.completions.create(
+                model=self.extract_model,
+                messages=messages,
+                temperature=0.0,
+            )
+        except Exception as exc:
+            return None, "", f"{type(exc).__name__}: {exc}"
+        raw = self._strip_code_fence(response.choices[0].message.content)
+        if not raw:
+            return None, "", "empty response"
+        try:
+            data = json.loads(raw)
+        except Exception as exc:
+            return None, raw, f"{type(exc).__name__}: {exc}"
+        if not isinstance(data, dict):
+            return None, raw, "response JSON is not an object"
+        return data, raw, None
+
+    def _validate_registry_selector_response(self, data: Dict, input_indices: List[int]) -> Tuple[Optional[List[Dict]], Optional[str]]:
+        rows = data.get("sections")
+        if not isinstance(rows, list):
+            return None, "missing sections list"
+        expected = set(input_indices)
+        seen = set()
+        validated = []
+        for row in rows:
+            if not isinstance(row, dict):
+                return None, "selector row is not an object"
+            try:
+                section_index = int(row.get("section_index"))
+            except (TypeError, ValueError):
+                return None, "selector row missing valid section_index"
+            if section_index not in expected:
+                return None, f"selector section_index {section_index} not in input"
+            decision = str(row.get("decision") or "").strip().lower()
+            if decision not in {"include", "maybe", "exclude"}:
+                return None, f"invalid selector decision for section_index {section_index}: {decision}"
+            seen.add(section_index)
+            validated.append({
+                "section_index": section_index,
+                "decision": decision,
+                "reason": str(row.get("reason") or "").strip(),
+            })
+        missing = expected - seen
+        if missing:
+            return None, f"selector missing section_index values: {sorted(missing)[:10]}"
+        return sorted(validated, key=lambda r: r["section_index"]), None
+
+    def _validate_registry_verifier_response(self, data: Dict, input_indices: List[int]) -> Tuple[Optional[List[Dict]], Optional[str]]:
+        rows = data.get("sections")
+        if not isinstance(rows, list):
+            return None, "missing sections list"
+        expected = set(input_indices)
+        seen = set()
+        validated = []
+        for row in rows:
+            if not isinstance(row, dict):
+                return None, "verifier row is not an object"
+            try:
+                section_index = int(row.get("section_index"))
+            except (TypeError, ValueError):
+                return None, "verifier row missing valid section_index"
+            if section_index not in expected:
+                return None, f"verifier section_index {section_index} not in candidates"
+            relevant = row.get("registry_relevant")
+            if not isinstance(relevant, bool):
+                return None, f"registry_relevant must be boolean for section_index {section_index}"
+            seen.add(section_index)
+            validated.append({
+                "section_index": section_index,
+                "registry_relevant": relevant,
+                "reason": str(row.get("reason") or "").strip(),
+            })
+        missing = expected - seen
+        if missing:
+            return None, f"verifier missing section_index values: {sorted(missing)[:10]}"
+        return sorted(validated, key=lambda r: r["section_index"]), None
+
+    def _section_preview(self, section: Dict, pages: List[Dict], char_limit: int = 1200) -> str:
+        start = section.get("start_page")
+        end = section.get("end_page")
+        texts = []
+        for page in pages:
+            page_num = page.get("page_num")
+            if isinstance(page_num, int) and isinstance(start, int) and isinstance(end, int) and start <= page_num <= end:
+                text = str(page.get("text") or "").strip()
+                if text:
+                    texts.append(f"--- Page {page_num} ---\n{text}")
+            if sum(len(t) for t in texts) >= char_limit:
+                break
+        preview = "\n\n".join(texts)
+        return preview[:char_limit]
+
+    def _raw_sections_for_registry_selection(self) -> List[Dict]:
+        debug = getattr(self, "last_section_debug", {}) or {}
+        raw_sections = debug.get("raw_sections") or []
+        result = []
+        for idx, section in enumerate(raw_sections, 1):
+            result.append({
+                "section_index": idx,
+                "title": section.get("title") or "",
+                "start_page": section.get("start_page"),
+                "end_page": section.get("end_page"),
+                "source": section.get("source") or "",
+            })
+        return result
+
+    def _chunks_for_selected_registry_sections(self, selected_sections: List[Dict], section_chunks: List[Dict], pages: List[Dict]) -> List[Dict]:
+        selected_keys = {
+            (
+                section.get("title") or "",
+                section.get("start_page"),
+                section.get("end_page"),
+            )
+            for section in selected_sections
+        }
+        pages_by_num = {
+            page.get("page_num"): page
+            for page in pages
+            if isinstance(page.get("page_num"), int)
+        }
+        chunks = []
+        for section_chunk in section_chunks:
+            key = (
+                section_chunk.get("section_title") or "",
+                section_chunk.get("section_start_page"),
+                section_chunk.get("section_end_page"),
+            )
+            if key not in selected_keys:
+                continue
+            start_page = section_chunk.get("start_page")
+            end_page = section_chunk.get("end_page")
+            if not isinstance(start_page, int) or not isinstance(end_page, int):
+                continue
+            chunk_pages = [
+                pages_by_num[num]
+                for num in sorted(pages_by_num)
+                if start_page <= num <= end_page
+            ]
+            if not chunk_pages:
+                continue
+            page_nums = [p["page_num"] for p in chunk_pages]
+            chunk_text = self._format_chunk_text(chunk_pages)
+            chunks.append({
+                "chunk_id": 0,
+                "page_range": self._page_range_label(page_nums),
+                "page_nums": page_nums,
+                "text": chunk_text,
+                "approx_tokens": len(chunk_text) // 4,
+                "section_title": section_chunk.get("section_title", ""),
+                "section_start_page": section_chunk.get("section_start_page"),
+                "section_end_page": section_chunk.get("section_end_page"),
+                "section_part_index": section_chunk.get("part_index"),
+                "chunk_strategy": "registry_section_llm",
+            })
+        return self._assign_chunk_ids(chunks)
+
+    def _select_registry_chunks_by_sections(self, pages: List[Dict], pages_per_chunk: int) -> Tuple[List[Dict], Dict]:
+        section_chunks = self.get_runtime_sections(pages)
+        section_stats = getattr(self, "last_section_chunking_stats", {}) or {}
+        base_stats = {
+            **section_stats,
+            "registry_selection_strategy": "skipped",
+            "registry_selection_status": "not_started",
+            "registry_chunk_strategy": "skipped",
+            "registry_sections_selected": 0,
+            "registry_sections_rejected": 0,
+            "registry_fallback_scan_pages": 20,
+            "registry_selector_error": None,
+            "registry_verifier_error": None,
+        }
+        if not section_chunks:
+            scan_pages = pages[:20]
+            fallback_chunks = self._chunk_pages_fixed(scan_pages, pages_per_chunk)
+            stats = {
+                **base_stats,
+                "registry_selection_strategy": "fixed_20_pages_fallback",
+                "registry_selection_status": "section_unavailable_fallback",
+                "registry_chunk_strategy": "fixed_pages",
+                "registry_chunks_total": len(fallback_chunks),
+            }
+            self._update_registry_selection_debug(stats=stats)
+            return fallback_chunks, stats
+
+        raw_sections = self._raw_sections_for_registry_selection()
+        if not raw_sections:
+            stats = {
+                **base_stats,
+                "registry_selection_strategy": "skipped",
+                "registry_selection_status": "no_sections_selected",
+                "registry_chunk_strategy": "skipped",
+                "registry_chunks_total": 0,
+            }
+            self._update_registry_selection_debug(stats=stats)
+            return [], stats
+
+        selector_payload = {
+            "allowed_section_indices": [s["section_index"] for s in raw_sections],
+            "sections": [
+                {
+                    "section_index": s["section_index"],
+                    "title": s["title"],
+                    "start_page": s["start_page"],
+                    "end_page": s["end_page"],
+                }
+                for s in raw_sections
+            ]
+        }
+        selector_data, selector_raw, selector_error = self._chat_json_for_registry_selection(
+            self.REGISTRY_SECTION_SELECTOR_PROMPT,
+            selector_payload,
+        )
+        selector_rows = None
+        if selector_error is None:
+            selector_rows, selector_error = self._validate_registry_selector_response(
+                selector_data,
+                [s["section_index"] for s in raw_sections],
+            )
+        if selector_error:
+            stats = {
+                **base_stats,
+                "registry_selection_strategy": "skipped",
+                "registry_selection_status": "selector_failed",
+                "registry_chunk_strategy": "skipped",
+                "registry_chunks_total": 0,
+                "registry_selector_error": selector_error,
+            }
+            self._update_registry_selection_debug(
+                stats=stats,
+                selector_rows=selector_rows or [],
+                selector_raw=selector_raw,
+            )
+            return [], stats
+
+        candidate_indices = {
+            row["section_index"]
+            for row in selector_rows
+            if row["decision"] in {"include", "maybe"}
+        }
+        candidate_sections = [s for s in raw_sections if s["section_index"] in candidate_indices]
+        if not candidate_sections:
+            stats = {
+                **base_stats,
+                "registry_selection_strategy": "section_llm",
+                "registry_selection_status": "no_sections_selected",
+                "registry_chunk_strategy": "section_llm",
+                "registry_sections_rejected": len(raw_sections),
+                "registry_chunks_total": 0,
+            }
+            self._update_registry_selection_debug(
+                stats=stats,
+                selector_rows=selector_rows,
+                selected_sections=[],
+                selected_chunks=[],
+                selector_raw=selector_raw,
+            )
+            return [], stats
+
+        verifier_payload = {
+            "allowed_section_indices": [s["section_index"] for s in candidate_sections],
+            "sections": [
+                {
+                    "section_index": s["section_index"],
+                    "title": s["title"],
+                    "start_page": s["start_page"],
+                    "end_page": s["end_page"],
+                    "preview": self._section_preview(s, pages, char_limit=1200),
+                }
+                for s in candidate_sections
+            ]
+        }
+        verifier_data, verifier_raw, verifier_error = self._chat_json_for_registry_selection(
+            self.REGISTRY_SECTION_VERIFIER_PROMPT,
+            verifier_payload,
+        )
+        verifier_rows = None
+        if verifier_error is None:
+            verifier_rows, verifier_error = self._validate_registry_verifier_response(
+                verifier_data,
+                [s["section_index"] for s in candidate_sections],
+            )
+        if verifier_error:
+            stats = {
+                **base_stats,
+                "registry_selection_strategy": "skipped",
+                "registry_selection_status": "verifier_failed",
+                "registry_chunk_strategy": "skipped",
+                "registry_chunks_total": 0,
+                "registry_selector_error": None,
+                "registry_verifier_error": verifier_error,
+            }
+            self._update_registry_selection_debug(
+                stats=stats,
+                selector_rows=selector_rows,
+                verifier_rows=verifier_rows or [],
+                selector_raw=selector_raw,
+                verifier_raw=verifier_raw,
+            )
+            return [], stats
+
+        relevant_indices = {
+            row["section_index"]
+            for row in verifier_rows
+            if row["registry_relevant"]
+        }
+        selected_sections = [s for s in raw_sections if s["section_index"] in relevant_indices]
+        selected_chunks = self._chunks_for_selected_registry_sections(selected_sections, section_chunks, pages)
+        status = "selected" if selected_sections and selected_chunks else "no_sections_selected"
+        stats = {
+            **base_stats,
+            "registry_selection_strategy": "section_llm",
+            "registry_selection_status": status,
+            "registry_chunk_strategy": "section_llm",
+            "registry_sections_selected": len(selected_sections),
+            "registry_sections_rejected": len(raw_sections) - len(selected_sections),
+            "registry_chunks_total": len(selected_chunks),
+        }
+        self._update_registry_selection_debug(
+            stats=stats,
+            selector_rows=selector_rows,
+            verifier_rows=verifier_rows,
+            selected_sections=selected_sections,
+            selected_chunks=selected_chunks,
+            selector_raw=selector_raw,
+            verifier_raw=verifier_raw,
+        )
+        return selected_chunks, stats
+
+    def _update_registry_selection_debug(
+        self,
+        *,
+        stats: Dict,
+        selector_rows: Optional[List[Dict]] = None,
+        verifier_rows: Optional[List[Dict]] = None,
+        selected_sections: Optional[List[Dict]] = None,
+        selected_chunks: Optional[List[Dict]] = None,
+        selector_raw: str = "",
+        verifier_raw: str = "",
+    ) -> None:
+        debug = dict(getattr(self, "last_section_debug", {}) or {})
+        registry_selection = {
+            "selector_rows": selector_rows or [],
+            "verifier_rows": verifier_rows or [],
+            "stats": stats,
+        }
+        debug_stats = {
+            **(debug.get("stats") or {}),
+            **stats,
+        }
+        debug.update({
+            "registry_section_selection": registry_selection,
+            "selected_registry_sections": selected_sections or [],
+            "selected_registry_section_chunks": [
+                {k: v for k, v in chunk.items() if k != "text"}
+                for chunk in (selected_chunks or [])
+            ],
+            "registry_selector_raw_preview": (selector_raw or "")[:1000],
+            "registry_verifier_raw_preview": (verifier_raw or "")[:1000],
+            "registry_selector_error": stats.get("registry_selector_error"),
+            "registry_verifier_error": stats.get("registry_verifier_error"),
+            "stats": debug_stats,
+        })
+        self.last_section_debug = debug
 
     def _merge_registry_results(self, registries: List[Dict[str, str]]) -> Dict[str, str]:
         """合并多个registry结果，保留最先出现的名称
@@ -369,44 +1302,104 @@ Return ONLY valid JSON."""
         """
         提取 symbol→full_chemical_name 映射表
 
-        策略：GPT分块提取 → 合并去重 → 清理
+        策略：section-aware LLM选择 → GPT分块提取 → 合并去重 → 清理
 
         Args:
             pages: 按页提取的文本列表
-            max_scan_pages: 最多扫描前N页
+            max_scan_pages: 兼容旧调用；仅在section不可用的fallback中保留前20页扫描
             pages_per_chunk: 每块页数
 
         Returns:
             {"1a": "(E)-3-(4-methoxyphenyl)-...", "2a": "...", "C1": "..."}
         """
         if not pages:
+            self.last_registry_validation_stats = {
+                "registry_raw_count": 0,
+                "registry_final_count": 0,
+                "registry_selection_strategy": "skipped",
+                "registry_selection_status": "no_pages",
+            }
+            self.last_registry_debug = {
+                "strategy": "skipped",
+                "status": "no_pages",
+                "section_selection": {},
+                "chunks": [],
+                "section_debug": {},
+                "selection_stats": {},
+                "summary": {
+                    "raw_registry_merged": {},
+                    "final_registry": {},
+                    "registry_raw_count": 0,
+                    "registry_final_count": 0,
+                },
+            }
             return {}
         
-        scan_pages = pages[:max_scan_pages]
-        
-        # --- Step 1: 页面分块 ---
-        print(f"  [Registry Step 1] 页面分块: {len(scan_pages)}页 分 {pages_per_chunk}页/块")
-        chunks = self._chunk_pages_for_registry(scan_pages, pages_per_chunk)
+        # --- Step 1: section-aware registry chunk selection ---
+        print("  [Registry Step 1] section-aware registry chunk selection...")
+        chunks, selection_stats = self._select_registry_chunks_by_sections(
+            pages,
+            pages_per_chunk=pages_per_chunk,
+        )
+        if selection_stats.get("registry_selection_status") in {
+            "selector_failed",
+            "verifier_failed",
+            "no_sections_selected",
+        }:
+            print(f"  [Registry] skipped: {selection_stats.get('registry_selection_status')}")
+            self.last_registry_validation_stats = {
+                "registry_raw_count": 0,
+                "registry_final_count": 0,
+                **selection_stats,
+            }
+            self.last_registry_debug = {
+                "strategy": selection_stats.get("registry_selection_strategy"),
+                "status": selection_stats.get("registry_selection_status"),
+                "section_selection": {
+                    "selected_sections": (getattr(self, "last_section_debug", {}) or {}).get("selected_registry_sections") or [],
+                    "selected_chunks": (getattr(self, "last_section_debug", {}) or {}).get("selected_registry_section_chunks") or [],
+                    "selector_raw_preview": (getattr(self, "last_section_debug", {}) or {}).get("registry_selector_raw_preview"),
+                    "verifier_raw_preview": (getattr(self, "last_section_debug", {}) or {}).get("registry_verifier_raw_preview"),
+                    "selector_error": (getattr(self, "last_section_debug", {}) or {}).get("registry_selector_error"),
+                    "verifier_error": (getattr(self, "last_section_debug", {}) or {}).get("registry_verifier_error"),
+                },
+                "chunks": [],
+                "section_debug": getattr(self, "last_section_debug", {}) or {},
+                "selection_stats": selection_stats,
+                "summary": {
+                    "raw_registry_merged": {},
+                    "final_registry": {},
+                    "registry_raw_count": 0,
+                    "registry_final_count": 0,
+                },
+            }
+            return {}
         print(f"  [Registry Step 2] 分为 {len(chunks)} 个分块，分别调用GPT提取...")
         
         # --- Step 2: GPT分块提取 ---
         all_registries = []
+        chunk_debugs = []
         validation_stats = {
             "registry_raw_count": 0,
-            "registry_grounded_count": 0,
-            "registry_removed_count": 0,
-            "registry_removed_entries": [],
         }
+        validation_stats.update(getattr(self, "last_section_chunking_stats", {}) or {})
+        validation_stats.update(selection_stats)
+        validation_stats["registry_chunks_total"] = len(chunks)
         for chunk in chunks:
             print(f"    处理分块{chunk['chunk_id']}: 页 {chunk['page_nums']}")
             registry = self.extract_registry_with_gpt(chunk['text'])
-            chunk_stats = getattr(self, "_last_registry_chunk_validation_stats", {}) or {}
-            validation_stats["registry_raw_count"] += int(chunk_stats.get("registry_raw_count", 0) or 0)
-            validation_stats["registry_grounded_count"] += int(chunk_stats.get("registry_grounded_count", 0) or 0)
-            validation_stats["registry_removed_count"] += int(chunk_stats.get("registry_removed_count", 0) or 0)
-            validation_stats["registry_removed_entries"].extend(
-                chunk_stats.get("registry_removed_entries", []) or []
-            )
+            chunk_debug = dict(getattr(self, "_last_registry_chunk_debug", {}) or {})
+            chunk_debug.update({
+                "chunk_id": chunk.get("chunk_id"),
+                "page_nums": chunk.get("page_nums") or [],
+                "section_title": chunk.get("section_title"),
+                "section_start_page": chunk.get("section_start_page"),
+                "section_end_page": chunk.get("section_end_page"),
+                "chunk_strategy": chunk.get("chunk_strategy"),
+                "text_preview": (chunk.get("text") or "")[:1200],
+            })
+            chunk_debugs.append(chunk_debug)
+            validation_stats["registry_raw_count"] += len(chunk_debug.get("raw_registry") or {})
             if registry:
                 print(f"      提取到 {len(registry)} 条映射")
                 all_registries.append(registry)
@@ -415,228 +1408,33 @@ Return ONLY valid JSON."""
         
         # --- Step 3: 合并去重 ---
         print(f"  [Registry Step 3] 合并 {len(all_registries)} 个分块的结果...")
-        merged_registry = self._merge_registry_results(all_registries)
-        
-        # --- Step 4: 清理通用术语映射 ---
-        print(f"  [Registry Step 4] 清理通用术语...")
-        registry = self._clean_registry(merged_registry)
-        validation_stats["registry_removed_entries"] = validation_stats["registry_removed_entries"][:20]
+        registry = self._merge_registry_results(all_registries)
+        validation_stats["registry_final_count"] = len(registry)
         self.last_registry_validation_stats = validation_stats
+        section_debug = getattr(self, "last_section_debug", {}) or {}
+        self.last_registry_debug = {
+            "strategy": selection_stats.get("registry_selection_strategy"),
+            "status": selection_stats.get("registry_selection_status"),
+            "section_selection": {
+                "selected_sections": section_debug.get("selected_registry_sections") or [],
+                "selected_chunks": section_debug.get("selected_registry_section_chunks") or [],
+                "selector_raw_preview": section_debug.get("registry_selector_raw_preview"),
+                "verifier_raw_preview": section_debug.get("registry_verifier_raw_preview"),
+                "selector_error": section_debug.get("registry_selector_error"),
+                "verifier_error": section_debug.get("registry_verifier_error"),
+            },
+            "chunks": chunk_debugs,
+            "section_debug": section_debug,
+            "selection_stats": selection_stats,
+            "summary": {
+                "raw_registry_merged": registry,
+                "final_registry": registry,
+                "registry_raw_count": validation_stats.get("registry_raw_count", 0),
+                "registry_final_count": len(registry),
+            },
+        }
 
         return registry
-
-    # 泛指术语集合（不能作为化学名称）
-    _GENERIC_TERMS = {
-        'photocatalyst', 'catalyst', 'catalyst_name', 'ligand', 'chiral ligand',
-        'solvent', 'reagent', 'additive', 'product', 'substrate', 'derivative',
-        'side product', 'desired product', 'main product', 'intermediate',
-        'alkene', 'alcohol', 'ketone', 'ester', 'aldehyde', 'amine', 'amide',
-        'acid', 'ether', 'aromatic', 'olefin', 'enone', 'epoxide', 'heterocycle',
-        'diene', 'enol', 'hydrocarbon', 'compound', 'material', 'species',
-        'molecule', 'fragment', 'moiety', 'group', 'ring', 'chain',
-        'ru(bpy)3', 'ir(ppy)3',
-    }
-
-    # 泛指描述词前缀（用于检测 "descriptor + symbol" 模式）
-    _GENERIC_PREFIXES = [
-        'alkene', 'alcohol', 'ketone', 'ester', 'aldehyde', 'amine', 'amide',
-        'acid', 'ether', 'aromatic', 'olefin', 'enone', 'epoxide', 'heterocycle',
-        'diene', 'enol', 'hydrocarbon', 'compound', 'substrate', 'product',
-        'catalyst', 'photocatalyst', 'ligand', 'chiral ligand', 'reagent',
-        'additive', 'solvent', 'intermediate', 'derivative', 'material',
-        'fragment', 'moiety',
-    ]
-
-    def _clean_registry(self, registry: Dict[str, str]) -> Dict[str, str]:
-        """
-        删除映射到泛指术语或不合规名称的条目
-
-        过滤规则:
-        1. name 是泛指术语（如 alkene, catalyst）
-        2. name 是 "泛指词 + 代号" 模式（如 alkene 2s, aldehyde 5b）
-        3. name 末尾包含 symbol（说明可能是泛指+代号）
-        4. name 长度太短（< 15 字符，大概率不是完整化学名）
-        5. name 等于 symbol 本身
-        """
-        # 预编译 "descriptor + symbol" 模式正则
-        # 匹配：泛指词 + 可选括号 + 符号（如 "alkene 2s", "alcohol (1a)", "ketone 5b"）
-        generic_prefix_pattern = '|'.join(re.escape(p) for p in self._GENERIC_PREFIXES)
-        desc_symbol_re = re.compile(
-            rf'^\s*(?:{generic_prefix_pattern})\s*\(?\s*[\w\d]{{1,5}}\s*\)?$',
-            re.IGNORECASE
-        )
-
-        cleaned = {}
-        removed = []
-
-        for symbol, name in registry.items():
-            name_str = str(name).strip()
-            name_lower = name_str.lower()
-
-            # 规则1: 泛指术语
-            if name_lower in self._GENERIC_TERMS:
-                removed.append((symbol, name, "泛指术语"))
-                continue
-
-            # 规则5: name 等于 symbol
-            if name_str == str(symbol).strip():
-                removed.append((symbol, name, "name=symbol"))
-                continue
-
-            # 规则2: "泛指词 + 代号" 模式
-            if desc_symbol_re.match(name_str):
-                removed.append((symbol, name, "泛指词+代号模式"))
-                continue
-
-            # 规则3: name 以 symbol 结尾且前面是泛指词
-            # 如 name="alkene 2s", symbol="2s"
-            if str(symbol).strip() in name_str:
-                # 去掉 symbol 后的部分是否是泛指词
-                without_symbol = name_str.replace(str(symbol).strip(), '').strip()
-                if without_symbol.lower() in {p.lower() for p in self._GENERIC_PREFIXES}:
-                    removed.append((symbol, name, "泛指词+symbol"))
-                    continue
-
-            # 规则4: 长度太短（完整化学名通常 > 15 字符）
-            if len(name_str) < 15:
-                removed.append((symbol, name, f"太短({len(name_str)}字符)"))
-                continue
-
-            cleaned[symbol] = name
-
-        if removed:
-            removed_str = ", ".join(f"'{s}' -> '{n}' [{reason}]" for s, n, reason in removed)
-            print(f"  [Registry Cleanup] 移除 {len(removed)} 条不合规映射: {removed_str}")
-
-        return cleaned
-
-    _REGISTRY_DEFINITION_TERMS = {
-        "compound",
-        "substrate",
-        "product",
-        "ligand",
-        "catalyst",
-        "denoted",
-        "named",
-        "abbreviated",
-        "corresponding",
-    }
-    _REGISTRY_RESULT_TERMS = {
-        "afforded",
-        "gave",
-        "yielded",
-        "obtained",
-        "isolated",
-    }
-
-    def _normalize_registry_text(self, text: str) -> str:
-        """Normalize source text for registry grounding checks."""
-        if text is None:
-            return ""
-        normalized = str(text).lower()
-        normalized = normalized.replace("\u00ad", "")
-        normalized = re.sub(r"[\u2010-\u2015\u2212]", "-", normalized)
-        normalized = re.sub(r"\s+", " ", normalized)
-        normalized = re.sub(r"\s*-\s*", "-", normalized)
-        return normalized.strip()
-
-    def _find_normalized_spans(self, source_text: str, needle: str) -> List[tuple]:
-        source_norm = self._normalize_registry_text(source_text)
-        needle_norm = self._normalize_registry_text(needle)
-        if not source_norm or not needle_norm:
-            return []
-        return [(m.start(), m.end()) for m in re.finditer(re.escape(needle_norm), source_norm)]
-
-    def _find_symbol_spans(self, source_text: str, symbol: str) -> List[tuple]:
-        source_norm = self._normalize_registry_text(source_text)
-        symbol_norm = self._normalize_registry_text(symbol)
-        if not source_norm or not symbol_norm:
-            return []
-        pattern = re.compile(rf"(?<![a-z0-9]){re.escape(symbol_norm)}(?![a-z0-9])")
-        return [(m.start(), m.end()) for m in pattern.finditer(source_norm)]
-
-    def _is_definition_window(self, window: str) -> bool:
-        return any(re.search(rf"\b{re.escape(term)}\b", window) for term in self._REGISTRY_DEFINITION_TERMS)
-
-    def _is_result_window(self, window: str) -> bool:
-        return any(re.search(rf"\b{re.escape(term)}\b", window) for term in self._REGISTRY_RESULT_TERMS)
-
-    def _is_strong_symbol_name_binding(self, symbol: str, name: str, source_text: str) -> bool:
-        source_norm = self._normalize_registry_text(source_text)
-        name_spans = self._find_normalized_spans(source_text, name)
-        symbol_spans = self._find_symbol_spans(source_text, symbol)
-        if not source_norm or not name_spans or not symbol_spans:
-            return False
-
-        for name_start, name_end in name_spans:
-            for symbol_start, symbol_end in symbol_spans:
-                if name_end <= symbol_start:
-                    separator = source_norm[name_end:symbol_start]
-                    if len(separator) <= 20 and re.fullmatch(r"[\s\(\)\[\]\{\}:,;=\-]*", separator):
-                        return True
-                elif symbol_end <= name_start:
-                    separator = source_norm[symbol_end:name_start]
-                    prefix = source_norm[max(0, symbol_start - 40):symbol_start]
-                    if len(separator) <= 20:
-                        has_definition_separator = bool(re.search(r"[:=]", separator))
-                        has_definition_prefix = bool(
-                            re.search(r"\b(?:compound|substrate|product|ligand|catalyst)\s*$", prefix)
-                        )
-                        has_named_separator = bool(
-                            re.search(r"\b(?:is|named|denoted|abbreviated(?: as)?)\b", separator)
-                        )
-                        if has_definition_separator or has_definition_prefix or has_named_separator:
-                            return True
-        return False
-
-    def _is_weak_symbol_name_binding(self, symbol: str, name: str, source_text: str) -> bool:
-        source_norm = self._normalize_registry_text(source_text)
-        name_spans = self._find_normalized_spans(source_text, name)
-        symbol_spans = self._find_symbol_spans(source_text, symbol)
-        if not source_norm or not name_spans or not symbol_spans:
-            return False
-
-        for name_start, name_end in name_spans:
-            for symbol_start, symbol_end in symbol_spans:
-                distance = max(symbol_start, name_start) - min(symbol_end, name_end)
-                if distance > 300:
-                    continue
-                window_start = max(0, min(name_start, symbol_start) - 80)
-                window_end = min(len(source_norm), max(name_end, symbol_end) + 80)
-                window = source_norm[window_start:window_end]
-                if self._is_result_window(window):
-                    continue
-                if self._is_definition_window(window):
-                    return True
-        return False
-
-    def _validate_registry_against_source(self, registry: Dict[str, str], source_text: str):
-        grounded = {}
-        removed = []
-
-        for symbol, name in (registry or {}).items():
-            symbol_str = str(symbol).strip()
-            name_str = str(name).strip()
-
-            if not symbol_str:
-                removed.append({"symbol": symbol_str, "name": name_str, "reason": "empty_symbol"})
-                continue
-            if not self._find_symbol_spans(source_text, symbol_str):
-                removed.append({"symbol": symbol_str, "name": name_str, "reason": "symbol_not_in_source"})
-                continue
-            if not self._find_normalized_spans(source_text, name_str):
-                removed.append({"symbol": symbol_str, "name": name_str, "reason": "name_not_in_source"})
-                continue
-            if self._is_strong_symbol_name_binding(symbol_str, name_str, source_text):
-                grounded[symbol_str] = name_str
-                continue
-            if self._is_weak_symbol_name_binding(symbol_str, name_str, source_text):
-                grounded[symbol_str] = name_str
-                continue
-
-            removed.append({"symbol": symbol_str, "name": name_str, "reason": "symbol_name_not_nearby"})
-
-        return grounded, removed
 
     # =====================================================================
     # Per-Chunk 精准过滤
@@ -735,44 +1533,44 @@ Return ONLY valid JSON."""
             if len(text) > 15000:
                 text = text[:15000]
 
+            messages = [
+                {"role": "system",
+                 "content": "You are a chemistry data extractor. Always respond with compact valid JSON only."},
+                {"role": "user",
+                 "content": f"{self.REGISTRY_PROMPT}\n\n{text}"}
+            ]
             response = self.client.chat.completions.create(
                 model=self.screen_model,
-                messages=[
-                    {"role": "system",
-                     "content": "You are a chemistry data extractor. Always respond with valid JSON only."},
-                    {"role": "user",
-                     "content": f"{self.REGISTRY_PROMPT}\n\n{text}"}
-                ],
+                messages=messages,
                 temperature=0.0,
-                max_tokens=1000,
             )
             raw = response.choices[0].message.content.strip()
+            if not raw:
+                print("  [WARN] GPT registry extraction returned empty content")
             raw_registry = self._parse_registry_response(raw)
-            grounded_registry, removed_entries = self._validate_registry_against_source(raw_registry, text)
-            self._last_registry_chunk_validation_stats = {
-                "registry_raw_count": len(raw_registry),
-                "registry_grounded_count": len(grounded_registry),
-                "registry_removed_count": len(removed_entries),
-                "registry_removed_entries": removed_entries[:20],
+            self._last_registry_chunk_debug = {
+                "raw_response": raw,
+                "raw_registry": raw_registry,
+                "counts": {
+                    "raw": len(raw_registry),
+                },
+                "error": None,
             }
-            if removed_entries:
-                removed_preview = ", ".join(
-                    f"{entry.get('symbol')}[{entry.get('reason')}]" for entry in removed_entries[:5]
-                )
-                print(f"      [Registry Grounding] removed {len(removed_entries)} ungrounded mappings: {removed_preview}")
-            return grounded_registry
+            return raw_registry
         except Exception as e:
             print(f"  [WARN] GPT registry提取出错: {e}")
-            self._last_registry_chunk_validation_stats = {
-                "registry_raw_count": 0,
-                "registry_grounded_count": 0,
-                "registry_removed_count": 0,
-                "registry_removed_entries": [],
+            self._last_registry_chunk_debug = {
+                "raw_response": "",
+                "raw_registry": {},
+                "counts": {
+                    "raw": 0,
+                },
+                "error": str(e),
             }
             return {}
 
     def _parse_registry_response(self, raw: str) -> Dict[str, str]:
-        """解析GPT返回的registry JSON，解析时过滤明显不合规的条目"""
+        """解析GPT返回的registry JSON，不做抽取后清洗。"""
         raw = raw.strip()
         if raw.startswith("```json"):
             raw = raw[7:]
@@ -789,24 +1587,8 @@ Return ONLY valid JSON."""
                 for k, v in data.items():
                     sym = str(k).strip()
                     name = str(v).strip()
-                    name_lower = name.lower()
-
-                    # 基本校验：必须是字符串且长度>=5
-                    if not isinstance(v, str) or len(name) < 5:
+                    if not sym or not name:
                         continue
-
-                    # name 不能等于 symbol
-                    if name == sym:
-                        continue
-
-                    # name 不能是泛指术语
-                    if name_lower in self._GENERIC_TERMS:
-                        continue
-
-                    # name 不能以泛指描述词开头
-                    if any(name_lower.startswith(p.lower() + ' ') for p in self._GENERIC_PREFIXES):
-                        continue
-
                     result[sym] = name
                 return result
         except json.JSONDecodeError:
@@ -998,7 +1780,6 @@ Return ONLY valid JSON."""
                         )}
                     ],
                     temperature=0.0,
-                    max_tokens=1000,
                 )
                 raw = response.choices[0].message.content.strip()
                 parsed = self._parse_gp_summary(raw)
@@ -1092,7 +1873,6 @@ Return ONLY valid JSON."""
                     {"role": "user", "content": f"{self.SCREEN_PROMPT}\n\n{chunk_text}"}
                 ],
                 temperature=0.0,
-                max_tokens=300,
             )
             raw = response.choices[0].message.content.strip()
             return self._parse_screen_response(raw)
@@ -1208,7 +1988,6 @@ Return ONLY valid JSON."""
                     },
                 ],
                 temperature=0.0,
-                max_tokens=8000,
             )
             raw = (response.choices[0].message.content or "").strip()
             if not raw:
@@ -1299,7 +2078,6 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
                         }
                     ],
                     temperature=0.1,
-                    max_tokens=16000,
                 )
                 gpt_response = response.choices[0].message.content or ""
                 if not gpt_response.strip():
@@ -1636,8 +2414,20 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
             return None
 
         print("[ReactionExtractionAgent] chunking pages...")
-        chunks = self.chunk_pages(relevant_pages)
+        chunks = self.chunk_pages_by_sections(relevant_pages, pages)
         file_stats['total_chunks'] = len(chunks)
+        section_stats = getattr(self, "last_section_chunking_stats", {}) or {}
+        file_stats.update({
+            "section_chunking_enabled": section_stats.get("section_chunking_enabled", False),
+            "section_chunking_source": section_stats.get("section_chunking_source", "fixed_fallback"),
+            "section_scope": section_stats.get("section_scope", "full_document"),
+            "raw_section_count": section_stats.get("raw_section_count", 0),
+            "section_chunk_count": section_stats.get("section_chunk_count", 0),
+            "section_chunk_max_pages": section_stats.get("section_chunk_max_pages", 5),
+            "section_chunk_max_chars": section_stats.get("section_chunk_max_chars", 8000),
+            "section_count": section_stats.get("section_count", 0),
+            "reaction_chunk_strategy": section_stats.get("reaction_chunk_strategy", "fixed_pages"),
+        })
 
         print(f"[ReactionExtractionAgent] Stage1 screening with {self.screen_model}...")
         screen_results = []
@@ -1835,9 +2625,7 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
             file_stats['registry_size'] = len(registry)
             file_stats.update({
                 "registry_raw_count": self.last_registry_validation_stats.get("registry_raw_count", len(registry)),
-                "registry_grounded_count": self.last_registry_validation_stats.get("registry_grounded_count", len(registry)),
-                "registry_removed_count": self.last_registry_validation_stats.get("registry_removed_count", 0),
-                "registry_removed_entries": self.last_registry_validation_stats.get("registry_removed_entries", [])[:20],
+                "registry_final_count": self.last_registry_validation_stats.get("registry_final_count", len(registry)),
             })
             if registry:
                 print(f"  注册表: {len(registry)} 条映射")
@@ -1885,8 +2673,20 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
 
             # --- Step 3: 分块 ---
             print("[Step 3] 页面分块...")
-            chunks = self.chunk_pages(relevant_pages)
+            chunks = self.chunk_pages_by_sections(relevant_pages, pages)
             file_stats['total_chunks'] = len(chunks)
+            section_stats = getattr(self, "last_section_chunking_stats", {}) or {}
+            file_stats.update({
+                "section_chunking_enabled": section_stats.get("section_chunking_enabled", False),
+                "section_chunking_source": section_stats.get("section_chunking_source", "fixed_fallback"),
+                "section_scope": section_stats.get("section_scope", "full_document"),
+                "raw_section_count": section_stats.get("raw_section_count", 0),
+                "section_chunk_count": section_stats.get("section_chunk_count", 0),
+                "section_chunk_max_pages": section_stats.get("section_chunk_max_pages", 5),
+                "section_chunk_max_chars": section_stats.get("section_chunk_max_chars", 8000),
+                "section_count": section_stats.get("section_count", 0),
+                "reaction_chunk_strategy": section_stats.get("reaction_chunk_strategy", "fixed_pages"),
+            })
             total_approx_tokens = sum(c['approx_tokens'] for c in chunks)
             print(f"  分为 {len(chunks)} 个块, 每块 {self.pages_per_chunk} 页")
             print(f"  预估总文本: ~{total_approx_tokens} tokens")

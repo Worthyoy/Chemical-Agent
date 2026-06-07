@@ -131,7 +131,6 @@ def call_llm_parse(names: List[str], client: OpenAI, model: str = "gpt-5-mini",
                     {"role": "user", "content": prompt}
                 ],
                 temperature=temperature,
-                max_tokens=8000,
             )
             raw = response.choices[0].message.content.strip()
             result = _parse_llm_json(raw)
