@@ -1458,7 +1458,7 @@ class CollectResultsAgent:
             "failed": [
                 {
                     "pdf_name": r.get("pdf_name"),
-                    "error": r.get("chemeagle", {}).get("role_refinement", {}).get("error"),
+                    "error": (r.get("chemeagle") or {}).get("role_refinement", {}).get("error"),
                 }
                 for r in results
                 if r.get("chemeagle_role_refinement_status") == "failed"
@@ -1481,7 +1481,8 @@ class CollectResultsAgent:
         symbol_candidates = []
         symbol_validations = []
         for r in results:
-            candidates = r.get("chemeagle", {}).get("symbol_resolution", {}).get("candidates", [])
+            chemeagle = r.get("chemeagle") or {}
+            candidates = chemeagle.get("symbol_resolution", {}).get("candidates", [])
             if isinstance(candidates, list):
                 for candidate in candidates:
                     if isinstance(candidate, dict):
@@ -1492,7 +1493,7 @@ class CollectResultsAgent:
                                 **candidate,
                             }
                         )
-            validation = r.get("chemeagle", {}).get("symbol_resolution", {}).get("validation")
+            validation = chemeagle.get("symbol_resolution", {}).get("validation")
             if isinstance(validation, dict):
                 symbol_validations.append(
                     {
@@ -1528,7 +1529,7 @@ class CollectResultsAgent:
             "failed": [
                 {
                     "pdf_name": r.get("pdf_name"),
-                    "error": r.get("chemeagle", {}).get("symbol_resolution", {}).get("error"),
+                    "error": (r.get("chemeagle") or {}).get("symbol_resolution", {}).get("error"),
                 }
                 for r in results
                 if r.get("symbol_resolution_status") == "failed"

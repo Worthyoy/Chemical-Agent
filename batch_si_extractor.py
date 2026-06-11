@@ -18,7 +18,7 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, Dict, List, Tuple
+from typing import Optional, Dict, List, Tuple, Any
 
 # 确保能导入同目录下的pdf_to_gpt_extractor
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -63,13 +63,22 @@ class SIExtractor(PDFReactionExtractor):
     ]
 
     # GP 标题正则 — 用于定位 General Procedure 段落
+    EXPLICIT_GP_TITLE_PATTERN = (
+        r'(?im)^\s*(?:\d+[\).]\s*)?'
+        r'(?:general\s+procedure|representative\s+procedure|typical\s+procedure|'
+        r'standard\s+procedure|standard\s+conditions|experimental\s+procedure|procedure)'
+        r'\s+[A-Z0-9]+\b\s*(?::|\uff1a)'
+    )
+
     GP_TITLE_PATTERNS = [
+        EXPLICIT_GP_TITLE_PATTERN,
         r'(?i)(general\s+procedure)(?:\s+for\s+synthesis\s+of\s+([\w\d\s,\-–and]+))?\s*([A-Z])?\b',
-        r'(?i)(representative\s+procedure)\s*[A-Z]?',
-        r'(?i)(typical\s+procedure)\s*[A-Z]?',
-        r'(?i)(standard\s+procedure)\s*[A-Z]?',
-        r'(?i)(standard\s+conditions)\s*[A-Z]?',
-        r'(?i)(experimental\s+procedure)\s+for',
+        r'(?im)^\s*(?:\d+[\).]\s*)?(representative\s+procedure)(?:\s+for\b[^\n]{0,120}|\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
+        r'(?im)^\s*(?:\d+[\).]\s*)?(typical\s+procedure)(?:\s+for\b[^\n]{0,120}|\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
+        r'(?im)^\s*(?:\d+[\).]\s*)?(standard\s+procedure)(?:\s+for\b[^\n]{0,120}|\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
+        r'(?im)^\s*(?:\d+[\).]\s*)?(standard\s+conditions)(?:\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
+        r'(?im)^\s*(?:\d+[\).]\s*)?(experimental\s+procedure)\s+for\b[^\n]{0,120}',
+        r'(?im)^\s*(?:\d+[\).]\s*)?procedure\s+[A-Z0-9]+\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)',
     ]
 
     # GP 定义 vs 引用的区分关键词
@@ -81,7 +90,8 @@ class SIExtractor(PDFReactionExtractor):
     ]
     GP_REFERENCE_KEYWORDS = [
         'according to', 'prepared according', 'using ',
-        'following the', 'as described', 'following general',
+        'following the', 'following procedure', 'following procedures',
+        'as described', 'following general',
     ]
 
     # =====================================================================
@@ -244,7 +254,7 @@ GENERAL PROCEDURE CONTEXT — apply these conditions when the entry specifies no
 RULES:
 1. Entry-specified reagents/solvents/conditions ALWAYS override GP conditions.
 2. Do NOT mix reaction types (e.g., NaBH4 = reduction, not photocatalysis).
-3. Check KNOWN SYMBOL-TO-NAME MAPPINGS to infer substrate chemical class.
+3. If only a short label/code is present, keep it in symbol and do not invent a full name.
 4. Do NOT set substrates = products.
 """
 
@@ -296,6 +306,55 @@ JSON format:
 Process this GP text:
 {gp_text}
 Return ONLY valid JSON."""
+
+    GP_TRUNCATION_PROMPT = """You are cleaning a chemistry Supporting Information general procedure.
+
+Task:
+- Identify where the actual general procedure definition ends.
+- Do NOT rewrite or summarize chemistry text.
+- Return a short exact end_anchor copied verbatim from the provided candidate text.
+- The end_anchor should be the last sentence or phrase that still belongs to the general procedure.
+- Exclude characterization sections, NMR/HRMS/HPLC data, optimization tables, screening tables, product entries, and examples that merely say "following/according to the general procedure".
+
+Examples:
+- If the procedure is followed by "Optimization of reaction conditions" or a table headed "Entry", the end_anchor should be the last purification/afforded sentence before that optimization section.
+- If the procedure is followed by "Characterization and NMR spectra of products" and product entries such as "was synthesized by following Procedure A", the end_anchor should be the last sentence of the procedure before the characterization heading.
+
+Return ONLY compact valid JSON:
+{{
+  "end_anchor": "exact copied text near the true end",
+  "include_anchor": true,
+  "trim_reason": "short reason",
+  "confidence": "high|medium|low"
+}}
+
+If the whole candidate is the general procedure, return an end_anchor near the end and confidence "medium".
+
+GP key: {gp_key}
+GP title: {gp_title}
+
+Candidate text:
+{candidate_text}
+"""
+
+    GP_GENERIC_RESOLUTION_PROMPT = """Resolve which general procedure is referenced by a reaction chunk.
+
+The chunk uses a generic phrase such as "according to the general procedure" or "following the general procedure" and does not name a procedure label.
+Select only the GP keys that best match the reaction type, substrates, catalysts, conditions, or product series.
+
+Return ONLY compact valid JSON:
+{{
+  "selected_gp_keys": ["GP key"],
+  "confidence": "high|medium|low",
+  "reason": "short reason"
+}}
+
+Reaction chunk:
+{chunk_text}
+
+Available GP candidates:
+{gp_candidates}
+"""
 
     def __init__(self, api_key: Optional[str] = None,
                  pages_per_chunk: int = 5,
@@ -1480,6 +1539,10 @@ Return ONLY valid JSON."""
                 continue
 
             # 模式1: 字母标识 (GeneralProcedureA → "GP A", "General Procedure A")
+            if self._text_contains_gp_alias(chunk_text, gp_label):
+                matched[gp_label] = summary
+                continue
+
             letter_match = re.search(r'GeneralProcedure([A-Z])$', gp_label)
             if letter_match:
                 letter = letter_match.group(1)
@@ -1509,6 +1572,137 @@ Return ONLY valid JSON."""
                     break
 
         return matched  # 可能为空 {}
+
+    def _has_gp_reference_cue(self, chunk_text: str) -> bool:
+        return bool(
+            re.search(
+                r'(?i)\b(?:according\s+to|following)\s+(?:the\s+)?(?:general\s+)?procedures?\b',
+                chunk_text,
+            )
+            or re.search(r'\bGP\s*[A-Z0-9]+\b', chunk_text)
+            or re.search(r'\bGeneralProcedure[A-Z0-9]+\b', chunk_text)
+        )
+
+    def _has_generic_gp_reference(self, chunk_text: str) -> bool:
+        return bool(re.search(
+            r'(?i)\b(?:according\s+to|following)\s+(?:the\s+)?general procedure\b(?!\s+[A-Z0-9]\b)'
+            r'|\bfollowing\s+(?:the\s+)?procedures?\b(?!\s+[A-Z0-9]\b)',
+            chunk_text,
+        ))
+
+    def _resolve_generic_gp_for_chunk(self, chunk_text: str, gp_texts: Dict[str, str]) -> Dict[str, str]:
+        if not getattr(self, "client", None):
+            self.last_gp_selection_debug = {
+                "mode": "llm_unavailable_generic",
+                "selected_gp_keys": [],
+            }
+            return {}
+
+        candidates = [
+            {
+                "key": key,
+                "title": str(text).splitlines()[0][:160] if isinstance(text, str) and text.strip() else key,
+                "preview": str(text)[:800],
+            }
+            for key, text in gp_texts.items()
+            if isinstance(text, str) and text.strip()
+        ]
+        if not candidates:
+            return {}
+
+        try:
+            response = self.client.chat.completions.create(
+                model=self.extract_model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You resolve references to chemistry general procedures. Return valid JSON only.",
+                    },
+                    {
+                        "role": "user",
+                        "content": self.GP_GENERIC_RESOLUTION_PROMPT.format(
+                            chunk_text=chunk_text[:5000],
+                            gp_candidates=json.dumps(candidates, ensure_ascii=False, indent=2),
+                        ),
+                    },
+                ],
+                temperature=0.0,
+            )
+            parsed = self._parse_compact_json_response(response.choices[0].message.content or "")
+            if not parsed:
+                return {}
+            selected = parsed.get("selected_gp_keys", [])
+            if not isinstance(selected, list):
+                return {}
+            selected_gp = {
+                key: gp_texts[key]
+                for key in selected
+                if key in gp_texts and isinstance(gp_texts.get(key), str)
+            }
+            self.last_gp_selection_debug = {
+                "mode": "llm_resolved_generic",
+                "selected_gp_keys": list(selected_gp.keys()),
+                "confidence": parsed.get("confidence"),
+                "reason": parsed.get("reason"),
+            }
+            return selected_gp
+        except Exception as exc:
+            print(f"  [WARN] GP generic resolution failed: {exc}")
+            self.last_gp_selection_debug = {
+                "mode": "llm_failed_generic",
+                "error": str(exc),
+            }
+            return {}
+
+    def select_gp_for_chunk(self, chunk_text: str, gp_texts: Optional[Dict[str, str]]) -> Dict[str, str]:
+        """Select only GP texts relevant to a Stage2 chunk."""
+        if not gp_texts:
+            self.last_gp_selection_debug = {"mode": "none", "selected_gp_keys": []}
+            return {}
+
+        valid_gp_texts = {
+            key: text for key, text in gp_texts.items()
+            if isinstance(text, str) and text.strip()
+        }
+        if not valid_gp_texts:
+            self.last_gp_selection_debug = {"mode": "none", "selected_gp_keys": []}
+            return {}
+
+        if len(valid_gp_texts) == 1:
+            if self._has_gp_reference_cue(chunk_text):
+                self.last_gp_selection_debug = {
+                    "mode": "single_gp",
+                    "selected_gp_keys": list(valid_gp_texts.keys()),
+                }
+                return valid_gp_texts
+            self.last_gp_selection_debug = {"mode": "no_reference", "selected_gp_keys": []}
+            return {}
+
+        matched = {
+            key: text
+            for key, text in valid_gp_texts.items()
+            if self._text_contains_gp_alias(chunk_text, key)
+        }
+        if matched:
+            self.last_gp_selection_debug = {
+                "mode": "explicit_match",
+                "selected_gp_keys": list(matched.keys()),
+            }
+            return matched
+
+        if self._has_generic_gp_reference(chunk_text):
+            selected = self._resolve_generic_gp_for_chunk(chunk_text, valid_gp_texts)
+            if selected:
+                return selected
+            if not getattr(self, "last_gp_selection_debug", {}).get("mode", "").startswith("llm_"):
+                self.last_gp_selection_debug = {
+                    "mode": "generic_unresolved",
+                    "selected_gp_keys": [],
+                }
+            return {}
+
+        self.last_gp_selection_debug = {"mode": "no_reference", "selected_gp_keys": []}
+        return {}
 
     # 以下方法已弃用，现在使用GPT分块提取Registry
     # def _find_registry_pages(self, pages: List[Dict]) -> List[Dict]:
@@ -1607,6 +1801,9 @@ Return ONLY valid JSON."""
             无标识时 → 'GeneralProcedureA', 'GeneralProcedureB', ...
         """
         # 尝试提取 scope (数字范围)
+        if self._is_explicit_gp_title(title):
+            return self._normalize_gp_title_key(title)
+
         scope_match = re.search(
             r'(\d+\w*)\s*[-–]\s*(\d+\w*)(?:\s+and\s+(\d+\w*))?',
             title
@@ -1619,7 +1816,11 @@ Return ONLY valid JSON."""
             return f"GeneralProcedure_{scope}"
 
         # 尝试提取字母标识 (如 "Procedure A", "Procedure B")
-        letter_match = re.search(r'procedure\s+([A-Z])\b', title, re.IGNORECASE)
+        letter_match = re.search(
+            r'procedure\s+([A-Z0-9]+)\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)',
+            title,
+            re.IGNORECASE,
+        )
         if letter_match:
             return f"GeneralProcedure{letter_match.group(1).upper()}"
 
@@ -1630,6 +1831,74 @@ Return ONLY valid JSON."""
         idx = gp_counter['GeneralProcedure']
         suffix = chr(ord('A') + idx - 1) if idx <= 26 else str(idx)
         return f"GeneralProcedure{suffix}"
+
+    def _is_explicit_gp_title(self, title: str) -> bool:
+        """Return True for line-start GP headings with an explicit label and colon."""
+        return bool(re.match(self.EXPLICIT_GP_TITLE_PATTERN, title.strip()))
+
+    def _normalize_gp_title_key(self, title: str) -> str:
+        """Normalize explicit GP headings to human-readable keys."""
+        match = re.match(
+            r'(?i)^\s*(?:\d+[\).]\s*)?'
+            r'(general\s+procedure|representative\s+procedure|typical\s+procedure|'
+            r'standard\s+procedure|standard\s+conditions|experimental\s+procedure|procedure)'
+            r'\s+([A-Z0-9]+)\b\s*(?::|\uff1a)',
+            title.strip(),
+        )
+        if not match:
+            return title.strip().rstrip(':：').strip()
+
+        canonical_prefixes = {
+            'general procedure': 'General Procedure',
+            'representative procedure': 'Representative Procedure',
+            'typical procedure': 'Typical Procedure',
+            'standard procedure': 'Standard Procedure',
+            'standard conditions': 'Standard Conditions',
+            'experimental procedure': 'Experimental Procedure',
+            'procedure': 'Procedure',
+        }
+        prefix = canonical_prefixes[re.sub(r'\s+', ' ', match.group(1).lower())]
+        label = match.group(2).upper()
+        return f"{prefix} {label}"
+
+    def _gp_key_aliases(self, gp_key: str) -> List[str]:
+        """Build old and new labels for matching GP references in text."""
+        aliases = {gp_key}
+        label_match = re.search(
+            r'(?i)\b(?:general\s+procedure|representative\s+procedure|typical\s+procedure|'
+            r'standard\s+procedure|standard\s+conditions|experimental\s+procedure|procedure)\s+([A-Z0-9]+)\b',
+            gp_key,
+        )
+        if not label_match:
+            label_match = re.search(r'GeneralProcedure([A-Z0-9]+)$', gp_key, re.IGNORECASE)
+
+        if label_match:
+            label = label_match.group(1).upper()
+            aliases.update({
+                f"GP {label}",
+                f"Procedure {label}",
+                f"General Procedure {label}",
+                f"GeneralProcedure{label}",
+            })
+
+        return sorted(aliases, key=len, reverse=True)
+
+    def _text_contains_gp_alias(self, text: str, gp_key: str) -> bool:
+        for alias in self._gp_key_aliases(gp_key):
+            pattern = r'(?i)\b' + r'\s+'.join(re.escape(part) for part in alias.split()) + r'\b'
+            if re.search(pattern, text):
+                return True
+        return False
+
+    def _has_reference_cue_before_title(self, full_text: str, pos: int) -> bool:
+        """Return True when a GP title is immediately preceded by a reference cue."""
+        pre_context = full_text[max(0, pos - 160):pos]
+        pre_context = re.sub(r'---\s*Page\s+\d+\s*---', ' ', pre_context, flags=re.IGNORECASE)
+        pre_context = re.sub(r'\s+', ' ', pre_context).strip()
+        return bool(re.search(
+            r'(?i)(?:according(?:\s+to|\s+the)?|following(?:\s+the|\s+procedures?)?)\s*$',
+            pre_context,
+        ))
 
     def _is_gp_definition(self, text_after: str) -> bool:
         """
@@ -1651,71 +1920,216 @@ Return ONLY valid JSON."""
 
         return False
 
-    def extract_general_procedure_texts(self, pages: List[Dict]) -> Dict[str, str]:
-        """
-        从全文提取所有 General Procedure 段落的原始文本
-
-        Returns:
-            {
-                "GeneralProcedure_1-38": "A 25 mL Schlenk flask...",
-                "GeneralProcedureA": "To a flame-dried vial...",
-            }
-        """
-        # 拼接全文
+    def _build_gp_full_text(self, pages: List[Dict]) -> str:
         full_text = "\n".join(
             f"--- Page {p['page_num']} ---\n{p['text']}"
             for p in pages
         )
-
-        # 修复跨行化学名
-        full_text = re.sub(r'-\n\s*', '', full_text)
+        full_text = re.sub(r'(?<=[A-Za-z])-\n\s*(?=[a-z])', '', full_text)
         full_text = re.sub(r'\n\s+(?=[a-z(])', ' ', full_text)
+        return full_text
 
-        # 找到所有 GP 标题匹配
+    def _find_filtered_gp_titles(self, full_text: str) -> List[Tuple[int, str]]:
         all_matches = []
         for pattern in self.GP_TITLE_PATTERNS:
             for m in re.finditer(pattern, full_text):
                 all_matches.append((m.start(), m.group(0).strip()))
 
-        # 按位置排序
         all_matches.sort(key=lambda x: x[0])
-
-        # 过滤 GP 引用（产物条目中的 "according to..."）
-        filtered = []
+        deduped_matches = []
         for pos, title in all_matches:
+            if deduped_matches and deduped_matches[-1][0] == pos:
+                if len(title) > len(deduped_matches[-1][1]):
+                    deduped_matches[-1] = (pos, title)
+            else:
+                deduped_matches.append((pos, title))
+        all_matches = deduped_matches
+
+        filtered = []
+        for match_index, (pos, title) in enumerate(all_matches):
+            if self._has_reference_cue_before_title(full_text, pos):
+                continue
+            if (
+                not self._is_explicit_gp_title(title)
+                and match_index + 1 < len(all_matches)
+                and all_matches[match_index + 1][0] - pos <= 200
+                and self._is_explicit_gp_title(all_matches[match_index + 1][1])
+            ):
+                continue
             context_after = full_text[pos:pos + 300]
-            if self._is_gp_definition(context_after):
+            if self._is_explicit_gp_title(title) or self._is_gp_definition(context_after):
                 filtered.append((pos, title))
+        return filtered
 
+    def _parse_compact_json_response(self, raw: str) -> Optional[Dict[str, Any]]:
+        raw = (raw or "").strip()
+        if raw.startswith("```json"):
+            raw = raw[7:]
+        if raw.startswith("```"):
+            raw = raw[3:]
+        if raw.endswith("```"):
+            raw = raw[:-3]
+        raw = raw.strip()
+        try:
+            data = json.loads(raw)
+            return data if isinstance(data, dict) else None
+        except json.JSONDecodeError:
+            match = re.search(r'\{.*\}', raw, re.DOTALL)
+            if not match:
+                return None
+            try:
+                data = json.loads(match.group(0))
+                return data if isinstance(data, dict) else None
+            except json.JSONDecodeError:
+                return None
+
+    def _find_anchor_end(self, text: str, anchor: str) -> Optional[int]:
+        anchor = re.sub(r'\s+', ' ', (anchor or "").strip())
+        if len(anchor) < 20:
+            return None
+        exact = text.find(anchor)
+        if exact >= 0:
+            return exact + len(anchor)
+        parts = [part for part in re.split(r'\s+', anchor) if part]
+        if not parts:
+            return None
+        pattern = r'\s+'.join(re.escape(part) for part in parts)
+        match = re.search(pattern, text)
+        return match.end() if match else None
+
+    def _llm_trim_gp_record(self, record: Dict[str, Any], candidate_char_limit: int = 8000) -> Dict[str, Any]:
+        if not getattr(self, "client", None):
+            record["final_text"] = record["raw_text"][:record["max_gp_chars"]]
+            record["stored_chars"] = len(record["final_text"])
+            record["end_reason"] = "llm_failed_fallback"
+            record["llm_trim"] = {"error": "missing_client"}
+            return record
+
+        candidate_text = record["raw_text"][:candidate_char_limit]
+        try:
+            response = self.client.chat.completions.create(
+                model=self.extract_model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are a chemistry SI text boundary detector. Return valid JSON only.",
+                    },
+                    {
+                        "role": "user",
+                        "content": self.GP_TRUNCATION_PROMPT.format(
+                            gp_key=record["key"],
+                            gp_title=record["title"],
+                            candidate_text=candidate_text,
+                        ),
+                    },
+                ],
+                temperature=0.0,
+            )
+            raw = response.choices[0].message.content or ""
+            parsed = self._parse_compact_json_response(raw)
+            if not parsed:
+                raise ValueError("empty_or_invalid_json")
+
+            anchor = str(parsed.get("end_anchor") or "").strip()
+            anchor_end = self._find_anchor_end(candidate_text, anchor)
+            if anchor_end is None:
+                raise ValueError("anchor_not_found")
+
+            include_anchor = parsed.get("include_anchor", True)
+            final_end = anchor_end if include_anchor else max(0, anchor_end - len(anchor))
+            final_text = candidate_text[:final_end].strip()
+            if len(final_text) < 80:
+                raise ValueError("trim_too_short")
+
+            record["final_text"] = final_text
+            record["stored_chars"] = len(final_text)
+            record["end_reason"] = "llm_trimmed"
+            record["llm_trim"] = {
+                "end_anchor": anchor,
+                "include_anchor": bool(include_anchor),
+                "trim_reason": parsed.get("trim_reason"),
+                "confidence": parsed.get("confidence"),
+            }
+            return record
+        except Exception as exc:
+            record["final_text"] = record["raw_text"][:record["max_gp_chars"]]
+            record["stored_chars"] = len(record["final_text"])
+            record["end_reason"] = "llm_failed_fallback"
+            record["llm_trim"] = {"error": str(exc)}
+            return record
+
+    def extract_general_procedure_records(self, pages: List[Dict]) -> List[Dict[str, Any]]:
+        """Extract GP records with boundary metadata. Public outputs still use gp_texts."""
+        full_text = self._build_gp_full_text(pages)
+        filtered = self._find_filtered_gp_titles(full_text)
         if not filtered:
-            return {}
+            self.last_gp_records = []
+            return []
 
-        # 提取每个 GP 的文本（到下一个标题或上限）
-        gp_texts = {}
         gp_counter = {}
-        max_gp_chars = 4000
+        max_gp_chars = 2000
+        rule_complete_trust_chars = 2000
+        records: List[Dict[str, Any]] = []
 
         for i, (pos, title) in enumerate(filtered):
-            # 确定结束位置
-            if i + 1 < len(filtered):
-                end_pos = filtered[i + 1][0]
-            else:
-                end_pos = len(full_text)
-
-            text = full_text[pos:end_pos].strip()
-            # if len(text) > max_gp_chars:
-            #     text = text[:max_gp_chars]
-
+            has_next_gp = i + 1 < len(filtered)
+            end_pos = filtered[i + 1][0] if has_next_gp else len(full_text)
+            next_title = filtered[i + 1][1] if has_next_gp else None
+            raw_text = full_text[pos:end_pos].strip()
+            raw_chars = len(raw_text)
             key = self._make_gp_key(title, gp_counter)
 
-            # 如果 key 已存在（罕见），合并文本
+            if has_next_gp and raw_chars <= rule_complete_trust_chars:
+                end_reason = "next_gp_title_complete"
+                needs_llm = False
+            elif has_next_gp:
+                end_reason = "max_chars_before_next"
+                needs_llm = True
+            elif raw_chars <= max_gp_chars:
+                end_reason = "last_gp_eof_short"
+                needs_llm = True
+            else:
+                end_reason = "last_gp_max_chars"
+                needs_llm = True
+
+            record: Dict[str, Any] = {
+                "key": key,
+                "title": title,
+                "raw_text": raw_text,
+                "final_text": raw_text[:max_gp_chars],
+                "start_pos": pos,
+                "raw_end_pos": end_pos,
+                "has_next_gp": has_next_gp,
+                "next_gp_title": next_title,
+                "raw_chars_to_next_or_eof": raw_chars,
+                "stored_chars": min(raw_chars, max_gp_chars),
+                "max_gp_chars": max_gp_chars,
+                "rule_complete_trust_chars": rule_complete_trust_chars,
+                "end_reason": end_reason,
+                "pre_llm_end_reason": end_reason,
+                "needs_llm_truncation": needs_llm,
+            }
+            if needs_llm:
+                record = self._llm_trim_gp_record(record)
+            records.append(record)
+
+        self.last_gp_records = records
+        return records
+
+    def extract_general_procedure_texts(self, pages: List[Dict]) -> Dict[str, str]:
+        """Extract General Procedure text and return the existing public dict schema."""
+        records = self.extract_general_procedure_records(pages)
+        if not records:
+            return {}
+
+        gp_texts: Dict[str, str] = {}
+        for record in records:
+            key = record["key"]
+            text = record.get("final_text") or record.get("raw_text", "")
             if key in gp_texts:
                 gp_texts[key] += "\n\n" + text
             else:
                 gp_texts[key] = text
-
-            if len(gp_texts[key]) > max_gp_chars:
-                gp_texts[key] = gp_texts[key][:max_gp_chars]
         return self._split_embedded_procedure_scopes(gp_texts)
 
     def _split_embedded_procedure_scopes(self, gp_texts: Dict[str, str]) -> Dict[str, str]:
@@ -1962,7 +2376,6 @@ Return ONLY valid JSON."""
         chunk_text: str,
         chunk_label: str,
         current_reactions: List[Dict],
-        registry_block: str = "",
         gp_block: str = "",
     ) -> List[Dict]:
         """Ask the LLM to extract only reactions omitted from the first Stage2 pass."""
@@ -1980,7 +2393,6 @@ Return ONLY valid JSON."""
                         "content": (
                             f"Processing chunk: {chunk_label}\n"
                             f"{self.STAGE2_AUDIT_PROMPT}\n"
-                            f"{registry_block}"
                             f"{gp_block}"
                             f"\ncurrent_extraction:\n{current_json}\n"
                             f"\nsource_text:\n{chunk_text}"
@@ -2025,26 +2437,12 @@ Return ONLY valid JSON."""
             gp_texts: 原始GP文本 dict（可选），格式: {"GP标签": "GP原文..."}
         """
         # 构建 registry 注入块
-        registry_block = ""
-        if registry:
-            mapping_lines = "\n".join(
-                f"  {sym} = {name}"
-                for sym, name in registry.items()
-            )
-            registry_block = f"""
-
-KNOWN SYMBOL-TO-NAME MAPPINGS (use these to replace symbols with full names):
-{mapping_lines}
-
-IMPORTANT: When you see a symbol like '1a' in a reaction table, replace it with 
-the full chemical name from the mapping above. Keep both the symbol and name if useful.
-"""
-
-        # 构建 GP 注入块 (使用原始GP文本，不过滤，全量注入)
+        # 构建 GP 注入块：只注入当前 chunk 明确引用或 LLM 解析到的 GP
         gp_block = ""
-        if gp_texts:
+        selected_gp_texts = self.select_gp_for_chunk(chunk_text, gp_texts)
+        if selected_gp_texts:
             gp_entries = []
-            for label, text in gp_texts.items():
+            for label, text in selected_gp_texts.items():
                 if isinstance(text, str):
                     # 截断过长的GP文本
                     text_truncated = text[:800] + "..." if len(text) > 800 else text
@@ -2071,7 +2469,9 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
                             "content": (
                                 f"Processing chunk: {chunk_label}\n"
                                 f"Extract ALL qualifying reactions from the text below. Do not omit any.\n"
-                                f"{registry_block}"
+                                "If a full chemical name is not explicitly present in this text, "
+                                "keep the short label/code in symbol and do not invent a full name. "
+                                "Registry-based name completion is handled after extraction.\n"
                                 f"{gp_block}"
                                 f"\nText content:\n{chunk_text}"
                             )
@@ -2090,7 +2490,6 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
                     chunk_text,
                     chunk_label,
                     reactions,
-                    registry_block=registry_block,
                     gp_block=gp_block,
                 )
                 if missing:
@@ -2209,7 +2608,7 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
             rid = str(reaction.get('id', ''))
             matched = False
             for gp_key in gp_texts:
-                if gp_key in rid:
+                if gp_key in rid or self._text_contains_gp_alias(rid, gp_key):
                     reaction['_gp_source'] = gp_key
                     filled_count += 1
                     matched = True
@@ -2450,11 +2849,9 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
         all_chunk_results = []
         for chunk, _screen in relevant_chunks:
             label = f"{pdf_name} Chunk{chunk['chunk_id']} Pages[{chunk['page_range']}]"
-            chunk_registry = self._filter_registry_for_chunk(chunk['text'], registry)
             reactions = self.stage2_extract(
                 chunk['text'],
                 label,
-                registry=chunk_registry,
                 gp_texts=gp_texts,
             )
             all_chunk_results.append(reactions)
@@ -2462,6 +2859,14 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
         merged = self.merge_results(all_chunk_results)
         if registry and merged:
             merged = self.align_names_in_reactions(merged, registry)
+            registry_stats = getattr(self, "last_registry_resolution_stats", {}) or {}
+            file_stats['registry_resolved_count'] = registry_stats.get("resolved", 0)
+            file_stats['registry_verified_count'] = registry_stats.get("verified", 0)
+            file_stats['registry_conflict_count'] = registry_stats.get("conflicts", 0)
+        else:
+            file_stats['registry_resolved_count'] = 0
+            file_stats['registry_verified_count'] = 0
+            file_stats['registry_conflict_count'] = 0
         scaffold_mapping = entity_context.get("scaffold_substituent_mapping") or {}
         if scaffold_mapping and merged:
             merged = self.enrich_reactions_with_scaffold_mapping(merged, scaffold_mapping)
@@ -2532,21 +2937,145 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
             enriched.append(new_reaction)
         return enriched
 
+    def _registry_lookup(self, value: str, registry: Dict[str, str], normalized_registry: Dict[str, str]) -> Optional[Tuple[str, str]]:
+        symbol = str(value or "").strip()
+        if not symbol:
+            return None
+        if symbol in registry:
+            return symbol, registry[symbol]
+        normalized = symbol.casefold()
+        if normalized in normalized_registry:
+            matched_symbol = normalized_registry[normalized]
+            return matched_symbol, registry[matched_symbol]
+        return None
+
+    def _generic_label_symbol(self, name: str, registry: Dict[str, str], normalized_registry: Dict[str, str]) -> str:
+        text = str(name or "").strip()
+        if not text:
+            return ""
+        generic_prefixes = (
+            "substrate",
+            "product",
+            "compound",
+            "ligand",
+            "catalyst",
+            "reagent",
+            "additive",
+            "alkene",
+            "alkyne",
+            "aldehyde",
+            "ketone",
+            "imine",
+            "ester",
+            "amide",
+            "acid",
+        )
+        match = re.fullmatch(
+            rf"(?i)(?:{'|'.join(generic_prefixes)})\s+([A-Za-z]{{0,4}}[-]?\d+[A-Za-z]{{0,4}}|\d+[A-Za-z]{{1,4}})",
+            text,
+        )
+        if match and self._registry_lookup(match.group(1), registry, normalized_registry):
+            return match.group(1)
+        return ""
+
+    def _normalize_registry_compare_name(self, value: str) -> str:
+        text = str(value or "").strip().casefold()
+        text = re.sub(r"[\u2010-\u2015\u2212]", "-", text)
+        text = re.sub(r"\s*-\s*", "-", text)
+        text = re.sub(r"\s+", " ", text)
+        return text
+
+    def _should_registry_overwrite_name(
+        self,
+        name: str,
+        symbol: str,
+        registry: Dict[str, str],
+        normalized_registry: Dict[str, str],
+    ) -> bool:
+        name = str(name or "").strip()
+        symbol = str(symbol or "").strip()
+        if not name:
+            return True
+        if symbol and name.casefold() == symbol.casefold():
+            return True
+        if self._registry_lookup(name, registry, normalized_registry):
+            return True
+        if symbol and self._generic_label_symbol(name, registry, normalized_registry):
+            return True
+        return False
+
+    def _resolve_registry_compound(
+        self,
+        item,
+        registry: Dict[str, str],
+        normalized_registry: Dict[str, str],
+    ) -> Tuple[object, str]:
+        if isinstance(item, str):
+            lookup = self._registry_lookup(item, registry, normalized_registry)
+            if not lookup:
+                return item, "none"
+            symbol, name = lookup
+            return {
+                "name": name,
+                "symbol": symbol,
+                "resolution_source": "name_registry",
+                "resolution_method": "same_paper_symbol",
+            }, "resolved"
+
+        if not isinstance(item, dict):
+            return item, "none"
+
+        new_item = dict(item)
+        raw_name = str(new_item.get("name") or "").strip()
+        raw_symbol = str(new_item.get("symbol") or new_item.get("label") or "").strip()
+        lookup = self._registry_lookup(raw_symbol, registry, normalized_registry) if raw_symbol else None
+        if not lookup:
+            generic_symbol = self._generic_label_symbol(raw_name, registry, normalized_registry)
+            lookup = self._registry_lookup(generic_symbol, registry, normalized_registry) if generic_symbol else None
+        if not lookup:
+            lookup = self._registry_lookup(raw_name, registry, normalized_registry)
+        if not lookup:
+            return new_item, "none"
+
+        symbol, name = lookup
+        if self._should_registry_overwrite_name(raw_name, symbol, registry, normalized_registry):
+            new_item["name"] = name
+            new_item["symbol"] = raw_symbol or symbol
+            new_item["resolution_source"] = "name_registry"
+            new_item["resolution_method"] = "same_paper_symbol"
+            return new_item, "resolved"
+
+        new_item["registry_name"] = name
+        if self._normalize_registry_compare_name(raw_name) == self._normalize_registry_compare_name(name):
+            new_item["registry_match_status"] = "verified"
+            return new_item, "verified"
+
+        new_item["registry_match_status"] = "conflict"
+        new_item["registry_conflict_reason"] = "extracted_name_differs_from_registry_symbol_name"
+        return new_item, "conflict"
+
     def align_names_in_reactions(self, reactions: List[Dict],
                                  registry: Dict[str, str]) -> List[Dict]:
-        """Replace registry symbols in extracted reaction entities."""
+        """Complete label-only reaction compounds from the name registry."""
         if not registry:
+            self.last_registry_resolution_stats = {"resolved": 0, "verified": 0, "conflicts": 0}
             return reactions
 
+        normalized_registry = {
+            str(symbol).strip().casefold(): str(symbol).strip()
+            for symbol in registry
+            if str(symbol).strip()
+        }
         aligned = []
-        replace_count = 0
+        stats = {"resolved": 0, "verified": 0, "conflicts": 0}
+        fields = ['substrates', 'products', 'catalysts', 'additives', 'reagents']
         for reaction in reactions:
             if not isinstance(reaction, dict):
                 aligned.append(reaction)
                 continue
 
             new_reaction = dict(reaction)
-            for field in ['substrates', 'products', 'catalysts', 'additives', 'reagents']:
+            for field in fields:
                 items = new_reaction.get(field)
                 if not items:
                     continue
@@ -2554,29 +3083,39 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
                 if isinstance(items, list):
                     new_items = []
                     for item in items:
-                        if isinstance(item, str) and item in registry:
-                            new_items.append(registry[item])
-                            replace_count += 1
-                        elif isinstance(item, dict):
-                            new_item = dict(item)
-                            name_val = new_item.get('name', '')
-                            if name_val in registry:
-                                new_item['name'] = registry[name_val]
-                                new_item['symbol'] = name_val
-                                replace_count += 1
-                            new_items.append(new_item)
-                        else:
-                            new_items.append(item)
+                        resolved_item, status = self._resolve_registry_compound(
+                            item,
+                            registry,
+                            normalized_registry,
+                        )
+                        if status == "resolved":
+                            stats["resolved"] += 1
+                        elif status == "verified":
+                            stats["verified"] += 1
+                        elif status == "conflict":
+                            stats["conflicts"] += 1
+                        new_items.append(resolved_item)
                     new_reaction[field] = new_items
-                elif isinstance(items, str) and items in registry:
-                    new_reaction[field] = registry[items]
-                    new_reaction[f'{field}_symbol'] = items
-                    replace_count += 1
+                elif isinstance(items, str):
+                    resolved_item, status = self._resolve_registry_compound(
+                        items,
+                        registry,
+                        normalized_registry,
+                    )
+                    if status == "resolved":
+                        new_reaction[field] = resolved_item
+                        stats["resolved"] += 1
 
             aligned.append(new_reaction)
 
-        if replace_count > 0:
-            print(f"  [Registry] symbol replacements: {replace_count}")
+        self.last_registry_resolution_stats = stats
+        if any(stats.values()):
+            print(
+                "  [Registry] "
+                f"resolved={stats['resolved']}, "
+                f"verified={stats['verified']}, "
+                f"conflicts={stats['conflicts']}"
+            )
         return aligned
 
     # =====================================================================
@@ -2724,14 +3263,13 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
                 label = f"{pdf_name} Chunk{chunk['chunk_id']} Pages[{chunk['page_range']}]"
 
                 # Per-chunk 精准过滤 (Registry)，GP全量注入
-                chunk_registry = self._filter_registry_for_chunk(chunk['text'], registry)
 
                 print(f"  块{chunk['chunk_id']}: "
-                      f"registry {len(registry)}→{len(chunk_registry)}, "
+                      f"registry resolver after extraction, "
                       f"GP 全量注入 {len(gp_texts)} 个")
 
                 # 传入原始 gp_texts（全部GP），不过滤
-                reactions = self.stage2_extract(chunk['text'], label, registry=chunk_registry, gp_texts=gp_texts)
+                reactions = self.stage2_extract(chunk['text'], label, gp_texts=gp_texts)
                 all_chunk_results.append(reactions)
                 # 统计每个chunk的反应类型
                 ids = [r.get('id', '') for r in reactions if isinstance(r, dict)]
@@ -2758,6 +3296,14 @@ the full chemical name from the mapping above. Keep both the symbol and name if 
             if registry and merged:
                 print("[Stage 5] 符号对齐（用registry补全剩余符号）...")
                 merged = self.align_names_in_reactions(merged, registry)
+                registry_stats = getattr(self, "last_registry_resolution_stats", {}) or {}
+                file_stats['registry_resolved_count'] = registry_stats.get("resolved", 0)
+                file_stats['registry_verified_count'] = registry_stats.get("verified", 0)
+                file_stats['registry_conflict_count'] = registry_stats.get("conflicts", 0)
+            else:
+                file_stats['registry_resolved_count'] = 0
+                file_stats['registry_verified_count'] = 0
+                file_stats['registry_conflict_count'] = 0
 
             # --- Stage 5b: GP 条件来源标记 ---
             if gp_texts and merged:

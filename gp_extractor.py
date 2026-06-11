@@ -14,7 +14,7 @@ import os
 import re
 import sys
 from pathlib import Path
-from typing import Optional, Dict, List
+from typing import Optional, Dict, List, Tuple, Any
 
 # 确保能导入同目录下的 pdf_to_gpt_extractor
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -29,13 +29,22 @@ class GPExtractor(PDFReactionExtractor):
     # =====================================================================
 
     # GP 标题正则 — 用于定位 General Procedure 段落
+    EXPLICIT_GP_TITLE_PATTERN = (
+        r'(?im)^\s*(?:\d+[\).]\s*)?'
+        r'(?:general\s+procedure|representative\s+procedure|typical\s+procedure|'
+        r'standard\s+procedure|standard\s+conditions|experimental\s+procedure|procedure)'
+        r'\s+[A-Z0-9]+\b\s*(?::|\uff1a)'
+    )
+
     GP_TITLE_PATTERNS = [
+        EXPLICIT_GP_TITLE_PATTERN,
         r'(?i)(general\s+procedure)(?:\s+for\s+synthesis\s+of\s+([\w\d\s,\-–and]+))?\s*([A-Z])?\b',
-        r'(?i)(representative\s+procedure)\s*[A-Z]?',
-        r'(?i)(typical\s+procedure)\s*[A-Z]?',
-        r'(?i)(standard\s+procedure)\s*[A-Z]?',
-        r'(?i)(standard\s+conditions)\s*[A-Z]?',
-        r'(?i)(experimental\s+procedure)\s+for',
+        r'(?im)^\s*(?:\d+[\).]\s*)?(representative\s+procedure)(?:\s+for\b[^\n]{0,120}|\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
+        r'(?im)^\s*(?:\d+[\).]\s*)?(typical\s+procedure)(?:\s+for\b[^\n]{0,120}|\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
+        r'(?im)^\s*(?:\d+[\).]\s*)?(standard\s+procedure)(?:\s+for\b[^\n]{0,120}|\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
+        r'(?im)^\s*(?:\d+[\).]\s*)?(standard\s+conditions)(?:\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
+        r'(?im)^\s*(?:\d+[\).]\s*)?(experimental\s+procedure)\s+for\b[^\n]{0,120}',
+        r'(?im)^\s*(?:\d+[\).]\s*)?procedure\s+[A-Z0-9]+\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)',
     ]
 
     # GP 定义 vs 引用的区分关键词
@@ -48,7 +57,8 @@ class GPExtractor(PDFReactionExtractor):
 
     GP_REFERENCE_KEYWORDS = [
         'according to', 'prepared according', 'using ',
-        'following the', 'as described', 'following general',
+        'following the', 'following procedure', 'following procedures',
+        'as described', 'following general',
     ]
 
     # General Procedure 注入到 Stage2 的 prompt 模板
@@ -129,6 +139,9 @@ Return ONLY valid JSON."""
             无标识时 → 'GeneralProcedureA', 'GeneralProcedureB', ...
         """
         # 尝试提取 scope (数字范围)
+        if self._is_explicit_gp_title(title):
+            return self._normalize_gp_title_key(title)
+
         scope_match = re.search(
             r'(\d+\w*)\s*[-–]\s*(\d+\w*)(?:\s+and\s+(\d+\w*))?',
             title
@@ -141,7 +154,11 @@ Return ONLY valid JSON."""
             return f"GeneralProcedure_{scope}"
 
         # 尝试提取字母标识 (如 "Procedure A", "Procedure B")
-        letter_match = re.search(r'procedure\s+([A-Z])\b', title, re.IGNORECASE)
+        letter_match = re.search(
+            r'procedure\s+([A-Z0-9]+)\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)',
+            title,
+            re.IGNORECASE,
+        )
         if letter_match:
             return f"GeneralProcedure{letter_match.group(1).upper()}"
 
@@ -152,6 +169,74 @@ Return ONLY valid JSON."""
         idx = gp_counter['GeneralProcedure']
         suffix = chr(ord('A') + idx - 1) if idx <= 26 else str(idx)
         return f"GeneralProcedure{suffix}"
+
+    def _is_explicit_gp_title(self, title: str) -> bool:
+        """Return True for line-start GP headings with an explicit label and colon."""
+        return bool(re.match(self.EXPLICIT_GP_TITLE_PATTERN, title.strip()))
+
+    def _normalize_gp_title_key(self, title: str) -> str:
+        """Normalize explicit GP headings to human-readable keys."""
+        match = re.match(
+            r'(?i)^\s*(?:\d+[\).]\s*)?'
+            r'(general\s+procedure|representative\s+procedure|typical\s+procedure|'
+            r'standard\s+procedure|standard\s+conditions|experimental\s+procedure|procedure)'
+            r'\s+([A-Z0-9]+)\b\s*(?::|\uff1a)',
+            title.strip(),
+        )
+        if not match:
+            return title.strip().rstrip(':：').strip()
+
+        canonical_prefixes = {
+            'general procedure': 'General Procedure',
+            'representative procedure': 'Representative Procedure',
+            'typical procedure': 'Typical Procedure',
+            'standard procedure': 'Standard Procedure',
+            'standard conditions': 'Standard Conditions',
+            'experimental procedure': 'Experimental Procedure',
+            'procedure': 'Procedure',
+        }
+        prefix = canonical_prefixes[re.sub(r'\s+', ' ', match.group(1).lower())]
+        label = match.group(2).upper()
+        return f"{prefix} {label}"
+
+    def _gp_key_aliases(self, gp_key: str) -> List[str]:
+        """Build old and new labels for matching GP references in text."""
+        aliases = {gp_key}
+        label_match = re.search(
+            r'(?i)\b(?:general\s+procedure|representative\s+procedure|typical\s+procedure|'
+            r'standard\s+procedure|standard\s+conditions|experimental\s+procedure|procedure)\s+([A-Z0-9]+)\b',
+            gp_key,
+        )
+        if not label_match:
+            label_match = re.search(r'GeneralProcedure([A-Z0-9]+)$', gp_key, re.IGNORECASE)
+
+        if label_match:
+            label = label_match.group(1).upper()
+            aliases.update({
+                f"GP {label}",
+                f"Procedure {label}",
+                f"General Procedure {label}",
+                f"GeneralProcedure{label}",
+            })
+
+        return sorted(aliases, key=len, reverse=True)
+
+    def _text_contains_gp_alias(self, text: str, gp_key: str) -> bool:
+        for alias in self._gp_key_aliases(gp_key):
+            pattern = r'(?i)\b' + r'\s+'.join(re.escape(part) for part in alias.split()) + r'\b'
+            if re.search(pattern, text):
+                return True
+        return False
+
+    def _has_reference_cue_before_title(self, full_text: str, pos: int) -> bool:
+        """Return True when a GP title is immediately preceded by a reference cue."""
+        pre_context = full_text[max(0, pos - 160):pos]
+        pre_context = re.sub(r'---\s*Page\s+\d+\s*---', ' ', pre_context, flags=re.IGNORECASE)
+        pre_context = re.sub(r'\s+', ' ', pre_context).strip()
+        return bool(re.search(
+            r'(?i)(?:according(?:\s+to|\s+the)?|following(?:\s+the|\s+procedures?)?)\s*$',
+            pre_context,
+        ))
 
     def _is_gp_definition(self, text_after: str) -> bool:
         """
@@ -173,74 +258,113 @@ Return ONLY valid JSON."""
 
         return False
 
-    def extract_general_procedure_texts(self, pages: List[Dict]) -> Dict[str, str]:
-        """
-        从全文提取所有 General Procedure 段落的原始文本
-
-        Args:
-            pages: [{"page_num": 1, "text": "..."}, ...]
-
-        Returns:
-            {
-                "GeneralProcedure_1-38": "A 25 mL Schlenk flask...",
-                "GeneralProcedureA": "To a flame-dried vial...",
-            }
-        """
-        # 拼接全文
+    def _build_gp_full_text(self, pages: List[Dict]) -> str:
         full_text = "\n".join(
             f"--- Page {p['page_num']} ---\n{p['text']}"
             for p in pages
         )
-
-        # 修复跨行化学名
-        full_text = re.sub(r'-\n\s*', '', full_text)
+        full_text = re.sub(r'(?<=[A-Za-z])-\n\s*(?=[a-z])', '', full_text)
         full_text = re.sub(r'\n\s+(?=[a-z(])', ' ', full_text)
+        return full_text
 
-        # 找到所有 GP 标题匹配
+    def _find_filtered_gp_titles(self, full_text: str) -> List[Tuple[int, str]]:
         all_matches = []
         for pattern in self.GP_TITLE_PATTERNS:
             for m in re.finditer(pattern, full_text):
                 all_matches.append((m.start(), m.group(0).strip()))
 
-        # 按位置排序
         all_matches.sort(key=lambda x: x[0])
-
-        # 过滤 GP 引用（产物条目中的 "according to..."）
-        filtered = []
+        deduped_matches = []
         for pos, title in all_matches:
-            context_after = full_text[pos:pos + 300]
-            if self._is_gp_definition(context_after):
-                filtered.append((pos, title))
-
-        if not filtered:
-            return {}
-
-        # 提取每个 GP 的文本（到下一个标题或上限）
-        gp_texts = {}
-        gp_counter = {}
-        max_gp_chars = 1200
-
-        for i, (pos, title) in enumerate(filtered):
-            # 确定结束位置
-            if i + 1 < len(filtered):
-                end_pos = filtered[i + 1][0]
+            if deduped_matches and deduped_matches[-1][0] == pos:
+                if len(title) > len(deduped_matches[-1][1]):
+                    deduped_matches[-1] = (pos, title)
             else:
-                end_pos = len(full_text)
+                deduped_matches.append((pos, title))
+        all_matches = deduped_matches
 
-            text = full_text[pos:end_pos].strip()
+        filtered = []
+        for match_index, (pos, title) in enumerate(all_matches):
+            if self._has_reference_cue_before_title(full_text, pos):
+                continue
+            if (
+                not self._is_explicit_gp_title(title)
+                and match_index + 1 < len(all_matches)
+                and all_matches[match_index + 1][0] - pos <= 200
+                and self._is_explicit_gp_title(all_matches[match_index + 1][1])
+            ):
+                continue
+            context_after = full_text[pos:pos + 300]
+            if self._is_explicit_gp_title(title) or self._is_gp_definition(context_after):
+                filtered.append((pos, title))
+        return filtered
 
+    def extract_general_procedure_records(self, pages: List[Dict]) -> List[Dict[str, Any]]:
+        """Regex-only GP extraction with boundary metadata for debugging."""
+        full_text = self._build_gp_full_text(pages)
+        filtered = self._find_filtered_gp_titles(full_text)
+        if not filtered:
+            self.last_gp_records = []
+            return []
 
+        gp_counter = {}
+        max_gp_chars = 2000
+        records: List[Dict[str, Any]] = []
+        for i, (pos, title) in enumerate(filtered):
+            has_next_gp = i + 1 < len(filtered)
+            end_pos = filtered[i + 1][0] if has_next_gp else len(full_text)
+            next_title = filtered[i + 1][1] if has_next_gp else None
+            raw_text = full_text[pos:end_pos].strip()
+            raw_chars = len(raw_text)
             key = self._make_gp_key(title, gp_counter)
 
-            # 如果 key 已存在（罕见），合并文本
+            if has_next_gp and raw_chars <= max_gp_chars:
+                end_reason = "next_gp_title_complete"
+                needs_llm = False
+            elif has_next_gp:
+                end_reason = "max_chars_before_next"
+                needs_llm = True
+            elif raw_chars <= max_gp_chars:
+                end_reason = "last_gp_eof_short"
+                needs_llm = True
+            else:
+                end_reason = "last_gp_max_chars"
+                needs_llm = True
+
+            final_text = raw_text[:max_gp_chars]
+            records.append({
+                "key": key,
+                "title": title,
+                "raw_text": raw_text,
+                "final_text": final_text,
+                "start_pos": pos,
+                "raw_end_pos": end_pos,
+                "has_next_gp": has_next_gp,
+                "next_gp_title": next_title,
+                "raw_chars_to_next_or_eof": raw_chars,
+                "stored_chars": len(final_text),
+                "max_gp_chars": max_gp_chars,
+                "end_reason": end_reason,
+                "pre_llm_end_reason": end_reason,
+                "needs_llm_truncation": needs_llm,
+            })
+
+        self.last_gp_records = records
+        return records
+
+    def extract_general_procedure_texts(self, pages: List[Dict]) -> Dict[str, str]:
+        records = self.extract_general_procedure_records(pages)
+        if not records:
+            return {}
+
+        gp_texts: Dict[str, str] = {}
+        for record in records:
+            key = record["key"]
+            text = record.get("final_text") or record.get("raw_text", "")
             if key in gp_texts:
                 gp_texts[key] += "\n\n" + text
             else:
                 gp_texts[key] = text
-
-            if len(gp_texts[key]) > max_gp_chars:
-                gp_texts[key] = gp_texts[key][:max_gp_chars]
-
         return gp_texts
 
     def extract_gp_from_text(self, text: str) -> Dict[str, str]:
@@ -373,6 +497,10 @@ Return ONLY valid JSON."""
                 continue
 
             # 模式1: 字母标识 (GeneralProcedureA → "GP A", "General Procedure A")
+            if self._text_contains_gp_alias(chunk_text, gp_label):
+                matched[gp_label] = summary
+                continue
+
             letter_match = re.search(r'GeneralProcedure([A-Z])$', gp_label)
             if letter_match:
                 letter = letter_match.group(1)
@@ -511,7 +639,7 @@ Summary: {summary_text}"""
             rid = str(reaction.get('id', ''))
             matched = False
             for gp_key in gp_texts:
-                if gp_key in rid:
+                if gp_key in rid or self._text_contains_gp_alias(rid, gp_key):
                     reaction['_gp_source'] = gp_key
                     filled_count += 1
                     matched = True
