@@ -44,44 +44,66 @@ class PDFReactionExtractor:
     
     # 数据抽取Prompt模板
     EXTRACTION_PROMPT = """You are a chemistry literature extraction specialist.
-Extract every reaction from paragraph text — ignore tables and figures, do not guess numbers.
-Scan ALL sections (Substrate Scope, Optimization, General Procedure, Synthesis, etc.).
+Extract every qualifying paragraph/prose reaction entry from any SI section. Ignore tables, figures, captions, and analytical-only text.
 
 Rules
-- Extract every reaction entry — no omissions. Only use reported data.
+- Extract every qualifying reaction entry in source order with no omissions. Only use reported data.
 - Different ee/yield = separate records even if substrates match.
 - Keep numbers exactly as written (units, significant figures, ranges).
   Use null for missing yield, ee, or er fields.
 - All reagents must appear in one of: catalysts, additives, reagents. Do NOT drop any.
 
+Coverage-first extraction:
+Internally identify every extractable paragraph/prose reaction entry in source order before writing the final JSON.
+
+An extractable prose reaction entry is any sentence or paragraph that contains:
+- a specific compound/product/substrate name, label, code, or symbol, and
+- wording indicating preparation, synthesis, isolation, furnishing, affording, obtaining, or reaction under/according to a procedure, and
+- at least one reported target value: isolated yield, ee, or er.
+
+Yield alone is sufficient. ee and er are optional.
+
+For a consecutive series of similar product entries, extract every entry in order.
+Do not skip middle entries in a repeated series.
+If entries have the same wording pattern but different compound symbols/names/yields, each one is a separate reaction record.
+
+Product characterization entries are valid reaction entries when they report a specific isolated product and yield, even if most following text is analytical data.
+Ignore NMR, HRMS, HPLC, spectra, exact mass, melting point, optical rotation, and analytical details after the yield; they are not separate reactions.
+
+General Procedure text is context only:
+- Do not output a standalone reaction for the GP paragraph itself unless it reports a specific product/substrate and yield, ee, or er.
+- Use GP text only to fill shared reagents, catalysts, solvents, and conditions for later prose entries that reference that procedure.
+
+Do NOT extract from tables, optimization tables, screening tables, entry tables, figure captions, or tabular lists.
+Ignore table content completely even if it contains yield, ee, er, conditions, substrates, or entry numbers.
+
 General Procedure entries
 Many SI docs have a GP paragraph followed by individual entries specifying only compound, yield, ee/er, and sometimes time.
+Product characterization entries after a GP are separate reaction entries when they report a specific product and isolated yield, ee, or er.
 1. conditions — Entry-specified reagents/solvents/conditions ALWAYS override GP conditions.
 2. substrates — Use GP substrate symbols/ranges. Do NOT set substrates = products.
    For compound-range GPs (e.g. "1a-19a"): use general class name (e.g. "alkene derivative"), keep symbol.
    Check KNOWN SYMBOL-TO-NAME MAPPINGS to infer substrate chemical class. Do NOT use product IUPAC as substrate.
 3. id — GP entries: "GeneralProcedure{scope}-Entry{N}" where scope = number (e.g. "1-38") OR letter (e.g. "A", "B").
-   Other sections: "{SectionName}-Entry{N}". Do NOT extract NMR/HPLC/HRMS as reactions.
+   Other sections: "{SectionName}-Entry{N}".
 4. When text references a GP (e.g. "Following GP5", "Following General Procedure A"), use that GP's scope in id.
    DO NOT use "SubstrateScope-Entry{N}" for GP-referenced reactions.
-5. Product characterization entries after a GP are reaction entries when they report an isolated product and yield.
-   Examples include:
-   - "compound name (3a): The product was obtained ... Yield: 94%; ..."
-   - "Prepared according to General Procedure A using alkyne 1a ... and alkene 2a ..., 24 mg, 76% yield; ..."
-   Extract each such entry as a separate reaction, even if the text mainly contains NMR/HRMS after the yield.
-6. For characterization-only product entries, infer substrates/reagents/conditions from the referenced GP context.
+5. For characterization-only product entries, infer substrates/reagents/conditions from the referenced GP context.
    The product header supplies products[].name/symbol only; it must never be copied into substrates[].
    If the exact substrate identity is not stated in the entry, use the GP's generic substrate class/range instead of guessing.
 
 Reaction type
-- Include reaction_type for every record: the short English main reaction class (for example "Suzuki coupling", "[2+2] photocycloaddition", "amide coupling", "reduction").
-- Base reaction_type on the paper title, section title, General Procedure text, substrates, products, catalysts, reagents, and conditions.
-- Do NOT use catalyst names, condition labels, optimization labels, or broad context labels as the main reaction type.
-- Do NOT use "photocatalysis", "metal-catalyzed reaction", or similar context labels unless the source explicitly defines the reaction that way.
-- If evidence is insufficient, set reaction_type = "unknown reaction". Do not guess.
+- Include reaction_type for every record.
+- Use the most specific reaction class supported by title, section, GP, substrates, products, catalysts, reagents, or conditions.
+- Do not use catalyst names, labels, or broad context labels as reaction_type; if unclear, use "unknown reaction".
 
 Output
-Return a JSON array. Each entry:
+Output only valid JSON matching the requested task.
+For normal extraction, return only a JSON array of reaction objects.
+For audit tasks, follow the audit prompt and return only the requested JSON object.
+Never include coverage lists, explanations, headings, bullets, prose prefaces, Markdown fences, or text outside JSON.
+
+For normal extraction, each entry:
 {
   "id": "...",
   "reaction_type": "...",
@@ -105,7 +127,7 @@ name/symbol rules
 - Same rules apply to ALL fields: substrates, products, catalysts, additives, reagents.
 - products[].amount = mass/volume ONLY (e.g. "511 mg"), NEVER yield.
 - yield/ee/er MUST be inside "targets", NOT top-level. Extract er when reported.
-- Use null for unreported fields. No commentary outside JSON."""
+- Use null for unreported fields."""
     
     def __init__(self, api_key: Optional[str] = None,
                  base_url: str = "https://oneapi.xty.app/v1"):

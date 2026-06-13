@@ -101,7 +101,7 @@ class SIExtractor(PDFReactionExtractor):
     # def _find_registry_pages() 和 _extract_registry_regex() 也已弃用
     
     # Stage1 screening prompt
-    SCREEN_PROMPT = """You are a chemistry data screener. 
+    LEGACY_SCREEN_PROMPT = """You are a chemistry data screener. 
 Look at the following readable text from a chemistry paper. 
 Answer only with a JSON object:
 {"has_reactions": true/false, "relevant_pages": [list of page numbers]}
@@ -112,6 +112,40 @@ Look for sections like "Substrate Scope", "Optimization", "General Procedure",
 or any readable table/paragraph describing a chemical reaction. 
 If no reaction data is found, set "has_reactions" to false and "relevant_pages" to an empty list. 
 Do not count references, general descriptions, instrumentation, or NMR data as reaction data. 
+Page numbers are marked as "--- Page N ---" in the text."""
+
+    SCREEN_PROMPT = """You are a chemistry reaction-entry screener.
+
+Task:
+Decide whether the text contains extractable reaction entries written in paragraph/prose form.
+
+Return ONLY valid JSON:
+{"has_reactions": true/false, "relevant_pages": [list of page numbers], "reason": "short reason"}
+
+Set "has_reactions" to true ONLY if the text contains at least one paragraph/prose reaction entry with:
+- a specific product or substrate name/symbol, and
+- a reported isolated yield, ee, or er.
+
+Yield alone is sufficient. ee and er are optional.
+
+Valid paragraph/prose reaction entries include:
+- substrate scope or product scope entries written as sentences/paragraphs
+- synthesis or preparation paragraphs for specific compounds
+- product characterization entries that report a compound was synthesized, prepared, obtained, afforded, or furnished by following a named/general procedure and include an isolated amount and yield
+  Example: "compound name (3a) was synthesized by following Procedure A ... to provide 3a ... (1.54 g, 75% yield)."
+
+Set "has_reactions" to false for:
+- tables, optimization tables, screening tables, entry tables, or figure captions
+- General Procedure text by itself
+- sections that only describe general methods, instrumentation, references, acknowledgements, or background
+- NMR, HRMS, HPLC, spectra, exact mass, melting point, optical rotation, or analytical-only text
+- title pages, table-of-contents pages, and pages with only headings or section titles
+
+General Procedure text is context only. It is not an extractable reaction entry unless the same paragraph also reports a specific product/substrate and isolated yield, ee, or er.
+
+Ignore table content completely, even if it contains substrates, products, conditions, yield, ee, er, or entry numbers.
+
+For "relevant_pages", include only the page numbers that contain the extractable paragraph/prose reaction entries. Do not include pages that only provide context.
 Page numbers are marked as "--- Page N ---" in the text."""
 
     TOC_DETECTION_PROMPT = """Find the table of contents in these first pages of a chemistry supporting information PDF.
@@ -267,6 +301,12 @@ Return ONLY a JSON object:
 Rules:
 - Do not rewrite reactions already present in current_extraction.
 - Add only reaction entries that are clearly present in the source text but missing from current_extraction.
+- Coverage audit: review the source text in order and check whether every extractable paragraph/prose reaction entry is present in current_extraction.
+- A missing reaction should be added when the source contains a specific compound/product/substrate name, label, code, or symbol; preparation/synthesis/obtained/afforded/furnished wording or an explicit procedure reference; and isolated yield, ee, or er.
+- Pay special attention to consecutive repeated product characterization entries.
+- Do not assume a generic General Procedure record covers later specific product entries.
+- Each specific product entry with its own symbol/name and yield must have its own reaction object.
+- Do not recover reactions from tables.
 - Product characterization entries after a GP are valid reaction entries when they report an isolated product and yield.
 - "Prepared according to General Procedure A/B using ..." entries are valid reaction entries.
 - For GP-referenced entries, use the supplied GP context for substrates/reagents/conditions, but do not copy product names into substrates.
@@ -801,6 +841,85 @@ Available GP candidates:
 
     def _format_chunk_text(self, pages: List[Dict]) -> str:
         return "\n\n".join(f"--- Page {p['page_num']} ---\n{p['text']}" for p in pages)
+
+    def _pages_from_chunk_text(self, chunk: Dict) -> Dict[int, str]:
+        text = str(chunk.get("text") or "")
+        matches = list(re.finditer(r"--- Page\s+(\d+)\s+---\s*\n?", text))
+        if not matches:
+            return {}
+
+        pages = {}
+        for idx, match in enumerate(matches):
+            try:
+                page_num = int(match.group(1))
+            except (TypeError, ValueError):
+                continue
+            start = match.end()
+            end = matches[idx + 1].start() if idx + 1 < len(matches) else len(text)
+            pages[page_num] = text[start:end].strip()
+        return pages
+
+    def _stage1_relevant_page_nums(self, chunk: Dict, screen: Dict) -> List[int]:
+        raw_pages = screen.get("relevant_pages") if isinstance(screen, dict) else None
+        if not isinstance(raw_pages, list):
+            return []
+
+        allowed_pages = []
+        for value in chunk.get("page_nums") or []:
+            try:
+                allowed_pages.append(int(value))
+            except (TypeError, ValueError):
+                continue
+        allowed = set(allowed_pages)
+        if not allowed:
+            return []
+
+        result = []
+        seen = set()
+        for value in raw_pages:
+            try:
+                page_num = int(value)
+            except (TypeError, ValueError):
+                continue
+            if page_num in allowed and page_num not in seen:
+                result.append(page_num)
+                seen.add(page_num)
+        return result
+
+    def _trim_chunk_to_stage1_pages(self, chunk: Dict, screen: Dict) -> Dict:
+        relevant_page_nums = self._stage1_relevant_page_nums(chunk, screen)
+        if not relevant_page_nums:
+            return chunk
+
+        original_page_nums = []
+        for value in chunk.get("page_nums") or []:
+            try:
+                original_page_nums.append(int(value))
+            except (TypeError, ValueError):
+                continue
+        if not original_page_nums or set(relevant_page_nums) == set(original_page_nums):
+            return chunk
+
+        page_text_by_num = self._pages_from_chunk_text(chunk)
+        if any(page_num not in page_text_by_num for page_num in relevant_page_nums):
+            return chunk
+
+        trimmed_pages = [
+            {"page_num": page_num, "text": page_text_by_num[page_num]}
+            for page_num in original_page_nums
+            if page_num in set(relevant_page_nums)
+        ]
+        if not trimmed_pages:
+            return chunk
+
+        trimmed = dict(chunk)
+        page_nums = [p["page_num"] for p in trimmed_pages]
+        chunk_text = self._format_chunk_text(trimmed_pages)
+        trimmed["page_nums"] = page_nums
+        trimmed["page_range"] = self._page_range_label(page_nums)
+        trimmed["text"] = chunk_text
+        trimmed["approx_tokens"] = len(chunk_text) // 4
+        return trimmed
 
     def _split_pages_with_limits(
         self,
@@ -2512,11 +2631,10 @@ Available GP candidates:
         合并多个分块的提取结果，去重
 
         去重策略：
-        1. 优先按 id 字段去重
-        2. 无id时按 (substrates, products, yield, ee) 组合去重
+        1. 按 (substrates, products, targets) 内容签名去重
+        2. merge 后按最终顺序为同一 id prefix 重新编号
         """
         merged = []
-        seen_ids = set()
         seen_signatures = set()
 
         for chunk_reactions in all_reactions:
@@ -2526,23 +2644,44 @@ Available GP candidates:
                 if not isinstance(reaction, dict):
                     continue
 
-                # 策略1：按id去重
-                rid = reaction.get('id')
-                if rid:
-                    if rid in seen_ids:
-                        continue
-                    seen_ids.add(rid)
-                    merged.append(reaction)
-                    continue
-
-                # 策略2：按内容签名去重
                 sig = self._reaction_signature(reaction)
                 if sig in seen_signatures:
                     continue
                 seen_signatures.add(sig)
-                merged.append(reaction)
+                merged.append(dict(reaction))
 
-        return merged
+        return self._renumber_reaction_ids(merged)
+
+    def _reaction_id_prefix(self, reaction_id: str) -> str:
+        """Return the stable id prefix used for final sequential numbering."""
+        rid = str(reaction_id or "").strip()
+        if not rid:
+            return "Reaction"
+        match = re.match(r"^(.*?)-Entry\d+$", rid)
+        if match:
+            prefix = match.group(1).strip()
+            return prefix or "Reaction"
+        if "-Entry" in rid:
+            prefix = rid.split("-Entry", 1)[0].strip()
+            return prefix or "Reaction"
+        return rid or "Reaction"
+
+    def _renumber_reaction_ids(self, reactions: List[Dict]) -> List[Dict]:
+        """Make final reaction ids unique and sequential within each original prefix."""
+        counters = {}
+        renumbered = []
+        for reaction in reactions:
+            if not isinstance(reaction, dict):
+                continue
+            new_reaction = dict(reaction)
+            original_id = str(new_reaction.get("id") or "").strip()
+            if original_id and not new_reaction.get("_original_id"):
+                new_reaction["_original_id"] = original_id
+            prefix = self._reaction_id_prefix(original_id)
+            counters[prefix] = counters.get(prefix, 0) + 1
+            new_reaction["id"] = f"{prefix}-Entry{counters[prefix]}"
+            renumbered.append(new_reaction)
+        return renumbered
 
     def _reaction_signature(self, reaction: Dict) -> str:
         """生成反应的唯一签名用于去重"""
@@ -2782,7 +2921,17 @@ Available GP candidates:
         pdf_name = Path(pdf_path).name
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
+        output_file = Path(output_path) if output_path else output_dir / f"{Path(pdf_path).stem}.json"
+        output_file.parent.mkdir(parents=True, exist_ok=True)
         self.stage2_audit_recovered = 0
+
+        context_path_value = entity_context.get("_context_path")
+        if context_path_value:
+            chunk_log_dir = Path(context_path_value).parent.parent / "chunk_extraction_logs"
+        else:
+            chunk_log_dir = output_file.parent.parent / "intermediate" / "chunk_extraction_logs"
+        chunk_log_path = chunk_log_dir / f"{output_file.stem}.json"
+        chunk_extraction_log = []
 
         file_stats = {
             'total_pages': len(pages),
@@ -2795,6 +2944,99 @@ Available GP candidates:
             'stage2_audit_enabled': self.enable_stage2_audit,
             'stage2_audit_recovered': 0,
         }
+
+        def _as_int_list(values) -> List[int]:
+            nums = []
+            for value in values or []:
+                try:
+                    nums.append(int(value))
+                except (TypeError, ValueError):
+                    continue
+            return nums
+
+        def _chunk_log_entry(chunk: Dict) -> Dict:
+            return {
+                "chunk_id": chunk.get("chunk_id"),
+                "page_range": chunk.get("page_range"),
+                "page_nums": _as_int_list(chunk.get("page_nums")),
+                "section_title": chunk.get("section_title"),
+                "section_part_index": chunk.get("section_part_index") or chunk.get("part_index"),
+                "approx_tokens": chunk.get("approx_tokens"),
+                "stage1": {
+                    "has_reactions": False,
+                    "relevant_pages": [],
+                    "reason": "",
+                },
+                "trimmed": {
+                    "was_trimmed": False,
+                    "page_range": chunk.get("page_range"),
+                    "page_nums": _as_int_list(chunk.get("page_nums")),
+                    "pages_removed": [],
+                },
+                "stage2": {
+                    "attempted": False,
+                    "reaction_count": 0,
+                    "reaction_ids": [],
+                },
+            }
+
+        def _atomic_write_json(path: Path, payload: Dict) -> None:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            tmp_path = path.with_name(f"{path.name}.tmp")
+            with open(tmp_path, "w", encoding="utf-8") as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+            tmp_path.replace(path)
+
+        def _write_chunk_log() -> None:
+            if not chunk_extraction_log and not chunks:
+                return
+            payload = {
+                "source": str(pdf_path),
+                "created_at": datetime.now().isoformat(),
+                "schema": "chunk_extraction_log_v1",
+                "stats": {
+                    "total_chunks": len(chunks),
+                    "stage1_pass": sum(
+                        1 for item in chunk_extraction_log
+                        if item.get("stage1", {}).get("has_reactions")
+                    ),
+                    "stage1_fail": sum(
+                        1 for item in chunk_extraction_log
+                        if not item.get("stage1", {}).get("has_reactions")
+                    ),
+                    "stage2_attempted_chunks": sum(
+                        1 for item in chunk_extraction_log
+                        if item.get("stage2", {}).get("attempted")
+                    ),
+                    "stage2_total_reactions_before_merge": sum(
+                        int(item.get("stage2", {}).get("reaction_count") or 0)
+                        for item in chunk_extraction_log
+                    ),
+                },
+                "chunks": chunk_extraction_log,
+            }
+            _atomic_write_json(chunk_log_path, payload)
+
+        def _build_output_payload(reactions: List[Dict], is_partial: bool, completed_stage2_chunks: int) -> Dict:
+            stats_snapshot = dict(file_stats)
+            stats_snapshot['stage2_audit_recovered'] = self.stage2_audit_recovered
+            return {
+                "source": str(pdf_path),
+                "extracted_at": datetime.now().isoformat(),
+                "is_partial": bool(is_partial),
+                "completed_stage2_chunks": completed_stage2_chunks,
+                "total_reactions": len(reactions),
+                "name_registry": registry,
+                "general_procedures": {
+                    k: v[:300] + "..." if isinstance(v, str) and len(v) > 300 else v
+                    for k, v in gp_texts.items()
+                } if gp_texts else {},
+                "entity_context_path": entity_context.get("_context_path"),
+                "chunk_extraction_log_path": str(chunk_log_path),
+                "stats": stats_snapshot,
+                "reactions": reactions,
+                "metadata": entity_context.get("metadata"),
+            }
 
         registry = entity_context.get("name_registry") or entity_context.get("symbol_name_mapping") or {}
         gp_texts = entity_context.get("general_procedures") or {}
@@ -2833,16 +3075,51 @@ Available GP candidates:
         for chunk in chunks:
             label = f"{pdf_name} Chunk{chunk['chunk_id']} Pages[{chunk['page_range']}]"
             screen_results.append(self.stage1_screen(chunk['text'], label))
+        chunk_extraction_log = [_chunk_log_entry(chunk) for chunk in chunks]
+        chunk_log_by_id = {
+            item.get("chunk_id"): item
+            for item in chunk_extraction_log
+        }
 
-        relevant_chunks = [
-            (chunk, screen)
-            for chunk, screen in zip(chunks, screen_results)
-            if screen.get('has_reactions')
-        ]
+        relevant_chunks = []
+        stage1_trimmed_chunks = 0
+        stage1_trimmed_pages_removed = 0
+        for chunk, screen in zip(chunks, screen_results):
+            log_item = chunk_log_by_id.get(chunk.get("chunk_id"))
+            if log_item is not None:
+                log_item["stage1"] = {
+                    "has_reactions": bool(screen.get("has_reactions")),
+                    "relevant_pages": _as_int_list(screen.get("relevant_pages")),
+                    "reason": str(screen.get("reason") or ""),
+                }
+            if not screen.get('has_reactions'):
+                continue
+            trimmed_chunk = self._trim_chunk_to_stage1_pages(chunk, screen)
+            original_pages = chunk.get("page_nums") or []
+            trimmed_pages = trimmed_chunk.get("page_nums") or []
+            original_page_nums = _as_int_list(original_pages)
+            trimmed_page_nums = _as_int_list(trimmed_pages)
+            if len(trimmed_pages) < len(original_pages):
+                stage1_trimmed_chunks += 1
+                stage1_trimmed_pages_removed += len(original_pages) - len(trimmed_pages)
+            if log_item is not None:
+                log_item["trimmed"] = {
+                    "was_trimmed": set(trimmed_page_nums) != set(original_page_nums),
+                    "page_range": trimmed_chunk.get("page_range"),
+                    "page_nums": trimmed_page_nums,
+                    "pages_removed": [
+                        page_num for page_num in original_page_nums
+                        if page_num not in set(trimmed_page_nums)
+                    ],
+                }
+            relevant_chunks.append((trimmed_chunk, screen))
         file_stats['screened_pass'] = len(relevant_chunks)
         file_stats['screened_fail'] = len(chunks) - len(relevant_chunks)
+        file_stats['stage1_trimmed_chunks'] = stage1_trimmed_chunks
+        file_stats['stage1_trimmed_pages_removed'] = stage1_trimmed_pages_removed
         if not relevant_chunks:
             print("  [SKIP] Stage1 found no reaction chunks")
+            _write_chunk_log()
             return None
 
         print(f"[ReactionExtractionAgent] Stage2 extraction with {self.extract_model}...")
@@ -2854,7 +3131,28 @@ Available GP candidates:
                 label,
                 gp_texts=gp_texts,
             )
+            log_item = chunk_log_by_id.get(chunk.get("chunk_id"))
+            if log_item is not None:
+                log_item["stage2"] = {
+                    "attempted": True,
+                    "reaction_count": len(reactions),
+                    "reaction_ids": [
+                        str(reaction.get("id"))
+                        for reaction in reactions
+                        if isinstance(reaction, dict) and reaction.get("id")
+                    ],
+                }
             all_chunk_results.append(reactions)
+            _write_chunk_log()
+            partial_merged = self.sanitize_reactions_schema(self.merge_results(all_chunk_results))
+            _atomic_write_json(
+                output_file,
+                _build_output_payload(
+                    partial_merged,
+                    is_partial=True,
+                    completed_stage2_chunks=len(all_chunk_results),
+                ),
+            )
 
         merged = self.merge_results(all_chunk_results)
         if registry and merged:
@@ -2874,24 +3172,14 @@ Available GP candidates:
             merged = self.apply_gp_conditions_fallback(merged, gp_texts)
         merged = self.sanitize_reactions_schema(merged)
         file_stats['stage2_audit_recovered'] = self.stage2_audit_recovered
+        _write_chunk_log()
 
-        output_file = Path(output_path) if output_path else output_dir / f"{Path(pdf_path).stem}.json"
-        output_file.parent.mkdir(parents=True, exist_ok=True)
-        output_data = {
-            "source": str(pdf_path),
-            "extracted_at": datetime.now().isoformat(),
-            "total_reactions": len(merged),
-            "name_registry": registry,
-            "general_procedures": {
-                k: v[:300] + "..." if isinstance(v, str) and len(v) > 300 else v
-                for k, v in gp_texts.items()
-            } if gp_texts else {},
-            "entity_context_path": entity_context.get("_context_path"),
-            "stats": file_stats,
-            "reactions": merged,
-        }
-        with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(output_data, f, ensure_ascii=False, indent=2)
+        output_data = _build_output_payload(
+            merged,
+            is_partial=False,
+            completed_stage2_chunks=len(all_chunk_results),
+        )
+        _atomic_write_json(output_file, output_data)
 
         print(f"  saved reaction output: {output_file}")
         return merged
@@ -3241,13 +3529,23 @@ Available GP candidates:
                 print(f"  块{chunk['chunk_id']} [{chunk['page_range']}]: {status}")
 
             # 统计通过筛选的块
-            relevant_chunks = [
-                (chunk, screen)
-                for chunk, screen in zip(chunks, screen_results)
-                if screen['has_reactions']
-            ]
+            relevant_chunks = []
+            stage1_trimmed_chunks = 0
+            stage1_trimmed_pages_removed = 0
+            for chunk, screen in zip(chunks, screen_results):
+                if not screen['has_reactions']:
+                    continue
+                trimmed_chunk = self._trim_chunk_to_stage1_pages(chunk, screen)
+                original_pages = chunk.get("page_nums") or []
+                trimmed_pages = trimmed_chunk.get("page_nums") or []
+                if len(trimmed_pages) < len(original_pages):
+                    stage1_trimmed_chunks += 1
+                    stage1_trimmed_pages_removed += len(original_pages) - len(trimmed_pages)
+                relevant_chunks.append((trimmed_chunk, screen))
             file_stats['screened_pass'] = len(relevant_chunks)
             file_stats['screened_fail'] = len(chunks) - len(relevant_chunks)
+            file_stats['stage1_trimmed_chunks'] = stage1_trimmed_chunks
+            file_stats['stage1_trimmed_pages_removed'] = stage1_trimmed_pages_removed
             print(f"  筛选结果: {len(relevant_chunks)}/{len(chunks)} 个块通过")
             print(f"  Stage1 token消耗: ~{sum(c['approx_tokens'] for c in chunks)} "
                   f"(比直接全量节省 {(1 - len(relevant_chunks)/max(len(chunks),1))*100:.0f}%)")

@@ -338,6 +338,8 @@ def metadata_matches(path: Path, expected: Dict) -> bool:
         payload = read_json(path)
     except Exception:
         return False
+    if isinstance(payload, dict) and payload.get("is_partial") is True:
+        return False
     actual = payload.get("metadata")
     return isinstance(actual, dict) and all(actual.get(k) == v for k, v in expected.items())
 
