@@ -491,11 +491,6 @@ Available GP candidates:
         """
         text_lower = page_text.lower()
 
-        # 检查是否需要跳过（参考文献、致谢等）
-        for pattern in self.SKIP_PATTERNS:
-            if re.search(pattern, text_lower):
-                return False
-
         # 定量关键词计分（权重3）
         quant_score = 0
         for kw in self.QUANT_KEYWORDS:
@@ -508,8 +503,17 @@ Available GP candidates:
             count = text_lower.count(kw.lower())
             general_score += count
 
+        total_score = quant_score + general_score
+
+        # Skip-pattern pages are only discarded when they do not also contain
+        # strong reaction/data signals. This prevents mixed pages with product
+        # entries plus NMR/references text from being removed before Stage1.
+        has_skip_pattern = any(re.search(pattern, text_lower) for pattern in self.SKIP_PATTERNS)
+        if has_skip_pattern:
+            return quant_score >= 6 or total_score >= 15
+
         # 阈值：总分 >= 5 视为相关页
-        return (quant_score + general_score) >= 5
+        return total_score >= 5
 
     def filter_relevant_pages(self, pages: List[Dict]) -> List[Dict]:
         """
@@ -802,11 +806,7 @@ Available GP candidates:
         toc = self.detect_toc_sections(pages)
         self._last_toc_page_offset = None
         raw_sections = self._sections_from_toc(pages, toc)
-        source = "toc" if raw_sections else "heading"
-        if not raw_sections:
-            raw_sections = self._sections_from_headings(pages)
-        if not raw_sections:
-            source = "fixed_fallback"
+        source = "toc" if raw_sections else "fixed_fallback"
 
         section_chunks = self.split_sections_to_chunks(raw_sections, pages) if raw_sections else []
         self.last_section_chunking_stats = {
