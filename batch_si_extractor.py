@@ -16,7 +16,10 @@ import os
 import re
 import sys
 import time
+import contextvars
+import threading
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Optional, Dict, List, Tuple, Any
 
@@ -401,7 +404,8 @@ Available GP candidates:
                  screen_model: str = "gpt-5-mini",
                  extract_model: str = "gpt-5-mini",
                  base_url: str = "https://hk.xty.app/v1",
-                 enable_stage2_audit: bool = True):
+                 enable_stage2_audit: bool = True,
+                 max_parallel_text_chunks: int = 1):
         """
         初始化SI提取器
 
@@ -417,6 +421,7 @@ Available GP candidates:
         self.screen_model = screen_model
         self.extract_model = extract_model
         self.enable_stage2_audit = enable_stage2_audit
+        self.max_parallel_text_chunks = max(1, int(max_parallel_text_chunks or 1))
         self.stage2_audit_recovered = 0
         self.last_registry_validation_stats = {
             "registry_raw_count": 0,
@@ -427,6 +432,7 @@ Available GP candidates:
         self._section_cache = {}
         self._section_debug_cache = {}
         self._toc_cache = {}
+        self._gp_selection_lock = threading.Lock()
         self._last_toc_page_offset = None
         self.last_section_chunking_stats = {}
         self.last_section_debug = {}
@@ -438,6 +444,26 @@ Available GP candidates:
             'extracted_chunks': 0,
             'skipped_chunks': 0,
         }
+
+    def _run_indexed_parallel(self, items, worker, max_workers: Optional[int] = None):
+        """Run independent chunk jobs concurrently and return results in input order."""
+        indexed_items = list(enumerate(items))
+        if not indexed_items:
+            return []
+        worker_count = min(max(1, int(max_workers or self.max_parallel_text_chunks)), len(indexed_items))
+        if worker_count <= 1:
+            return [(index, worker(item)) for index, item in indexed_items]
+
+        results = [None] * len(indexed_items)
+        with ThreadPoolExecutor(max_workers=worker_count) as executor:
+            futures = {}
+            for index, item in indexed_items:
+                ctx = contextvars.copy_context()
+                futures[executor.submit(ctx.run, worker, item)] = index
+            for future in as_completed(futures):
+                index = futures[future]
+                results[index] = (index, future.result())
+        return results
     
     # =====================================================================
     # 第一层：按页提取文本
@@ -1556,10 +1582,25 @@ Available GP candidates:
         validation_stats.update(getattr(self, "last_section_chunking_stats", {}) or {})
         validation_stats.update(selection_stats)
         validation_stats["registry_chunks_total"] = len(chunks)
-        for chunk in chunks:
+        registry_parallel_results = None
+        if self.max_parallel_text_chunks > 1:
+            def _extract_registry_chunk(chunk: Dict) -> Tuple[Dict[str, str], Dict]:
+                return self.extract_registry_with_gpt_debug(chunk['text'])
+
+            registry_parallel_results = [
+                result
+                for _, result in self._run_indexed_parallel(
+                    chunks,
+                    _extract_registry_chunk,
+                    max_workers=self.max_parallel_text_chunks,
+                )
+            ]
+        for chunk_index, chunk in enumerate(chunks):
             print(f"    处理分块{chunk['chunk_id']}: 页 {chunk['page_nums']}")
-            registry = self.extract_registry_with_gpt(chunk['text'])
-            chunk_debug = dict(getattr(self, "_last_registry_chunk_debug", {}) or {})
+            if registry_parallel_results is None:
+                registry, chunk_debug = self.extract_registry_with_gpt_debug(chunk['text'])
+            else:
+                registry, chunk_debug = registry_parallel_results[chunk_index]
             chunk_debug.update({
                 "chunk_id": chunk.get("chunk_id"),
                 "page_nums": chunk.get("page_nums") or [],
@@ -1824,7 +1865,7 @@ Available GP candidates:
     #     """用正则从文本中提取 symbol→name 映射"""
     #     ...
 
-    def extract_registry_with_gpt(self, text: str) -> Dict[str, str]:
+    def extract_registry_with_gpt_debug(self, text: str) -> Tuple[Dict[str, str], Dict]:
         """
         用 gpt-5-mini 从文本中提取 symbol→name 映射（正则的fallback）
 
@@ -1854,7 +1895,7 @@ Available GP candidates:
             if not raw:
                 print("  [WARN] GPT registry extraction returned empty content")
             raw_registry = self._parse_registry_response(raw)
-            self._last_registry_chunk_debug = {
+            debug = {
                 "raw_response": raw,
                 "raw_registry": raw_registry,
                 "counts": {
@@ -1862,10 +1903,10 @@ Available GP candidates:
                 },
                 "error": None,
             }
-            return raw_registry
+            return raw_registry, debug
         except Exception as e:
             print(f"  [WARN] GPT registry提取出错: {e}")
-            self._last_registry_chunk_debug = {
+            debug = {
                 "raw_response": "",
                 "raw_registry": {},
                 "counts": {
@@ -1873,7 +1914,12 @@ Available GP candidates:
                 },
                 "error": str(e),
             }
-            return {}
+            return {}, debug
+
+    def extract_registry_with_gpt(self, text: str) -> Dict[str, str]:
+        registry, debug = self.extract_registry_with_gpt_debug(text)
+        self._last_registry_chunk_debug = debug
+        return registry
 
     def _parse_registry_response(self, raw: str) -> Dict[str, str]:
         """解析GPT返回的registry JSON，不做抽取后清洗。"""
@@ -2539,6 +2585,18 @@ Available GP candidates:
     def stage2_extract(self, chunk_text: str, chunk_label: str,
                        registry: Optional[Dict[str, str]] = None,
                        gp_texts: Optional[Dict[str, str]] = None) -> List[Dict]:
+        result = self.stage2_extract_with_meta(
+            chunk_text,
+            chunk_label,
+            registry=registry,
+            gp_texts=gp_texts,
+        )
+        self.stage2_audit_recovered += int(result.get("audit_recovered") or 0)
+        return result.get("reactions") or []
+
+    def stage2_extract_with_meta(self, chunk_text: str, chunk_label: str,
+                                 registry: Optional[Dict[str, str]] = None,
+                                 gp_texts: Optional[Dict[str, str]] = None) -> Dict:
         """
         用精确模型从分块中提取反应数据
 
@@ -2551,7 +2609,9 @@ Available GP candidates:
         # 构建 registry 注入块
         # 构建 GP 注入块：只注入当前 chunk 明确引用或 LLM 解析到的 GP
         gp_block = ""
-        selected_gp_texts = self.select_gp_for_chunk(chunk_text, gp_texts)
+        with self._gp_selection_lock:
+            selected_gp_texts = self.select_gp_for_chunk(chunk_text, gp_texts)
+            gp_selection_debug = dict(getattr(self, "last_gp_selection_debug", {}) or {})
         if selected_gp_texts:
             gp_entries = []
             for label, text in selected_gp_texts.items():
@@ -2605,15 +2665,29 @@ Available GP candidates:
                     gp_block=gp_block,
                 )
                 if missing:
-                    self.stage2_audit_recovered += len(missing)
                     print(f"  [Stage2 audit] recovered {len(missing)} omitted reactions ({chunk_label})")
-                    return self.merge_results([reactions, missing])
-                return reactions
+                    return {
+                        "reactions": self.merge_results([reactions, missing]),
+                        "audit_recovered": len(missing),
+                        "gp_selection_debug": gp_selection_debug,
+                        "error": None,
+                    }
+                return {
+                    "reactions": reactions,
+                    "audit_recovered": 0,
+                    "gp_selection_debug": gp_selection_debug,
+                    "error": None,
+                }
             except Exception as e:
                 print(f"  [WARN] Stage2 attempt {attempt+1}/3 failed ({chunk_label}): {e}")
 
         print(f"  [ERROR] Stage2 最终失败 ({chunk_label})")
-        return []
+        return {
+            "reactions": [],
+            "audit_recovered": 0,
+            "gp_selection_debug": gp_selection_debug,
+            "error": "stage2_failed_after_retries",
+        }
 
     # =====================================================================
     # 结果合并与去重
@@ -3064,10 +3138,18 @@ Available GP candidates:
         })
 
         print(f"[ReactionExtractionAgent] Stage1 screening with {self.screen_model}...")
-        screen_results = []
-        for chunk in chunks:
+        def _screen_chunk(chunk: Dict) -> Dict:
             label = f"{pdf_name} Chunk{chunk['chunk_id']} Pages[{chunk['page_range']}]"
-            screen_results.append(self.stage1_screen(chunk['text'], label))
+            return self.stage1_screen(chunk['text'], label)
+
+        screen_results = [
+            result
+            for _, result in self._run_indexed_parallel(
+                chunks,
+                _screen_chunk,
+                max_workers=self.max_parallel_text_chunks,
+            )
+        ]
         chunk_extraction_log = [_chunk_log_entry(chunk) for chunk in chunks]
         chunk_log_by_id = {
             item.get("chunk_id"): item
@@ -3117,35 +3199,83 @@ Available GP candidates:
 
         print(f"[ReactionExtractionAgent] Stage2 extraction with {self.extract_model}...")
         all_chunk_results = []
-        for chunk, _screen in relevant_chunks:
-            label = f"{pdf_name} Chunk{chunk['chunk_id']} Pages[{chunk['page_range']}]"
-            reactions = self.stage2_extract(
-                chunk['text'],
-                label,
-                gp_texts=gp_texts,
-            )
-            log_item = chunk_log_by_id.get(chunk.get("chunk_id"))
-            if log_item is not None:
-                log_item["stage2"] = {
-                    "attempted": True,
-                    "reaction_count": len(reactions),
-                    "reaction_ids": [
-                        str(reaction.get("id"))
-                        for reaction in reactions
-                        if isinstance(reaction, dict) and reaction.get("id")
-                    ],
-                }
-            all_chunk_results.append(reactions)
+        if self.max_parallel_text_chunks > 1:
+            def _extract_reaction_chunk(item: Tuple[Dict, Dict]) -> Dict:
+                chunk, _screen = item
+                label = f"{pdf_name} Chunk{chunk['chunk_id']} Pages[{chunk['page_range']}]"
+                try:
+                    result = self.stage2_extract_with_meta(
+                        chunk['text'],
+                        label,
+                        gp_texts=gp_texts,
+                    )
+                except Exception as exc:
+                    result = {
+                        "reactions": [],
+                        "audit_recovered": 0,
+                        "gp_selection_debug": {},
+                        "error": f"{type(exc).__name__}: {exc}",
+                    }
+                return result
+
+            stage2_results = [
+                result
+                for _, result in self._run_indexed_parallel(
+                    relevant_chunks,
+                    _extract_reaction_chunk,
+                    max_workers=self.max_parallel_text_chunks,
+                )
+            ]
+            for (chunk, _screen), result in zip(relevant_chunks, stage2_results):
+                reactions = result.get("reactions") or []
+                self.stage2_audit_recovered += int(result.get("audit_recovered") or 0)
+                log_item = chunk_log_by_id.get(chunk.get("chunk_id"))
+                if log_item is not None:
+                    log_item["stage2"] = {
+                        "attempted": True,
+                        "reaction_count": len(reactions),
+                        "reaction_ids": [
+                            str(reaction.get("id"))
+                            for reaction in reactions
+                            if isinstance(reaction, dict) and reaction.get("id")
+                        ],
+                    }
+                    if result.get("error"):
+                        log_item["stage2"]["error"] = result.get("error")
+                    if result.get("gp_selection_debug"):
+                        log_item["stage2"]["gp_selection"] = result.get("gp_selection_debug")
+                all_chunk_results.append(reactions)
             _write_chunk_log()
-            partial_merged = self.sanitize_reactions_schema(self.merge_results(all_chunk_results))
-            _atomic_write_json(
-                output_file,
-                _build_output_payload(
-                    partial_merged,
-                    is_partial=True,
-                    completed_stage2_chunks=len(all_chunk_results),
-                ),
-            )
+        else:
+            for chunk, _screen in relevant_chunks:
+                label = f"{pdf_name} Chunk{chunk['chunk_id']} Pages[{chunk['page_range']}]"
+                reactions = self.stage2_extract(
+                    chunk['text'],
+                    label,
+                    gp_texts=gp_texts,
+                )
+                log_item = chunk_log_by_id.get(chunk.get("chunk_id"))
+                if log_item is not None:
+                    log_item["stage2"] = {
+                        "attempted": True,
+                        "reaction_count": len(reactions),
+                        "reaction_ids": [
+                            str(reaction.get("id"))
+                            for reaction in reactions
+                            if isinstance(reaction, dict) and reaction.get("id")
+                        ],
+                    }
+                all_chunk_results.append(reactions)
+                _write_chunk_log()
+                partial_merged = self.sanitize_reactions_schema(self.merge_results(all_chunk_results))
+                _atomic_write_json(
+                    output_file,
+                    _build_output_payload(
+                        partial_merged,
+                        is_partial=True,
+                        completed_stage2_chunks=len(all_chunk_results),
+                    ),
+                )
 
         merged = self.merge_results(all_chunk_results)
         if registry and merged:
@@ -3760,6 +3890,9 @@ Token节省效果:
     parser.add_argument("--extract_model", default="gpt-5-mini",
                         help="Stage2提取模型 (默认: gpt-5-mini)")
 
+    parser.add_argument("--max_parallel_text_chunks", type=int, default=1,
+                        help="Maximum chunk-level concurrency inside each PDF (default: 1)")
+
     args = parser.parse_args()
 
     # 获取API密钥
@@ -3781,6 +3914,7 @@ Token节省效果:
         pages_per_chunk=args.pages_per_chunk,
         screen_model=args.screen_model,
         extract_model=args.extract_model,
+        max_parallel_text_chunks=args.max_parallel_text_chunks,
     )
 
     # 执行批量处理

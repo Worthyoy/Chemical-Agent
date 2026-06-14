@@ -191,6 +191,12 @@ def parse_args():
     parser.add_argument("--paper_name", default=None)
     parser.add_argument("--base_url", default="https://hk.xty.app/v1")
     parser.add_argument("--max_parallel_pdfs", type=int, default=2)
+    parser.add_argument(
+        "--max_parallel_text_chunks",
+        type=int,
+        default=1,
+        help="Maximum chunk-level concurrency inside each text extraction PDF. 1 preserves serial behavior.",
+    )
     parser.add_argument("--skip_reaction_type_normalization", action="store_true")
     parser.add_argument("--skip_stage2_audit", action="store_true")
     parser.add_argument(
@@ -333,6 +339,7 @@ def config_from_args(args) -> PipelineConfig:
         paper_name=args.paper_name,
         base_url=args.base_url,
         max_parallel_pdfs=max(1, args.max_parallel_pdfs),
+        max_parallel_text_chunks=max(1, args.max_parallel_text_chunks),
         skip_reaction_type_normalization=args.skip_reaction_type_normalization,
         skip_chemeagle_normalization=args.skip_chemeagle_normalization,
         skip_downstream_build=args.skip_downstream_build,

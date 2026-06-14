@@ -61,6 +61,7 @@ class PipelineConfig:
     paper_name: Optional[str] = None
     base_url: str = "https://hk.xty.app/v1"
     max_parallel_pdfs: int = 2
+    max_parallel_text_chunks: int = 1
     pipeline_version: str = "parallel_pdf_v1"
     skip_reaction_type_normalization: bool = False
     skip_chemeagle_normalization: bool = False
@@ -227,6 +228,7 @@ def make_extractor(config: PipelineConfig) -> SIExtractor:
         extract_model=config.extract_model,
         base_url=config.base_url,
         enable_stage2_audit=config.enable_stage2_audit,
+        max_parallel_text_chunks=config.max_parallel_text_chunks,
     )
 
 
@@ -672,6 +674,7 @@ class PrepareJobsAgent:
             "paper_name": self.config.paper_name,
             "limit": self.config.limit,
             "max_parallel_pdfs": self.config.max_parallel_pdfs,
+            "max_parallel_text_chunks": self.config.max_parallel_text_chunks,
             "input_mode": self.config.input_mode,
             "use_chemeagle": self.config.use_chemeagle,
             "skip_chemeagle_normalization": self.config.skip_chemeagle_normalization,
@@ -2013,6 +2016,7 @@ class ReportAgent:
                 "chemeagle_role_refinement_model": self.config.chemeagle_role_refinement_model,
                 "base_url": self.config.base_url,
                 "max_parallel_pdfs": self.config.max_parallel_pdfs,
+                "max_parallel_text_chunks": self.config.max_parallel_text_chunks,
                 "resume": self.config.resume,
                 "overwrite": self.config.overwrite,
                 "skip_reaction_type_normalization": self.config.skip_reaction_type_normalization,
