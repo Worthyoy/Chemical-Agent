@@ -49,6 +49,7 @@ class PipelineState(TypedDict, total=False):
     pdf_results: Annotated[List[Dict], operator.add]
     successful_filtered_paths: List[str]
     successful_text_filtered_paths: List[str]
+    successful_text_structure_enriched_paths: List[str]
     successful_text_symbol_resolved_paths: List[str]
     successful_chemeagle_raw_paths: List[str]
     successful_chemeagle_symbol_resolved_paths: List[str]
@@ -188,7 +189,7 @@ def parse_args():
     parser.add_argument("--no_resume", action="store_true")
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--paper_name", default=None)
-    parser.add_argument("--base_url", default="https://oneapi.xty.app/v1")
+    parser.add_argument("--base_url", default="https://hk.xty.app/v1")
     parser.add_argument("--max_parallel_pdfs", type=int, default=2)
     parser.add_argument("--skip_reaction_type_normalization", action="store_true")
     parser.add_argument("--skip_stage2_audit", action="store_true")

@@ -400,7 +400,7 @@ Available GP candidates:
                  pages_per_chunk: int = 5,
                  screen_model: str = "gpt-5-mini",
                  extract_model: str = "gpt-5-mini",
-                 base_url: str = "https://oneapi.xty.app/v1",
+                 base_url: str = "https://hk.xty.app/v1",
                  enable_stage2_audit: bool = True):
         """
         初始化SI提取器
@@ -505,15 +505,8 @@ Available GP candidates:
 
         total_score = quant_score + general_score
 
-        # Skip-pattern pages are only discarded when they do not also contain
-        # strong reaction/data signals. This prevents mixed pages with product
-        # entries plus NMR/references text from being removed before Stage1.
-        has_skip_pattern = any(re.search(pattern, text_lower) for pattern in self.SKIP_PATTERNS)
-        if has_skip_pattern:
-            return quant_score >= 6 or total_score >= 15
-
         # 阈值：总分 >= 5 视为相关页
-        return total_score >= 5
+        return total_score >= 3
 
     def filter_relevant_pages(self, pages: List[Dict]) -> List[Dict]:
         """

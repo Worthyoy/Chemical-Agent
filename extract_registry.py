@@ -98,7 +98,7 @@ class RegistryExtractor(PDFReactionExtractor):
         try:
             from openai import OpenAI
             self.client = OpenAI(
-                base_url="https://oneapi.xty.app/v1",
+                base_url="https://hk.xty.app/v1",
                 api_key=self.api_key
             )
         except Exception as e:

@@ -59,7 +59,7 @@ class PipelineConfig:
     resume: bool = True
     limit: Optional[int] = None
     paper_name: Optional[str] = None
-    base_url: str = "https://oneapi.xty.app/v1"
+    base_url: str = "https://hk.xty.app/v1"
     max_parallel_pdfs: int = 2
     pipeline_version: str = "parallel_pdf_v1"
     skip_reaction_type_normalization: bool = False
@@ -938,11 +938,9 @@ class ProcessPDFAgent:
                     pages,
                     max_scan_pages=20,
                     pages_per_chunk=5,
-                )
+            )
             gp_texts = extractor.extract_general_procedure_texts(pages)
             symbol_index = build_symbol_index(registry)
-            with token_usage_context("text_registry_scaffold_parse", pdf_path.name):
-                scaffold_mapping = build_scaffold_mapping(registry, self.config)
             registry_validation_stats = getattr(extractor, "last_registry_validation_stats", {}) or {}
             entity_context = {
                 "source": str(pdf_path),
@@ -955,7 +953,7 @@ class ProcessPDFAgent:
                 "substrate_index": symbol_index,
                 "product_index": symbol_index,
                 "symbol_name_mapping": registry,
-                "scaffold_substituent_mapping": scaffold_mapping,
+                "scaffold_substituent_mapping": {},
                 "section_debug_path": job["section_debug_path"],
                 "registry_debug_path": job["registry_debug_path"],
                 "stats": {
@@ -981,7 +979,7 @@ class ProcessPDFAgent:
                     "registry_selector_error": registry_validation_stats.get("registry_selector_error"),
                     "registry_verifier_error": registry_validation_stats.get("registry_verifier_error"),
                     "gp_templates": len(gp_texts),
-                    "scaffold_mappings": len(scaffold_mapping),
+                    "scaffold_mappings": 0,
                 },
                 "metadata": metadata,
             }
@@ -1002,6 +1000,10 @@ class ProcessPDFAgent:
             result["cache"]["entity_context"] = "miss"
             result["cache"]["section_debug"] = "miss" if section_debug_path else "skipped"
             result["cache"]["registry_debug"] = "miss" if registry_debug_path else "skipped"
+        entity_context = dict(entity_context)
+        entity_context["scaffold_substituent_mapping"] = {}
+        if isinstance(entity_context.get("stats"), dict):
+            entity_context["stats"]["scaffold_mappings"] = 0
         result["counts"]["registry_size"] = len(entity_context.get("name_registry", {}))
         result["counts"]["gp_templates"] = len(entity_context.get("general_procedures", {}))
 
@@ -1012,7 +1014,6 @@ class ProcessPDFAgent:
             reactions = reaction_payload.get("reactions", [])
             result["cache"]["reaction_output"] = "hit"
         else:
-            entity_context = dict(entity_context)
             entity_context["_context_path"] = str(context_path)
             with token_usage_context("text_reaction_extraction", pdf_path.name):
                 reactions = extractor.process_pages_with_context(
@@ -1438,9 +1439,50 @@ class CollectResultsAgent:
             )
         ]
         chemeagle_kg_input_paths = chemeagle_filtered_paths
-        filtered_paths = text_filtered_paths + chemeagle_filtered_paths
+        text_structure_enriched_paths = []
+        substrate_structure_result = {
+            "status": "skipped",
+            "reason": "no_text_filtered_inputs",
+            "text_inputs": text_filtered_paths,
+            "text_outputs": [],
+        }
+        if text_filtered_paths:
+            if OpenAI is None:
+                substrate_structure_result = {
+                    "status": "failed",
+                    "reason": "openai_not_available",
+                    "text_inputs": text_filtered_paths,
+                    "text_outputs": [],
+                }
+            else:
+                try:
+                    client = OpenAI(api_key=self.config.api_key, base_url=self.config.base_url)
+                    text_structure_report_path = self.config.reports_dir / "text_substrate_structure_enrichment_report.json"
+                    with token_usage_context("text_post_filter_substrate_structure_enrichment"):
+                        substrate_structure_result = enrich_multimodal_structure(
+                            text_reaction_paths=text_filtered_paths,
+                            chemeagle_reaction_paths=[],
+                            output_dir=self.config.multimodal_structure_enriched_dir,
+                            cache_path=self.config.multimodal_structure_parse_cache_path,
+                            report_path=text_structure_report_path,
+                            client=client,
+                            model=self.config.split_model,
+                            batch_size=30,
+                        )
+                    substrate_structure_result["report_path"] = str(text_structure_report_path)
+                    text_structure_enriched_paths = substrate_structure_result.get("text_outputs") or []
+                except Exception as exc:
+                    substrate_structure_result = {
+                        "status": "failed",
+                        "reason": f"{type(exc).__name__}: {exc}",
+                        "text_inputs": text_filtered_paths,
+                        "text_outputs": [],
+                    }
+        text_downstream_paths = text_structure_enriched_paths or text_filtered_paths
+        filtered_paths = text_downstream_paths + chemeagle_filtered_paths
         state["successful_filtered_paths"] = filtered_paths
         state["successful_text_filtered_paths"] = text_filtered_paths
+        state["successful_text_structure_enriched_paths"] = text_structure_enriched_paths
         state["successful_text_symbol_resolved_paths"] = text_symbol_resolved_paths
         state["successful_chemeagle_raw_paths"] = chemeagle_raw_paths
         state["successful_chemeagle_symbol_resolved_paths"] = chemeagle_symbol_resolved_paths
@@ -1578,6 +1620,7 @@ class CollectResultsAgent:
             "successful": len(successful),
             "failed": len(failed),
             "text_successful": len(text_filtered_paths),
+            "text_structure_enriched_successful": len(text_structure_enriched_paths),
             "text_symbol_resolved_successful": len(text_symbol_resolved_paths),
             "chemeagle_raw_successful": len(chemeagle_raw_paths),
             "chemeagle_symbol_resolved_successful": len(chemeagle_symbol_resolved_paths),
@@ -1625,10 +1668,12 @@ class CollectResultsAgent:
             ),
             "successful_pdfs": [r["pdf_name"] for r in successful],
             "failed_pdfs": failed,
+            "text_substrate_structure_enrichment": substrate_structure_result,
         }
         return {
             "successful_filtered_paths": filtered_paths,
             "successful_text_filtered_paths": text_filtered_paths,
+            "successful_text_structure_enriched_paths": text_structure_enriched_paths,
             "successful_text_symbol_resolved_paths": text_symbol_resolved_paths,
             "successful_chemeagle_raw_paths": chemeagle_raw_paths,
             "successful_chemeagle_symbol_resolved_paths": chemeagle_symbol_resolved_paths,
@@ -1660,6 +1705,7 @@ class ReactionReorganizationAgent:
                 "total_files": merge_result.get("total_files", 0),
                 "input_files": merge_result.get("input_files", []),
                 "text_input_files": state.get("successful_text_filtered_paths", []),
+                "text_structure_enriched_input_files": state.get("successful_text_structure_enriched_paths", []),
                 "chemeagle_input_files": state.get("successful_chemeagle_filtered_paths", []),
             },
         }
@@ -1681,7 +1727,10 @@ class CrossModalKGAgent:
                 "reason": "enable_multimodal_kg_false",
             }
         else:
-            text_paths = state.get("successful_text_filtered_paths", [])
+            text_paths = (
+                state.get("successful_text_structure_enriched_paths")
+                or state.get("successful_text_filtered_paths", [])
+            )
             chemeagle_paths = state.get("successful_chemeagle_kg_input_paths", [])
             if not text_paths and not chemeagle_paths:
                 result = {
@@ -1692,22 +1741,25 @@ class CrossModalKGAgent:
                     "input_policy": "multimodal KG uses filtered text and filtered ChemEagle reactions only",
                 }
             else:
-                if OpenAI is None:
-                    raise ImportError("openai is required for multimodal structure enrichment")
-                client = OpenAI(api_key=self.config.api_key, base_url=self.config.base_url)
-                with token_usage_context("multimodal_structure_enrichment"):
-                    structure_result = enrich_multimodal_structure(
-                        text_reaction_paths=text_paths,
-                        chemeagle_reaction_paths=chemeagle_paths,
-                        output_dir=self.config.multimodal_structure_enriched_dir,
-                        cache_path=self.config.multimodal_structure_parse_cache_path,
-                        report_path=self.config.multimodal_structure_enrichment_report_path,
-                        client=client,
-                        model=self.config.split_model,
-                        batch_size=30,
-                    )
-                kg_text_paths = structure_result.get("text_outputs") or text_paths
-                kg_chemeagle_paths = structure_result.get("chemeagle_outputs") or chemeagle_paths
+                kg_text_paths = text_paths
+                kg_chemeagle_paths = chemeagle_paths
+                structure_result = {}
+                if self.config.enable_multimodal_structure_enrichment and chemeagle_paths:
+                    if OpenAI is None:
+                        raise ImportError("openai is required for multimodal structure enrichment")
+                    client = OpenAI(api_key=self.config.api_key, base_url=self.config.base_url)
+                    with token_usage_context("chemeagle_post_filter_substrate_structure_enrichment"):
+                        structure_result = enrich_multimodal_structure(
+                            text_reaction_paths=[],
+                            chemeagle_reaction_paths=chemeagle_paths,
+                            output_dir=self.config.multimodal_structure_enriched_dir,
+                            cache_path=self.config.multimodal_structure_parse_cache_path,
+                            report_path=self.config.multimodal_structure_enrichment_report_path,
+                            client=client,
+                            model=self.config.split_model,
+                            batch_size=30,
+                        )
+                    kg_chemeagle_paths = structure_result.get("chemeagle_outputs") or chemeagle_paths
                 result = build_cross_modal_kg(
                     text_reaction_paths=kg_text_paths,
                     chemeagle_raw_iupac_paths=kg_chemeagle_paths,
@@ -1715,12 +1767,13 @@ class CrossModalKGAgent:
                     kg_output_dir=self.config.kg_dir,
                     alignments_output_dir=self.config.alignments_dir,
                 )
-                result["structure_enrichment"] = structure_result
+                if structure_result:
+                    result["structure_enrichment"] = structure_result
 
         state.setdefault("steps", {})["cross_modal_kg"] = result
         result["text_filtered_kg_inputs"] = state.get("successful_text_filtered_paths", [])
         result["chemeagle_filtered_kg_inputs"] = state.get("successful_chemeagle_filtered_paths", [])
-        result["text_structure_enriched_kg_inputs"] = result.get("structure_enrichment", {}).get("text_outputs")
+        result["text_structure_enriched_kg_inputs"] = state.get("successful_text_structure_enriched_paths")
         result["chemeagle_structure_enriched_kg_inputs"] = result.get("structure_enrichment", {}).get("chemeagle_outputs")
         state["cross_modal_alignments_path"] = result.get("cross_modal_alignments")
         state["cross_modal_candidates_path"] = result.get("cross_modal_alignment_candidates")
@@ -2015,6 +2068,10 @@ class ReportAgent:
                     if r.get("text_status") == "success" and r.get("paths", {}).get("registry_debug")
                 ],
                 "text_filtered_outputs": state.get("successful_text_filtered_paths", []),
+                "text_structure_enriched_outputs": state.get("successful_text_structure_enriched_paths", []),
+                "text_substrate_structure_enrichment_report": (
+                    str(self.config.reports_dir / "text_substrate_structure_enrichment_report.json")
+                ),
                 "text_symbol_resolved_outputs": state.get("successful_text_symbol_resolved_paths", []),
                 "chemeagle_raw_outputs": state.get("successful_chemeagle_raw_paths", []),
                 "chemeagle_symbol_resolved_outputs": state.get("successful_chemeagle_symbol_resolved_paths", []),
@@ -2047,7 +2104,7 @@ class ReportAgent:
                 "chemeagle_structure_enriched_kg_inputs": state.get("steps", {}).get("cross_modal_kg", {}).get("chemeagle_structure_enriched_kg_inputs"),
                 "multimodal_structure_parse_cache": (
                     str(self.config.multimodal_structure_parse_cache_path)
-                    if self.config.enable_multimodal_kg
+                    if (self.config.enable_multimodal_kg or state.get("successful_text_structure_enriched_paths"))
                     else None
                 ),
                 "multimodal_structure_enrichment_report": (

@@ -234,7 +234,7 @@ def main() -> None:
         default=str(WORKFLOW_DIR / "output_pdf_full_structure_no_observer" / "chemeagle"),
     )
     parser.add_argument("--models", nargs="+", default=["gpt-4o", "gpt-5-mini"])
-    parser.add_argument("--base-url", default=os.environ.get("OPENAI_BASE_URL") or "https://oneapi.xty.app/v1")
+    parser.add_argument("--base-url", default=os.environ.get("OPENAI_BASE_URL") or "https://hk.xty.app/v1")
     parser.add_argument("--api-key", default=None)
     args = parser.parse_args()
 
@@ -242,7 +242,7 @@ def main() -> None:
     api_key = args.api_key or os.environ.get("OPENAI_API_KEY") or env_values.get("OPENAI_API_KEY")
     if not api_key:
         raise SystemExit("Missing OPENAI_API_KEY in environment or extract/.env")
-    base_url = args.base_url or env_values.get("OPENAI_BASE_URL") or "https://oneapi.xty.app/v1"
+    base_url = args.base_url or env_values.get("OPENAI_BASE_URL") or "https://hk.xty.app/v1"
 
     chemeagle_dir = Path(args.chemeagle_dir)
     input_paths = pick_inputs(chemeagle_dir)

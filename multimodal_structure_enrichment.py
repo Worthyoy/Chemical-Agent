@@ -93,32 +93,35 @@ def is_generic_identifier(value: str) -> bool:
     return False
 
 
-def substrate_identifier(compound: Dict[str, Any], modality: str) -> str:
+def substrate_identifier_with_source(compound: Dict[str, Any], modality: str) -> Tuple[str, str]:
     if modality == "image":
         name = clean_text(compound.get("name"))
         candidates = [
-            clean_text(compound.get("smiles")),
-            name if looks_like_smiles(name) else "",
-            clean_text(compound.get("resolved_smiles")),
-            clean_text(compound.get("iupac_name")),
-            clean_text(compound.get("resolved_iupac_name")),
-            clean_text(compound.get("resolved_name_normalized")),
-            clean_text(compound.get("resolved_name")),
-            name if not looks_like_smiles(name) else "",
-            clean_text(compound.get("label")),
-            clean_text(compound.get("symbol")),
+            ("smiles", clean_text(compound.get("smiles"))),
+            ("name", name if looks_like_smiles(name) else ""),
+            ("resolved_smiles", clean_text(compound.get("resolved_smiles"))),
+            ("iupac_name", clean_text(compound.get("iupac_name"))),
+            ("resolved_iupac_name", clean_text(compound.get("resolved_iupac_name"))),
+            ("resolved_name_normalized", clean_text(compound.get("resolved_name_normalized"))),
+            ("resolved_name", clean_text(compound.get("resolved_name"))),
+            ("name", name if not looks_like_smiles(name) else ""),
+            ("label", clean_text(compound.get("label"))),
+            ("symbol", clean_text(compound.get("symbol"))),
         ]
     else:
         candidates = [
-            clean_text(compound.get("iupac_name")),
-            clean_text(compound.get("name")),
-            clean_text(compound.get("resolved_iupac_name")),
-            clean_text(compound.get("resolved_name_normalized")),
-            clean_text(compound.get("resolved_name")),
-            clean_text(compound.get("symbol")),
-            clean_text(compound.get("label")),
+            ("iupac_name", clean_text(compound.get("iupac_name"))),
+            ("resolved_iupac_name", clean_text(compound.get("resolved_iupac_name"))),
+            ("resolved_name_normalized", clean_text(compound.get("resolved_name_normalized"))),
+            ("resolved_name", clean_text(compound.get("resolved_name"))),
+            ("name", clean_text(compound.get("name"))),
         ]
-    return next((candidate for candidate in candidates if candidate), "")
+    return next(((value, source) for source, value in candidates if value), ("", ""))
+
+
+def substrate_identifier(compound: Dict[str, Any], modality: str) -> str:
+    identifier, _ = substrate_identifier_with_source(compound, modality)
+    return identifier
 
 
 def cache_key(identifier: str) -> str:
@@ -190,7 +193,7 @@ def call_structure_llm(
                     "scaffold": clean_text(row.get("scaffold")) or None,
                     "substituents": [clean_text(item) for item in substituents if clean_text(item)],
                     "structure_parse_source": "llm",
-                    "structure_parse_status": "resolved",
+                    "structure_parse_status": "parsed",
                 }
             return result
         except Exception as exc:
@@ -226,7 +229,7 @@ def collect_needed_identifiers(payloads: List[Tuple[Path, Dict[str, Any], str]],
                     continue
                 if clean_text(substrate.get("scaffold")):
                     continue
-                identifier = substrate_identifier(substrate, modality)
+                identifier, _ = substrate_identifier_with_source(substrate, modality)
                 key = cache_key(identifier)
                 if not identifier or key in cache:
                     continue
@@ -262,23 +265,24 @@ def apply_enrichment(payload: Dict[str, Any], modality: str, cache: Dict[str, Di
             if clean_text(substrate.get("scaffold")):
                 stats["substrates_with_existing_structure"] += 1
                 continue
-            identifier = substrate_identifier(substrate, modality)
+            identifier, source = substrate_identifier_with_source(substrate, modality)
             if not identifier:
                 stats["substrates_missing_identifier"] += 1
                 continue
             parsed = cache.get(cache_key(identifier)) or {}
             substrate["structure_parse_identifier"] = identifier
             substrate["structure_parse_modality"] = modality
-            substrate["structure_parse_source"] = clean_text(parsed.get("structure_parse_source")) or "cache"
-            substrate["structure_parse_status"] = clean_text(parsed.get("structure_parse_status")) or "not_found"
+            substrate["structure_parse_source"] = source
             if parsed.get("parseable") and clean_text(parsed.get("scaffold")):
                 substrate["parseable"] = True
                 substrate["scaffold"] = clean_text(parsed.get("scaffold"))
                 substrate["substituents"] = [
                     clean_text(item) for item in parsed.get("substituents") or [] if clean_text(item)
                 ]
+                substrate["structure_parse_status"] = "parsed"
                 stats["substrates_enriched"] += 1
             else:
+                substrate["structure_parse_status"] = clean_text(parsed.get("structure_parse_status")) or "not_found"
                 substrate.setdefault("parseable", False)
                 substrate.setdefault("substituents", [])
                 stats["substrates_unparseable"] += 1
@@ -362,6 +366,9 @@ def enrich_multimodal_structure(
         "chemeagle_outputs": image_outputs,
         "cache_path": str(cache_path),
         "model": model,
+        "batch_size": batch_size,
+        "new_unique_parseable_substrate_identifiers": len(needed),
+        "llm_batches": (len(needed) + batch_size - 1) // batch_size if batch_size else 0,
         **total_stats,
         "files": file_reports,
     }

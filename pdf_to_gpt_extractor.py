@@ -130,7 +130,7 @@ name/symbol rules
 - Use null for unreported fields."""
     
     def __init__(self, api_key: Optional[str] = None,
-                 base_url: str = "https://oneapi.xty.app/v1"):
+                 base_url: str = "https://hk.xty.app/v1"):
         """
         初始化提取器
         

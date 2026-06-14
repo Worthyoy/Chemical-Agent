@@ -223,7 +223,7 @@ def normalize_reaction_types(
     reactions: List[dict],
     model: str = "gpt-5-mini",
     api_key: Optional[str] = None,
-    base_url: str = "https://oneapi.xty.app/v1",
+    base_url: str = "https://hk.xty.app/v1",
     batch_size: int = 20,
 ) -> dict:
     if OpenAI is None:
@@ -271,7 +271,7 @@ def normalize_reaction_types_file(
     report_path=None,
     model: str = "gpt-5-mini",
     api_key: Optional[str] = None,
-    base_url: str = "https://oneapi.xty.app/v1",
+    base_url: str = "https://hk.xty.app/v1",
     batch_size: int = 20,
 ) -> dict:
     input_path = Path(input_path)
