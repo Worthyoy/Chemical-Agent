@@ -1,9 +1,12 @@
 import csv
+import contextvars
 import hashlib
 import json
 import re
+import threading
 import time
 import traceback
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -18,6 +21,7 @@ from cross_modal_kg import build_cross_modal_kg
 from multimodal_structure_enrichment import enrich_multimodal_structure
 from symbol_resolution import canonical_paper_key, resolve_cross_modal_symbols, write_resolution_outputs
 from langgraph_workflow.chemeagle_adapter import (
+    cleanup_reaction_targets,
     enrich_chemeagle_raw_with_iupac,
     normalize_chemeagle_payload,
     refine_chemeagle_condition_roles,
@@ -39,6 +43,9 @@ try:
     from tqdm import tqdm
 except ImportError:
     tqdm = None
+
+
+_BRANCH_EVENT_LOCK = threading.Lock()
 
 
 @dataclass
@@ -68,6 +75,7 @@ class PipelineConfig:
     skip_downstream_build: bool = False
     enable_cross_modal_symbol_resolution: bool = False
     enable_chemeagle_iupac_enrichment: bool = False
+    chemeagle_iupac_lookup_timeout: float = 15.0
     enable_chemeagle_role_refinement: bool = False
     enable_multimodal_kg: bool = False
     enable_multimodal_structure_enrichment: bool = False
@@ -82,10 +90,24 @@ class PipelineConfig:
     chemeagle_base_url: Optional[str] = None
     chemeagle_api_key: Optional[str] = None
     chemeagle_max_images: int = 0
+    chemeagle_max_parallel_images: int = 1
     chemeagle_use_plan_observer: bool = False
     chemeagle_use_action_observer: bool = False
+    chemeagle_execution_mode: str = "subprocess"
+    chemeagle_gpu_worker_host: Optional[str] = None
+    chemeagle_gpu_worker_port: Optional[int] = None
+    chemeagle_gpu_worker_pid: Optional[int] = None
     token_usage_tracking: bool = True
     token_usage_run_id: Optional[str] = None
+    enable_gpu_monitor: bool = False
+    gpu_monitor_interval: float = 1.0
+    gpu_monitor_plot: bool = True
+    enable_chemeagle_gpu_gate: bool = False
+    chemeagle_gpu_gate_util_threshold: float = 20.0
+    chemeagle_gpu_gate_memory_free_mib: float = 2000.0
+    chemeagle_gpu_gate_stable_samples: int = 2
+    chemeagle_gpu_gate_poll_interval: float = 1.0
+    chemeagle_gpu_gate_timeout: float = 0.0
 
     @property
     def page_cache_dir(self) -> Path:
@@ -200,12 +222,44 @@ class PipelineConfig:
         return self.reports_dir / "token_usage_report.json"
 
     @property
+    def gpu_usage_samples_path(self) -> Path:
+        return self.intermediate_dir / "gpu_usage_samples.csv"
+
+    @property
+    def gpu_usage_report_path(self) -> Path:
+        return self.reports_dir / "gpu_usage_report.json"
+
+    @property
+    def gpu_timeline_path(self) -> Path:
+        return self.reports_dir / "gpu_timeline.png"
+
+    @property
+    def workflow_branch_events_path(self) -> Path:
+        return self.intermediate_dir / "workflow_branch_events.jsonl"
+
+    @property
     def chemeagle_timing_events_path(self) -> Path:
         return self.intermediate_dir / "chemeagle_timing_events.jsonl"
 
     @property
     def chemeagle_timing_report_path(self) -> Path:
         return self.reports_dir / "chemeagle_timing_report.json"
+
+    @property
+    def chemeagle_gpu_gate_lock_dir(self) -> Path:
+        return self.intermediate_dir / "chemeagle_gpu_gate.lock"
+
+    @property
+    def chemeagle_gpu_worker_task_dir(self) -> Path:
+        return self.intermediate_dir / "chemeagle_gpu_worker_tasks"
+
+    @property
+    def chemeagle_gpu_worker_ready_path(self) -> Path:
+        return self.intermediate_dir / "chemeagle_gpu_worker_ready.json"
+
+    @property
+    def chemeagle_gpu_worker_log_path(self) -> Path:
+        return self.intermediate_dir / "chemeagle_gpu_worker.log"
 
     @property
     def multimodal_structure_enriched_dir(self) -> Path:
@@ -244,6 +298,14 @@ def write_json(path: Path, data) -> None:
         f.seek(0)
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.truncate()
+
+
+def append_jsonl(path: Path, payload: Dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    line = json.dumps(payload, ensure_ascii=False)
+    with _BRANCH_EVENT_LOCK:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(line + "\n")
 
 
 def safe_artifact_stem(raw_stem: str, max_prefix_len: int = 48) -> str:
@@ -394,10 +456,14 @@ def summarize_chemeagle_raw_payload(raw_payload) -> Dict:
     total_images = 0
     failed_images = []
     raw_reactions = 0
+    image_elapsed_values = []
     for index, record in enumerate(records):
         if not isinstance(record, dict):
             continue
         total_images += 1
+        elapsed = record.get("image_elapsed_seconds")
+        if isinstance(elapsed, (int, float)):
+            image_elapsed_values.append(float(elapsed))
         status = record.get("status")
         if status == "error":
             failed_images.append(
@@ -413,8 +479,12 @@ def summarize_chemeagle_raw_payload(raw_payload) -> Dict:
         raw_reactions += reaction_count if isinstance(reaction_count, int) else len(reactions)
     return {
         "total_images": total_images,
+        "successful_images": total_images - len(failed_images),
         "failed_images": failed_images,
+        "failed_image_count": len(failed_images),
         "raw_reactions": raw_reactions,
+        "image_elapsed_seconds_max": round(max(image_elapsed_values), 3) if image_elapsed_values else 0.0,
+        "image_elapsed_seconds_sum": round(sum(image_elapsed_values), 3),
     }
 
 
@@ -701,6 +771,89 @@ class ProcessPDFAgent:
     def __init__(self, config: PipelineConfig):
         self.config = config
 
+    def _emit_branch_event(
+        self,
+        job: Dict,
+        event: str,
+        *,
+        status: Optional[str] = None,
+        started_at: Optional[float] = None,
+        extra: Optional[Dict] = None,
+        error: Optional[BaseException] = None,
+    ) -> None:
+        payload = {
+            "created_at": datetime.now().isoformat(),
+            "event": event,
+            "status": status,
+            "pdf_name": job.get("pdf_name"),
+            "paper_key": job.get("paper_key"),
+            "artifact_stem": job.get("artifact_stem"),
+            "mode": job.get("mode", "legacy_joint"),
+            "text_pdf": job.get("text_pdf_path"),
+            "image_pdf": job.get("image_pdf_path"),
+        }
+        if started_at is not None:
+            payload["elapsed_seconds"] = round(time.perf_counter() - started_at, 3)
+        if extra:
+            payload.update(extra)
+        if error is not None:
+            payload["error"] = {
+                "type": type(error).__name__,
+                "message": str(error),
+            }
+        append_jsonl(self.config.workflow_branch_events_path, payload)
+
+    def _run_logged_text_branch(self, job: Dict, result: Dict) -> Path:
+        started_at = time.perf_counter()
+        self._emit_branch_event(job, "text_raw_branch_start", status="started")
+        try:
+            output_path = self._run_text_branch(job, result)
+            self._emit_branch_event(
+                job,
+                "text_raw_branch_end",
+                status=result.get("text_status", "success"),
+                started_at=started_at,
+                extra={"output": str(output_path)},
+            )
+            return output_path
+        except Exception as exc:
+            self._emit_branch_event(
+                job,
+                "text_raw_branch_end",
+                status="failed",
+                started_at=started_at,
+                error=exc,
+            )
+            raise
+
+    def _run_logged_chemeagle_raw_branch(self, job: Dict, result: Dict, chemeagle_result: Dict):
+        started_at = time.perf_counter()
+        self._emit_branch_event(job, "chemeagle_raw_branch_start", status="started")
+        try:
+            raw_payload = self._run_chemeagle_raw_branch(job, result, chemeagle_result)
+            self._emit_branch_event(
+                job,
+                "chemeagle_raw_branch_end",
+                status=chemeagle_result.get("raw_status", "success"),
+                started_at=started_at,
+                extra={
+                    "output": job.get("chemeagle_raw_result_path"),
+                    "cache": chemeagle_result.get("cache"),
+                    "total_images": chemeagle_result.get("total_images"),
+                    "raw_reactions": chemeagle_result.get("raw_reactions"),
+                },
+            )
+            return raw_payload
+        except Exception as exc:
+            self._emit_branch_event(
+                job,
+                "chemeagle_raw_branch_end",
+                status="failed",
+                started_at=started_at,
+                error=exc,
+            )
+            raise
+
     def run(self, state: Dict) -> Dict:
         job = state["job"]
         started_at = time.perf_counter()
@@ -763,9 +916,44 @@ class ProcessPDFAgent:
 
         errors = []
         reaction_output_path = Path(job["reaction_output_path"])
-        if run_text:
+        chemeagle_result = None
+        raw_payload = None
+
+        if run_text and run_chemeagle:
+            chemeagle_result = self._init_chemeagle_result(job)
+
+            def run_text_branch():
+                return self._run_logged_text_branch(job, result)
+
+            def run_chemeagle_raw_branch():
+                return self._run_logged_chemeagle_raw_branch(job, result, chemeagle_result)
+
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                text_ctx = contextvars.copy_context()
+                chemeagle_ctx = contextvars.copy_context()
+                futures = {
+                    "text": executor.submit(text_ctx.run, run_text_branch),
+                    "chemeagle_raw": executor.submit(chemeagle_ctx.run, run_chemeagle_raw_branch),
+                }
+                try:
+                    reaction_output_path = futures["text"].result()
+                except Exception as exc:
+                    result["text_status"] = "failed"
+                    errors.append(
+                        {
+                            "stage": "text",
+                            "type": type(exc).__name__,
+                            "message": str(exc),
+                            "traceback": traceback.format_exc(limit=8),
+                        }
+                    )
+                try:
+                    raw_payload = futures["chemeagle_raw"].result()
+                except Exception as exc:
+                    self._mark_chemeagle_failure(chemeagle_result, result, exc)
+        elif run_text:
             try:
-                reaction_output_path = self._run_text_branch(job, result)
+                reaction_output_path = self._run_logged_text_branch(job, result)
             except Exception as exc:
                 result["text_status"] = "failed"
                 errors.append(
@@ -776,12 +964,65 @@ class ProcessPDFAgent:
                         "traceback": traceback.format_exc(limit=8),
                     }
                 )
-        if run_chemeagle:
-            self._run_chemeagle_branch(job, result)
+        elif run_chemeagle:
+            chemeagle_result = self._init_chemeagle_result(job)
+            try:
+                raw_payload = self._run_logged_chemeagle_raw_branch(job, result, chemeagle_result)
+            except Exception as exc:
+                self._mark_chemeagle_failure(chemeagle_result, result, exc)
+
+        if run_chemeagle and raw_payload is not None and chemeagle_result is not None:
+            symbol_started_at = time.perf_counter()
+            self._emit_branch_event(job, "symbol_resolution_start", status="started")
+            try:
+                chemeagle_payload, chemeagle_input_path = self._run_cross_modal_symbol_resolution(
+                    job,
+                    result,
+                    chemeagle_result,
+                    raw_payload,
+                )
+                self._emit_branch_event(
+                    job,
+                    "symbol_resolution_end",
+                    status=result.get("symbol_resolution_status", "skipped"),
+                    started_at=symbol_started_at,
+                    extra={
+                        "text_output": job.get("text_symbol_resolved_output_path"),
+                        "image_output": job.get("chemeagle_symbol_resolved_output_path"),
+                    },
+                )
+            except Exception as exc:
+                self._emit_branch_event(
+                    job,
+                    "symbol_resolution_end",
+                    status="failed",
+                    started_at=symbol_started_at,
+                    error=exc,
+                )
+                self._mark_chemeagle_failure(chemeagle_result, result, exc)
+                chemeagle_payload = None
+                chemeagle_input_path = None
+            if chemeagle_payload is not None and chemeagle_input_path is not None:
+                try:
+                    self._run_chemeagle_postprocess(
+                        job,
+                        result,
+                        chemeagle_result,
+                        chemeagle_payload,
+                        chemeagle_input_path,
+                    )
+                except Exception as exc:
+                    self._mark_chemeagle_failure(chemeagle_result, result, exc)
+        if run_chemeagle and chemeagle_result is not None:
+            result["chemeagle"] = chemeagle_result
         if run_text and result.get("text_status") == "success":
             filter_input_path = (
                 Path(job["text_symbol_resolved_output_path"])
-                if can_symbol_resolve and Path(job["text_symbol_resolved_output_path"]).exists()
+                if (
+                    can_symbol_resolve
+                    and result.get("symbol_resolution_status") == "success"
+                    and Path(job["text_symbol_resolved_output_path"]).exists()
+                )
                 else reaction_output_path
             )
             try:
@@ -1081,8 +1322,8 @@ class ProcessPDFAgent:
         else:
             result["counts"]["filtered_reactions"] = filter_result.get("reactions", 0)
 
-    def _run_chemeagle_branch(self, job: Dict, result: Dict) -> None:
-        chemeagle_result = {
+    def _init_chemeagle_result(self, job: Dict) -> Dict:
+        return {
             "status": "failed",
             "raw_status": "pending",
             "iupac_status": "skipped" if not self.config.enable_chemeagle_iupac_enrichment else "pending",
@@ -1098,124 +1339,103 @@ class ProcessPDFAgent:
             "image_dir": job["chemeagle_image_dir"],
             "error": None,
         }
-        try:
-            if not self.config.chemeagle_dir:
-                raise ValueError("ChemEagle directory is not configured.")
-            pdf_path = Path(job.get("image_pdf_path") or job["pdf_path"])
-            metadata = source_metadata(pdf_path, self.config)
-            metadata["paper_key"] = job.get("paper_key")
-            metadata["source_modality"] = "image"
-            metadata["source_pdf"] = str(pdf_path)
-            text_raw_path = Path(job["reaction_output_path"])
-            text_symbol_resolved_path = Path(job["text_symbol_resolved_output_path"])
-            raw_path = Path(job["chemeagle_raw_result_path"])
-            symbol_resolved_path = Path(job["chemeagle_symbol_resolved_output_path"])
-            raw_iupac_path = Path(job["chemeagle_raw_iupac_output_path"])
-            role_refined_path = Path(job["chemeagle_role_refined_output_path"])
-            normalized_path = Path(job["chemeagle_normalized_output_path"])
-            filtered_path = Path(job["chemeagle_filtered_output_path"])
-            image_dir = Path(job["chemeagle_image_dir"])
 
-            if self.config.resume and not self.config.overwrite and raw_path.exists():
-                chemeagle_result["cache"] = "hit"
-            else:
-                with token_usage_context("chemeagle_subprocess", pdf_path.name):
-                    subprocess_result = run_chemeagle_pdf(
-                        chemeagle_python=self.config.chemeagle_python,
-                        chemeagle_dir=Path(self.config.chemeagle_dir),
-                        pdf_path=pdf_path,
-                        image_dir=image_dir,
-                        raw_result_path=raw_path,
-                        pdf_model_size=self.config.chemeagle_pdf_model_size,
-                        model_name=self.config.chemeagle_model_name,
-                        base_url=self.config.chemeagle_base_url,
-                        api_key=self.config.chemeagle_api_key,
-                        max_images=self.config.chemeagle_max_images,
-                        use_plan_observer=self.config.chemeagle_use_plan_observer,
-                        use_action_observer=self.config.chemeagle_use_action_observer,
-                        timing_events_path=self.config.chemeagle_timing_events_path,
-                        timing_report_path=self.config.chemeagle_timing_report_path,
-                        timing_run_id=self.config.token_usage_run_id,
-                    )
-                chemeagle_result["cache"] = "miss"
-                chemeagle_result["subprocess"] = subprocess_result
+    def _mark_chemeagle_failure(self, chemeagle_result: Dict, result: Dict, exc: Exception) -> None:
+        chemeagle_result["error"] = {
+            "type": type(exc).__name__,
+            "message": str(exc),
+            "traceback": traceback.format_exc(limit=8),
+        }
+        if chemeagle_result.get("raw_status") != "success":
+            chemeagle_result["raw_status"] = "failed"
+            result["chemeagle_raw_status"] = "failed"
+        if chemeagle_result.get("normalization_status") == "pending":
+            chemeagle_result["normalization_status"] = "failed"
+            result["chemeagle_normalization_status"] = "failed"
+        if chemeagle_result.get("iupac_status") == "pending":
+            chemeagle_result["iupac_status"] = "failed"
+            result["chemeagle_iupac_status"] = "failed"
+        if chemeagle_result.get("symbol_resolution_status") == "pending":
+            chemeagle_result["symbol_resolution_status"] = "failed"
+            result["symbol_resolution_status"] = "failed"
+        if chemeagle_result.get("role_refinement_status") == "pending":
+            chemeagle_result["role_refinement_status"] = "failed"
+            result["chemeagle_role_refinement_status"] = "failed"
+        result["chemeagle_status"] = "failed"
+        result["chemeagle"] = chemeagle_result
 
-            raw_payload = read_json(raw_path)
-            raw_summary = summarize_chemeagle_raw_payload(raw_payload)
-            chemeagle_result.update(raw_summary)
-            chemeagle_result["raw_status"] = "success"
-            result["chemeagle_raw_status"] = "success"
-            result["counts"]["chemeagle_images"] = raw_summary["total_images"]
-            result["counts"]["chemeagle_raw_reactions"] = raw_summary["raw_reactions"]
+    def _run_chemeagle_raw_branch(self, job: Dict, result: Dict, chemeagle_result: Dict):
+        if not self.config.chemeagle_dir:
+            raise ValueError("ChemEagle directory is not configured.")
+        pdf_path = Path(job.get("image_pdf_path") or job["pdf_path"])
+        raw_path = Path(job["chemeagle_raw_result_path"])
+        image_dir = Path(job["chemeagle_image_dir"])
 
-            chemeagle_iupac_input_payload = raw_payload
-            chemeagle_iupac_input_path = raw_path
-            can_symbol_resolve = (
-                self.config.enable_cross_modal_symbol_resolution
-                and bool(job.get("run_text", True))
-                and text_raw_path.exists()
-            )
-            if can_symbol_resolve:
-                try:
-                    text_payload_for_symbol = read_json(text_raw_path)
-                    if isinstance(text_payload_for_symbol, dict):
-                        text_payload_for_symbol.setdefault("paper_key", job.get("paper_key"))
-                    image_payload_for_symbol = raw_payload
-                    image_records = (
-                        image_payload_for_symbol
-                        if isinstance(image_payload_for_symbol, list)
-                        else [image_payload_for_symbol]
-                    )
-                    for record in image_records:
-                        if isinstance(record, dict):
-                            record.setdefault("paper_key", job.get("paper_key"))
-                    resolved_text, resolved_image, symbol_report = resolve_cross_modal_symbols(
-                        text_payload_for_symbol,
-                        image_payload_for_symbol,
-                    )
-                    symbol_report["cache"] = "refreshed"
-                    write_resolution_outputs(
-                        text_output_path=text_symbol_resolved_path,
-                        image_output_path=symbol_resolved_path,
-                        report_path=self.config.symbol_resolution_report_path,
-                        candidates_path=self.config.symbol_resolution_candidates_path,
-                        validation_path=self.config.symbol_resolution_validation_report_path,
-                        resolved_text=resolved_text,
-                        resolved_image=resolved_image,
-                        report=symbol_report,
-                    )
-                    chemeagle_iupac_input_payload = resolved_image
-                    chemeagle_iupac_input_path = symbol_resolved_path
-                    chemeagle_result["symbol_resolution_status"] = "success"
-                    chemeagle_result["symbol_resolution"] = {
-                        **{k: v for k, v in symbol_report.items() if k != "candidates"},
-                        "candidates": symbol_report.get("candidates", []),
-                        "text_output": str(text_symbol_resolved_path),
-                        "image_output": str(symbol_resolved_path),
-                        "report_output": str(self.config.symbol_resolution_report_path),
-                        "candidates_output": str(self.config.symbol_resolution_candidates_path),
-                        "validation_output": str(self.config.symbol_resolution_validation_report_path),
-                    }
-                    result["symbol_resolution_status"] = "success"
-                    result["counts"]["symbol_text_entities_resolved"] = symbol_report.get("text_entities_resolved", 0)
-                    result["counts"]["symbol_image_entities_resolved"] = symbol_report.get("image_entities_resolved", 0)
-                    result["counts"]["symbol_resolution_candidates"] = symbol_report.get("candidate_count", 0)
-                    validation_report = symbol_report.get("validation", {})
-                    result["counts"]["symbol_resolution_invalid"] = validation_report.get("invalid_resolution_count", 0)
-                except Exception as exc:
-                    chemeagle_result["symbol_resolution_status"] = "failed"
-                    chemeagle_result["symbol_resolution"] = {
-                        "status": "failed",
-                        "text_output": str(text_symbol_resolved_path),
-                        "image_output": str(symbol_resolved_path),
-                        "error": {
-                            "type": type(exc).__name__,
-                            "message": str(exc),
-                            "traceback": traceback.format_exc(limit=8),
-                        },
-                    }
-                    result["symbol_resolution_status"] = "failed"
-            elif self.config.enable_cross_modal_symbol_resolution:
+        if self.config.resume and not self.config.overwrite and raw_path.exists():
+            chemeagle_result["cache"] = "hit"
+        else:
+            with token_usage_context("chemeagle_subprocess", pdf_path.name):
+                subprocess_result = run_chemeagle_pdf(
+                    chemeagle_python=self.config.chemeagle_python,
+                    chemeagle_dir=Path(self.config.chemeagle_dir),
+                    pdf_path=pdf_path,
+                    image_dir=image_dir,
+                    raw_result_path=raw_path,
+                    pdf_model_size=self.config.chemeagle_pdf_model_size,
+                    model_name=self.config.chemeagle_model_name,
+                    base_url=self.config.chemeagle_base_url,
+                    api_key=self.config.chemeagle_api_key,
+                    max_images=self.config.chemeagle_max_images,
+                    use_plan_observer=self.config.chemeagle_use_plan_observer,
+                    use_action_observer=self.config.chemeagle_use_action_observer,
+                    max_parallel_images=self.config.chemeagle_max_parallel_images,
+                    timing_events_path=self.config.chemeagle_timing_events_path,
+                    timing_report_path=self.config.chemeagle_timing_report_path,
+                    timing_run_id=self.config.token_usage_run_id,
+                    enable_gpu_gate=self.config.enable_chemeagle_gpu_gate,
+                    gpu_gate_lock_dir=self.config.chemeagle_gpu_gate_lock_dir,
+                    gpu_gate_util_threshold=self.config.chemeagle_gpu_gate_util_threshold,
+                    gpu_gate_memory_free_mib=self.config.chemeagle_gpu_gate_memory_free_mib,
+                    gpu_gate_stable_samples=self.config.chemeagle_gpu_gate_stable_samples,
+                    gpu_gate_poll_interval=self.config.chemeagle_gpu_gate_poll_interval,
+                    gpu_gate_timeout=self.config.chemeagle_gpu_gate_timeout,
+                    chemeagle_execution_mode=self.config.chemeagle_execution_mode,
+                    gpu_worker_host=self.config.chemeagle_gpu_worker_host,
+                    gpu_worker_port=self.config.chemeagle_gpu_worker_port,
+                    gpu_worker_task_dir=self.config.chemeagle_gpu_worker_task_dir,
+                )
+            chemeagle_result["cache"] = "miss"
+            chemeagle_result["subprocess"] = subprocess_result
+
+        raw_payload = read_json(raw_path)
+        raw_summary = summarize_chemeagle_raw_payload(raw_payload)
+        chemeagle_result.update(raw_summary)
+        chemeagle_result["max_parallel_images"] = self.config.chemeagle_max_parallel_images
+        chemeagle_result["raw_status"] = "success"
+        result["chemeagle_raw_status"] = "success"
+        result["counts"]["chemeagle_images"] = raw_summary["total_images"]
+        result["counts"]["chemeagle_raw_reactions"] = raw_summary["raw_reactions"]
+        return raw_payload
+
+    def _run_cross_modal_symbol_resolution(
+        self,
+        job: Dict,
+        result: Dict,
+        chemeagle_result: Dict,
+        raw_payload,
+    ):
+        text_raw_path = Path(job["reaction_output_path"])
+        text_symbol_resolved_path = Path(job["text_symbol_resolved_output_path"])
+        symbol_resolved_path = Path(job["chemeagle_symbol_resolved_output_path"])
+        raw_path = Path(job["chemeagle_raw_result_path"])
+        can_symbol_resolve = (
+            self.config.enable_cross_modal_symbol_resolution
+            and bool(job.get("run_text", True))
+            and result.get("text_status") == "success"
+            and text_raw_path.exists()
+        )
+        if not can_symbol_resolve:
+            if self.config.enable_cross_modal_symbol_resolution:
                 chemeagle_result["symbol_resolution_status"] = "skipped"
                 chemeagle_result["symbol_resolution"] = {
                     "status": "skipped",
@@ -1224,120 +1444,269 @@ class ProcessPDFAgent:
                     "image_output": str(symbol_resolved_path),
                 }
                 result["symbol_resolution_status"] = "skipped"
+            return raw_payload, raw_path
 
-            if self.config.enable_chemeagle_iupac_enrichment:
-                try:
-                    enriched_payload, iupac_stats = enrich_chemeagle_raw_with_iupac(
-                        chemeagle_iupac_input_payload,
-                        cache_path=self.config.chemeagle_iupac_cache_path,
-                    )
-                    write_json(raw_iupac_path, enriched_payload)
-                    chemeagle_result["iupac_status"] = "success"
-                    chemeagle_result["iupac"] = {
-                        **iupac_stats,
+        try:
+            text_payload_for_symbol = read_json(text_raw_path)
+            if isinstance(text_payload_for_symbol, dict):
+                text_payload_for_symbol.setdefault("paper_key", job.get("paper_key"))
+            image_payload_for_symbol = raw_payload
+            image_records = (
+                image_payload_for_symbol
+                if isinstance(image_payload_for_symbol, list)
+                else [image_payload_for_symbol]
+            )
+            for record in image_records:
+                if isinstance(record, dict):
+                    record.setdefault("paper_key", job.get("paper_key"))
+            resolved_text, resolved_image, symbol_report = resolve_cross_modal_symbols(
+                text_payload_for_symbol,
+                image_payload_for_symbol,
+            )
+            symbol_report["cache"] = "refreshed"
+            write_resolution_outputs(
+                text_output_path=text_symbol_resolved_path,
+                image_output_path=symbol_resolved_path,
+                report_path=self.config.symbol_resolution_report_path,
+                candidates_path=self.config.symbol_resolution_candidates_path,
+                validation_path=self.config.symbol_resolution_validation_report_path,
+                resolved_text=resolved_text,
+                resolved_image=resolved_image,
+                report=symbol_report,
+            )
+            chemeagle_result["symbol_resolution_status"] = "success"
+            chemeagle_result["symbol_resolution"] = {
+                **{k: v for k, v in symbol_report.items() if k != "candidates"},
+                "candidates": symbol_report.get("candidates", []),
+                "text_output": str(text_symbol_resolved_path),
+                "image_output": str(symbol_resolved_path),
+                "report_output": str(self.config.symbol_resolution_report_path),
+                "candidates_output": str(self.config.symbol_resolution_candidates_path),
+                "validation_output": str(self.config.symbol_resolution_validation_report_path),
+            }
+            result["symbol_resolution_status"] = "success"
+            result["counts"]["symbol_text_entities_resolved"] = symbol_report.get("text_entities_resolved", 0)
+            result["counts"]["symbol_image_entities_resolved"] = symbol_report.get("image_entities_resolved", 0)
+            result["counts"]["symbol_resolution_candidates"] = symbol_report.get("candidate_count", 0)
+            validation_report = symbol_report.get("validation", {})
+            result["counts"]["symbol_resolution_invalid"] = validation_report.get("invalid_resolution_count", 0)
+            return resolved_image, symbol_resolved_path
+        except Exception as exc:
+            chemeagle_result["symbol_resolution_status"] = "failed"
+            chemeagle_result["symbol_resolution"] = {
+                "status": "failed",
+                "text_output": str(text_symbol_resolved_path),
+                "image_output": str(symbol_resolved_path),
+                "error": {
+                    "type": type(exc).__name__,
+                    "message": str(exc),
+                    "traceback": traceback.format_exc(limit=8),
+                },
+            }
+            result["symbol_resolution_status"] = "failed"
+            return raw_payload, raw_path
+
+    def _run_chemeagle_postprocess(
+        self,
+        job: Dict,
+        result: Dict,
+        chemeagle_result: Dict,
+        chemeagle_iupac_input_payload,
+        chemeagle_iupac_input_path: Path,
+    ) -> None:
+        pdf_path = Path(job.get("image_pdf_path") or job["pdf_path"])
+        metadata = source_metadata(pdf_path, self.config)
+        metadata["paper_key"] = job.get("paper_key")
+        metadata["source_modality"] = "image"
+        metadata["source_pdf"] = str(pdf_path)
+        raw_path = Path(job["chemeagle_raw_result_path"])
+        raw_iupac_path = Path(job["chemeagle_raw_iupac_output_path"])
+        role_refined_path = Path(job["chemeagle_role_refined_output_path"])
+        normalized_path = Path(job["chemeagle_normalized_output_path"])
+        filtered_path = Path(job["chemeagle_filtered_output_path"])
+
+        if self.config.enable_chemeagle_iupac_enrichment:
+            iupac_started_at = time.perf_counter()
+            self._emit_branch_event(job, "chemeagle_iupac_start", status="started")
+            try:
+                enriched_payload, iupac_stats = enrich_chemeagle_raw_with_iupac(
+                    chemeagle_iupac_input_payload,
+                    cache_path=self.config.chemeagle_iupac_cache_path,
+                    lookup_timeout=self.config.chemeagle_iupac_lookup_timeout,
+                )
+                write_json(raw_iupac_path, enriched_payload)
+                chemeagle_result["iupac_status"] = "success"
+                chemeagle_result["iupac"] = {
+                    **iupac_stats,
+                    "input": str(chemeagle_iupac_input_path),
+                    "output": str(raw_iupac_path),
+                }
+                result["chemeagle_iupac_status"] = "success"
+                result["counts"]["iupac_resolved_count"] = iupac_stats.get("resolved", 0)
+                result["counts"]["iupac_not_found_count"] = iupac_stats.get("not_found", 0)
+                result["counts"]["iupac_error_count"] = iupac_stats.get("error", 0)
+                self._emit_branch_event(
+                    job,
+                    "chemeagle_iupac_end",
+                    status="success",
+                    started_at=iupac_started_at,
+                    extra={
                         "input": str(chemeagle_iupac_input_path),
                         "output": str(raw_iupac_path),
-                    }
-                    result["chemeagle_iupac_status"] = "success"
-                    result["counts"]["iupac_resolved_count"] = iupac_stats.get("resolved", 0)
-                    result["counts"]["iupac_not_found_count"] = iupac_stats.get("not_found", 0)
-                    result["counts"]["iupac_error_count"] = iupac_stats.get("error", 0)
-                except Exception as exc:
-                    chemeagle_result["iupac_status"] = "failed"
-                    chemeagle_result["iupac"] = {
-                        "status": "failed",
-                        "output": str(raw_iupac_path),
-                        "error": {
-                            "type": type(exc).__name__,
-                            "message": str(exc),
-                            "traceback": traceback.format_exc(limit=8),
-                        },
-                    }
-                    result["chemeagle_iupac_status"] = "failed"
-
-            role_refinement_input = None
-            role_refinement_input_path = chemeagle_iupac_input_path
-            if self.config.enable_chemeagle_iupac_enrichment and raw_iupac_path.exists():
-                try:
-                    role_refinement_input = read_json(raw_iupac_path)
-                    role_refinement_input_path = raw_iupac_path
-                except Exception:
-                    role_refinement_input = None
-            if role_refinement_input is None:
-                role_refinement_input = chemeagle_iupac_input_payload
-
-            chemeagle_normalization_input = role_refinement_input
-            chemeagle_normalization_input_path = role_refinement_input_path
-            if self.config.enable_chemeagle_role_refinement:
-                try:
-                    if self.config.resume and not self.config.overwrite and role_refined_path.exists():
-                        refined_payload = read_json(role_refined_path)
-                        chemeagle_normalization_input = refined_payload
-                        chemeagle_normalization_input_path = role_refined_path
-                        role_stats = {
-                            "status": "success",
-                            "cache": "hit",
-                            "model": self.config.chemeagle_role_refinement_model,
-                            "conditions_total": 0,
-                            "conditions_llm_refined": 0,
-                            "conditions_fallback": 0,
-                        }
-                    else:
-                        with token_usage_context("chemeagle_role_refinement", pdf_path.name):
-                            refined_payload, role_stats = refine_chemeagle_condition_roles(
-                                role_refinement_input,
-                                model=self.config.chemeagle_role_refinement_model,
-                                api_key=self.config.api_key,
-                                base_url=self.config.base_url,
-                            )
-                        write_json(role_refined_path, refined_payload)
-                        chemeagle_normalization_input = refined_payload
-                        chemeagle_normalization_input_path = role_refined_path
-                        role_stats["cache"] = "miss"
-                    chemeagle_result["role_refinement_status"] = "success"
-                    chemeagle_result["role_refinement"] = {
-                        **role_stats,
-                        "input": str(role_refinement_input_path),
-                        "output": str(role_refined_path),
-                    }
-                    result["chemeagle_role_refinement_status"] = "success"
-                    result["counts"]["role_refinement_conditions_total"] = role_stats.get("conditions_total", 0)
-                    result["counts"]["role_refinement_conditions_llm_refined"] = role_stats.get("conditions_llm_refined", 0)
-                    result["counts"]["role_refinement_conditions_fallback"] = role_stats.get("conditions_fallback", 0)
-                except Exception as exc:
-                    chemeagle_result["role_refinement_status"] = "failed"
-                    chemeagle_result["role_refinement"] = {
-                        "status": "failed",
-                        "input": str(role_refinement_input_path),
-                        "output": str(role_refined_path),
-                        "error": {
-                            "type": type(exc).__name__,
-                            "message": str(exc),
-                            "traceback": traceback.format_exc(limit=8),
-                        },
-                    }
-                    result["chemeagle_role_refinement_status"] = "failed"
-
-            if self.config.skip_chemeagle_normalization:
-                chemeagle_result["status"] = "raw_only"
-                chemeagle_result["normalization_status"] = "skipped"
-                chemeagle_result["filter"] = {
-                    "status": "skipped",
-                    "reason": "skip_chemeagle_normalization",
-                    "input": str(raw_path),
-                    "output": None,
+                        "resolved": iupac_stats.get("resolved", 0),
+                        "not_found": iupac_stats.get("not_found", 0),
+                        "error_count": iupac_stats.get("error", 0),
+                        "queries": iupac_stats.get("queries", 0),
+                        "cache_hits": iupac_stats.get("cache_hits", 0),
+                        "lookup_timeout": self.config.chemeagle_iupac_lookup_timeout,
+                    },
+                )
+            except Exception as exc:
+                chemeagle_result["iupac_status"] = "failed"
+                chemeagle_result["iupac"] = {
+                    "status": "failed",
+                    "output": str(raw_iupac_path),
+                    "error": {
+                        "type": type(exc).__name__,
+                        "message": str(exc),
+                        "traceback": traceback.format_exc(limit=8),
+                    },
                 }
-                result["chemeagle_status"] = "raw_only"
-                result["chemeagle_normalization_status"] = "skipped"
-                result["chemeagle"] = chemeagle_result
-                return
+                result["chemeagle_iupac_status"] = "failed"
+                self._emit_branch_event(
+                    job,
+                    "chemeagle_iupac_end",
+                    status="failed",
+                    started_at=iupac_started_at,
+                    extra={
+                        "input": str(chemeagle_iupac_input_path),
+                        "output": str(raw_iupac_path),
+                        "lookup_timeout": self.config.chemeagle_iupac_lookup_timeout,
+                    },
+                    error=exc,
+                )
 
+        role_refinement_input = None
+        role_refinement_input_path = chemeagle_iupac_input_path
+        if self.config.enable_chemeagle_iupac_enrichment and raw_iupac_path.exists():
+            try:
+                role_refinement_input = read_json(raw_iupac_path)
+                role_refinement_input_path = raw_iupac_path
+            except Exception:
+                role_refinement_input = None
+        if role_refinement_input is None:
+            role_refinement_input = chemeagle_iupac_input_payload
+
+        chemeagle_normalization_input = role_refinement_input
+        chemeagle_normalization_input_path = role_refinement_input_path
+        if self.config.enable_chemeagle_role_refinement:
+            role_started_at = time.perf_counter()
+            self._emit_branch_event(job, "chemeagle_role_refinement_start", status="started")
+            try:
+                if self.config.resume and not self.config.overwrite and role_refined_path.exists():
+                    refined_payload = read_json(role_refined_path)
+                    chemeagle_normalization_input = refined_payload
+                    chemeagle_normalization_input_path = role_refined_path
+                    role_stats = {
+                        "status": "success",
+                        "cache": "hit",
+                        "model": self.config.chemeagle_role_refinement_model,
+                        "conditions_total": 0,
+                        "conditions_llm_refined": 0,
+                        "conditions_fallback": 0,
+                    }
+                else:
+                    with token_usage_context("chemeagle_role_refinement", pdf_path.name):
+                        refined_payload, role_stats = refine_chemeagle_condition_roles(
+                            role_refinement_input,
+                            model=self.config.chemeagle_role_refinement_model,
+                            api_key=self.config.api_key,
+                            base_url=self.config.base_url,
+                        )
+                    write_json(role_refined_path, refined_payload)
+                    chemeagle_normalization_input = refined_payload
+                    chemeagle_normalization_input_path = role_refined_path
+                    role_stats["cache"] = "miss"
+                chemeagle_result["role_refinement_status"] = "success"
+                chemeagle_result["role_refinement"] = {
+                    **role_stats,
+                    "input": str(role_refinement_input_path),
+                    "output": str(role_refined_path),
+                }
+                result["chemeagle_role_refinement_status"] = "success"
+                result["counts"]["role_refinement_conditions_total"] = role_stats.get("conditions_total", 0)
+                result["counts"]["role_refinement_conditions_llm_refined"] = role_stats.get("conditions_llm_refined", 0)
+                result["counts"]["role_refinement_conditions_fallback"] = role_stats.get("conditions_fallback", 0)
+                self._emit_branch_event(
+                    job,
+                    "chemeagle_role_refinement_end",
+                    status="success",
+                    started_at=role_started_at,
+                    extra={
+                        "input": str(role_refinement_input_path),
+                        "output": str(role_refined_path),
+                        "conditions_total": role_stats.get("conditions_total", 0),
+                        "conditions_llm_refined": role_stats.get("conditions_llm_refined", 0),
+                        "conditions_fallback": role_stats.get("conditions_fallback", 0),
+                        "cache": role_stats.get("cache"),
+                    },
+                )
+            except Exception as exc:
+                chemeagle_result["role_refinement_status"] = "failed"
+                chemeagle_result["role_refinement"] = {
+                    "status": "failed",
+                    "input": str(role_refinement_input_path),
+                    "output": str(role_refined_path),
+                    "error": {
+                        "type": type(exc).__name__,
+                        "message": str(exc),
+                        "traceback": traceback.format_exc(limit=8),
+                    },
+                }
+                result["chemeagle_role_refinement_status"] = "failed"
+                self._emit_branch_event(
+                    job,
+                    "chemeagle_role_refinement_end",
+                    status="failed",
+                    started_at=role_started_at,
+                    extra={
+                        "input": str(role_refinement_input_path),
+                        "output": str(role_refined_path),
+                    },
+                    error=exc,
+                )
+
+        normalization_started_at = time.perf_counter()
+        self._emit_branch_event(job, "chemeagle_normalization_start", status="started")
+        if self.config.skip_chemeagle_normalization:
+            chemeagle_result["status"] = "raw_only"
+            chemeagle_result["normalization_status"] = "skipped"
+            chemeagle_result["filter"] = {
+                "status": "skipped",
+                "reason": "skip_chemeagle_normalization",
+                "input": str(raw_path),
+                "output": None,
+            }
+            result["chemeagle_status"] = "raw_only"
+            result["chemeagle_normalization_status"] = "skipped"
+            result["chemeagle"] = chemeagle_result
+            self._emit_branch_event(
+                job,
+                "chemeagle_normalization_end",
+                status="skipped",
+                started_at=normalization_started_at,
+                extra={"reason": "skip_chemeagle_normalization"},
+            )
+            return
+
+        try:
             normalized_payload = normalize_chemeagle_payload(
                 chemeagle_normalization_input,
                 pdf_path=pdf_path,
                 artifact_stem=job["artifact_stem"],
                 source_paper=job.get("paper_key"),
             )
+            normalized_payload = cleanup_reaction_targets(normalized_payload)
             normalized_payload["metadata"] = {
                 **metadata,
                 "extractor": "ChemEagle",
@@ -1370,28 +1739,66 @@ class ProcessPDFAgent:
             result["counts"]["chemeagle_filtered_reactions"] = filtered_count
             result["chemeagle_status"] = "success"
             result["chemeagle_normalization_status"] = "success"
+            result["chemeagle"] = chemeagle_result
+            self._emit_branch_event(
+                job,
+                "chemeagle_normalization_end",
+                status="success",
+                started_at=normalization_started_at,
+                extra={
+                    "input": str(chemeagle_normalization_input_path),
+                    "normalized_output": str(normalized_path),
+                    "filtered_output": str(filtered_path),
+                    "normalized_reactions": chemeagle_result["normalized_reactions"],
+                    "filtered_reactions": filtered_count,
+                },
+            )
         except Exception as exc:
-            chemeagle_result["error"] = {
-                "type": type(exc).__name__,
-                "message": str(exc),
-                "traceback": traceback.format_exc(limit=8),
-            }
-            if chemeagle_result.get("raw_status") != "success":
-                chemeagle_result["raw_status"] = "failed"
-                result["chemeagle_raw_status"] = "failed"
-            if chemeagle_result.get("normalization_status") == "pending":
-                chemeagle_result["normalization_status"] = "failed"
-                result["chemeagle_normalization_status"] = "failed"
-            if chemeagle_result.get("iupac_status") == "pending":
-                chemeagle_result["iupac_status"] = "failed"
-                result["chemeagle_iupac_status"] = "failed"
-            if chemeagle_result.get("symbol_resolution_status") == "pending":
-                chemeagle_result["symbol_resolution_status"] = "failed"
-                result["symbol_resolution_status"] = "failed"
-            if chemeagle_result.get("role_refinement_status") == "pending":
-                chemeagle_result["role_refinement_status"] = "failed"
-                result["chemeagle_role_refinement_status"] = "failed"
-            result["chemeagle_status"] = "failed"
+            self._emit_branch_event(
+                job,
+                "chemeagle_normalization_end",
+                status="failed",
+                started_at=normalization_started_at,
+                extra={
+                    "input": str(chemeagle_normalization_input_path),
+                    "normalized_output": str(normalized_path),
+                    "filtered_output": str(filtered_path),
+                },
+                error=exc,
+            )
+            raise
+
+    def _run_chemeagle_branch(self, job: Dict, result: Dict) -> None:
+        chemeagle_result = self._init_chemeagle_result(job)
+        try:
+            raw_payload = self._run_logged_chemeagle_raw_branch(job, result, chemeagle_result)
+            symbol_started_at = time.perf_counter()
+            self._emit_branch_event(job, "symbol_resolution_start", status="started")
+            chemeagle_payload, chemeagle_input_path = self._run_cross_modal_symbol_resolution(
+                job,
+                result,
+                chemeagle_result,
+                raw_payload,
+            )
+            self._emit_branch_event(
+                job,
+                "symbol_resolution_end",
+                status=result.get("symbol_resolution_status", "skipped"),
+                started_at=symbol_started_at,
+                extra={
+                    "text_output": job.get("text_symbol_resolved_output_path"),
+                    "image_output": job.get("chemeagle_symbol_resolved_output_path"),
+                },
+            )
+            self._run_chemeagle_postprocess(
+                job,
+                result,
+                chemeagle_result,
+                chemeagle_payload,
+                chemeagle_input_path,
+            )
+        except Exception as exc:
+            self._mark_chemeagle_failure(chemeagle_result, result, exc)
         result["chemeagle"] = chemeagle_result
 
 
@@ -2024,6 +2431,7 @@ class ReportAgent:
                 "skip_downstream_build": self.config.skip_downstream_build,
                 "enable_cross_modal_symbol_resolution": self.config.enable_cross_modal_symbol_resolution,
                 "enable_chemeagle_iupac_enrichment": self.config.enable_chemeagle_iupac_enrichment,
+                "chemeagle_iupac_lookup_timeout": self.config.chemeagle_iupac_lookup_timeout,
                 "enable_chemeagle_role_refinement": self.config.enable_chemeagle_role_refinement,
                 "enable_multimodal_kg": self.config.enable_multimodal_kg,
                 "enable_multimodal_structure_enrichment": self.config.enable_multimodal_structure_enrichment,
@@ -2044,10 +2452,27 @@ class ReportAgent:
                 "chemeagle_model_name": self.config.chemeagle_model_name,
                 "chemeagle_base_url": self.config.chemeagle_base_url,
                 "chemeagle_max_images": self.config.chemeagle_max_images,
+                "chemeagle_max_parallel_images": self.config.chemeagle_max_parallel_images,
                 "chemeagle_use_plan_observer": self.config.chemeagle_use_plan_observer,
                 "chemeagle_use_action_observer": self.config.chemeagle_use_action_observer,
+                "chemeagle_execution_mode": self.config.chemeagle_execution_mode,
+                "chemeagle_gpu_worker_host": self.config.chemeagle_gpu_worker_host,
+                "chemeagle_gpu_worker_port": self.config.chemeagle_gpu_worker_port,
+                "chemeagle_gpu_worker_pid": self.config.chemeagle_gpu_worker_pid,
+                "chemeagle_gpu_worker_task_dir": str(self.config.chemeagle_gpu_worker_task_dir),
+                "chemeagle_gpu_worker_log": str(self.config.chemeagle_gpu_worker_log_path),
                 "token_usage_tracking": self.config.token_usage_tracking,
                 "token_usage_run_id": self.config.token_usage_run_id,
+                "enable_gpu_monitor": self.config.enable_gpu_monitor,
+                "gpu_monitor_interval": self.config.gpu_monitor_interval,
+                "gpu_monitor_plot": self.config.gpu_monitor_plot,
+                "enable_chemeagle_gpu_gate": self.config.enable_chemeagle_gpu_gate,
+                "chemeagle_gpu_gate_lock_dir": str(self.config.chemeagle_gpu_gate_lock_dir),
+                "chemeagle_gpu_gate_util_threshold": self.config.chemeagle_gpu_gate_util_threshold,
+                "chemeagle_gpu_gate_memory_free_mib": self.config.chemeagle_gpu_gate_memory_free_mib,
+                "chemeagle_gpu_gate_stable_samples": self.config.chemeagle_gpu_gate_stable_samples,
+                "chemeagle_gpu_gate_poll_interval": self.config.chemeagle_gpu_gate_poll_interval,
+                "chemeagle_gpu_gate_timeout": self.config.chemeagle_gpu_gate_timeout,
             },
             "pdf_count": len(state.get("pdf_files", [])),
             "successful_pdf_count": len(successful),
@@ -2136,6 +2561,22 @@ class ReportAgent:
                 "token_usage_report": (
                     str(self.config.token_usage_report_path)
                     if self.config.token_usage_tracking
+                    else None
+                ),
+                "workflow_branch_events": str(self.config.workflow_branch_events_path),
+                "gpu_usage_samples": (
+                    str(self.config.gpu_usage_samples_path)
+                    if self.config.enable_gpu_monitor
+                    else None
+                ),
+                "gpu_usage_report": (
+                    str(self.config.gpu_usage_report_path)
+                    if self.config.enable_gpu_monitor
+                    else None
+                ),
+                "gpu_timeline": (
+                    str(self.config.gpu_timeline_path)
+                    if self.config.enable_gpu_monitor and self.config.gpu_monitor_plot
                     else None
                 ),
                 "chemeagle_timing_events": str(self.config.chemeagle_timing_events_path),

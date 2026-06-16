@@ -16,6 +16,18 @@ class ReactionFilter:
     ]
     INVALID_DR_PATTERNS = INVALID_ER_PATTERNS
 
+    INVALID_TARGET_PLACEHOLDERS = {
+        "none",
+        "null",
+        "n/a",
+        "na",
+        "/",
+        "not specified",
+        "not reported",
+        "trace",
+        "determined by chiral hplc",
+    }
+
     VALID_NUMBER_PATTERN = r'^[<>≥≤~]?\s*\d+(?:\.\d+)?\s*%?(?:\s*(?:yield|isolated|ee))?'
     VALID_RATIO_PATTERN = r'^[<>≥≤~]?\s*\d+(?:\.\d+)?\s*[:/]\s*[<>≥≤~]?\s*\d+(?:\.\d+)?(?:\s*(?:er|dr))?'
 
@@ -88,12 +100,21 @@ class ReactionFilter:
             return True
         return False
 
+    def is_valid_target_presence(self, value) -> bool:
+        if value is None:
+            return False
+        value_str = str(value).strip()
+        if not value_str:
+            return False
+        return value_str.casefold() not in self.INVALID_TARGET_PLACEHOLDERS
+
     def is_negative_value(self, value) -> bool:
         if value is None:
             return False
         value_str = str(value).strip()
         if not value_str:
             return False
+        return value_str.startswith('-')
         # 检查是否以负号开头
         return value_str.startswith('-')
 
@@ -118,10 +139,10 @@ class ReactionFilter:
         if self.is_negative_value(yield_val) or self.is_negative_value(ee_val):
             return False
 
-        yield_valid = self.is_valid_number_value(yield_val, self.INVALID_YIELD_PATTERNS)
-        ee_valid = self.is_valid_number_value(ee_val, self.INVALID_EE_PATTERNS)
+        yield_valid = self.is_valid_target_presence(yield_val)
+        ee_valid = self.is_valid_target_presence(ee_val)
         er_valid = self.is_valid_number_value(er_val, self.INVALID_ER_PATTERNS)
-        dr_valid = self.is_valid_number_value(dr_val, self.INVALID_DR_PATTERNS)
+        dr_valid = self.is_valid_target_presence(dr_val)
 
         all_invalid = not yield_valid and not ee_valid and not er_valid and not dr_valid
         return not all_invalid

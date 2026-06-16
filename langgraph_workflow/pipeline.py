@@ -1,6 +1,9 @@
 import argparse
+import json
 import operator
 import os
+import socket
+import subprocess
 import sys
 import time
 import traceback
@@ -40,6 +43,7 @@ from langgraph_workflow.token_usage import (  # noqa: E402
     summarize_token_usage,
     token_usage_context,
 )
+from langgraph_workflow.gpu_monitor import GpuMonitor  # noqa: E402
 
 
 class PipelineState(TypedDict, total=False):
@@ -215,6 +219,12 @@ def parse_args():
         help="Add a raw_iupac ChemEagle JSON by resolving SMILES to PubChem IUPAC names.",
     )
     parser.add_argument(
+        "--chemeagle_iupac_lookup_timeout",
+        type=float,
+        default=15.0,
+        help="Maximum seconds for each PubChem IUPAC lookup. 0 disables the timeout.",
+    )
+    parser.add_argument(
         "--enable_cross_modal_symbol_resolution",
         action="store_true",
         help="Resolve symbol-only entities between text raw JSON and ChemEagle raw JSON before filtering/IUPAC enrichment.",
@@ -253,15 +263,78 @@ def parse_args():
     parser.add_argument("--chemeagle_base_url", default=None)
     parser.add_argument("--chemeagle_api_key", default=None)
     parser.add_argument(
+        "--chemeagle_execution_mode",
+        choices=("subprocess", "task_gpu_worker"),
+        default="subprocess",
+        help="Run ChemEagle normally or route GPU-heavy tasks through one long-lived GPU worker.",
+    )
+    parser.add_argument(
         "--chemeagle_max_images",
         type=int,
         default=0,
         help="For validation only: limit ChemEagle to the first N extracted images. 0 means all images.",
     )
     parser.add_argument(
+        "--chemeagle_max_parallel_images",
+        type=int,
+        default=1,
+        help="Maximum extracted images to process concurrently inside each ChemEagle PDF subprocess. 1 preserves serial behavior.",
+    )
+    parser.add_argument(
         "--disable_token_usage_tracking",
         action="store_true",
         help="Disable local OpenAI token usage tracking.",
+    )
+    parser.add_argument(
+        "--enable_gpu_monitor",
+        action="store_true",
+        help="Record GPU utilization during the pipeline and write CSV/JSON/PNG reports.",
+    )
+    parser.add_argument(
+        "--gpu_monitor_interval",
+        type=float,
+        default=1.0,
+        help="GPU sampling interval in seconds when --enable_gpu_monitor is set.",
+    )
+    parser.add_argument(
+        "--disable_gpu_monitor_plot",
+        action="store_true",
+        help="Only write GPU monitor CSV/JSON; skip PNG generation.",
+    )
+    parser.add_argument(
+        "--enable_chemeagle_gpu_gate",
+        action="store_true",
+        help="Serialize ChemEagle GPU-heavy local model calls across parallel PDF subprocesses.",
+    )
+    parser.add_argument(
+        "--chemeagle_gpu_gate_util_threshold",
+        type=float,
+        default=20.0,
+        help="GPU gate waits until utilization is at or below this percent.",
+    )
+    parser.add_argument(
+        "--chemeagle_gpu_gate_memory_free_mib",
+        type=float,
+        default=2000.0,
+        help="GPU gate waits until at least this much GPU memory is free.",
+    )
+    parser.add_argument(
+        "--chemeagle_gpu_gate_stable_samples",
+        type=int,
+        default=2,
+        help="Number of consecutive available GPU samples required before entering a gated operation.",
+    )
+    parser.add_argument(
+        "--chemeagle_gpu_gate_poll_interval",
+        type=float,
+        default=1.0,
+        help="Seconds between GPU gate availability checks.",
+    )
+    parser.add_argument(
+        "--chemeagle_gpu_gate_timeout",
+        type=float,
+        default=0.0,
+        help="Maximum seconds to wait for the GPU gate. 0 means wait indefinitely.",
     )
     return parser.parse_args()
 
@@ -345,6 +418,7 @@ def config_from_args(args) -> PipelineConfig:
         skip_downstream_build=args.skip_downstream_build,
         enable_cross_modal_symbol_resolution=args.enable_cross_modal_symbol_resolution,
         enable_chemeagle_iupac_enrichment=args.enable_chemeagle_iupac_enrichment,
+        chemeagle_iupac_lookup_timeout=max(0.0, args.chemeagle_iupac_lookup_timeout),
         enable_chemeagle_role_refinement=args.enable_chemeagle_role_refinement,
         enable_multimodal_kg=args.enable_multimodal_kg,
         enable_multimodal_structure_enrichment=args.enable_multimodal_structure_enrichment,
@@ -359,15 +433,120 @@ def config_from_args(args) -> PipelineConfig:
         chemeagle_base_url=args.chemeagle_base_url,
         chemeagle_api_key=args.chemeagle_api_key,
         chemeagle_max_images=max(0, args.chemeagle_max_images),
+        chemeagle_max_parallel_images=max(1, args.chemeagle_max_parallel_images),
         chemeagle_use_plan_observer=False,
         chemeagle_use_action_observer=False,
+        chemeagle_execution_mode=args.chemeagle_execution_mode,
         token_usage_tracking=not args.disable_token_usage_tracking,
         token_usage_run_id=token_usage_run_id,
+        enable_gpu_monitor=args.enable_gpu_monitor,
+        gpu_monitor_interval=max(0.1, args.gpu_monitor_interval),
+        gpu_monitor_plot=not args.disable_gpu_monitor_plot,
+        enable_chemeagle_gpu_gate=args.enable_chemeagle_gpu_gate,
+        chemeagle_gpu_gate_util_threshold=max(0.0, args.chemeagle_gpu_gate_util_threshold),
+        chemeagle_gpu_gate_memory_free_mib=max(0.0, args.chemeagle_gpu_gate_memory_free_mib),
+        chemeagle_gpu_gate_stable_samples=max(1, args.chemeagle_gpu_gate_stable_samples),
+        chemeagle_gpu_gate_poll_interval=max(0.1, args.chemeagle_gpu_gate_poll_interval),
+        chemeagle_gpu_gate_timeout=max(0.0, args.chemeagle_gpu_gate_timeout),
     )
+
+
+def choose_free_port() -> int:
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        sock.bind(("127.0.0.1", 0))
+        return int(sock.getsockname()[1])
+
+
+def start_chemeagle_gpu_worker(config: PipelineConfig):
+    if not config.chemeagle_dir:
+        raise ValueError("ChemEagle directory is required for task_gpu_worker mode.")
+    port = choose_free_port()
+    config.chemeagle_gpu_worker_host = "127.0.0.1"
+    config.chemeagle_gpu_worker_port = port
+    config.chemeagle_gpu_worker_task_dir.mkdir(parents=True, exist_ok=True)
+    config.chemeagle_gpu_worker_ready_path.parent.mkdir(parents=True, exist_ok=True)
+    config.chemeagle_gpu_worker_log_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        config.chemeagle_gpu_worker_ready_path.unlink()
+    except FileNotFoundError:
+        pass
+
+    command = [
+        config.chemeagle_python,
+        str(WORKFLOW_DIR / "chemeagle_gpu_worker.py"),
+        "--chemeagle-dir",
+        str(Path(config.chemeagle_dir).resolve()),
+        "--host",
+        config.chemeagle_gpu_worker_host,
+        "--port",
+        str(port),
+        "--ready-file",
+        str(config.chemeagle_gpu_worker_ready_path),
+    ]
+    env = os.environ.copy()
+    env["PYTHONUTF8"] = "1"
+    env["PYTHONIOENCODING"] = "utf-8"
+    env["CHEMEAGLE_TIMING_EVENTS_PATH"] = str(config.chemeagle_timing_events_path)
+    env["CHEMEAGLE_TIMING_REPORT_PATH"] = str(config.chemeagle_timing_report_path)
+    if config.token_usage_run_id:
+        env["CHEMEAGLE_TIMING_RUN_ID"] = config.token_usage_run_id
+    log_file = config.chemeagle_gpu_worker_log_path.open("w", encoding="utf-8", errors="replace")
+    process = subprocess.Popen(
+        command,
+        cwd=str(Path(config.chemeagle_dir).resolve()),
+        env=env,
+        stdout=log_file,
+        stderr=subprocess.STDOUT,
+        text=True,
+    )
+    process._chemeagle_log_file = log_file  # type: ignore[attr-defined]
+    config.chemeagle_gpu_worker_pid = process.pid
+    deadline = time.time() + 120
+    while time.time() < deadline:
+        if process.poll() is not None:
+            log_file.flush()
+            tail = ""
+            try:
+                tail = config.chemeagle_gpu_worker_log_path.read_text(encoding="utf-8", errors="replace")[-2000:]
+            except Exception:
+                pass
+            log_file.close()
+            raise RuntimeError(f"ChemEagle GPU worker exited before ready. Log tail:\n{tail}")
+        if config.chemeagle_gpu_worker_ready_path.exists():
+            try:
+                ready = json.loads(config.chemeagle_gpu_worker_ready_path.read_text(encoding="utf-8"))
+                config.chemeagle_gpu_worker_port = int(ready.get("port") or port)
+            except Exception:
+                pass
+            return process
+        time.sleep(0.25)
+    stop_chemeagle_gpu_worker(process)
+    raise TimeoutError(f"Timed out waiting for ChemEagle GPU worker readiness: {config.chemeagle_gpu_worker_log_path}")
+
+
+def stop_chemeagle_gpu_worker(process) -> None:
+    if process is None:
+        return
+    if process.poll() is None:
+        process.terminate()
+        try:
+            process.wait(timeout=15)
+        except subprocess.TimeoutExpired:
+            process.kill()
+            process.wait(timeout=15)
+    log_file = getattr(process, "_chemeagle_log_file", None)
+    if log_file is not None:
+        try:
+            log_file.close()
+        except Exception:
+            pass
 
 
 def main():
     config = config_from_args(parse_args())
+    gpu_monitor = None
+    gpu_summary = None
+    chemeagle_gpu_worker = None
     if config.token_usage_tracking:
         install_token_usage_tracking(
             config.token_usage_events_path,
@@ -375,16 +554,36 @@ def main():
             enabled=True,
             default_stage="workflow",
         )
-    app = build_graph(config)
+    if config.enable_gpu_monitor:
+        gpu_monitor = GpuMonitor(
+            csv_path=config.gpu_usage_samples_path,
+            report_path=config.gpu_usage_report_path,
+            png_path=config.gpu_timeline_path if config.gpu_monitor_plot else None,
+            interval_seconds=config.gpu_monitor_interval,
+        )
+        gpu_monitor.start()
+    if config.use_chemeagle and config.chemeagle_execution_mode == "task_gpu_worker":
+        chemeagle_gpu_worker = start_chemeagle_gpu_worker(config)
     final_state = None
     try:
+        app = build_graph(config)
         final_state = app.invoke({"steps": {}, "pdf_results": []}, config={"max_concurrency": config.max_parallel_pdfs})
     finally:
+        stop_chemeagle_gpu_worker(chemeagle_gpu_worker)
+        if gpu_monitor is not None:
+            gpu_summary = gpu_monitor.stop()
         if config.token_usage_tracking:
             summarize_token_usage(config.token_usage_events_path, config.token_usage_report_path)
     print("\nPipeline complete.")
-    print(f"  Report: {final_state.get('workflow_report')}")
-    print(f"  Multimodal KG CSV: {final_state.get('kg_unified_multimodal_path')}")
+    if final_state is not None:
+        print(f"  Report: {final_state.get('workflow_report')}")
+        print(f"  Multimodal KG CSV: {final_state.get('kg_unified_multimodal_path')}")
+    if config.enable_gpu_monitor:
+        print(f"  GPU usage report: {config.gpu_usage_report_path}")
+        if config.gpu_monitor_plot:
+            print(f"  GPU timeline: {config.gpu_timeline_path}")
+        if gpu_summary is not None:
+            print(f"  GPU samples: {gpu_summary.get('valid_sample_count', 0)} valid / {gpu_summary.get('sample_count', 0)} total")
 
 
 if __name__ == "__main__":

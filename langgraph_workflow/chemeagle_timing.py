@@ -13,6 +13,14 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Iterator, Optional
 
+try:
+    from chemeagle_gpu_gate import gpu_gate, gpu_gate_enabled
+except ImportError:
+    gpu_gate = None
+
+    def gpu_gate_enabled() -> bool:
+        return False
+
 
 TIMING_EVENTS_ENV = "CHEMEAGLE_TIMING_EVENTS_PATH"
 TIMING_REPORT_ENV = "CHEMEAGLE_TIMING_REPORT_PATH"
@@ -26,6 +34,11 @@ _selected_area_var = contextvars.ContextVar("chemeagle_timing_selected_area", de
 _operation_var = contextvars.ContextVar("chemeagle_timing_operation", default=None)
 _lock = threading.Lock()
 _openai_patched = False
+GPU_GATED_OPERATIONS = {
+    "rxnim.predict_image_file",
+    "chemietoolkit.extract_molecule_corefs_from_figures",
+    "visualheist.page_detection",
+}
 
 
 @contextlib.contextmanager
@@ -40,13 +53,15 @@ def timed_event(
     event_kind: str = "span",
     **extra: Any,
 ) -> Iterator[None]:
-    started_at = time.perf_counter()
     status = "success"
     error_type = None
     error = None
     operation_token = _operation_var.set(operation)
+    started_at = None
     try:
-        yield
+        with gpu_gate_context(operation):
+            started_at = time.perf_counter()
+            yield
     except Exception as exc:
         status = "error"
         error_type = type(exc).__name__
@@ -61,7 +76,7 @@ def timed_event(
             selected_area=selected_area,
             model=model,
             status=status,
-            elapsed_seconds=time.perf_counter() - started_at,
+            elapsed_seconds=time.perf_counter() - (started_at or time.perf_counter()),
             event_kind=event_kind,
             error_type=error_type,
             error=error,
@@ -231,17 +246,18 @@ def _wrap_callable(original, *, operation: str, model_from_kwargs: bool = False)
 
     @functools.wraps(original)
     def wrapped(*args, **kwargs):
-        started_at = time.perf_counter()
         model = kwargs.get("model") if model_from_kwargs else None
         try:
-            result = original(*args, **kwargs)
+            with gpu_gate_context(operation):
+                started_at = time.perf_counter()
+                result = original(*args, **kwargs)
         except Exception as exc:
             record_event(
                 operation=operation,
                 model=str(model) if model is not None else None,
                 status="error",
                 event_kind="leaf",
-                elapsed_seconds=time.perf_counter() - started_at,
+                elapsed_seconds=time.perf_counter() - locals().get("started_at", time.perf_counter()),
                 error_type=type(exc).__name__,
                 error=str(exc),
             )
@@ -258,6 +274,27 @@ def _wrap_callable(original, *, operation: str, model_from_kwargs: bool = False)
 
     wrapped._chemeagle_timing_wrapped = True
     return wrapped
+
+
+@contextlib.contextmanager
+def gpu_gate_context(operation: str) -> Iterator[None]:
+    if operation not in GPU_GATED_OPERATIONS or gpu_gate is None or not gpu_gate_enabled():
+        yield
+        return
+    with gpu_gate(operation) as gate_info:
+        record_event(
+            operation="chemeagle.gpu_gate.wait",
+            status=gate_info.get("status", "unknown"),
+            event_kind="leaf",
+            elapsed_seconds=gate_info.get("wait_seconds", 0.0),
+            gated_operation=operation,
+            gate_samples=gate_info.get("samples"),
+            gate_error=gate_info.get("error"),
+            gate_lock_path=gate_info.get("lock_path"),
+            gate_lock_fallback_from=gate_info.get("lock_fallback_from"),
+            gate_last_snapshot=gate_info.get("last_snapshot"),
+        )
+        yield
 
 
 def summarize_chemeagle_timing(events_path: Path | str, report_path: Path | str) -> Dict[str, Any]:

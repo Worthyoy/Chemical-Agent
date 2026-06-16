@@ -1,10 +1,13 @@
 """ChemEagle integration helpers for the LangGraph workflow."""
 
 import copy
+import contextlib
 import json
 import os
 import re
+import socket
 import subprocess
+import threading
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -119,9 +122,45 @@ Image payload:
 """
 
 try:
+    from langgraph_workflow.chemeagle_gpu_gate import (
+        GPU_GATE_ENABLED_ENV,
+        GPU_GATE_LOCK_DIR_ENV,
+        GPU_GATE_MEMORY_FREE_MIB_ENV,
+        GPU_GATE_POLL_INTERVAL_ENV,
+        GPU_GATE_STABLE_SAMPLES_ENV,
+        GPU_GATE_TIMEOUT_ENV,
+        GPU_GATE_UTIL_THRESHOLD_ENV,
+    )
+except ImportError:
+    GPU_GATE_ENABLED_ENV = "CHEMEAGLE_GPU_GATE_ENABLED"
+    GPU_GATE_LOCK_DIR_ENV = "CHEMEAGLE_GPU_GATE_LOCK_DIR"
+    GPU_GATE_UTIL_THRESHOLD_ENV = "CHEMEAGLE_GPU_GATE_UTIL_THRESHOLD"
+    GPU_GATE_MEMORY_FREE_MIB_ENV = "CHEMEAGLE_GPU_GATE_MEMORY_FREE_MIB"
+    GPU_GATE_STABLE_SAMPLES_ENV = "CHEMEAGLE_GPU_GATE_STABLE_SAMPLES"
+    GPU_GATE_POLL_INTERVAL_ENV = "CHEMEAGLE_GPU_GATE_POLL_INTERVAL"
+    GPU_GATE_TIMEOUT_ENV = "CHEMEAGLE_GPU_GATE_TIMEOUT"
+
+try:
+    from langgraph_workflow.chemeagle_gpu_worker_client import (
+        GPU_WORKER_ENABLED_ENV,
+        GPU_WORKER_HOST_ENV,
+        GPU_WORKER_PORT_ENV,
+        GPU_WORKER_TASK_DIR_ENV,
+        GPU_WORKER_TIMEOUT_ENV,
+    )
+except ImportError:
+    GPU_WORKER_ENABLED_ENV = "CHEMEAGLE_GPU_WORKER_ENABLED"
+    GPU_WORKER_HOST_ENV = "CHEMEAGLE_GPU_WORKER_HOST"
+    GPU_WORKER_PORT_ENV = "CHEMEAGLE_GPU_WORKER_PORT"
+    GPU_WORKER_TASK_DIR_ENV = "CHEMEAGLE_GPU_WORKER_TASK_DIR"
+    GPU_WORKER_TIMEOUT_ENV = "CHEMEAGLE_GPU_WORKER_TIMEOUT"
+
+try:
     import pubchempy as pcp
 except ImportError:
     pcp = None
+
+_IUPAC_TIMEOUT_LOCK = threading.Lock()
 
 
 def write_json(path: Path, data: Any) -> None:
@@ -149,9 +188,22 @@ def run_chemeagle_pdf(
     max_images: int,
     use_plan_observer: bool,
     use_action_observer: bool,
+    max_parallel_images: int = 1,
     timing_events_path: Optional[Path] = None,
     timing_report_path: Optional[Path] = None,
     timing_run_id: Optional[str] = None,
+    enable_gpu_gate: bool = False,
+    gpu_gate_lock_dir: Optional[Path] = None,
+    gpu_gate_util_threshold: float = 20.0,
+    gpu_gate_memory_free_mib: float = 2000.0,
+    gpu_gate_stable_samples: int = 2,
+    gpu_gate_poll_interval: float = 1.0,
+    gpu_gate_timeout: float = 0.0,
+    chemeagle_execution_mode: str = "subprocess",
+    gpu_worker_host: Optional[str] = None,
+    gpu_worker_port: Optional[int] = None,
+    gpu_worker_task_dir: Optional[Path] = None,
+    gpu_worker_timeout: float = 0.0,
 ) -> Dict[str, Any]:
     chemeagle_dir = chemeagle_dir.resolve()
     pdf_path = pdf_path.resolve()
@@ -173,6 +225,8 @@ def run_chemeagle_pdf(
     ]
     if max_images and max_images > 0:
         command.extend(["--max-images", str(max_images)])
+    if max_parallel_images and max_parallel_images > 1:
+        command.extend(["--max-parallel-images", str(max_parallel_images)])
     if not use_plan_observer:
         command.append("--no-plan-observer")
     if not use_action_observer:
@@ -196,6 +250,30 @@ def run_chemeagle_pdf(
         env[TIMING_REPORT_ENV] = str(timing_report_path)
     if timing_run_id:
         env[TIMING_RUN_ID_ENV] = timing_run_id
+    if chemeagle_execution_mode == "task_gpu_worker":
+        if not gpu_worker_host or not gpu_worker_port:
+            raise ValueError("ChemEagle task_gpu_worker mode requires a running GPU worker host/port.")
+        if gpu_worker_task_dir is None:
+            gpu_worker_task_dir = raw_result_path.parent / "chemeagle_gpu_worker_tasks"
+        gpu_worker_task_dir = Path(gpu_worker_task_dir).resolve()
+        gpu_worker_task_dir.mkdir(parents=True, exist_ok=True)
+        env[GPU_WORKER_ENABLED_ENV] = "1"
+        env[GPU_WORKER_HOST_ENV] = str(gpu_worker_host)
+        env[GPU_WORKER_PORT_ENV] = str(gpu_worker_port)
+        env[GPU_WORKER_TASK_DIR_ENV] = str(gpu_worker_task_dir)
+        env[GPU_WORKER_TIMEOUT_ENV] = str(gpu_worker_timeout)
+    if enable_gpu_gate and chemeagle_execution_mode != "task_gpu_worker":
+        if gpu_gate_lock_dir is None:
+            gpu_gate_lock_dir = raw_result_path.parent / "chemeagle_gpu_gate.lock"
+        gpu_gate_lock_dir = Path(gpu_gate_lock_dir).resolve()
+        gpu_gate_lock_dir.parent.mkdir(parents=True, exist_ok=True)
+        env[GPU_GATE_ENABLED_ENV] = "1"
+        env[GPU_GATE_LOCK_DIR_ENV] = str(gpu_gate_lock_dir)
+        env[GPU_GATE_UTIL_THRESHOLD_ENV] = str(gpu_gate_util_threshold)
+        env[GPU_GATE_MEMORY_FREE_MIB_ENV] = str(gpu_gate_memory_free_mib)
+        env[GPU_GATE_STABLE_SAMPLES_ENV] = str(gpu_gate_stable_samples)
+        env[GPU_GATE_POLL_INTERVAL_ENV] = str(gpu_gate_poll_interval)
+        env[GPU_GATE_TIMEOUT_ENV] = str(gpu_gate_timeout)
     with log_path.open("w", encoding="utf-8", errors="replace") as log_file:
         completed = subprocess.run(
             command,
@@ -232,7 +310,12 @@ def mask_command(command: List[str]) -> List[str]:
     return masked
 
 
-def enrich_chemeagle_raw_with_iupac(raw_payload: Any, cache_path: Path) -> tuple[Any, Dict[str, Any]]:
+def enrich_chemeagle_raw_with_iupac(
+    raw_payload: Any,
+    cache_path: Path,
+    *,
+    lookup_timeout: float = 15.0,
+) -> tuple[Any, Dict[str, Any]]:
     cache = load_iupac_cache(cache_path)
     entries = cache.setdefault("entries", {})
     stats = {
@@ -277,7 +360,7 @@ def enrich_chemeagle_raw_with_iupac(raw_payload: Any, cache_path: Path) -> tuple
             lookup = cached
         else:
             stats["queries"] += 1
-            lookup = lookup_iupac_name(smiles)
+            lookup = lookup_iupac_name(smiles, timeout_seconds=lookup_timeout)
             entries[smiles] = {
                 **lookup,
                 "updated_at": datetime.now().isoformat(),
@@ -324,7 +407,21 @@ def smiles_for_iupac_lookup(value: Any) -> str:
     return smiles
 
 
-def lookup_iupac_name(smiles: str) -> Dict[str, Any]:
+@contextlib.contextmanager
+def temporary_socket_timeout(timeout_seconds: float):
+    if timeout_seconds <= 0:
+        yield
+        return
+    with _IUPAC_TIMEOUT_LOCK:
+        previous_timeout = socket.getdefaulttimeout()
+        socket.setdefaulttimeout(timeout_seconds)
+        try:
+            yield
+        finally:
+            socket.setdefaulttimeout(previous_timeout)
+
+
+def lookup_iupac_name(smiles: str, *, timeout_seconds: float = 15.0) -> Dict[str, Any]:
     if pcp is None:
         return {
             "status": "error",
@@ -332,7 +429,8 @@ def lookup_iupac_name(smiles: str) -> Dict[str, Any]:
             "error": "pubchempy is not installed",
         }
     try:
-        compounds = pcp.get_compounds(smiles, "smiles")
+        with temporary_socket_timeout(timeout_seconds):
+            compounds = pcp.get_compounds(smiles, "smiles")
         if not compounds:
             return {"status": "not_found", "iupac_name": None}
         iupac_name = getattr(compounds[0], "iupac_name", None)
@@ -914,6 +1012,40 @@ def normalize_chemeagle_payload(
         "total_reactions": len(reactions),
         "reactions": reactions,
     }
+
+
+def cleanup_reaction_targets(payload: Dict[str, Any]) -> Dict[str, Any]:
+    reactions = payload.get("reactions")
+    if not isinstance(reactions, list):
+        return payload
+
+    for reaction in reactions:
+        if not isinstance(reaction, dict):
+            continue
+        targets = reaction.get("targets")
+        if not isinstance(targets, dict):
+            continue
+        for metric in ("yield", "ee", "er", "dr"):
+            if metric not in targets:
+                continue
+            cleaned = cleanup_target_value(targets.get(metric))
+            if cleaned is None:
+                targets[metric] = None
+            else:
+                targets[metric] = cleaned
+    return payload
+
+
+def cleanup_target_value(value: Any) -> Optional[str]:
+    if value is None:
+        return None
+    text = str(value).strip()
+    while len(text) >= 2 and text.startswith("(") and text.endswith(")"):
+        inner = text[1:-1].strip()
+        if not inner:
+            break
+        text = inner
+    return text
 
 
 def normalize_chemeagle_reaction(
