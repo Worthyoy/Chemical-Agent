@@ -145,6 +145,7 @@ try:
         GPU_WORKER_ENABLED_ENV,
         GPU_WORKER_HOST_ENV,
         GPU_WORKER_PORT_ENV,
+        GPU_WORKER_GRANULARITY_ENV,
         GPU_WORKER_TASK_DIR_ENV,
         GPU_WORKER_TIMEOUT_ENV,
     )
@@ -152,6 +153,7 @@ except ImportError:
     GPU_WORKER_ENABLED_ENV = "CHEMEAGLE_GPU_WORKER_ENABLED"
     GPU_WORKER_HOST_ENV = "CHEMEAGLE_GPU_WORKER_HOST"
     GPU_WORKER_PORT_ENV = "CHEMEAGLE_GPU_WORKER_PORT"
+    GPU_WORKER_GRANULARITY_ENV = "CHEMEAGLE_GPU_WORKER_GRANULARITY"
     GPU_WORKER_TASK_DIR_ENV = "CHEMEAGLE_GPU_WORKER_TASK_DIR"
     GPU_WORKER_TIMEOUT_ENV = "CHEMEAGLE_GPU_WORKER_TIMEOUT"
 
@@ -200,6 +202,7 @@ def run_chemeagle_pdf(
     gpu_gate_poll_interval: float = 1.0,
     gpu_gate_timeout: float = 0.0,
     chemeagle_execution_mode: str = "subprocess",
+    chemeagle_gpu_worker_granularity: str = "coarse",
     gpu_worker_host: Optional[str] = None,
     gpu_worker_port: Optional[int] = None,
     gpu_worker_task_dir: Optional[Path] = None,
@@ -260,6 +263,7 @@ def run_chemeagle_pdf(
         env[GPU_WORKER_ENABLED_ENV] = "1"
         env[GPU_WORKER_HOST_ENV] = str(gpu_worker_host)
         env[GPU_WORKER_PORT_ENV] = str(gpu_worker_port)
+        env[GPU_WORKER_GRANULARITY_ENV] = str(chemeagle_gpu_worker_granularity)
         env[GPU_WORKER_TASK_DIR_ENV] = str(gpu_worker_task_dir)
         env[GPU_WORKER_TIMEOUT_ENV] = str(gpu_worker_timeout)
     if enable_gpu_gate and chemeagle_execution_mode != "task_gpu_worker":

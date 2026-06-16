@@ -269,6 +269,12 @@ def parse_args():
         help="Run ChemEagle normally or route GPU-heavy tasks through one long-lived GPU worker.",
     )
     parser.add_argument(
+        "--chemeagle_gpu_worker_granularity",
+        choices=("coarse", "model_forward"),
+        default="coarse",
+        help="In task_gpu_worker mode, choose coarse whole-method tasks or finer model-forward worker tasks.",
+    )
+    parser.add_argument(
         "--chemeagle_max_images",
         type=int,
         default=0,
@@ -437,6 +443,7 @@ def config_from_args(args) -> PipelineConfig:
         chemeagle_use_plan_observer=False,
         chemeagle_use_action_observer=False,
         chemeagle_execution_mode=args.chemeagle_execution_mode,
+        chemeagle_gpu_worker_granularity=args.chemeagle_gpu_worker_granularity,
         token_usage_tracking=not args.disable_token_usage_tracking,
         token_usage_run_id=token_usage_run_id,
         enable_gpu_monitor=args.enable_gpu_monitor,

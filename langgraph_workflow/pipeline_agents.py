@@ -94,6 +94,7 @@ class PipelineConfig:
     chemeagle_use_plan_observer: bool = False
     chemeagle_use_action_observer: bool = False
     chemeagle_execution_mode: str = "subprocess"
+    chemeagle_gpu_worker_granularity: str = "coarse"
     chemeagle_gpu_worker_host: Optional[str] = None
     chemeagle_gpu_worker_port: Optional[int] = None
     chemeagle_gpu_worker_pid: Optional[int] = None
@@ -1400,6 +1401,7 @@ class ProcessPDFAgent:
                     gpu_gate_poll_interval=self.config.chemeagle_gpu_gate_poll_interval,
                     gpu_gate_timeout=self.config.chemeagle_gpu_gate_timeout,
                     chemeagle_execution_mode=self.config.chemeagle_execution_mode,
+                    chemeagle_gpu_worker_granularity=self.config.chemeagle_gpu_worker_granularity,
                     gpu_worker_host=self.config.chemeagle_gpu_worker_host,
                     gpu_worker_port=self.config.chemeagle_gpu_worker_port,
                     gpu_worker_task_dir=self.config.chemeagle_gpu_worker_task_dir,
@@ -2456,6 +2458,7 @@ class ReportAgent:
                 "chemeagle_use_plan_observer": self.config.chemeagle_use_plan_observer,
                 "chemeagle_use_action_observer": self.config.chemeagle_use_action_observer,
                 "chemeagle_execution_mode": self.config.chemeagle_execution_mode,
+                "chemeagle_gpu_worker_granularity": self.config.chemeagle_gpu_worker_granularity,
                 "chemeagle_gpu_worker_host": self.config.chemeagle_gpu_worker_host,
                 "chemeagle_gpu_worker_port": self.config.chemeagle_gpu_worker_port,
                 "chemeagle_gpu_worker_pid": self.config.chemeagle_gpu_worker_pid,
