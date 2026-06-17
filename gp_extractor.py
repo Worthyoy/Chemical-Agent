@@ -215,7 +215,13 @@ Return ONLY valid JSON."""
             aliases.update({
                 f"GP {label}",
                 f"Procedure {label}",
+                f"Procedures {label}",
                 f"General Procedure {label}",
+                f"General Procedures {label}",
+                f"Typical Procedures {label}",
+                f"Representative Procedures {label}",
+                f"Standard Procedures {label}",
+                f"Experimental Procedures {label}",
                 f"GeneralProcedure{label}",
             })
 
