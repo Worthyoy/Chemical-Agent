@@ -72,7 +72,7 @@ class SIExtractor(PDFReactionExtractor):
         r'(?im)^\s*(?:\d+[\).]\s*)?'
         r'(?:general\s+procedure|representative\s+procedure|typical\s+procedure|'
         r'standard\s+procedure|standard\s+conditions|experimental\s+procedure|procedure)'
-        r'\s+[A-Z0-9]+\b\s*(?::|\uff1a)'
+        r'\s+[A-Z0-9]+\b\s*(?:\([^)\n]{0,60}\))?\s*(?::|\uff1a)'
     )
 
     GP_TITLE_PATTERNS = [
@@ -1734,7 +1734,7 @@ Available GP candidates:
                 r'(?i)\b(?:according\s+to|following)\s+(?:the\s+)?(?:general\s+)?procedures?\b',
                 chunk_text,
             )
-            or re.search(r'\bGP\s*[A-Z0-9]+\b', chunk_text)
+            or re.search(r'\bGP[\s\-\u2010-\u2015]*[A-Z0-9]+\b', chunk_text)
             or re.search(r'\bGeneralProcedure[A-Z0-9]+\b', chunk_text)
         )
 
@@ -2054,7 +2054,7 @@ Available GP candidates:
             r'(?i)^\s*(?:\d+[\).]\s*)?'
             r'(general\s+procedure|representative\s+procedure|typical\s+procedure|'
             r'standard\s+procedure|standard\s+conditions|experimental\s+procedure|procedure)'
-            r'\s+([A-Z0-9]+)\b\s*(?::|\uff1a)',
+            r'\s+([A-Z0-9]+)\b\s*(?:\([^)\n]{0,60}\))?\s*(?::|\uff1a)',
             title.strip(),
         )
         if not match:
@@ -2093,7 +2093,9 @@ Available GP candidates:
 
     def _text_contains_gp_alias(self, text: str, gp_key: str) -> bool:
         for alias in self._gp_key_aliases(gp_key):
-            pattern = r'(?i)\b' + r'\s+'.join(re.escape(part) for part in alias.split()) + r'\b'
+            parts = alias.split()
+            separator = r'[\s\-\u2010-\u2015]+' if len(parts) > 1 else r'\s+'
+            pattern = r'(?i)\b' + separator.join(re.escape(part) for part in parts) + r'\b'
             if re.search(pattern, text):
                 return True
         return False
