@@ -27,6 +27,8 @@ from typing import Optional, Dict, List, Tuple, Any
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pdf_to_gpt_extractor import PDFReactionExtractor, PDF_LIBRARY
 
+GP_CONTEXT_CHAR_LIMIT = 1500
+
 
 class SIExtractor(PDFReactionExtractor):
     """SI PDF批量提取器，集成token节省策略"""
@@ -1951,12 +1953,62 @@ Available GP candidates:
     # Stage -1: General Procedure 文本提取
     # =====================================================================
 
-    def _make_gp_key(self, title: str, gp_counter: Dict[str, int]) -> str:
+    def _make_unique_gp_key(self, base_key: str, used_keys: set) -> str:
+        """Return a stable unique GP key without merging distinct records."""
+        key = (base_key or "GeneralProcedureUnlabeled").strip()
+        if key not in used_keys:
+            used_keys.add(key)
+            return key
+
+        suffix = 2
+        while f"{key}_{suffix}" in used_keys:
+            suffix += 1
+        unique_key = f"{key}_{suffix}"
+        used_keys.add(unique_key)
+        return unique_key
+
+    def _semantic_gp_key_from_text(self, title: str, text_sample: str = "") -> Optional[str]:
+        """Build a descriptive key for unlabeled GP headings."""
+        source = (title or "").strip()
+        generic_title = bool(re.match(r'(?i)^\s*general\s+procedures?\s*$', source))
+        if generic_title and text_sample:
+            source = str(text_sample)[:320]
+
+        source = re.sub(r'---\s*Page\s+\d+\s*---', ' ', source, flags=re.IGNORECASE)
+        source = re.sub(r'\bS\d+\b', ' ', source)
+        source = source.replace('\u2010', '-').replace('\u2011', '-').replace('\u2012', '-')
+        source = source.replace('\u2013', '-').replace('\u2014', '-').replace('\u2212', '-')
+        source = re.split(r'[:\uff1a]', source, maxsplit=1)[0]
+        source = re.split(
+            r'(?i)\b(?:under|to\s+a|a\s+flask|in\s+a|the\s+reaction|a\s+mixture)\b',
+            source,
+            maxsplit=1,
+        )[0]
+        source = re.sub(
+            r'(?i)^\s*(?:general\s+procedures?|representative\s+procedures?|typical\s+procedures?|'
+            r'standard\s+procedures?|experimental\s+procedures?|procedures?)\b'
+            r'\s*(?:for|of|to|on)?\s*',
+            '',
+            source,
+        )
+        source = re.sub(r'(?i)^\s*(?:the|a|an)\s+', '', source)
+        source = re.sub(r'[^A-Za-z0-9]+', ' ', source).strip().lower()
+        words = [word for word in source.split() if word]
+        if len(words) < 2:
+            return None
+
+        slug = "_".join(words[:12])
+        slug = slug[:96].strip("_")
+        if not slug or len(slug) < 8:
+            return None
+        return f"GeneralProcedure_{slug}"
+
+    def _make_gp_key(self, title: str, gp_counter: Dict[str, int], text_sample: str = "") -> str:
         """
         根据 GP 标题生成 key
         例: 'General procedure for synthesis of 1-38:' → 'GeneralProcedure_1-38'
             'General Procedure A' → 'GeneralProcedureA'
-            无标识时 → 'GeneralProcedureA', 'GeneralProcedureB', ...
+            无标识时 → semantic key 或 'GeneralProcedureUnlabeled1', ...
         """
         # 尝试提取 scope (数字范围)
         if self._is_explicit_gp_title(title):
@@ -1982,13 +2034,15 @@ Available GP candidates:
         if letter_match:
             return f"GeneralProcedure{letter_match.group(1).upper()}"
 
-        # 无标识，按顺序编号
-        if 'GeneralProcedure' not in gp_counter:
-            gp_counter['GeneralProcedure'] = 0
-        gp_counter['GeneralProcedure'] += 1
-        idx = gp_counter['GeneralProcedure']
-        suffix = chr(ord('A') + idx - 1) if idx <= 26 else str(idx)
-        return f"GeneralProcedure{suffix}"
+        semantic_key = self._semantic_gp_key_from_text(title, text_sample)
+        if semantic_key:
+            return semantic_key
+
+        # Unlabeled GPs must not consume A/B/C keys used by explicit titles.
+        if 'GeneralProcedureUnlabeled' not in gp_counter:
+            gp_counter['GeneralProcedureUnlabeled'] = 0
+        gp_counter['GeneralProcedureUnlabeled'] += 1
+        return f"GeneralProcedureUnlabeled{gp_counter['GeneralProcedureUnlabeled']}"
 
     def _is_explicit_gp_title(self, title: str) -> bool:
         """Return True for line-start GP headings with an explicit label and colon."""
@@ -2006,18 +2060,8 @@ Available GP candidates:
         if not match:
             return title.strip().rstrip(':：').strip()
 
-        canonical_prefixes = {
-            'general procedure': 'General Procedure',
-            'representative procedure': 'Representative Procedure',
-            'typical procedure': 'Typical Procedure',
-            'standard procedure': 'Standard Procedure',
-            'standard conditions': 'Standard Conditions',
-            'experimental procedure': 'Experimental Procedure',
-            'procedure': 'Procedure',
-        }
-        prefix = canonical_prefixes[re.sub(r'\s+', ' ', match.group(1).lower())]
         label = match.group(2).upper()
-        return f"{prefix} {label}"
+        return f"GeneralProcedure{label}"
 
     def _gp_key_aliases(self, gp_key: str) -> List[str]:
         """Build old and new labels for matching GP references in text."""
@@ -2161,7 +2205,7 @@ Available GP candidates:
         match = re.search(pattern, text)
         return match.end() if match else None
 
-    def _llm_trim_gp_record(self, record: Dict[str, Any], candidate_char_limit: int = 8000) -> Dict[str, Any]:
+    def _llm_trim_gp_record(self, record: Dict[str, Any], candidate_char_limit: int = GP_CONTEXT_CHAR_LIMIT) -> Dict[str, Any]:
         if not getattr(self, "client", None):
             record["final_text"] = record["raw_text"][:record["max_gp_chars"]]
             record["stored_chars"] = len(record["final_text"])
@@ -2201,7 +2245,7 @@ Available GP candidates:
 
             include_anchor = parsed.get("include_anchor", True)
             final_end = anchor_end if include_anchor else max(0, anchor_end - len(anchor))
-            final_text = candidate_text[:final_end].strip()
+            final_text = candidate_text[:final_end].strip()[:GP_CONTEXT_CHAR_LIMIT]
             if len(final_text) < 80:
                 raise ValueError("trim_too_short")
 
@@ -2231,8 +2275,9 @@ Available GP candidates:
             return []
 
         gp_counter = {}
-        max_gp_chars = 2000
-        rule_complete_trust_chars = 2000
+        used_gp_keys = set()
+        max_gp_chars = GP_CONTEXT_CHAR_LIMIT
+        rule_complete_trust_chars = GP_CONTEXT_CHAR_LIMIT
         records: List[Dict[str, Any]] = []
 
         for i, (pos, title) in enumerate(filtered):
@@ -2241,7 +2286,10 @@ Available GP candidates:
             next_title = filtered[i + 1][1] if has_next_gp else None
             raw_text = full_text[pos:end_pos].strip()
             raw_chars = len(raw_text)
-            key = self._make_gp_key(title, gp_counter)
+            key = self._make_unique_gp_key(
+                self._make_gp_key(title, gp_counter, raw_text),
+                used_gp_keys,
+            )
 
             if has_next_gp and raw_chars <= rule_complete_trust_chars:
                 end_reason = "next_gp_title_complete"
@@ -2287,18 +2335,24 @@ Available GP candidates:
             return {}
 
         gp_texts: Dict[str, str] = {}
+        used_gp_keys = set()
         for record in records:
-            key = record["key"]
+            key = self._make_unique_gp_key(str(record["key"]), used_gp_keys)
             text = record.get("final_text") or record.get("raw_text", "")
-            if key in gp_texts:
-                gp_texts[key] += "\n\n" + text
-            else:
-                gp_texts[key] = text
-        return self._split_embedded_procedure_scopes(gp_texts)
+            gp_texts[key] = str(text)[:GP_CONTEXT_CHAR_LIMIT]
+
+        split_texts = self._split_embedded_procedure_scopes(gp_texts)
+        capped_texts: Dict[str, str] = {}
+        used_final_keys = set()
+        for key, text in split_texts.items():
+            unique_key = self._make_unique_gp_key(str(key), used_final_keys)
+            capped_texts[unique_key] = str(text)[:GP_CONTEXT_CHAR_LIMIT]
+        return capped_texts
 
     def _split_embedded_procedure_scopes(self, gp_texts: Dict[str, str]) -> Dict[str, str]:
         """Split one General Procedure section into scoped Procedure A/B entries."""
         split_texts = {}
+        used_split_keys = set()
         heading_re = re.compile(
             r'(?:^|\n)\s*(?:\d+\)\s*)?Procedure\s+([A-Z])\s*'
             r'\((?:for\s+)?([^)]+?\b(?:products?|compounds?)\s+'
@@ -2309,7 +2363,7 @@ Available GP candidates:
         for base_key, text in gp_texts.items():
             matches = list(heading_re.finditer(text))
             if len(matches) < 2:
-                split_texts[base_key] = text
+                split_texts[self._make_unique_gp_key(base_key, used_split_keys)] = text
                 continue
 
             for idx, match in enumerate(matches):
@@ -2319,7 +2373,8 @@ Available GP candidates:
                 start = match.start()
                 end = matches[idx + 1].start() if idx + 1 < len(matches) else len(text)
                 scoped_text = text[start:end].strip()
-                split_texts[f"GeneralProcedure{letter}_{lo}-{hi}"] = scoped_text
+                split_key = f"GeneralProcedure{letter}_{lo}-{hi}"
+                split_texts[self._make_unique_gp_key(split_key, used_split_keys)] = scoped_text
 
         return split_texts
 
@@ -2623,7 +2678,11 @@ Available GP candidates:
             for label, text in selected_gp_texts.items():
                 if isinstance(text, str):
                     # 截断过长的GP文本
-                    text_truncated = text[:800] + "..." if len(text) > 800 else text
+                    text_truncated = (
+                        text[: GP_CONTEXT_CHAR_LIMIT - 3] + "..."
+                        if len(text) > GP_CONTEXT_CHAR_LIMIT
+                        else text
+                    )
                     entry = f"""=== {label} ===
 {text_truncated}"""
                     gp_entries.append(entry)
