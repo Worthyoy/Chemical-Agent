@@ -75,8 +75,14 @@ class SIExtractor(PDFReactionExtractor):
         r'\s+[A-Z0-9]+\b\s*(?:\([^)\n]{0,60}\))?\s*(?::|\uff1a)'
     )
 
+    SHORT_GP_TITLE_PATTERN = (
+        r'(?im)^\s*(?:\d+[\).]\s*)?'
+        r'GP[\s\-\u2010-\u2015]*[A-Z0-9]+\s*(?::|\uff1a|\.)'
+    )
+
     GP_TITLE_PATTERNS = [
         EXPLICIT_GP_TITLE_PATTERN,
+        SHORT_GP_TITLE_PATTERN,
         r'(?i)(general\s+procedure)(?:\s+for\s+synthesis\s+of\s+([\w\d\s,\-–and]+))?\s*([A-Z])?\b',
         r'(?im)^\s*(?:\d+[\).]\s*)?(representative\s+procedure)(?:\s+for\b[^\n]{0,120}|\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
         r'(?im)^\s*(?:\d+[\).]\s*)?(typical\s+procedure)(?:\s+for\b[^\n]{0,120}|\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
@@ -386,6 +392,27 @@ Candidate text:
 
 The chunk uses a generic phrase such as "according to the general procedure" or "following the general procedure" and does not name a procedure label.
 Select only the GP keys that best match the reaction type, substrates, catalysts, conditions, or product series.
+
+Return ONLY compact valid JSON:
+{{
+  "selected_gp_keys": ["GP key"],
+  "confidence": "high|medium|low",
+  "reason": "short reason"
+}}
+
+Reaction chunk:
+{chunk_text}
+
+Available GP candidates:
+{gp_candidates}
+"""
+
+    GP_NO_REFERENCE_RESOLUTION_PROMPT = """Decide whether any general procedure should be used for a reaction chunk that does not explicitly name a procedure.
+
+The chunk may contain product characterization entries, compound labels, product series, method wording, substrates, yields, ee/er, or brief "synthesized by using" details.
+Select only GP keys that are clearly applicable based on product numbering/series, method labels, reaction family, substrates/reagents, catalysts, or conditions.
+You may select multiple GP keys if the chunk clearly contains entries that use multiple procedures.
+Return an empty selected_gp_keys list if no GP is applicable. Do not select a GP merely because it exists.
 
 Return ONLY compact valid JSON:
 {{
@@ -1745,15 +1772,8 @@ Available GP candidates:
             chunk_text,
         ))
 
-    def _resolve_generic_gp_for_chunk(self, chunk_text: str, gp_texts: Dict[str, str]) -> Dict[str, str]:
-        if not getattr(self, "client", None):
-            self.last_gp_selection_debug = {
-                "mode": "llm_unavailable_generic",
-                "selected_gp_keys": [],
-            }
-            return {}
-
-        candidates = [
+    def _build_gp_resolution_candidates(self, gp_texts: Dict[str, str]) -> List[Dict[str, str]]:
+        return [
             {
                 "key": key,
                 "title": str(text).splitlines()[0][:160] if isinstance(text, str) and text.strip() else key,
@@ -1762,6 +1782,16 @@ Available GP candidates:
             for key, text in gp_texts.items()
             if isinstance(text, str) and text.strip()
         ]
+
+    def _resolve_generic_gp_for_chunk(self, chunk_text: str, gp_texts: Dict[str, str]) -> Dict[str, str]:
+        if not getattr(self, "client", None):
+            self.last_gp_selection_debug = {
+                "mode": "llm_unavailable_generic",
+                "selected_gp_keys": [],
+            }
+            return {}
+
+        candidates = self._build_gp_resolution_candidates(gp_texts)
         if not candidates:
             return {}
 
@@ -1809,6 +1839,82 @@ Available GP candidates:
             }
             return {}
 
+    def _resolve_no_reference_gp_for_chunk(self, chunk_text: str, gp_texts: Dict[str, str]) -> Dict[str, str]:
+        if not getattr(self, "client", None):
+            self.last_gp_selection_debug = {
+                "mode": "llm_unavailable_no_reference",
+                "selected_gp_keys": [],
+            }
+            return {}
+
+        candidates = self._build_gp_resolution_candidates(gp_texts)
+        if not candidates:
+            return {}
+
+        try:
+            response = self.client.chat.completions.create(
+                model=self.extract_model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You resolve whether chemistry general procedures apply to reaction chunks. Return valid JSON only.",
+                    },
+                    {
+                        "role": "user",
+                        "content": self.GP_NO_REFERENCE_RESOLUTION_PROMPT.format(
+                            chunk_text=chunk_text[:5000],
+                            gp_candidates=json.dumps(candidates, ensure_ascii=False, indent=2),
+                        ),
+                    },
+                ],
+                temperature=0.0,
+            )
+            parsed = self._parse_compact_json_response(response.choices[0].message.content or "")
+            if not parsed:
+                self.last_gp_selection_debug = {
+                    "mode": "llm_unresolved_no_reference",
+                    "selected_gp_keys": [],
+                    "reason": "empty_or_invalid_json",
+                }
+                return {}
+            selected = parsed.get("selected_gp_keys", [])
+            if not isinstance(selected, list):
+                self.last_gp_selection_debug = {
+                    "mode": "llm_unresolved_no_reference",
+                    "selected_gp_keys": [],
+                    "reason": "selected_gp_keys_not_list",
+                }
+                return {}
+            selected_gp = {
+                key: gp_texts[key]
+                for key in selected
+                if key in gp_texts and isinstance(gp_texts.get(key), str)
+            }
+            if selected_gp:
+                self.last_gp_selection_debug = {
+                    "mode": "llm_resolved_no_reference",
+                    "selected_gp_keys": list(selected_gp.keys()),
+                    "confidence": parsed.get("confidence"),
+                    "reason": parsed.get("reason"),
+                }
+                return selected_gp
+
+            self.last_gp_selection_debug = {
+                "mode": "llm_unresolved_no_reference",
+                "selected_gp_keys": [],
+                "confidence": parsed.get("confidence"),
+                "reason": parsed.get("reason"),
+            }
+            return {}
+        except Exception as exc:
+            print(f"  [WARN] GP no-reference resolution failed: {exc}")
+            self.last_gp_selection_debug = {
+                "mode": "llm_failed_no_reference",
+                "selected_gp_keys": [],
+                "error": str(exc),
+            }
+            return {}
+
     def select_gp_for_chunk(self, chunk_text: str, gp_texts: Optional[Dict[str, str]]) -> Dict[str, str]:
         """Select only GP texts relevant to a Stage2 chunk."""
         if not gp_texts:
@@ -1830,8 +1936,7 @@ Available GP candidates:
                     "selected_gp_keys": list(valid_gp_texts.keys()),
                 }
                 return valid_gp_texts
-            self.last_gp_selection_debug = {"mode": "no_reference", "selected_gp_keys": []}
-            return {}
+            return self._resolve_no_reference_gp_for_chunk(chunk_text, valid_gp_texts)
 
         matched = {
             key: text
@@ -1853,11 +1958,10 @@ Available GP candidates:
                 self.last_gp_selection_debug = {
                     "mode": "generic_unresolved",
                     "selected_gp_keys": [],
-                }
+            }
             return {}
 
-        self.last_gp_selection_debug = {"mode": "no_reference", "selected_gp_keys": []}
-        return {}
+        return self._resolve_no_reference_gp_for_chunk(chunk_text, valid_gp_texts)
 
     # 以下方法已弃用，现在使用GPT分块提取Registry
     # def _find_registry_pages(self, pages: List[Dict]) -> List[Dict]:
@@ -2011,6 +2115,9 @@ Available GP candidates:
             无标识时 → semantic key 或 'GeneralProcedureUnlabeled1', ...
         """
         # 尝试提取 scope (数字范围)
+        if self._is_short_gp_title(title):
+            return self._normalize_short_gp_title_key(title)
+
         if self._is_explicit_gp_title(title):
             return self._normalize_gp_title_key(title)
 
@@ -2047,6 +2154,23 @@ Available GP candidates:
     def _is_explicit_gp_title(self, title: str) -> bool:
         """Return True for line-start GP headings with an explicit label and colon."""
         return bool(re.match(self.EXPLICIT_GP_TITLE_PATTERN, title.strip()))
+
+    def _is_short_gp_title(self, title: str) -> bool:
+        """Return True for short GP headings such as GP-1: or Gp-A:."""
+        return bool(re.match(self.SHORT_GP_TITLE_PATTERN, title.strip()))
+
+    def _normalize_short_gp_title_key(self, title: str) -> str:
+        """Preserve short GP labels as public keys while normalizing separators."""
+        match = re.match(
+            r'(?i)^\s*(?:\d+[\).]\s*)?(GP)(?:[\s\-\u2010-\u2015]*)([A-Z0-9]+)\s*(?::|\uff1a|\.)',
+            title.strip(),
+        )
+        if not match:
+            return title.strip().rstrip(':：.').strip()
+
+        prefix = match.group(1)
+        label = match.group(2)
+        return f"{prefix}-{label}"
 
     def _normalize_gp_title_key(self, title: str) -> str:
         """Normalize explicit GP headings to human-readable keys."""
@@ -2087,6 +2211,17 @@ Available GP candidates:
                 f"Standard Procedures {label}",
                 f"Experimental Procedures {label}",
                 f"GeneralProcedure{label}",
+            })
+
+        short_match = re.match(r'(?i)^(GP)[\s\-\u2010-\u2015]*([A-Z0-9]+)$', gp_key)
+        if short_match:
+            prefix = short_match.group(1)
+            label = short_match.group(2)
+            aliases.update({
+                f"{prefix} {label}",
+                f"{prefix}-{label}",
+                f"GP {label}",
+                f"GP-{label}",
             })
 
         return sorted(aliases, key=len, reverse=True)

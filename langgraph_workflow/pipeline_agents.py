@@ -69,7 +69,7 @@ class PipelineConfig:
     base_url: str = "https://hk.xty.app/v1"
     max_parallel_pdfs: int = 2
     max_parallel_text_chunks: int = 1
-    pipeline_version: str = "parallel_pdf_v4_gp_alias_titles"
+    pipeline_version: str = "parallel_pdf_v7_gp_no_reference_resolver"
     skip_reaction_type_normalization: bool = False
     skip_chemeagle_normalization: bool = False
     skip_downstream_build: bool = False
