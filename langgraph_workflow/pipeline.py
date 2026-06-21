@@ -196,6 +196,12 @@ def parse_args():
     parser.add_argument("--base_url", default="https://hk.xty.app/v1")
     parser.add_argument("--max_parallel_pdfs", type=int, default=2)
     parser.add_argument(
+        "--pdf_text_layout",
+        choices=("single", "two_column", "auto"),
+        default="single",
+        help="PDF text extraction layout: single keeps current whole-page extraction; two_column reads left/right columns; auto detects two-column pages.",
+    )
+    parser.add_argument(
         "--max_parallel_text_chunks",
         type=int,
         default=1,
@@ -419,6 +425,7 @@ def config_from_args(args) -> PipelineConfig:
         base_url=args.base_url,
         max_parallel_pdfs=max(1, args.max_parallel_pdfs),
         max_parallel_text_chunks=max(1, args.max_parallel_text_chunks),
+        pdf_text_layout=args.pdf_text_layout,
         skip_reaction_type_normalization=args.skip_reaction_type_normalization,
         skip_chemeagle_normalization=args.skip_chemeagle_normalization,
         skip_downstream_build=args.skip_downstream_build,

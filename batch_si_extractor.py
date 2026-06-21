@@ -434,7 +434,8 @@ Available GP candidates:
                  extract_model: str = "gpt-5-mini",
                  base_url: str = "https://hk.xty.app/v1",
                  enable_stage2_audit: bool = True,
-                 max_parallel_text_chunks: int = 1):
+                 max_parallel_text_chunks: int = 1,
+                 pdf_text_layout: str = "single"):
         """
         初始化SI提取器
 
@@ -451,6 +452,9 @@ Available GP candidates:
         self.extract_model = extract_model
         self.enable_stage2_audit = enable_stage2_audit
         self.max_parallel_text_chunks = max(1, int(max_parallel_text_chunks or 1))
+        self.pdf_text_layout = (
+            pdf_text_layout if pdf_text_layout in {"single", "two_column", "auto"} else "single"
+        )
         self.stage2_audit_recovered = 0
         self.last_registry_validation_stats = {
             "registry_raw_count": 0,
@@ -498,6 +502,67 @@ Available GP candidates:
     # 第一层：按页提取文本
     # =====================================================================
 
+    def _is_likely_two_column_page(self, page) -> bool:
+        """Detect common two-column article pages from word coordinates."""
+        try:
+            words = page.extract_words(use_text_flow=False, keep_blank_chars=False) or []
+        except Exception:
+            return False
+
+        top_margin = page.height * 0.08
+        bottom_margin = page.height * 0.94
+        body_words = [
+            w for w in words
+            if top_margin <= float(w.get("top", 0)) <= bottom_margin
+        ]
+        if len(body_words) < 120:
+            return False
+
+        width = float(page.width)
+        mid_left = width * 0.43
+        mid_right = width * 0.57
+        left_count = sum(1 for w in body_words if float(w.get("x0", 0)) < mid_left)
+        right_count = sum(1 for w in body_words if float(w.get("x1", 0)) > mid_right)
+        min_side_count = max(30, int(len(body_words) * 0.18))
+        return (
+            left_count >= min_side_count
+            and right_count >= min_side_count
+            and min(left_count, right_count) / max(left_count, right_count) >= 0.45
+        )
+
+    def _extract_two_column_text(self, page) -> str:
+        """Extract page text left column first, then right column."""
+        width = float(page.width)
+        height = float(page.height)
+        split_x = width / 2.0
+        top = height * 0.06
+        bottom = height * 0.96
+
+        try:
+            left = page.crop((0, top, split_x, bottom)).extract_text() or ""
+            right = page.crop((split_x, top, width, bottom)).extract_text() or ""
+        except Exception:
+            return ""
+
+        text = "\n\n".join(part.strip() for part in (left, right) if part and part.strip())
+        return text.strip()
+
+    def _extract_pdfplumber_page_text(self, page) -> str:
+        default_text = page.extract_text() or ""
+        if self.pdf_text_layout == "single":
+            return default_text
+
+        use_two_column = self.pdf_text_layout == "two_column" or (
+            self.pdf_text_layout == "auto" and self._is_likely_two_column_page(page)
+        )
+        if not use_two_column:
+            return default_text
+
+        column_text = self._extract_two_column_text(page)
+        if len(column_text.strip()) < max(80, int(len(default_text.strip()) * 0.4)):
+            return default_text
+        return column_text
+
     def extract_text_by_pages(self, pdf_path: str) -> List[Dict]:
         """
         按页提取PDF文本，返回页列表
@@ -515,7 +580,7 @@ Available GP candidates:
             import pdfplumber
             with pdfplumber.open(pdf_path) as pdf:
                 for page_num, page in enumerate(pdf.pages, 1):
-                    page_text = page.extract_text()
+                    page_text = self._extract_pdfplumber_page_text(page)
                     if page_text and page_text.strip():
                         pages.append({"page_num": page_num, "text": page_text})
 
@@ -4092,6 +4157,9 @@ Token节省效果:
     parser.add_argument("--extract_model", default="gpt-5-mini",
                         help="Stage2提取模型 (默认: gpt-5-mini)")
 
+    parser.add_argument("--pdf_text_layout", choices=("single", "two_column", "auto"), default="single",
+                        help="PDF text layout: single, two_column, or auto (default: single)")
+
     parser.add_argument("--max_parallel_text_chunks", type=int, default=1,
                         help="Maximum chunk-level concurrency inside each PDF (default: 1)")
 
@@ -4117,6 +4185,7 @@ Token节省效果:
         screen_model=args.screen_model,
         extract_model=args.extract_model,
         max_parallel_text_chunks=args.max_parallel_text_chunks,
+        pdf_text_layout=args.pdf_text_layout,
     )
 
     # 执行批量处理
