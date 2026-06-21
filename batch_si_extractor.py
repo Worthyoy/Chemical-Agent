@@ -75,8 +75,14 @@ class SIExtractor(PDFReactionExtractor):
         r'\s+[A-Z0-9]+\b\s*(?:\([^)\n]{0,60}\))?\s*(?::|\uff1a)'
     )
 
+    SHORT_GP_TITLE_PATTERN = (
+        r'(?im)^\s*(?:\d+[\).]\s*)?'
+        r'GP[\s\-\u2010-\u2015]*[A-Z0-9]+\s*(?::|\uff1a|\.)'
+    )
+
     GP_TITLE_PATTERNS = [
         EXPLICIT_GP_TITLE_PATTERN,
+        SHORT_GP_TITLE_PATTERN,
         r'(?i)(general\s+procedure)(?:\s+for\s+synthesis\s+of\s+([\w\d\s,\-–and]+))?\s*([A-Z])?\b',
         r'(?im)^\s*(?:\d+[\).]\s*)?(representative\s+procedure)(?:\s+for\b[^\n]{0,120}|\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
         r'(?im)^\s*(?:\d+[\).]\s*)?(typical\s+procedure)(?:\s+for\b[^\n]{0,120}|\s+[A-Z]\b\s*(?::|\uff1a|\.|-|\u2013|\u2014|$)|\b)',
@@ -401,13 +407,35 @@ Available GP candidates:
 {gp_candidates}
 """
 
+    GP_NO_REFERENCE_RESOLUTION_PROMPT = """Decide whether any general procedure should be used for a reaction chunk that does not explicitly name a procedure.
+
+The chunk may contain product characterization entries, compound labels, product series, method wording, substrates, yields, ee/er, or brief "synthesized by using" details.
+Select only GP keys that are clearly applicable based on product numbering/series, method labels, reaction family, substrates/reagents, catalysts, or conditions.
+You may select multiple GP keys if the chunk clearly contains entries that use multiple procedures.
+Return an empty selected_gp_keys list if no GP is applicable. Do not select a GP merely because it exists.
+
+Return ONLY compact valid JSON:
+{{
+  "selected_gp_keys": ["GP key"],
+  "confidence": "high|medium|low",
+  "reason": "short reason"
+}}
+
+Reaction chunk:
+{chunk_text}
+
+Available GP candidates:
+{gp_candidates}
+"""
+
     def __init__(self, api_key: Optional[str] = None,
                  pages_per_chunk: int = 5,
                  screen_model: str = "gpt-5-mini",
                  extract_model: str = "gpt-5-mini",
                  base_url: str = "https://hk.xty.app/v1",
                  enable_stage2_audit: bool = True,
-                 max_parallel_text_chunks: int = 1):
+                 max_parallel_text_chunks: int = 1,
+                 pdf_text_layout: str = "single"):
         """
         初始化SI提取器
 
@@ -424,6 +452,9 @@ Available GP candidates:
         self.extract_model = extract_model
         self.enable_stage2_audit = enable_stage2_audit
         self.max_parallel_text_chunks = max(1, int(max_parallel_text_chunks or 1))
+        self.pdf_text_layout = (
+            pdf_text_layout if pdf_text_layout in {"single", "two_column", "auto"} else "single"
+        )
         self.stage2_audit_recovered = 0
         self.last_registry_validation_stats = {
             "registry_raw_count": 0,
@@ -471,6 +502,67 @@ Available GP candidates:
     # 第一层：按页提取文本
     # =====================================================================
 
+    def _is_likely_two_column_page(self, page) -> bool:
+        """Detect common two-column article pages from word coordinates."""
+        try:
+            words = page.extract_words(use_text_flow=False, keep_blank_chars=False) or []
+        except Exception:
+            return False
+
+        top_margin = page.height * 0.08
+        bottom_margin = page.height * 0.94
+        body_words = [
+            w for w in words
+            if top_margin <= float(w.get("top", 0)) <= bottom_margin
+        ]
+        if len(body_words) < 120:
+            return False
+
+        width = float(page.width)
+        mid_left = width * 0.43
+        mid_right = width * 0.57
+        left_count = sum(1 for w in body_words if float(w.get("x0", 0)) < mid_left)
+        right_count = sum(1 for w in body_words if float(w.get("x1", 0)) > mid_right)
+        min_side_count = max(30, int(len(body_words) * 0.18))
+        return (
+            left_count >= min_side_count
+            and right_count >= min_side_count
+            and min(left_count, right_count) / max(left_count, right_count) >= 0.45
+        )
+
+    def _extract_two_column_text(self, page) -> str:
+        """Extract page text left column first, then right column."""
+        width = float(page.width)
+        height = float(page.height)
+        split_x = width / 2.0
+        top = height * 0.06
+        bottom = height * 0.96
+
+        try:
+            left = page.crop((0, top, split_x, bottom)).extract_text() or ""
+            right = page.crop((split_x, top, width, bottom)).extract_text() or ""
+        except Exception:
+            return ""
+
+        text = "\n\n".join(part.strip() for part in (left, right) if part and part.strip())
+        return text.strip()
+
+    def _extract_pdfplumber_page_text(self, page) -> str:
+        default_text = page.extract_text() or ""
+        if self.pdf_text_layout == "single":
+            return default_text
+
+        use_two_column = self.pdf_text_layout == "two_column" or (
+            self.pdf_text_layout == "auto" and self._is_likely_two_column_page(page)
+        )
+        if not use_two_column:
+            return default_text
+
+        column_text = self._extract_two_column_text(page)
+        if len(column_text.strip()) < max(80, int(len(default_text.strip()) * 0.4)):
+            return default_text
+        return column_text
+
     def extract_text_by_pages(self, pdf_path: str) -> List[Dict]:
         """
         按页提取PDF文本，返回页列表
@@ -488,7 +580,7 @@ Available GP candidates:
             import pdfplumber
             with pdfplumber.open(pdf_path) as pdf:
                 for page_num, page in enumerate(pdf.pages, 1):
-                    page_text = page.extract_text()
+                    page_text = self._extract_pdfplumber_page_text(page)
                     if page_text and page_text.strip():
                         pages.append({"page_num": page_num, "text": page_text})
 
@@ -1745,15 +1837,8 @@ Available GP candidates:
             chunk_text,
         ))
 
-    def _resolve_generic_gp_for_chunk(self, chunk_text: str, gp_texts: Dict[str, str]) -> Dict[str, str]:
-        if not getattr(self, "client", None):
-            self.last_gp_selection_debug = {
-                "mode": "llm_unavailable_generic",
-                "selected_gp_keys": [],
-            }
-            return {}
-
-        candidates = [
+    def _build_gp_resolution_candidates(self, gp_texts: Dict[str, str]) -> List[Dict[str, str]]:
+        return [
             {
                 "key": key,
                 "title": str(text).splitlines()[0][:160] if isinstance(text, str) and text.strip() else key,
@@ -1762,6 +1847,16 @@ Available GP candidates:
             for key, text in gp_texts.items()
             if isinstance(text, str) and text.strip()
         ]
+
+    def _resolve_generic_gp_for_chunk(self, chunk_text: str, gp_texts: Dict[str, str]) -> Dict[str, str]:
+        if not getattr(self, "client", None):
+            self.last_gp_selection_debug = {
+                "mode": "llm_unavailable_generic",
+                "selected_gp_keys": [],
+            }
+            return {}
+
+        candidates = self._build_gp_resolution_candidates(gp_texts)
         if not candidates:
             return {}
 
@@ -1809,6 +1904,82 @@ Available GP candidates:
             }
             return {}
 
+    def _resolve_no_reference_gp_for_chunk(self, chunk_text: str, gp_texts: Dict[str, str]) -> Dict[str, str]:
+        if not getattr(self, "client", None):
+            self.last_gp_selection_debug = {
+                "mode": "llm_unavailable_no_reference",
+                "selected_gp_keys": [],
+            }
+            return {}
+
+        candidates = self._build_gp_resolution_candidates(gp_texts)
+        if not candidates:
+            return {}
+
+        try:
+            response = self.client.chat.completions.create(
+                model=self.extract_model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You resolve whether chemistry general procedures apply to reaction chunks. Return valid JSON only.",
+                    },
+                    {
+                        "role": "user",
+                        "content": self.GP_NO_REFERENCE_RESOLUTION_PROMPT.format(
+                            chunk_text=chunk_text[:5000],
+                            gp_candidates=json.dumps(candidates, ensure_ascii=False, indent=2),
+                        ),
+                    },
+                ],
+                temperature=0.0,
+            )
+            parsed = self._parse_compact_json_response(response.choices[0].message.content or "")
+            if not parsed:
+                self.last_gp_selection_debug = {
+                    "mode": "llm_unresolved_no_reference",
+                    "selected_gp_keys": [],
+                    "reason": "empty_or_invalid_json",
+                }
+                return {}
+            selected = parsed.get("selected_gp_keys", [])
+            if not isinstance(selected, list):
+                self.last_gp_selection_debug = {
+                    "mode": "llm_unresolved_no_reference",
+                    "selected_gp_keys": [],
+                    "reason": "selected_gp_keys_not_list",
+                }
+                return {}
+            selected_gp = {
+                key: gp_texts[key]
+                for key in selected
+                if key in gp_texts and isinstance(gp_texts.get(key), str)
+            }
+            if selected_gp:
+                self.last_gp_selection_debug = {
+                    "mode": "llm_resolved_no_reference",
+                    "selected_gp_keys": list(selected_gp.keys()),
+                    "confidence": parsed.get("confidence"),
+                    "reason": parsed.get("reason"),
+                }
+                return selected_gp
+
+            self.last_gp_selection_debug = {
+                "mode": "llm_unresolved_no_reference",
+                "selected_gp_keys": [],
+                "confidence": parsed.get("confidence"),
+                "reason": parsed.get("reason"),
+            }
+            return {}
+        except Exception as exc:
+            print(f"  [WARN] GP no-reference resolution failed: {exc}")
+            self.last_gp_selection_debug = {
+                "mode": "llm_failed_no_reference",
+                "selected_gp_keys": [],
+                "error": str(exc),
+            }
+            return {}
+
     def select_gp_for_chunk(self, chunk_text: str, gp_texts: Optional[Dict[str, str]]) -> Dict[str, str]:
         """Select only GP texts relevant to a Stage2 chunk."""
         if not gp_texts:
@@ -1830,8 +2001,7 @@ Available GP candidates:
                     "selected_gp_keys": list(valid_gp_texts.keys()),
                 }
                 return valid_gp_texts
-            self.last_gp_selection_debug = {"mode": "no_reference", "selected_gp_keys": []}
-            return {}
+            return self._resolve_no_reference_gp_for_chunk(chunk_text, valid_gp_texts)
 
         matched = {
             key: text
@@ -1853,11 +2023,10 @@ Available GP candidates:
                 self.last_gp_selection_debug = {
                     "mode": "generic_unresolved",
                     "selected_gp_keys": [],
-                }
+            }
             return {}
 
-        self.last_gp_selection_debug = {"mode": "no_reference", "selected_gp_keys": []}
-        return {}
+        return self._resolve_no_reference_gp_for_chunk(chunk_text, valid_gp_texts)
 
     # 以下方法已弃用，现在使用GPT分块提取Registry
     # def _find_registry_pages(self, pages: List[Dict]) -> List[Dict]:
@@ -2011,6 +2180,9 @@ Available GP candidates:
             无标识时 → semantic key 或 'GeneralProcedureUnlabeled1', ...
         """
         # 尝试提取 scope (数字范围)
+        if self._is_short_gp_title(title):
+            return self._normalize_short_gp_title_key(title)
+
         if self._is_explicit_gp_title(title):
             return self._normalize_gp_title_key(title)
 
@@ -2047,6 +2219,23 @@ Available GP candidates:
     def _is_explicit_gp_title(self, title: str) -> bool:
         """Return True for line-start GP headings with an explicit label and colon."""
         return bool(re.match(self.EXPLICIT_GP_TITLE_PATTERN, title.strip()))
+
+    def _is_short_gp_title(self, title: str) -> bool:
+        """Return True for short GP headings such as GP-1: or Gp-A:."""
+        return bool(re.match(self.SHORT_GP_TITLE_PATTERN, title.strip()))
+
+    def _normalize_short_gp_title_key(self, title: str) -> str:
+        """Preserve short GP labels as public keys while normalizing separators."""
+        match = re.match(
+            r'(?i)^\s*(?:\d+[\).]\s*)?(GP)(?:[\s\-\u2010-\u2015]*)([A-Z0-9]+)\s*(?::|\uff1a|\.)',
+            title.strip(),
+        )
+        if not match:
+            return title.strip().rstrip(':：.').strip()
+
+        prefix = match.group(1)
+        label = match.group(2)
+        return f"{prefix}-{label}"
 
     def _normalize_gp_title_key(self, title: str) -> str:
         """Normalize explicit GP headings to human-readable keys."""
@@ -2087,6 +2276,17 @@ Available GP candidates:
                 f"Standard Procedures {label}",
                 f"Experimental Procedures {label}",
                 f"GeneralProcedure{label}",
+            })
+
+        short_match = re.match(r'(?i)^(GP)[\s\-\u2010-\u2015]*([A-Z0-9]+)$', gp_key)
+        if short_match:
+            prefix = short_match.group(1)
+            label = short_match.group(2)
+            aliases.update({
+                f"{prefix} {label}",
+                f"{prefix}-{label}",
+                f"GP {label}",
+                f"GP-{label}",
             })
 
         return sorted(aliases, key=len, reverse=True)
@@ -3957,6 +4157,9 @@ Token节省效果:
     parser.add_argument("--extract_model", default="gpt-5-mini",
                         help="Stage2提取模型 (默认: gpt-5-mini)")
 
+    parser.add_argument("--pdf_text_layout", choices=("single", "two_column", "auto"), default="single",
+                        help="PDF text layout: single, two_column, or auto (default: single)")
+
     parser.add_argument("--max_parallel_text_chunks", type=int, default=1,
                         help="Maximum chunk-level concurrency inside each PDF (default: 1)")
 
@@ -3982,6 +4185,7 @@ Token节省效果:
         screen_model=args.screen_model,
         extract_model=args.extract_model,
         max_parallel_text_chunks=args.max_parallel_text_chunks,
+        pdf_text_layout=args.pdf_text_layout,
     )
 
     # 执行批量处理

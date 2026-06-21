@@ -69,7 +69,8 @@ class PipelineConfig:
     base_url: str = "https://hk.xty.app/v1"
     max_parallel_pdfs: int = 2
     max_parallel_text_chunks: int = 1
-    pipeline_version: str = "parallel_pdf_v4_gp_alias_titles"
+    pdf_text_layout: str = "single"
+    pipeline_version: str = "parallel_pdf_v8_two_column_cli"
     skip_reaction_type_normalization: bool = False
     skip_chemeagle_normalization: bool = False
     skip_downstream_build: bool = False
@@ -284,6 +285,7 @@ def make_extractor(config: PipelineConfig) -> SIExtractor:
         base_url=config.base_url,
         enable_stage2_audit=config.enable_stage2_audit,
         max_parallel_text_chunks=config.max_parallel_text_chunks,
+        pdf_text_layout=config.pdf_text_layout,
     )
 
 
@@ -392,6 +394,7 @@ def source_metadata(pdf_path: Path, config: PipelineConfig) -> Dict:
         "split_model": config.split_model,
         "chemeagle_role_refinement_model": config.chemeagle_role_refinement_model,
         "pages_per_chunk": config.pages_per_chunk,
+        "pdf_text_layout": config.pdf_text_layout,
         "enable_stage2_audit": config.enable_stage2_audit,
     }
 
