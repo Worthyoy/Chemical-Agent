@@ -56,6 +56,14 @@ Rules
 Coverage-first extraction:
 Internally identify every extractable paragraph/prose reaction entry in source order before writing the final JSON.
 
+Page provenance:
+- Every reaction object must include "source_pages": [positive PDF page numbers].
+- Read page numbers only from the "--- Page N ---" markers surrounding the specific reaction entry in source_text.
+- Include only pages containing concrete reaction entry evidence: its specific substrate/product, operation, or reported result.
+- Do not include a General Procedure definition page merely because GP context was supplied or referenced.
+- If the concrete entry spans pages, include every evidence page once in ascending order.
+- If the page cannot be determined, use "source_pages": []. Never invent a page number.
+
 An extractable prose reaction entry is any sentence or paragraph that contains:
 - a specific compound/product/substrate name, label, code, or symbol, and
 - wording indicating preparation, synthesis, isolation, furnishing, affording, obtaining, or reaction under/according to a procedure, and
@@ -73,6 +81,23 @@ Ignore NMR, HRMS, HPLC, spectra, exact mass, melting point, optical rotation, an
 General Procedure text is context only:
 - Do not output a standalone reaction for the GP paragraph itself unless it reports a specific product/substrate and yield, ee, or er.
 - Use GP text only to fill shared reagents, catalysts, solvents, and conditions for later prose entries that reference that procedure.
+
+Multi-step reactions and General Procedures:
+- Before extracting GP-referenced entries, determine whether the referenced GP describes one chemical transformation or multiple sequential chemical transformations. Do not output this decision separately.
+- A multi-step reaction or GP contains two or more sequential chemical transformations leading to one final reported product/result. Keep that sequence as ONE reaction object.
+- A synthetic step requires a chemical transformation, not just an operational step.
+- Do not count workup or purification as a synthetic step: quench, extraction, washing, drying, concentration, filtration, and chromatography are not separate steps unless the source explicitly performs another chemical transformation.
+- Expressions such as "over two steps", "used directly in the next step", "without isolation/further purification", or "the crude product/residue was subjected to another transformation" are evidence to review; they are not sufficient by themselves unless the text describes multiple chemical transformations.
+- If a supplied GP is multi-step, every concrete entry that references that GP must inherit the multi-step schema.
+- For a multi-step reaction only, add integer "step_count" and integer "step" to every item in substrates, products, catalysts, additives, and reagents.
+- If any substrate, product, catalyst, additive, reagent, intermediate, or condition uses a step field, the reaction must include integer "step_count".
+- Assign each chemical to the step where it is actually used or formed. Do not flatten chemicals from different steps into an unlabelled list.
+- For multi-step conditions, every condition field must be a list of {"step": N, "value": "reported value"} objects. Preserve separate solvent, volume, atmosphere, light source, wavelength, temperature, and time values by step.
+- Add "intermediates" for multi-step reactions. Include an intermediate only when the source explicitly gives its chemical name or symbol/code. Each intermediate must contain name, symbol, amount, produced_in_step, and consumed_in_step.
+- Do not invent an intermediate identity from phrases such as "crude product", "residue obtained above", or "corresponding intermediate". If no intermediate is explicitly identified, use "intermediates": [].
+- An intermediate belongs only in intermediates; do not duplicate it in substrates or products.
+- Keep an overall reported yield exactly scoped as written, for example "66% yield over two steps" rather than "66%".
+- Single-step reactions must keep the ordinary schema below: do not add step_count, step annotations, or intermediates.
 
 Do NOT extract from tables, optimization tables, screening tables, entry tables, figure captions, or tabular lists.
 Ignore table content completely even if it contains yield, ee, er, conditions, substrates, or entry numbers.
@@ -106,6 +131,7 @@ Never include coverage lists, explanations, headings, bullets, prose prefaces, M
 For normal extraction, each entry:
 {
   "id": "...",
+  "source_pages": [1],
   "reaction_type": "...",
   "substrates": [{"name": "...", "symbol": "...", "amount": "..."}],
   "products": [{"name": "...", "symbol": "...", "amount": "..."}],
@@ -114,6 +140,22 @@ For normal extraction, each entry:
   "reagents": [{"name": "...", "symbol": "...", "amount": "..."}],
   "conditions": {"solvent": "...", "volume": "...", "light source": "...", "wavelength": "...", "temperature": "...", "time": "..."},
   "targets": {"yield": "...", "ee": "...%", "er": "..."}
+}
+
+For a multi-step entry, extend that object as follows:
+{
+  "step_count": 2,
+  "substrates": [{"name": "...", "symbol": "...", "amount": "...", "step": 1}],
+  "products": [{"name": "...", "symbol": "...", "amount": "...", "step": 2}],
+  "catalysts": [{"name": "...", "symbol": "...", "amount": "...", "step": 1}],
+  "additives": [{"name": "...", "symbol": "...", "amount": "...", "step": 1}],
+  "reagents": [{"name": "...", "symbol": "...", "amount": "...", "step": 2}],
+  "intermediates": [{"name": "...", "symbol": "...", "amount": "...", "produced_in_step": 1, "consumed_in_step": 2}],
+  "conditions": {
+    "solvent": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}],
+    "temperature": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}],
+    "time": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}]
+  }
 }
 
 name/symbol rules

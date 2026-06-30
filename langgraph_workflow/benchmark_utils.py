@@ -80,6 +80,17 @@ def format_conditions_en(conditions: Dict) -> str:
         if value is None or value == "":
             continue
         label = str(key).replace("_", " ")
+        if isinstance(value, list):
+            step_parts = []
+            for item in value:
+                if not isinstance(item, dict) or item.get("value") in (None, ""):
+                    continue
+                step = item.get("step")
+                prefix = f"Step {step}" if step not in (None, "") else "Step"
+                step_parts.append(f"{prefix}: {item.get('value')}")
+            if step_parts:
+                parts.append(f"{label}: " + "; ".join(step_parts))
+            continue
         parts.append(f"{label}: {value}")
     return "; ".join(parts) if parts else "not specified"
 
@@ -92,6 +103,8 @@ def _compound_public_fields(compound: dict) -> dict:
     }
     if compound.get("symbol") is not None:
         public["symbol"] = compound.get("symbol")
+    if compound.get("step") is not None:
+        public["step"] = compound.get("step")
     return public
 
 
@@ -399,7 +412,10 @@ def _catalyst_names_public(catalysts: List[dict]) -> List[dict]:
     for catalyst in catalysts or []:
         name = catalyst.get("name", "")
         if _is_valid_compound_name(name):
-            names.append({"name": _normalize_compound_name(name)})
+            public = {"name": _normalize_compound_name(name)}
+            if catalyst.get("step") is not None:
+                public["step"] = catalyst.get("step")
+            names.append(public)
     return sorted(names, key=lambda x: str(x.get("name", "")).casefold())
 
 
@@ -715,7 +731,7 @@ def generate_q1_benchmark(q1_data: List[dict]) -> List[dict]:
 
 
 def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
-    paper_combo_data: Dict[Tuple[str, str, Tuple[str, ...], Optional[str]], List[dict]] = defaultdict(list)
+    paper_combo_data: Dict[Tuple[str, str, Tuple[str, ...], str], List[dict]] = defaultdict(list)
     review_set = []
 
     for reaction in q2_data:
@@ -744,8 +760,8 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
             )
             continue
 
-        conditions = reaction.get("conditions", {})
-        cond_key = get_conditions_key(conditions)
+        condition_signature = _public_condition_option(reaction)
+        cond_key = _public_option_key(condition_signature)
 
         key = (paper, reaction_type, combo, cond_key)
         paper_combo_data[key].append(reaction)
@@ -761,10 +777,9 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
             str(item[0][3]).casefold(),
         ),
     ):
-        if len(entries) < 2:
-            continue
-
-        conditions = entries[0].get("conditions", {})
+        first_entry = entries[0]
+        conditions = first_entry.get("conditions", {})
+        condition_signature = _public_condition_option(first_entry)
 
         for variable_scaffold in combo:
             variable_candidates = []
@@ -791,18 +806,12 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                         "source_paper": paper,
                         "reaction_type": reaction_type,
                         "conditions": conditions,
+                        "condition_signature": condition_signature,
                         "scaffold_combo": list(combo),
                         "variable_scaffold": variable_scaffold,
                         "details": bad_entries,
                     }
                 )
-                continue
-
-            distinct_variable_substrates = {
-                _compound_identity(variable_sub)
-                for _, _, variable_sub in variable_candidates
-            }
-            if len(distinct_variable_substrates) < 2:
                 continue
 
             fixed_keys = {
@@ -816,6 +825,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                         "source_paper": paper,
                         "reaction_type": reaction_type,
                         "conditions": conditions,
+                        "condition_signature": condition_signature,
                         "scaffold_combo": list(combo),
                         "variable_scaffold": variable_scaffold,
                         "reaction_ids": [reaction.get("id") for _, reaction, _ in variable_candidates],
@@ -839,20 +849,19 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
             )
 
             options = []
+            omitted_no_targets = []
             for original_answer_index, reaction, variable_substrate in variable_candidates:
                 targets = reaction.get("targets", {})
-                ee = parse_percentage(targets.get("ee"))
-                yield_val = parse_percentage(targets.get("yield"))
-
-                score = 0
-                count = 0
-                if ee is not None:
-                    score += ee
-                    count += 1
-                if yield_val is not None:
-                    score += yield_val
-                    count += 1
-                score = score / count if count > 0 else 0
+                ee, yield_val, score, target_count = _score_from_targets(targets)
+                er = targets.get("er")
+                if target_count == 0 and er in (None, "", [], {}):
+                    omitted_no_targets.append(
+                        {
+                            "reaction_id": reaction.get("id"),
+                            "variable_substrate": _compound_public_fields(variable_substrate),
+                        }
+                    )
+                    continue
 
                 options.append(
                     {
@@ -863,18 +872,107 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                             "reaction_id": reaction.get("id"),
                             "ee": ee,
                             "yield": yield_val,
-                            "er": targets.get("er"),
+                            "er": er,
                             "score": score,
                             "source_paper": reaction.get("source_paper"),
                         },
                     }
                 )
 
-            ranked_options = sorted(options, key=_option_sort_key)
+            if len(options) < 2:
+                review_set.append(
+                    {
+                        "reason": "insufficient_scored_options",
+                        "source_paper": paper,
+                        "reaction_type": reaction_type,
+                        "conditions": conditions,
+                        "condition_signature": condition_signature,
+                        "scaffold_combo": list(combo),
+                        "variable_scaffold": variable_scaffold,
+                        "scored_option_count": len(options),
+                        "omitted_no_targets": omitted_no_targets,
+                        "reaction_ids": [reaction.get("id") for _, reaction, _ in variable_candidates],
+                    }
+                )
+                continue
+
+            option_groups = defaultdict(list)
+            for option in options:
+                option_groups[_public_option_key(option["variable_substrate"])].append(option)
+
+            deduped_options = []
+            duplicate_conflicts = []
+            duplicate_option_count = 0
+            for duplicate_key, duplicate_options in sorted(option_groups.items()):
+                duplicate_option_count += max(0, len(duplicate_options) - 1)
+                scores = {
+                    (
+                        item["metadata_hidden"].get("ee"),
+                        item["metadata_hidden"].get("yield"),
+                        item["metadata_hidden"].get("er"),
+                        item["metadata_hidden"].get("score"),
+                    )
+                    for item in duplicate_options
+                }
+                if len(scores) > 1:
+                    duplicate_conflicts.append(
+                        {
+                            "variable_substrate": duplicate_options[0]["variable_substrate"],
+                            "reaction_ids": [
+                                item["metadata_hidden"].get("reaction_id")
+                                for item in duplicate_options
+                            ],
+                            "results": [
+                                {
+                                    "ee": item["metadata_hidden"].get("ee"),
+                                    "yield": item["metadata_hidden"].get("yield"),
+                                    "er": item["metadata_hidden"].get("er"),
+                                    "score": item["metadata_hidden"].get("score"),
+                                }
+                                for item in duplicate_options
+                            ],
+                        }
+                    )
+                    continue
+                deduped_options.append(sorted(duplicate_options, key=_option_sort_key)[0])
+
+            if duplicate_conflicts:
+                review_set.append(
+                    {
+                        "reason": "duplicate_variable_substrate_conflicting_results",
+                        "source_paper": paper,
+                        "reaction_type": reaction_type,
+                        "conditions": conditions,
+                        "condition_signature": condition_signature,
+                        "scaffold_combo": list(combo),
+                        "variable_scaffold": variable_scaffold,
+                        "details": duplicate_conflicts,
+                    }
+                )
+                continue
+
+            if len(deduped_options) < 2:
+                review_set.append(
+                    {
+                        "reason": "insufficient_distinct_variable_substrates",
+                        "source_paper": paper,
+                        "reaction_type": reaction_type,
+                        "conditions": conditions,
+                        "condition_signature": condition_signature,
+                        "scaffold_combo": list(combo),
+                        "variable_scaffold": variable_scaffold,
+                        "distinct_option_count": len(deduped_options),
+                        "duplicate_option_count": duplicate_option_count,
+                        "omitted_no_targets": omitted_no_targets,
+                    }
+                )
+                continue
+
+            ranked_options = sorted(deduped_options, key=_option_sort_key)
             max_score = ranked_options[0]["metadata_hidden"]["score"]
 
             seed = f"{paper}|{combo}|{cond_key}|{variable_scaffold}"
-            shuffled_options = _shuffle_options(options, seed)
+            shuffled_options = _shuffle_options(deduped_options, seed)
             by_original_index = {
                 option["metadata_hidden"]["original_answer_index"]: option
                 for option in shuffled_options
@@ -904,6 +1002,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                     "id": f"Q2_{len(q2_benchmark) + 1}",
                     "reaction_type": reaction_type,
                     "reaction_conditions": conditions,
+                    "condition_signature": condition_signature,
                     "fixed_substrates": fixed_substrates,
                     "variable_substrate_scaffold": variable_scaffold,
                     "product_scaffold_class": product_class,
@@ -926,6 +1025,8 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                             for option in shuffled_options
                         ],
                         "has_top_score_tie": len(gold_option_ids) > 1,
+                        "omitted_no_targets": omitted_no_targets,
+                        "deduped_duplicate_option_count": duplicate_option_count,
                     },
                 }
             )

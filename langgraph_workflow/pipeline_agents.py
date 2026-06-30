@@ -16,7 +16,8 @@ from batch_si_extractor import SIExtractor
 from merge_filtered import merge_filtered_reactions_from_files
 from normalize_reaction_types_llm import normalize_reaction_types_file
 from reaction_filter import filter_reaction_file
-from split_by_substrate import batch_llm_parse, split_reactions
+from compound_structure_parser import parse_compound_structures
+from split_by_substrate import split_reactions
 from cross_modal_kg import build_cross_modal_kg
 from multimodal_structure_enrichment import enrich_multimodal_structure
 from symbol_resolution import canonical_paper_key, resolve_cross_modal_symbols, write_resolution_outputs
@@ -29,7 +30,7 @@ from langgraph_workflow.chemeagle_adapter import (
 )
 from langgraph_workflow.benchmark_utils import (
     generate_q1_benchmark_package,
-    generate_q2_benchmark,
+    generate_q2_benchmark_package,
 )
 from langgraph_workflow.token_usage import summarize_token_usage, token_usage_context
 from langgraph_workflow.chemeagle_timing import summarize_chemeagle_timing
@@ -130,6 +131,10 @@ class PipelineConfig:
     @property
     def pipeline_cache_dir(self) -> Path:
         return self.intermediate_dir / "cache"
+
+    @property
+    def compound_structure_parse_cache_path(self) -> Path:
+        return self.pipeline_cache_dir / "compound_structure_parse_cache.json"
 
     @property
     def text_filtered_dir(self) -> Path:
@@ -269,7 +274,7 @@ class PipelineConfig:
 
     @property
     def multimodal_structure_parse_cache_path(self) -> Path:
-        return self.pipeline_cache_dir / "multimodal_structure_parse_cache.json"
+        return self.compound_structure_parse_cache_path
 
     @property
     def multimodal_structure_enrichment_report_path(self) -> Path:
@@ -439,7 +444,13 @@ def build_scaffold_mapping(registry: Dict[str, str], config: PipelineConfig) -> 
         base_url=config.base_url,
         api_key=config.api_key,
     )
-    parsed = batch_llm_parse(names, client, model=config.split_model, batch_size=30)
+    parsed = parse_compound_structures(
+        names,
+        cache_path=config.compound_structure_parse_cache_path,
+        client=client,
+        model=config.split_model,
+        batch_size=30,
+    )
     mapping = {}
     name_to_symbol = {name: symbol for symbol, name in registry.items()}
     for name, info in parsed.items():
@@ -1883,6 +1894,7 @@ class CollectResultsAgent:
                             client=client,
                             model=self.config.split_model,
                             batch_size=30,
+                            roles=("substrates", "products"),
                         )
                     substrate_structure_result["report_path"] = str(text_structure_report_path)
                     text_structure_enriched_paths = substrate_structure_result.get("text_outputs") or []
@@ -2173,6 +2185,7 @@ class CrossModalKGAgent:
                             client=client,
                             model=self.config.split_model,
                             batch_size=30,
+                            roles=("substrates", "products"),
                         )
                     kg_chemeagle_paths = structure_result.get("chemeagle_outputs") or chemeagle_paths
                 result = build_cross_modal_kg(
@@ -2257,20 +2270,23 @@ class Q1Q2SplitAgent:
             split_result = split_reactions(
                 input_path=state["merged_reactions_path"],
                 output_dir=self.config.benchmark_dir,
-                cache_path=self.config.pipeline_cache_dir / "substrate_parse_cache.json",
+                cache_path=self.config.compound_structure_parse_cache_path,
                 model=self.config.split_model,
                 batch_size=30,
                 api_key=self.config.api_key,
                 base_url=self.config.base_url,
+                allow_llm=False,
             )
         if not split_result:
             raise RuntimeError("Q1/Q2 split failed; no split result was returned.")
         state.setdefault("steps", {})["q1q2_split"] = split_result
         state["q1_path"] = split_result["q1_output"]
         state["q2_path"] = split_result["q2_output"]
+        state["q1q2_split_report"] = split_result.get("report_output")
         return {
             "q1_path": state["q1_path"],
             "q2_path": state["q2_path"],
+            "q1q2_split_report": state["q1q2_split_report"],
             "steps": state["steps"],
         }
 
@@ -2289,16 +2305,23 @@ class BenchmarkAgent:
         q1_benchmark = q1_package["benchmark"]
         q1_review = q1_package["review_set"]
         q1_report = q1_package["report"]
-        q2_benchmark = generate_q2_benchmark(q2_data)
+        q2_package = generate_q2_benchmark_package(q2_data)
+        q2_benchmark = q2_package["benchmark"]
+        q2_review = q2_package["review_set"]
+        q2_report = q2_package["report"]
 
         q1_output = self.config.benchmark_dir / "Q1_benchmark.json"
         q1_review_output = self.config.benchmark_dir / "Q1_benchmark_review.json"
         q1_report_output = self.config.benchmark_dir / "Q1_benchmark_report.json"
         q2_output = self.config.benchmark_dir / "Q2_benchmark.json"
+        q2_review_output = self.config.benchmark_dir / "Q2_benchmark_review.json"
+        q2_report_output = self.config.benchmark_dir / "Q2_benchmark_report.json"
         write_json(q1_output, q1_benchmark)
         write_json(q1_review_output, q1_review)
         write_json(q1_report_output, q1_report)
         write_json(q2_output, q2_benchmark)
+        write_json(q2_review_output, q2_review)
+        write_json(q2_report_output, q2_report)
 
         state.setdefault("steps", {})["benchmark"] = {
             "q1": {
@@ -2308,17 +2331,27 @@ class BenchmarkAgent:
                 "review_questions": len(q1_review),
                 "report_output": str(q1_report_output),
             },
-            "q2": {"output": str(q2_output), "questions": len(q2_benchmark)},
+            "q2": {
+                "output": str(q2_output),
+                "questions": len(q2_benchmark),
+                "review_output": str(q2_review_output),
+                "review_questions": len(q2_review),
+                "report_output": str(q2_report_output),
+            },
         }
         state["q1_benchmark"] = str(q1_output)
         state["q2_benchmark"] = str(q2_output)
         state["q1_benchmark_review"] = str(q1_review_output)
         state["q1_benchmark_report"] = str(q1_report_output)
+        state["q2_benchmark_review"] = str(q2_review_output)
+        state["q2_benchmark_report"] = str(q2_report_output)
         return {
             "q1_benchmark": state["q1_benchmark"],
             "q2_benchmark": state["q2_benchmark"],
             "q1_benchmark_review": state["q1_benchmark_review"],
             "q1_benchmark_report": state["q1_benchmark_report"],
+            "q2_benchmark_review": state["q2_benchmark_review"],
+            "q2_benchmark_report": state["q2_benchmark_report"],
             "steps": state["steps"],
         }
 
@@ -2343,6 +2376,8 @@ class SkipDownstreamAgent:
             "q2_benchmark",
             "q1_benchmark_review",
             "q1_benchmark_report",
+            "q2_benchmark_review",
+            "q2_benchmark_report",
         ):
             state[key] = None
         return {
@@ -2352,6 +2387,8 @@ class SkipDownstreamAgent:
             "q2_benchmark": None,
             "q1_benchmark_review": None,
             "q1_benchmark_report": None,
+            "q2_benchmark_review": None,
+            "q2_benchmark_report": None,
             "steps": state["steps"],
         }
 
@@ -2537,6 +2574,7 @@ class ReportAgent:
                 "chemeagle_filtered_kg_inputs": state.get("steps", {}).get("cross_modal_kg", {}).get("chemeagle_filtered_kg_inputs"),
                 "text_structure_enriched_kg_inputs": state.get("steps", {}).get("cross_modal_kg", {}).get("text_structure_enriched_kg_inputs"),
                 "chemeagle_structure_enriched_kg_inputs": state.get("steps", {}).get("cross_modal_kg", {}).get("chemeagle_structure_enriched_kg_inputs"),
+                "compound_structure_parse_cache": str(self.config.compound_structure_parse_cache_path),
                 "multimodal_structure_parse_cache": (
                     str(self.config.multimodal_structure_parse_cache_path)
                     if (self.config.enable_multimodal_kg or state.get("successful_text_structure_enriched_paths"))
@@ -2555,10 +2593,13 @@ class ReportAgent:
                 "reaction_type_normalization_report": state.get("reaction_type_report"),
                 "q1": state.get("q1_path"),
                 "q2": state.get("q2_path"),
+                "q1q2_split_report": state.get("q1q2_split_report"),
                 "q1_benchmark": state.get("q1_benchmark"),
                 "q1_benchmark_review": state.get("q1_benchmark_review"),
                 "q1_benchmark_report": state.get("q1_benchmark_report"),
                 "q2_benchmark": state.get("q2_benchmark"),
+                "q2_benchmark_review": state.get("q2_benchmark_review"),
+                "q2_benchmark_report": state.get("q2_benchmark_report"),
                 "token_usage_events": (
                     str(self.config.token_usage_events_path)
                     if self.config.token_usage_tracking

@@ -10,7 +10,14 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 
-TEXT_COMPOUND_FIELDS = ("substrates", "products", "catalysts", "additives", "reagents")
+TEXT_COMPOUND_FIELDS = (
+    "substrates",
+    "products",
+    "intermediates",
+    "catalysts",
+    "additives",
+    "reagents",
+)
 IMAGE_COMPOUND_FIELDS = ("reactants", "products")
 IMAGE_COMPOUND_ROLES = {
     "reagent",

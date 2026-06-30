@@ -72,10 +72,13 @@ class PipelineState(TypedDict, total=False):
     chemeagle_structure_enriched_kg_inputs: List[str]
     q1_path: Optional[str]
     q2_path: Optional[str]
+    q1q2_split_report: Optional[str]
     q1_benchmark: Optional[str]
     q2_benchmark: Optional[str]
     q1_benchmark_review: Optional[str]
     q1_benchmark_report: Optional[str]
+    q2_benchmark_review: Optional[str]
+    q2_benchmark_report: Optional[str]
     workflow_report: str
     has_successful_pdfs: bool
     steps: Dict

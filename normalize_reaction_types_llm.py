@@ -107,6 +107,7 @@ def _reaction_summary(reaction: dict, index: int) -> dict:
         "section": reaction.get("section") or reaction.get("chunk_label"),
         "substrates": names("substrates"),
         "products": names("products"),
+        "intermediates": names("intermediates"),
         "catalysts": names("catalysts"),
         "additives": names("additives"),
         "reagents": names("reagents"),
@@ -118,6 +119,7 @@ def _reaction_summary(reaction: dict, index: int) -> dict:
         "targets": {
             key: value for key, value in targets.items() if value not in (None, "", "null")
         },
+        "step_count": reaction.get("step_count"),
         "raw_reaction_type": reaction.get("reaction_type"),
     }
 

@@ -301,6 +301,9 @@ RULES:
 2. Do NOT mix reaction types (e.g., NaBH4 = reduction, not photocatalysis).
 3. If only a short label/code is present, keep it in symbol and do not invent a full name.
 4. Do NOT set substrates = products.
+5. Determine whether the supplied GP describes multiple chemical transformations or only one reaction followed by workup/purification.
+6. If the GP is multi-step, preserve step boundaries using the multi-step schema. Do not flatten multi-step GP materials into an unlabelled list.
+7. Do not invent an unnamed intermediate. Only an explicit intermediate name or symbol/code belongs in intermediates.
 """
 
     STAGE2_AUDIT_PROMPT = """You are auditing a chemistry SI reaction extraction.
@@ -321,6 +324,9 @@ Rules:
 - Product characterization entries after a GP are valid reaction entries when they report an isolated product and yield.
 - "Prepared according to General Procedure A/B using ..." entries are valid reaction entries.
 - For GP-referenced entries, use the supplied GP context for substrates/reagents/conditions, but do not copy product names into substrates.
+- When a missing entry uses a multi-step GP or reports an overall multi-step yield, first confirm that the GP/entry contains multiple chemical transformations, not only workup or purification, then reproduce the multi-step schema, step assignments, explicitly named intermediates, and per-step conditions from the extraction prompt.
+- If any substrate, product, catalyst, additive, reagent, intermediate, or condition uses a step field, the reaction must include integer step_count. Single-step reactions must not include step fields.
+- Every missing reaction must include source_pages from the concrete entry's "--- Page N ---" markers. Do not use a supplied GP definition page; use [] if uncertain.
 - Keep the current schema exactly: targets may contain yield, ee, and er only.
 - Do not output dr, conversion, selectivity, NMR_yield, or GC_yield.
 - If no reactions are missing, return {"missing_reactions": []}.
@@ -1907,7 +1913,7 @@ Available GP candidates:
     def _resolve_no_reference_gp_for_chunk(self, chunk_text: str, gp_texts: Dict[str, str]) -> Dict[str, str]:
         if not getattr(self, "client", None):
             self.last_gp_selection_debug = {
-                "mode": "llm_unavailable_no_reference",
+                "mode": "no_reference",
                 "selected_gp_keys": [],
             }
             return {}
@@ -2763,10 +2769,322 @@ Available GP candidates:
             return stripped
         return value
 
-    def sanitize_reaction_schema(self, reaction: Dict) -> Dict:
+    def _source_page_numbers_from_chunk_text(self, chunk_text: str) -> List[int]:
+        """Return 1-based PDF pages explicitly marked in a Stage2 chunk."""
+        pages = set()
+        for match in re.findall(r"--- Page\s+(\d+)\s+---", str(chunk_text or "")):
+            page = int(match)
+            if page > 0:
+                pages.add(page)
+        return sorted(pages)
+
+    def _normalize_source_pages(
+        self,
+        value,
+        allowed_page_nums: Optional[List[int]] = None,
+    ) -> List[int]:
+        """Normalize model page provenance and optionally keep only current chunk pages."""
+        if isinstance(value, (list, tuple, set)):
+            values = list(value)
+        elif value in (None, ""):
+            values = []
+        else:
+            values = [value]
+
+        pages = set()
+        for item in values:
+            if isinstance(item, bool) or item is None:
+                continue
+            if isinstance(item, int):
+                candidates = [item]
+            elif isinstance(item, float) and item.is_integer():
+                candidates = [int(item)]
+            else:
+                candidates = [
+                    int(match)
+                    for match in re.findall(r"(?i)(?:\bpage\s*)?(\d+)\b", str(item))
+                ]
+            pages.update(page for page in candidates if page > 0)
+
+        if allowed_page_nums is not None:
+            allowed = {
+                int(page)
+                for page in allowed_page_nums
+                if isinstance(page, int) and not isinstance(page, bool) and page > 0
+            }
+            pages.intersection_update(allowed)
+
+        return sorted(pages)
+
+    def _multistep_review_needed(self, text: str) -> bool:
+        """Weak signal that a GP may need semantic multi-step review.
+
+        This does not decide the schema. It only flags text that should prompt
+        the model to check whether multiple chemical transformations are
+        present, while avoiding pure workup/purification descriptions.
+        """
+        normalized = re.sub(r"\s+", " ", str(text or "").casefold())
+        if not normalized:
+            return False
+
+        if re.search(r"\b(?:over|in)\s+(?:two|three|\d+)\s+steps?\b", normalized):
+            return True
+        if re.search(r"\b(?:two|three|\d+)[-\s]?step\s+(?:sequence|procedure|synthesis|preparation)\b", normalized):
+            return True
+        if re.search(r"\bused\s+directly\s+in\s+the\s+next\s+step\b", normalized):
+            return True
+        if re.search(r"\b(?:without\s+(?:further\s+)?(?:isolation|purification))\b", normalized):
+            return True
+        if re.search(
+            r"\b(?:crude\s+(?:product|material)|residue|material)\b.{0,140}"
+            r"\b(?:subjected|treated|dissolved|used|carried|converted|added)\b",
+            normalized,
+        ):
+            return True
+
+        chemical_action = re.search(
+            r"\b(?:deprotect(?:ed|ion)?|desilylat(?:ed|ion)?|hydrolys(?:ed|is)|"
+            r"reduc(?:ed|tion)|oxid(?:ized|ised|ation)|cycli[sz](?:ed|ation)|"
+            r"coupl(?:ed|ing)|converted|functionalized|functionalised)\b",
+            normalized,
+        )
+        sequence_marker = re.search(r"\b(?:then|subsequently|after completion|followed by)\b", normalized)
+        workup_only = re.fullmatch(
+            r".*\b(?:quenched|extracted|washed|dried|concentrated|filtered|purified|chromatography)\b.*",
+            normalized,
+        ) and not chemical_action
+        return bool(chemical_action and sequence_marker and not workup_only)
+
+    def _normalize_step_number(self, value) -> Optional[int]:
+        """Normalize model step labels such as 1, "1", or "Step 1"."""
+        if isinstance(value, bool) or value is None:
+            return None
+        if isinstance(value, int):
+            return value if value > 0 else None
+        if isinstance(value, float) and value.is_integer():
+            number = int(value)
+            return number if number > 0 else None
+        match = re.fullmatch(r"(?i)\s*(?:step\s*)?(\d+)\s*", str(value))
+        if not match:
+            return None
+        number = int(match.group(1))
+        return number if number > 0 else None
+
+    def _single_step_schema(self, reaction: Dict) -> Dict:
+        """Remove accidental step annotations so ordinary reactions stay compatible."""
+        reaction.pop("step_count", None)
+        for field in ("substrates", "products", "catalysts", "additives", "reagents"):
+            values = reaction.get(field)
+            if not isinstance(values, list):
+                continue
+            for item in values:
+                if isinstance(item, dict):
+                    item.pop("step", None)
+
+        conditions = reaction.get("conditions")
+        if isinstance(conditions, dict):
+            for key, value in list(conditions.items()):
+                if not isinstance(value, list):
+                    continue
+                step_values = [
+                    item.get("value")
+                    for item in value
+                    if isinstance(item, dict)
+                    and self._normalize_step_number(item.get("step")) == 1
+                    and item.get("value") not in (None, "")
+                ]
+                if step_values:
+                    conditions[key] = "; ".join(str(item) for item in step_values)
+                elif not value:
+                    conditions[key] = None
+
+        if reaction.get("intermediates") == []:
+            reaction.pop("intermediates", None)
+        return reaction
+
+    def _collect_step_annotations(self, reaction: Dict) -> List[int]:
+        """Return normalized step annotations already present in a reaction object."""
+        steps: List[int] = []
+        for field in ("substrates", "products", "catalysts", "additives", "reagents"):
+            values = reaction.get(field)
+            if not isinstance(values, list):
+                continue
+            for item in values:
+                if not isinstance(item, dict):
+                    continue
+                step = self._normalize_step_number(item.get("step"))
+                if step is not None:
+                    steps.append(step)
+
+        conditions = reaction.get("conditions")
+        if isinstance(conditions, dict):
+            for value in conditions.values():
+                if not isinstance(value, list):
+                    continue
+                for item in value:
+                    if not isinstance(item, dict):
+                        continue
+                    step = self._normalize_step_number(item.get("step"))
+                    if step is not None:
+                        steps.append(step)
+
+        intermediates = reaction.get("intermediates")
+        if isinstance(intermediates, list):
+            for item in intermediates:
+                if not isinstance(item, dict):
+                    continue
+                for key in ("produced_in_step", "consumed_in_step"):
+                    step = self._normalize_step_number(item.get(key))
+                    if step is not None:
+                        steps.append(step)
+        return steps
+
+    def _infer_or_clean_step_schema(self, reaction: Dict) -> Dict:
+        """Make model-produced step annotations consistent with the schema.
+
+        The model sometimes emits item/condition-level step annotations but omits
+        the top-level step_count. Treat any step >= 2 as a true multi-step schema
+        and infer step_count deterministically. If all annotations are only step 1,
+        treat them as accidental single-step pollution and remove them.
+        """
+        if reaction.get("step_count") is not None:
+            return reaction
+
+        steps = self._collect_step_annotations(reaction)
+        if not steps:
+            return reaction
+        max_step = max(steps)
+        if max_step >= 2:
+            reaction["step_count"] = max_step
+            return reaction
+        return self._single_step_schema(reaction)
+
+    def _is_explicit_intermediate(self, item: Dict) -> bool:
+        """Require an explicit name or symbol; reject generic residue descriptions."""
+        symbol = str(item.get("symbol") or item.get("label") or "").strip()
+        generic = (
+            r"(?i)(?:the\s+)?(?:corresponding\s+)?(?:crude\s+)?"
+            r"(?:product|residue|intermediate)(?:\s+"
+            r"(?:thus\s+obtained|obtained\s+above|from\s+step\s+\d+))?"
+        )
+        if symbol and not re.fullmatch(generic, symbol):
+            return True
+        name = str(item.get("name") or "").strip()
+        return bool(name) and not bool(re.fullmatch(generic, name))
+
+    def _multistep_identity_key(self, item: Dict) -> str:
+        symbol = str(item.get("symbol") or item.get("label") or "").strip().casefold()
+        if symbol:
+            return f"symbol:{symbol}"
+        name = str(item.get("name") or "").strip().casefold()
+        return f"name:{name}" if name else ""
+
+    def _normalize_multistep_schema(self, reaction: Dict) -> Dict:
+        """Canonicalize and validate the optional multi-step reaction extension."""
+        reaction = self._infer_or_clean_step_schema(reaction)
+        raw_step_count = reaction.get("step_count")
+        if raw_step_count is None:
+            return reaction
+
+        step_count = self._normalize_step_number(raw_step_count)
+        if step_count is None:
+            raise ValueError(f"invalid step_count: {raw_step_count!r}")
+        if step_count < 2:
+            return self._single_step_schema(reaction)
+        reaction["step_count"] = step_count
+
+        compound_fields = ("substrates", "products", "catalysts", "additives", "reagents")
+        for field in compound_fields:
+            values = reaction.get(field)
+            if values is None:
+                reaction[field] = []
+                continue
+            if not isinstance(values, list):
+                raise ValueError(f"multi-step {field} must be a list")
+            for item in values:
+                if not isinstance(item, dict):
+                    raise ValueError(f"multi-step {field} items must be objects")
+                step = self._normalize_step_number(item.get("step"))
+                if step is None or step > step_count:
+                    raise ValueError(f"multi-step {field} item has invalid step: {item!r}")
+                item["step"] = step
+
+        conditions = reaction.get("conditions")
+        if conditions is None:
+            conditions = {}
+            reaction["conditions"] = conditions
+        if not isinstance(conditions, dict):
+            raise ValueError("multi-step conditions must be an object")
+        for key, value in list(conditions.items()):
+            if value in (None, ""):
+                conditions[key] = []
+                continue
+            if not isinstance(value, list):
+                conditions[key] = [{"step": 1, "value": value}]
+                continue
+            normalized_values = []
+            for item in value:
+                if not isinstance(item, dict):
+                    raise ValueError(f"multi-step condition {key!r} item must be an object")
+                step = self._normalize_step_number(item.get("step"))
+                if step is None or step > step_count:
+                    raise ValueError(f"multi-step condition {key!r} has invalid step: {item!r}")
+                condition_value = item.get("value")
+                if condition_value in (None, ""):
+                    continue
+                normalized_values.append({"step": step, "value": condition_value})
+            conditions[key] = normalized_values
+
+        raw_intermediates = reaction.get("intermediates")
+        if raw_intermediates is None:
+            raw_intermediates = []
+        if not isinstance(raw_intermediates, list):
+            raise ValueError("multi-step intermediates must be a list")
+        intermediates = []
+        for item in raw_intermediates:
+            if not isinstance(item, dict) or not self._is_explicit_intermediate(item):
+                continue
+            produced = self._normalize_step_number(item.get("produced_in_step"))
+            consumed = self._normalize_step_number(item.get("consumed_in_step"))
+            if produced is None or consumed is None or produced >= consumed or consumed > step_count:
+                raise ValueError(f"intermediate has invalid step relation: {item!r}")
+            normalized = dict(item)
+            normalized["produced_in_step"] = produced
+            normalized["consumed_in_step"] = consumed
+            intermediates.append(normalized)
+        reaction["intermediates"] = intermediates
+
+        intermediate_keys = {
+            self._multistep_identity_key(item)
+            for item in intermediates
+            if self._multistep_identity_key(item)
+        }
+        for field in ("substrates", "products"):
+            duplicate_keys = {
+                self._multistep_identity_key(item)
+                for item in reaction.get(field, [])
+                if self._multistep_identity_key(item) in intermediate_keys
+            }
+            if duplicate_keys:
+                raise ValueError(
+                    f"intermediates must not be duplicated in {field}: {sorted(duplicate_keys)}"
+                )
+        return reaction
+
+    def sanitize_reaction_schema(
+        self,
+        reaction: Dict,
+        allowed_page_nums: Optional[List[int]] = None,
+    ) -> Dict:
         """Keep only the current LangGraph reaction schema surface."""
         if not isinstance(reaction, dict):
             return reaction
+
+        reaction = self._normalize_multistep_schema(reaction)
+        reaction["source_pages"] = self._normalize_source_pages(
+            reaction.get("source_pages"),
+            allowed_page_nums=allowed_page_nums,
+        )
 
         for key in ("dr", "conversion", "selectivity", "NMR_yield", "GC_yield"):
             reaction.pop(key, None)
@@ -2785,9 +3103,13 @@ Available GP candidates:
         reaction["targets"] = clean_targets
         return reaction
 
-    def sanitize_reactions_schema(self, reactions: List[Dict]) -> List[Dict]:
+    def sanitize_reactions_schema(
+        self,
+        reactions: List[Dict],
+        allowed_page_nums: Optional[List[int]] = None,
+    ) -> List[Dict]:
         return [
-            self.sanitize_reaction_schema(reaction)
+            self.sanitize_reaction_schema(reaction, allowed_page_nums=allowed_page_nums)
             for reaction in reactions
             if isinstance(reaction, dict)
         ]
@@ -2804,6 +3126,7 @@ Available GP candidates:
             return []
 
         try:
+            allowed_page_nums = self._source_page_numbers_from_chunk_text(chunk_text)
             current_json = json.dumps(current_reactions, ensure_ascii=False, indent=2)
             response = self.client.chat.completions.create(
                 model=self.extract_model,
@@ -2840,7 +3163,10 @@ Available GP candidates:
                 missing = []
             if not isinstance(missing, list):
                 return []
-            return self.sanitize_reactions_schema(missing)
+            return self.sanitize_reactions_schema(
+                missing,
+                allowed_page_nums=allowed_page_nums,
+            )
         except Exception as e:
             print(f"  [WARN] Stage2 audit failed ({chunk_label}): {e}")
             return []
@@ -2854,7 +3180,9 @@ Available GP candidates:
             registry=registry,
             gp_texts=gp_texts,
         )
-        self.stage2_audit_recovered += int(result.get("audit_recovered") or 0)
+        self.stage2_audit_recovered = int(
+            getattr(self, "stage2_audit_recovered", 0) or 0
+        ) + int(result.get("audit_recovered") or 0)
         return result.get("reactions") or []
 
     def stage2_extract_with_meta(self, chunk_text: str, chunk_label: str,
@@ -2871,7 +3199,10 @@ Available GP candidates:
         """
         # 构建 registry 注入块
         # 构建 GP 注入块：只注入当前 chunk 明确引用或 LLM 解析到的 GP
+        allowed_page_nums = self._source_page_numbers_from_chunk_text(chunk_text)
         gp_block = ""
+        if not hasattr(self, "_gp_selection_lock"):
+            self._gp_selection_lock = threading.Lock()
         with self._gp_selection_lock:
             selected_gp_texts = self.select_gp_for_chunk(chunk_text, gp_texts)
             gp_selection_debug = dict(getattr(self, "last_gp_selection_debug", {}) or {})
@@ -2893,6 +3224,15 @@ Available GP candidates:
                 gp_block = self.GP_INJECTION_TEMPLATE.format(
                     gp_block="\n\n".join(gp_entries)
                 )
+                if self._multistep_review_needed("\n\n".join(gp_entries)):
+                    gp_block += (
+                        "\nMULTI-STEP REVIEW NOTE:\n"
+                        "The supplied GP may describe sequential chemical transformations. "
+                        "Review semantically whether there are multiple chemical transformations "
+                        "or only one reaction followed by workup/purification. Use the multi-step "
+                        "schema only for true multi-step chemistry; if the GP is multi-step, every "
+                        "GP-referenced concrete entry must inherit that schema.\n"
+                    )
 
         for attempt in range(3):
             try:
@@ -2923,7 +3263,8 @@ Available GP candidates:
                     print(f"  [WARN] Stage2 attempt {attempt+1}/3: empty response ({chunk_label})")
                     continue
                 reactions = self.sanitize_reactions_schema(
-                    self.parse_and_validate_json(gpt_response)
+                    self.parse_and_validate_json(gpt_response),
+                    allowed_page_nums=allowed_page_nums,
                 )
                 missing = self.stage2_audit_missing_reactions(
                     chunk_text,
@@ -2969,7 +3310,7 @@ Available GP candidates:
         2. merge 后按最终顺序为同一 id prefix 重新编号
         """
         merged = []
-        seen_signatures = set()
+        signature_indexes = {}
 
         for chunk_reactions in all_reactions:
             if not chunk_reactions:
@@ -2978,11 +3319,19 @@ Available GP candidates:
                 if not isinstance(reaction, dict):
                     continue
 
+                normalized_pages = self._normalize_source_pages(reaction.get("source_pages"))
                 sig = self._reaction_signature(reaction)
-                if sig in seen_signatures:
+                if sig in signature_indexes:
+                    existing = merged[signature_indexes[sig]]
+                    existing["source_pages"] = sorted(set(
+                        self._normalize_source_pages(existing.get("source_pages"))
+                        + normalized_pages
+                    ))
                     continue
-                seen_signatures.add(sig)
-                merged.append(dict(reaction))
+                new_reaction = dict(reaction)
+                new_reaction["source_pages"] = normalized_pages
+                signature_indexes[sig] = len(merged)
+                merged.append(new_reaction)
 
         return self._renumber_reaction_ids(merged)
 
@@ -3026,7 +3375,13 @@ Available GP candidates:
             sort_keys=True,
             ensure_ascii=False,
         )
-        return f"{subs}|{prods}|{target}"
+        intermediates = json.dumps(
+            reaction.get('intermediates', ''),
+            sort_keys=True,
+            ensure_ascii=False,
+        )
+        step_count = reaction.get('step_count', '')
+        return f"{subs}|{prods}|{intermediates}|{step_count}|{target}"
 
     # =====================================================================
     # Stage 5b: GP 条件来源标记（兜底）
@@ -3068,7 +3423,7 @@ Available GP candidates:
             conditions = reaction.get('conditions', {})
             if not isinstance(conditions, dict):
                 continue
-            if any(v is not None for v in conditions.values()):
+            if any(v not in (None, "", [], {}) for v in conditions.values()):
                 continue
 
             # 策略1: 只有一个 GP → 直接关联
@@ -3746,7 +4101,7 @@ Available GP candidates:
         }
         aligned = []
         stats = {"resolved": 0, "verified": 0, "conflicts": 0}
-        fields = ['substrates', 'products', 'catalysts', 'additives', 'reagents']
+        fields = ['substrates', 'products', 'intermediates', 'catalysts', 'additives', 'reagents']
         for reaction in reactions:
             if not isinstance(reaction, dict):
                 aligned.append(reaction)
