@@ -8,15 +8,32 @@ from typing import Dict, List, Optional, Tuple
 def parse_percentage(val):
     if val is None:
         return None
-    if isinstance(val, (int, float)):
-        return float(val)
-    val = str(val).strip()
-    if val.endswith("%"):
-        val = val[:-1]
-    try:
-        return float(val)
-    except Exception:
+    if isinstance(val, bool):
         return None
+    if isinstance(val, (int, float)):
+        number = float(val)
+        return number if 0.0 <= number <= 100.0 else None
+
+    text = str(val).strip().replace("％", "%")
+    if not text:
+        return None
+
+    percentage_matches = re.findall(
+        r"(?<![\d.])(?:[<>≤≥~≈]\s*)?(\d+(?:\.\d+)?)\s*%",
+        text,
+    )
+    if len(percentage_matches) == 1:
+        number = float(percentage_matches[0])
+        return number if 0.0 <= number <= 100.0 else None
+    if len(percentage_matches) > 1:
+        return None
+
+    if re.fullmatch(r"\s*[<>≤≥~≈]?\s*\d+(?:\.\d+)?\s*", text):
+        number_match = re.search(r"\d+(?:\.\d+)?", text)
+        number = float(number_match.group(0)) if number_match else None
+        if number is not None and 0.0 <= number <= 100.0:
+            return number
+    return None
 
 
 UNKNOWN_REACTION_TYPE = "unknown reaction"
@@ -533,9 +550,8 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
         options = []
         omitted_no_targets = []
         for original_answer_index, reaction in enumerate(entries):
-            ee, yield_val, score, target_count = _score_from_targets(
-                reaction.get("targets", {})
-            )
+            targets = reaction.get("targets", {}) or {}
+            ee, yield_val, score, target_count = _score_from_targets(targets)
             if target_count == 0:
                 omitted_no_targets.append(reaction.get("id"))
                 continue
@@ -547,9 +563,11 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
                     "metadata_hidden": {
                         "original_answer_index": original_answer_index,
                         "reaction_id": reaction.get("id"),
+                        "ee_raw": targets.get("ee"),
+                        "yield_raw": targets.get("yield"),
                         "ee": ee,
                         "yield": yield_val,
-                        "er": (reaction.get("targets") or {}).get("er"),
+                        "er": targets.get("er"),
                         "score": score,
                         "source_paper": reaction.get("source_paper"),
                     },
@@ -870,6 +888,8 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                         "metadata_hidden": {
                             "original_answer_index": original_answer_index,
                             "reaction_id": reaction.get("id"),
+                            "ee_raw": targets.get("ee"),
+                            "yield_raw": targets.get("yield"),
                             "ee": ee,
                             "yield": yield_val,
                             "er": er,
@@ -1071,3 +1091,229 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
 
 def generate_q2_benchmark(q2_data: List[dict]) -> List[dict]:
     return generate_q2_benchmark_package(q2_data)["benchmark"]
+
+
+SUPPORTED_SOURCE_MODALITIES = ("text", "image")
+
+
+def normalize_source_modality(value) -> str:
+    modality = str(value or "").strip().casefold()
+    aliases = {
+        "text": "text",
+        "textual": "text",
+        "image": "image",
+        "chemeagle": "image",
+        "vision": "image",
+    }
+    return aliases.get(modality, modality or "unknown")
+
+
+def _attach_modality_to_package(task: str, modality: str, package: dict) -> dict:
+    task_key = str(task).upper()
+    modality_key = normalize_source_modality(modality)
+    for index, question in enumerate(package["benchmark"], start=1):
+        question["id"] = f"{task_key}_{modality_key.upper()}_{index:04d}"
+        question["source_modality"] = modality_key
+        for option_result in question.get("metadata_hidden", {}).get(
+            "option_results", []
+        ):
+            option_result["source_modality"] = modality_key
+    for review in package["review_set"]:
+        review["source_modality"] = modality_key
+    package["report"] = {
+        **package["report"],
+        "source_modality": modality_key,
+    }
+    return package
+
+
+def _aggregate_modality_reports(task: str, packages: Dict[str, dict]) -> dict:
+    questions = [
+        question
+        for modality in SUPPORTED_SOURCE_MODALITIES
+        for question in packages[modality]["benchmark"]
+    ]
+    reviews = [
+        review
+        for modality in SUPPORTED_SOURCE_MODALITIES
+        for review in packages[modality]["review_set"]
+    ]
+    option_counts = sorted({question["option_count"] for question in questions})
+    return {
+        "task": str(task).upper(),
+        "input_groups": sum(
+            packages[modality]["report"].get("input_groups", 0)
+            for modality in SUPPORTED_SOURCE_MODALITIES
+        ),
+        "main_questions": len(questions),
+        "review_questions": len(reviews),
+        "min_options": min((q["option_count"] for q in questions), default=0),
+        "max_options": max((q["option_count"] for q in questions), default=0),
+        "option_count_distribution": {
+            str(count): sum(1 for question in questions if question["option_count"] == count)
+            for count in option_counts
+        },
+        "top3_eligible_questions": sum(
+            1 for question in questions if question["metric_eligibility"]["top3"]
+        ),
+        "top3_ineligible_questions": sum(
+            1 for question in questions if not question["metric_eligibility"]["top3"]
+        ),
+        "top_score_tie_questions": sum(
+            1
+            for question in questions
+            if question["metadata_hidden"]["has_top_score_tie"]
+        ),
+        "review_reasons": dict(
+            sorted(
+                {
+                    reason: sum(1 for review in reviews if review.get("reason") == reason)
+                    for reason in {review.get("reason") for review in reviews}
+                    if reason
+                }.items()
+            )
+        ),
+        "by_modality": {
+            modality: packages[modality]["report"]
+            for modality in SUPPORTED_SOURCE_MODALITIES
+        },
+    }
+
+
+def _question_fingerprint(task: str, question: dict) -> str:
+    if str(task).upper() == "Q1":
+        payload = {
+            "source_paper": question.get("source_paper"),
+            "reaction_type": question.get("reaction_type"),
+            "substrate_combo": question.get("substrate_combo"),
+            "product_combo": question.get("product_combo"),
+        }
+    else:
+        payload = {
+            "source_paper": question.get("source_paper"),
+            "reaction_type": question.get("reaction_type"),
+            "condition_signature": question.get("condition_signature"),
+            "fixed_substrates": question.get("fixed_substrates"),
+            "variable_substrate_scaffold": question.get(
+                "variable_substrate_scaffold"
+            ),
+            "product_scaffold_class": question.get("product_scaffold_class"),
+        }
+    return json.dumps(payload, sort_keys=True, ensure_ascii=False)
+
+
+def _cross_modal_overlap(task: str, packages: Dict[str, dict]) -> dict:
+    fingerprints = {
+        modality: {
+            _question_fingerprint(task, question)
+            for question in packages[modality]["benchmark"]
+        }
+        for modality in SUPPORTED_SOURCE_MODALITIES
+    }
+    shared = fingerprints["text"] & fingerprints["image"]
+    return {
+        "text_only": len(fingerprints["text"] - shared),
+        "image_only": len(fingerprints["image"] - shared),
+        "both": len(shared),
+    }
+
+
+def generate_benchmark_packages_by_modality(
+    q1_data: List[dict],
+    q2_data: List[dict],
+) -> dict:
+    q1_by_modality = {modality: [] for modality in SUPPORTED_SOURCE_MODALITIES}
+    q2_by_modality = {modality: [] for modality in SUPPORTED_SOURCE_MODALITIES}
+    unexpected_modalities = set()
+
+    for reaction in q1_data:
+        modality = normalize_source_modality(reaction.get("source_modality"))
+        if modality not in q1_by_modality:
+            unexpected_modalities.add(modality)
+            continue
+        q1_by_modality[modality].append(reaction)
+    for reaction in q2_data:
+        modality = normalize_source_modality(reaction.get("source_modality"))
+        if modality not in q2_by_modality:
+            unexpected_modalities.add(modality)
+            continue
+        q2_by_modality[modality].append(reaction)
+
+    if unexpected_modalities:
+        raise ValueError(
+            "Unsupported or missing source_modality values: "
+            + ", ".join(sorted(unexpected_modalities))
+        )
+
+    q1_packages = {
+        modality: _attach_modality_to_package(
+            "Q1",
+            modality,
+            generate_q1_benchmark_package(q1_by_modality[modality]),
+        )
+        for modality in SUPPORTED_SOURCE_MODALITIES
+    }
+    q2_packages = {
+        modality: _attach_modality_to_package(
+            "Q2",
+            modality,
+            generate_q2_benchmark_package(q2_by_modality[modality]),
+        )
+        for modality in SUPPORTED_SOURCE_MODALITIES
+    }
+
+    combined = {}
+    for task, packages in (("Q1", q1_packages), ("Q2", q2_packages)):
+        combined[task.lower()] = {
+            "benchmark": [
+                question
+                for modality in SUPPORTED_SOURCE_MODALITIES
+                for question in packages[modality]["benchmark"]
+            ],
+            "review_set": [
+                review
+                for modality in SUPPORTED_SOURCE_MODALITIES
+                for review in packages[modality]["review_set"]
+            ],
+            "report": _aggregate_modality_reports(task, packages),
+        }
+
+    question_option_counts = []
+    for task in ("q1", "q2"):
+        for question in combined[task]["benchmark"]:
+            question_option_counts.append(
+                {
+                    "question_id": question["id"],
+                    "task": task.upper(),
+                    "source_modality": question["source_modality"],
+                    "source_paper": question.get("source_paper"),
+                    "reaction_type": question.get("reaction_type"),
+                    "option_count": question["option_count"],
+                    "option_ids": [
+                        option["option_id"] for option in question.get("options", [])
+                    ],
+                    "top3_eligible": question["metric_eligibility"]["top3"],
+                    "has_top_score_tie": question["metadata_hidden"][
+                        "has_top_score_tie"
+                    ],
+                }
+            )
+
+    return {
+        "by_modality": {
+            modality: {
+                "q1_reactions": q1_by_modality[modality],
+                "q2_reactions": q2_by_modality[modality],
+                "q1": q1_packages[modality],
+                "q2": q2_packages[modality],
+            }
+            for modality in SUPPORTED_SOURCE_MODALITIES
+        },
+        "q1": combined["q1"],
+        "q2": combined["q2"],
+        "question_option_counts": question_option_counts,
+        "cross_modal_overlap": {
+            "q1": _cross_modal_overlap("Q1", q1_packages),
+            "q2": _cross_modal_overlap("Q2", q2_packages),
+        },
+    }

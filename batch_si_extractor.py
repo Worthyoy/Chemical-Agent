@@ -304,6 +304,7 @@ RULES:
 5. Determine whether the supplied GP describes multiple chemical transformations or only one reaction followed by workup/purification.
 6. If the GP is multi-step, preserve step boundaries using the multi-step schema. Do not flatten multi-step GP materials into an unlabelled list.
 7. Do not invent an unnamed intermediate. Only an explicit intermediate name or symbol/code belongs in intermediates.
+8. Normalize GP conditions by field meaning: solvent records solvent identity only; volume records quantities and short role notes for separate portions, addition solutions, suspensions, dilutions, or reaction mixtures. Do not duplicate quantities in both solvent and volume. Exclude workup, extraction, washing, and chromatography solvents unless they are the reaction medium.
 """
 
     STAGE2_AUDIT_PROMPT = """You are auditing a chemistry SI reaction extraction.
@@ -325,6 +326,7 @@ Rules:
 - "Prepared according to General Procedure A/B using ..." entries are valid reaction entries.
 - For GP-referenced entries, use the supplied GP context for substrates/reagents/conditions, but do not copy product names into substrates.
 - When a missing entry uses a multi-step GP or reports an overall multi-step yield, first confirm that the GP/entry contains multiple chemical transformations, not only workup or purification, then reproduce the multi-step schema, step assignments, explicitly named intermediates, and per-step conditions from the extraction prompt.
+- Normalize condition fields by meaning: solvent records solvent identity only; volume records quantities and short role notes for separate portions, addition solutions, suspensions, dilutions, or reaction mixtures. Do not duplicate quantities in both solvent and volume, and exclude workup/extraction/washing/chromatography solvents unless they are the reaction medium.
 - If any substrate, product, catalyst, additive, reagent, intermediate, or condition uses a step field, the reaction must include integer step_count. Single-step reactions must not include step fields.
 - Every missing reaction must include source_pages from the concrete entry's "--- Page N ---" markers. Do not use a supplied GP definition page; use [] if uncertain.
 - Keep the current schema exactly: targets may contain yield, ee, and er only.

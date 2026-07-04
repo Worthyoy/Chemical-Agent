@@ -1,0 +1,2129 @@
+--- Page 1 ---
+Enantioselective Nickel-Catalyzed Mizoroki-Heck Cyclizations
+to Generate Quaternary Stereocenters
+Jean-Nicolas Desrosiers,*† Jialin Wen,‡ Sergei Tcyrulnikov,§ Soumik Biswas,† Bo Qu,† Liana
+Hie,┴ Dmitry Kurouski,† Ling Wu,† Nelu Grinberg,† Nizar Haddad, † Carl A. Busacca,† Nathan
+K. Yee,† Jinhua J. Song,† Neil K. Garg, ǁ Xumu Zhang, ‡ Marisa C. Kozlowski,*§ Chris H.
+Senanayake†
+† Department of Chemical Development US, Boehringer-Ingelheim Pharmaceuticals, Inc., 900 Ridgebury Road,
+Ridgefield, CT, 06877, USA
+‡ Department of Chemistry, South University of Science and Technology of China, Shenzhen, 518000, P.R. China
+§ Department of Chemistry, University of Pennsylvania, Philadelphia, PA 19104-6323, USA
+ǁ Department of Chemistry and Biochemistry, University of California, Los Angeles, CA 90095-1569, USA
+Table of Contents
+Materials and Methods............................................................................................................ 2
+Experimental Procedures and Characterization ........................................................................ 3
+Synthesis of Starting Materials ............................................................................................. 3
+Nickel-Catalyzed Mirozoki-Heck Cyclization for the Synthesis of Quaternary Stereocenters:
+Procedures and Characterization ............................................................................................21
+Preparation of nickel(II) chloride QuinoxP* complex: ...........................................................21
+General method for preparation of racemic mixture:...........................................................21
+General method for nickel catalyzed asymmetric Mirozoki-Heck cyclization: ........................21
+Crystal Structure of the complex R,R-QuinoxP*(NiCl2)..............................................................45
+Computational Studies ...........................................................................................................50
+Details of Computational Studies ........................................................................................50
+Coordinates and thermochemical data for computed intermediates and transition states ....51
+
+--- Page 2 ---
+Materials and Methods
+Unless stated otherwise, reactions were conducted under an atmosphere of nitrogen using
+standard Schlenk or glove box techniques. Commercially obtained reagents were used as received. 2-
+Bromo-N-methylaniline, 2-chloro-N-methylaniline and 2-methoxy-N-methylaniline were purchased from
+Sigma-Aldrich. 2-Bromo-N-methyl-4-(trifluoromethoxy)aniline is commercially available from
+Oakwood. 2-Bromo-5-fluoro-N-methylaniline hydrochloride is commercially available from Combi-
+Blocks, Inc. 1H-indene-3-carboxylic acid was purchased from Sigma-Aldrich. Tiglic acid was purchased
+from Fluka. Angelic acid was purchased from TCI America. NiCl2(Pn-Bu3)2, Mn, and Na2CO3 were
+purchased from Sigma-Aldrich. QuinoxP* was purchased from Sphinx Scientific Laboratory. DMF was
+purchased from Sigma-Aldrich in a Sure-Seal bottle and degassed by sparging with nitrogen prior to use.
+Aluminum oxide, neutral, Brockmann I (50-200 μm, 60 Å) was purchased from Acros. 1H NMR spectra
+were recorded on Bruker spectrometers (at 400 and 500 MHz) and are reported relative to residual solvent
+signals. Data for 1H NMR spectra are reported as follows: chemical shift (δ ppm), multiplicity, coupling
+constant (Hz), integration and are referenced to the residual solvent peak 7.26 ppm for CDCl3. Data for
+13C NMR are reported in terms of chemical shift (at 100 and 125 MHz) and are referenced to the residual
+solvent peak 77.15 for CDCl3. IR spectra were recorded on a Thermo Nicolet 3700 FT-IR spectrometer
+and are reported in terms of frequency absorption (cm-1). High resolution mass spectral data were
+acquired using an Agilent LC/MSD TOF (time-of-flight) mass spectrometer in an electrospray positive
+ionization mode via flow injection. TLC analysis was performed using hexanes/EtOAc as the eluent and
+visualized using UV light. Flash chromatography was accomplished using a Teledyne CombiFlash Rf
+(visualizing oxindoles at 254 nm) with Silicycle SiliaSep Flash Cartridges (60Å porosity, 40-63 μm).
+
+--- Page 3 ---
+Experimental Procedures and Characterization
+Synthesis of Starting Materials
+General Procedure A
+A solution of (Z)-2-methyl-2 butenoic acid (angelic acid, 1.0g, 10.0 mmol), KOH (0.56 g, 1.0 eq) and
+ethanol (60 mL) was stirred at rt for 30 min. The mixture was concentrated and the residue was
+azeotroped with toluene. The resulting solid was dried in vacuo for 10 h to give potassium angelate as a
+white solid. This solid was suspended in DCM (6 mL) and oxalyl chloride (1.0 eq) was added dropwise,
+followed by 1 drops of DMF. The reaction was stirred at rt for 30 min and a solution of aniline (0.8 eq)
+and Hunig’s base (1.0 eq) in DCM (5 mL) was then added dropwise. The reaction was maintained at rt for
+3 h, quenched with 2M hydrochloric acid solution (20 mL) and extracted with DCM (10 mL). The
+organic layers were then combined, washed with brine (20 mL), dried (MgSO4), and concentrated.
+This amide was dissolved in THF (20 mL) and was added dropwise to a stirring suspension of NaH (60%
+oil dispersion, 1.1 eq.) in THF (20 mL) at 0 °C. After 15 min, the reaction was allowed to warm to room
+temperature, and MeI (0.33 mL, 5.30 mmol) was added. The reaction was maintained overnight at room
+temperature and then poured into saturated aqueous NaHCO3 solution (50 mL), and the resulting mixture
+was extracted with Et2O (2 × 30 mL) and EtOAc (30 mL). The combined organic layers were washed
+with brine (100 mL), dried (MgSO4), filtered, and concentrated. Purification of the residue by sgc (5:1
+hexanes-EtOAc) afforded N-methylated amide as a mixture of rotamers.
+(Z)-N-(2-bromophenyl)-N,2-dimethylbut-2-enamide
+Prepared according to General Procedure A. White solid, 81% (2.1 g) yield
+(0.3:0.7 ratio of rotamers). 1H NMR (500 MHz, CDCl3) δ 7.65 (m, 1H), 7.41
+– 7.17 (m, 3H), 5.57 (qq, J = 6.9, 1.6 Hz, 0.28H), 5.26 (dddt, J = 8.6, 7.0, 5.4,
+1.6 Hz, 0.76H), 3.28 (s, 3H), 2.01 (t, J = 1.6 Hz, 1H), 1.82 (dd, J = 6.9, 1.6
+Hz, 1H), 1.71 (dq, J = 7.0, 1.6 Hz, 2H), 1.61 (p, J = 1.6 Hz, 2H). 13C NMR
+(125 MHz, CDCl3) δ 172.02, 171.91, 142.32, 141.68, 133.74, 133.69, 133.19,
+132.48, 129.93, 129.78, 129.49, 129.24, 128.73, 128.12, 126.41, 124.24,
+122.61, 122.34, 77.29, 37.87, 35.92, 20.26, 20.16, 15.96, 15.02. Spectral data matched those previously
+reported.1
+1 Desrosiers, J.-N.; Hie, L.; Biswas, S.; Zatolochnaya, O. V.; Rodriguez, S.; Lee, H.; Grinberg, N.; Haddad, N.; Yee, N.
+K.; Garg, N. K.; Senanayake, C. H. Angew. Chem., Int. Ed. 2016, 55, 11921–11924.
+
+--- Page 4 ---
+
+
+--- Page 5 ---
+(Z)-N-(2-chlorophenyl)-N,2-dimethylbut-2-enamide
+Prepared according to General Procedure A. White solid, 76% yield (1.6 g)
+(0.25:0.75 ratio of rotamers). 1H NMR (500 MHz, CDCl3) δ 7.53 – 7.43
+(m, 1H), 7.35 – 7.18 (m, 3H), 5.57 (tdt, J = 7.0, 5.4, 1.6 Hz, 0.25H), 5.25
+(qq, J = 7.0, 1.6 Hz, 0.74H), 3.28 (s, 3H), 2.00 (p, J = 1.5 Hz, 0.76H), 1.81
+(dq, J = 6.9, 1.6 Hz, 0.76H), 1.68 (dq, J = 7.0, 1.6 Hz, 2.24H), 1.62 (p, J =
+1.6 Hz, 2.24H). 13C NMR (126 MHz, CDCl3) δ 172.15, 172.03, 140.79,
+140.05, 133.06, 132.44, 132.39, 132.26, 130.51, 129.75, 129.68, 129.25,
+128.98, 127.98, 127.43, 126.31, 124.25, 77.29, 77.24, 77.04, 76.78, 37.78, 35.72, 20.21, 20.18, 15.78,
+14.93; 141.3, 138.2, 132.3, 128.3, 124.2, 123.2, 115.7, 109.9, 71.4, 56.2, 51.7, 22.97; FT-IR (cm-1, neat,
+ATR): 1632, 1477, 1439, 1416, 1366, 1286, 1251, 1124, 1046, 1036, 766, 727, 618, 439; HRMS-ESI
+(m/z) [M+H]+ calcd for C12H14NOCl, 224.0845, found 224.0834.
+
+--- Page 6 ---
+(Z)-N-(6-bromo-2,2-difluorobenzo[d][1,3]dioxol-5-yl)-N,2-dimethylbut-2-enamide
+Prepared according to General Procedure A. White solid, 72%
+yield (2.4g, 0.45:0.55 ratio of rotamers). 1H NMR (500 MHz,
+CDCl3) δ 7.37 (s, 0.44H), 7.36 (s, 0.56H), 7.02 (s, 0.44H), 6.95 (s,
+0.56H), 5.59 (qq, J = 7.0, 1.6 Hz, 0.44H), 5.33 (tdt, J = 7.0, 5.4, 1.6
+Hz, 0.56H), 3.25 (s, 3H), 2.00 (p, J = 1.6 Hz, 1.32H), 1.80 (dq, J =
+7.0, 1.6 Hz, 1.32H), 1.72 (dq, J = 7.0, 1.6 Hz, 1.68H), 1.64 (p, J =
+1.6 Hz, 1.68H). 13C NMR (126 MHz, CDCl3) δ 172.28, 171.77,
+143.58, 143.48, 142.98, 138.05, 137.21, 132.88, 132.03, 131.81 (t,
+J = 259.1 Hz), 126.79, 124.73, 116.74, 116.18, 114.17, 114.11, 111.09, 110.97, 77.29, 77.24, 77.04,
+76.78, 37.77, 35.94, 20.18, 20.06, 15.96, 15.03; FT-IR (cm-1, neat, ATR): 1646, 1482, 1454, 1235, 1216,
+1153, 1112, 1042, 1026, 917, 891, 705, 634, 467, 457; HRMS-ESI (m/z) [M+H]+ calcd for
+C13H12NO3BrF2, 348.0043, found 348.0040.
+
+--- Page 7 ---
+
+
+--- Page 8 ---
+(Z)-N-(2-bromo-4-methylphenyl)-N,2-dimethylbut-2-enamide
+Prepared according to General Procedure A. White solid, 80% yield
+(2.2 g, 0.25:0.75 ratio of rotamers). 1H NMR (500 MHz, CDCl3) δ
+7.49 – 7.43 (m, 1H), 7.20 – 7.05 (m, 2H), 5.55 (qq, J = 7.0, 1.6 Hz,
+0.25H), 5.24 (qq, J = 7.0, 1.6 Hz, 0.75H), 3.26 (s, 3H), 2.35 (s, 3H),
+2.00 (p, J = 1.6 Hz, 0.74H), 1.81 (dq, J = 6.9, 1.5 Hz, 0.74H), 1.70
+(dq, J = 7.0, 1.5 Hz, 2.26H), 1.62 (p, J = 1.6 Hz, 2.26H). 13C NMR
+(126 MHz, CDCl3) δ 172.06, 172.03, 139.91, 139.63, 139.53, 138.93,
+134.04, 134.01, 133.35, 132.57, 129.46, 129.40, 129.23, 128.87, 126.07, 124.09, 122.19, 121.86, 77.33,
+77.28, 77.08, 76.82, 37.92, 35.94, 20.78, 20.75, 20.30, 20.16, 15.94, 15.00; 141.3, 138.2, 132.3, 128.3,
+124.2, 123.2, 115.7, 109.9, 71.4, 56.2, 51.7, 22.97; FT-IR (cm-1, neat, ATR):1639, 1490, 1435, 1422,
+1369, 1295, 1038, 831, 603; HRMS-ESI (m/z) [M+H]+ calcd for C13H16NOBr, 282.0499, found 282.0483.
+
+--- Page 9 ---
+(Z)-N-(2-bromo-4-methoxyphenyl)-N,2-dimethylbut-2-enamide
+Prepared according to General Procedure A. White solid, 96% yield
+(2.8 g, 0.25:0.75 ratio of rotamers). 1H NMR (500 MHz, CDCl3) δ
+7.21 – 7.09 (m, 2H), 6.90 (dd, J = 8.7, 2.8 Hz, 0.25H), 6.81 (dd, J =
+8.7, 2.9 Hz, 0.73H), 5.55 (qq, J = 6.9, 1.6 Hz, 0.25H), 5.24 (qq, J =
+7.0, 1.6 Hz, 0.72H), 3.81 (s, 3H), 3.25 (s, 3H), 1.99 (p, J = 1.6 Hz,
+0.75H), 1.80 (dq, J = 6.9, 1.6 Hz, 0.75H), 1.70 (dq, J = 6.9, 1.5 Hz,
+2.25H), 1.62 (p, J = 1.6 Hz, 2.25H). 13C NMR (126 MHz, CDCl3) δ
+172.27, 172.23, 159.46, 159.32, 135.08, 134.35, 133.46, 132.61,
+130.15, 129.95, 125.86, 124.03, 123.11, 122.61, 118.56, 118.42, 114.66, 113.88, 77.32, 77.26, 77.06,
+76.81, 55.74, 55.71, 53.44, 38.08, 36.07, 20.26, 20.16, 15.94, 15.00; 141.3, 138.2, 132.3, 128.3, 124.2,
+123.2, 115.7, 109.9, 71.4, 56.2, 51.7, 22.97; FT-IR (cm-1, neat, ATR): 1633, 1495, 1453, 1436, 1371,
+1287, 1227, 1120, 1027, 1013, 835, 613; HRMS-ESI (m/z) [M+H]+ calcd for C13H16NO2Br, 298.0446,
+found 298.0433.
+
+--- Page 10 ---
+
+
+--- Page 11 ---
+(Z)-N-(2-bromo-4-(trifluoromethoxy)phenyl)-N,2-dimethylbut-2-enamide
+Prepared according to General Procedure A. White solid, 97% yield
+(3.4 g, 0.4:0.8 ratio of rotamers). 1H NMR (500 MHz, CDCl3) δ 7.60
+– 7.49 (m, 1H), 7.36 – 7.13 (m, 2H), 5.60 (qq, J = 7.0, 1.6 Hz,
+0.39H), 5.30 (qt, J = 7.0, 1.6 Hz, 0.61H), 3.27 (s, 3H), 2.00 (p, J =
+1.6 Hz, 1H), 1.81 (dq, J = 7.0, 1.6 Hz, 1H), 1.71 (dq, J = 7.0, 1.6 Hz,
+2H), 1.62 (p, J = 1.6 Hz, 2H). 13C NMR (126 MHz, CDCl3) δ
+172.12, 171.71, 148.48, 148.32, 141.03, 140.45, 132.79, 132.14,
+130.70, 130.68, 126.93, 126.13, 125.90, 124.58, 123.21, 122.98,
+121.15, 120.32, 120.26 (q, J = 258.8 Hz), 120.21 (q, J = 259.2 Hz), 77.31, 77.26, 77.06, 76.80, 37.75,
+35.84, 20.19, 20.06, 15.91, 14.98; 141.3, 138.2, 132.3, 128.3, 124.2, 123.2, 115.7, 109.9, 71.4, 56.2, 51.7,
+22.97; FT-IR (cm-1, neat, ATR): 1648, 1489, 1252, 1216, 1168, 1123, 631, 591, 536, 497; HRMS-ESI
+(m/z) [M+H]+ calcd for C13H13NO2BrF3, 352.0164, found 352.0149.
+
+--- Page 12 ---
+(Z)-N-(2-bromo-5-cyanophenyl)-N,2-dimethylbut-2-enamide
+Prepared according to General Procedure A. Yellow solid, 67% yield
+(1.9 g, 0.45:0.55 ratio of rotamers). 1H NMR (500 MHz, CDCl3) δ
+7.80 (dd, J = 8.2, 3.7 Hz, 1H), 7.59 – 7.46 (m, 2H), 5.63 (qd, J = 6.9,
+1.7 Hz, 0.46H), 5.34 (tdd, J = 8.7, 6.3, 1.7 Hz, 0.54H), 3.28 (s, 1H),
+2.01 (s, 1.38H), 1.81 (dd, J = 6.8, 1.7 Hz, 1.38H), 1.71 (dd, J = 7.1,
+1.7 Hz, 1.62H), 1.60 (s, 1.62H). 13C NMR (126 MHz, CDCl3) δ
+172.12, 171.40, 143.56, 142.97, 135.05, 134.90, 133.56, 133.33,
+132.37, 132.34, 132.23, 131.75, 128.69, 128.63, 127.65, 125.10, 117.23, 116.98, 112.89, 112.36, 77.32,
+77.27, 77.07, 76.81, 37.64, 35.79, 20.20, 20.06, 16.02, 15.08; FT-IR (cm-1, neat, ATR): 2232, 1632, 1404,
+1374, 1102, 1031, 828, 556; HRMS-ESI (m/z) [M+H]+ calcd for C13H13N2OBr, 293.0290, found
+293.0281.
+
+--- Page 13 ---
+
+
+--- Page 14 ---
+(Z)-N-(2-bromo-5-(trifluoromethyl)phenyl)-N,2-dimethylbut-2-enamide
+Prepared according to General Procedure A. Colorless oil, 85% yield
+(2.8 g, 0.36:0.64 ratio of rotamers). 1H NMR (500 MHz, CDCl3) δ
+7.79 (m, 1H), 7.53 – 7.43 (m, 2H), 5.61 (qd, J = 6.9, 1.7 Hz, 0.36H),
+5.28 (dddd, J = 8.7, 7.0, 5.4, 1.6 Hz, 0.64H), 3.30 (s, 3H), 2.02 (s,
+1.08H), 1.83 (dd, J = 6.9, 1.7 Hz, 1.08H), 1.70 (dd, J = 7.0, 1.6 Hz,
+1.92H), 1.61 (s, 1.92H). 13C NMR (126 MHz, CDCl3) δ 172.02,
+171.72, 143.00, 142.45, 134.47, 134.41, 132.66, 131.99, 131.29 (q, J
+= 33.3 Hz), 130.68 (q, J = 33.5 Hz), 126.90, 126.84, 126.64, 126.04,
+126.01, 125.98, 125.95, 125.92, 125.89, 124.84, 123.28 (q, J = 272.5 Hz), 123.13 (q, J = 272.6 Hz),
+77.31, 77.25, 77.05, 76.80, 37.73, 35.68, 20.14, 20.08, 15.92, 15.07; 141.3, 138.2, 132.3, 128.3, 124.2,
+123.2, 115.7, 109.9, 71.4, 56.2, 51.7, 22.97; FT-IR (cm-1, neat, ATR): 1650, 1415, 1335, 1315, 1171,
+1128, 1077, 631, 536, 496; HRMS-ESI (m/z) [M+H]+ calcd for C13H13NOBrF3, 336.0220, found
+336.0197.
+
+--- Page 15 ---
+Methyl (Z)-3-bromo-4-(N,2-dimethylbut-2-enamido)benzoate
+Prepared according to General Procedure A. Colorless oil, 56%
+yield (1.8 g, 0.3:0.7 ratio of rotamers). 1H NMR (500 MHz,
+CDCl3) δ 8.33 (m, 1H), 8.04 (dd, J = 8.1, 1.9 Hz, 0.31H), 7.95
+(dd, J = 8.2, 1.9 Hz, 0.69H), 7.35 (d, J = 8.2 Hz, 0.31H), 7.26 (d,
+J = 8.2 Hz, 0.69H), 5.60 (td, J = 7.5, 3.7 Hz, 0.31H), 5.28 (qd, J
+= 7.1, 1.8 Hz, 0.69H), 3.94 (s, 3H), 3.29 (s, 3H), 2.01 (s, 0.91H),
+1.82 (d, J = 6.9, 0.91H), 1.70 (dd, J = 6.9, 1.7 Hz, 2.01H), 1.61
+(m, 2.01H). 13C NMR (126 MHz, CDCl3) δ 171.95, 171.54,
+165.18, 164.99, 146.30, 145.88, 135.02, 134.96, 132.74, 132.13, 131.17, 131.03, 129.84, 129.24, 127.19,
+124.69, 122.51, 122.47, 77.30, 77.25, 77.04, 76.79, 52.61, 52.53, 37.62, 35.81, 20.28, 20.10, 15.96, 15.05;
+FT-IR (cm-1, neat, ATR): 1726, 1648, 1595, 1435, 1384, 1285, 1238, 1112, 631, 536, 496; HRMS-ESI
+(m/z) [M+H]+ calcd for C14H16NO3Br, 326.0394, found 326.0382.
+
+--- Page 16 ---
+
+
+--- Page 17 ---
+(Z)-N-(2-bromophenyl)-N-(methoxymethyl)-2-methylbut-2-enamide
+Prepared according to General Procedure A. White solid, 46% yield (1.3 g,
+0.37:0.63 ratio of rotamers). 1H NMR (500 MHz, CDCl3) δ 7.71 – 7.61 (m,
+1H), 7.41 – 7.18 (m, 3H), 5.71 (d, J = 10.2 Hz, 0.63H), 5.62 (dddd, J = 8.7,
+7.1, 5.4, 1.8 Hz, 0.37H), 5.28 (qq, J = 7.0, 1.6 Hz, 0.63H), 5.08 (d, J = 10.2
+Hz, 0.37H), 4.66 (d, J = 10.2 Hz, 0.37H), 4.57 (d, J = 10.3 Hz, 0.63H),
+3.48 (s, 1.90H), 3.30 (s, 1.10H), 2.04 (p, J = 1.5 Hz, 1.10H), 1.82 (dq, J =
+7.0, 1.6 Hz, 1.10H), 1.76 (dq, J = 7.0, 1.6 Hz, 1.90H), 1.60 (p, J = 1.5 Hz,
+1.90H). 13C NMR (126 MHz, CDCl3) δ 172.66, 139.54, 139.37, 133.57,
+133.45, 132.97, 132.12, 131.80, 131.66, 129.82, 129.49, 128.26, 127.91, 126.79, 125.38, 122.93, 122.54,
+82.21, 77.83, 77.30, 77.25, 77.04, 76.79, 57.22, 56.35, 20.92, 20.02, 16.08, 15.39; FT-IR (cm-1, neat,
+ATR): 1637, 1475, 1379, 1272, 1107, 1077, 1030, 1013, 907, 730, 657, 645; HRMS-ESI (m/z) [M+H]+
+calcd for C13H16NO2Br, 297.0441, found 297.0435.
+
+--- Page 18 ---
+(Z)-N-(2-bromophenyl)-N,2-dimethylpent-2-enamide
+A solution of (Z)-2-bromopent-2-ene2 (5.3g, 33% sln in pentane, 1.1 eq.) in MTBE (25mL) was cooled
+down to -78 °C. A solution of tert-butyllithium in pentane (13mL, 1.7M, 2 eq.) was added over 30 min
+and was kept at that temperature for 1h. The starting isocyanate (2.2g, 11 mmol, 1 eq.) was added and the
+resulting mixture was stirred 1h at -78 °C, then warmed up to 0 °C over 2-3 h. The mixture was quenched
+with water and extracted with EtOAc (10 mL). The organic layers were then combined, washed with
+brine (20 mL), dried (MgSO4), and concentrated.
+This amide was dissolved in THF (20 mL) and was added dropwise to a stirring suspension of NaH (60%
+oil dispersion, 1.1 eq.) in THF (20 mL) at 0 °C. After 15 min, the reaction was allowed to warm to room
+temperature, and MeI (1.2 eq.) was added. The reaction was maintained overnight at room temperature
+and then poured into saturated aqueous NaHCO3 solution (50 mL), and the resulting mixture was
+extracted with Et2O (2 × 30 mL) and EtOAc (30 mL). The combined organic layers were washed with
+2 Kim, H.; Lee, S.-K.; Lee, D.; Cha, J. K. Synth. Comm. 1998, 28, 729-735.
+
+--- Page 19 ---
+brine (100 mL), dried (MgSO4), filtered, and concentrated. Purification of the residue by sgc (5:1
+hexanes-EtOAc) afforded a mixture of rotamers (0.42:1.0 ratio) of the N-methylated amide as a colorless
+oil with 43% isolated yield (1.3 g). 1H NMR (500 MHz, CDCl3) δ 7.66 (d, J = 8.2 Hz, 0.4H), 7.63 (d, J =
+7.9 Hz, 1H), 7.37 (t, J = 6.8 Hz, 0.4H), 7.31-7.26 (m, 1.4H), 7.22-7.17 (m, 2.4H), 5.48 (t, J = 7.9 Hz,
+0.4H), 5.13 (t, J = 7.2 Hz, 1 H), 3.28 (s, 1.2H), 3.27 (s, 3H), 2.26-2.18 (m, 0.8H), 2.18-2.11 (m, 1H), 2.11-
+2.03 (m, 1H), 2.0 (s, 1.2H), 1.62 (s, 3H); 13C NMR (100 MHz, CDCl3) δ 171.8, 142.2, 141.6, 133.7 (2),
+133.6 (3), 131.4, 131.3, 131.0, 130.9, 130.1, 129.8, 129.5, 129.4, 129.2, 128.7, 128.2, 128.1, 122.5, 122.3,
+38.0, 35.9, 23.5, 22.9, 20.34, 20.1, 13.7, 13.65; FT-IR (cm-1, neat, ATR): 1643, 1476, 1379, 1287, 1041,
+1028, 762, 650, 631, 536, 498; HRMS-ESI (m/z) [M+H]+ calcd for C13H16BrNO, 282.0488, found
+282.0478.
+
+--- Page 20 ---
+N-(2-bromophenyl)-N-methyl-1H-indene-3-carboxamide
+A previously reported procedure was followed:1 To a solution of EDC•HCl (5.60 g, 29.1 mmol, 1.5 equiv)
+in CH2Cl2 (65 mL, 0.3 M) was added NEt3 (4.0 equiv) at 23 ⁰C. To the mixture was then added the
+carboxylic acid (3.11 g, 19.4 mmol, 1.0 equiv) and the aniline (2.5 mL, 21.33 mmol, 1.1 equiv). The
+resulting heterogeneous mixture was allowed to stir at 23 °C for 12 h and then diluted with CH2Cl2 (30
+mL). The mixture was then washed with deionized water (30 mL), 1.0 M HCl (30 mL), saturated sodium
+bicarbonate solution (30 mL), and deionized water (30 mL). The mixture was dried over Na2SO4 and the
+volatiles were removed under reduced pressure. The crude residue was purified via flash chromatography
+(EtOAc in hexanes) to afford the desired bromide as a light orange solid (4.51 g, 71% yield). 1H NMR
+(500 MHz, CDCl3): δ 7.79–7.77 (m, 1H), 7.57–7.55 (m, 1H), 7.36–7.32 (m, 2H), 7.21 (br s, 3H), 7.11 (br
+s, 1H), 6.13 (s, 1H), 3.41 (s, 3H), 3.26 (dd, J = 19.0, 24.0, 2H); 13C NMR (125 MHz, CDCl3): δ 166.7,
+143.6, 142.7, 138.8, 136.1, 133.7, 129.9, 129.3, 128.6, 126.5, 125.3, 123.5, 123.3, 121.9, 38.7, 36.4.
+Spectral data matched those previously reported.1
+
+--- Page 21 ---
+Nickel-Catalyzed Mirozoki-Heck Cyclization for the Synthesis of
+Quaternary Stereocenters: Procedures and Characterization
+Preparation of nickel(II) chloride QuinoxP* complex:
+Anhydrous NiCl2 (2.0 mmol, 0.259 g), EtOH, and a magnetic stir bar were added to a round-bottom flask.
+Under nitrogen protection, (R,R)-QuinoxP* (2.0 mmol, 0.669 g) was added in one portion. The flask was
+fitted with a reflux condenser and the mixture was heated to 80 °C for 30 minutes, then allowed to cool to
+room temperature. Once cooled to room temperature overnight, the flask was chilled to 0 °C for 20
+minutes, after which the solid was collected by vacuum filtration, washed twice with cold ethanol. Drying
+under vacuum gave the product as a dark red crystalline solid, 89% yield. See X-Ray analysis at next
+section. 1H NMR (400 MHz, DMF-d7):  8.60-8.53 (m, 1H), 8.41-8.34 (m, 1H), 8.28-8.19 (m, 2H), 3.71-
+3.65 (s, 3H), 2.15 (s, 3H), 1.59 (s, 3H); 31P NMR (162 MHz, DMF-d7):  49.79.
+General method for preparation of racemic mixture:
+General Procedure B
+A reaction vial was charged with the bromide (0.30 mmol, 1.0 equiv), Na2CO3 (95.4 mg, 0.90 mmol, 3.0
+equiv), Mn (49.4 mg, 0.90 mmol, 3.0 equiv), NiCl2(Pn-Bu3)2 (16.0 mg, 0.030 mmol, 10 mol%) or
+NiCl2(DME) (10 mol%) with racemic QuinoxP* (20 mol%), DMF (1.0 mL, 0.3 M), and a magnetic stir in
+a glove box. The vial was sealed with a cap containing a PTFE septum, removed from the glove box, and
+stirred at 23 C for 1 h. The reaction mixture was then stirred at 60 C for 12 h. After cooling to 23 °C,
+the mixture was diluted with EtOAc (2.0 mL) and filtered over a plug of neutral aluminum oxide (30 mL
+of EtOAc eluent). The organics were then washed with deionized water (3 X 10 mL), dried over Na2SO4,
+and concentrated under reduced pressure. Purification by flash chromatography generated the desired
+racemic mixture of the corresponding oxindole.
+General method for nickel catalyzed asymmetric Mirozoki-Heck cyclization:
+General Procedure C
+A reaction vial was charged with NiCl2[(R,R)-QuinoxP*] (10 mol%), the substrate amide (0.30 mmol, 1.0
+equiv), Na2CO3 (3.0 equiv), Mn (3.0 equiv), DMF (1.0 ml) and a magnetic stir bar in a glove box. The
+vial was sealed with a cap containing a PTFE septum, removed from the glove box, and stirred at 20 °C
+for 1 h. The reaction mixture was then stirred at 60 °C for 20 h. After cooling to 20 °C, the mixture was
+diluted with EtOAc (2.0 mL) and filtered over a plug of neutral aluminum oxide (30 mL of EtOAc
+eluent). The organic solution was washed with DI water three times. The organic layers were combined
+and concentrated under reduced pressure. The residue was purified by sgc (hexanes-EtOAc) to afford
+oxindole. Enantiomeric excess was determined by HPLC.
+
+--- Page 22 ---
+Oxindole 2: Prepared according to General Procedure C at 1 mmole scale. A
+reaction vial was charged with NiCl2[(R,R)-QuinoxP*] (10 mol%), the substrate
+amide (1.0 mmol, 1.0 equiv), Na2CO3 (3.0 equiv), Mn (3.0 equiv), DMF (3.0 ml)
+and a magnetic stir bar in a glove box. The vial was sealed with a cap containing a
+PTFE septum, removed from the glove box, and stirred at 20 °C for 1 h. The
+reaction mixture was then stirred at 60 °C for 20 h. After cooling to 20 °C, the
+mixture was diluted with EtOAc (6.0 mL) and filtered over a plug of neutral aluminum oxide (90 mL of
+EtOAc eluent). The organic solution was washed with DI water three times. The organic layers were
+combined and concentrated under reduced pressure. Purification by flash chromatography (10% acetone
+in hexanes) generated oxindole 2 (75% yield, 140 mg) as a clear oil. 1H NMR (500 MHz, CDCl3):  7.31
+(t, J = 7.6, 7.4, 1H), 7.20–7.18 (m, 1H), 7.10 (t, J = 7.4, 7.2, 1H), 6.88 (d, J = 7.6, 1H), 5.98 (dd, J = 10.5,
+6.7, 1H), 5.16–5.11 (m, 2H), 3.21 (s, 3H) 1.50 (s, 3H); 13C NMR (125 MHz, CDCl3):  178.8, 143.1,
+138.2, 132.8, 128.2, 123.97, 122.7, 115.4, 108.4, 51.4, 26.5, 22.6. Spectral data matched those previously
+reported.1 Enantiomeric excess (96% ee) was determined by HPLC analysis (Chiralpak AD-3, 1% IPA in
+heptane, tr (minor) 8.7 min, tr (major) 9.1 min). [α]25 D +69.9 (c 0.79, MeOH) (litt. [α]25 D +15.2 (c 0.79,
+MeOH))3
+3 (a) McDermott, M. C.; Stephenson, G. R.; Walkington, A. J. Synlett 2007, 1, 51– 54. (b) McDermott, M. C.;
+Stephenson, G. R.; Hughes, D. L.; Walkington, A. J. Org. Lett. 2006, 8, 2917– 2920. (c) Ashimori, A.; Bachand, B.;
+Overman, L. E.; Poon, D. J. J. Am. Chem. Soc. 1998, 120, 6477-6487.
+
+--- Page 23 ---
+
+
+--- Page 24 ---
+Oxindole 3: Prepared according to General Procedure C. Purification by
+flash chromatography (2 % MeOH in Toluene) generated oxindole 3 (71%
+yield, 57 mg) as a white solid. 1H NMR (500 MHz, CDCl3):  6.92 (s, 1H),
+6.67 (s, 1H), 5.90 (dd, J = 10.43, 17.25, 1H), 5.12 (dd, J = 17.30, 10.35,
+2H), 3.19 (s, 3H), 1.49 (s, 3H); 13C NMR (125 MHz, CDCl3):  177.2,
+142.4, 138.4, 138.0, 136.6, 130.7, 126.1, 114.7, 105.4, 91.4, 50.4, 25.6, 21.6;
+19F NMR (471 MHz, CDCl3): δ -49.7, -49.7 ; FT-IR (cm-1, neat, ATR):
+2918.2, 1699.6, 1638.7, 1623.5, 1478.8, 1428.3, 1386.3, 1323.9, 1264.9, 1073.8, 1059.5, 1039.2, 1028.0,
+992.8, 920.8, 867.8, 829.6, 803.9; HRMS-ESI (m/z) [M+H]+ calcd for C13H11F2NO3, 268.0786, found
+268.078. Spectral data matched those previously reported.1 Enantiomeric excess (90% ee) was determined
+by HPLC analysis (Chiralpak AD-3, 2% IPA in heptane, tr (minor) 13.4 min, tr (major) 13.9 min).
+
+--- Page 25 ---
+Oxindole 4: Prepared according to General Procedure C. Purification by flash
+chromatography (0  25% EtOAc in hexanes) generated oxindole 4 (85%
+yield, 51 mg). 1H NMR (400 MHz, CDCl3):  7.05 (d, J = 7.65 Hz, 1H), 6.93
+(s, 1H), 6.74 (d, J = 7.54, 1H), 5.96–5.87 (m, 1H), 5.08 (s, 1H), 5.05 (d, J =
+7.54 Hz, 1H), 3.19 (s, 3H), 2.35 (s, 3H), 1.48 (s, 3H); 13C NMR (100 MHz,
+CDCl3):  178.6, 140.6, 128.2, 132.8, 132.1, 128.2, 124.6, 115.1, 107.9, 51.3,
+26.4, 224, 21.1; FT-IR (cm-1, neat, ATR): 1705, 1619, 1601, 1498, 1367, 1347, 1113, 1061, 1040, 1020,
+920, 806, 738, 706, 647, 630, 554, 460; HRMS-ESI (m/z) [M+H]+ calcd for C13H15NO, 202.1240, found
+202.1228. Enantiomeric excess (96% ee) was determined by HPLC analysis (Chiralpak AD-3, 2% IPA in
+heptane, tr (minor) 7.9 min, tr (major) 8.7 min).
+
+--- Page 26 ---
+
+
+--- Page 27 ---
+
+
+--- Page 28 ---
+Oxindole 5: Prepared according to General Procedure C. Purification by
+flash chromatography (0  25% EtOAc in hexanes) generated oxindole 5
+(70% yield, 46 mg); 1H NMR (500 MHz, CDCl3):  6.85-6.69 (m, 2H),
+6.82-6.73 (m, 1H), 5.95 (dd, J = 16.4, 10.2, 1H), 5.14 (m, 2H), 3.80 (s, 3H),
+3.19 (s, 3H), 1.49 (s, 3H); 13C NMR (125 MHz, CDCl3):  178.3, 156.0,
+138.0, 126.5, 134.0, 115.3, 112.1, 111.5, 108.5, 55.8, 51.6, 26.4, 22.5; FT-IR
+(cm-1, neat, ATR): 1704, 1600, 1497, 1469, 1434, 1288, 1031, 802, 631, 540; HRMS-ESI (m/z) [M+H]+
+calcd for C13H15NO2, 218.1187, found 218.1172. Enantiomeric excess (95% ee) was determined by HPLC
+analysis (Chiralpak OD-3, 1.5% IPA in heptane, tr (minor) 6.8 min, tr (major) 7.0 min).
+
+--- Page 29 ---
+
+
+--- Page 30 ---
+Oxindole 6: Prepared according to General Procedure C. Purification by
+flash chromatography (0  25% EtOAc in hexanes) generated oxindole 6
+(75% yield, 61 mg); 1H NMR (500 MHz, CDCl3):  7.18 (d, J = 8.3 Hz, 1H),
+7.08 (s, 1H), 6.83 (d, J = 8.3 Hz, 1H), 5.93 (dd, J = 17.1, 10.4, 1H), 5.14 (dd,
+J = 16.5, 10.4 Hz, 2H), 3.22 (s, 3H), 1.51 (s, 3H); 13C NMR (125 MHz,
+CDCl3):  178.3, 144.7 (2), 141.7, 137.3, 134.1, 121.2, 117.9, 115.7, 108.6,
+51.5, 26.5, 22.4; FT-IR (cm-1, neat, ATR): 1718, 1496, 1254, 1217, 1161, 631, 537, 497; HRMS-ESI
+(m/z) [M+H]+ calcd for C13H12F3NO2, 272.0903, found 272.0889. Enantiomeric excess (80% ee) was
+determined by HPLC analysis (Chiralpak AD-3, 2% IPA in heptane, tr (minor) 16.3 min, tr (major) 20.3
+min).
+
+--- Page 31 ---
+
+
+--- Page 32 ---
+
+
+--- Page 33 ---
+Oxindole 7: Prepared according to General Procedure C. Purification by flash
+chromatography (2 % MeOH in Toluene) generated oxindole 7 (40% yield, 26
+mg) as a light red solid. 1H NMR (500 MHz, CDCl3):  7.42 (dd, J = 7.55,
+1.25, 1H), 7.28 (d, J = 7.60, 1H), 7.09 (d, J = 0.80), 5.90 (dd, J = 17.23, 10.38,
+1H), 5.21 (d, J = 10.40, 1H), 5.11 (d, J = 17.25, 1H), 3.23 (s, 3H), 1.51 (s, 3H);
+13C NMR (125 MHz, CDCl3): 177.8, 143.9, 138.0, 136.8, 127.1, 127.1, 124.5, 118.7, 116.2, 112.0, 110.8,
+51.3, 26.6, 22.3 FT-IR (cm-1, neat, ATR): 2960.9, 2918.3, 2850.5, 2226.1, 1712.5, 1613.8, 1496.8,
+1468.7, 1445.7, 1375.5, 1323.3, 1304.4, 1260.6, 1177.2, 1105.4, 1075.3, 1038.3, 994.4, 939.6, 869, 830;
+HRMS-ESI (m/z) [M+H]+ calcd for C13H12N2O, 213.1022, found 213.103. Spectral data matched those
+previously reported.1 Enantiomeric excess (84% ee) was determined by HPLC analysis (Chiralpak AD-3,
+0.5% IPA in heptane, tr (minor) 22.1 min, tr (major) 22.7 min).
+
+--- Page 34 ---
+Oxindole 8: Prepared according to General Procedure C. Purification by flash
+chromatography (10% acetone in hexanes) generated oxindole 8 (81% yield,
+62 mg) as a clear oil. 1H NMR (500 MHz, CDCl3):  7.38–7.35 (m, 1H), 7.34–
+7.25 (m, 1H), 7.07–7.04 (s, 1H), 5.96 (dd, J = 10.0, 6.3, 1H), 5.15 (dd, J =
+16.5, 10.0, 2H), 3.25 (s, 3H), 1.51 (s, 3H); 13C NMR (125 MHz, CDCl3): 
+178.4, 143.8, 143.7, 137.3, 124.2, 122.8, 119.8, 116.1, 105.1, 51.3, 31.5, 26.7,
+22.6; 19F NMR (376 MHz, CDCl3): δ -62.4; FT-IR (cm-1, neat, ATR): 2970, 2930, 2852, 1722, 1625,
+1510, 1460, 1320, 1258, 1167, 1125, 932, 862, 827, 712, 687, 670, 510; HRMS-ESI (m/z) [M+H]+ calcd
+for C13H13F3NO, 256.0949, found 256.0921. Spectral data matched those previously reported.1
+Enantiomeric excess (83% ee) was determined by HPLC analysis (Chiralcel OD-3, 0.5% IPA in heptane,
+tr (minor) 5.1 min, tr (major) 5.6 min).
+
+--- Page 35 ---
+
+
+--- Page 36 ---
+Oxindole 9: Prepared according to General Procedure C. Purification by
+flash chromatography (2 % MeOH in Toluene) generated oxindole 9
+(77% yield, 56 mg) as a white solid. 1H NMR (500 MHz, CDCl3):  8.06
+(d, J = 8.2, 1H), 7.86 (s, 1H), 6.90 (d, J = 8.2, 1H), 5.94 (dd, J = 10.25,
+17.18, 1H), 5.16 (dd, J = 17.2, 10.4, 2H), 3.90 (s, 3H), 3.22 (s, 3H), 1.51
+(s, 3H); 13C NMR (125 MHz, CDCl3):  178.9, 166.9, 147.2, 137.4,
+132.7, 130.9, 125.1, 115.8, 107.8, 52.1, 52.0, 51.0, 26.6, 22.5; FT-IR
+(cm-1, neat, ATR): 2889.3, 2157.4, 1710.5, 1230.1, 1106.0, 1038.4, 1027.1, 767.5; HRMS-ESI (m/z)
+[M+H]+ calcd for C14H15NO3, 246.1125, found 246.1128. Spectral data matched those previously
+reported.1 Enantiomeric excess (77% ee) was determined by HPLC analysis (Amylose-SA, 2% IPA in
+heptane, tr (minor) 14.3 min, tr (major) 18.1 min).
+
+--- Page 37 ---
+
+
+--- Page 38 ---
+Oxindole 10: Prepared according to General Procedure C. Purification by flash
+chromatography (0  15% acetone in Hexanes) generated oxindole 10 (61% yield,
+40 mg) as a clear oil. 1H NMR (500 MHz, CDCl3):  7.28 (td, J = 7.7, 1.1, 1H),
+7.19 (d, J = 7.3, 1H), 7.13–7.08 (m, 1H), 7.07–7.03 (m, 1H), 5.98 (dd, J = 10.2, 6.8,
+1H), 5.18–5.13 (m, 2H), 5.13–5.10 (m, 2H), 3.31 (s, 3H), 1.53 (s, 3H); 13C NMR
+(125 MHz, CDCl3):  179.5, 141.3, 138.2, 132.3, 128.3, 124.2, 123.2, 115.7, 109.9,
+71.4, 56.2, 51.7, 22.97; FT-IR (cm-1, neat, ATR): 3092, 3060, 2975, 2933, 2825,
+1722, 1612, 1488, 1468, 1370, 1290, 1344, 1298, 1227, 1111, 1187, 1084, 916, 762, 707, 640, 535, 487;
+HRMS-ESI (m/z) [M+H]+ calcd for C13H16NO2, 218.1181, found 218.1173. Spectral data matched those
+previously reported.1 Enantiomeric excess (89% ee) was determined by HPLC analysis (Chiralpak AD-3,
+2% IPA in heptane, tr (minor) 10.9 min, tr (major) 11.5 min).
+
+--- Page 39 ---
+
+
+--- Page 40 ---
+Oxindole 11. Prepared according to General Procedure C. Purification by flash
+chromatography (0  15% acetone in Hexanes) generated oxindole 11 (82% yield,
+49 mg) as a clear oil. 1H NMR (400 MHz, CDCl3):  7.30–7.25 (m, 1H), 7.18 (d, J =
+7.0, 1H), 7.07 (t, J = 7.4, 1H), 6.85 (d, J = 7.7, 1H), 5.61–5.47 (m, 2H), 3.20 (s, 3H),
+1.65 (d, J = 5.9, 3H), 1.46 (s, 3H); 13C NMR (100 MHz, CDCl3):  179.5, 143.1,
+133.7, 131.2, 127.99, 126.2, 123.9, 122.6, 108.2, 50.6, 26.4, 23.1, 18.0. Spectral data
+matched those previously reported.1,4 Enantiomeric excess (92% ee) was determined by HPLC analysis
+(Chiralpak AD-H, 0.5% IPA in heptane, tr (major) 14.1 min, tr (minor) 15.5 min). [α]25 D +79.64° (c 1.00,
+CHCl3) (litt. [α]25 D –0.46° (c 0.25, CHCl3) for S enantiomer )4
+4 Taylor, A. M.; Altman, R. A.; Buchwald, S. L. J. Am. Chem. Soc. 2009, 131, 9900–9901.
+
+--- Page 41 ---
+
+
+--- Page 42 ---
+Oxindole 12: Prepared according to General Procedure C. Purification by
+flash chromatography (0  25% EtOAc in hexanes) generated oxindole 12
+(66% yield, 49 mg) as a light orange solid. 1H NMR (500 MHz, CDCl3):
+d, Jmm, 2H), 6.96
+(d, J = 7.0 Hz, 2H), 6.89 (d, J = 6.9 Hz, 1H), 6.76 (d, J = 6.9, 1H), 6.25 (d,
+J = 4.7, 1H), 3.33 (s, 3H); 13C NMR (100 MHz, CDCl3):  174.9, 145.7,
+145.0, 144.8, 135.9, 135.7, 130.0, 128.8, 128.1, 126.4, 123.6, 123.0, 122.4, 122.0, 108.5, 27.1; FT-IR (cm-
+1, neat, ATR): 3400, 3062, 2932, 1708, 1654, 1608, 1556, 1490, 1467, 1417, 1379, 1365, 1345, 1301,
+1263, 1243, 1194, 1169, 1161, 1154, 1124, 1098, 1079, 1030, 1021, 984, 947, 927, 883; HRMS-ESI
+(m/z) [M+H]+ calcd for C17H13NO, 248.1070, found 248.1082. Spectral data matched those previously
+reported.1 Enantiomeric excess (55% ee) was determined by HPLC analysis (Amylose-SA, 10% EtOH in
+heptane, tr (major) 5.7 min, tr (minor) 6.3 min).
+
+--- Page 43 ---
+
+
+--- Page 44 ---
+
+
+--- Page 45 ---
+Crystal Structure of the complex R,R-QuinoxP*(NiCl )
+2
+CCDC 1536324:
+Table 1 Crystal data and structure refinement for scan_0m.
+Empirical formula C18H28Cl2N2NiP2·C2H5OH
+Formula weight 510.04
+Temperature/K 100.0
+Crystal system monoclinic
+Space group P21
+a/Å 8.1504(4)
+b/Å 14.5588(6)
+c/Å 10.2533(5)
+α/° 90
+β/° 101.286(3)
+γ/° 90
+Volume/Å3 1193.13(10)
+Z 2
+ρcalcg/cm3 1.420
+μ/mm-1 4.605
+F(000) 536.0
+Crystal size/mm3 0.15 × 0.04 × 0.03
+Radiation CuKα (λ = 1.54184)
+2Θ range for data collection/° 8 .794 to 132.996
+Index ranges -9 ≤ h ≤ 9, -17 ≤ k ≤ 17, -11 ≤ l ≤ 10
+Reflections collected 5587
+Independent reflections 3228 [Rint = 0.0184, Rsigma = 0.0349]
+Data/restraints/parameters 3228/1/263
+Goodness-of-fit on F2 1.023
+Final R indexes [I>=2σ (I)] R1 = 0.0202, wR2 = 0.0484
+
+--- Page 46 ---
+Final R indexes [all data] R1 = 0.0207, wR2 = 0.0486
+Largest diff. peak/hole / e Å-3 0 .26/-0.19
+Flack parameter 0.059(8)
+Table 2 Fractional Atomic Coordinates (×104) and Equivalent Isotropic Displacement
+Parameters (Å2×103) for scan_0m. Ueq is defined as 1/3 of of the trace of the orthogonalised
+UIJ tensor.
+Atom x y z U(eq)
+Ni1 8618.7(5) 6089.6(3) 5532.4(5) 12.01(13)
+P1 6910.1(9) 4978.6(4) 5615.6(8) 10.43(18)
+P2 7701.3(8) 6171.8(5) 3419.6(7) 10.53(17)
+Cl2 9950.4(9) 5747.8(5) 7554.2(8) 21.06(19)
+Cl1 9809.4(10) 7446.7(5) 5483.6(8) 20.4(2)
+O1 7406(3) 3132(2) 2000(3) 38.5(8)
+N1 5103(3) 5314.9(16) 1725(3) 13.5(6)
+N2 4834(3) 3973.7(16) 3692(3) 12.0(6)
+C1 5165(4) 5357.1(19) 6435(3) 13.2(7)
+C2 4292(4) 6181(2) 5645(3) 19.3(7)
+C3 5880(4) 5651(2) 7868(3) 16.4(7)
+C4 3917(4) 4579(2) 6464(3) 18.1(7)
+C5 7686(4) 3886.7(19) 6334(3) 17.3(8)
+C6 5834(4) 4686.6(19) 3925(3) 11.6(7)
+C7 6032(3) 5324.0(19) 2933(3) 12.1(7)
+C8 9360(4) 5818.5(19) 2500(3) 14.4(7)
+C9 8622(4) 5592(2) 1047(4) 22.8(8)
+C10 10208(4) 4967(2) 3209(4) 22.6(8)
+C11 10647(4) 6599(2) 2535(4) 20.1(8)
+C12 6796(4) 7236.9(19) 2701(3) 18.7(8)
+C13 4001(4) 4599(2) 1464(3) 13.5(7)
+C14 2924(4) 4549(2) 201(3) 17.0(7)
+C15 1843(4) 3822(2) -80(3) 19.2(8)
+C16 1785(4) 3125(2) 865(4) 20.2(8)
+C17 2793(4) 3166(2) 2095(3) 17.1(8)
+C18 3922(3) 3907.7(19) 2423(3) 12.8(7)
+C19 6964(4) 3121(2) -357(4) 24.3(8)
+C20 6996(4) 2554(2) 866(4) 28.7(9)
+
+--- Page 47 ---
+Table 3 Anisotropic Displacement Parameters (Å2×103) for scan_0m. The Anisotropic
+displacement factor exponent takes the form: -2π2[h2a*2U11+2hka*b*U12+…].
+Atom U11 U22 U33 U23 U13 U12
+Ni1 12.6(2) 14.7(2) 8.1(3) -1.10(19) 0.5(2) -3.0(2)
+P1 12.1(3) 11.2(3) 7.5(4) 0.7(3) 0.8(3) 0.3(3)
+P2 11.2(3) 10.1(3) 9.8(4) 0.2(3) 1.1(3) -0.1(3)
+Cl2 18.8(3) 30.8(4) 11.0(4) 1.5(3) -3.4(3) -3.3(3)
+Cl1 26.1(4) 18.7(3) 16.5(5) -4.0(3) 4.7(4) -10.2(3)
+O1 41.5(16) 53.5(17) 17.9(16) 1.8(13) -1.0(14) 19.6(13)
+N1 13.4(12) 18.2(12) 9.5(16) -0.1(10) 3.7(11) 0.9(9)
+N2 12.6(12) 13.9(11) 10.3(15) -1.9(9) 4.2(11) 1.8(9)
+C1 14.4(14) 13.4(13) 12.3(19) 1.0(11) 3.7(13) 2.3(11)
+C2 20.4(15) 18.2(14) 19.4(19) 1.5(13) 4.0(14) 5.9(13)
+C3 21.0(15) 14.3(13) 14.8(19) -2.1(12) 5.7(14) -0.4(12)
+C4 18.8(15) 23.3(15) 14(2) -3.5(12) 7.2(14) -4.7(12)
+C5 20.8(15) 14.5(14) 16.0(19) 1.9(12) 1.9(14) 5.2(12)
+C6 11.6(13) 11.8(12) 11.9(18) -1.5(11) 3.2(13) 2.4(10)
+C7 9.2(13) 11.8(12) 15.0(19) -1.6(11) 1.7(13) 0.7(10)
+C8 15.0(13) 14.6(14) 14.0(19) -1.7(11) 3.7(13) -1.2(11)
+C9 18.8(15) 33.1(18) 17(2) -8.6(14) 6.0(14) -4.1(13)
+C10 21.3(16) 21.4(15) 27(2) 2.3(14) 10.5(15) 6.5(13)
+C11 18.0(15) 22.4(15) 21(2) -2.5(13) 6.7(15) -7.1(13)
+C12 18.5(16) 16.0(15) 19(2) 3.0(12) -1.3(15) 2.0(11)
+C13 10.1(13) 18.2(14) 12.9(19) -2.4(11) 4.0(13) 1.7(11)
+C14 14.6(15) 22.2(15) 14(2) -0.1(12) 1.8(14) 0.3(12)
+C15 15.0(15) 27.6(16) 14(2) -9.4(13) 0.9(14) 0.9(12)
+C16 16.0(15) 19.5(15) 24(2) -7.2(13) 0.6(15) -3.1(12)
+C17 18.7(15) 13.3(14) 20(2) -5.1(12) 3.7(15) 0.3(11)
+C18 10.5(13) 14.9(13) 13.4(19) -4.3(11) 2.9(13) 2.1(11)
+C19 22.3(17) 31.9(18) 18(2) -0.6(14) 3.1(16) -0.3(14)
+C20 28.1(18) 25.1(17) 30(2) 8.0(15) -0.5(17) -0.7(14)
+Table 4 Bond Lengths for scan_0m.
+Atom Atom Length/Å Atom Atom Length/Å
+Ni1 P1 2.1469(8) C1 C2 1.541(4)
+Ni1 P2 2.1523(9) C1 C3 1.532(4)
+Ni1 Cl2 2.2006(8) C1 C4 1.526(4)
+Ni1 Cl1 2.2061(8) C6 C7 1.410(5)
+P1 C1 1.871(3) C8 C9 1.530(4)
+P1 C5 1.813(3) C8 C10 1.531(4)
+
+--- Page 48 ---
+P1 C6 1.833(3) C8 C11 1.541(4)
+P2 C7 1.833(3) C13 C14 1.417(4)
+P2 C8 1.866(4) C13 C18 1.418(5)
+P2 C12 1.811(3) C14 C15 1.371(4)
+O1 C20 1.422(5) C15 C16 1.411(5)
+N1 C7 1.319(4) C16 C17 1.366(5)
+N1 C13 1.367(4) C17 C18 1.415(4)
+N2 C6 1.312(4) C19 C20 1.498(5)
+N2 C18 1.369(4)
+Table 5 Bond Angles for scan_0m.
+Atom Atom Atom Angle/˚ Atom Atom Atom Angle/˚
+P1 Ni1 P2 88.95(3) C4 C1 C3 108.6(3)
+P1 Ni1 Cl2 89.79(3) N2 C6 P1 121.4(3)
+P1 Ni1 Cl1 165.30(4) N2 C6 C7 122.9(3)
+P2 Ni1 Cl2 166.15(4) C7 C6 P1 115.4(2)
+P2 Ni1 Cl1 89.72(3) N1 C7 P2 121.4(2)
+Cl2 Ni1 Cl1 94.92(3) N1 C7 C6 123.0(3)
+C1 P1 Ni1 110.61(9) C6 C7 P2 115.5(2)
+C5 P1 Ni1 119.96(11) C9 C8 P2 111.5(2)
+C5 P1 C1 108.14(16) C9 C8 C10 110.1(3)
+C5 P1 C6 104.19(14) C9 C8 C11 108.5(3)
+C6 P1 Ni1 109.35(11) C10 C8 P2 106.7(2)
+C6 P1 C1 103.15(13) C10 C8 C11 110.1(2)
+C7 P2 Ni1 109.26(11) C11 C8 P2 110.0(2)
+C7 P2 C8 104.45(14) N1 C13 C14 119.0(3)
+C8 P2 Ni1 110.48(9) N1 C13 C18 121.5(3)
+C12 P2 Ni1 119.40(11) C14 C13 C18 119.5(3)
+C12 P2 C7 104.13(13) C15 C14 C13 119.4(3)
+C12 P2 C8 107.97(16) C14 C15 C16 121.2(3)
+C7 N1 C13 115.2(3) C17 C16 C15 120.5(3)
+C6 N2 C18 115.5(3) C16 C17 C18 119.9(3)
+C2 C1 P1 107.9(2) N2 C18 C13 121.3(2)
+C3 C1 P1 109.4(2) N2 C18 C17 119.1(3)
+C3 C1 C2 109.6(2) C17 C18 C13 119.5(3)
+C4 C1 P1 111.0(2) O1 C20 C19 108.7(3)
+C4 C1 C2 110.3(2)
+
+--- Page 49 ---
+Experimental
+Single crystals of C20H34Cl2N2NiOP2 were grown by slow evaporation in degassed EtOH under inert
+atmosphere. A suitable crystal was selected and mounted on a diffractometer. The crystal was kept at 100.0 K during
+data collection. Using Olex2 [1], the structure was solved with the XS [2] structure solution program using Direct
+Methods and refined with the XL [3] refinement package using Least Squares minimisation.
+1. Dolomanov, O.V., Bourhis, L.J., Gildea, R.J, Howard, J.A.K. & Puschmann, H. (2009), J. Appl. Cryst. 42,
+339-341.
+2. Sheldrick, G.M. (2008). Acta Cryst. A64, 112-122.
+3. Sheldrick, G.M. (2008). Acta Cryst. A64, 112-122.
+Crystal structure determination
+8.1504( C 4) r y Å s , t a b l D = a 1 ta 4 .5 fo 5 r 8 8 C (6 18 ) H Å 28 , C l c 2N = 2 N 1 i 0 P .2 2· 5 C 3 2 3 H (5 5 ) O Å H , (M β = = 5 1 1 0 0 1 . . 0 2 4 8 6 g ( / 3 m )° o , l) V : m = o n 11 o 9 cl 3 in .1 i 3 c, ( 1 s 0 p ) a Å ce 3 , g r Z o u = p 2 P , 21 T ( = n o 1 . 0 4 0 ) . , 0 a K = ,
+μ(CuKα) = 4.605 mm-1, Dcalc = 1.420 g/cm3, 5587 reflections measured (8.794° ≤ 2Θ ≤ 132.996°), 3228 unique
+(Rint = 0.0184, Rsigma = 0.0349) which were used in all calculations. The final R1 was 0.0202 (I > 2σ(I)) and wR2 was
+0.0486 (all data).
+
+--- Page 50 ---
+Computational Studies
+Details of Computational Studies
+Optimizations of intermediates and transition states were performed using Gaussian 095 software with spin-restricted
+DFT at the RB3LYP6/6-31G(d) level in the gas phase. For all species, vibrational frequencies were also computed at
+the specified level of theory to obtain thermal Gibbs Free Energy corrections (at 298 K) and to characterize the
+stationary points as transition states (one and only one imaginary frequency) or minima (zero imaginary frequencies).
+Single point energy calculations were performed on optimized geometries in N, N-dimethylformamide solvent using
+the SMD7-solvation model with M068 functional and 6-311+G(d,p) basis set. Obtained single-point energies were
+converted to the enthalpies and Gibbs free energies using corrections from gas-phase frequency analysis. Extensive
+conformational analysis of the transition states was performed manually.
+Geometries of the oxidative addition transition state:
+from Z-alkene:
+from E-alkene:
+5 Gaussian 09, Revision D.01, M. J. Frisch, G. W. Trucks, H. B. Schlegel, G. E. Scuseria, M. A. Robb, J. R. Cheeseman, G.
+Scalmani, V. Barone, B. Mennucci, G. A. Petersson, H. Nakatsuji, M. Caricato, X. Li, H. P. Hratchian, A. F. Izmaylov, J. Bloino, G.
+Zheng, J. L. Sonnenberg, M. Hada, M. Ehara, K. Toyota, R. Fukuda, J. Hasegawa, M. Ishida, T. Nakajima, Y. Honda, O. Kitao, H.
+Nakai, T. Vreven, J. A. Montgomery, Jr., J. E. Peralta, F. Ogliaro, M. Bearpark, J. J. Heyd, E. Brothers, K. N. Kudin, V. N.
+Staroverov, T. Keith, R. Kobayashi, J. Normand, K. Raghavachari, A. Rendell, J. C. Burant, S. S. Iyengar, J. Tomasi, M. Cossi, N.
+Rega, J. M. Millam, M. Klene, J. E. Knox, J. B. Cross, V. Bakken, C. Adamo, J. Jaramillo, R. Gomperts, R. E. Stratmann, O. Yazyev,
+A. J. Austin, R. Cammi, C. Pomelli, J. W. Ochterski, R. L. Martin, K. Morokuma, V. G. Zakrzewski, G. A. Voth, P. Salvador, J. J.
+Dannenberg, S. Dapprich, A. D. Daniels, O. Farkas, J. B. Foresman, J. V. Ortiz, J. Cioslowski, and D. J. Fox, Gaussian, Inc.,
+Wallingford CT, 2013.
+6 Lee, C.; Yang, W.; Parr, R. G. Phys. Rev. B 1988, 37, 785.
+Becke, A. D. J. Chem. Phys. 1993, 98, 5648
+Becke, A. D. J. Chem. Phys. 1993, 98, 1372.
+7
+Marenich, A. V.; Cramer, C. J.; Truhlar, D. G. J. Phys. Chem. B 2009, 113, 6378.
+8
+Zhao, Y.; Truhlar, D. Theor. Chem. Acc. 2008, 120, 215.
+
+--- Page 51 ---
+Coordinates and thermochemical data for computed intermediates and transition states
+Ni(0)-ligand complex
+Zero-point correction= 0.382074
+(Hartree/Particle)
+Thermal correction to Energy= 0.405961
+Thermal correction to Enthalpy= 0.406905
+Thermal correction to Gibbs Free Energy= 0.330813
+Sum of electronic and zero-point Energies= -
+2849.100168
+Sum of electronic and thermal Energies= -
+2849.076282
+Sum of electronic and thermal Enthalpies= -
+2849.075338
+Sum of electronic and thermal Free Energies= -
+2849.151430
+Electronic energy (RM06) -
+2849.23969363
+C -0.66260600 1.09545300 -0.25791400
+C 0.66258100 1.09544300 0.25776900
+P -1.54837400 -0.53599200 -0.56599700
+P 1.54829000 -0.53600800 0.56583100
+C -3.15956100 -0.37110900 0.43312900
+C 3.15971500 -0.37104300 -0.43285000
+C -2.05177500 -0.25659000 -2.32910400
+H -2.76559400 -1.02649800 -2.63906700
+H -2.48922700 0.73360200 -2.48789800
+H -1.15908100 -0.35499700 -2.95449900
+C 2.05119500 -0.25690200 2.32910900
+H 2.48888100 0.73315100 2.48815400
+H 1.15827200 -0.35511000 2.95420700
+H 2.76469300 -1.02704900 2.63922300
+Ni 0.00000900 -1.74161700 -0.00029800
+C -2.76842700 -0.06293900 1.89047800 E-alkene
+H -2.32362300 0.93313800 1.98880400
+H -3.65971900 -0.09459500 2.53108600
+H -2.04891000 -0.79422100 2.27918300 Zero-point correction= 0.235045
+C -4.13678700 0.69788900 -0.08590000 (Hartree/Particle)
+H -4.49935700 0.45897300 -1.09207300 Thermal correction to Energy= 0.250893
+H -5.01451000 0.74599100 0.57381700 Thermal correction to Enthalpy= 0.251837
+H -3.67443400 1.68733200 -0.12028300 Thermal correction to Gibbs Free Energy= 0.190350
+C -3.83414900 -1.75600000 0.36690900 Sum of electronic and zero-point Energies= -
+H -4.07555300 -2.04213000 -0.66401800 3167.145936
+H -3.19254400 -2.53773200 0.78853700 Sum of electronic and thermal Energies= -
+H -4.77453000 -1.74211300 0.93438800 3167.130088
+C 3.83442300 -1.75585300 -0.36641900 Sum of electronic and thermal Enthalpies= -
+H 4.07560800 -2.04189000 0.66458700 3167.129144
+H 3.19302800 -2.53768800 -0.78817800 Sum of electronic and thermal Free Energies= -
+H 4.77494600 -1.74187200 -0.93365800 3167.190631
+C 4.13674800 0.69803500 0.08637200 Electronic energy (RM06) -
+H 5.01470100 0.74605100 -0.57304200 3169.42818750
+H 3.67437400 1.68747700 0.12047300
+H 4.49895300 0.45927800 1.09271600 C 2.32068600 0.39644600 -1.26079000
+C 2.76885900 -0.06295400 -1.89030000 C 3.11787400 -0.74229700 -1.36422900
+H 2.32406000 0.93311200 -1.98878800 C 2.87895100 -1.83963600 -0.53452800
+H 3.66026600 -0.09463000 -2.53074400 C 1.83097200 -1.79849000 0.38176600
+H 2.04939500 -0.79423900 -2.27910300 C 1.00487900 -0.67179900 0.49483400
+C 0.63804100 3.38811400 0.27697800 C 1.28425600 0.43233800 -0.32760700
+H 1.15288300 4.31783100 0.51221400 H 2.50430000 1.26180600 -1.88824600
+C -0.63806200 3.38812600 -0.27701200 H 3.92749200 -0.76517700 -2.08804000
+H -1.15293200 4.31785700 -0.51213400 H 3.50118600 -2.72690500 -0.60609800
+N -1.28783600 2.24702800 -0.53804100 H 1.62324900 -2.64885300 1.02469600
+N 1.28781000 2.24700200 0.53796600 C -1.38156000 -0.51261700 1.14973700
+C -1.83005700 -0.96195200 -0.21834800
+C -2.75957800 -0.18776500 -0.80320600
+
+--- Page 52 ---
+C 0.37487900 -0.21370800 2.81556200 H 1.90266700 2.71365800 -2.67819000
+H 1.29354600 -0.73387300 3.09940900 H 2.55650100 1.09652500 -2.98204400
+H 0.55156300 0.86941400 2.83585000 H 3.64507300 2.39378300 -2.43198900
+H -0.42398500 -0.44906600 3.51813900 C 2.13863600 -3.10224600 -0.62998500
+N -0.03158400 -0.65660400 1.47628300 C 2.39342200 3.03047600 0.44624700
+O -2.17213400 -0.07076300 1.97502700 Ni 0.77286900 0.03482900 -0.12266600
+C -1.29969600 -2.25288300 -0.80837700 Br -1.39290300 -0.24861100 0.30053300
+H -2.07133600 -2.75152200 -1.40287900 C -5.80073400 -1.42443800 -2.59027700
+H -0.42977500 -2.10116000 -1.45784000 H -6.88281200 -1.59339000 -2.67678700
+H -0.99549700 -2.94759100 -0.01896200 H -5.55579500 -0.61406600 -3.29044400
+H -3.08307900 0.69183900 -0.25018600 H -5.29002000 -2.32797500 -2.93053300
+Br 0.26028300 2.03280900 -0.16283800 C 2.51227900 2.58362000 1.91626600
+C -3.40205800 -0.38591300 -2.14220300 H 3.44468500 2.03926000 2.10208100
+H -4.49596500 -0.41039800 -2.04597700 H 2.50222700 3.46179700 2.57516000
+H -3.16871600 0.45779200 -2.80620100 H 1.67646600 1.93570800 2.20753100
+H -3.08202000 -1.30264500 -2.64420000 C 3.57637000 3.94025000 0.07135000
+H 3.47624400 4.33336700 -0.94670600
+H 3.60418700 4.80254500 0.75207400
+pro-si-Oxidative-Addition-NiL-E- H 4.53367000 3.41808100 0.13575900
+C 1.07689500 3.80981400 0.25805200
+alkene starting complex H 0.93021800 4.11341200 -0.78574300
+H 0.20631800 3.21978400 0.56161500
+H 1.09901700 4.72499100 0.86491700
+Zero-point correction= 0.617886 C 0.71583200 -3.69191600 -0.69656100
+(Hartree/Particle) H 0.01112000 -2.99447000 -1.16163700
+Thermal correction to Energy= 0.659809 H 0.72504800 -4.61535600 -1.29088200
+Thermal correction to Enthalpy= 0.660753 H 0.33144100 -3.94424700 0.29873800
+Thermal correction to Gibbs Free Energy= 0.540489 C 3.10733900 -4.16389900 -0.08061900
+Sum of electronic and zero-point Energies= - H 3.15523100 -5.01237700 -0.77720300
+6016.301483 H 4.11691000 -3.76618900 0.04983800
+Sum of electronic and thermal Energies= - H 2.77086800 -4.55515300 0.88593400
+6016.259560 C 2.57524100 -2.66873900 -2.04220900
+Sum of electronic and thermal Enthalpies= - H 3.59648200 -2.27259500 -2.05112600
+6016.258615 H 2.54851500 -3.53170400 -2.72048800
+Sum of electronic and thermal Free Energies= - H 1.90857400 -1.90015200 -2.45165600
+6016.378880 C 3.83737800 0.52952500 -0.21232200
+Electronic energy (RM06) - C 3.73376600 -0.78465400 0.30300100
+6018.70190903 C 6.11666700 0.38802200 -0.07611800
+C 6.01059500 -0.87974500 0.49443100
+C -2.30526900 2.19838400 -1.02065800 H 7.08807200 0.84591800 -0.25360400
+C -3.17232600 3.24851800 -1.32545300 H 6.89494100 -1.43398400 0.80342700
+C -4.44362700 3.28547100 -0.74721400 N 4.82517000 -1.47087000 0.67734500
+C -4.84803200 2.26716200 0.11422700 N 5.03626400 1.09583400 -0.42229400
+C -3.99435800 1.19569400 0.41936400
+C -2.71896500 1.20125300 -0.15166100
+H H - - 1 2 . . 2 8 9 5 9 4 5 9 3 7 8 1 0 0 0 0 2 4 . . 1 0 5 3 2 5 5 7 4 0 4 9 0 0 0 0 - - 1 2 . . 4 0 3 0 7 4 2 3 8 4 2 0 0 0 0 0 pro-re-Oxidative-Addition-NiL-E-
+H -5.12374300 4.10224300 -0.97220000 alkene starting complex
+H -5.83959100 2.28289600 0.55989600
+C -4.46323500 -1.17007400 1.08040700
+C -4.60541400 -1.65175600 -0.33988900 Zero-point correction= 0.618072
+C -5.43904200 -1.02710500 -1.18880400 (Hartree/Particle)
+P 2.02275300 -1.53088600 0.43393300 Thermal correction to Energy= 0.659872
+P 2.24667700 1.44754500 -0.60450400 Thermal correction to Enthalpy= 0.660817
+C -4.39651300 0.57623600 2.76533600 Thermal correction to Gibbs Free Energy= 0.540572
+H -4.73443200 1.61035400 2.86286200 Sum of electronic and zero-point Energies= -
+H -3.38363700 0.49005800 3.17984200 6016.299405
+H -5.05427500 -0.08823300 3.32555900 Sum of electronic and thermal Energies= -
+N -4.42684100 0.19592400 1.34729800 6016.257605
+O -4.44267800 -1.97926600 2.00349200 Sum of electronic and thermal Enthalpies= -
+C -3.88474800 -2.94999700 -0.60608400 6016.256661
+H -4.10000200 -3.35281400 -1.59761900 Sum of electronic and thermal Free Energies= -
+H -4.17066000 -3.68885700 0.14891300 6016.376905
+H -2.80144500 -2.80671600 -0.52011500 Electronic energy (RM06) -
+H -5.93349600 -0.12344600 -0.83937800 6018.69893754
+C 2.08063400 -2.12091400 2.18753000
+H 3.00287800 -2.66146900 2.42062700 C 2.53844200 2.28037800 -1.57634600
+H 1.21596300 -2.76001400 2.39299600 C 3.53781900 3.25321600 -1.48739200
+H 2.00755000 -1.24448300 2.83896700 C 4.55384700 3.12071700 -0.53960800
+C 2.63765700 1.97760000 -2.33778800 C 4.56302800 2.02864200 0.32859900
+
+--- Page 53 ---
+C 3.57141500 1.03978400 0.24955300
+C 2.57063900 1.18981300 -0.71731200
+H 1.74772900 2.36466200 -2.31688600
+H 3.52407200 4.10572400 -2.16122100
+H 5.33363600 3.87346200 -0.46562900
+H 5.34054100 1.92939500 1.08090300
+C 4.65387800 -0.90659300 1.33893700
+C 5.59717100 -1.12201300 0.18120700
+C 6.86398700 -1.42091100 0.51857800 pro-si-Oxidative-Addition-E-alkene
+P -2.21869300 -1.53253200 -0.69019800 transition state
+P -2.27211800 1.28121700 0.74991500
+C 2.62779800 0.02371100 2.28851400
+H 3.09428000 0.50402200 3.15742500 Zero-point correction= 0.616755
+H 1.75277900 0.59724600 1.97948900 (Hartree/Particle)
+H 2.31992600 -0.98269800 2.57807300 Thermal correction to Energy= 0.657703
+N 3.56532000 -0.05902800 1.16049500 Thermal correction to Enthalpy= 0.658647
+O 4.79733700 -1.49410000 2.40809200 Thermal correction to Gibbs Free Energy= 0.543139
+C 5.08735100 -1.09114100 -1.24595100 Sum of electronic and zero-point Energies= -
+H 5.55962900 -1.88078600 -1.83918900 6016.282982
+H 4.00687500 -1.25328600 -1.28433500 Sum of electronic and thermal Energies= -
+H 5.28903100 -0.13655000 -1.74658100 6016.242034
+C -2.25047500 -3.19879600 0.22509100 Sum of electronic and thermal Enthalpies= -
+C -2.50333800 3.05446200 0.09764000 6016.241090
+C -2.48809700 -1.95098100 -2.47389000 Sum of electronic and thermal Free Energies= -
+C -2.42988800 1.42570100 2.59232300 6016.356598
+Ni -0.89785500 -0.02875500 -0.14372200 Electronic energy (RM06) -
+Br 1.17532100 -0.24104400 -0.93034200 6018.69287533
+C -3.91689100 0.45151900 0.37977000
+C -3.89119300 -0.79160400 -0.29829500 C -2.02792800 2.19691800 -1.53731600
+C -6.20267800 0.35852700 0.43188900 C -2.61189700 3.38685800 -1.12745500
+C -6.17798700 -0.83599600 -0.28620900 C -3.23617300 3.47491900 0.12520800
+H -7.14327900 0.80755200 0.74568800 C -3.28661300 2.35075000 0.94432600
+H -7.09912700 -1.33978300 -0.57336500 C -2.73308000 1.12675400 0.54615300
+N -5.02772900 -1.41621000 -0.64464700 C -2.02118300 1.09225100 -0.67168800
+N -5.07887700 1.00378200 0.76216800 H -1.54458900 2.12105700 -2.50535400
+C -2.52717100 -2.89991500 1.71102900 H -2.58810300 4.24827800 -1.78934900
+H -1.79811900 -2.19044100 2.12068800 H -3.69196000 4.40557800 0.44890400
+H -3.52930100 -2.48567900 1.86637200 H -3.77950100 2.39287300 1.91209400
+H -2.45613000 -3.82674600 2.29507200 C -3.33895700 -1.21426400 1.15718100
+C -0.84084300 -3.80852300 0.08871700 C -4.55033300 -1.24993800 0.26461600
+H -0.80820500 -4.78022500 0.59931600 C -5.49925100 -0.30394600 0.37076300
+H -0.56655800 -3.97826400 -0.95939400 P 1.68289300 -1.52189700 0.55204100
+H -0.07644300 -3.16434700 0.53596600 P 1.73840500 1.52227600 -0.41739200
+C -3.29330100 -4.19296100 -0.31473500 C -1.58941400 -0.01480800 2.34851000
+H -3.29115000 -5.10072600 0.30437200 H -1.51898900 0.93544100 2.88464800
+H -4.30152300 -3.77109000 -0.30646600 H -0.66043800 -0.15952700 1.75970400
+H -3.06438300 -4.49889900 -1.34166700 H -1.69853900 -0.84653800 3.04314200
+H -2.48325900 -1.01525000 -3.04178300 N -2.74450300 0.01665600 1.44761800
+H -1.66046800 -2.56706000 -2.83994800 O -2.91884700 -2.24814300 1.66927400
+H -3.43703900 -2.46659300 -2.64834000 C -4.63924200 -2.49662800 -0.58010300
+H -3.39557600 1.83915300 2.89890900 H -5.59527100 -2.58465200 -1.09966100
+H -1.62276300 2.04993500 2.98781500 H -4.49460800 -3.37816300 0.05170400
+H -2.32315400 0.42340500 3.01880200 H -3.83840600 -2.50421200 -1.32874300
+C -1.14843000 3.76631700 0.28430100 H -5.32238100 0.51147500 1.06790500
+H -0.87858900 3.85575500 1.34357300 C 1.94391900 -1.87811200 2.35470100
+H -0.33582000 3.23639500 -0.22345400 H 2.89456500 -2.38243800 2.55328700
+H -1.20546400 4.78342000 -0.12620300 H 1.12082300 -2.49715700 2.72605200
+C -3.60196000 3.86780100 0.80377000 H 1.92798500 -0.93030000 2.90148900
+H -4.57422600 3.37358200 0.74971200 C 1.95596200 2.31283000 -2.08667100
+H -3.36498000 4.03157900 1.86117700 H 1.21620100 3.10926700 -2.21867500
+H -3.68487200 4.85707500 0.33235600 H 1.76649000 1.54853100 -2.84756100
+C -2.81284200 2.93600700 -1.40700600 H 2.96147900 2.71759600 -2.23340900
+H -2.04182900 2.35750200 -1.93080000 C 1.76073700 -3.24510200 -0.26480800
+H -3.77952800 2.45319500 -1.58706400 C 2.02044700 2.96435900 0.80596400
+H -2.84991800 3.93535800 -1.86052500 Ni 0.35357900 -0.00589900 -0.09576700
+C 8.00544900 -1.71557400 -0.40611000 Br -1.49347100 -0.62816600 -1.40900700
+H 8.81457400 -0.98573400 -0.26380300 C -6.81242100 -0.22578000 -0.35130400
+H 8.43794000 -2.70045900 -0.18254400 H -7.64697600 -0.22637100 0.36306800
+H 7.72229200 -1.69835700 -1.46177500 H -6.88242000 0.71774200 -0.90968800
+H 7.09020400 -1.46056300 1.58249500 H -6.97033400 -1.04532200 -1.05595600
+
+--- Page 54 ---
+C 2.28636100 2.34482200 2.18987900 P -1.61053400 1.46099500 0.48358900
+H 3.22707000 1.78321900 2.21297200 C 1.49172700 -1.05445600 1.62635400
+H 2.35151500 3.13545800 2.94914800 H 1.42272500 -0.68553900 2.65819100
+H 1.47882500 1.66323000 2.48229200 H 0.62681100 -0.69369900 1.05383100
+C 3.16792900 3.91575200 0.42714200 H 1.49953800 -2.14439000 1.64180900
+H 2.97345400 4.42547300 -0.52290200 N 2.70115800 -0.57081800 0.95828800
+H 3.27304800 4.69221900 1.19825800 O 3.88330100 -2.10054700 2.14251200
+H 4.12283000 3.39235200 0.33466300 C 5.10123700 -0.35925000 -0.88287100
+C 0.69793900 3.75320600 0.85431300 H 5.93976100 -0.77221600 -1.45290600
+H 0.45077900 4.19616100 -0.11707800 H 4.18101200 -0.68367900 -1.37570000
+H -0.14260300 3.11866700 1.15269800 H 5.14707400 0.73287000 -0.96952200
+H 0.78133300 4.57463100 1.57905300 C -1.99384700 -3.25872800 -0.18310100
+C 0.33265900 -3.82009500 -0.16136900 C -2.38206900 3.00131300 -0.34606700
+H -0.39479100 -3.19599700 -0.68886400 C -3.13587300 -1.50840100 -2.28673100
+H 0.30442700 -4.82444200 -0.60495600 C -1.02354200 2.07404200 2.13120000
+H -0.00726700 -3.90439300 0.87719000 Ni -0.57632300 0.01369300 -0.61432800
+C 2.75185000 -4.22892200 0.38230500 Br 1.34651400 -0.41917300 -1.89324100
+H 2.75685800 -5.17046100 -0.18499400 C -3.14648500 0.53177600 1.03117400
+H 3.76794400 -3.82771900 0.39588300 C -3.41728000 -0.72516600 0.43753900
+H 2.46423100 -4.47405800 1.41078400 C -5.06659900 0.34614200 2.26299600
+C 2.12215400 -3.04167300 -1.74856000 C -5.36659200 -0.85747700 1.62763200
+H 3.16312500 -2.72587600 -1.87152900 H -5.72312600 0.75891500 3.02678300
+H 1.99490400 -3.98562900 -2.29515100 H -6.28006800 -1.40327600 1.85647200
+H 1.48131300 -2.29068300 -2.22713700 N -4.54616900 -1.39514900 0.71835800
+C 3.36055300 0.58199300 -0.32872700 N -3.97044300 1.04855200 1.95630000
+C 3.34173400 -0.75553700 0.14090400 C -1.77762800 -3.28488000 1.34034100
+C 5.63173200 0.44795500 -0.58130300 H -0.97655700 -2.60198000 1.64402000
+C 5.61953100 -0.84684800 -0.06734600 H -2.68686900 -3.01061600 1.88347300
+H 6.56050800 0.92099600 -0.89537000 H -1.49085400 -4.29576900 1.65845300
+H 6.54083100 -1.41344100 0.05570600 C -0.73073000 -3.80542100 -0.88014200
+N 4.48040000 -1.45005400 0.28974800 H -0.61849900 -4.87541500 -0.66002600
+N 4.50941100 1.16501200 -0.70499000 H -0.78106300 -3.69706200 -1.97100900
+H 0.17350500 -3.29432300 -0.53320800
+C -3.20499900 -4.13165800 -0.55413100
+H -3.05615000 -5.14918500 -0.16642500
+pro-re-Oxidative-Addition-E-alkene H -4.12998300 -3.73322500 -0.13014100
+H -3.32913800 -4.21453200 -1.63977100
+transition state H -3.29670800 -0.48719800 -2.64405800
+H -2.57584500 -2.04935800 -3.05668200
+H -4.10794400 -1.98952300 -2.14158500
+Zero-point correction= 0.617809 H -1.83376200 2.48639500 2.73886400
+(Hartree/Particle) H -0.24489100 2.82937200 1.98625600
+Thermal correction to Energy= 0.658449 H -0.57656400 1.23151100 2.66759600
+Thermal correction to Enthalpy= 0.659393 C -1.22701000 3.81386400 -0.95894600
+Thermal correction to Gibbs Free Energy= 0.544789 H -0.49795200 4.12921800 -0.20437100
+Sum of electronic and zero-point Energies= - H -0.69216100 3.23674100 -1.71926300
+6016.280842 H -1.62492300 4.71953800 -1.43687100
+Sum of electronic and thermal Energies= - C -3.17546500 3.90108500 0.61745300
+6016.240201 H -3.96509500 3.35450900 1.13867000
+Sum of electronic and thermal Enthalpies= - H -2.52542400 4.35303200 1.37477400
+6016.239257 H -3.63757900 4.72281700 0.05260100
+Sum of electronic and thermal Free Energies= - C -3.29909500 2.50978700 -1.48133700
+6016.353862 H -2.75032600 1.88078200 -2.19268500
+Electronic energy (RM06) - H -4.15219700 1.93512800 -1.10442800
+6018.69184658 H -3.69736100 3.37035300 -2.03495100
+C 7.69166800 -0.76742200 0.76545000
+C 1.98613800 2.32732200 -1.30859500 H 8.18397200 -0.02322400 1.40682600
+C 2.65940400 3.34588000 -0.64772300 H 8.29710000 -1.68151300 0.83602900
+C 3.30692800 3.09390200 0.56921500 H 7.73938900 -0.40419100 -0.26433900
+C 3.29481700 1.80213300 1.09238100 H 6.19817500 -1.41404400 2.25121500
+C 2.65004000 0.74922700 0.43112400
+C 1.90254000 1.05165900 -0.72965400
+H 1.50317600 2.51400600 -2.26103300
+H H 3 2 . . 8 6 3 8 1 9 1 5 5 5 6 0 0 0 0 0 3 4 . . 8 3 8 3 8 7 5 4 0 8 4 4 0 0 0 0 - 1 1 . . 0 0 9 9 1 1 2 2 0 1 4 8 0 0 0 0 pro-si-Oxidative-Addition-E-alkene
+H 3.81525400 1.57892000 2.01940500 product
+C 3.89064000 -1.21402400 1.29198700
+C 5.15158700 -0.83370800 0.55556100
+C 6.29386000 -1.02484300 1.23936000 Zero-point correction= 0.620469
+P -2.13523800 -1.43288900 -0.72393400 (Hartree/Particle)
+
+--- Page 55 ---
+Thermal correction to Energy= 0.661429 H 0.01362800 -4.97010300 0.01700800
+Thermal correction to Enthalpy= 0.662373 H -0.30720800 -3.77154100 1.28140000
+Thermal correction to Gibbs Free Energy= 0.548965 C 2.43561600 -4.15026700 0.83404100
+Sum of electronic and zero-point Energies= - H 2.41668800 -5.18985000 0.48117200
+6016.365869 H 3.45459500 -3.77137400 0.74200300
+Sum of electronic and thermal Energies= - H 2.16103600 -4.16868600 1.89442600
+6016.324909 C 1.78157300 -3.43469300 -1.50451900
+Sum of electronic and thermal Enthalpies= - H 2.79588100 -3.07344300 -1.70780200
+6016.323964 H 1.73571400 -4.48527300 -1.81863100
+Sum of electronic and thermal Free Energies= - H 1.06731700 -2.86931300 -2.11030300
+6016.437373 C 3.14724100 0.55620800 -0.21412100
+Electronic energy (RM06) - C 3.07590000 -0.80461100 0.14986400
+6018.75934278 C 5.41939300 0.39444400 -0.38394600
+C 5.35188000 -0.94913300 -0.01261000
+C -1.60616700 2.25432400 -1.67902400 H 6.37088000 0.87112400 -0.60987300
+C -2.56764800 3.26478800 -1.69585300 H 6.25100800 -1.55648700 0.06828500
+C -3.41086100 3.44160300 -0.59702400 N 4.18888400 -1.54761100 0.25507100
+C -3.31110400 2.55673100 0.47239100 N 4.32073600 1.14703900 -0.48357000
+C -2.37058000 1.51618200 0.46310500
+C -1.43270300 1.38885500 -0.58408200
+H -0.97655200 2.12810900 -2.55574000
+H -2.65627500 3.91419500 -2.56409400 pro-re-Oxidative-Addition-E-alkene
+H -4.15050100 4.23766000 -0.58325300
+H -3.97800200 2.64990000 1.32703900 product
+C -2.65263900 -0.71805900 1.61676100
+C -3.77243600 -1.24384200 0.76243500
+C -4.82204400 -0.45984400 0.45977000 Zero-point correction= 0.620602
+P 1.37635100 -1.50148300 0.44287100 (Hartree/Particle)
+P 1.56327800 1.53096600 -0.36222000 Thermal correction to Energy= 0.661583
+C -1.56438700 1.10963200 2.76599400 Thermal correction to Enthalpy= 0.662527
+H -1.78121600 2.17023300 2.92185200 Thermal correction to Gibbs Free Energy= 0.547664
+H -0.48408700 0.99035900 2.61927500 Sum of electronic and zero-point Energies= -
+H -1.84765500 0.54015400 3.65224800 6016.368027
+N -2.33438400 0.63596800 1.61668800 Sum of electronic and thermal Energies= -
+O -2.08457400 -1.47643100 2.41251600 6016.327045
+C -3.70178400 -2.72016900 0.45363500 Sum of electronic and thermal Enthalpies= -
+H -4.69434200 -3.15833800 0.32102000 6016.326101
+H -3.19804500 -3.24111300 1.27087200 Sum of electronic and thermal Free Energies= -
+H -3.12698000 -2.88654200 -0.46335300 6016.440964
+H -4.80060700 0.57430000 0.78440800 Electronic energy (RM06) -
+C 1.26917600 -1.44878100 2.28925200 6018.77018670
+H 1.96904700 -2.14710000 2.75579400
+H 0.24126400 -1.67149200 2.59293000 C 1.40597000 2.90823900 -0.59489800
+H 1.50931600 -0.43701300 2.62580700 C 2.42906900 3.76583200 -0.18546700
+C 1.79337200 2.18572900 -2.07753200 C 3.30385600 3.37387000 0.82785900
+H 1.10543300 3.01300700 -2.26351600 C 3.15006500 2.11047400 1.39109300
+H 1.57386800 1.38785600 -2.79302400 C 2.13388900 1.24714900 0.95417900
+H 2.82432300 2.52140100 -2.21272700 C 1.19699100 1.63820700 -0.02872700
+C 1.42999000 -3.33909500 -0.00683800 H 0.77215000 3.23386000 -1.41301000
+C 1.82971000 3.04384900 0.76809800 H 2.54439700 4.73557600 -0.66472600
+Ni -0.06630000 0.06590800 -0.42883800 H 4.09982800 4.03251300 1.16539000
+Br -1.28662000 -1.25760300 -1.86949800 H 3.83514500 1.76394500 2.16117800
+C -6.05528700 -0.84095900 -0.30389500 C 3.10102400 -1.00290600 1.50990700
+H -6.95969500 -0.63387900 0.28473700 C 4.25214600 -0.81609200 0.54399600
+H -6.12995400 -0.23128000 -1.21496000 C 5.42948600 -1.27820100 1.00675400
+H -6.07331100 -1.89068100 -0.60454800 P -1.44693800 -1.45579600 -0.79862000
+C 2.21039700 2.53559100 2.17090700 P -1.68416900 1.29454000 0.62993600
+H 3.17992800 2.02634200 2.17592100 C 1.19093900 -0.16460300 2.74411500
+H 2.28159900 3.38775300 2.85820600 H 1.28309000 0.73810200 3.35989900
+H 1.45752000 1.85230500 2.57523700 H 0.14360000 -0.28460000 2.44985400
+C 2.93500100 3.98499200 0.24798400 H 1.49406400 -1.03690100 3.32245000
+H 2.66360900 4.43971100 -0.71021300 N 2.07317800 -0.05978800 1.57743600
+H 3.06433900 4.80221000 0.96983400 O 3.08104400 -1.98274700 2.25779400
+H 3.89339400 3.47529400 0.12775400 C 4.07481400 -0.22740900 -0.83753000
+C 0.50581200 3.82911000 0.84355900 H 4.80597700 -0.65907700 -1.52828300
+H 0.18824300 4.20096000 -0.13552900 H 3.08505700 -0.42672400 -1.25273900
+H -0.31146200 3.22828300 1.24452000 H 4.20360500 0.86029500 -0.85537500
+H 0.65039700 4.69821600 1.49857200 C -0.61539500 -3.11356500 -0.35696800
+C 0.01112200 -3.89525600 0.24065000 C -2.83087600 2.44908900 -0.38367500
+H -0.72081200 -3.40772600 -0.40410200 C -2.34238500 -1.79280800 -2.37548000
+
+--- Page 56 ---
+C -1.34647900 2.23972400 2.16992200 C 3.84658000 0.77299700 2.16202000
+Ni -0.15773200 0.39359900 -0.59070800 C 4.72739000 1.11401700 1.13248400
+Br 0.81615800 0.07474300 -2.66743700 C 4.45507800 0.71282500 -0.17673800
+C -2.84591000 -0.04756200 1.16988200 C 3.27396100 0.01351400 -0.44383800
+C -2.81223300 -1.26233500 0.45109100 C 2.31685900 -0.25828700 0.56397200
+C -4.55860900 -0.84888800 2.44203100 H 1.97571700 -0.16457500 2.68591400
+C -4.57881800 -2.02049900 1.68057900 H 4.06749400 1.06265700 3.18618800
+H -5.24732200 -0.70674200 3.27210100 H 5.64071600 1.66180000 1.34796600
+H -5.30660400 -2.80488200 1.87694800 H 5.16894300 0.91076700 -0.97096500
+N -3.70848200 -2.23234300 0.68857100 C 2.16803700 -1.68448900 -1.62963300
+N -3.71133600 0.14984800 2.17611100 C 1.87220300 -2.06902800 -0.18956100
+C -0.28556400 -3.12049300 1.14593100 C 0.56378700 -2.56118800 0.08522900
+H 0.40388400 -2.31734000 1.41218300 P -1.71466400 -0.73644700 -0.87380700
+H -1.18230900 -3.04778300 1.77036000 P -0.01090700 1.69846000 0.29551100
+H 0.21593100 -4.06301000 1.39656700 C 3.67826700 -0.22282900 -2.92651900
+C 0.69646800 -3.22338600 -1.15925600 H 4.74418000 -0.48399500 -2.90701800
+H 1.14035600 -4.20847200 -0.96661300 H 3.58181100 0.85299000 -3.10505300
+H 0.53970200 -3.12646700 -2.23780800 H 3.19140600 -0.77436000 -3.73173900
+H 1.41979700 -2.46187800 -0.85918100 N 3.01976600 -0.59594000 -1.68765100
+C -1.52772600 -4.30891600 -0.69706000 O 1.75057000 -2.28310900 -2.61347400
+H -1.03084200 -5.22953200 -0.36487900 C 3.05338300 -2.77414400 0.49154100
+H -2.49775400 -4.24442700 -0.19723000 H 3.06573700 -3.81120300 0.13104200
+H -1.69573000 -4.40297400 -1.77479700 H 2.94352600 -2.78950100 1.57598800
+H -2.78385700 -0.86780600 -2.74934800 H 4.01069000 -2.30735900 0.25051200
+H -1.61713800 -2.13589000 -3.11752600 H 0.03014200 -2.84656200 -0.81608200
+H -3.12395000 -2.54404600 -2.23863500 C -1.53269800 -0.72178600 -2.72252200
+H -2.26664200 2.59321400 2.63846100 H -2.43306100 -0.35715100 -3.22382700
+H -0.69391300 3.08122100 1.92349900 H -1.32023100 -1.74108500 -3.05879200
+H -0.81724100 1.60168300 2.87684300 H -0.67866600 -0.10873900 -3.00775700
+C -1.99477100 3.61598500 -0.94126500 C 0.35720400 2.57612400 1.87094200
+H -1.45156500 4.16000100 -0.16210100 H 1.43553600 2.60588700 2.03557600
+H -1.27330900 3.26536600 -1.68296900 H -0.10691900 1.99567200 2.67012000
+H -2.66644600 4.32877900 -1.43686200 H -0.05476900 3.58783200 1.85223000
+C -3.97355800 3.00936300 0.48527300 C -3.10540000 -2.05454900 -0.64147000
+H -4.54933100 2.22716600 0.98771300 C 0.60128600 2.93989500 -1.04636800
+H -3.60580700 3.70224500 1.24827600 Ni 0.33310900 -0.58082200 0.24558000
+H -4.65984400 3.57255300 -0.16023800 Br -0.77401900 -0.60236300 2.61806900
+C -3.41650100 1.66486400 -1.57207500 C 0.33520900 -3.47006700 1.27303600
+H -2.62573100 1.30704800 -2.23970800 H -0.71587100 -3.50007000 1.56254900
+H -4.02619600 0.81316000 -1.25241100 H 0.65456600 -4.49601900 1.03004400
+H -4.06463400 2.33106100 -2.15516300 H 0.87885700 -3.13806700 2.15889100
+C 6.76136000 -1.24264900 0.31950500 C 0.63031100 2.22248000 -2.40434300
+H 7.48568700 -0.67329300 0.91871500 H -0.38125600 1.97399100 -2.74116200
+H 7.17302800 -2.25715600 0.22365900 H 1.07068200 2.88187200 -3.16392900
+H 6.72693100 -0.79333800 -0.67582100 H 1.21689600 1.29927700 -2.36766100
+H 5.42612900 -1.73031400 1.99623900 C -0.29672200 4.18680200 -1.16617600
+H -0.43308200 4.70068700 -0.21045900
+H 0.17483000 4.89299000 -1.86301800
+H -1.28845100 3.94787000 -1.56064900
+C 2.02119600 3.40702800 -0.67009200
+si-insertion-E-alkene transition state H 2.01676300 4.03362800 0.22700100
+H 2.70910700 2.57672900 -0.50239200
+H 2.42393600 4.01541400 -1.49099300
+Zero-point correction= 0.621602 C -2.52291400 -3.47078900 -0.82182800
+(Hartree/Particle) H -1.85253200 -3.75201800 -0.01258200
+Thermal correction to Energy= 0.660809 H -3.35615000 -4.18508500 -0.82007100
+Thermal correction to Enthalpy= 0.661753 H -1.99748100 -3.59653300 -1.77564500
+Thermal correction to Gibbs Free Energy= 0.553753 C -4.22230000 -1.89344100 -1.69843500
+Sum of electronic and zero-point Energies= - H -5.01621800 -2.61448300 -1.46203500
+6016.336212 H -4.65564000 -0.89379200 -1.69640000
+Sum of electronic and thermal Energies= - H -3.86750300 -2.12744300 -2.70773000
+6016.297005 C -3.69965300 -1.92290800 0.77350600
+Sum of electronic and thermal Enthalpies= - H -4.26155300 -0.99131300 0.88591100
+6016.296061 H -4.39722900 -2.75369100 0.94349400
+Sum of electronic and thermal Free Energies= - H -2.93016400 -1.94175700 1.54978600
+6016.404060 C -1.84489700 1.87374100 0.18427400
+Electronic energy (RM06) - C -2.58182400 0.87357800 -0.48050500
+6018.74669436 C -3.75250100 3.08554200 0.49572600
+C -4.46586500 2.15325800 -0.25783800
+C 2.67032200 0.07047800 1.88363400 H -4.24278800 3.95138400 0.93602200
+
+--- Page 57 ---
+H -5.52359500 2.28945500 -0.47336500 C 3.81663400 -2.71509400 -0.89679900
+N -3.88533000 1.04933300 -0.73501600 H 4.19098700 -3.05011400 0.07553400
+N -2.43780100 2.96398600 0.68990700 H 4.07954100 -3.48585900 -1.63335100
+H 4.35180400 -1.80222900 -1.16384600
+C 1.65083900 -3.91510900 -0.59517500
+H 1.86258100 -4.25540300 0.42476400
+H 0.57256000 -3.92602300 -0.76661600
+re-insertion-E-alkene transition state H 2.09155200 -4.65608700 -1.27509100
+C -1.33309400 3.52851800 0.05931400
+H -2.06436900 3.17490500 -0.67440500
+Zero-point correction= 0.621972 H -1.54520500 3.05312900 1.01664700
+(Hartree/Particle) H -1.47992700 4.61078200 0.17560500
+Thermal correction to Energy= 0.660885 C 0.41766000 4.14841800 -1.61541700
+Thermal correction to Enthalpy= 0.661830 H 0.34270700 5.20182000 -1.31495800
+Thermal correction to Gibbs Free Energy= 0.555299 H 1.42205100 3.97826900 -2.00799800
+Sum of electronic and zero-point Energies= - H -0.31099200 3.99032200 -2.41778700
+6016.340843 C 1.05185300 3.68119100 0.78284900
+Sum of electronic and thermal Energies= - H 2.10579300 3.66312500 0.49343000
+6016.301930 H 0.80909400 4.71089700 1.07660300
+Sum of electronic and thermal Enthalpies= - H 0.90474500 3.03135800 1.64929600
+6016.300986 C -1.05384100 -2.49350700 2.68431800
+Sum of electronic and thermal Free Energies= - H -1.55063400 -3.46091200 2.85806400
+6016.407516 H -0.07653500 -2.52933700 3.16991900
+Electronic energy (RM06) - H -1.62568400 -1.71158000 3.18751700
+6018.74907409 C 4.26823100 2.12676100 -1.18768500
+H 4.88490800 2.86534100 -1.69555300
+C -3.00570300 0.97364400 1.07495900 C 4.83106600 1.17590900 -0.33227800
+C -4.13689300 1.70771600 0.70799900 H 5.89146500 1.19116200 -0.08941700
+C -4.63759200 1.62878500 -0.59354400 N 4.09721800 0.19501700 0.19740800
+C -4.06261400 0.74154300 -1.50623800 N 2.95179400 2.18051100 -1.40185300
+C -2.96367400 -0.02627800 -1.10540500
+C -2.33862500 0.15771400 0.14949400
+H -2.58911400 1.08129200 2.07225700
+H -4.60493800 2.36981800 1.43200200
+H -5.49980300 2.22036700 -0.88945300
+H -4.50630300 0.60156600 -2.48771900
+C -1.95164600 -2.15978900 -1.09035100
+C -2.02480600 -1.88211300 0.40042900
+C -0.91030700 -2.24642700 1.20040800
+C 2.78244400 0.20849500 -0.06533900
+C 2.19295400 1.25727800 -0.79133800
+P 1.70513300 -1.22164700 0.38974100
+P 0.33856400 1.40217500 -0.77356400
+C -2.78762800 -1.33725200 -3.25509400
+H -3.85886800 -1.48413100 -3.44376400
+H -2.44454300 -0.47037700 -3.82897100
+H -2.24734100 -2.22898900 -3.57409300
+N -2.51986200 -1.14765000 -1.84063000
+O -1.48612700 -3.18586500 -1.58124200
+C -3.41955200 -2.10178600 0.99352900
+H -3.55343100 -3.18608600 1.10895900
+H -3.51690600 -1.63781300 1.97533400
+H -4.21496000 -1.71786900 0.35175100
+H -0.22918100 -2.92897300 0.70949800
+C 2.28450000 -2.53987900 -0.90262800
+C 0.11828800 3.27890600 -0.37686900
+C 2.45901300 -1.78664500 1.97189800
+H 2.16827900 -2.81675300 2.19338900
+H 3.54733800 -1.71194700 1.91604500
+H 2.07884200 -1.12584600 2.75501200
+C -0.06699300 1.27765500 -2.57782900
+H 0.58856400 1.90451600 -3.18671000
+H 0.03569300 0.23579900 -2.88891800
+H N i - - 1 0. . 4 1 3 0 7 6 7 7 7 5 2 8 0 0 0 0 - 1 0 . . 5 4 7 0 9 7 2 9 5 7 4 2 0 0 0 0 - 0 2 . . 4 7 8 3 7 4 7 3 5 4 5 1 0 0 0 0 Z-alkene
+Br 0.10704900 0.76202800 2.75614900
+C H H H 1 2 2 0 . . . . 8 2 1 7 2 4 5 2 1 6 1 9 0 2 7 8 6 9 5 8 6 7 1 3 0 0 0 0 0 0 0 0 - - - - 2 1 2 2 . . . . 0 1 8 0 8 1 1 3 5 5 6 0 0 2 9 9 0 4 6 9 3 5 8 6 0 0 0 0 0 0 0 0 - - - - 2 2 3 2 . . . . 2 5 0 3 9 8 4 5 7 0 5 4 8 1 9 3 3 1 1 5 9 4 6 8 0 0 0 0 0 0 0 0 Z ( T H e h a r e o r r t - m r p e o a e i l / n P c t a o c r rr t o i e c r c r l e e ti c o ) t n io t n o = E n e r g y = 0 . 2 5 0 8 9 0 1 . 235114
+
+--- Page 58 ---
+Thermal correction to Enthalpy= 0.251836 C -2.52239600 1.19511100 0.10100200
+Thermal correction to Gibbs Free Energy= 0.190817 H -0.97631700 2.43860200 -0.69301200
+Sum of electronic and zero-point Energies= - H -2.58678200 4.23980300 -1.37826800
+3167.146213 H -5.02211900 3.93093900 -0.95456700
+Sum of electronic and thermal Energies= - H -5.83332200 1.87175000 0.17135700
+3167.130435 C -5.27432300 -1.05091000 0.49255700
+Sum of electronic and thermal Enthalpies= - C -5.40410200 -1.06752600 -1.01291500
+3167.129491 P 2.22776400 -1.56199800 0.54115300
+Sum of electronic and thermal Free Energies= - P 2.43584600 1.42576100 -0.47411800
+3167.190510 C -4.14625000 -0.21416300 2.49103300
+Electronic energy (RM06) - H -4.84670400 0.45089600 3.01268600
+3169.42640240 H -3.12302000 0.09198200 2.71795200
+H -4.31457300 -1.23529400 2.83223000
+C 2.45311000 0.78231100 -0.83851800 N -4.35114600 -0.17072800 1.03948800
+C 3.36662800 -0.26010500 -0.98997900 O -5.90448200 -1.82785300 1.20331200
+C 3.10401900 -1.50771100 -0.42193400 C 2.66374900 -2.12164400 2.25096600
+C 1.91832100 -1.71174800 0.28116600 H 3.55608300 -2.75461700 2.27145500
+C 0.97502200 -0.68592700 0.43069600 H 1.81990000 -2.66061200 2.69282100
+C 1.27548500 0.56828600 -0.12331100 H 2.84818700 -1.23118600 2.85972300
+H 2.65185400 1.76103300 -1.26138200 C 2.47190400 2.05126000 -2.21935300
+H 4.28489000 -0.09044000 -1.54483100 H 1.75542300 2.86965000 -2.34160400
+H 3.81684100 -2.32009600 -0.52839300 H 2.16291900 1.23143400 -2.87540300
+H 1.69662900 -2.67741500 0.72636300 H 3.46863400 2.38873100 -2.51907300
+C -1.48426100 -0.97560700 0.66418300 C 1.96760300 -3.15991300 -0.45645700
+C -1.61244000 -1.23781200 -0.81813500 C 2.95782200 2.91409000 0.59627100
+C -2.33310800 -0.41352000 -1.59506000 Ni 0.98657500 0.07763100 0.21625900
+C -0.07789200 -0.65523100 2.64271400 Br -1.18852800 -0.25040100 0.55355600
+H 0.79560900 -1.18386200 3.03509000 C 3.38034900 2.35663800 1.96890500
+H 0.03567000 0.41944000 2.83372800 H 4.27819100 1.73303400 1.89580500
+H -0.98482200 -1.00756700 3.13275400 H 3.60485000 3.18407200 2.65469100
+N -0.20202600 -0.91720700 1.20464600 H 2.58364300 1.75324100 2.42057200
+O -2.47091300 -0.87749400 1.38471400 C 4.09343100 3.76021700 -0.00326300
+C -1.04279700 -2.53281900 -1.35566000 H 3.79214900 4.23059900 -0.94584800
+H -1.34953400 -2.67813500 -2.39662000 H 4.35705900 4.56692900 0.69477700
+H 0.05090900 -2.56716200 -1.31952500 H 4.98870100 3.16502100 -0.19774900
+H -1.41209200 -3.38904600 -0.77569800 C 1.70270400 3.79214800 0.76708400
+Br 0.07682800 2.02762300 0.13203400 H 1.35074800 4.18829000 -0.19335200
+H -2.42835900 -0.69271300 -2.64613300 H 0.87786200 3.23582900 1.22456700
+C -3.03698800 0.85422600 -1.21014300 H 1.93489100 4.65148400 1.41041900
+H -2.62241700 1.70948000 -1.76010400 C 0.57289600 -3.69722700 -0.07804700
+H -4.09881300 0.78575200 -1.48180100 H -0.21652600 -2.97221900 -0.29829500
+H -2.97446100 1.05826900 -0.14100300 H 0.36284800 -4.61214700 -0.64768400
+H 0.50919900 -3.95168000 0.98656100
+C 3.01554900 -4.25693100 -0.19774900
+pro-si-Oxidative-Addition-NiL-Z- H 2.79974600 -5.12414100 -0.83705700
+H 4.03095000 -3.91460000 -0.40901400
+alkene starting complex H 2.98807400 -4.60432300 0.84108800
+C 1.97231400 -2.76146200 -1.94481000
+H 2.94340400 -2.36190700 -2.25803700
+Zero-point correction= 0.617553 H 1.75766300 -3.64042800 -2.56669200
+(Hartree/Particle) H 1.20794700 -2.00484000 -2.15867700
+Thermal correction to Energy= 0.659592 C 3.98716000 0.37079200 -0.52066100
+Thermal correction to Enthalpy= 0.660537 C 3.90699500 -0.95023500 -0.01866800
+Thermal correction to Gibbs Free Energy= 0.538935 C 6.20961700 0.05570000 -0.96255000
+Sum of electronic and zero-point Energies= - C 6.14615300 -1.21939600 -0.40235500
+6016.300785 H 7.14014600 0.44606800 -1.37057500
+Sum of electronic and thermal Energies= - H 7.03186300 -1.84796700 -0.33078400
+6016.258745 N 4.99947900 -1.72625100 0.06238700
+Sum of electronic and thermal Enthalpies= - N 5.13824800 0.85401500 -1.01439900
+6016.257801 C -6.59256700 -0.87021200 -1.60220400
+Sum of electronic and thermal Free Energies= - H -6.62574000 -0.94901900 -2.69023500
+6016.379402 C -7.90028900 -0.54261300 -0.94176900
+Electronic energy (RM06) - H -8.29175800 0.41869000 -1.30325800
+6018.70117478 H -8.65399500 -1.30022800 -1.19465000
+H -7.82034600 -0.50923100 0.14662100
+C -2.04652800 2.34201300 -0.51000800 C -4.16856600 -1.45116200 -1.79512500
+C -2.94838700 3.33630000 -0.89412200 H -4.38348300 -1.47518800 -2.86838600
+C -4.31388600 3.16220100 -0.65857900 H -3.33383800 -0.76330300 -1.62714400
+C -4.77442000 2.00487800 -0.03074700 H -3.81981300 -2.44885500 -1.49689300
+C -3.88198500 0.99408700 0.35637700
+
+--- Page 59 ---
+pro-re-Oxidative-Addition-NiL-Z-
+alkene starting complex
+Zero-point correction= 0.617907
+(Hartree/Particle)
+Thermal correction to Energy= 0.659591
+Thermal correction to Enthalpy= 0.660535
+Thermal correction to Gibbs Free Energy= 0.541270
+Sum of electronic and zero-point Energies= -
+6016.299093
+Sum of electronic and thermal Energies= -
+6016.257409
+Sum of electronic and thermal Enthalpies= -
+6016.256464
+Sum of electronic and thermal Free Energies= -
+6016.375729
+Electronic energy (RM06) -
+6018.70004407
+C 2.86498800 1.81727900 -2.18081100
+C 3.92275300 2.72091100 -2.06144900
+C 4.75250000 2.67535300 -0.93975600
+C 4.51880500 1.73654600 0.06421400
+C 3.46521300 0.81665300 -0.03852100
+C 2.65131900 0.87985500 -1.17638700
+H 2.21144000 1.84205000 -3.04816600
+H 4.09762100 3.45466500 -2.84378500
+H 5.57677100 3.37585900 -0.84053500
+H 5.15063800 1.70651600 0.94726300
+C 4.06098400 -1.14804100 1.34990500
+C 5.10540700 -1.52458900 0.32245700
+C 6.41098900 -1.35646600 0.57102900
+P -2.31524500 -1.42707000 -0.70070800
+P -1.85798700 1.31170200 0.81670500
+C 2.13250900 0.24752900 1.95734200
+H 2.33796500 1.21154200 2.43941600
+H 1.17790800 0.31258700 1.42015400
+H 2.08512100 -0.53538700 2.71409600
+N 3.20818600 -0.10327700 1.02495300
+O 3.93976100 -1.77784200 2.39529100
+C 4.59075800 -2.22406700 -0.91352500
+H 3.84056600 -1.62999200 -1.44552700
+H 5.40974400 -2.45024800 -1.60395400
+H 4.10408100 -3.16989400 -0.63972600
+C -2.49488200 -3.07784300 0.22785000
+C -1.87198700 3.13211800 0.25440000
+C -2.79596800 -1.80669900 -2.44978200
+C -1.85375500 1.38848700 2.67009200
+Ni -0.75738400 -0.11783300 -0.25333400
+Br 1.13864300 -0.41560500 -1.39007600
+C -3.62750000 0.74313800 0.54318500
+C -3.82924200 -0.46180100 -0.17399900
+C -5.89391500 0.98165600 0.74824300
+C -6.09179100 -0.17198000 -0.00861800
+H -6.73589100 1.54980700 1.13948300
+H -7.09368000 -0.52255800 -0.24961300
+N -5.06502200 -0.89949300 -0.46141400
+N -4.66835500 1.44178400 1.02210100
+C 7.02775400 -0.73714400 1.79211400
+H 7.59617300 0.16739300 1.53307100
+H 7.74120400 -1.43153900 2.25502000
+H 6.28173100 -0.48041800 2.54847400
+H 7.11396800 -1.70099500 -0.18919800
+C -2.58167100 -2.75817500 1.73245800
+H -1.71873500 -2.17238300 2.07126600
+H -3.49074700 -2.19906300 1.97992300
+H -2.59794900 -3.69205100 2.30927800
+C -1.20345000 -3.87486400 -0.04479700
+
+--- Page 60 ---
+H -1.24757100 -4.84095600 0.47561700 H 3.11131500 -2.11388600 2.70549700
+H -1.06812300 -4.08244500 -1.11300900 H 1.38532500 -2.56360500 2.65401300
+H -0.31596000 -3.33887000 0.30868600 H 1.85191700 -0.87640200 2.92049700
+C -3.71512500 -3.91122600 -0.20096600 C 1.90641200 2.51221700 -1.90447200
+H -3.77295500 -4.82020500 0.41355700 H 1.05468500 3.17222200 -2.09815600
+H -4.65048200 -3.35716600 -0.08456700 H 1.95123600 1.77526500 -2.71301300
+H -3.64037900 -4.22904700 -1.24670600 H 2.83134300 3.09581600 -1.90494500
+H -2.67993600 -0.88817900 -3.03379500 C 2.52360800 -3.11025900 -0.23819500
+H -2.11616400 -2.55571400 -2.86842700 C 1.49731700 2.98864500 0.99463300
+H -3.82913100 -2.15504400 -2.53695400 Ni 0.53439400 -0.17355800 -0.22979100
+H -2.72051500 1.92139000 3.07254700 Br -1.12955100 -1.07490200 -1.62948700
+H -0.93487400 1.86854300 3.02123500 C 1.70593500 2.34588200 2.37778200
+H -1.86390900 0.36135500 3.04811100 H 2.72180300 1.95291100 2.49764600
+C -0.42083500 3.63750000 0.38397400 H 1.54193400 3.09196900 3.16644400
+H -0.08046800 3.62901700 1.42647100 H 1.00176300 1.52209900 2.54398100
+H 0.27948100 3.03388000 -0.20240200 C 2.48566200 4.15148400 0.80205800
+H -0.35807100 4.67473000 0.02841300 H 2.31147800 4.67925200 -0.14205500
+C -2.79792600 4.05732200 1.06342000 H 2.35522000 4.88242900 1.61256800
+H -3.83546500 3.71768200 1.04336200 H 3.52507100 3.81382600 0.80818500
+H -2.48517000 4.12446300 2.11160300 C 0.05502000 3.52117000 0.89984400
+H -2.75390800 5.07310700 0.64606400 H -0.15453200 3.96331400 -0.08026800
+C -2.28338200 3.13680200 -1.23041300 H -0.68164000 2.72982100 1.07044500
+H -1.62699300 2.49543400 -1.83138800 H -0.10255700 4.30334800 1.65486900
+H -3.31417400 2.79189900 -1.36830300 C 1.23015000 -3.94917300 -0.29763600
+H -2.21747500 4.15637100 -1.63272800 H 0.45758400 -3.46319400 -0.90226500
+H 1.44234400 -4.92958100 -0.74431200
+H 0.80966200 -4.12536400 0.69988100
+C 3.60389600 -3.90529900 0.51702900
+H 3.84492600 -4.82009500 -0.04272000
+pro-si-Oxidative-Addition-Z-alkene H 4.51967300 -3.32344100 0.64155300
+transition state H 3.25657700 -4.21603700 1.50889200
+C 2.99937800 -2.80650400 -1.67110400
+H 3.95628300 -2.27480800 -1.67490200
+Zero-point correction= 0.616584 H 3.13915700 -3.74456700 -2.22477300
+(Hartree/Particle) H 2.27094800 -2.19951300 -2.22290800
+Thermal correction to Energy= 0.657807 C 3.38638500 0.95827300 -0.04139100
+Thermal correction to Enthalpy= 0.658751 C 3.55533100 -0.38434400 0.37967300
+Thermal correction to Gibbs Free Energy= 0.541823 C 5.65719400 1.24344600 -0.00896400
+Sum of electronic and zero-point Energies= - C 5.82068600 -0.06057800 0.45389800
+6016.281126 H 6.51442800 1.89036400 -0.18651600
+Sum of electronic and thermal Energies= - H 6.80886600 -0.46215200 0.67089000
+6016.239903 N 4.77637500 -0.87365100 0.64601200
+Sum of electronic and thermal Enthalpies= - N 4.44550800 1.75613300 -0.24858000
+6016.238959 C -6.44421800 -0.49822400 0.51788700
+Sum of electronic and thermal Free Energies= - H -7.22028900 -0.48776500 -0.24933800
+6016.355887 C -6.86765300 0.01112500 1.86506800
+Electronic energy (RM06) - H -7.22340500 1.04873700 1.79593700
+6018.69203910 H -7.70916300 -0.58128500 2.24832000
+H -6.06478100 -0.04289200 2.60287600
+C -1.84428800 1.68583700 -2.02514900 C -4.96077600 -1.48529900 -1.23299900
+C -2.62672500 2.81540200 -1.82861600 H -5.84711500 -1.38091500 -1.86698900
+C -3.49417300 2.89291900 -0.73045900 H -4.12638600 -0.97693300 -1.72646400
+C -3.57263700 1.82397500 0.15789200 H -4.69930400 -2.55094600 -1.18859300
+C -2.81332700 0.65970500 -0.02828200
+C -1.88977900 0.63684400 -1.09479800
+H -1.18115000 1.61236400 -2.88007000
+H -2.57010200 3.63334200 -2.54172400
+H -4.10672100 3.77539900 -0.57376200
+H -4.24334700 1.86621900 1.01053600
+C -4.12004600 -1.07040200 1.16644300
+C -5.23429300 -0.94872600 0.15364700
+P 2.02555400 -1.45111300 0.56167000
+P 1.64320900 1.59775800 -0.30776300
+C -1.81158700 -0.63916300 1.81571700
+H -1.85134400 0.06303700 2.65842300
+H -0.86880800 -0.49189900 1.27013600
+H -1.85536100 -1.65973900 2.19551000
+N -2.92112400 -0.42969900 0.88228900
+O -4.23744900 -1.75617900 2.17743800
+C 2.11528400 -1.79315300 2.38494200
+
+--- Page 61 ---
+pro-re-Oxidative-Addition-Z-alkene H 0.66863200 4.86883400 -0.65008600
+H 0.86270000 3.69902100 -1.96442100
+transition state H -0.14475300 3.29592500 -0.56306300
+C 3.24205000 4.09258500 -0.46563700
+H 3.09414200 5.10896100 -0.07455200
+Zero-point correction= 0.617583 H 4.14850300 3.67917600 -0.01661400
+(Hartree/Particle) H 3.40088400 4.18217900 -1.54622600
+Thermal correction to Energy= 0.658358 H 3.36372500 0.46097200 -2.57202200
+Thermal correction to Enthalpy= 0.659302 H 2.67312800 2.03257900 -3.00035700
+Thermal correction to Gibbs Free Energy= 0.543853 H 4.17279500 1.95181000 -2.03450500
+Sum of electronic and zero-point Energies= - H 1.65528500 -2.50741600 2.74836500
+6016.279480 H 0.09570500 -2.83497900 1.93026300
+Sum of electronic and thermal Energies= - H 0.41426500 -1.24030500 2.62576300
+6016.238705 C 1.16907200 -3.82396100 -0.97442100
+Sum of electronic and thermal Enthalpies= - H 0.41383900 -4.13532200 -0.24446600
+6016.237761 H 0.66465900 -3.23592000 -1.74697500
+Sum of electronic and thermal Free Energies= - H 1.57113500 -4.73129800 -1.44562400
+6016.353209 C 3.06154000 -3.94205400 0.66649000
+Electronic energy (RM06) - H 3.84534300 -3.40968500 1.21068400
+6018.69119920 H 2.38121400 -4.38109800 1.40459400
+H 3.52502200 -4.77283600 0.11619400
+C -2.00275500 -2.27791200 -1.45293500 C 3.27518100 -2.54695400 -1.42275900
+C -2.71020400 -3.30016000 -0.83564300 H 2.75936100 -1.90866000 -2.15037700
+C -3.39977300 -3.06262200 0.36063400 H 4.12290000 -1.98469000 -1.01602500
+C -3.39374000 -1.78078900 0.90694500 H 3.68045400 -3.41116000 -1.96539700
+C -2.71018700 -0.72431600 0.29277900
+C -1.92516700 -1.01352900 -0.84722600
+H
+H
+-
+-
+1
+2
+.
+.
+4
+7
+8
+3
+6
+4
+9
+3
+7
+6
+5
+2
+0
+0
+0
+0
+-
+-
+2
+4
+.
+.
+4
+2
+5
+8
+2
+3
+7
+3
+8
+2
+4
+2
+0
+0
+0
+0
+-
+-
+2
+1
+.
+.
+3
+2
+9
+9
+0
+7
+2
+9
+7
+0
+3
+0
+0
+0
+0
+0
+H -3.95289500 -3.85977500 0.84757200 pro-si-Oxidative-Addition-Z-alkene
+H C - - 3 3 . . 9 9 4 3 3 4 3 7 1 5 7 0 0 0 0 0 - 1 1 . . 2 5 8 6 3 9 1 5 5 7 2 2 0 0 0 0 1 1 . . 0 8 7 1 3 9 0 3 3 4 1 9 0 0 0 0 product
+C -5.15841000 0.86865900 0.29116900
+C P P C H H H N O C H H H C C C
+C N B C C C C H H N N C H H H H C H H H C r i
+- - - - - - - - - -
+- - - - - -
+- 2 1
+0
+2 2 3
+0 3 3 4 5 5 6 3 1 2 1 0
+6 1 1 0 1 2 5 4 6 4
+1 4 6 6 7 5 7 0
+3 . .
+.
+. . .
+. . . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . .
+. 1 5
+5
+0 3 2
+0 3 9 2 5 1 8 7 6 4 7
+3 5 5 6 5 7 0 3 0 7
+3 5 5 9 3 7 1 9 8
+9 4 3
+6
+0 1 0
+6 7 4 8 6 9 4 4 2 5 7
+1 5 1 8 6 5 5 3 2 3
+1 0 8 4 7 0 7 2 7
+5 5 5
+2
+8 3 1
+4 6 2 5 4 9 6 2 9 8 6
+6 9 4 2 5 6 6 4 9 3
+4 5 2 6 3 0 6 2 5
+1 9 3
+8
+6 7 0
+1 2 6 2 9 7 1 1 1 1 3
+1 1 5 3 1 5 4 1 6 8
+5 7 1 8 1 2 0 6 0
+9 7 9
+9
+2 6 3
+4 2 2 7 4 6 3 7 2 1 0
+3 8 4 0 6 3 8 5 6 4
+2 9 9 7 2 7 0 5 1
+1 4 0
+7
+7 0 1
+6 2 9 8 7 3 3 0 4 1 8
+1 1 4 1 8 4 0 6 8 1
+5 4 3 9 7 6 2 6 0
+2 0 0
+0
+0 0 0
+0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0
+0 -
+-
+-
+- - - - - -
+1 3 1
+0 0 1 3 2 4 3 1 2
+1
+0
+0 1 0 0 2 0 0 0 0 1
+0 0 1 0 0
+3
+2 0 0 0 1 0
+2 . . .
+. . . . . . . . .
+.
+.
+. . . . . . . . . .
+. . . . .
+.
+. . . . . .
+. 4 2 4
+6 7 3 2 9 2 7 3 5
+4
+0
+6 0 6 6 1 5 8 1 6 8
+4 6 3 8 3
+0
+0 5 4 8 1 3
+2 0 3 8
+7 7 0 5 6 6 9 2 7
+7
+1
+1 5 8 9 4 8 8 5 6 7
+7 0 2 7 7
+2
+8 7 2 4 0 7
+4 8 2 1
+7 4 3 2 3 5 9 7 8
+9
+4
+4 8 3 7 8 4 3 4 3 0
+0 7 8 4 3
+9
+7 6 4 9 8 7
+1 7 6 9
+0 2 6 5 2 2 3 5 4
+9
+7
+7 6 1 3 3 1 7 9 1 3
+4 1 2 1 7
+2 0
+1 3 7 4 0 5
+3 8 1
+7 9 8 7 5 9 8 6 6
+2 3 5 0 6 8 5 2 0
+7 8 4 0 3
+9
+5 2 2 0 3
+7
+7
+6 1
+3
+2 7 1
+5 3 5 5 5 2 7 7
+5
+2 5
+9 7 6 1 3 4 2 0 4
+0 6 8 4 5
+9 1
+3 3 2 4 0 4
+7 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0
+0
+0 0 0 0 0
+0
+0
+0
+0
+0
+0
+0 0 0
+0 0 0 0 0 0 0 0
+0
+0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0
+0 0
+0 0 0 0 0 0
+0 - - - - - - - -
+- - - 1 2 1 1 1 0 1
+0
+0
+0 0 1 2 0 1
+2 2 2 0
+1
+2 1 2 3 2 2
+0 1 1 1 1 0 0 2
+0 1 0 . . . . . . .
+.
+.
+. . . . . .
+. . . .
+.
+. . . . . .
+. . . . . . . .
+. . . 7 0 3 9 6 8 6
+4
+5
+6 9 5 5 9 5
+3 6 9 2
+8
+1 0 3 1 0 7
+8 2 5 6 5 1 3 2
+6 9 8 6 3 7 4 9 3 4
+8
+1
+8 2 4 7 9 6
+9 4 8 9
+4
+0 9 9 7 4 2
+5 1 9 6 7 4 2 1
+4 6 7 9 0 5 7 0 3 8
+6
+2
+8 0 5 5 1 5
+8 4 2 3
+1
+7 3 1 7 6 2
+0 7 8 7 4 0 0 4
+4 7 5 3 4 5 0 2
+6 1 9 3 1
+8 0 4 7 2 4 8 3 9 4 0
+1 9
+8
+1 0 7
+3 0
+0
+3
+4 5 9 9 7
+3 8 1 7 1 8 8 9
+4
+7
+8 8 4 5 7 2
+3 4 9 3 4 8 2 9 6
+9 6 0
+9 4
+0
+6
+4 9 0 6 0
+8 3 0 1 0 1 7 7
+6
+9
+2 9 6 6 4 1
+4 1 2 1
+9
+6 5 0 7 2 7
+1 2 1 1 9 9 2 5
+4 3 3 0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0
+0 0
+0
+0 0 0
+0 0
+0
+0
+0 0 0 0 0
+0 0 0 0 0 0 0 0
+0
+0
+0 0 0 0 0 0
+0 0 0 0
+0
+0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0
+Z ( T T T S 6 S 6 S 6 S 6 E 6 H
+C C C C C C H H H H C C P P C H H H N O C
+0 0 0 0 0 e h h h u u u u le a 1 1 1 1 1 r e e e m m m m c o r 6 6 6 6 8 r r r t t - m m m r r . . . . . p e o 3 3 3 4 7 o o o o o a a a e n f 6 2 2 3 f 6 f i f l l l / i n 7 6 5 8 8 P c e e c c c e t 5 6 2 5 0 l l a o o o e l e e e 5 1 6 8 9 e l c r r r r c c e n 5 1 9 r r r t o 6 8 c
+- - - - - - - - - - - - - - - - - - 1
+i e e e t
+1 1
+t e
+1 2 3 3 2 1 0 2 4 4 3 4 1 2 0 1 2
+c 0
+3
+c t r r r
+.
+r c c c o o r
+. .
+t r
+. . . . . . . . . . . . . . . . .
+l 8
+. 4
+o e
+9 6
+r g
+3 4 5 5 5 3 5 4 4 4 8 9 6 0 8 3 6
+e t t t
+8
+n n o i i i n
+7
+c
+6 6
+o o o y
+6 5 6 8 2 3 0 1 0 5 2 1 5 2 0 4 9
+) i i
+9
+n i c c t
+6 1 2
+n n n i
+2 0 1 8 7 9 4 7 2 2 0 7 7 6 3 2 8
+c i
+7
+o c (
+8 5 3 0 6 3 6 0 4 7 9 9 1 7 2 0 2 3 0 0
+t t t
+0
+R a a n o o o
+9 3 0 8 4 2 2 7 3 2 3 7 6 6 1 2 0 3 5 3
+a n
+3
+n = M
+2 2
+n
+1
+E E G
+1 1 4 0 1 8 8 0 6 3 6 5 1 2 2 4 7
+a d
+5
+d
+0 0
+0 d n
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+n n
+0
+i 6
+0 0
+b
+0
+d t
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+e t t h h h ) b z r e e a g s e
+- - - - -
+t
+- 1
+r
+1
+l r
+1 1 2 1 0 0 1 2 2 1 0 0 0 0 0 0 0 2
+y F r h
+0
+m p m o
+. .
+=
+. . . . . . . . . . . . . .
+e
+. . . .
+r
+. 5
+y
+4 2 9 1 6 8 6 0 2 7 7 3 8 8 2 4 8 6 1
+e
+8
+- a a r = p
+6 0 1 2 5 3 5 9 5 9 3 9 1 5 4 3
+m
+7 0 8 7
+e l
+5
+l o
+4 5 7 1 7 1 4 2 4 4 9 9 6 0 6 0 0 7 2 6 3
+E E a i
+4
+E
+6
+n
+2 8 2 1 0 5 9 7 9 9 1 4 8 8 8 5 8 6 2
+l
+4
+n n n
+5 9 0 0 2 3 2 0 2 0 9 3 6 7 1
+t
+3 0 2 4 7
+e
+8
+e
+4
+t
+0 9 8 8 8 3 6 6 9 1 0 9 0 6 9 3 2 4 3
+h F
+0
+r E r
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+g a g r
+0 0
+n
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+i e
+0
+l y e p e e = i s r
+-
+e
+- - - - - - - - - -
+=
+0
+g
+0
+0
+2 2 1 1 0 2 2 1 2 2 2 0 0 1 2 3 2 0 2
+0 s i
+. .
+.
+. . .
+E
+. . . .
+e
+. . . . . . . . . . .
+=
+.
+.
+4 4
+6
+0 9 0 4 4 3 0 6 3 8 0 7 2 0 9 8 4 1 5
+6 n s
+2 7
+6
+2 1 0 1 2 4 6 1 3 5 5 6 7 3 8 8 1 2 8
+= 6 e
+0 5
+1
+8 1 7 4 8 6 6 1 4 9 3 2 3 1 4 0 8 9
+0
+2
+2 r
+9 6 3 8 4 0 6
+4 g
+1 5 3 1 1 7 9 6 5 2 4 8 0
+.
+9
+4 5
+8 1 4 9 1
+i
+9 2
+8
+7 1 8 5 6 1 1 3 9 7 8 1 8 6
+e 3 4
+9 6
+0
+8 5 0 7 9 7 7 6 6 7 7 8 9 2 2 8 9 2
+7
+5
+s 1 9
+0 0 0 0 0 0 0
+.
+0 0 0
+=
+0 0 0 0 0 0 0 0 0 0 0
+6
+0 0
+7
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+2 7 0 3 9 4 4 - - - - -
+
+--- Page 62 ---
+H 2.57613200 -2.60467100 2.48796300 pro-re-Oxidative-Addition-Z-alkene
+H 0.88984200 -2.94280300 1.96801400
+H 1.28533100 -1.40221400 2.74137100 product
+C 1.96541200 2.05125000 -2.18989200
+H 1.16211900 2.61923300 -2.66407100
+H 2.14249200 1.14750200 -2.78009700 Zero-point correction= 0.620027
+H 2.87756900 2.65297500 -2.16734600 (Hartree/Particle)
+C 2.84269700 -2.71171800 -0.66477900 Thermal correction to Energy= 0.661016
+C 1.08392700 3.20871500 0.42032800 Thermal correction to Enthalpy= 0.661960
+Ni 0.22122300 -0.23445800 -0.40680000 Thermal correction to Gibbs Free Energy= 0.546804
+Br -0.95285100 -2.22324700 -0.62982300 Sum of electronic and zero-point Energies= -
+C 1.28149300 2.98523900 1.93341300 6016.368453
+H 2.33448700 2.84413400 2.19446600 Sum of electronic and thermal Energies= -
+H 0.92155600 3.86807800 2.47561400 6016.327464
+H 0.71682900 2.12272700 2.30221000 Sum of electronic and thermal Enthalpies= -
+C 1.99938200 4.35469300 -0.05929300 6016.326520
+H 1.80328400 4.61659900 -1.10435900 Sum of electronic and thermal Free Energies= -
+H 1.78238800 5.24626900 0.54332400 6016.441677
+H 3.05888500 4.11556900 0.04855700 Electronic energy (RM06) -
+C -0.37717900 3.61285700 0.14596800 6018.77234995
+H -0.60130400 3.67662800 -0.92289800
+H -1.09411700 2.92092300 0.58743400 C 1.48802900 2.55325900 -1.07233100
+H -0.54749300 4.60464500 0.58450100 C 2.58392400 3.41185000 -0.96137400
+C 2.11484100 -4.06329700 -0.51017100 C 3.58930000 3.13127500 -0.03802100
+H 1.04500500 -3.97134000 -0.70407900 C 3.49692600 1.96892300 0.72220700
+H 2.54293800 -4.77455800 -1.22822700 C 2.41532300 1.08734200 0.56638200
+H 2.25599500 -4.48364900 0.49165800 C 1.33462500 1.38956800 -0.29684400
+C 4.32383200 -2.90794900 -0.29132400 H 0.74135700 2.78368300 -1.82829100
+H 4.71951300 -3.74373700 -0.88294100 H 2.64878400 4.29282000 -1.59604900
+H 4.93301500 -2.02780600 -0.51563700 H 4.43986200 3.79684000 0.08289600
+H 4.46283900 -3.15042800 0.76626600 H 4.28009100 1.71568500 1.42986700
+C 2.74309500 -2.22361600 -2.12344800 C 3.49998400 -1.06118300 1.26915000
+H 3.21597900 -1.24164500 -2.25451300 C 4.60329600 -0.87626900 0.25133900
+H 3.26836000 -2.92850700 -2.78052900 C 5.88026000 -0.81122800 0.66044000
+H 1.70302600 -2.15835600 -2.45681900 P -1.73586400 -1.39157000 -0.68762600
+C 3.13640000 1.10984600 0.24689300 P -1.52911700 1.39999100 0.67075600
+C 3.28501700 -0.17236900 0.80584000 C 1.45198900 -0.33893700 2.34816700
+C 5.22507200 1.66102400 0.98752500 H 1.50934000 0.46005100 3.09883700
+C 5.30900900 0.43879800 1.66362800 H 0.45289100 -0.32724100 1.90141900
+H 6.04262600 2.37830100 1.01584500 H 1.63499900 -1.30177200 2.82386900
+H 6.16582300 0.20037200 2.29039500 N 2.45732800 -0.14547200 1.31297500
+N 4.35638000 -0.48810200 1.55362500 O 3.52498700 -2.02400100 2.03762200
+N 4.13567400 2.00551800 0.29868600 C 4.23851200 -0.90468800 -1.21263000
+C -6.19038200 -0.48575900 0.70816400 H 3.57781600 -0.08250300 -1.49863700
+H -6.94887100 -0.81715900 -0.00344100 H 5.14309800 -0.85573400 -1.82844500
+C -6.71537400 0.29007300 1.88221600 H 3.70429300 -1.82918700 -1.46371300
+H -7.27043300 1.17769600 1.54673900 C -1.28500000 -3.10064700 0.03112800
+H -7.42426200 -0.32176900 2.45677600 C -2.34976100 2.84494100 -0.28921100
+H -5.92339800 0.60125700 2.56553500 C -2.51150800 -1.69490300 -2.32974600
+C -4.55824300 -1.64091700 -0.78014600 C -1.07432200 2.10521600 2.30817900
+H -5.46419000 -1.90400100 -1.33689800 Ni -0.16968500 0.21254600 -0.55030400
+H -3.87125300 -1.12457500 -1.45652000 Br 0.80802200 -0.61371300 -2.48113500
+H -4.05673600 -2.56731200 -0.47773600 C -2.98162100 0.32631800 1.10426600
+C -3.16105000 -0.85999000 0.36901300
+C -4.91190100 -0.09013100 2.24013800
+C -5.15122000 -1.20369900 1.42656200
+H -5.60248500 0.18193600 3.03564600
+H -6.05992500 -1.79213500 1.53440300
+N -4.27240300 -1.60298900 0.50398200
+N -3.84290800 0.69029900 2.06800300
+C 6.40751100 -0.81302400 2.06667100
+H 6.98826000 0.09866900 2.26684100
+H 7.09386500 -1.65785400 2.21525800
+H 5.61387600 -0.90107500 2.81074300
+H 6.64081300 -0.73589100 -0.11867700
+C -1.31523200 -3.01885200 1.57047800
+H -0.69509600 -2.20354800 1.95555700
+H -2.33084600 -2.89866600 1.95929500
+H -0.91299000 -3.95295000 1.98109600
+C 0.14285500 -3.46362000 -0.42193200
+
+--- Page 63 ---
+H 0.37972700 -4.47149800 -0.05762100 H 1.95905600 -2.70669700 1.93575200
+H 0.24993200 -3.45559700 -1.50989400 H 3.58670100 -2.23404900 1.40091700
+H 0.88418400 -2.77151000 -0.01265200 C -1.93723700 -0.83804100 -2.64737300
+C -2.27676100 -4.17955700 -0.44399400 H -2.92166800 -0.48191200 -2.96041300
+H -2.02610700 -5.13009400 0.04467300 H -1.77253100 -1.83299000 -3.05985200
+H -3.31027700 -3.92768800 -0.18856300 H -1.16950700 -0.17507500 -3.05356300
+H -2.21372900 -4.34284700 -1.52463400 C 0.11543500 2.58563300 1.79137500
+H -2.65501900 -0.73040300 -2.82395500 H 1.17482600 2.74616600 1.99011200
+H -1.82623000 -2.27805500 -2.94806300 H -0.29664500 1.93660400 2.56896800
+H -3.46897100 -2.21273600 -2.22950400 H -0.42249700 3.53719900 1.77903800
+H -1.87538600 2.72640900 2.71591400 C -3.11991500 -2.11602900 -0.17592000
+H -0.15707300 2.68944600 2.20212200 C 0.52563800 2.89975300 -1.16067400
+H -0.88518300 1.28350200 3.00235100 Ni 0.32922100 -0.54023400 0.05820700
+C -1.48097300 4.10787100 -0.11644300 Br -0.80877200 -0.88733200 2.52513500
+H -1.52977700 4.48932600 0.90900600 C 0.76783300 2.08533100 -2.44431500
+H -0.43221000 3.94411100 -0.36937900 H -0.16960200 1.68443500 -2.84476700
+H -1.86903500 4.89494100 -0.77569500 H 1.19792600 2.73618500 -3.21712000
+C -3.76644700 3.16172300 0.22821200 H 1.45346800 1.24751300 -2.28164200
+H -4.47940000 2.36290100 0.00492800 C -0.44120400 4.05574400 -1.47964800
+H -3.79210400 3.34298900 1.30677700 H -0.72062700 4.62466300 -0.58869200
+H -4.12228500 4.07088500 -0.27347500 H 0.05190300 4.74299300 -2.18023000
+C -2.44149300 2.44268900 -1.77376000 H -1.36248500 3.70657500 -1.95581500
+H -1.46371800 2.24110800 -2.22073800 C 1.85558300 3.50811400 -0.67427500
+H -3.05981500 1.54635700 -1.90272500 H 1.70405100 4.19212800 0.16663200
+H -2.91589600 3.25333700 -2.34147900 H 2.58282100 2.75175100 -0.37314900
+H 2.29818800 4.09040400 -1.49349500
+C -2.41251500 -3.39081800 0.32040600
+H -1.75882100 -3.16451500 1.16575500
+si-insertion-Z-alkene transition state H -3.18066900 -4.09612500 0.66263500
+H -1.84187200 -3.89469500 -0.46462000
+C -4.08257000 -2.47927300 -1.32415800
+Zero-point correction= 0.623263 H -4.82698800 -3.18530500 -0.93414100
+(Hartree/Particle) H -4.61883500 -1.60416300 -1.70081000
+Thermal correction to Energy= 0.661689 H -3.57690900 -2.97362600 -2.16026100
+Thermal correction to Enthalpy= 0.662633 C -3.94608200 -1.55285200 1.00109200
+Thermal correction to Gibbs Free Energy= 0.556809 H -4.60654700 -0.74160000 0.69052100
+Sum of electronic and zero-point Energies= - H -4.57728400 -2.36578700 1.38311600
+6016.328778 H -3.29948900 -1.21606700 1.81372400
+Sum of electronic and thermal Energies= - C -1.97202100 1.86997400 0.03994300
+6016.290352 C -2.68081500 0.80353100 -0.52781800
+Sum of electronic and thermal Enthalpies= - C -3.89415000 3.09345100 0.13118500
+6016.289408 C -4.56856900 2.08358300 -0.56189700
+Sum of electronic and thermal Free Energies= - H -4.40879900 3.99714000 0.45109300
+6016.395232 H -5.60996600 2.19896700 -0.85494700
+Electronic energy (RM06) - N -3.96903100 0.93463100 -0.88012400
+6018.74030636 N -2.59177700 3.00376900 0.40399700
+C 0.42913200 -2.93843800 -1.86263400
+C 2.32765800 0.26473500 2.04069700 H 1.08050300 -3.79451000 -2.07225500
+C 3.37448700 1.04787400 2.53057100 H -0.60537300 -3.26715000 -1.97939900
+C 4.39701700 1.47475000 1.68141400 H 0.64027700 -2.19298800 -2.63484200
+C 4.40868900 1.03942300 0.35790200 H 0.25432300 -3.07035700 0.31535900
+C 3.36237600 0.23445200 -0.11113500
+C 2.23491000 -0.08259500 0.67870200
+H 1.52836900 -0.03764200 2.70916100
+H 3.37741600 1.33372900 3.57938200
+H 5.20554900 2.09826300 2.05333200
+H 5.24802800 1.27617700 -0.28798400
+C 2.95286500 -1.74603700 -1.26503300
+C 1.99763600 -1.96437300 -0.09512100
+C 0.69081100 -2.43417500 -0.45225700
+P -1.80390000 -0.81205700 -0.78807700
+P -0.13828500 1.70191800 0.19702700
+C 4.49895700 -0.17628800 -2.31977800
+H 5.50931300 -0.38092800 -1.94222400
+H 4.43175600 0.87522600 -2.61172800
+H 4.31753200 -0.81703300 -3.18268000
+N 3.48003900 -0.47393100 -1.32542100
+O 3.23893800 -2.63146700 -2.05887700
+C 2.64561600 -2.69132900 1.08487900
+H 2.84320200 -3.72379200 0.77041700
+
+--- Page 64 ---
+re-insertion-Z-alkene transition state C 0.29852600 -4.02514300 0.27586600
+H 1.14396400 -3.97129900 -0.41530900
+H 0.58312200 -3.55578800 1.22280300
+Zero-point correction= 0.620324 H 0.10026300 -5.08668900 0.47310300
+(Hartree/Particle) C -1.30612700 -4.10716200 -1.64115400
+Thermal correction to Energy= 0.659739 H -1.49756200 -5.16595500 -1.42053100
+Thermal correction to Enthalpy= 0.660684 H -2.19863800 -3.69165200 -2.11300800
+Thermal correction to Gibbs Free Energy= 0.551917 H -0.47615700 -4.07123300 -2.35487000
+Sum of electronic and zero-point Energies= - C -2.12879800 -3.60227200 0.68072600
+6016.335916 H -3.08570000 -3.26945500 0.27487200
+Sum of electronic and thermal Energies= - H -2.20883800 -4.67793900 0.88682900
+6016.296500 H -1.94319200 -3.08402800 1.62286000
+Sum of electronic and thermal Enthalpies= - C -4.47638900 -1.07425500 -1.45657200
+6016.295556 H -5.19473300 -1.71674900 -1.96213600
+Sum of electronic and thermal Free Energies= - C -4.84776600 0.15194000 -0.90932800
+6016.404323 H -5.88285200 0.48874200 -0.91385100
+Electronic energy (RM06) - N -3.94123800 0.96882800 -0.37474700
+6018.73487110 N -3.22192700 -1.51460000 -1.36551300
+C 1.13872100 1.84400200 2.85763400
+C 2.86655500 -1.94756500 -0.37222400 H 0.37353200 1.53300200 3.57180900
+C 3.51656900 -2.44868900 -1.50204000 H 1.88724700 2.44946600 3.38808000
+C 3.72783900 -1.62442000 -2.61168700 H 0.68446800 2.48512600 2.10460400
+C 3.37213900 -0.27707000 -2.54877200 H 2.19069100 -0.04970200 3.03082400
+C 2.74069600 0.21044100 -1.39885900
+C 2.34756200 -0.63964600 -0.34140500
+H 2.72623600 -2.59697600 0.48614200
+H 3.85366300 -3.48190200 -1.51644500
+H 4.22002700 -2.01142400 -3.49947500
+H 3.62914100 0.39335400 -3.36263500
+C 2.63950000 1.91700700 0.21444600
+C 2.68383400 0.69333200 1.12296200
+C 1.82146100 0.63134200 2.26164700
+C -2.65784100 0.56790300 -0.33101600
+C -2.30869400 -0.73401000 -0.76388900
+P -1.37818400 1.79955400 0.24901800
+P -0.60726500 -1.50439300 -0.58537800
+C 2.85706000 2.60889800 -2.13380400
+H 3.89222500 2.57258200 -2.49754100
+H 2.17822400 2.47731900 -2.98137400
+H 2.68323600 3.57756800 -1.66636200
+N 2.61691000 1.58541400 -1.12951200
+O 2.68990000 3.06853200 0.62499800
+C 4.12730000 0.24129100 1.38719000
+H 4.59597800 1.00269900 2.02332300
+H 4.13610300 -0.70948600 1.92661800
+H 4.71963000 0.12766700 0.47529700
+C -1.57766700 3.24495200 -1.00031500
+C -0.97296700 -3.38826500 -0.31869600
+C -2.26023500 2.42520600 1.76088400
+H -1.79824100 3.35595700 2.10296000
+H -3.32413900 2.58725600 1.57006700
+H -2.14139700 1.67291200 2.54543900
+C -0.10223400 -1.38385700 -2.36361600
+H -0.88365200 -1.76516600 -3.02507500
+H 0.07852000 -0.33071300 -2.59464500
+H 0.82721300 -1.93050400 -2.53860800
+Ni 0.84150700 -0.41674500 0.90477000
+Br -0.68664800 -0.94459700 2.62012300
+C -1.15637100 2.70981300 -2.38149700
+H -1.86284000 1.96267300 -2.76173300
+H -1.12126500 3.53080000 -3.11018000
+H -0.16177500 2.25013500 -2.34463900
+C -2.97466500 3.87948100 -1.09327300
+H -3.30359800 4.28036800 -0.12895000
+H -2.94563400 4.71695900 -1.80499600
+H -3.73147400 3.16880400 -1.43182000
+C -0.57144700 4.32249700 -0.54013300
+H -0.87333900 4.77518100 0.41120900
+H 0.44214400 3.92957300 -0.41168300
+H -0.53317100 5.13060300 -1.28345100

@@ -74,6 +74,11 @@ def test_gp1_multistep_schema_is_normalized_without_inventing_intermediate():
     assert "every concrete entry that references that GP must inherit the multi-step schema" in PDFReactionExtractor.EXTRACTION_PROMPT
     assert "the residue obtained above" not in PDFReactionExtractor.EXTRACTION_PROMPT
     assert "Determine whether the supplied GP describes multiple chemical transformations" in SIExtractor.GP_INJECTION_TEMPLATE
+    assert "Normalize condition fields by meaning" in PDFReactionExtractor.EXTRACTION_PROMPT
+    assert "solvent records solvent identity only" in PDFReactionExtractor.EXTRACTION_PROMPT
+    assert "volume records solvent quantities" in PDFReactionExtractor.EXTRACTION_PROMPT
+    assert "Normalize GP conditions by field meaning" in SIExtractor.GP_INJECTION_TEMPLATE
+    assert "Normalize condition fields by meaning" in SIExtractor.STAGE2_AUDIT_PROMPT
     assert "If any substrate, product, catalyst, additive, reagent, intermediate, or condition uses a step field" in PDFReactionExtractor.EXTRACTION_PROMPT
     assert "the reaction must include integer step_count" in SIExtractor.STAGE2_AUDIT_PROMPT
     assert reaction["step_count"] == 2

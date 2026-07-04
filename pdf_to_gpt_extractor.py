@@ -93,6 +93,12 @@ Multi-step reactions and General Procedures:
 - If any substrate, product, catalyst, additive, reagent, intermediate, or condition uses a step field, the reaction must include integer "step_count".
 - Assign each chemical to the step where it is actually used or formed. Do not flatten chemicals from different steps into an unlabelled list.
 - For multi-step conditions, every condition field must be a list of {"step": N, "value": "reported value"} objects. Preserve separate solvent, volume, atmosphere, light source, wavelength, temperature, and time values by step.
+- Normalize condition fields by meaning:
+  * solvent records solvent identity only, without quantities, equivalents, or procedural roles.
+  * volume records solvent quantities and short role notes for separate portions, addition solutions, suspensions, dilutions, or reaction mixtures.
+  * When the same solvent appears in multiple portions in one synthetic step, keep the solvent identity once and keep the distinct quantities/purposes in volume.
+  * Do not duplicate the same quantity in both solvent and volume.
+  * Exclude workup, extraction, washing, and chromatography solvents from reaction conditions unless the text uses them as the reaction medium.
 - Add "intermediates" for multi-step reactions. Include an intermediate only when the source explicitly gives its chemical name or symbol/code. Each intermediate must contain name, symbol, amount, produced_in_step, and consumed_in_step.
 - Do not invent an intermediate identity from phrases such as "crude product", "residue obtained above", or "corresponding intermediate". If no intermediate is explicitly identified, use "intermediates": [].
 - An intermediate belongs only in intermediates; do not duplicate it in substrates or products.
@@ -153,6 +159,7 @@ For a multi-step entry, extend that object as follows:
   "intermediates": [{"name": "...", "symbol": "...", "amount": "...", "produced_in_step": 1, "consumed_in_step": 2}],
   "conditions": {
     "solvent": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}],
+    "volume": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}],
     "temperature": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}],
     "time": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}]
   }

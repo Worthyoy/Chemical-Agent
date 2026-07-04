@@ -29,8 +29,11 @@ from langgraph_workflow.chemeagle_adapter import (
     run_chemeagle_pdf,
 )
 from langgraph_workflow.benchmark_utils import (
-    generate_q1_benchmark_package,
-    generate_q2_benchmark_package,
+    SUPPORTED_SOURCE_MODALITIES,
+    generate_benchmark_packages_by_modality,
+)
+from langgraph_workflow.paper_question_summary import (
+    build_paper_question_option_summary,
 )
 from langgraph_workflow.token_usage import summarize_token_usage, token_usage_context
 from langgraph_workflow.chemeagle_timing import summarize_chemeagle_timing
@@ -2301,11 +2304,12 @@ class BenchmarkAgent:
         q1_data = read_json(q1_path)
         q2_data = read_json(q2_path)
 
-        q1_package = generate_q1_benchmark_package(q1_data)
+        generated = generate_benchmark_packages_by_modality(q1_data, q2_data)
+        q1_package = generated["q1"]
         q1_benchmark = q1_package["benchmark"]
         q1_review = q1_package["review_set"]
         q1_report = q1_package["report"]
-        q2_package = generate_q2_benchmark_package(q2_data)
+        q2_package = generated["q2"]
         q2_benchmark = q2_package["benchmark"]
         q2_review = q2_package["review_set"]
         q2_report = q2_package["report"]
@@ -2316,12 +2320,70 @@ class BenchmarkAgent:
         q2_output = self.config.benchmark_dir / "Q2_benchmark.json"
         q2_review_output = self.config.benchmark_dir / "Q2_benchmark_review.json"
         q2_report_output = self.config.benchmark_dir / "Q2_benchmark_report.json"
+        summary_output = self.config.benchmark_dir / "benchmark_summary.json"
+        option_counts_output = self.config.benchmark_dir / "question_option_counts.json"
+        paper_summary_output = (
+            self.config.benchmark_dir / "paper_question_option_summary.json"
+        )
         write_json(q1_output, q1_benchmark)
         write_json(q1_review_output, q1_review)
         write_json(q1_report_output, q1_report)
         write_json(q2_output, q2_benchmark)
         write_json(q2_review_output, q2_review)
         write_json(q2_report_output, q2_report)
+        summary = {
+            "q1_reactions": len(q1_data),
+            "q2_reactions": len(q2_data),
+            "q1_questions": len(q1_benchmark),
+            "q2_questions": len(q2_benchmark),
+            "cross_modal_overlap": generated["cross_modal_overlap"],
+            "by_modality": {},
+        }
+        for modality in SUPPORTED_SOURCE_MODALITIES:
+            modality_dir = self.config.benchmark_dir / modality
+            modality_bundle = generated["by_modality"][modality]
+            write_json(
+                modality_dir / "Q1_substrate_to_condition.json",
+                modality_bundle["q1_reactions"],
+            )
+            write_json(
+                modality_dir / "Q2_condition_to_substrate.json",
+                modality_bundle["q2_reactions"],
+            )
+            for task in ("q1", "q2"):
+                task_label = task.upper()
+                package = modality_bundle[task]
+                write_json(modality_dir / f"{task_label}_benchmark.json", package["benchmark"])
+                write_json(
+                    modality_dir / f"{task_label}_benchmark_review.json",
+                    package["review_set"],
+                )
+                write_json(
+                    modality_dir / f"{task_label}_benchmark_report.json",
+                    package["report"],
+                )
+            summary["by_modality"][modality] = {
+                "q1_reactions": len(modality_bundle["q1_reactions"]),
+                "q2_reactions": len(modality_bundle["q2_reactions"]),
+                "q1_questions": len(modality_bundle["q1"]["benchmark"]),
+                "q1_review_questions": len(modality_bundle["q1"]["review_set"]),
+                "q1_option_count_distribution": modality_bundle["q1"]["report"][
+                    "option_count_distribution"
+                ],
+                "q2_questions": len(modality_bundle["q2"]["benchmark"]),
+                "q2_review_questions": len(modality_bundle["q2"]["review_set"]),
+                "q2_option_count_distribution": modality_bundle["q2"]["report"][
+                    "option_count_distribution"
+                ],
+            }
+        write_json(summary_output, summary)
+        write_json(option_counts_output, generated["question_option_counts"])
+        merged_payload = read_json(Path(state["merged_reactions_path"]))
+        paper_summary = build_paper_question_option_summary(
+            merged_payload.get("reactions", []),
+            generated["question_option_counts"],
+        )
+        write_json(paper_summary_output, paper_summary)
 
         state.setdefault("steps", {})["benchmark"] = {
             "q1": {
@@ -2338,6 +2400,9 @@ class BenchmarkAgent:
                 "review_questions": len(q2_review),
                 "report_output": str(q2_report_output),
             },
+            "summary_output": str(summary_output),
+            "question_option_counts_output": str(option_counts_output),
+            "paper_question_option_summary_output": str(paper_summary_output),
         }
         state["q1_benchmark"] = str(q1_output)
         state["q2_benchmark"] = str(q2_output)
