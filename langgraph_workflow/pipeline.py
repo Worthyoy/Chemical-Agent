@@ -205,6 +205,18 @@ def parse_args():
         help="PDF text extraction layout: single keeps current whole-page extraction; two_column reads left/right columns; auto detects two-column pages.",
     )
     parser.add_argument(
+        "--pdf_text_x_tolerance",
+        type=float,
+        default=3.0,
+        help="pdfplumber horizontal character tolerance (default: 3.0).",
+    )
+    parser.add_argument(
+        "--pdf_text_y_tolerance",
+        type=float,
+        default=5.0,
+        help="pdfplumber vertical line tolerance (default: 5.0).",
+    )
+    parser.add_argument(
         "--max_parallel_text_chunks",
         type=int,
         default=1,
@@ -429,6 +441,8 @@ def config_from_args(args) -> PipelineConfig:
         max_parallel_pdfs=max(1, args.max_parallel_pdfs),
         max_parallel_text_chunks=max(1, args.max_parallel_text_chunks),
         pdf_text_layout=args.pdf_text_layout,
+        pdf_text_x_tolerance=args.pdf_text_x_tolerance,
+        pdf_text_y_tolerance=args.pdf_text_y_tolerance,
         skip_reaction_type_normalization=args.skip_reaction_type_normalization,
         skip_chemeagle_normalization=args.skip_chemeagle_normalization,
         skip_downstream_build=args.skip_downstream_build,

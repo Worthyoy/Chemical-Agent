@@ -12,6 +12,7 @@ SI PDF批量提取工具 - Token节省策略全部组合
 """
 
 import json
+import math
 import os
 import re
 import sys
@@ -443,7 +444,9 @@ Available GP candidates:
                  base_url: str = "https://hk.xty.app/v1",
                  enable_stage2_audit: bool = True,
                  max_parallel_text_chunks: int = 1,
-                 pdf_text_layout: str = "single"):
+                 pdf_text_layout: str = "single",
+                 pdf_text_x_tolerance: float = 3.0,
+                 pdf_text_y_tolerance: float = 5.0):
         """
         初始化SI提取器
 
@@ -463,6 +466,12 @@ Available GP candidates:
         self.pdf_text_layout = (
             pdf_text_layout if pdf_text_layout in {"single", "two_column", "auto"} else "single"
         )
+        self.pdf_text_x_tolerance = float(pdf_text_x_tolerance)
+        self.pdf_text_y_tolerance = float(pdf_text_y_tolerance)
+        if not math.isfinite(self.pdf_text_x_tolerance) or self.pdf_text_x_tolerance < 0:
+            raise ValueError("pdf_text_x_tolerance must be a finite, non-negative number")
+        if not math.isfinite(self.pdf_text_y_tolerance) or self.pdf_text_y_tolerance < 0:
+            raise ValueError("pdf_text_y_tolerance must be a finite, non-negative number")
         self.stage2_audit_recovered = 0
         self.last_registry_validation_stats = {
             "registry_raw_count": 0,
@@ -547,8 +556,12 @@ Available GP candidates:
         bottom = height * 0.96
 
         try:
-            left = page.crop((0, top, split_x, bottom)).extract_text() or ""
-            right = page.crop((split_x, top, width, bottom)).extract_text() or ""
+            extract_kwargs = {
+                "x_tolerance": self.pdf_text_x_tolerance,
+                "y_tolerance": self.pdf_text_y_tolerance,
+            }
+            left = page.crop((0, top, split_x, bottom)).extract_text(**extract_kwargs) or ""
+            right = page.crop((split_x, top, width, bottom)).extract_text(**extract_kwargs) or ""
         except Exception:
             return ""
 
@@ -556,7 +569,10 @@ Available GP candidates:
         return text.strip()
 
     def _extract_pdfplumber_page_text(self, page) -> str:
-        default_text = page.extract_text() or ""
+        default_text = page.extract_text(
+            x_tolerance=self.pdf_text_x_tolerance,
+            y_tolerance=self.pdf_text_y_tolerance,
+        ) or ""
         if self.pdf_text_layout == "single":
             return default_text
 
@@ -4516,6 +4532,10 @@ Token节省效果:
 
     parser.add_argument("--pdf_text_layout", choices=("single", "two_column", "auto"), default="single",
                         help="PDF text layout: single, two_column, or auto (default: single)")
+    parser.add_argument("--pdf_text_x_tolerance", type=float, default=3.0,
+                        help="pdfplumber horizontal character tolerance (default: 3.0)")
+    parser.add_argument("--pdf_text_y_tolerance", type=float, default=5.0,
+                        help="pdfplumber vertical line tolerance (default: 5.0)")
 
     parser.add_argument("--max_parallel_text_chunks", type=int, default=1,
                         help="Maximum chunk-level concurrency inside each PDF (default: 1)")
@@ -4543,6 +4563,8 @@ Token节省效果:
         extract_model=args.extract_model,
         max_parallel_text_chunks=args.max_parallel_text_chunks,
         pdf_text_layout=args.pdf_text_layout,
+        pdf_text_x_tolerance=args.pdf_text_x_tolerance,
+        pdf_text_y_tolerance=args.pdf_text_y_tolerance,
     )
 
     # 执行批量处理

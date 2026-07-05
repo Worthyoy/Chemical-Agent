@@ -74,7 +74,9 @@ class PipelineConfig:
     max_parallel_pdfs: int = 2
     max_parallel_text_chunks: int = 1
     pdf_text_layout: str = "single"
-    pipeline_version: str = "parallel_pdf_v8_two_column_cli"
+    pdf_text_x_tolerance: float = 3.0
+    pdf_text_y_tolerance: float = 5.0
+    pipeline_version: str = "parallel_pdf_v9_formula_subscripts"
     skip_reaction_type_normalization: bool = False
     skip_chemeagle_normalization: bool = False
     skip_downstream_build: bool = False
@@ -294,6 +296,8 @@ def make_extractor(config: PipelineConfig) -> SIExtractor:
         enable_stage2_audit=config.enable_stage2_audit,
         max_parallel_text_chunks=config.max_parallel_text_chunks,
         pdf_text_layout=config.pdf_text_layout,
+        pdf_text_x_tolerance=config.pdf_text_x_tolerance,
+        pdf_text_y_tolerance=config.pdf_text_y_tolerance,
     )
 
 
@@ -403,6 +407,8 @@ def source_metadata(pdf_path: Path, config: PipelineConfig) -> Dict:
         "chemeagle_role_refinement_model": config.chemeagle_role_refinement_model,
         "pages_per_chunk": config.pages_per_chunk,
         "pdf_text_layout": config.pdf_text_layout,
+        "pdf_text_x_tolerance": config.pdf_text_x_tolerance,
+        "pdf_text_y_tolerance": config.pdf_text_y_tolerance,
         "enable_stage2_audit": config.enable_stage2_audit,
     }
 
@@ -763,6 +769,9 @@ class PrepareJobsAgent:
             "limit": self.config.limit,
             "max_parallel_pdfs": self.config.max_parallel_pdfs,
             "max_parallel_text_chunks": self.config.max_parallel_text_chunks,
+            "pdf_text_layout": self.config.pdf_text_layout,
+            "pdf_text_x_tolerance": self.config.pdf_text_x_tolerance,
+            "pdf_text_y_tolerance": self.config.pdf_text_y_tolerance,
             "input_mode": self.config.input_mode,
             "use_chemeagle": self.config.use_chemeagle,
             "skip_chemeagle_normalization": self.config.skip_chemeagle_normalization,
@@ -2531,6 +2540,9 @@ class ReportAgent:
                 "base_url": self.config.base_url,
                 "max_parallel_pdfs": self.config.max_parallel_pdfs,
                 "max_parallel_text_chunks": self.config.max_parallel_text_chunks,
+                "pdf_text_layout": self.config.pdf_text_layout,
+                "pdf_text_x_tolerance": self.config.pdf_text_x_tolerance,
+                "pdf_text_y_tolerance": self.config.pdf_text_y_tolerance,
                 "resume": self.config.resume,
                 "overwrite": self.config.overwrite,
                 "skip_reaction_type_normalization": self.config.skip_reaction_type_normalization,

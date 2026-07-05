@@ -1,7 +1,46 @@
+import hashlib
 import json
 import re
 from pathlib import Path
 from typing import Dict, List
+
+
+FILTER_PROVENANCE_SCHEMA = "reaction_filter_input_v1"
+
+
+def file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def filter_output_matches_input(output_path: Path, input_sha256: str) -> bool:
+    try:
+        with output_path.open("r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+    except (OSError, json.JSONDecodeError):
+        return False
+    if not isinstance(payload, dict):
+        return False
+    provenance = payload.get("filter_provenance") or {}
+    return (
+        provenance.get("schema") == FILTER_PROVENANCE_SCHEMA
+        and provenance.get("input_sha256") == input_sha256
+    )
+
+
+def write_filter_provenance(output_path: Path, input_path: Path, input_sha256: str) -> None:
+    with output_path.open("r", encoding="utf-8") as handle:
+        payload = json.load(handle)
+    payload["filter_provenance"] = {
+        "schema": FILTER_PROVENANCE_SCHEMA,
+        "input_path": str(input_path.resolve()),
+        "input_sha256": input_sha256,
+    }
+    with output_path.open("w", encoding="utf-8") as handle:
+        json.dump(payload, handle, ensure_ascii=False, indent=2)
 
 
 class ReactionFilter:
@@ -296,22 +335,30 @@ def filter_reaction_file(input_path, output_path, overwrite: bool = False) -> Di
     input_path = Path(input_path)
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    input_sha256 = file_sha256(input_path)
 
-    if output_path.exists() and not overwrite:
+    if (
+        output_path.exists()
+        and not overwrite
+        and filter_output_matches_input(output_path, input_sha256)
+    ):
         return {
             "status": "skipped",
             "input": str(input_path),
             "output": str(output_path),
             "reactions": None,
+            "input_sha256": input_sha256,
         }
 
     filter_engine = ReactionFilter(batch_size=15)
     count = filter_engine.filter_file(str(input_path), str(output_path))
+    write_filter_provenance(output_path, input_path, input_sha256)
     return {
         "status": "processed",
         "input": str(input_path),
         "output": str(output_path),
         "reactions": count,
+        "input_sha256": input_sha256,
         "filter_stats": filter_engine.last_stats,
     }
 
