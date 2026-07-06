@@ -12,6 +12,8 @@ TEXT_COMPOUND_FIELDS = (
     "products",
     "intermediates",
     "catalysts",
+    "ligands",
+    "other_components",
     "additives",
     "reagents",
 )
@@ -36,6 +38,11 @@ COMPOUND_LIKE_ROLES = {
     "additive",
     "additives",
     "ligand",
+    "ligands",
+    "other_component",
+    "other_components",
+    "other component",
+    "other components",
     "precatalyst",
 }
 TARGET_ROLES = {"yield", "ee", "er", "dr"}
@@ -46,6 +53,7 @@ AMOUNT_FIELD_BY_RELATIONSHIP = {
     "USES_SUBSTRATE": "substrate_amount",
     "PRODUCES": "product_amount",
     "USES_CATALYST": "catalyst_amount",
+    "USES_OTHER_COMPONENT": "other_component_amount",
     "USES_ADDITIVE": "additive_amount",
     "USES_REAGENT": "reagent_amount",
 }
@@ -63,6 +71,7 @@ EDGE_FIELDNAMES = [
     "substrate_amount",
     "product_amount",
     "catalyst_amount",
+    "other_component_amount",
     "additive_amount",
     "reagent_amount",
     "yield",
@@ -377,6 +386,7 @@ def make_triple(
     substrate_amount: str = "",
     product_amount: str = "",
     catalyst_amount: str = "",
+    other_component_amount: str = "",
     additive_amount: str = "",
     reagent_amount: str = "",
     reaction_id: str = "",
@@ -396,6 +406,7 @@ def make_triple(
         "substrate_amount": clean_text(substrate_amount),
         "product_amount": clean_text(product_amount),
         "catalyst_amount": clean_text(catalyst_amount),
+        "other_component_amount": clean_text(other_component_amount),
         "additive_amount": clean_text(additive_amount),
         "reagent_amount": clean_text(reagent_amount),
         "yield": clean_text(yield_value),
@@ -617,6 +628,8 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
                 "substrates": ("USES_SUBSTRATE", "Substrate", "substrate"),
                 "products": ("PRODUCES", "Product", "product"),
                 "catalysts": ("USES_CATALYST", "Catalyst", "catalyst"),
+                "ligands": ("USES_LIGAND", "Ligand", "ligand"),
+                "other_components": ("USES_OTHER_COMPONENT", "OtherComponent", "other_component"),
                 "additives": ("USES_ADDITIVE", "Additive", "additive"),
                 "reagents": ("USES_REAGENT", "Reagent", "reagent"),
             }
@@ -801,8 +814,12 @@ def image_condition_summary(condition_like: List[Dict[str, Any]]) -> str:
 
 def image_role_to_edge(role: str) -> Tuple[str, str]:
     normalized = clean_role(role)
-    if normalized in {"catalyst", "catalysts", "ligand", "precatalyst"}:
+    if normalized in {"ligand", "ligands"}:
+        return "USES_LIGAND", "Ligand"
+    if normalized in {"catalyst", "catalysts", "precatalyst"}:
         return "USES_CATALYST", "Catalyst"
+    if normalized in {"other component", "other components"}:
+        return "USES_OTHER_COMPONENT", "OtherComponent"
     if normalized in {"base", "additive", "additives"}:
         return "USES_ADDITIVE", "Additive"
     return "USES_REAGENT", "Reagent"
@@ -895,6 +912,8 @@ def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[s
                 "substrates": ("USES_SUBSTRATE", "Substrate", "substrate"),
                 "products": ("PRODUCES", "Product", "product"),
                 "catalysts": ("USES_CATALYST", "Catalyst", "catalyst"),
+                "ligands": ("USES_LIGAND", "Ligand", "ligand"),
+                "other_components": ("USES_OTHER_COMPONENT", "OtherComponent", "other_component"),
                 "additives": ("USES_ADDITIVE", "Additive", "additive"),
                 "reagents": ("USES_REAGENT", "Reagent", "reagent"),
             }
@@ -1015,6 +1034,8 @@ def extract_chemeagle_compounds(paths: Iterable[Path]) -> List[Entity]:
                 "substrates": "substrate",
                 "products": "product",
                 "catalysts": "catalyst",
+                "ligands": "ligand",
+                "other_components": "other_component",
                 "additives": "additive",
                 "reagents": "reagent",
             }

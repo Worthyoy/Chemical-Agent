@@ -51,7 +51,8 @@ Rules
 - Different ee/yield = separate records even if substrates match.
 - Keep numbers exactly as written (units, significant figures, ranges).
   Use null for missing yield, ee, or er fields.
-- All reagents must appear in one of: catalysts, additives, reagents. Do NOT drop any.
+- Classify catalyst complexes/precatalysts under catalysts, ligands under ligands, and all other reacting materials under other_components. Do NOT drop any.
+- ligands items contain name only for single-step reactions; multi-step ligands contain name and step only. Never put ligand loading in ligands.
 
 Coverage-first extraction:
 Internally identify every extractable paragraph/prose reaction entry in source order before writing the final JSON.
@@ -89,7 +90,7 @@ Multi-step reactions and General Procedures:
 - Do not count workup or purification as a synthetic step: quench, extraction, washing, drying, concentration, filtration, and chromatography are not separate steps unless the source explicitly performs another chemical transformation.
 - Expressions such as "over two steps", "used directly in the next step", "without isolation/further purification", or "the crude product/residue was subjected to another transformation" are evidence to review; they are not sufficient by themselves unless the text describes multiple chemical transformations.
 - If a supplied GP is multi-step, every concrete entry that references that GP must inherit the multi-step schema.
-- For a multi-step reaction only, add integer "step_count" and integer "step" to every item in substrates, products, catalysts, additives, and reagents.
+- For a multi-step reaction only, add integer "step_count" and integer "step" to every item in substrates, products, catalysts, ligands, and other_components.
 - If any substrate, product, catalyst, additive, reagent, intermediate, or condition uses a step field, the reaction must include integer "step_count".
 - Assign each chemical to the step where it is actually used or formed. Do not flatten chemicals from different steps into an unlabelled list.
 - For multi-step conditions, every condition field must be a list of {"step": N, "value": "reported value"} objects. Preserve separate solvent, volume, atmosphere, light source, wavelength, temperature, and time values by step.
@@ -142,9 +143,9 @@ For normal extraction, each entry:
   "substrates": [{"name": "...", "symbol": "...", "amount": "..."}],
   "products": [{"name": "...", "symbol": "...", "amount": "..."}],
   "catalysts": [{"name": "...", "symbol": "...", "amount": "..."}],
-  "additives": [{"name": "...", "symbol": "...", "amount": "..."}],
-  "reagents": [{"name": "...", "symbol": "...", "amount": "..."}],
-  "conditions": {"solvent": "...", "volume": "...", "light source": "...", "wavelength": "...", "temperature": "...", "time": "..."},
+  "ligands": [{"name": "..."}],
+  "other_components": [{"name": "...", "symbol": "...", "amount": "..."}],
+  "conditions": {"solvent": "...", "volume": "...", "concentration": "...", "atmosphere": "...", "light_source": "...", "wavelength": "...", "temperature": "...", "time": "..."},
   "targets": {"yield": "...", "ee": "...%", "er": "..."}
 }
 
@@ -154,8 +155,8 @@ For a multi-step entry, extend that object as follows:
   "substrates": [{"name": "...", "symbol": "...", "amount": "...", "step": 1}],
   "products": [{"name": "...", "symbol": "...", "amount": "...", "step": 2}],
   "catalysts": [{"name": "...", "symbol": "...", "amount": "...", "step": 1}],
-  "additives": [{"name": "...", "symbol": "...", "amount": "...", "step": 1}],
-  "reagents": [{"name": "...", "symbol": "...", "amount": "...", "step": 2}],
+  "ligands": [{"name": "...", "step": 1}],
+  "other_components": [{"name": "...", "symbol": "...", "amount": "...", "step": 2}],
   "intermediates": [{"name": "...", "symbol": "...", "amount": "...", "produced_in_step": 1, "consumed_in_step": 2}],
   "conditions": {
     "solvent": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}],
@@ -173,7 +174,7 @@ name/symbol rules
   Example: Header="...cyclobutane-1-carbaldehyde (5b)", Results="aldehyde 5b [10.4 mg, ...]"
   → {"name": "...cyclobutane-1-carbaldehyde", "symbol": "5b", "amount": "10.4 mg"}
   NOT {"name": "aldehyde 5b", "symbol": "5b"}. Scan entire section for longest, most complete name.
-- Same rules apply to ALL fields: substrates, products, catalysts, additives, reagents.
+- Same name rules apply to substrates, products, catalysts, ligands, and other_components.
 - products[].amount = mass/volume ONLY (e.g. "511 mg"), NEVER yield.
 - yield/ee/er MUST be inside "targets", NOT top-level. Extract er when reported.
 - Use null for unreported fields."""

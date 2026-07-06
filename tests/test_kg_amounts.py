@@ -22,6 +22,7 @@ AMOUNT_COLUMNS = [
     "substrate_amount",
     "product_amount",
     "catalyst_amount",
+    "other_component_amount",
     "additive_amount",
     "reagent_amount",
 ]
@@ -30,6 +31,7 @@ ROLE_EXPECTATIONS = {
     "USES_SUBSTRATE": ("substrate_amount", "1.0 mmol, 1.0 equiv."),
     "PRODUCES": ("product_amount", "25.0 mg"),
     "USES_CATALYST": ("catalyst_amount", "5.0 mol%"),
+    "USES_OTHER_COMPONENT": ("other_component_amount", "2.0 equiv."),
     "USES_ADDITIVE": ("additive_amount", "2.0 equiv."),
     "USES_REAGENT": ("reagent_amount", "3.0 mmol"),
 }
@@ -52,6 +54,7 @@ def reaction_with_amounts():
         ],
         "products": [{"name": "product B", "amount": "25.0 mg"}],
         "catalysts": [{"name": "catalyst C", "amount": "5.0 mol%"}],
+        "other_components": [{"name": "base F", "amount": "2.0 equiv."}],
         "additives": [{"name": "additive D", "amount": "2.0 equiv."}],
         "reagents": [{"name": "reagent E", "amount": "3.0 mmol"}],
         "intermediates": [

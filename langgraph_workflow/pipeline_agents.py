@@ -76,7 +76,7 @@ class PipelineConfig:
     pdf_text_layout: str = "single"
     pdf_text_x_tolerance: float = 3.0
     pdf_text_y_tolerance: float = 5.0
-    pipeline_version: str = "parallel_pdf_v9_formula_subscripts"
+    pipeline_version: str = "parallel_pdf_v10_gp_templates_ligands"
     skip_reaction_type_normalization: bool = False
     skip_chemeagle_normalization: bool = False
     skip_downstream_build: bool = False
@@ -1211,6 +1211,11 @@ class ProcessPDFAgent:
                     pages_per_chunk=5,
             )
             gp_texts = extractor.extract_general_procedure_texts(pages)
+            with token_usage_context("text_gp_template_extraction", pdf_path.name):
+                gp_templates = extractor.build_gp_templates(
+                    gp_texts,
+                    source_pages_by_gp=getattr(extractor, "last_gp_source_pages", {}) or {},
+                )
             symbol_index = build_symbol_index(registry)
             registry_validation_stats = getattr(extractor, "last_registry_validation_stats", {}) or {}
             entity_context = {
@@ -1221,6 +1226,7 @@ class ProcessPDFAgent:
                 "created_at": datetime.now().isoformat(),
                 "name_registry": registry,
                 "general_procedures": gp_texts,
+                "general_procedure_templates": gp_templates,
                 "substrate_index": symbol_index,
                 "product_index": symbol_index,
                 "symbol_name_mapping": registry,
@@ -1249,7 +1255,14 @@ class ProcessPDFAgent:
                     "registry_fallback_scan_pages": registry_validation_stats.get("registry_fallback_scan_pages", 20),
                     "registry_selector_error": registry_validation_stats.get("registry_selector_error"),
                     "registry_verifier_error": registry_validation_stats.get("registry_verifier_error"),
-                    "gp_templates": len(gp_texts),
+                    "gp_templates": sum(
+                        1 for template in gp_templates.values()
+                        if isinstance(template, dict) and template.get("status") == "valid"
+                    ),
+                    "gp_template_errors": sum(
+                        1 for template in gp_templates.values()
+                        if not isinstance(template, dict) or template.get("status") != "valid"
+                    ),
                     "scaffold_mappings": 0,
                 },
                 "metadata": metadata,
@@ -1276,7 +1289,10 @@ class ProcessPDFAgent:
         if isinstance(entity_context.get("stats"), dict):
             entity_context["stats"]["scaffold_mappings"] = 0
         result["counts"]["registry_size"] = len(entity_context.get("name_registry", {}))
-        result["counts"]["gp_templates"] = len(entity_context.get("general_procedures", {}))
+        result["counts"]["gp_templates"] = sum(
+            1 for template in entity_context.get("general_procedure_templates", {}).values()
+            if isinstance(template, dict) and template.get("status") == "valid"
+        )
 
         reaction_output_path = Path(job["reaction_output_path"])
         reaction_payload = {}
@@ -1308,6 +1324,7 @@ class ProcessPDFAgent:
                             "total_reactions": 0,
                             "name_registry": entity_context.get("name_registry", {}),
                             "general_procedures": entity_context.get("general_procedures", {}),
+                            "general_procedure_templates": entity_context.get("general_procedure_templates", {}),
                             "entity_context_path": str(context_path),
                             "stats": {"no_reaction_chunks": True},
                             "reactions": [],

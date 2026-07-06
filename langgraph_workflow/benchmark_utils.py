@@ -365,6 +365,14 @@ def _public_condition_option(reaction: dict) -> dict:
     catalysts = _catalyst_names_public(reaction.get("catalysts", []))
     if catalysts:
         public["catalysts"] = catalysts
+    ligands = _condition_components_public(reaction.get("ligands", []), include_amount=False)
+    if ligands:
+        public["ligands"] = ligands
+    other_components = _condition_components_public(
+        reaction.get("other_components", []), include_amount=True
+    )
+    if other_components:
+        public["other_components"] = other_components
     for key in (
         "additives",
         "reagents",
@@ -425,15 +433,28 @@ def _is_valid_product_name(name: str, scaffold: Optional[str] = None) -> bool:
 
 
 def _catalyst_names_public(catalysts: List[dict]) -> List[dict]:
+    return _condition_components_public(catalysts, include_amount=True)
+
+
+def _condition_components_public(items: List[dict], *, include_amount: bool) -> List[dict]:
     names = []
-    for catalyst in catalysts or []:
-        name = catalyst.get("name", "")
+    for item in items or []:
+        name = item.get("name", "")
         if _is_valid_compound_name(name):
             public = {"name": _normalize_compound_name(name)}
-            if catalyst.get("step") is not None:
-                public["step"] = catalyst.get("step")
+            if include_amount and item.get("amount") not in (None, ""):
+                public["amount"] = item.get("amount")
+            if item.get("step") is not None:
+                public["step"] = item.get("step")
             names.append(public)
-    return sorted(names, key=lambda x: str(x.get("name", "")).casefold())
+    return sorted(
+        names,
+        key=lambda x: (
+            str(x.get("name", "")).casefold(),
+            str(x.get("amount", "")).casefold(),
+            str(x.get("step", "")),
+        ),
+    )
 
 
 def _public_combo_key(items: List[dict]) -> Optional[str]:

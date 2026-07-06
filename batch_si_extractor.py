@@ -11,6 +11,7 @@ SI PDF批量提取工具 - Token节省策略全部组合
 6. 结合去重 - 合并所有块的结果并去重
 """
 
+import hashlib
 import json
 import math
 import os
@@ -29,6 +30,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pdf_to_gpt_extractor import PDFReactionExtractor, PDF_LIBRARY
 
 GP_CONTEXT_CHAR_LIMIT = 1500
+GP_TEMPLATE_SOURCE_CHAR_LIMIT = 12000
+GP_TEMPLATE_SCHEMA_VERSION = "gp_template_v1"
+GP_TEMPLATE_PROMPT_VERSION = "gp_template_prompt_v1"
 
 
 class SIExtractor(PDFReactionExtractor):
@@ -298,14 +302,16 @@ GENERAL PROCEDURE CONTEXT — apply these conditions when the entry specifies no
 {gp_block}
 
 RULES:
-1. Entry-specified reagents/solvents/conditions ALWAYS override GP conditions.
-2. Do NOT mix reaction types (e.g., NaBH4 = reduction, not photocatalysis).
-3. If only a short label/code is present, keep it in symbol and do not invent a full name.
-4. Do NOT set substrates = products.
-5. Determine whether the supplied GP describes multiple chemical transformations or only one reaction followed by workup/purification.
-6. If the GP is multi-step, preserve step boundaries using the multi-step schema. Do not flatten multi-step GP materials into an unlabelled list.
-7. Do not invent an unnamed intermediate. Only an explicit intermediate name or symbol/code belongs in intermediates.
-8. Normalize GP conditions by field meaning: solvent records solvent identity only; volume records quantities and short role notes for separate portions, addition solutions, suspensions, dilutions, or reaction mixtures. Do not duplicate quantities in both solvent and volume. Exclude workup, extraction, washing, and chromatography solvents unless they are the reaction medium.
+1. This canonical JSON is authoritative for shared GP catalysts, ligands, other_components, and conditions. Do not reformat those shared values.
+2. Return the referenced GP key in _gp_source. Put only explicitly reported deviations in _entry_overrides.
+3. Entry-specified components and conditions ALWAYS override GP values.
+4. Do NOT mix reaction types (e.g., NaBH4 = reduction, not photocatalysis).
+5. If only a short label/code is present, keep it in symbol and do not invent a full name.
+6. Do NOT set substrates = products.
+7. The template already decides single-step versus multi-step. Preserve that decision exactly.
+8. Do not invent an unnamed intermediate. Only an explicit intermediate name or symbol/code belongs in intermediates.
+9. Determine whether the supplied GP describes multiple chemical transformations during template construction only; do not re-decide it here.
+10. Normalize GP conditions by field meaning using the canonical template; entry-specific deviations belong only in _entry_overrides.
 """
 
     STAGE2_AUDIT_PROMPT = """You are auditing a chemistry SI reaction extraction.
@@ -366,6 +372,33 @@ JSON format:
 Process this GP text:
 {gp_text}
 Return ONLY valid JSON."""
+
+    GP_TEMPLATE_PROMPT = """Extract one canonical General Procedure template from the source text.
+Return ONLY valid JSON. Use reported information only; never calculate concentration.
+
+GP ID: {gp_label}
+
+Rules:
+- step_count is present only for two or more genuine sequential chemical transformations.
+- Heating/cooling, staged addition, stirring, workup, extraction, washing, drying, filtration, concentration, and purification are not new steps.
+- Single-step templates must not contain step_count or item-level step.
+- Multi-step templates require step_count >= 2 and a valid step on every substrate, catalyst, ligand, other_component, and every condition value.
+- catalysts retain the complete reported catalyst or preformed metal-ligand complex name and amount.
+- ligands contain name only (plus step for multi-step). Never include amount or symbol. A ligand identifiable inside a preformed complex is also listed in ligands.
+- other_components contains all reaction additives, reagents, bases, reductants, and other reacting materials except substrates, catalysts, ligands, and solvents. Include name and reported amount.
+- Exclude workup, extraction, washing, drying, and purification materials.
+- Ignore later product examples, characterization entries, spectra, and analytical data even when they are present in the candidate text.
+- If a substrate is a generic class, keep that reported class name and set is_generic_class=true.
+- Preserve important order, sealing, degassing, pressure, and staged operation details in procedure_details.
+
+Single-step shape:
+{{"reaction_type":"...","substrates":[{{"name":"...","amount":"... or null","is_generic_class":true}}],"catalysts":[{{"name":"...","amount":"... or null"}}],"ligands":[{{"name":"..."}}],"other_components":[{{"name":"...","amount":"... or null"}}],"conditions":{{"solvent":"... or null","solvent_amount":"... or null","concentration":"... or null","temperature":"... or null","time":"... or null","atmosphere":"... or null","light_source":"... or null","wavelength":"... or null"}},"procedure_details":[{{"sequence":1,"detail":"...","evidence":"exact source text"}}],"evidence":{{"ligands":[{{"index":0,"text":"exact source text"}}]}}}}
+
+Multi-step shape uses the same fields plus step_count. Every compound item has step. Every conditions field is a list of {{"step":N,"value":"..."}} objects. Ligand items have only name and step.
+
+Source GP text:
+{gp_text}
+"""
 
     GP_TRUNCATION_PROMPT = """You are cleaning a chemistry Supporting Information general procedure.
 
@@ -2502,9 +2535,13 @@ Available GP candidates:
 
         gp_counter = {}
         used_gp_keys = set()
-        max_gp_chars = GP_CONTEXT_CHAR_LIMIT
-        rule_complete_trust_chars = GP_CONTEXT_CHAR_LIMIT
+        max_gp_chars = GP_TEMPLATE_SOURCE_CHAR_LIMIT
+        rule_complete_trust_chars = GP_TEMPLATE_SOURCE_CHAR_LIMIT
         records: List[Dict[str, Any]] = []
+        page_markers = [
+            (match.start(), int(match.group(1)))
+            for match in re.finditer(r"--- Page\s+(\d+)\s+---", full_text)
+        ]
 
         for i, (pos, title) in enumerate(filtered):
             has_next_gp = i + 1 < len(filtered)
@@ -2512,6 +2549,11 @@ Available GP candidates:
             next_title = filtered[i + 1][1] if has_next_gp else None
             raw_text = full_text[pos:end_pos].strip()
             raw_chars = len(raw_text)
+            preceding_pages = [page for marker_pos, page in page_markers if marker_pos <= pos]
+            source_pages = [preceding_pages[-1]] if preceding_pages else []
+            source_pages.extend(
+                page for marker_pos, page in page_markers if pos < marker_pos < end_pos
+            )
             key = self._make_unique_gp_key(
                 self._make_gp_key(title, gp_counter, raw_text),
                 used_gp_keys,
@@ -2529,6 +2571,11 @@ Available GP candidates:
             else:
                 end_reason = "last_gp_max_chars"
                 needs_llm = True
+            # Boundary cleanup and canonical structuring are intentionally one
+            # semantic LLM call per GP. The template prompt ignores examples,
+            # workup, purification, and analytical text in this candidate.
+            needs_llm = False
+            end_reason = "deterministic_candidate_for_template"
 
             record: Dict[str, Any] = {
                 "key": key,
@@ -2540,6 +2587,7 @@ Available GP candidates:
                 "has_next_gp": has_next_gp,
                 "next_gp_title": next_title,
                 "raw_chars_to_next_or_eof": raw_chars,
+                "source_pages": sorted(set(source_pages)),
                 "stored_chars": min(raw_chars, max_gp_chars),
                 "max_gp_chars": max_gp_chars,
                 "rule_complete_trust_chars": rule_complete_trust_chars,
@@ -2547,8 +2595,6 @@ Available GP candidates:
                 "pre_llm_end_reason": end_reason,
                 "needs_llm_truncation": needs_llm,
             }
-            if needs_llm:
-                record = self._llm_trim_gp_record(record)
             records.append(record)
 
         self.last_gp_records = records
@@ -2561,18 +2607,24 @@ Available GP candidates:
             return {}
 
         gp_texts: Dict[str, str] = {}
+        source_pages_by_gp: Dict[str, List[int]] = {}
         used_gp_keys = set()
         for record in records:
             key = self._make_unique_gp_key(str(record["key"]), used_gp_keys)
             text = record.get("final_text") or record.get("raw_text", "")
-            gp_texts[key] = str(text)[:GP_CONTEXT_CHAR_LIMIT]
+            gp_texts[key] = str(text)[:GP_TEMPLATE_SOURCE_CHAR_LIMIT]
+            source_pages_by_gp[key] = list(record.get("source_pages") or [])
 
         split_texts = self._split_embedded_procedure_scopes(gp_texts)
         capped_texts: Dict[str, str] = {}
         used_final_keys = set()
         for key, text in split_texts.items():
             unique_key = self._make_unique_gp_key(str(key), used_final_keys)
-            capped_texts[unique_key] = str(text)[:GP_CONTEXT_CHAR_LIMIT]
+            capped_texts[unique_key] = str(text)[:GP_TEMPLATE_SOURCE_CHAR_LIMIT]
+        self.last_gp_source_pages = {
+            key: list(source_pages_by_gp.get(key) or [])
+            for key in capped_texts
+        }
         return capped_texts
 
     def _split_embedded_procedure_scopes(self, gp_texts: Dict[str, str]) -> Dict[str, str]:
@@ -2683,6 +2735,199 @@ Available GP candidates:
         except json.JSONDecodeError:
             pass
         return None
+
+    def build_gp_templates(
+        self,
+        gp_texts: Dict[str, str],
+        source_pages_by_gp: Optional[Dict[str, List[int]]] = None,
+    ) -> Dict[str, Dict]:
+        """Call the LLM exactly once per GP and return canonical templates."""
+        templates: Dict[str, Dict] = {}
+        source_pages_by_gp = source_pages_by_gp or {}
+        for gp_label, gp_text in (gp_texts or {}).items():
+            print(f"    structuring GP: {gp_label}")
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.extract_model,
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": "You extract canonical chemistry procedure JSON. Return valid JSON only.",
+                        },
+                        {
+                            "role": "user",
+                            "content": self.GP_TEMPLATE_PROMPT.format(
+                                gp_label=gp_label,
+                                gp_text=gp_text,
+                            ),
+                        },
+                    ],
+                    temperature=0.0,
+                )
+                parsed = self._parse_canonical_gp_response(
+                    (response.choices[0].message.content or "").strip()
+                )
+                templates[gp_label] = self.validate_gp_template(
+                    parsed,
+                    gp_label=gp_label,
+                    gp_text=gp_text,
+                    source_pages=source_pages_by_gp.get(gp_label, []),
+                )
+                template = templates[gp_label]
+                print(
+                    f"      template ready: substrates={len(template['substrates'])}, "
+                    f"catalysts={len(template['catalysts'])}, ligands={len(template['ligands'])}"
+                )
+            except Exception as exc:
+                print(f"      GP template failed: {exc}")
+                templates[gp_label] = {
+                    "schema_version": GP_TEMPLATE_SCHEMA_VERSION,
+                    "prompt_version": GP_TEMPLATE_PROMPT_VERSION,
+                    "gp_id": gp_label,
+                    "raw_text_sha256": hashlib.sha256(gp_text.encode("utf-8")).hexdigest(),
+                    "status": "invalid",
+                    "error": f"{type(exc).__name__}: {exc}",
+                }
+        return templates
+
+    @staticmethod
+    def _parse_canonical_gp_response(raw: str) -> Dict:
+        raw = (raw or "").strip()
+        if raw.startswith("```json"):
+            raw = raw[7:]
+        elif raw.startswith("```"):
+            raw = raw[3:]
+        if raw.endswith("```"):
+            raw = raw[:-3]
+        data = json.loads(raw.strip())
+        if not isinstance(data, dict):
+            raise ValueError("GP template response must be an object")
+        return data
+
+    @staticmethod
+    def _gp_name_key(value: Any) -> str:
+        return re.sub(r"\s+", " ", str(value or "")).strip().casefold()
+
+    def validate_gp_template(
+        self,
+        payload: Dict,
+        *,
+        gp_label: str,
+        gp_text: str,
+        source_pages: Optional[List[int]] = None,
+    ) -> Dict:
+        """Validate and normalize the canonical single/multi-step GP union."""
+        if not isinstance(payload, dict):
+            raise ValueError("GP template must be an object")
+
+        raw_step_count = payload.get("step_count")
+        step_count = self._normalize_step_number(raw_step_count)
+        is_multistep = raw_step_count is not None
+        if is_multistep and (step_count is None or step_count < 2):
+            raise ValueError("multi-step GP requires step_count >= 2")
+
+        pages = []
+        for page in source_pages or []:
+            try:
+                page_num = int(page)
+            except (TypeError, ValueError):
+                continue
+            if page_num > 0:
+                pages.append(page_num)
+
+        template: Dict[str, Any] = {
+            "schema_version": GP_TEMPLATE_SCHEMA_VERSION,
+            "prompt_version": GP_TEMPLATE_PROMPT_VERSION,
+            "gp_id": gp_label,
+            "raw_text_sha256": hashlib.sha256(gp_text.encode("utf-8")).hexdigest(),
+            "source_pages": sorted(set(pages)),
+            "reaction_type": str(payload.get("reaction_type") or "unknown reaction").strip(),
+        }
+        if is_multistep:
+            template["step_count"] = step_count
+
+        def normalize_items(field: str) -> List[Dict]:
+            values = payload.get(field) or []
+            if not isinstance(values, list):
+                raise ValueError(f"{field} must be a list")
+            normalized: List[Dict] = []
+            for value in values:
+                if not isinstance(value, dict):
+                    raise ValueError(f"{field} items must be objects")
+                name = str(value.get("name") or "").strip()
+                if not name:
+                    raise ValueError(f"{field} item is missing name")
+                if field == "ligands":
+                    allowed = {"name", "step"} if is_multistep else {"name"}
+                    unexpected = set(value) - allowed
+                    if unexpected:
+                        raise ValueError(f"ligand item has unsupported fields: {sorted(unexpected)}")
+                    item: Dict[str, Any] = {"name": name}
+                else:
+                    item = {"name": name, "amount": value.get("amount")}
+                    if field == "substrates":
+                        item["is_generic_class"] = bool(value.get("is_generic_class", False))
+                if is_multistep:
+                    step = self._normalize_step_number(value.get("step"))
+                    if step is None or step > step_count:
+                        raise ValueError(f"{field} item has invalid step")
+                    item["step"] = step
+                elif value.get("step") is not None:
+                    raise ValueError(f"single-step {field} item must not have step")
+                normalized.append(item)
+            return normalized
+
+        for field in ("substrates", "catalysts", "ligands", "other_components"):
+            template[field] = normalize_items(field)
+
+        deduped_ligands = []
+        seen_ligands = set()
+        for ligand in template["ligands"]:
+            key = (self._gp_name_key(ligand.get("name")), ligand.get("step"))
+            if key not in seen_ligands:
+                seen_ligands.add(key)
+                deduped_ligands.append(ligand)
+        template["ligands"] = deduped_ligands
+
+        ligand_names = {self._gp_name_key(item.get("name")) for item in template["ligands"]}
+        template["other_components"] = [
+            item for item in template["other_components"]
+            if self._gp_name_key(item.get("name")) not in ligand_names
+        ]
+
+        raw_conditions = payload.get("conditions") or {}
+        if not isinstance(raw_conditions, dict):
+            raise ValueError("conditions must be an object")
+        condition_keys = (
+            "solvent", "solvent_amount", "concentration", "temperature",
+            "time", "atmosphere", "light_source", "wavelength",
+        )
+        conditions: Dict[str, Any] = {}
+        for key in condition_keys:
+            value = raw_conditions.get(key)
+            if is_multistep:
+                value = [] if value in (None, "") else value
+                if not isinstance(value, list):
+                    raise ValueError(f"multi-step condition {key} must be a list")
+                normalized_values = []
+                for item in value:
+                    if not isinstance(item, dict):
+                        raise ValueError(f"multi-step condition {key} items must be objects")
+                    step = self._normalize_step_number(item.get("step"))
+                    if step is None or step > step_count:
+                        raise ValueError(f"multi-step condition {key} has invalid step")
+                    if item.get("value") not in (None, ""):
+                        normalized_values.append({"step": step, "value": item.get("value")})
+                conditions[key] = normalized_values
+            else:
+                if isinstance(value, list):
+                    raise ValueError(f"single-step condition {key} must be scalar")
+                conditions[key] = None if value in (None, "") else value
+        template["conditions"] = conditions
+        template["procedure_details"] = payload.get("procedure_details") or []
+        template["evidence"] = payload.get("evidence") or {}
+        template["status"] = "valid"
+        return template
 
     # =====================================================================
     # 第三层：页面分块
@@ -2891,7 +3136,7 @@ Available GP candidates:
     def _single_step_schema(self, reaction: Dict) -> Dict:
         """Remove accidental step annotations so ordinary reactions stay compatible."""
         reaction.pop("step_count", None)
-        for field in ("substrates", "products", "catalysts", "additives", "reagents"):
+        for field in ("substrates", "products", "catalysts", "ligands", "other_components", "additives", "reagents"):
             values = reaction.get(field)
             if not isinstance(values, list):
                 continue
@@ -2923,7 +3168,7 @@ Available GP candidates:
     def _collect_step_annotations(self, reaction: Dict) -> List[int]:
         """Return normalized step annotations already present in a reaction object."""
         steps: List[int] = []
-        for field in ("substrates", "products", "catalysts", "additives", "reagents"):
+        for field in ("substrates", "products", "catalysts", "ligands", "other_components", "additives", "reagents"):
             values = reaction.get(field)
             if not isinstance(values, list):
                 continue
@@ -3011,7 +3256,10 @@ Available GP candidates:
             return self._single_step_schema(reaction)
         reaction["step_count"] = step_count
 
-        compound_fields = ("substrates", "products", "catalysts", "additives", "reagents")
+        compound_fields = (
+            "substrates", "products", "catalysts", "ligands",
+            "other_components", "additives", "reagents",
+        )
         for field in compound_fields:
             values = reaction.get(field)
             if values is None:
@@ -3099,6 +3347,24 @@ Available GP candidates:
             return reaction
 
         reaction = self._normalize_multistep_schema(reaction)
+        ligands = reaction.get("ligands")
+        if ligands is None:
+            reaction["ligands"] = []
+        elif not isinstance(ligands, list):
+            raise ValueError("ligands must be a list")
+        else:
+            clean_ligands = []
+            for ligand in ligands:
+                if not isinstance(ligand, dict) or not str(ligand.get("name") or "").strip():
+                    continue
+                clean = {"name": str(ligand["name"]).strip()}
+                if reaction.get("step_count") is not None:
+                    step = self._normalize_step_number(ligand.get("step"))
+                    if step is None:
+                        raise ValueError("multi-step ligand is missing step")
+                    clean["step"] = step
+                clean_ligands.append(clean)
+            reaction["ligands"] = clean_ligands
         reaction["source_pages"] = self._normalize_source_pages(
             reaction.get("source_pages"),
             allowed_page_nums=allowed_page_nums,
@@ -3191,12 +3457,14 @@ Available GP candidates:
 
     def stage2_extract(self, chunk_text: str, chunk_label: str,
                        registry: Optional[Dict[str, str]] = None,
-                       gp_texts: Optional[Dict[str, str]] = None) -> List[Dict]:
+                       gp_texts: Optional[Dict[str, str]] = None,
+                       gp_templates: Optional[Dict[str, Dict]] = None) -> List[Dict]:
         result = self.stage2_extract_with_meta(
             chunk_text,
             chunk_label,
             registry=registry,
             gp_texts=gp_texts,
+            gp_templates=gp_templates,
         )
         self.stage2_audit_recovered = int(
             getattr(self, "stage2_audit_recovered", 0) or 0
@@ -3205,7 +3473,8 @@ Available GP candidates:
 
     def stage2_extract_with_meta(self, chunk_text: str, chunk_label: str,
                                  registry: Optional[Dict[str, str]] = None,
-                                 gp_texts: Optional[Dict[str, str]] = None) -> Dict:
+                                 gp_texts: Optional[Dict[str, str]] = None,
+                                 gp_templates: Optional[Dict[str, Dict]] = None) -> Dict:
         """
         用精确模型从分块中提取反应数据
 
@@ -3227,13 +3496,13 @@ Available GP candidates:
         if selected_gp_texts:
             gp_entries = []
             for label, text in selected_gp_texts.items():
+                template = (gp_templates or {}).get(label)
+                if not isinstance(template, dict) or template.get("status") != "valid":
+                    raise ValueError(f"No validated canonical template for referenced GP: {label}")
+                text = json.dumps(template, ensure_ascii=False, sort_keys=True, indent=2)
                 if isinstance(text, str):
                     # 截断过长的GP文本
-                    text_truncated = (
-                        text[: GP_CONTEXT_CHAR_LIMIT - 3] + "..."
-                        if len(text) > GP_CONTEXT_CHAR_LIMIT
-                        else text
-                    )
+                    text_truncated = text
                     entry = f"""=== {label} ===
 {text_truncated}"""
                     gp_entries.append(entry)
@@ -3495,6 +3764,95 @@ Available GP candidates:
     # 过滤无效反应
     # =====================================================================
 
+    def _gp_template_for_reaction(
+        self,
+        reaction: Dict,
+        gp_templates: Dict[str, Dict],
+    ) -> Tuple[Optional[str], Optional[Dict]]:
+        explicit = str(reaction.get("_gp_source") or "").strip()
+        if explicit in gp_templates:
+            template = gp_templates.get(explicit)
+            return explicit, template if isinstance(template, dict) else None
+        identifiers = " ".join(
+            str(reaction.get(key) or "") for key in ("id", "_original_id")
+        )
+        for gp_key, template in gp_templates.items():
+            if gp_key in identifiers or self._text_contains_gp_alias(identifiers, gp_key):
+                return gp_key, template if isinstance(template, dict) else None
+        return None, None
+
+    @staticmethod
+    def _merge_gp_override(base: Any, override: Any) -> Any:
+        if not isinstance(base, dict) or not isinstance(override, dict):
+            return override
+        merged = dict(base)
+        for key, value in override.items():
+            if value not in (None, "", [], {}):
+                merged[key] = value
+        return merged
+
+    def apply_gp_templates(
+        self,
+        reactions: List[Dict],
+        gp_templates: Dict[str, Dict],
+    ) -> List[Dict]:
+        """Materialize authoritative GP shared fields into concrete reactions."""
+        if not gp_templates:
+            return reactions
+        materialized = []
+        for reaction in reactions:
+            if not isinstance(reaction, dict):
+                materialized.append(reaction)
+                continue
+            gp_key, template = self._gp_template_for_reaction(reaction, gp_templates)
+            if not gp_key:
+                materialized.append(reaction)
+                continue
+            if not isinstance(template, dict) or template.get("status") != "valid":
+                raise ValueError(f"Reaction references invalid GP template: {gp_key}")
+
+            effective = dict(reaction)
+            effective["_gp_source"] = gp_key
+            effective["_gp_template_sha256"] = template.get("raw_text_sha256")
+            overrides = effective.pop("_entry_overrides", {})
+            if not isinstance(overrides, dict):
+                overrides = {}
+
+            current_type = str(effective.get("reaction_type") or "").strip().casefold()
+            if template.get("reaction_type") and current_type in {"", "unknown", "unknown reaction"}:
+                effective["reaction_type"] = template["reaction_type"]
+            if not effective.get("substrates") and template.get("substrates"):
+                effective["substrates"] = [dict(item) for item in template["substrates"]]
+
+            for field in ("catalysts", "ligands", "other_components"):
+                value = [dict(item) for item in template.get(field, [])]
+                if isinstance(overrides.get(field), list):
+                    value = overrides[field]
+                effective[field] = value
+
+            conditions = dict(template.get("conditions") or {})
+            if isinstance(overrides.get("conditions"), dict):
+                conditions = self._merge_gp_override(conditions, overrides["conditions"])
+            effective["conditions"] = conditions
+
+            if template.get("step_count") is not None:
+                effective["step_count"] = template["step_count"]
+                for field, default_step in (
+                    ("substrates", 1),
+                    ("products", int(template["step_count"])),
+                ):
+                    for item in effective.get(field) or []:
+                        if isinstance(item, dict) and item.get("step") is None:
+                            item["step"] = default_step
+            else:
+                effective.pop("step_count", None)
+                effective = self._single_step_schema(effective)
+
+            effective.pop("additives", None)
+            effective.pop("reagents", None)
+            materialized.append(effective)
+        return materialized
+
     def _is_placeholder_name(self, name: str) -> bool:
         """检测是否为泛指产物名（如 Compound 3, Product 13）"""
         if not name or not isinstance(name, str):
@@ -3738,6 +4096,7 @@ Available GP candidates:
                     k: v[:300] + "..." if isinstance(v, str) and len(v) > 300 else v
                     for k, v in gp_texts.items()
                 } if gp_texts else {},
+                "general_procedure_templates": gp_templates,
                 "entity_context_path": entity_context.get("_context_path"),
                 "chunk_extraction_log_path": str(chunk_log_path),
                 "stats": stats_snapshot,
@@ -3747,8 +4106,12 @@ Available GP candidates:
 
         registry = entity_context.get("name_registry") or entity_context.get("symbol_name_mapping") or {}
         gp_texts = entity_context.get("general_procedures") or {}
+        gp_templates = entity_context.get("general_procedure_templates") or {}
         file_stats['registry_size'] = len(registry)
-        file_stats['gp_templates'] = len(gp_texts)
+        file_stats['gp_templates'] = sum(
+            1 for template in gp_templates.values()
+            if isinstance(template, dict) and template.get("status") == "valid"
+        )
 
         if not pages:
             print("  [SKIP] no page text available")
@@ -3848,6 +4211,7 @@ Available GP candidates:
                         chunk['text'],
                         label,
                         gp_texts=gp_texts,
+                        gp_templates=gp_templates,
                     )
                 except Exception as exc:
                     result = {
@@ -3893,6 +4257,7 @@ Available GP candidates:
                     chunk['text'],
                     label,
                     gp_texts=gp_texts,
+                    gp_templates=gp_templates,
                 )
                 log_item = chunk_log_by_id.get(chunk.get("chunk_id"))
                 if log_item is not None:
@@ -3931,8 +4296,8 @@ Available GP candidates:
         scaffold_mapping = entity_context.get("scaffold_substituent_mapping") or {}
         if scaffold_mapping and merged:
             merged = self.enrich_reactions_with_scaffold_mapping(merged, scaffold_mapping)
-        if gp_texts and merged:
-            merged = self.apply_gp_conditions_fallback(merged, gp_texts)
+        if gp_templates and merged:
+            merged = self.apply_gp_templates(merged, gp_templates)
         merged = self.sanitize_reactions_schema(merged)
         file_stats['stage2_audit_recovered'] = self.stage2_audit_recovered
         _write_chunk_log()
@@ -4119,7 +4484,10 @@ Available GP candidates:
         }
         aligned = []
         stats = {"resolved": 0, "verified": 0, "conflicts": 0}
-        fields = ['substrates', 'products', 'intermediates', 'catalysts', 'additives', 'reagents']
+        fields = [
+            'substrates', 'products', 'intermediates', 'catalysts',
+            'other_components', 'additives', 'reagents',
+        ]
         for reaction in reactions:
             if not isinstance(reaction, dict):
                 aligned.append(reaction)
@@ -4231,8 +4599,15 @@ Available GP candidates:
             print("[Stage -1] 提取 General Procedure 文本...")
             gp_texts = self.extract_general_procedure_texts(pages)
             if gp_texts:
+                gp_templates = self.build_gp_templates(
+                    gp_texts,
+                    source_pages_by_gp=getattr(self, "last_gp_source_pages", {}) or {},
+                )
                 print(f"  找到 {len(gp_texts)} 个 GP 段落")
-                file_stats['gp_templates'] = len(gp_texts)
+                file_stats['gp_templates'] = sum(
+                    1 for template in gp_templates.values()
+                    if isinstance(template, dict) and template.get("status") == "valid"
+                )
                 
                 # --- Stage -1b: GP总结 (已禁用，直接注入原始GP文本) ---
                 # print("[Stage -1b] 总结GP文本...")
@@ -4245,6 +4620,7 @@ Available GP candidates:
             else:
                 print("  [INFO] 未找到 General Procedure 段落")
                 gp_texts = {}
+                gp_templates = {}
                 gp_summaries = {}
 
             # --- Step 2: 关键词过滤 ---
@@ -4330,7 +4706,9 @@ Available GP candidates:
                       f"GP 全量注入 {len(gp_texts)} 个")
 
                 # 传入原始 gp_texts（全部GP），不过滤
-                reactions = self.stage2_extract(chunk['text'], label, gp_texts=gp_texts)
+                reactions = self.stage2_extract(
+                    chunk['text'], label, gp_texts=gp_texts, gp_templates=gp_templates
+                )
                 all_chunk_results.append(reactions)
                 # 统计每个chunk的反应类型
                 ids = [r.get('id', '') for r in reactions if isinstance(r, dict)]
@@ -4367,9 +4745,9 @@ Available GP candidates:
                 file_stats['registry_conflict_count'] = 0
 
             # --- Stage 5b: GP 条件来源标记 ---
-            if gp_texts and merged:
+            if gp_templates and merged:
                 print("[Stage 5b] GP 条件来源标记（兜底）...")
-                merged = self.apply_gp_conditions_fallback(merged, gp_texts)
+                merged = self.apply_gp_templates(merged, gp_templates)
             merged = self.sanitize_reactions_schema(merged)
             file_stats['stage2_audit_recovered'] = self.stage2_audit_recovered
 
@@ -4381,6 +4759,7 @@ Available GP candidates:
                 "total_reactions": len(merged),
                 "name_registry": registry,
                 "general_procedures": {k: v[:300] + "..." if len(v) > 300 else v for k, v in gp_texts.items()} if gp_texts else {},
+                "general_procedure_templates": gp_templates,
                 "stats": file_stats,
                 "reactions": merged,
             }

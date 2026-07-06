@@ -45,7 +45,10 @@ def normalize_reaction(rxn, index: int):
         normalized["conditions"] = {}
     if not isinstance(normalized.get("targets"), dict):
         normalized["targets"] = {}
-    for field in ("substrates", "products", "catalysts", "additives", "reagents"):
+    for field in (
+        "substrates", "products", "catalysts", "ligands",
+        "other_components", "additives", "reagents",
+    ):
         values = normalized.get(field) or []
         if not isinstance(values, list):
             values = [values]
