@@ -7,20 +7,33 @@ import csv
 import re
 from collections import OrderedDict
 from pathlib import Path
-from typing import Dict, Iterable, List, Tuple
+from typing import Dict, Iterable, List
 
+
+COL_PAPER = "文献"
+COL_LOCATION = "反应位置"
+COL_SUBSTRATE = "底物"
+COL_PRODUCT = "产物"
+COL_INTERMEDIATE = "中间体"
+COL_CATALYST = "催化剂"
+COL_LIGAND = "配体"
+COL_SOLVENT = "溶剂"
+COL_OTHER_COMPONENT = "其它组分"
+COL_CONDITIONS = "条件（温度、时间、气氛、光源、波长等）"
+COL_YIELD = "产率"
 
 OUTPUT_FIELDNAMES = [
-    "文献",
-    "反应位置",
-    "底物",
-    "产物",
-    "中间体",
-    "催化剂",
-    "添加剂",
-    "试剂",
-    "条件（温度、时间、溶剂等）",
-    "产率",
+    COL_PAPER,
+    COL_LOCATION,
+    COL_SUBSTRATE,
+    COL_PRODUCT,
+    COL_INTERMEDIATE,
+    COL_CATALYST,
+    COL_LIGAND,
+    COL_SOLVENT,
+    COL_OTHER_COMPONENT,
+    COL_CONDITIONS,
+    COL_YIELD,
     "dr",
     "ee",
     "er",
@@ -28,11 +41,14 @@ OUTPUT_FIELDNAMES = [
 
 
 ROLE_CONFIG = {
-    "USES_SUBSTRATE": ("底物", "substrate_amount"),
-    "PRODUCES": ("产物", "product_amount"),
-    "USES_CATALYST": ("催化剂", "catalyst_amount"),
-    "USES_ADDITIVE": ("添加剂", "additive_amount"),
-    "USES_REAGENT": ("试剂", "reagent_amount"),
+    "USES_SUBSTRATE": (COL_SUBSTRATE, "substrate_amount"),
+    "PRODUCES": (COL_PRODUCT, "product_amount"),
+    "USES_CATALYST": (COL_CATALYST, "catalyst_amount"),
+    "USES_LIGAND": (COL_LIGAND, ""),
+    "USES_OTHER_COMPONENT": (COL_OTHER_COMPONENT, "other_component_amount"),
+    # Legacy KG relationships are accepted and folded into the new summary column.
+    "USES_ADDITIVE": (COL_OTHER_COMPONENT, "additive_amount"),
+    "USES_REAGENT": (COL_OTHER_COMPONENT, "reagent_amount"),
 }
 
 
@@ -42,6 +58,16 @@ IGNORED_RELATIONSHIPS = {
     "HAS_SCAFFOLD",
     "HAS_SUBSTITUENT",
     "EXTRACTED_FROM_IMAGE",
+    "SAME_AS",
+    "NAME_RESOLVED_BY",
+}
+
+SOLVENT_CONDITION_LABELS = {
+    "solvent",
+    "solvent amount",
+    "solvent_amount",
+    "vol",
+    "volume",
 }
 
 
@@ -87,13 +113,6 @@ def normalize_step(step: str) -> str:
     return match.group(1) if match else ""
 
 
-def step_sort_key(step: str) -> Tuple[int, str]:
-    normalized = normalize_step(step)
-    if normalized:
-        return (int(normalized), normalized)
-    return (10**9, "")
-
-
 def add_unique(values: List[str], value: str) -> None:
     if value and value not in values:
         values.append(value)
@@ -107,11 +126,7 @@ def formatted_compound(row: Dict[str, str], amount_column: str = "") -> str:
     return f"{name} ({amount})" if amount else name
 
 
-def add_grouped_value(
-    grouped: Dict[str, List[str]],
-    step: str,
-    value: str,
-) -> None:
+def add_grouped_value(grouped: Dict[str, List[str]], step: str, value: str) -> None:
     key = normalize_step(step)
     grouped.setdefault(key, [])
     add_unique(grouped[key], value)
@@ -135,6 +150,48 @@ def first_nonempty(rows: Iterable[Dict[str, str]], field: str) -> str:
     return ""
 
 
+def split_condition_parts(condition_text: str) -> List[str]:
+    """Split combined KG condition text while preserving single condition values."""
+    text = clean_text(condition_text)
+    if not text:
+        return []
+    return [
+        part.strip()
+        for part in re.split(
+            r";\s*|,\s*(?=(?:solvent|solvent_amount|solvent amount|vol|volume|temp|time|atm|light|wl|conc)\s*:)",
+            text,
+            flags=re.IGNORECASE,
+        )
+        if part.strip()
+    ]
+
+
+def condition_label(part: str) -> str:
+    match = re.match(r"\s*([^:：]+)\s*[:：]", part)
+    return clean_text(match.group(1)).casefold().replace("_", " ") if match else ""
+
+
+def is_solvent_condition(part: str) -> bool:
+    return condition_label(part) in SOLVENT_CONDITION_LABELS
+
+
+def new_reaction_record(row: Dict[str, str], reaction_id: str) -> Dict:
+    return {
+        "rows": [],
+        "source_pages": [],
+        COL_PAPER: clean_text(row.get("pdf_name")),
+        COL_LOCATION: reaction_location(reaction_id),
+        COL_SUBSTRATE: {},
+        COL_PRODUCT: {},
+        COL_INTERMEDIATE: {},
+        COL_CATALYST: {},
+        COL_LIGAND: {},
+        COL_SOLVENT: {},
+        COL_OTHER_COMPONENT: {},
+        COL_CONDITIONS: {},
+    }
+
+
 def convert_kg_rows(rows: Iterable[Dict[str, str]]) -> List[Dict[str, str]]:
     reactions: "OrderedDict[str, Dict]" = OrderedDict()
     for row in rows:
@@ -145,30 +202,15 @@ def convert_kg_rows(rows: Iterable[Dict[str, str]]) -> List[Dict[str, str]]:
             continue
         rel = clean_text(row.get("relationship"))
         if rel in IGNORED_RELATIONSHIPS:
-            pass
+            continue
 
-        reaction = reactions.setdefault(
-            reaction_id,
-            {
-                "rows": [],
-                "source_pages": [],
-                "文献": clean_text(row.get("pdf_name")),
-                "反应位置": reaction_location(reaction_id),
-                "底物": {},
-                "产物": {},
-                "中间体": {},
-                "催化剂": {},
-                "添加剂": {},
-                "试剂": {},
-                "条件（温度、时间、溶剂等）": {},
-            },
-        )
+        reaction = reactions.setdefault(reaction_id, new_reaction_record(row, reaction_id))
         reaction["rows"].append(row)
         for page in parse_source_pages(row.get("source_pages", "")):
             if page not in reaction["source_pages"]:
                 reaction["source_pages"].append(page)
-        if not reaction["文献"]:
-            reaction["文献"] = clean_text(row.get("pdf_name"))
+        if not reaction[COL_PAPER]:
+            reaction[COL_PAPER] = clean_text(row.get("pdf_name"))
 
         if rel in ROLE_CONFIG:
             field, amount_column = ROLE_CONFIG[rel]
@@ -178,23 +220,21 @@ def convert_kg_rows(rows: Iterable[Dict[str, str]]) -> List[Dict[str, str]]:
                 formatted_compound(row, amount_column),
             )
         elif rel == "HAS_CONDITION":
-            add_grouped_value(
-                reaction["条件（温度、时间、溶剂等）"],
-                row.get("step", ""),
-                clean_text(row.get("y_name")),
-            )
+            for part in split_condition_parts(row.get("y_name")):
+                target_field = COL_SOLVENT if is_solvent_condition(part) else COL_CONDITIONS
+                add_grouped_value(reaction[target_field], row.get("step", ""), part)
         elif rel in {"PRODUCES_INTERMEDIATE", "USES_INTERMEDIATE"}:
             # Prefer the produced step when both produced/use edges exist.
             if rel == "USES_INTERMEDIATE":
                 existing_values = {
                     value
-                    for values in reaction["中间体"].values()
+                    for values in reaction[COL_INTERMEDIATE].values()
                     for value in values
                 }
                 if clean_text(row.get("y_name")) in existing_values:
                     continue
             add_grouped_value(
-                reaction["中间体"],
+                reaction[COL_INTERMEDIATE],
                 row.get("step", ""),
                 clean_text(row.get("y_name")),
             )
@@ -205,21 +245,17 @@ def convert_kg_rows(rows: Iterable[Dict[str, str]]) -> List[Dict[str, str]]:
         source_pages = reaction.pop("source_pages")
         output.append(
             {
-                "文献": reaction["文献"],
-                "反应位置": render_reaction_location(
-                    reaction["反应位置"],
-                    source_pages,
-                ),
-                "底物": render_grouped_values(reaction["底物"]),
-                "产物": render_grouped_values(reaction["产物"]),
-                "中间体": render_grouped_values(reaction["中间体"]),
-                "催化剂": render_grouped_values(reaction["催化剂"]),
-                "添加剂": render_grouped_values(reaction["添加剂"]),
-                "试剂": render_grouped_values(reaction["试剂"]),
-                "条件（温度、时间、溶剂等）": render_grouped_values(
-                    reaction["条件（温度、时间、溶剂等）"]
-                ),
-                "产率": first_nonempty(source_rows, "yield"),
+                COL_PAPER: reaction[COL_PAPER],
+                COL_LOCATION: render_reaction_location(reaction[COL_LOCATION], source_pages),
+                COL_SUBSTRATE: render_grouped_values(reaction[COL_SUBSTRATE]),
+                COL_PRODUCT: render_grouped_values(reaction[COL_PRODUCT]),
+                COL_INTERMEDIATE: render_grouped_values(reaction[COL_INTERMEDIATE]),
+                COL_CATALYST: render_grouped_values(reaction[COL_CATALYST]),
+                COL_LIGAND: render_grouped_values(reaction[COL_LIGAND]),
+                COL_SOLVENT: render_grouped_values(reaction[COL_SOLVENT]),
+                COL_OTHER_COMPONENT: render_grouped_values(reaction[COL_OTHER_COMPONENT]),
+                COL_CONDITIONS: render_grouped_values(reaction[COL_CONDITIONS]),
+                COL_YIELD: first_nonempty(source_rows, "yield"),
                 "dr": first_nonempty(source_rows, "dr"),
                 "ee": first_nonempty(source_rows, "ee"),
                 "er": first_nonempty(source_rows, "er"),

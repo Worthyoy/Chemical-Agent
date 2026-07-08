@@ -361,7 +361,7 @@ def _score_from_targets(targets: Dict) -> Tuple[Optional[float], Optional[float]
 
 
 def _public_condition_option(reaction: dict) -> dict:
-    public = {"conditions": reaction.get("conditions") or {}}
+    public = {"conditions": _clean_public_conditions(reaction.get("conditions") or {})}
     catalysts = _catalyst_names_public(reaction.get("catalysts", []))
     if catalysts:
         public["catalysts"] = catalysts
@@ -455,6 +455,58 @@ def _condition_components_public(items: List[dict], *, include_amount: bool) -> 
             str(x.get("step", "")),
         ),
     )
+
+
+def _is_empty_public_value(value) -> bool:
+    if value is None:
+        return True
+    if isinstance(value, str):
+        return not value.strip()
+    if isinstance(value, list):
+        return not any(not _is_empty_public_value(item) for item in value)
+    if isinstance(value, dict):
+        return not any(not _is_empty_public_value(item) for item in value.values())
+    return False
+
+
+def _clean_public_conditions(conditions: Dict) -> Dict:
+    if not isinstance(conditions, dict):
+        return {}
+    cleaned = {}
+    for key, value in conditions.items():
+        if _is_empty_public_value(value):
+            continue
+        if isinstance(value, list):
+            items = []
+            for item in value:
+                if _is_empty_public_value(item):
+                    continue
+                if isinstance(item, dict):
+                    if "value" in item and _is_empty_public_value(item.get("value")):
+                        continue
+                    clean_item = {
+                        item_key: item_value
+                        for item_key, item_value in item.items()
+                        if not _is_empty_public_value(item_value)
+                    }
+                    if clean_item:
+                        items.append(clean_item)
+                else:
+                    items.append(item)
+            if items:
+                cleaned[key] = items
+            continue
+        if isinstance(value, dict):
+            clean_value = {
+                item_key: item_value
+                for item_key, item_value in value.items()
+                if not _is_empty_public_value(item_value)
+            }
+            if clean_value:
+                cleaned[key] = clean_value
+            continue
+        cleaned[key] = value
+    return cleaned
 
 
 def _public_combo_key(items: List[dict]) -> Optional[str]:

@@ -630,8 +630,9 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
                 "catalysts": ("USES_CATALYST", "Catalyst", "catalyst"),
                 "ligands": ("USES_LIGAND", "Ligand", "ligand"),
                 "other_components": ("USES_OTHER_COMPONENT", "OtherComponent", "other_component"),
-                "additives": ("USES_ADDITIVE", "Additive", "additive"),
-                "reagents": ("USES_REAGENT", "Reagent", "reagent"),
+                # Legacy text fields are folded into the canonical other_components role.
+                "additives": ("USES_OTHER_COMPONENT", "OtherComponent", "additive"),
+                "reagents": ("USES_OTHER_COMPONENT", "OtherComponent", "reagent"),
             }
             for field, (relationship, node_type, role) in field_specs.items():
                 values = raw_rxn.get(field) or []
@@ -818,11 +819,17 @@ def image_role_to_edge(role: str) -> Tuple[str, str]:
         return "USES_LIGAND", "Ligand"
     if normalized in {"catalyst", "catalysts", "precatalyst"}:
         return "USES_CATALYST", "Catalyst"
-    if normalized in {"other component", "other components"}:
+    if normalized in {
+        "base",
+        "reagent",
+        "reagents",
+        "additive",
+        "additives",
+        "other component",
+        "other components",
+    }:
         return "USES_OTHER_COMPONENT", "OtherComponent"
-    if normalized in {"base", "additive", "additives"}:
-        return "USES_ADDITIVE", "Additive"
-    return "USES_REAGENT", "Reagent"
+    return "USES_OTHER_COMPONENT", "OtherComponent"
 
 
 def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[str, str]]:
@@ -914,8 +921,9 @@ def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[s
                 "catalysts": ("USES_CATALYST", "Catalyst", "catalyst"),
                 "ligands": ("USES_LIGAND", "Ligand", "ligand"),
                 "other_components": ("USES_OTHER_COMPONENT", "OtherComponent", "other_component"),
-                "additives": ("USES_ADDITIVE", "Additive", "additive"),
-                "reagents": ("USES_REAGENT", "Reagent", "reagent"),
+                # Legacy image fields are folded into the canonical other_components role.
+                "additives": ("USES_OTHER_COMPONENT", "OtherComponent", "additive"),
+                "reagents": ("USES_OTHER_COMPONENT", "OtherComponent", "reagent"),
             }
             for field, (relationship, node_type, role) in field_specs.items():
                 values = rxn.get(field) or []
@@ -1299,7 +1307,7 @@ def build_cross_modal_kg(
                 "condition_policy": "SAME_CONDITION_AS is intentionally not emitted in the v1 main KG.",
                 "target_policy": "yield/ee/er/dr are edge attributes; KG inputs are filtered reactions only.",
                 "intermediate_policy": "Explicitly named intermediates create PRODUCES_INTERMEDIATE and USES_INTERMEDIATE text edges; reaction-step nodes are not emitted.",
-                "amount_policy": "Raw entity amount strings populate only the matching substrate/product/catalyst/additive/reagent column on direct reaction-entity edges for both text and image modalities.",
+                "amount_policy": "Raw entity amount strings populate only the matching substrate/product/catalyst/other_component column on direct reaction-entity edges for both text and image modalities. Ligand has no amount column by design. additive_amount and reagent_amount are retained only as legacy CSV columns.",
                 "reaction_id_policy": "All text/image reaction-derived edges carry the full TextReaction/ImageReaction node identifier; cross-modal alignment edges remain empty.",
                 "source_pages_policy": "Text reaction-derived edges carry source_pages from reaction JSON; image and cross-modal alignment edges remain empty.",
                 "step_policy": "Direct multi-step entity edges carry item step, explicit intermediate edges use produced_in_step/consumed_in_step, multi-step condition edges are split per step, and single-step/alignment edges remain empty.",

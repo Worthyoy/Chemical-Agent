@@ -15,6 +15,7 @@ TEXT_COMPOUND_FIELDS = (
     "products",
     "intermediates",
     "catalysts",
+    "ligands",
     "other_components",
     "additives",
     "reagents",

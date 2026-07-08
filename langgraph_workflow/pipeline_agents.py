@@ -12,7 +12,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from batch_si_extractor import SIExtractor
+from batch_si_extractor import GP_TEMPLATE_PROMPT_VERSION, SIExtractor
 from merge_filtered import merge_filtered_reactions_from_files
 from normalize_reaction_types_llm import normalize_reaction_types_file
 from reaction_filter import filter_reaction_file
@@ -76,7 +76,7 @@ class PipelineConfig:
     pdf_text_layout: str = "single"
     pdf_text_x_tolerance: float = 3.0
     pdf_text_y_tolerance: float = 5.0
-    pipeline_version: str = "parallel_pdf_v10_gp_templates_ligands"
+    pipeline_version: str = "parallel_pdf_v15_gp_llm_boundary_trim"
     skip_reaction_type_normalization: bool = False
     skip_chemeagle_normalization: bool = False
     skip_downstream_build: bool = False
@@ -124,6 +124,10 @@ class PipelineConfig:
     @property
     def entity_context_dir(self) -> Path:
         return self.intermediate_dir / "entity_context"
+
+    @property
+    def gp_template_logs_dir(self) -> Path:
+        return self.intermediate_dir / "gp_template_logs"
 
     @property
     def section_chunks_dir(self) -> Path:
@@ -426,6 +430,122 @@ def metadata_matches(path: Path, expected: Dict) -> bool:
     return isinstance(actual, dict) and all(actual.get(k) == v for k, v in expected.items())
 
 
+def page_cache_metadata_matches(path: Path, expected: Dict) -> bool:
+    """Reuse page text across pipeline-only prompt/version changes."""
+    if not path.exists():
+        return False
+    try:
+        payload = read_json(path)
+    except Exception:
+        return False
+    actual = payload.get("metadata") if isinstance(payload, dict) else None
+    if not isinstance(actual, dict):
+        return False
+    keys = (
+        "source_path", "source_mtime_ns", "source_size", "pdf_text_layout",
+        "pdf_text_x_tolerance", "pdf_text_y_tolerance",
+    )
+    return all(actual.get(key) == expected.get(key) for key in keys)
+
+
+def reusable_entity_context(path: Path, expected: Dict) -> Optional[Dict]:
+    """Reuse GP templates when only the pipeline prompt/version changed."""
+    if not path.exists():
+        return None
+    try:
+        payload = read_json(path)
+    except Exception:
+        return None
+    if not isinstance(payload, dict):
+        return None
+    if not isinstance(payload.get("general_procedures"), dict):
+        return None
+    if not isinstance(payload.get("general_procedure_templates"), dict):
+        return None
+    actual = payload.get("metadata")
+    if not isinstance(actual, dict):
+        return None
+    compatible_versions = {
+        "parallel_pdf_v10_gp_templates_ligands",
+        "parallel_pdf_v11_generic_substrate_resolution",
+        "parallel_pdf_v12_gp_template_logs_structured_prompt",
+    }
+    if actual.get("pipeline_version") not in compatible_versions:
+        return None
+    templates = payload.get("general_procedure_templates") or {}
+    for template in templates.values():
+        if not isinstance(template, dict):
+            return None
+        if template.get("prompt_version") != GP_TEMPLATE_PROMPT_VERSION:
+            return None
+    keys = tuple(key for key in expected if key != "pipeline_version")
+    if not all(actual.get(key) == expected.get(key) for key in keys):
+        return None
+    return payload
+
+
+def build_gp_template_log_payload(
+    *,
+    source_pdf: str,
+    paper_key: str,
+    gp_texts: Dict[str, str],
+    gp_templates: Dict[str, Dict],
+    metadata: Dict,
+    gp_records: Optional[Dict[str, Dict]] = None,
+) -> Dict:
+    """Create the complete, auditable per-paper GP template log."""
+    records = []
+    gp_records = gp_records or {}
+    ordered_ids = list(gp_texts)
+    ordered_ids.extend(gp_id for gp_id in gp_templates if gp_id not in gp_texts)
+    for gp_id in ordered_ids:
+        raw_text = str(gp_texts.get(gp_id) or "")
+        template = gp_templates.get(gp_id)
+        template_dict = template if isinstance(template, dict) else {}
+        gp_record = gp_records.get(gp_id) if isinstance(gp_records.get(gp_id), dict) else {}
+        status = "valid" if template_dict.get("status") == "valid" else "invalid"
+        record = {
+            "gp_id": gp_id,
+            "source_pages": list(template_dict.get("source_pages") or []),
+            "raw_text": raw_text,
+            "raw_text_sha256": hashlib.sha256(raw_text.encode("utf-8")).hexdigest(),
+            "raw_char_count": len(raw_text),
+            "raw_candidate_char_count": int(
+                gp_record.get("raw_chars_to_next_or_eof")
+                or gp_record.get("raw_char_count")
+                or len(str(gp_record.get("raw_text") or ""))
+                or len(raw_text)
+            ),
+            "raw_candidate_text_preview": str(gp_record.get("raw_text") or "")[:1200],
+            "raw_source_pages": list(gp_record.get("raw_source_pages") or []),
+            "stored_chars": int(gp_record.get("stored_chars") or len(raw_text)),
+            "end_reason": gp_record.get("end_reason"),
+            "pre_llm_end_reason": gp_record.get("pre_llm_end_reason"),
+            "needs_llm_truncation": bool(gp_record.get("needs_llm_truncation")),
+            "boundary_suspect": bool(gp_record.get("boundary_suspect")),
+            "llm_trim": gp_record.get("llm_trim"),
+            "template_status": status,
+            "template": template_dict,
+        }
+        if status == "invalid":
+            record["error"] = str(template_dict.get("error") or "missing_or_invalid_template")
+        records.append(record)
+    valid_count = sum(1 for record in records if record["template_status"] == "valid")
+    return {
+        "source_pdf": source_pdf,
+        "paper_key": paper_key,
+        "schema_version": "gp_template_log_v1",
+        "created_at": datetime.now().isoformat(),
+        "summary": {
+            "gp_count": len(records),
+            "valid_templates": valid_count,
+            "invalid_templates": len(records) - valid_count,
+        },
+        "general_procedures": records,
+        "metadata": metadata,
+    }
+
+
 def add_metadata(path: Path, metadata: Dict) -> None:
     payload = read_json(path)
     if isinstance(payload, dict):
@@ -530,6 +650,7 @@ def build_pdf_job(pdf_path: Path, config: PipelineConfig) -> Dict:
         "image_artifact_stem": artifact_stem,
         "page_cache_path": str(config.page_cache_dir / f"{artifact_stem}.json"),
         "context_path": str(config.entity_context_dir / f"{artifact_stem}.json"),
+        "gp_template_log_path": str(config.gp_template_logs_dir / f"{artifact_stem}.json"),
         "section_debug_path": str(config.section_chunks_dir / f"{artifact_stem}.json"),
         "registry_debug_path": str(config.registry_debug_dir / f"{artifact_stem}.json"),
         "reaction_output_path": str(config.output_dir / f"{artifact_stem}.json"),
@@ -586,6 +707,7 @@ def build_paper_job(
         "image_artifact_stem": image_stem,
         "page_cache_path": str(config.page_cache_dir / f"{text_stem}.json"),
         "context_path": str(config.entity_context_dir / f"{text_stem}.json"),
+        "gp_template_log_path": str(config.gp_template_logs_dir / f"{text_stem}.json"),
         "section_debug_path": str(config.section_chunks_dir / f"{text_stem}.json"),
         "registry_debug_path": str(config.registry_debug_dir / f"{text_stem}.json"),
         "reaction_output_path": str(config.output_dir / f"{text_stem}.json"),
@@ -717,6 +839,7 @@ class PrepareJobsAgent:
         for path in (
             self.config.page_cache_dir,
             self.config.entity_context_dir,
+            self.config.gp_template_logs_dir,
             self.config.section_chunks_dir,
             self.config.registry_debug_dir,
             self.config.pipeline_cache_dir,
@@ -920,6 +1043,7 @@ class ProcessPDFAgent:
             "paths": {
                 "page_cache": job["page_cache_path"],
                 "context": job["context_path"],
+                "gp_template_log": job["gp_template_log_path"],
                 "section_debug": job["section_debug_path"],
                 "registry_debug": job["registry_debug_path"],
                 "reaction_output": job["reaction_output_path"],
@@ -1165,7 +1289,7 @@ class ProcessPDFAgent:
         extractor = make_extractor(self.config)
 
         page_cache_path = Path(job["page_cache_path"])
-        if self.config.resume and not self.config.overwrite and metadata_matches(page_cache_path, metadata):
+        if self.config.resume and not self.config.overwrite and page_cache_metadata_matches(page_cache_path, metadata):
             page_payload = read_json(page_cache_path)
             pages = page_payload.get("pages", [])
             result["cache"]["page_cache"] = "hit"
@@ -1185,9 +1309,23 @@ class ProcessPDFAgent:
         result["counts"]["pages"] = len(pages)
 
         context_path = Path(job["context_path"])
-        if self.config.resume and not self.config.overwrite and metadata_matches(context_path, metadata):
-            entity_context = read_json(context_path)
-            result["cache"]["entity_context"] = "hit"
+        context_is_current = (
+            self.config.resume
+            and not self.config.overwrite
+            and metadata_matches(context_path, metadata)
+        )
+        migrated_context = None
+        if self.config.resume and not self.config.overwrite and not context_is_current:
+            migrated_context = reusable_entity_context(context_path, metadata)
+        if context_is_current or migrated_context is not None:
+            entity_context = read_json(context_path) if context_is_current else migrated_context
+            if migrated_context is not None:
+                entity_context = dict(entity_context)
+                entity_context["metadata"] = metadata
+                write_json(context_path, entity_context)
+                result["cache"]["entity_context"] = "migrated_without_llm"
+            else:
+                result["cache"]["entity_context"] = "hit"
             if not Path(job["section_debug_path"]).exists():
                 with token_usage_context("text_section_chunking_debug", pdf_path.name):
                     section_debug_path = self._write_section_debug(
@@ -1211,6 +1349,11 @@ class ProcessPDFAgent:
                     pages_per_chunk=5,
             )
             gp_texts = extractor.extract_general_procedure_texts(pages)
+            gp_records = {
+                str(record.get("key")): record
+                for record in (getattr(extractor, "last_gp_records", []) or [])
+                if isinstance(record, dict) and record.get("key")
+            }
             with token_usage_context("text_gp_template_extraction", pdf_path.name):
                 gp_templates = extractor.build_gp_templates(
                     gp_texts,
@@ -1226,6 +1369,7 @@ class ProcessPDFAgent:
                 "created_at": datetime.now().isoformat(),
                 "name_registry": registry,
                 "general_procedures": gp_texts,
+                "general_procedure_records": gp_records,
                 "general_procedure_templates": gp_templates,
                 "substrate_index": symbol_index,
                 "product_index": symbol_index,
@@ -1233,6 +1377,7 @@ class ProcessPDFAgent:
                 "scaffold_substituent_mapping": {},
                 "section_debug_path": job["section_debug_path"],
                 "registry_debug_path": job["registry_debug_path"],
+                "gp_template_log_path": job["gp_template_log_path"],
                 "stats": {
                     "total_pages": len(pages),
                     "registry_size": len(registry),
@@ -1284,7 +1429,27 @@ class ProcessPDFAgent:
             result["cache"]["entity_context"] = "miss"
             result["cache"]["section_debug"] = "miss" if section_debug_path else "skipped"
             result["cache"]["registry_debug"] = "miss" if registry_debug_path else "skipped"
+        gp_template_log_path = Path(job["gp_template_log_path"])
         entity_context = dict(entity_context)
+        context_needs_update = entity_context.get("gp_template_log_path") != str(gp_template_log_path)
+        entity_context["gp_template_log_path"] = str(gp_template_log_path)
+        if self.config.resume and not self.config.overwrite and metadata_matches(gp_template_log_path, metadata):
+            result["cache"]["gp_template_log"] = "hit"
+        else:
+            gp_template_log = build_gp_template_log_payload(
+                source_pdf=str(pdf_path),
+                paper_key=str(job.get("paper_key") or ""),
+                gp_texts=entity_context.get("general_procedures") or {},
+                gp_templates=entity_context.get("general_procedure_templates") or {},
+                gp_records=entity_context.get("general_procedure_records") or {},
+                metadata=metadata,
+            )
+            write_json(gp_template_log_path, gp_template_log)
+            result["cache"]["gp_template_log"] = (
+                "rebuilt_without_llm" if context_is_current or migrated_context is not None else "miss"
+            )
+        if context_needs_update:
+            write_json(context_path, entity_context)
         entity_context["scaffold_substituent_mapping"] = {}
         if isinstance(entity_context.get("stats"), dict):
             entity_context["stats"]["scaffold_mappings"] = 0
@@ -1292,6 +1457,10 @@ class ProcessPDFAgent:
         result["counts"]["gp_templates"] = sum(
             1 for template in entity_context.get("general_procedure_templates", {}).values()
             if isinstance(template, dict) and template.get("status") == "valid"
+        )
+        result["counts"]["gp_template_errors"] = sum(
+            1 for template in entity_context.get("general_procedure_templates", {}).values()
+            if not isinstance(template, dict) or template.get("status") != "valid"
         )
 
         reaction_output_path = Path(job["reaction_output_path"])
@@ -1326,6 +1495,7 @@ class ProcessPDFAgent:
                             "general_procedures": entity_context.get("general_procedures", {}),
                             "general_procedure_templates": entity_context.get("general_procedure_templates", {}),
                             "entity_context_path": str(context_path),
+                            "gp_template_log_path": str(gp_template_log_path),
                             "stats": {"no_reaction_chunks": True},
                             "reactions": [],
                         },
@@ -1340,6 +1510,16 @@ class ProcessPDFAgent:
                 reaction_payload = {}
         result["counts"]["stage2_audit_recovered"] = (
             reaction_payload.get("stats", {}).get("stage2_audit_recovered", 0)
+            if isinstance(reaction_payload, dict)
+            else 0
+        )
+        result["counts"]["stage2_error_count"] = (
+            reaction_payload.get("stats", {}).get("stage2_error_count", 0)
+            if isinstance(reaction_payload, dict)
+            else 0
+        )
+        result["counts"]["invalid_gp_template_chunk_count"] = (
+            reaction_payload.get("stats", {}).get("invalid_gp_template_chunk_count", 0)
             if isinstance(reaction_payload, dict)
             else 0
         )
@@ -2493,6 +2673,14 @@ class ReportAgent:
         pdf_results = state.get("pdf_results", [])
         successful = [r for r in pdf_results if r.get("status") == "success"]
         failed = [r for r in pdf_results if r.get("status") != "success"]
+        gp_template_summary = {
+            "valid_templates": sum(int(r.get("counts", {}).get("gp_templates", 0) or 0) for r in pdf_results),
+            "invalid_templates": sum(int(r.get("counts", {}).get("gp_template_errors", 0) or 0) for r in pdf_results),
+            "invalid_template_chunks": sum(
+                int(r.get("counts", {}).get("invalid_gp_template_chunk_count", 0) or 0)
+                for r in pdf_results
+            ),
+        }
         token_usage_summary = None
         if self.config.token_usage_tracking:
             token_usage_summary = summarize_token_usage(
@@ -2545,6 +2733,7 @@ class ReportAgent:
                 "cache": str(self.config.pipeline_cache_dir),
                 "page_cache": str(self.config.page_cache_dir),
                 "entity_context": str(self.config.entity_context_dir),
+                "gp_template_logs": str(self.config.gp_template_logs_dir),
                 "section_chunks": str(self.config.section_chunks_dir),
                 "registry_debug": str(self.config.registry_debug_dir),
             },
@@ -2614,6 +2803,7 @@ class ReportAgent:
             "pdf_count": len(state.get("pdf_files", [])),
             "successful_pdf_count": len(successful),
             "failed_pdf_count": len(failed),
+            "gp_template_summary": gp_template_summary,
             "pdf_results": pdf_results,
             "artifacts": {
                 "merged_reactions": state.get("merged_reactions_path"),
@@ -2632,6 +2822,11 @@ class ReportAgent:
                     r["paths"]["registry_debug"]
                     for r in pdf_results
                     if r.get("text_status") == "success" and r.get("paths", {}).get("registry_debug")
+                ],
+                "gp_template_logs": [
+                    r["paths"]["gp_template_log"]
+                    for r in pdf_results
+                    if r.get("paths", {}).get("gp_template_log")
                 ],
                 "text_filtered_outputs": state.get("successful_text_filtered_paths", []),
                 "text_structure_enriched_outputs": state.get("successful_text_structure_enriched_paths", []),

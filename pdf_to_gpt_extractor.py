@@ -121,8 +121,21 @@ Product characterization entries after a GP are separate reaction entries when t
 4. When text references a GP (e.g. "Following GP5", "Following General Procedure A"), use that GP's scope in id.
    DO NOT use "SubstrateScope-Entry{N}" for GP-referenced reactions.
 5. For characterization-only product entries, infer substrates/reagents/conditions from the referenced GP context.
-   The product header supplies products[].name/symbol only; it must never be copied into substrates[].
-   If the exact substrate identity is not stated in the entry, use the GP's generic substrate class/range instead of guessing.
+   The product header supplies products[].name/symbol only; the complete product name must never be copied into substrates[].
+
+Generic substrate name completion:
+- A GP substrate such as "aniline", "amine", "substrate", or another generic class can be a placeholder shared by many concrete entries.
+- Resolve a generic substrate with this strict priority: (1) a specific name stated in the current entry, (2) a specific name supplied by the same-paper name registry, then (3) a high-confidence one-to-one inference from the reported product name.
+- Product-based completion is allowed only when the original substrate name is generic and the product unambiguously preserves the substrate-derived group. Do not apply this rule to an already specific substrate name.
+- Never copy the complete product name into substrates[]. Derive only the corresponding substrate identity; if more than one substrate could give the product, keep the generic name.
+- Preserve symbol, amount, step, and role when completing a name.
+- For a high-confidence product-derived completion, write name as the specific substrate and also include original_name, resolution_source="product_name", resolution_method="gp_product_to_substrate_mapping", resolution_confidence="high", and resolution_evidence={"product_name":"the exact reported product name"}.
+- If the relationship is absent, ambiguous, or low-confidence, keep the generic substrate name. Do not guess.
+
+Product-derived completion examples (the product name is evidence, not the substrate value):
+1. Generic substrate "aniline" plus product "(Z)-N-(2-bromophenyl)-N,2-dimethylbut-2-enamide" -> substrate name "2-bromoaniline".
+2. Generic substrate "aniline" plus product "(Z)-N-(6-bromo-2,2-difluorobenzo[d][1,3]dioxol-5-yl)-N,2-dimethylbut-2-enamide" -> substrate name "6-bromo-2,2-difluorobenzo[d][1,3]dioxol-5-amine".
+3. Generic substrate "aniline" plus product "(Z)-N-(2-bromo-4-methoxyphenyl)-N,2-dimethylbut-2-enamide" -> substrate name "2-bromo-4-methoxyaniline".
 
 Reaction type
 - Include reaction_type for every record.
@@ -140,7 +153,7 @@ For normal extraction, each entry:
   "id": "...",
   "source_pages": [1],
   "reaction_type": "...",
-  "substrates": [{"name": "...", "symbol": "...", "amount": "..."}],
+  "substrates": [{"name": "...", "symbol": "...", "amount": "...", "original_name": "... only when resolved from a generic name", "resolution_source": "product_name only when applicable", "resolution_method": "gp_product_to_substrate_mapping only when applicable", "resolution_confidence": "high only when applicable", "resolution_evidence": {"product_name": "exact reported product name"}}],
   "products": [{"name": "...", "symbol": "...", "amount": "..."}],
   "catalysts": [{"name": "...", "symbol": "...", "amount": "..."}],
   "ligands": [{"name": "..."}],

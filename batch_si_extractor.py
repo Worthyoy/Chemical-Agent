@@ -32,7 +32,7 @@ from pdf_to_gpt_extractor import PDFReactionExtractor, PDF_LIBRARY
 GP_CONTEXT_CHAR_LIMIT = 1500
 GP_TEMPLATE_SOURCE_CHAR_LIMIT = 12000
 GP_TEMPLATE_SCHEMA_VERSION = "gp_template_v1"
-GP_TEMPLATE_PROMPT_VERSION = "gp_template_prompt_v1"
+GP_TEMPLATE_PROMPT_VERSION = "gp_template_prompt_v5"
 
 
 class SIExtractor(PDFReactionExtractor):
@@ -296,50 +296,280 @@ Return exactly one item for every input section_index.
 Do not create, omit, renumber, or reorder section_index values.
 """
     # General Procedure 注入到 Stage2 的 prompt 模板
+    STRUCTURED_REACTION_PROMPT = """You are a chemistry literature extraction expert.
+Extract every qualifying paragraph/prose reaction entry from SI text in source order.
+Ignore tables, figures, captions, and analytical-only text.
+Return only valid JSON matching the user request.
+
+1. Scope and eligibility
+- Extract every qualifying entry in source order. A qualifying entry has a specific compound name, label, or symbol; preparation/procedure language; and at least one reported isolated yield, ee, or er. Yield alone is sufficient.
+- Product-characterization paragraphs are valid reaction entries when they identify an isolated product and report yield, ee, or er. Extract result data reported before NMR/HPLC/HRMS/spectra text.
+- A line such as "Prepared according to General Procedure A/B..." followed by color, physical form, yield, ee, er, NMR, HPLC, or HRMS is a valid concrete reaction entry.
+- Never extract optimization/screening/entry tables, figures, captions, or tabular lists. A General Procedure definition is context, not a standalone reaction, unless that same paragraph reports a specific substrate/product and yield, ee, or er.
+
+2. GP template usage
+- A supplied canonical GP JSON is the authoritative source for shared reaction_type, substrates, catalysts, ligands, other_components, conditions, intermediates, and step schema. Never re-parse or re-decide the GP.
+- For every GP-referenced entry, return _gp_source with the supplied GP ID and output a complete reaction record now. Do not rely on later GP-template materialization.
+- Copy applicable shared GP fields into every GP reaction, then apply explicit concrete-entry overrides. Precedence is concrete entry text override > canonical GP template default.
+- GP templates do NOT provide products, targets, or source_pages. Those fields MUST come from the current concrete entry text.
+- If a concrete entry overrides the GP template, write the overridden value directly into the top-level reaction field. Do not output audit-only override fields.
+- Color, physical form, yield, ee, er, NMR, HPLC, and HRMS are product/result data, not condition overrides.
+- Preserve the template step_count exactly. Assign entry-specific compounds to actual steps. Do not invent unnamed intermediates from "crude product", "residue", or "corresponding intermediate".
+
+3. Output schema
+- Return a JSON array of reaction objects.
+- Every reaction has id, source_pages, reaction_type, substrates, products, catalysts, ligands, other_components, conditions, and targets.
+- GP entries additionally use "_gp_source":"GeneralProcedureA".
+- source_pages contains only page numbers from the concrete entry's surrounding "--- Page N ---" markers. Do not include a GP definition page merely because its template was supplied.
+- For both single-step and multi-step reactions, substrates, products, catalysts, ligands, and other_components must be arrays of objects, never arrays of strings.
+- Each compound object separates name, symbol, and amount when reported. Multiple substrates and multiple products are represented by multiple objects in the same array.
+- name stores the chemical name only. symbol stores the reported label, compound number, product number, or short code.
+- Do not keep trailing labels such as (34), (35'), (36), SM15, or 3a inside name. If no full name exists, use the symbol for both name and symbol. Never copy a product name into substrates.
+- Label separation examples: source "... carboxylic acid (34)" -> {"name":"... carboxylic acid","symbol":"34"}; source "... dibromovinyl ... (35')" -> {"name":"... dibromovinyl ...","symbol":"35'"}; source "... methanol (36)" -> {"name":"... methanol","symbol":"36"}.
+- catalysts contains catalysts, precatalysts, and complete preformed catalyst-complex names with reported amounts.
+- ligands contains name and optional symbol for single-step reactions, and name, optional symbol, plus step for multi-step reactions. Ligand loading belongs with the reported catalyst or other component, not in ligands.
+- other_components contains reacting reagents, bases, additives, and reductants. Exclude workup, washing, extraction, drying, chromatography, and purification materials.
+
+4. Single-step schema
+- Single-step compound objects do not use step.
+- Single-step shape:
+  {"id":"...","source_pages":[1],"reaction_type":"...","substrates":[{"name":"starting material A","symbol":null,"amount":"reported amount"},{"name":"starting material B","symbol":null,"amount":"reported amount"}],"products":[{"name":"reported product","symbol":"34","amount":"reported isolated mass"}],"catalysts":[{"name":"reported catalyst","symbol":null,"amount":"reported amount"}],"ligands":[{"name":"reported ligand","symbol":null}],"other_components":[{"name":"reported reagent/additive/base","symbol":null,"amount":"reported amount"}],"conditions":{"solvent":"reported solvent","solvent_amount":"reported solvent amount","atmosphere":"reported atmosphere","light_source":null,"wavelength":null,"temperature":"reported temperature","time":"reported time"},"targets":{"yield":"percent only","ee":null,"er":null}}
+
+5. Multi-step schema
+- Multi-step rules apply to every multi-step reaction, whether GP or non-GP.
+- Use step_count >= 2 only for sequential chemical transformations. Staged addition, heating, workup, extraction, filtration, concentration, chromatography, and purification are not chemical steps by themselves.
+- Every substrate, product, catalyst, ligand, and other_component object in a multi-step reaction must include integer step.
+- intermediates uses produced_in_step and consumed_in_step, not step.
+- conditions must be an object. Each condition field is [] or a list of {"step":N,"value":"..."} objects.
+- Multi-step shape:
+  {"id":"...","source_pages":[1,2],"reaction_type":"...","step_count":2,"substrates":[{"name":"starting material A","symbol":null,"amount":"reported amount","step":1},{"name":"starting material B","symbol":null,"amount":"reported amount","step":2}],"intermediates":[{"name":"intermediate from step 1","symbol":"reported label or null","produced_in_step":1,"consumed_in_step":2}],"products":[{"name":"final product","symbol":"36","amount":"reported isolated mass","step":2}],"catalysts":[{"name":"reported catalyst","symbol":null,"amount":"reported amount","step":1}],"ligands":[{"name":"reported ligand","symbol":null,"step":1}],"other_components":[{"name":"reagent for step 1","symbol":null,"amount":"reported amount","step":1},{"name":"reagent for step 2","symbol":null,"amount":"reported amount","step":2}],"conditions":{"solvent":[{"step":1,"value":"reported solvent for step 1"},{"step":2,"value":"reported solvent for step 2"}],"solvent_amount":[{"step":1,"value":"reported solvent amount for step 1"},{"step":2,"value":"reported solvent amount for step 2"}],"temperature":[{"step":1,"value":"reported temperature for step 1"},{"step":2,"value":"reported temperature for step 2"}],"time":[{"step":1,"value":"reported time for step 1"},{"step":2,"value":"reported time for step 2"}],"atmosphere":[],"light_source":[],"wavelength":[]},"targets":{"yield":"percent only","ee":null,"er":null}}
+
+6. Generic substrate handling
+- Keep generic substrate names as extracted unless the concrete substrate name is explicitly stated in the current entry text.
+- A generic substrate name is a class-level, placeholder, corresponding/appropriate, or non-specific chemical identity. A fully specified chemical name is not generic.
+- Product-derived generic substrate resolution is handled after extraction. Do not invent a product-derived concrete substrate name during reaction extraction.
+- Label-only product names are not sufficient evidence for product-derived substrate completion.
+- Never copy the complete product name into substrates.
+
+7. Targets normalization
+- targets contains yield, ee, and er only, using null when unreported. targets does not come from GP templates.
+- products[].amount is mass or isolated amount only, never yield.
+- targets.yield stores only the percent string, for example "81%". Use "81%", not "81% yield" or "81% (2.1 g) yield".
+- Normalize "81% yield" to targets.yield "81%"; "81% (2.1 g) yield" to targets.yield "81%" and products[].amount "2.1 g"; "75% yield, 96% ee" to targets.yield "75%" and targets.ee "96%".
+- targets.ee stores only the percent string, for example "96%"; normalize "96% ee" and "96% e.e." to "96%".
+- targets.er keeps the reported ratio string such as "95:5"; do not convert er to ee.
+
+8. Exclusions and invalid formats
+- Invalid single-step formats: never output {"substrates":["substrate A"]}; never output {"products":["product A (81% yield)"]}; use object arrays and put yield only in targets.
+- Invalid multi-step formats: never output compound arrays containing bare strings; never omit step on multi-step compound objects; never output conditions as a top-level list.
+- Do not output explanations, Markdown, coverage lists, dr, conversion, selectivity, NMR_yield, or GC_yield."""
+
+    GENERIC_SUBSTRATE_RESOLUTION_PROMPT = """You resolve generic chemistry substrate names after reaction extraction.
+
+Task:
+- Decide whether each generic substrate can be replaced by a specific substrate name inferred from the concrete product name or names.
+- Resolve only when the inference is chemically valid, high confidence, and one-to-one.
+- The resolved substrate must be the complete starting-material identity, not the minimal scaffold. Preserve all ring substituents, chain substituents, heteroatom substituents, protecting groups, and N/O/S substituents that can be mapped from the product back to that substrate.
+- Do not copy the complete product name as a substrate.
+- Do not resolve when the product name is only a label such as "Oxindole 2", "Product 3", or "compound 5".
+- Evaluate every input substrate independently.
+- If there are multiple products, resolution_evidence.product_name must name the exact product used as evidence.
+- If there are multiple generic substrates, resolve only the substrates that have an explicit one-to-one mapping; return can_resolve=false for ambiguous substrates.
+- Use the other substrates in the same reaction to decide whether a product fragment maps one-to-one to a generic substrate. If the product fragment could come from more than one starting material, return can_resolve=false.
+- For generic amine, aniline, alcohol, phenol, thiol, amide, carbamate, sulfonamide, urea, or similar heteroatom-containing substrates, inspect substituents attached to the heteroatom in the product. If a heteroatom substituent is part of the original substrate identity, the resolved_name must retain it. If the substituent could have been introduced in a later step or its source is not unique, return can_resolve=false.
+- Do not infer a substrate from the final product scaffold alone.
+- Resolve only when the product name preserves a chemically meaningful fragment that maps one-to-one to the complete identity of the generic substrate.
+- If the original substrate identity is not uniquely recoverable from the product name, return can_resolve=false.
+- If multiple starting materials could have contributed the same product fragment, use the other reported substrates to disambiguate. If the mapping remains ambiguous, return can_resolve=false.
+
+Current-paper regression examples:
+- generic substrate: aniline
+  product: (Z)-N-(2-bromophenyl)-N,2-dimethylbut-2-enamide
+  resolved substrate: 2-bromoaniline
+- generic substrate: aniline
+  product: (Z)-N-(2-bromophenyl)-N-(methoxymethyl)-2-methylbut-2-enamide
+  resolved substrate: 2-bromo-N-(methoxymethyl)aniline
+
+Return ONLY compact valid JSON:
+{
+  "reaction_id": "...",
+  "resolutions": [
+    {
+      "substrate_index": 1,
+      "can_resolve": true,
+      "resolved_name": "2-bromoaniline",
+      "original_name": "aniline",
+      "resolution_source": "product_name",
+      "resolution_method": "gp_product_to_substrate_mapping",
+      "resolution_confidence": "high",
+      "resolution_evidence": {
+        "product_name": "(Z)-N-(2-bromophenyl)-N,2-dimethylbut-2-enamide",
+        "reason": "The N-(2-bromophenyl) fragment corresponds to 2-bromoaniline."
+      }
+    }
+  ]
+}
+
+If a substrate cannot be resolved, return can_resolve=false with a short reason."""
+
+    NON_GP_REACTION_PROMPT = """You extract standalone paragraph/prose reaction records from chemistry Supporting Information.
+Return only valid JSON array of reaction objects.
+
+Scope
+- Extract only qualifying standalone reactions that do NOT rely on a General Procedure.
+- Skip entries that say "prepared according to General Procedure", "following GP", "according to GP", or equivalent GP-reference wording.
+- Do not inherit any General Procedure conditions, catalysts, ligands, or reagents.
+- Extract every qualifying standalone preparation/synthesis/isolation entry in source order. Yield alone is sufficient; ee and er are optional.
+- Ignore optimization/screening tables, figures, captions, and analytical-only NMR/HRMS/HPLC/spectra text after the reported yield.
+
+Schema
+- Use source_pages from the surrounding "--- Page N ---" markers. A spanning entry includes all evidence pages.
+- catalysts contains catalysts and precatalysts; ligands contains ligand name only for single-step reactions; other_components contains bases, reagents, additives, and reductants.
+- For both single-step and multi-step reactions, substrates, products, catalysts, ligands, and other_components must be arrays of objects, never arrays of strings.
+- Each compound object separates name, symbol, and amount when reported. Multiple substrates and multiple products are represented by multiple objects in the same array.
+- name stores the chemical name only. symbol stores the reported label, compound number, product number, or short code.
+- Do not keep trailing labels such as (34), (35'), (36), SM15, or 3a inside name. If no full name exists, use the symbol for both name and symbol.
+- Label separation examples: source "... carboxylic acid (34)" -> {"name":"... carboxylic acid","symbol":"34"}; source "... dibromovinyl ... (35')" -> {"name":"... dibromovinyl ...","symbol":"35'"}; source "... methanol (36)" -> {"name":"... methanol","symbol":"36"}.
+- Single-step shape: {"id":"...","source_pages":[1],"reaction_type":"...","substrates":[{"name":"reported substrate A","symbol":null,"amount":"reported amount"},{"name":"reported substrate B","symbol":null,"amount":"reported amount"}],"products":[{"name":"reported product A","symbol":"34","amount":"reported isolated mass"},{"name":"reported product B","symbol":null,"amount":"reported isolated mass"}],"catalysts":[{"name":"reported catalyst","symbol":null,"amount":"reported amount"}],"ligands":[{"name":"reported ligand","symbol":null}],"other_components":[{"name":"reported reagent/additive/base","symbol":null,"amount":"reported amount"}],"conditions":{"solvent":"...","solvent_amount":"...","atmosphere":"...","light_source":null,"wavelength":null,"temperature":"...","time":"..."},"targets":{"yield":"percent only","ee":null,"er":null}}.
+- Invalid single-step formats:
+  - Never output {"substrates":["substrate A"]}; use {"substrates":[{"name":"substrate A","amount":null}]}.
+  - Never output {"products":["product A (71% yield)"]}; use {"products":[{"name":"product A","amount":null}],"targets":{"yield":"71%"}}.
+  - Never put yield into products[].name or products[].amount; targets.yield stores only the percent string.
+- Multi-step shape rules:
+  - Use step_count >= 2 only for two or more sequential chemical transformations. Staged addition, heating, workup, extraction, filtration, concentration, and purification do not create new steps by themselves.
+  - If step_count >= 2, every item in substrates, products, catalysts, ligands, and other_components MUST be an object. Do not output bare strings in any compound array.
+  - Every compound object in a multi-step entry MUST include an integer step field.
+  - intermediates MUST be a list of objects using produced_in_step and consumed_in_step. Do not use step on intermediates.
+  - conditions MUST be an object. Each condition field MUST be [] or a list of {"step": integer, "value": string} objects.
+  - Do not output conditions as a top-level list.
+- Generic multi-step example format, using placeholders only:
+  [{"id":"example_multistep_1","source_pages":[1,2],"reaction_type":"standalone multi-step synthesis","step_count":2,"substrates":[{"name":"starting material A","symbol":null,"amount":"reported amount","step":1},{"name":"starting material B","symbol":null,"amount":"reported amount","step":1}],"intermediates":[{"name":"intermediate from step 1","symbol":"reported label or null","produced_in_step":1,"consumed_in_step":2}],"products":[{"name":"final product","symbol":"36","amount":"reported isolated amount","step":2}],"catalysts":[{"name":"reported catalyst","symbol":null,"amount":"reported amount","step":1}],"ligands":[{"name":"reported ligand","symbol":null,"step":1}],"other_components":[{"name":"reagent for step 1","symbol":null,"amount":"reported amount","step":1},{"name":"reagent for step 2","symbol":null,"amount":"reported amount","step":2}],"conditions":{"solvent":[{"step":1,"value":"reported solvent for step 1"},{"step":2,"value":"reported solvent for step 2"}],"solvent_amount":[{"step":1,"value":"reported solvent amount for step 1"},{"step":2,"value":"reported solvent amount for step 2"}],"temperature":[{"step":1,"value":"reported temperature for step 1"},{"step":2,"value":"reported temperature for step 2"}],"time":[{"step":1,"value":"reported time for step 1"},{"step":2,"value":"reported time for step 2"}],"atmosphere":[],"light_source":[],"wavelength":[]},"targets":{"yield":"reported final isolated yield","ee":null,"er":null}}]
+- Invalid multi-step formats:
+  - Never output {"other_components":["reagent A"]}; use {"other_components":[{"name":"reagent A","amount":null,"step":1}]}.
+  - Never output {"other_components":[{"name":"reagent A","amount":"reported amount"}]} because step is missing.
+  - Never output {"conditions":[{"step":1,"temperature":"reported temperature"}]} because conditions must be an object with condition-field lists.
+- Do not output _gp_source, _entry_overrides, explanations, Markdown, coverage lists, dr, conversion, selectivity, NMR_yield, or GC_yield."""
+
+    MIXED_REACTION_PROMPT = """You are a chemistry literature extraction expert. Extract every qualifying paragraph/prose reaction entry from SI text in source order. Ignore tables, figures, captions, and analytical-only text.
+Return only a valid JSON array of reaction objects.
+
+1. Scope
+- This chunk may contain both General-Procedure-referenced entries and standalone downstream transformations. Extract all qualifying entries in source order.
+- A standalone/downstream reaction starts from an already isolated product, cycloadduct, intermediate, compound label, or previously prepared material and performs a new transformation. Extract it as a non-GP reaction, do not set _gp_source, and do not inherit GP substrates, catalysts, ligands, other_components, or conditions.
+- A reaction prepared according to a reported literature procedure, published procedure, reported procedure, literature procedure, or previously reported method is standalone non-GP unless it explicitly references one of the supplied General Procedure templates. For these literature-method entries, do not set _gp_source and do not inherit GP fields.
+- Do not output the same concrete reaction twice as both GP and non-GP. If a product/yield entry is a downstream transformation of an isolated GP product, output only the standalone non-GP reaction.
+- If multiple product names with yield, ee, or er appear on the same page or in the same chunk, extract each distinct product/result as a separate reaction. Do not stop after the first entry.
+- Extract all qualifying entries in source order. Do not omit any.
+
+2. GP template usage
+- A GP-referenced entry explicitly says or clearly means it was prepared according to, following, or using one of the supplied canonical General Procedure templates. For that entry only, copy applicable shared GP fields into the complete reaction record and set "_gp_source" to the matching GP id.
+- GP templates provide shared reaction_type, substrates, catalysts, ligands, other_components, conditions, intermediates, and step schema only for GP-referenced entries. Products, targets, and source_pages always come from the concrete entry text.
+- If the supplied GP template has no step_count, the GP-referenced entry is single-step: copy shared fields, add entry products/targets/source_pages, and do not use item-level step.
+- If the supplied GP template has step_count >= 2, every GP-referenced entry must keep the same step_count and the same multi-step schema surface.
+- For multi-step GP-referenced entries, entry-specific starting materials usually belong to step 1, and the final isolated product usually belongs to step=step_count. If the concrete entry explicitly assigns a compound to another chemical step, use the entry evidence.
+
+3. Output schema
+- Every reaction has id, source_pages, reaction_type, substrates, products, catalysts, ligands, other_components, conditions, and targets.
+- For both single-step and multi-step reactions, substrates, products, catalysts, ligands, and other_components must be arrays of objects, never arrays of strings.
+- Each compound object separates name, symbol, and amount when reported. name stores the chemical name only. symbol stores the reported label, compound number, product number, or short code.
+- Do not keep trailing labels such as (34), (35'), (36), SM15, or 3a inside name. If no full name exists, use the symbol for both name and symbol.
+- Label separation examples: source "... carboxylic acid (34)" -> {"name":"... carboxylic acid","symbol":"34"}; source "... dibromovinyl ... (35')" -> {"name":"... dibromovinyl ...","symbol":"35'"}; source "... methanol (36)" -> {"name":"... methanol","symbol":"36"}.
+- Use solvent_amount, not volume. Use light_source, not light source.
+- catalysts contains catalysts and precatalysts; ligands contains ligand name only for single-step reactions; other_components contains bases, reagents, additives, reductants, and fixed transfer/derivatization reagents.
+- source_pages must come from the concrete entry page markers, not from the GP definition page.
+
+4. Single-step schema
+- Single-step compound objects do not use step.
+- Use this shape for standalone literature-procedure entries and for GP-referenced entries whose supplied GP template has no step_count:
+  {"id":"...","source_pages":[18],"reaction_type":"...","substrates":[{"name":"reported substrate A","symbol":null,"amount":"reported amount"},{"name":"reported substrate B","symbol":null,"amount":"reported amount"}],"products":[{"name":"reported product name","symbol":"29","amount":"454 mg"}],"catalysts":[{"name":"reported catalyst","symbol":null,"amount":"reported amount"}],"ligands":[{"name":"reported ligand","symbol":null}],"other_components":[{"name":"reported reagent/base/additive","symbol":null,"amount":"reported amount"}],"conditions":{"solvent":"reported solvent","solvent_amount":"reported solvent amount","temperature":"reported temperature","time":"reported time","atmosphere":"reported atmosphere","light_source":null,"wavelength":null},"targets":{"yield":"81%","ee":null,"er":null}}
+- For single-step reactions, do not output step_count and do not put step on any compound object.
+
+5. Multi-step schema
+- Use step_count >= 2 only for sequential chemical transformations. Staged addition, heating, workup, extraction, filtration, concentration, chromatography, and purification are not chemical steps by themselves.
+- If a reaction has step_count >= 2, every item in substrates, products, catalysts, ligands, and other_components must include integer step.
+- intermediates do not use step; they must use produced_in_step and consumed_in_step.
+- conditions must be an object. Each condition field is [] or a list of {"step":N,"value":"..."} objects.
+- Multi-step GP-referenced shape:
+  {"id":"...","_gp_source":"GeneralProcedureC","source_pages":[24],"reaction_type":"...","step_count":2,"substrates":[{"name":"template substrate","symbol":"SM6","amount":"0.1 mmol","step":1}],"intermediates":[{"name":"explicit intermediate name","symbol":"6","produced_in_step":1,"consumed_in_step":2}],"products":[{"name":"final reported product","symbol":"21","amount":"51.9 mg","step":2}],"catalysts":[{"name":"template catalyst","symbol":null,"amount":"reported amount","step":1}],"ligands":[{"name":"template ligand","symbol":null,"step":1}],"other_components":[{"name":"template reagent","symbol":null,"amount":"reported amount","step":2}],"conditions":{"solvent":[{"step":1,"value":"..."},{"step":2,"value":"..."}],"solvent_amount":[],"temperature":[],"time":[],"atmosphere":[],"light_source":[],"wavelength":[]},"targets":{"yield":"65%","ee":"91%","er":null}}
+- In multi-step GP-referenced entries, final isolated product objects must include step, usually step=step_count.
+- Standalone non-GP entries use step_count only if the paragraph itself describes multiple sequential chemical transformations. A single-step literature procedure must not use step_count or item-level step.
+
+6. Literature and published procedure entries
+- reported literature procedure, published procedure, reported procedure, literature procedure, and previously reported method are not supplied GP templates.
+- Extract these as standalone non-GP reactions with no _gp_source and no inherited GP fields.
+- They are usually single-step unless the paragraph itself reports multiple sequential chemical transformations.
+
+7. Targets normalization
+- targets.yield and targets.ee store percent strings only, for example "81%" and "96%"; products[].amount stores mass or isolated amount only. targets.er keeps the reported ratio string.
+- Use "81%", not "81% yield" or "81% (454 mg) yield". Put the mass in products[].amount.
+
+8. Invalid formats
+- Invalid single-step format: never output {"products":["product A (81% yield)"]}; use object arrays and put yield only in targets.
+- Invalid multi-step format: never output a product, substrate, catalyst, ligand, or other_component without integer step when step_count is present.
+- Invalid multi-step format: never output conditions as a top-level list.
+- Do not output explanations, Markdown, coverage lists, dr, conversion, selectivity, NMR_yield, or GC_yield."""
+
+    CHUNK_REACTION_ROUTER_PROMPT = """Route chemistry SI reaction extraction for one chunk.
+
+Decide whether extractable prose reactions in the chunk rely on General Procedures, do not rely on General Procedures, both, or none.
+Use the available GP candidates only as procedure references; do not extract reactions here.
+
+Return ONLY compact valid JSON:
+{{
+  "route": "gp_only|non_gp_only|mixed|none",
+  "jobs": [
+    {{
+      "job_id": "gp_1",
+      "mode": "gp",
+      "gp_keys": ["GeneralProcedureA"],
+      "source_pages": [3, 5]
+    }},
+    {{
+      "job_id": "non_gp_1",
+      "mode": "non_gp",
+      "gp_keys": [],
+      "source_pages": [18, 19, 20]
+    }}
+  ],
+  "confidence": "high|medium|low",
+  "reason": "short reason"
+}}
+
+Rules:
+- route="gp_only" when all extractable reactions rely on selected GP candidates.
+- route="non_gp_only" when extractable reactions are standalone and should not inherit any GP.
+- route="mixed" when the chunk contains both GP-referenced reactions and standalone non-GP reactions.
+- route="none" when no qualifying prose reaction should be extracted.
+- A GP job must list only applicable gp_keys from the available candidates.
+- A non_gp job must have gp_keys=[] and must exclude GP-referenced entries.
+- Do not enumerate only some product entries or examples in a job. A GP job means all qualifying entries in this chunk that reference its gp_keys; a non-GP job means all qualifying standalone entries in this chunk.
+- Do not limit extraction to listed examples, product names, or the first entries seen in the chunk.
+- Optional scope text is for logging only and must not narrow extraction coverage.
+
+Reaction chunk:
+{chunk_text}
+
+Available GP candidates:
+{gp_candidates}
+"""
+
     GP_INJECTION_TEMPLATE = """
 GENERAL PROCEDURE CONTEXT — apply these conditions when the entry specifies none:
 
 {gp_block}
 
-RULES:
-1. This canonical JSON is authoritative for shared GP catalysts, ligands, other_components, and conditions. Do not reformat those shared values.
-2. Return the referenced GP key in _gp_source. Put only explicitly reported deviations in _entry_overrides.
-3. Entry-specified components and conditions ALWAYS override GP values.
-4. Do NOT mix reaction types (e.g., NaBH4 = reduction, not photocatalysis).
-5. If only a short label/code is present, keep it in symbol and do not invent a full name.
-6. Do NOT set substrates = products.
-7. The template already decides single-step versus multi-step. Preserve that decision exactly.
-8. Do not invent an unnamed intermediate. Only an explicit intermediate name or symbol/code belongs in intermediates.
-9. Determine whether the supplied GP describes multiple chemical transformations during template construction only; do not re-decide it here.
-10. Normalize GP conditions by field meaning using the canonical template; entry-specific deviations belong only in _entry_overrides.
+Use only the matching template for each entry. Return its gp_id in _gp_source.
+The template is authoritative for shared fields and step_count; do not re-parse it.
+If an entry overrides the template, write the overridden value directly in the top-level reaction field. Never copy products into substrates.
 """
 
-    STAGE2_AUDIT_PROMPT = """You are auditing a chemistry SI reaction extraction.
-Compare the source text against the current extracted reaction JSON.
-
-Return ONLY a JSON object:
-{"missing_reactions": [<reaction objects>]}
-
-Rules:
-- Do not rewrite reactions already present in current_extraction.
-- Add only reaction entries that are clearly present in the source text but missing from current_extraction.
-- Coverage audit: review the source text in order and check whether every extractable paragraph/prose reaction entry is present in current_extraction.
-- A missing reaction should be added when the source contains a specific compound/product/substrate name, label, code, or symbol; preparation/synthesis/obtained/afforded/furnished wording or an explicit procedure reference; and isolated yield, ee, or er.
-- Pay special attention to consecutive repeated product characterization entries.
-- Do not assume a generic General Procedure record covers later specific product entries.
-- Each specific product entry with its own symbol/name and yield must have its own reaction object.
-- Do not recover reactions from tables.
-- Product characterization entries after a GP are valid reaction entries when they report an isolated product and yield.
-- "Prepared according to General Procedure A/B using ..." entries are valid reaction entries.
-- For GP-referenced entries, use the supplied GP context for substrates/reagents/conditions, but do not copy product names into substrates.
-- When a missing entry uses a multi-step GP or reports an overall multi-step yield, first confirm that the GP/entry contains multiple chemical transformations, not only workup or purification, then reproduce the multi-step schema, step assignments, explicitly named intermediates, and per-step conditions from the extraction prompt.
-- Normalize condition fields by meaning: solvent records solvent identity only; volume records quantities and short role notes for separate portions, addition solutions, suspensions, dilutions, or reaction mixtures. Do not duplicate quantities in both solvent and volume, and exclude workup/extraction/washing/chromatography solvents unless they are the reaction medium.
-- If any substrate, product, catalyst, additive, reagent, intermediate, or condition uses a step field, the reaction must include integer step_count. Single-step reactions must not include step fields.
-- Every missing reaction must include source_pages from the concrete entry's "--- Page N ---" markers. Do not use a supplied GP definition page; use [] if uncertain.
-- Keep the current schema exactly: targets may contain yield, ee, and er only.
-- Do not output dr, conversion, selectivity, NMR_yield, or GC_yield.
-- If no reactions are missing, return {"missing_reactions": []}.
-- Each missing reaction must use the same schema as the original extraction prompt."""
+    STAGE2_AUDIT_PROMPT = """Audit source_text against current_extraction for omitted qualifying prose reaction entries.
+Return only {"missing_reactions":[<reaction objects>]}. Do not rewrite existing records.
+Follow the system extraction schema and supplied canonical GP templates exactly.
+Check consecutive product-characterization entries carefully; each distinct product/result is a record.
+Every missing reaction must take source_pages from the concrete entry's page markers.
+Never recover tables or use a GP definition page as source_pages.
+Return {"missing_reactions":[]} when coverage is complete."""
 
     GP_SUMMARY_PROMPT = """You are a chemistry data extraction specialist. 
 Extract structured information from this General Procedure text.
@@ -374,7 +604,7 @@ Process this GP text:
 Return ONLY valid JSON."""
 
     GP_TEMPLATE_PROMPT = """Extract one canonical General Procedure template from the source text.
-Return ONLY valid JSON. Use reported information only; never calculate concentration.
+Return ONLY valid JSON. Use reported information only.
 
 GP ID: {gp_label}
 
@@ -383,18 +613,28 @@ Rules:
 - Heating/cooling, staged addition, stirring, workup, extraction, washing, drying, filtration, concentration, and purification are not new steps.
 - Single-step templates must not contain step_count or item-level step.
 - Multi-step templates require step_count >= 2 and a valid step on every substrate, catalyst, ligand, other_component, and every condition value.
+- temperature records temperature values only; time records duration values only.
+- When duration is embedded in a temperature phrase, split it into both fields. For example, "20 °C for 1 h, then 60 °C for 20 h" becomes temperature "20 °C then 60 °C" and time "1 h then 20 h".
+- Do not leave time null when a duration such as min, h, hour(s), day(s), or overnight is reported in the procedure.
+- In multi-step templates, substrates are main externally supplied starting-material classes, generic substrate classes, substrate ranges, or variable substrate-scope components that define the reaction series.
+- A material generated in an earlier step and consumed in a later step is an intermediate, not a new external substrate.
+- Pronouns, generic descriptions, or references to material obtained from a previous step must be assigned by role: use intermediates when they carry material forward between chemical transformations.
+- A newly added material in a later step is a substrate only when it is a main building block or variable substrate-scope component.
+- Fixed derivatization, alkylation, methylation, acylation, activation, reduction, oxidation, base, additive, or transfer reagents belong in other_components, even if atoms from them appear in the final product.
+- A fixed methylating reagent used to derivatize an intermediate belongs in other_components, not substrates.
+- intermediates records step-to-step material transfer using produced_in_step and consumed_in_step. Use a concise reported or descriptive name; keep evidence in procedure_details or evidence.
 - catalysts retain the complete reported catalyst or preformed metal-ligand complex name and amount.
 - ligands contain name only (plus step for multi-step). Never include amount or symbol. A ligand identifiable inside a preformed complex is also listed in ligands.
-- other_components contains all reaction additives, reagents, bases, reductants, and other reacting materials except substrates, catalysts, ligands, and solvents. Include name and reported amount.
+- other_components contains all reaction additives, reagents, bases, reductants, fixed transfer/derivatization reagents, and other reacting materials except substrates, catalysts, ligands, and solvents. Include name and reported amount; do not drop any reported reacting material.
 - Exclude workup, extraction, washing, drying, and purification materials.
 - Ignore later product examples, characterization entries, spectra, and analytical data even when they are present in the candidate text.
 - If a substrate is a generic class, keep that reported class name and set is_generic_class=true.
 - Preserve important order, sealing, degassing, pressure, and staged operation details in procedure_details.
 
 Single-step shape:
-{{"reaction_type":"...","substrates":[{{"name":"...","amount":"... or null","is_generic_class":true}}],"catalysts":[{{"name":"...","amount":"... or null"}}],"ligands":[{{"name":"..."}}],"other_components":[{{"name":"...","amount":"... or null"}}],"conditions":{{"solvent":"... or null","solvent_amount":"... or null","concentration":"... or null","temperature":"... or null","time":"... or null","atmosphere":"... or null","light_source":"... or null","wavelength":"... or null"}},"procedure_details":[{{"sequence":1,"detail":"...","evidence":"exact source text"}}],"evidence":{{"ligands":[{{"index":0,"text":"exact source text"}}]}}}}
+{{"reaction_type":"...","substrates":[{{"name":"...","amount":"... or null","is_generic_class":true}}],"catalysts":[{{"name":"...","amount":"... or null"}}],"ligands":[{{"name":"..."}}],"other_components":[{{"name":"...","amount":"... or null"}}],"intermediates":[],"conditions":{{"solvent":"... or null","solvent_amount":"... or null","temperature":"... or null","time":"... or null","atmosphere":"... or null","light_source":"... or null","wavelength":"... or null"}},"procedure_details":[{{"sequence":1,"detail":"...","evidence":"exact source text"}}],"evidence":{{"ligands":[{{"index":0,"text":"exact source text"}}]}}}}
 
-Multi-step shape uses the same fields plus step_count. Every compound item has step. Every conditions field is a list of {{"step":N,"value":"..."}} objects. Ligand items have only name and step.
+Multi-step shape uses the same fields plus step_count. Every substrate/catalyst/ligand/other_component has step. Every conditions field is a list of {{"step":N,"value":"..."}} objects. Ligand items have only name and step. Intermediates use {{"name":"...","produced_in_step":1,"consumed_in_step":2}} and must not also appear as external substrates.
 
 Source GP text:
 {gp_text}
@@ -2464,12 +2704,26 @@ Available GP candidates:
         match = re.search(pattern, text)
         return match.end() if match else None
 
+    @staticmethod
+    def _pages_for_text_span(
+        page_markers: List[Tuple[int, int]],
+        start_pos: int,
+        end_pos: int,
+    ) -> List[int]:
+        preceding_pages = [page for marker_pos, page in page_markers if marker_pos <= start_pos]
+        pages = [preceding_pages[-1]] if preceding_pages else []
+        pages.extend(
+            page for marker_pos, page in page_markers if start_pos < marker_pos < end_pos
+        )
+        return sorted(set(pages))
+
     def _llm_trim_gp_record(self, record: Dict[str, Any], candidate_char_limit: int = GP_CONTEXT_CHAR_LIMIT) -> Dict[str, Any]:
         if not getattr(self, "client", None):
-            record["final_text"] = record["raw_text"][:record["max_gp_chars"]]
+            record["final_text"] = record["raw_text"][:candidate_char_limit]
             record["stored_chars"] = len(record["final_text"])
             record["end_reason"] = "llm_failed_fallback"
             record["llm_trim"] = {"error": "missing_client"}
+            record["boundary_suspect"] = True
             return record
 
         candidate_text = record["raw_text"][:candidate_char_limit]
@@ -2511,6 +2765,7 @@ Available GP candidates:
             record["final_text"] = final_text
             record["stored_chars"] = len(final_text)
             record["end_reason"] = "llm_trimmed"
+            record["boundary_suspect"] = len(final_text) >= record.get("max_gp_chars", GP_TEMPLATE_SOURCE_CHAR_LIMIT)
             record["llm_trim"] = {
                 "end_anchor": anchor,
                 "include_anchor": bool(include_anchor),
@@ -2519,10 +2774,11 @@ Available GP candidates:
             }
             return record
         except Exception as exc:
-            record["final_text"] = record["raw_text"][:record["max_gp_chars"]]
+            record["final_text"] = record["raw_text"][:candidate_char_limit]
             record["stored_chars"] = len(record["final_text"])
             record["end_reason"] = "llm_failed_fallback"
             record["llm_trim"] = {"error": str(exc)}
+            record["boundary_suspect"] = True
             return record
 
     def extract_general_procedure_records(self, pages: List[Dict]) -> List[Dict[str, Any]]:
@@ -2548,12 +2804,10 @@ Available GP candidates:
             end_pos = filtered[i + 1][0] if has_next_gp else len(full_text)
             next_title = filtered[i + 1][1] if has_next_gp else None
             raw_text = full_text[pos:end_pos].strip()
+            raw_text = re.sub(r'\n--- Page\s+\d+\s+---\s*$', '', raw_text).strip()
             raw_chars = len(raw_text)
-            preceding_pages = [page for marker_pos, page in page_markers if marker_pos <= pos]
-            source_pages = [preceding_pages[-1]] if preceding_pages else []
-            source_pages.extend(
-                page for marker_pos, page in page_markers if pos < marker_pos < end_pos
-            )
+            raw_effective_end_pos = pos + len(raw_text)
+            raw_source_pages = self._pages_for_text_span(page_markers, pos, raw_effective_end_pos)
             key = self._make_unique_gp_key(
                 self._make_gp_key(title, gp_counter, raw_text),
                 used_gp_keys,
@@ -2571,11 +2825,6 @@ Available GP candidates:
             else:
                 end_reason = "last_gp_max_chars"
                 needs_llm = True
-            # Boundary cleanup and canonical structuring are intentionally one
-            # semantic LLM call per GP. The template prompt ignores examples,
-            # workup, purification, and analytical text in this candidate.
-            needs_llm = False
-            end_reason = "deterministic_candidate_for_template"
 
             record: Dict[str, Any] = {
                 "key": key,
@@ -2584,17 +2833,31 @@ Available GP candidates:
                 "final_text": raw_text[:max_gp_chars],
                 "start_pos": pos,
                 "raw_end_pos": end_pos,
+                "raw_effective_end_pos": raw_effective_end_pos,
                 "has_next_gp": has_next_gp,
                 "next_gp_title": next_title,
                 "raw_chars_to_next_or_eof": raw_chars,
-                "source_pages": sorted(set(source_pages)),
+                "raw_source_pages": raw_source_pages,
+                "source_pages": raw_source_pages,
                 "stored_chars": min(raw_chars, max_gp_chars),
                 "max_gp_chars": max_gp_chars,
                 "rule_complete_trust_chars": rule_complete_trust_chars,
                 "end_reason": end_reason,
                 "pre_llm_end_reason": end_reason,
                 "needs_llm_truncation": needs_llm,
+                "boundary_suspect": raw_chars >= max_gp_chars,
             }
+            if needs_llm:
+                record = self._llm_trim_gp_record(record)
+            final_text = str(record.get("final_text") or "")
+            final_end_pos = pos + len(final_text)
+            record["source_pages"] = self._pages_for_text_span(
+                page_markers,
+                pos,
+                final_end_pos,
+            )
+            record["stored_chars"] = len(final_text)
+            record["boundary_suspect"] = bool(record.get("boundary_suspect")) or len(final_text) >= max_gp_chars
             records.append(record)
 
         self.last_gp_records = records
@@ -2895,16 +3158,69 @@ Available GP candidates:
             if self._gp_name_key(item.get("name")) not in ligand_names
         ]
 
+        raw_intermediates = payload.get("intermediates")
+        if raw_intermediates is None:
+            raw_intermediates = []
+        if not isinstance(raw_intermediates, list):
+            raise ValueError("intermediates must be a list")
+        intermediates = []
+        for value in raw_intermediates:
+            if not isinstance(value, dict):
+                raise ValueError("intermediate items must be objects")
+            name = str(value.get("name") or "").strip()
+            if not name:
+                raise ValueError("intermediate item is missing name")
+            if is_multistep:
+                produced = self._normalize_step_number(value.get("produced_in_step"))
+                consumed = self._normalize_step_number(value.get("consumed_in_step"))
+                if produced is None or consumed is None or produced >= consumed or consumed > step_count:
+                    raise ValueError(f"intermediate has invalid step relation: {value!r}")
+                item: Dict[str, Any] = {
+                    "name": name,
+                    "produced_in_step": produced,
+                    "consumed_in_step": consumed,
+                }
+                if value.get("description") not in (None, ""):
+                    item["description"] = value.get("description")
+                intermediates.append(item)
+            else:
+                if value.get("produced_in_step") is not None or value.get("consumed_in_step") is not None:
+                    raise ValueError("single-step intermediate item must not have step relation")
+                item = {"name": name}
+                if value.get("description") not in (None, ""):
+                    item["description"] = value.get("description")
+                intermediates.append(item)
+        template["intermediates"] = intermediates
+
+        if is_multistep:
+            intermediate_keys = {
+                self._gp_name_key(item.get("name"))
+                for item in intermediates
+                if self._gp_name_key(item.get("name"))
+            }
+            for field in ("substrates",):
+                duplicate_keys = {
+                    self._gp_name_key(item.get("name"))
+                    for item in template.get(field, [])
+                    if self._gp_name_key(item.get("name")) in intermediate_keys
+                }
+                if duplicate_keys:
+                    raise ValueError(
+                        f"intermediates must not be duplicated in {field}: {sorted(duplicate_keys)}"
+                    )
+
         raw_conditions = payload.get("conditions") or {}
         if not isinstance(raw_conditions, dict):
             raise ValueError("conditions must be an object")
         condition_keys = (
-            "solvent", "solvent_amount", "concentration", "temperature",
+            "solvent", "solvent_amount", "temperature",
             "time", "atmosphere", "light_source", "wavelength",
         )
         conditions: Dict[str, Any] = {}
         for key in condition_keys:
             value = raw_conditions.get(key)
+            if key == "solvent_amount" and value in (None, ""):
+                value = raw_conditions.get("volume")
             if is_multistep:
                 value = [] if value in (None, "") else value
                 if not isinstance(value, list):
@@ -3165,6 +3481,19 @@ Available GP candidates:
             reaction.pop("intermediates", None)
         return reaction
 
+    def _validate_single_step_compound_arrays(self, reaction: Dict) -> None:
+        if reaction.get("step_count") is not None:
+            return
+        for field in ("substrates", "products", "catalysts", "ligands", "other_components", "additives", "reagents"):
+            values = reaction.get(field)
+            if values is None:
+                continue
+            if not isinstance(values, list):
+                raise ValueError(f"single-step {field} must be a list")
+            for item in values:
+                if not isinstance(item, dict):
+                    raise ValueError(f"single-step {field} items must be objects")
+
     def _collect_step_annotations(self, reaction: Dict) -> List[int]:
         """Return normalized step annotations already present in a reaction object."""
         steps: List[int] = []
@@ -3337,6 +3666,70 @@ Available GP candidates:
                 )
         return reaction
 
+    def _normalize_condition_amount_key(self, reaction: Dict) -> Dict:
+        """Canonicalize solvent quantity conditions to solvent_amount."""
+        conditions = reaction.get("conditions")
+        if not isinstance(conditions, dict):
+            return reaction
+
+        if "volume" in conditions:
+            volume_value = conditions.pop("volume")
+            solvent_amount_value = conditions.get("solvent_amount")
+            if not self._has_meaningful_value(solvent_amount_value):
+                conditions["solvent_amount"] = volume_value
+        if "concentration" in conditions and not self._has_meaningful_value(
+            conditions.get("concentration")
+        ):
+            conditions.pop("concentration", None)
+        return reaction
+
+    def _split_trailing_reported_symbol(self, item: Dict) -> None:
+        """Move a trailing short compound label from name to symbol when safe.
+
+        This is intentionally conservative: it only handles common SI labels such
+        as "(34)", "(35')", "(SM15)", "(3a)", or "(7-(E))" at the very end of a
+        name. It does not split chemistry parentheticals like "(R,R)-ligand" or
+        "(E)-alkene" because those do not match the short-label pattern.
+        """
+        if not isinstance(item, dict):
+            return
+        if self._has_meaningful_value(item.get("symbol")):
+            return
+        name = item.get("name")
+        if not isinstance(name, str):
+            return
+        match = re.fullmatch(
+            r"\s*(?P<base>.+?)\s*\((?P<label>(?:[A-Za-z]{1,8}-)?\d+[A-Za-z]?'?|[A-Za-z]{1,8}\d+[A-Za-z]?'?|\d+-\([EZ]\))\)\s*",
+            name,
+        )
+        if not match:
+            return
+        base = re.sub(r"\s+", " ", match.group("base")).strip()
+        label = match.group("label").strip()
+        if not base or not label:
+            return
+        item["name"] = base
+        item["symbol"] = label
+
+    def _normalize_compound_name_symbols(self, reaction: Dict) -> Dict:
+        """Normalize name/symbol separation for all compound-role arrays."""
+        for field in (
+            "substrates",
+            "products",
+            "catalysts",
+            "ligands",
+            "other_components",
+            "additives",
+            "reagents",
+            "intermediates",
+        ):
+            values = reaction.get(field)
+            if not isinstance(values, list):
+                continue
+            for item in values:
+                self._split_trailing_reported_symbol(item)
+        return reaction
+
     def sanitize_reaction_schema(
         self,
         reaction: Dict,
@@ -3347,6 +3740,9 @@ Available GP candidates:
             return reaction
 
         reaction = self._normalize_multistep_schema(reaction)
+        reaction = self._normalize_condition_amount_key(reaction)
+        reaction = self._normalize_compound_name_symbols(reaction)
+        self._validate_single_step_compound_arrays(reaction)
         ligands = reaction.get("ligands")
         if ligands is None:
             reaction["ligands"] = []
@@ -3358,6 +3754,8 @@ Available GP candidates:
                 if not isinstance(ligand, dict) or not str(ligand.get("name") or "").strip():
                     continue
                 clean = {"name": str(ligand["name"]).strip()}
+                if self._has_meaningful_value(ligand.get("symbol")):
+                    clean["symbol"] = str(ligand["symbol"]).strip()
                 if reaction.get("step_count") is not None:
                     step = self._normalize_step_number(ligand.get("step"))
                     if step is None:
@@ -3415,7 +3813,7 @@ Available GP candidates:
             response = self.client.chat.completions.create(
                 model=self.extract_model,
                 messages=[
-                    {"role": "system", "content": self.EXTRACTION_PROMPT},
+                    {"role": "system", "content": self.STRUCTURED_REACTION_PROMPT},
                     {
                         "role": "user",
                         "content": (
@@ -3471,6 +3869,669 @@ Available GP candidates:
         ) + int(result.get("audit_recovered") or 0)
         return result.get("reactions") or []
 
+    @staticmethod
+    def _reaction_gp_context(gp_label: str, template: Dict) -> Dict:
+        """Project a validated GP template onto the reaction-only context."""
+        procedure_details = []
+        for value in template.get("procedure_details") or []:
+            if not isinstance(value, dict):
+                continue
+            item = {
+                key: value.get(key)
+                for key in ("sequence", "step", "detail")
+                if value.get(key) is not None
+            }
+            if item:
+                procedure_details.append(item)
+        projected = {
+            "gp_id": str(template.get("gp_id") or gp_label),
+            "reaction_type": template.get("reaction_type"),
+            "substrates": template.get("substrates") or [],
+            "catalysts": template.get("catalysts") or [],
+            "ligands": template.get("ligands") or [],
+            "other_components": template.get("other_components") or [],
+            "intermediates": template.get("intermediates") or [],
+            "conditions": template.get("conditions") or {},
+            "procedure_details": procedure_details,
+        }
+        if template.get("step_count") is not None:
+            projected["step_count"] = template["step_count"]
+        return projected
+
+    def _fallback_router_from_selected_gp(
+        self,
+        selected_gp_texts: Dict[str, str],
+        gp_selection_debug: Optional[Dict] = None,
+        reason: str = "",
+    ) -> Dict:
+        selected_keys = list((selected_gp_texts or {}).keys())
+        if selected_keys:
+            route = "gp_only"
+            jobs = [{
+                "job_id": "gp_1",
+                "mode": "gp",
+                "gp_keys": selected_keys,
+                "scope": "fallback GP extraction for selected procedures",
+                "source_pages": [],
+            }]
+        else:
+            route = "non_gp_only"
+            jobs = [{
+                "job_id": "non_gp_1",
+                "mode": "non_gp",
+                "gp_keys": [],
+                "scope": "fallback standalone non-GP extraction",
+                "source_pages": [],
+            }]
+        return {
+            "route": route,
+            "jobs": jobs,
+            "confidence": "low",
+            "reason": reason or "router fallback",
+            "fallback": True,
+            "gp_selection": dict(gp_selection_debug or {}),
+        }
+
+    def route_reaction_chunk(
+        self,
+        chunk_text: str,
+        gp_texts: Optional[Dict[str, str]],
+    ) -> Dict:
+        """Use an LLM router to split a chunk into GP/non-GP extraction jobs."""
+        valid_gp_texts = {
+            key: text for key, text in (gp_texts or {}).items()
+            if isinstance(text, str) and text.strip()
+        }
+        if not valid_gp_texts:
+            router = self._fallback_router_from_selected_gp(
+                {},
+                {"mode": "none", "selected_gp_keys": []},
+                reason="no GP candidates available",
+            )
+            router["fallback"] = False
+            router["confidence"] = "high"
+            return router
+
+        if not getattr(self, "client", None):
+            selected = self.select_gp_for_chunk(chunk_text, valid_gp_texts)
+            return self._fallback_router_from_selected_gp(
+                selected,
+                getattr(self, "last_gp_selection_debug", {}) or {},
+                reason="router LLM unavailable",
+            )
+
+        candidates = self._build_gp_resolution_candidates(valid_gp_texts)
+        try:
+            response = self.client.chat.completions.create(
+                model=self.extract_model,
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You route chemistry SI reaction chunks. Return valid JSON only.",
+                    },
+                    {
+                        "role": "user",
+                        "content": self.CHUNK_REACTION_ROUTER_PROMPT.format(
+                            chunk_text=chunk_text[:5000],
+                            gp_candidates=json.dumps(candidates, ensure_ascii=False, indent=2),
+                        ),
+                    },
+                ],
+                temperature=0.0,
+            )
+            parsed = self._parse_compact_json_response(response.choices[0].message.content or "")
+            router = self._normalize_reaction_router(parsed, valid_gp_texts)
+            self.last_gp_selection_debug = {
+                "mode": "router",
+                "selected_gp_keys": sorted({
+                    key
+                    for job in router.get("jobs", [])
+                    if job.get("mode") == "gp"
+                    for key in job.get("gp_keys", [])
+                }),
+                "route": router.get("route"),
+                "confidence": router.get("confidence"),
+                "reason": router.get("reason"),
+            }
+            return router
+        except Exception as exc:
+            selected = self.select_gp_for_chunk(chunk_text, valid_gp_texts)
+            router = self._fallback_router_from_selected_gp(
+                selected,
+                getattr(self, "last_gp_selection_debug", {}) or {},
+                reason="router_error",
+            )
+            router["router_error"] = f"{type(exc).__name__}: {exc}"
+            return router
+
+    def _normalize_reaction_router(self, parsed, gp_texts: Dict[str, str]) -> Dict:
+        if not isinstance(parsed, dict):
+            raise ValueError("router returned non-object JSON")
+        allowed_routes = {"gp_only", "non_gp_only", "mixed", "none"}
+        route = str(parsed.get("route") or "").strip()
+        if route not in allowed_routes:
+            raise ValueError(f"invalid router route: {route}")
+
+        raw_jobs = parsed.get("jobs") if isinstance(parsed.get("jobs"), list) else []
+        jobs = []
+        for index, raw_job in enumerate(raw_jobs, 1):
+            if not isinstance(raw_job, dict):
+                continue
+            mode = str(raw_job.get("mode") or "").strip()
+            if mode not in {"gp", "non_gp"}:
+                continue
+            gp_keys = raw_job.get("gp_keys") if isinstance(raw_job.get("gp_keys"), list) else []
+            gp_keys = [
+                str(key)
+                for key in gp_keys
+                if str(key) in gp_texts
+            ]
+            if mode == "gp" and not gp_keys:
+                continue
+            if mode == "non_gp":
+                gp_keys = []
+            jobs.append({
+                "job_id": str(raw_job.get("job_id") or f"{mode}_{index}"),
+                "mode": mode,
+                "gp_keys": gp_keys,
+                "scope": str(raw_job.get("scope") or ""),
+                "source_pages": self._normalize_source_pages(raw_job.get("source_pages")),
+            })
+
+        if route == "none":
+            jobs = []
+        elif route == "gp_only":
+            jobs = [job for job in jobs if job["mode"] == "gp"]
+        elif route == "non_gp_only":
+            jobs = [job for job in jobs if job["mode"] == "non_gp"]
+        elif route == "mixed":
+            has_gp = any(job["mode"] == "gp" for job in jobs)
+            has_non_gp = any(job["mode"] == "non_gp" for job in jobs)
+            if not (has_gp and has_non_gp):
+                raise ValueError("mixed route requires both gp and non_gp jobs")
+
+        if route != "none" and not jobs:
+            raise ValueError("router returned no executable jobs")
+
+        return {
+            "route": route,
+            "jobs": jobs,
+            "confidence": parsed.get("confidence"),
+            "reason": parsed.get("reason"),
+        }
+
+    def _build_gp_block_for_job(
+        self,
+        job: Dict,
+        gp_templates: Optional[Dict[str, Dict]],
+    ) -> Tuple[str, List[str]]:
+        gp_entries = []
+        invalid_gp_labels = []
+        for label in job.get("gp_keys") or []:
+            template = (gp_templates or {}).get(label)
+            if not isinstance(template, dict) or template.get("status") != "valid":
+                invalid_gp_labels.append(label)
+                continue
+            reaction_context = self._reaction_gp_context(label, template)
+            text = json.dumps(reaction_context, ensure_ascii=False, sort_keys=True, indent=2)
+            gp_entries.append(f"=== {label} ===\n{text}")
+        if invalid_gp_labels:
+            return "", invalid_gp_labels
+        if not gp_entries:
+            return "", []
+        return self.GP_INJECTION_TEMPLATE.format(gp_block="\n\n".join(gp_entries)), []
+
+    def _stage2_prompt_for_job(self, job: Dict) -> Tuple[str, str]:
+        mode = str(job.get("mode") or "")
+        if mode == "mixed":
+            return self.MIXED_REACTION_PROMPT, "mixed_gp_non_gp"
+        if mode == "gp":
+            return self.STRUCTURED_REACTION_PROMPT, "gp_template"
+        return self.NON_GP_REACTION_PROMPT, "non_gp"
+
+    @staticmethod
+    def _chunk_has_target_cue(chunk_text: str) -> bool:
+        text = chunk_text or ""
+        return bool(re.search(
+            r"(?i)(?:\b\d{1,3}(?:\.\d+)?\s*%(?:\s*\([^)]{1,80}\))?\s*(?:yield|ee|e\.e\.)\b|"
+            r"\byield\s*\d{1,3}(?:\.\d+)?\s*%|"
+            r"\ber\s*[:=]?\s*\d+\s*:\s*\d+)",
+            text,
+        ))
+
+    @staticmethod
+    def _reaction_has_product(reaction: Dict) -> bool:
+        products = reaction.get("products")
+        if not isinstance(products, list):
+            return False
+        return any(isinstance(product, dict) and product.get("name") for product in products)
+
+    @staticmethod
+    def _reaction_targets_all_empty(reaction: Dict) -> bool:
+        targets = reaction.get("targets")
+        if not isinstance(targets, dict):
+            return True
+        return not any(targets.get(key) for key in ("yield", "ee", "er"))
+
+    def _detect_missing_gp_targets_for_retry(self, chunk_text: str, reactions: List[Dict], job: Dict) -> Optional[str]:
+        if str(job.get("mode") or "") not in {"gp", "mixed"}:
+            return None
+        if not self._chunk_has_target_cue(chunk_text):
+            return None
+        missing_ids = []
+        for reaction in reactions or []:
+            if not isinstance(reaction, dict):
+                continue
+            if self._reaction_has_product(reaction) and self._reaction_targets_all_empty(reaction):
+                missing_ids.append(str(reaction.get("id") or "<missing id>"))
+        if not missing_ids:
+            return None
+        preview = ", ".join(missing_ids[:5])
+        if len(missing_ids) > 5:
+            preview += f", ... (+{len(missing_ids) - 5} more)"
+        return (
+            "Previous output missed targets. Extract percent-only yield/ee values from "
+            "the concrete entry line before NMR/HPLC/HRMS text. Use \"81%\", not "
+            "\"81% yield\" or \"81% (2.1 g) yield\". "
+            f"Reactions with products but empty targets: {preview}."
+        )
+
+    def _detect_unresolved_generic_substrates_for_retry(self, reactions: List[Dict], job: Dict) -> Optional[str]:
+        missing = []
+        for reaction in reactions or []:
+            if not isinstance(reaction, dict):
+                continue
+            product_names = self._specific_product_names(reaction)
+            if len(product_names) != 1:
+                continue
+            for index, substrate in enumerate(reaction.get("substrates") or []):
+                if not isinstance(substrate, dict):
+                    continue
+                name = str(substrate.get("name") or "").strip()
+                if not self._is_generic_substrate_name(name):
+                    continue
+                source = str(substrate.get("resolution_source") or "").strip()
+                method = str(substrate.get("resolution_method") or "").strip()
+                if source == "product_name" or method == "gp_product_to_substrate_mapping":
+                    continue
+                missing.append(
+                    f"{reaction.get('id') or '<missing id>'} substrate[{index}]={name!r}"
+                )
+        if not missing:
+            return None
+        preview = ", ".join(missing[:5])
+        if len(missing) > 5:
+            preview += f", ... (+{len(missing) - 5} more)"
+        return (
+            "Previous output left a generic substrate unresolved although a unique product name is available. "
+            "For every generic substrate, either emit the full high-confidence product_name resolution metadata "
+            "or keep the generic name only when the mapping is ambiguous. If chemically valid and one-to-one, "
+            "write the concrete substrate name directly in substrates[].name. "
+            f"Unresolved generic substrates: {preview}."
+        )
+
+    @staticmethod
+    def _has_meaningful_value(value: Any) -> bool:
+        if value is None:
+            return False
+        if isinstance(value, str):
+            return bool(value.strip())
+        if isinstance(value, list):
+            return any(SIExtractor._has_meaningful_value(item) for item in value)
+        if isinstance(value, dict):
+            return any(SIExtractor._has_meaningful_value(item) for item in value.values())
+        return True
+
+    def _template_for_gp_job_reaction(
+        self,
+        reaction: Dict,
+        job: Dict,
+        gp_templates: Optional[Dict[str, Dict]],
+    ) -> Tuple[Optional[str], Optional[Dict], List[str]]:
+        if not gp_templates:
+            return None, None, []
+        gp_keys = [str(key) for key in (job.get("gp_keys") or []) if str(key)]
+        gp_key, template = self._gp_template_for_reaction(reaction, gp_templates)
+        missing = []
+        if not reaction.get("_gp_source"):
+            missing.append("_gp_source")
+        if not gp_key and len(gp_keys) == 1:
+            gp_key = gp_keys[0]
+            candidate = gp_templates.get(gp_key)
+            template = candidate if isinstance(candidate, dict) else None
+        if not gp_key or not isinstance(template, dict) or template.get("status") != "valid":
+            return gp_key, None, missing
+        return gp_key, template, missing
+
+    def _detect_missing_gp_template_fields_for_retry(
+        self,
+        reactions: List[Dict],
+        job: Dict,
+        gp_templates: Optional[Dict[str, Dict]],
+    ) -> Optional[str]:
+        mode = str(job.get("mode") or "")
+        if mode not in {"gp", "mixed"} or not gp_templates:
+            return None
+        missing_by_reaction = []
+        for reaction in reactions or []:
+            if not isinstance(reaction, dict):
+                continue
+            if mode == "mixed" and not reaction.get("_gp_source"):
+                continue
+            _, template, missing_fields = self._template_for_gp_job_reaction(
+                reaction, job, gp_templates
+            )
+            if not template:
+                if missing_fields:
+                    missing_by_reaction.append(
+                        f"{reaction.get('id') or '<missing id>'}: {', '.join(missing_fields)}"
+                    )
+                continue
+            for field in ("substrates", "catalysts", "ligands", "other_components", "intermediates"):
+                if self._has_meaningful_value(template.get(field)) and not self._has_meaningful_value(reaction.get(field)):
+                    missing_fields.append(field)
+            template_conditions = template.get("conditions")
+            reaction_conditions = reaction.get("conditions")
+            if isinstance(template_conditions, dict) and self._has_meaningful_value(template_conditions):
+                if not isinstance(reaction_conditions, dict):
+                    missing_fields.append("conditions")
+                else:
+                    for key, value in template_conditions.items():
+                        if self._has_meaningful_value(value) and not self._has_meaningful_value(reaction_conditions.get(key)):
+                            missing_fields.append(f"conditions.{key}")
+            if template.get("reaction_type") and not reaction.get("reaction_type"):
+                missing_fields.append("reaction_type")
+            if template.get("step_count") is not None:
+                if reaction.get("step_count") != template.get("step_count"):
+                    missing_fields.append("step_count")
+            if missing_fields:
+                unique_fields = list(dict.fromkeys(missing_fields))
+                missing_by_reaction.append(
+                    f"{reaction.get('id') or '<missing id>'}: {', '.join(unique_fields)}"
+                )
+        if not missing_by_reaction:
+            return None
+        preview = "; ".join(missing_by_reaction[:5])
+        if len(missing_by_reaction) > 5:
+            preview += f"; ... (+{len(missing_by_reaction) - 5} more)"
+        return (
+            "Previous output omitted shared GP template fields. For every GP-referenced entry, "
+            "output a complete reaction by copying applicable substrates, catalysts, ligands, "
+            "other_components, conditions, intermediates, reaction_type, and step schema from "
+            "the supplied canonical GP template, then apply entry-specific overrides. "
+            "Do not treat products or targets as GP-template fields; products and yield/ee/er "
+            "must come from the concrete entry text. "
+            f"Missing GP-derived fields: {preview}."
+        )
+
+    def _stage2_user_content_for_job(
+        self,
+        chunk_text: str,
+        chunk_label: str,
+        job: Dict,
+        gp_block: str,
+        previous_schema_error: Optional[str] = None,
+        previous_target_error: Optional[str] = None,
+    ) -> str:
+        mode = str(job.get("mode") or "")
+        if mode == "gp":
+            instruction = (
+                "Extract all qualifying reactions in this chunk that explicitly rely on "
+                "the supplied canonical General Procedure template(s). "
+                "Do not extract standalone non-GP reactions in this job.\n"
+            )
+        elif mode == "mixed":
+            instruction = (
+                "Extract all qualifying reactions in this mixed chunk. Use the supplied "
+                "canonical General Procedure template(s) only for entries that explicitly "
+                "rely on them and mark those records with _gp_source. Extract standalone "
+                "or downstream transformations as non-GP reactions without inheriting GP "
+                "fields and without _gp_source. Do not output the same concrete reaction "
+                "twice as both GP and non-GP.\n"
+            )
+        else:
+            instruction = (
+                "Extract all standalone qualifying reactions in this chunk that do not rely on "
+                "any General Procedure. Skip GP-referenced entries in this job.\n"
+            )
+        retry_feedback = ""
+        if previous_schema_error:
+            retry_feedback = (
+                "\nPrevious output failed schema validation: "
+                f"{previous_schema_error}\n"
+                "Fix only the JSON schema shape while preserving the extracted chemistry. "
+                "Compound arrays must contain objects, not strings, for both single-step "
+                "and multi-step reactions. Split each string into {\"name\": ..., "
+                "\"amount\": ...}; keep yield only in targets. For multi-step reactions, "
+                "compound objects must include integer step, intermediates must use "
+                "produced_in_step/consumed_in_step, and conditions must be an object. "
+                "In mixed GP-referenced reactions using a multi-step GP template, every "
+                "substrate/product/catalyst/ligand/other_component object must include "
+                "integer step. Final reported products usually use step=step_count. "
+                "For single-step standalone literature-procedure entries, remove "
+                "step_count and do not use item-level step.\n"
+            )
+        if previous_target_error:
+            retry_feedback += f"\n{previous_target_error}\n"
+        return (
+            f"Processing chunk: {chunk_label}\n"
+            f"Extraction job: {job.get('job_id')} ({mode})\n"
+            f"{instruction}"
+            f"{retry_feedback}"
+            "If a full chemical name is not explicitly present in this text, "
+            "keep the short label/code in symbol and do not invent a full name, "
+            "including generic substrate names that might later be resolved from a reported product. "
+            "Product-derived generic-substrate resolution is handled after extraction. "
+            "Registry-based name completion is handled after extraction.\n"
+            f"{gp_block}"
+            f"\nText content:\n{chunk_text}"
+        )
+
+    def _run_stage2_job(
+        self,
+        chunk_text: str,
+        chunk_label: str,
+        job: Dict,
+        gp_block: str,
+        allowed_page_nums: Optional[List[int]],
+        gp_templates: Optional[Dict[str, Dict]] = None,
+        allow_non_gp_split_fallback: bool = False,
+    ) -> Dict:
+        system_prompt, prompt_mode = self._stage2_prompt_for_job(job)
+        attempts = []
+        previous_schema_error = None
+        previous_target_error = None
+        for attempt in range(3):
+            raw_preview = ""
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.extract_model,
+                    messages=[
+                        {"role": "system", "content": system_prompt},
+                        {
+                            "role": "user",
+                            "content": self._stage2_user_content_for_job(
+                                chunk_text,
+                                chunk_label,
+                                job,
+                                gp_block,
+                                previous_schema_error=previous_schema_error,
+                                previous_target_error=previous_target_error,
+                            ),
+                        },
+                    ],
+                    temperature=0.1,
+                )
+                gpt_response = response.choices[0].message.content or ""
+                raw_preview = gpt_response[:2000]
+                if not gpt_response.strip():
+                    attempts.append({
+                        "attempt": attempt + 1,
+                        "exception_type": "EmptyResponse",
+                        "message": "empty response",
+                        "raw_response_preview": raw_preview,
+                        "prompt_mode": prompt_mode,
+                    })
+                    print(f"  [WARN] Stage2 attempt {attempt+1}/3: empty response ({chunk_label}, {job.get('job_id')})")
+                    continue
+                reactions = self.sanitize_reactions_schema(
+                    self.parse_and_validate_json(gpt_response),
+                    allowed_page_nums=allowed_page_nums,
+                )
+                template_error = self._detect_missing_gp_template_fields_for_retry(
+                    reactions, job, gp_templates
+                )
+                target_error = self._detect_missing_gp_targets_for_retry(chunk_text, reactions, job)
+                quality_errors = [error for error in (template_error, target_error) if error]
+                if quality_errors and attempt < 2:
+                    if len(quality_errors) > 1:
+                        exception_type = "ExtractionQualityRetry"
+                    elif template_error:
+                        exception_type = "MissingGPTemplateFields"
+                    else:
+                        exception_type = "MissingTargets"
+                    quality_error = "\n".join(quality_errors)
+                    attempts.append({
+                        "attempt": attempt + 1,
+                        "exception_type": exception_type,
+                        "message": quality_error[:1000],
+                        "raw_response_preview": raw_preview,
+                        "prompt_mode": prompt_mode,
+                    })
+                    previous_schema_error = None
+                    previous_target_error = quality_error[:1000]
+                    print(f"  [WARN] Stage2 attempt {attempt+1}/3 quality retry ({chunk_label}, {job.get('job_id')}): {quality_error}")
+                    continue
+                previous_target_error = None
+                missing = self.stage2_audit_missing_reactions(
+                    chunk_text,
+                    chunk_label,
+                    reactions,
+                    gp_block=gp_block,
+                )
+                if missing:
+                    print(f"  [Stage2 audit] recovered {len(missing)} omitted reactions ({chunk_label}, {job.get('job_id')})")
+                    reactions = self.merge_results([reactions, missing])
+                return {
+                    "reactions": reactions,
+                    "audit_recovered": len(missing),
+                    "error": None,
+                    "job_log": {
+                        "job_id": job.get("job_id"),
+                        "mode": job.get("mode"),
+                        "prompt_mode": prompt_mode,
+                        "gp_keys": list(job.get("gp_keys") or []),
+                        "reaction_count": len(reactions),
+                        "reaction_ids": [
+                            str(reaction.get("id"))
+                            for reaction in reactions
+                            if isinstance(reaction, dict) and reaction.get("id")
+                        ],
+                        "attempts": attempts,
+                    },
+                }
+            except Exception as e:
+                attempts.append({
+                    "attempt": attempt + 1,
+                    "exception_type": type(e).__name__,
+                    "message": str(e)[:1000],
+                    "raw_response_preview": raw_preview,
+                    "prompt_mode": prompt_mode,
+                })
+                previous_schema_error = str(e)[:1000]
+                previous_target_error = None
+                print(f"  [WARN] Stage2 attempt {attempt+1}/3 failed ({chunk_label}, {job.get('job_id')}): {e}")
+
+        error = "stage2_failed_after_retries"
+        fallback = None
+        if job.get("mode") == "non_gp" and allow_non_gp_split_fallback:
+            fallback = self._retry_non_gp_job_by_page(chunk_text, chunk_label, job)
+            if fallback.get("reactions"):
+                return {
+                    "reactions": fallback.get("reactions") or [],
+                    "audit_recovered": int(fallback.get("audit_recovered") or 0),
+                    "error": None,
+                    "job_log": {
+                        "job_id": job.get("job_id"),
+                        "mode": job.get("mode"),
+                        "prompt_mode": prompt_mode,
+                        "gp_keys": [],
+                        "reaction_count": len(fallback.get("reactions") or []),
+                        "reaction_ids": [
+                            str(reaction.get("id"))
+                            for reaction in fallback.get("reactions") or []
+                            if isinstance(reaction, dict) and reaction.get("id")
+                        ],
+                        "attempts": attempts,
+                        "fallback": fallback.get("job_logs") or [],
+                        "fallback_recovered_count": len(fallback.get("reactions") or []),
+                    },
+                }
+
+        return {
+            "reactions": [],
+            "audit_recovered": 0,
+            "error": error,
+            "job_log": {
+                "job_id": job.get("job_id"),
+                "mode": job.get("mode"),
+                "prompt_mode": prompt_mode,
+                "gp_keys": list(job.get("gp_keys") or []),
+                "reaction_count": 0,
+                "reaction_ids": [],
+                "attempts": attempts,
+                "fallback": (fallback or {}).get("job_logs") or [],
+            },
+        }
+
+    def _split_stage2_text_by_page(self, chunk_text: str) -> List[Tuple[str, str]]:
+        pattern = re.compile(r'(?m)^---\s*Page\s+(\d+)\s*---\s*$')
+        matches = list(pattern.finditer(chunk_text or ""))
+        if not matches:
+            return []
+        pages = []
+        for index, match in enumerate(matches):
+            end = matches[index + 1].start() if index + 1 < len(matches) else len(chunk_text)
+            page_text = chunk_text[match.start():end].strip()
+            pages.append((match.group(1), page_text))
+        candidates = [(f"Page {page}", text) for page, text in pages if text]
+        for index in range(len(pages) - 1):
+            page_a, text_a = pages[index]
+            page_b, text_b = pages[index + 1]
+            joined = f"{text_a}\n{text_b}".strip()
+            if joined:
+                candidates.append((f"Pages {page_a}-{page_b}", joined))
+        return candidates
+
+    def _retry_non_gp_job_by_page(self, chunk_text: str, chunk_label: str, job: Dict) -> Dict:
+        reactions_by_candidate = []
+        job_logs = []
+        audit_recovered = 0
+        for suffix, sub_text in self._split_stage2_text_by_page(chunk_text):
+            allowed_pages = self._source_page_numbers_from_chunk_text(sub_text)
+            sub_job = dict(job)
+            sub_job["job_id"] = f"{job.get('job_id')}_fallback_{len(job_logs)+1}"
+            result = self._run_stage2_job(
+                sub_text,
+                f"{chunk_label} {suffix}",
+                sub_job,
+                gp_block="",
+                allowed_page_nums=allowed_pages,
+                allow_non_gp_split_fallback=False,
+            )
+            job_log = result.get("job_log") or {}
+            job_log["fallback_source"] = suffix
+            job_logs.append(job_log)
+            audit_recovered += int(result.get("audit_recovered") or 0)
+            if result.get("reactions"):
+                reactions_by_candidate.append(result.get("reactions") or [])
+        merged = self.merge_results(reactions_by_candidate) if reactions_by_candidate else []
+        return {
+            "reactions": merged,
+            "audit_recovered": audit_recovered,
+            "job_logs": job_logs,
+        }
+
     def stage2_extract_with_meta(self, chunk_text: str, chunk_label: str,
                                  registry: Optional[Dict[str, str]] = None,
                                  gp_texts: Optional[Dict[str, str]] = None,
@@ -3484,104 +4545,103 @@ Available GP candidates:
             registry: symbol→name 映射表（可选）
             gp_texts: 原始GP文本 dict（可选），格式: {"GP标签": "GP原文..."}
         """
-        # 构建 registry 注入块
-        # 构建 GP 注入块：只注入当前 chunk 明确引用或 LLM 解析到的 GP
         allowed_page_nums = self._source_page_numbers_from_chunk_text(chunk_text)
-        gp_block = ""
         if not hasattr(self, "_gp_selection_lock"):
             self._gp_selection_lock = threading.Lock()
         with self._gp_selection_lock:
             selected_gp_texts = self.select_gp_for_chunk(chunk_text, gp_texts)
             gp_selection_debug = dict(getattr(self, "last_gp_selection_debug", {}) or {})
-        if selected_gp_texts:
-            gp_entries = []
-            for label, text in selected_gp_texts.items():
-                template = (gp_templates or {}).get(label)
-                if not isinstance(template, dict) or template.get("status") != "valid":
-                    raise ValueError(f"No validated canonical template for referenced GP: {label}")
-                text = json.dumps(template, ensure_ascii=False, sort_keys=True, indent=2)
-                if isinstance(text, str):
-                    # 截断过长的GP文本
-                    text_truncated = text
-                    entry = f"""=== {label} ===
-{text_truncated}"""
-                    gp_entries.append(entry)
-            
-            if gp_entries:
-                gp_block = self.GP_INJECTION_TEMPLATE.format(
-                    gp_block="\n\n".join(gp_entries)
-                )
-                if self._multistep_review_needed("\n\n".join(gp_entries)):
-                    gp_block += (
-                        "\nMULTI-STEP REVIEW NOTE:\n"
-                        "The supplied GP may describe sequential chemical transformations. "
-                        "Review semantically whether there are multiple chemical transformations "
-                        "or only one reaction followed by workup/purification. Use the multi-step "
-                        "schema only for true multi-step chemistry; if the GP is multi-step, every "
-                        "GP-referenced concrete entry must inherit that schema.\n"
-                    )
 
-        for attempt in range(3):
-            try:
-                response = self.client.chat.completions.create(
-                    model=self.extract_model,
-                    messages=[
-                        {
-                            "role": "system",
-                            "content": self.EXTRACTION_PROMPT
-                        },
-                        {
-                            "role": "user",
-                            "content": (
-                                f"Processing chunk: {chunk_label}\n"
-                                f"Extract ALL qualifying reactions from the text below. Do not omit any.\n"
-                                "If a full chemical name is not explicitly present in this text, "
-                                "keep the short label/code in symbol and do not invent a full name. "
-                                "Registry-based name completion is handled after extraction.\n"
-                                f"{gp_block}"
-                                f"\nText content:\n{chunk_text}"
-                            )
-                        }
-                    ],
-                    temperature=0.1,
-                )
-                gpt_response = response.choices[0].message.content or ""
-                if not gpt_response.strip():
-                    print(f"  [WARN] Stage2 attempt {attempt+1}/3: empty response ({chunk_label})")
-                    continue
-                reactions = self.sanitize_reactions_schema(
-                    self.parse_and_validate_json(gpt_response),
-                    allowed_page_nums=allowed_page_nums,
-                )
-                missing = self.stage2_audit_missing_reactions(
-                    chunk_text,
-                    chunk_label,
-                    reactions,
-                    gp_block=gp_block,
-                )
-                if missing:
-                    print(f"  [Stage2 audit] recovered {len(missing)} omitted reactions ({chunk_label})")
+        all_job_reactions = []
+        job_logs = []
+        errors = []
+        audit_recovered = 0
+        selected_gp_keys = [
+            key
+            for key in (selected_gp_texts or {}).keys()
+            if isinstance(key, str) and key
+        ]
+        if selected_gp_keys:
+            dispatch_mode = "gp_template_forced_mixed"
+            executable_jobs = [{
+                "job_id": "mixed_1",
+                "mode": "mixed",
+                "gp_keys": selected_gp_keys,
+                "source_pages": allowed_page_nums,
+            }]
+        else:
+            dispatch_mode = "non_gp_only"
+            executable_jobs = [{
+                "job_id": "non_gp_1",
+                "mode": "non_gp",
+                "gp_keys": [],
+                "source_pages": allowed_page_nums,
+            }]
+        dispatch_info = {
+            "dispatch_mode": dispatch_mode,
+            "selected_gp_keys": selected_gp_keys,
+            "router_disabled": True,
+        }
+
+        for job in executable_jobs:
+            gp_block = ""
+            if job.get("mode") in {"gp", "mixed"}:
+                gp_block, invalid_gp_labels = self._build_gp_block_for_job(job, gp_templates)
+                if invalid_gp_labels:
+                    gp_selection_debug["invalid_gp_templates"] = invalid_gp_labels
+                    error = "invalid_gp_template: " + ", ".join(invalid_gp_labels)
+                    job_logs.append({
+                        "job_id": job.get("job_id"),
+                        "mode": job.get("mode"),
+                        "prompt_mode": "mixed_gp_non_gp" if job.get("mode") == "mixed" else "gp_template",
+                        "gp_keys": list(job.get("gp_keys") or []),
+                        "reaction_count": 0,
+                        "reaction_ids": [],
+                        "error": error,
+                    })
+                    dispatch_info["invalid_gp_templates"] = invalid_gp_labels
                     return {
-                        "reactions": self.merge_results([reactions, missing]),
-                        "audit_recovered": len(missing),
+                        "reactions": [],
+                        "audit_recovered": 0,
                         "gp_selection_debug": gp_selection_debug,
-                        "error": None,
+                        "dispatch": dispatch_info,
+                        "jobs": job_logs,
+                        "error": error,
                     }
-                return {
-                    "reactions": reactions,
-                    "audit_recovered": 0,
-                    "gp_selection_debug": gp_selection_debug,
-                    "error": None,
-                }
-            except Exception as e:
-                print(f"  [WARN] Stage2 attempt {attempt+1}/3 failed ({chunk_label}): {e}")
 
-        print(f"  [ERROR] Stage2 最终失败 ({chunk_label})")
+            result = self._run_stage2_job(
+                chunk_text,
+                chunk_label,
+                job,
+                gp_block=gp_block,
+                allowed_page_nums=allowed_page_nums,
+                gp_templates=gp_templates,
+            )
+            job_log = result.get("job_log") or {}
+            if result.get("error"):
+                job_log["error"] = result.get("error")
+                errors.append(f"{job.get('job_id')}: {result.get('error')}")
+            job_logs.append(job_log)
+            audit_recovered += int(result.get("audit_recovered") or 0)
+            if result.get("reactions"):
+                all_job_reactions.append(result.get("reactions") or [])
+
+        reactions = self.merge_results(all_job_reactions) if all_job_reactions else []
+        if errors and not reactions:
+            print(f"  [ERROR] Stage2 最终失败 ({chunk_label})")
+            error_value = "stage2_failed_after_retries"
+        elif errors:
+            error_value = "; ".join(errors)
+        else:
+            error_value = None
+
         return {
-            "reactions": [],
-            "audit_recovered": 0,
+            "reactions": reactions,
+            "audit_recovered": audit_recovered,
             "gp_selection_debug": gp_selection_debug,
-            "error": "stage2_failed_after_retries",
+            "dispatch": dispatch_info,
+            "jobs": job_logs,
+            "error": error_value,
         }
 
     # =====================================================================
@@ -3622,32 +4682,26 @@ Available GP candidates:
 
         return self._renumber_reaction_ids(merged)
 
-    def _reaction_id_prefix(self, reaction_id: str) -> str:
+    def _reaction_id_prefix(self, reaction: Dict) -> str:
         """Return the stable id prefix used for final sequential numbering."""
-        rid = str(reaction_id or "").strip()
-        if not rid:
-            return "Reaction"
-        match = re.match(r"^(.*?)-Entry\d+$", rid)
-        if match:
-            prefix = match.group(1).strip()
-            return prefix or "Reaction"
-        if "-Entry" in rid:
-            prefix = rid.split("-Entry", 1)[0].strip()
-            return prefix or "Reaction"
-        return rid or "Reaction"
+        gp_source = str(reaction.get("_gp_source") or "").strip()
+        if gp_source:
+            return gp_source
+        return "NonGP"
 
     def _renumber_reaction_ids(self, reactions: List[Dict]) -> List[Dict]:
-        """Make final reaction ids unique and sequential within each original prefix."""
+        """Make final reaction ids unique and sequential without filtering reactions."""
         counters = {}
         renumbered = []
         for reaction in reactions:
             if not isinstance(reaction, dict):
+                renumbered.append(reaction)
                 continue
             new_reaction = dict(reaction)
             original_id = str(new_reaction.get("id") or "").strip()
             if original_id and not new_reaction.get("_original_id"):
                 new_reaction["_original_id"] = original_id
-            prefix = self._reaction_id_prefix(original_id)
+            prefix = self._reaction_id_prefix(new_reaction)
             counters[prefix] = counters.get(prefix, 0) + 1
             new_reaction["id"] = f"{prefix}-Entry{counters[prefix]}"
             renumbered.append(new_reaction)
@@ -3818,11 +4872,14 @@ Available GP candidates:
             if not isinstance(overrides, dict):
                 overrides = {}
 
-            current_type = str(effective.get("reaction_type") or "").strip().casefold()
-            if template.get("reaction_type") and current_type in {"", "unknown", "unknown reaction"}:
+            if template.get("reaction_type"):
                 effective["reaction_type"] = template["reaction_type"]
             if not effective.get("substrates") and template.get("substrates"):
                 effective["substrates"] = [dict(item) for item in template["substrates"]]
+            if "intermediates" in template and not effective.get("intermediates"):
+                effective["intermediates"] = [
+                    dict(item) for item in template.get("intermediates", [])
+                ]
 
             for field in ("catalysts", "ligands", "other_components"):
                 value = [dict(item) for item in template.get(field, [])]
@@ -3989,6 +5046,17 @@ Available GP candidates:
         output_file = Path(output_path) if output_path else output_dir / f"{Path(pdf_path).stem}.json"
         output_file.parent.mkdir(parents=True, exist_ok=True)
         self.stage2_audit_recovered = 0
+        self.last_substrate_name_resolution_reviews = []
+        self.last_substrate_name_resolution_stats = {"resolved": 0, "reviewed": 0}
+        self.last_generic_substrate_resolution_reviews = []
+        self.last_generic_substrate_resolution_stats = {
+            "candidates": 0,
+            "llm_calls": 0,
+            "candidate_substrates": 0,
+            "candidate_products": 0,
+            "resolved": 0,
+            "reviewed": 0,
+        }
 
         context_path_value = entity_context.get("_context_path")
         if context_path_value:
@@ -4058,7 +5126,7 @@ Available GP candidates:
             payload = {
                 "source": str(pdf_path),
                 "created_at": datetime.now().isoformat(),
-                "schema": "chunk_extraction_log_v1",
+                "schema": "chunk_extraction_log_v2",
                 "stats": {
                     "total_chunks": len(chunks),
                     "stage1_pass": sum(
@@ -4076,6 +5144,20 @@ Available GP candidates:
                     "stage2_total_reactions_before_merge": sum(
                         int(item.get("stage2", {}).get("reaction_count") or 0)
                         for item in chunk_extraction_log
+                    ),
+                    "stage2_error_count": sum(
+                        1 for item in chunk_extraction_log
+                        if item.get("stage2", {}).get("error")
+                    ),
+                    "invalid_gp_template_chunk_count": sum(
+                        1 for item in chunk_extraction_log
+                        if str(item.get("stage2", {}).get("error") or "").startswith("invalid_gp_template:")
+                    ),
+                    "stage2_job_error_count": sum(
+                        1
+                        for item in chunk_extraction_log
+                        for job in item.get("stage2", {}).get("jobs", [])
+                        if job.get("error")
                     ),
                 },
                 "chunks": chunk_extraction_log,
@@ -4098,8 +5180,12 @@ Available GP candidates:
                 } if gp_texts else {},
                 "general_procedure_templates": gp_templates,
                 "entity_context_path": entity_context.get("_context_path"),
+                "gp_template_log_path": entity_context.get("gp_template_log_path"),
                 "chunk_extraction_log_path": str(chunk_log_path),
                 "stats": stats_snapshot,
+                "substrate_name_resolution_reviews": list(
+                    getattr(self, "last_substrate_name_resolution_reviews", []) or []
+                ),
                 "reactions": reactions,
                 "metadata": entity_context.get("metadata"),
             }
@@ -4244,6 +5330,12 @@ Available GP candidates:
                             if isinstance(reaction, dict) and reaction.get("id")
                         ],
                     }
+                    if result.get("router"):
+                        log_item["stage2"]["router"] = result.get("router")
+                    if result.get("dispatch"):
+                        log_item["stage2"]["dispatch"] = result.get("dispatch")
+                    if result.get("jobs"):
+                        log_item["stage2"]["jobs"] = result.get("jobs")
                     if result.get("error"):
                         log_item["stage2"]["error"] = result.get("error")
                     if result.get("gp_selection_debug"):
@@ -4253,12 +5345,14 @@ Available GP candidates:
         else:
             for chunk, _screen in relevant_chunks:
                 label = f"{pdf_name} Chunk{chunk['chunk_id']} Pages[{chunk['page_range']}]"
-                reactions = self.stage2_extract(
+                stage2_result = self.stage2_extract_with_meta(
                     chunk['text'],
                     label,
                     gp_texts=gp_texts,
                     gp_templates=gp_templates,
                 )
+                reactions = stage2_result.get("reactions") or []
+                self.stage2_audit_recovered += int(stage2_result.get("audit_recovered") or 0)
                 log_item = chunk_log_by_id.get(chunk.get("chunk_id"))
                 if log_item is not None:
                     log_item["stage2"] = {
@@ -4270,9 +5364,20 @@ Available GP candidates:
                             if isinstance(reaction, dict) and reaction.get("id")
                         ],
                     }
+                    if stage2_result.get("router"):
+                        log_item["stage2"]["router"] = stage2_result.get("router")
+                    if stage2_result.get("dispatch"):
+                        log_item["stage2"]["dispatch"] = stage2_result.get("dispatch")
+                    if stage2_result.get("jobs"):
+                        log_item["stage2"]["jobs"] = stage2_result.get("jobs")
+                    if stage2_result.get("error"):
+                        log_item["stage2"]["error"] = stage2_result.get("error")
+                    if stage2_result.get("gp_selection_debug"):
+                        log_item["stage2"]["gp_selection"] = stage2_result.get("gp_selection_debug")
                 all_chunk_results.append(reactions)
                 _write_chunk_log()
                 partial_merged = self.sanitize_reactions_schema(self.merge_results(all_chunk_results))
+                partial_merged = self.validate_substrate_name_resolutions(partial_merged)
                 _atomic_write_json(
                     output_file,
                     _build_output_payload(
@@ -4281,6 +5386,22 @@ Available GP candidates:
                         completed_stage2_chunks=len(all_chunk_results),
                     ),
                 )
+
+        stage2_errors = [
+            {
+                "chunk_id": item.get("chunk_id"),
+                "page_range": item.get("page_range"),
+                "error": item.get("stage2", {}).get("error"),
+            }
+            for item in chunk_extraction_log
+            if item.get("stage2", {}).get("error")
+        ]
+        file_stats["stage2_error_count"] = len(stage2_errors)
+        file_stats["invalid_gp_template_chunk_count"] = sum(
+            1 for item in stage2_errors
+            if str(item.get("error") or "").startswith("invalid_gp_template:")
+        )
+        file_stats["stage2_errors"] = stage2_errors
 
         merged = self.merge_results(all_chunk_results)
         if registry and merged:
@@ -4293,11 +5414,21 @@ Available GP candidates:
             file_stats['registry_resolved_count'] = 0
             file_stats['registry_verified_count'] = 0
             file_stats['registry_conflict_count'] = 0
+        merged = self.resolve_generic_substrates_from_products(merged)
+        generic_resolution_stats = getattr(self, "last_generic_substrate_resolution_stats", {}) or {}
+        file_stats["generic_substrate_resolution_candidates"] = generic_resolution_stats.get("candidates", 0)
+        file_stats["generic_substrate_resolution_llm_calls"] = generic_resolution_stats.get("llm_calls", 0)
+        file_stats["generic_substrate_resolution_candidate_substrates"] = generic_resolution_stats.get("candidate_substrates", 0)
+        file_stats["generic_substrate_resolution_candidate_products"] = generic_resolution_stats.get("candidate_products", 0)
+        merged = self.validate_substrate_name_resolutions(merged)
+        substrate_resolution_stats = getattr(self, "last_substrate_name_resolution_stats", {}) or {}
+        file_stats["substrate_names_resolved_from_product"] = substrate_resolution_stats.get("resolved", 0)
+        file_stats["generic_substrates_resolved_from_product"] = substrate_resolution_stats.get("resolved", 0)
+        file_stats["substrate_name_resolution_review_count"] = substrate_resolution_stats.get("reviewed", 0)
+        file_stats["generic_substrate_resolution_review_count"] = substrate_resolution_stats.get("reviewed", 0)
         scaffold_mapping = entity_context.get("scaffold_substituent_mapping") or {}
         if scaffold_mapping and merged:
             merged = self.enrich_reactions_with_scaffold_mapping(merged, scaffold_mapping)
-        if gp_templates and merged:
-            merged = self.apply_gp_templates(merged, gp_templates)
         merged = self.sanitize_reactions_schema(merged)
         file_stats['stage2_audit_recovered'] = self.stage2_audit_recovered
         _write_chunk_log()
@@ -4401,6 +5532,430 @@ Available GP candidates:
         text = re.sub(r"\s+", " ", text)
         return text
 
+    def _is_generic_substrate_name(self, value: str) -> bool:
+        """Conservatively identify class-level substrate placeholders."""
+        text = self._normalize_registry_compare_name(value)
+        text = re.sub(r"^(?:the|a|an)\s+", "", text).strip()
+        if not text:
+            return True
+        generic_nouns = (
+            "substrate", "starting material", "aniline", "amine", "amide",
+            "alkene", "alkyne", "aldehyde", "ketone", "imine", "ester",
+            "carboxylic acid", "alcohol", "phenol", "aryl halide",
+        )
+        if text in generic_nouns:
+            return True
+        qualifier = r"(?:corresponding|appropriate|desired|substituted|generic)"
+        noun_pattern = "|".join(re.escape(noun) for noun in generic_nouns)
+        if re.fullmatch(rf"{qualifier}\s+(?:{noun_pattern})(?:\s+derivative)?", text):
+            return True
+        if re.fullmatch(rf"(?:{noun_pattern})\s+derivative", text):
+            return True
+        if re.fullmatch(r"substrate(?:\s+(?:amide|amine|alkene|alkyne|\w{1,5}))?", text):
+            return True
+        return False
+
+    def _specific_product_names(self, reaction: Dict) -> List[str]:
+        names = []
+        for product in reaction.get("products") or []:
+            if isinstance(product, dict):
+                name = str(product.get("name") or "").strip()
+            else:
+                name = str(product or "").strip()
+            if (
+                name
+                and not self._is_generic_substrate_name(name)
+                and not self._is_placeholder_name(name)
+                and not self._is_label_only_product_name(name)
+            ):
+                names.append(name)
+        return names
+
+    def _is_label_only_product_name(self, value: str) -> bool:
+        """Return true for product labels without a concrete chemical name."""
+        text = self._normalize_registry_compare_name(value)
+        if not text:
+            return True
+        label_prefixes = (
+            "product", "compound", "entry", "example", "substrate",
+            "oxindole", "amide", "material",
+        )
+        prefix_pattern = "|".join(re.escape(prefix) for prefix in label_prefixes)
+        if re.fullmatch(rf"(?:{prefix_pattern})\s+[a-z]?\d+[a-z]?", text):
+            return True
+        if re.fullmatch(r"[a-z]?\d+[a-z]?", text):
+            return True
+        return False
+
+    def _generic_substrate_resolution_review(
+        self,
+        reaction: Dict,
+        substrate_index: Optional[int],
+        original_name: str,
+        product_names: List[str],
+        reason: str,
+        detail: str = "",
+    ) -> Dict:
+        review = {
+            "reaction_id": str(reaction.get("id") or ""),
+            "substrate_index": substrate_index,
+            "original_name": original_name,
+            "candidate_name": None,
+            "product_names": product_names,
+            "reason": reason,
+        }
+        if detail:
+            review["detail"] = detail
+        return review
+
+    def _generic_substrate_resolution_candidate(self, reaction: Dict) -> Tuple[Optional[Dict], List[Dict]]:
+        """Build a compact LLM payload for generic substrates with concrete product evidence."""
+        reviews = []
+        products = reaction.get("products") or []
+        raw_product_names = [
+            str(product.get("name") if isinstance(product, dict) else product or "").strip()
+            for product in products
+        ]
+        raw_product_names = [name for name in raw_product_names if name]
+        product_names = [
+            name for name in raw_product_names
+            if (
+                not self._is_generic_substrate_name(name)
+                and not self._is_placeholder_name(name)
+                and not self._is_label_only_product_name(name)
+            )
+        ]
+
+        generic_substrates = []
+        for index, substrate in enumerate(reaction.get("substrates") or []):
+            if not isinstance(substrate, dict):
+                continue
+            name = str(substrate.get("name") or "").strip()
+            if not self._is_generic_substrate_name(name):
+                continue
+            if substrate.get("resolution_source") or substrate.get("resolution_method"):
+                continue
+            generic_substrates.append((index, substrate))
+
+        if not generic_substrates:
+            return None, reviews
+        if not product_names:
+            reason = "product_not_unique_or_not_specific"
+            if raw_product_names and all(self._is_label_only_product_name(name) for name in raw_product_names):
+                reason = "label_only_product_name"
+            for index, substrate in generic_substrates:
+                reviews.append(
+                    self._generic_substrate_resolution_review(
+                        reaction,
+                        index,
+                        str(substrate.get("name") or ""),
+                        raw_product_names,
+                        reason,
+                    )
+                )
+            return None, reviews
+
+        payload = {
+            "reaction_id": str(reaction.get("id") or ""),
+            "reaction_type": str(reaction.get("reaction_type") or ""),
+            "gp_source": str(reaction.get("_gp_source") or ""),
+            "substrates": [
+                {
+                    "index": index,
+                    "name": str(substrate.get("name") or ""),
+                    "symbol": substrate.get("symbol"),
+                    "amount": substrate.get("amount"),
+                    "step": substrate.get("step"),
+                }
+                for index, substrate in generic_substrates
+            ],
+            "products": [{"name": name} for name in product_names],
+        }
+        return payload, reviews
+
+    def _call_generic_substrate_resolution_llm(self, payload: Dict) -> Dict:
+        response = self.client.chat.completions.create(
+            model=self.extract_model,
+            messages=[
+                {"role": "system", "content": self.GENERIC_SUBSTRATE_RESOLUTION_PROMPT},
+                {"role": "user", "content": json.dumps(payload, ensure_ascii=False, indent=2)},
+            ],
+            temperature=0.0,
+        )
+        content = response.choices[0].message.content or ""
+        raw_preview = content[:500]
+        try:
+            parsed = self._parse_json_with_trailing_text(content)
+        except Exception as exc:
+            raise ValueError(
+                "generic substrate resolution JSON parse failed: "
+                f"{type(exc).__name__}: {exc}; raw_response_preview={raw_preview!r}"
+            ) from exc
+        if not isinstance(parsed, dict):
+            raise ValueError(
+                "generic substrate resolution response must be a JSON object; "
+                f"raw_response_preview={raw_preview!r}"
+            )
+        if not isinstance(parsed.get("resolutions"), list):
+            raise ValueError(
+                "generic substrate resolution response must contain a resolutions list; "
+                f"raw_response_preview={raw_preview!r}"
+            )
+        return parsed
+
+    def resolve_generic_substrates_from_products(self, reactions: List[Dict]) -> List[Dict]:
+        """Use a focused LLM node to resolve generic substrates from concrete product names."""
+        resolved_reactions = []
+        reviews = []
+        stats = {
+            "candidates": 0,
+            "llm_calls": 0,
+            "candidate_substrates": 0,
+            "candidate_products": 0,
+            "resolved": 0,
+            "reviewed": 0,
+        }
+
+        for reaction in reactions or []:
+            if not isinstance(reaction, dict):
+                resolved_reactions.append(reaction)
+                continue
+            new_reaction = json.loads(json.dumps(reaction, ensure_ascii=False))
+            payload, candidate_reviews = self._generic_substrate_resolution_candidate(new_reaction)
+            reviews.extend(candidate_reviews)
+            if not payload:
+                resolved_reactions.append(new_reaction)
+                continue
+
+            stats["candidates"] += 1
+            stats["candidate_substrates"] += len(payload.get("substrates") or [])
+            stats["candidate_products"] += len(payload.get("products") or [])
+            try:
+                stats["llm_calls"] += 1
+                llm_result = self._call_generic_substrate_resolution_llm(payload)
+            except Exception as exc:
+                product_names = [str(product.get("name") or "") for product in payload.get("products") or []]
+                detail = f"{type(exc).__name__}: {exc}"[:500]
+                for substrate in payload.get("substrates") or []:
+                    reviews.append(
+                        self._generic_substrate_resolution_review(
+                            new_reaction,
+                            substrate.get("index"),
+                            str(substrate.get("name") or ""),
+                            product_names,
+                            "llm_resolution_error",
+                            detail=detail,
+                        )
+                    )
+                resolved_reactions.append(new_reaction)
+                continue
+
+            resolutions = llm_result.get("resolutions")
+            if not isinstance(resolutions, list):
+                resolutions = []
+            substrates = new_reaction.get("substrates") or []
+            payload_product_names = [
+                str(product.get("name") or "").strip()
+                for product in payload.get("products") or []
+                if str(product.get("name") or "").strip()
+            ]
+            payload_product_set = {
+                self._normalize_registry_compare_name(name)
+                for name in payload_product_names
+            }
+            for resolution in resolutions:
+                if not isinstance(resolution, dict):
+                    continue
+                substrate_index = resolution.get("substrate_index")
+                if not isinstance(substrate_index, int) or substrate_index < 0 or substrate_index >= len(substrates):
+                    reviews.append(
+                        self._generic_substrate_resolution_review(
+                            new_reaction,
+                            substrate_index if isinstance(substrate_index, int) else None,
+                            "",
+                            payload_product_names,
+                            "invalid_substrate_index",
+                        )
+                    )
+                    continue
+                substrate = substrates[substrate_index]
+                if not isinstance(substrate, dict):
+                    continue
+                if not resolution.get("can_resolve"):
+                    reviews.append(
+                        self._generic_substrate_resolution_review(
+                            new_reaction,
+                            substrate_index,
+                            str(substrate.get("name") or ""),
+                            payload_product_names,
+                            "llm_could_not_resolve",
+                            detail=str(resolution.get("reason") or "")[:500],
+                        )
+                    )
+                    continue
+                resolved_name = str(resolution.get("resolved_name") or "").strip()
+                if not resolved_name:
+                    reviews.append(
+                        self._generic_substrate_resolution_review(
+                            new_reaction,
+                            substrate_index,
+                            str(substrate.get("name") or ""),
+                            payload_product_names,
+                            "empty_resolved_name",
+                        )
+                    )
+                    continue
+                original_name = str(resolution.get("original_name") or substrate.get("name") or "").strip()
+                evidence = resolution.get("resolution_evidence")
+                if not isinstance(evidence, dict):
+                    evidence = {}
+                evidence_product = str(evidence.get("product_name") or "").strip()
+                if not evidence_product and len(payload_product_names) == 1:
+                    evidence_product = payload_product_names[0]
+                    evidence["product_name"] = evidence_product
+                normalized_evidence = self._normalize_registry_compare_name(evidence_product)
+                if not evidence_product or normalized_evidence not in payload_product_set:
+                    reviews.append(
+                        self._generic_substrate_resolution_review(
+                            new_reaction,
+                            substrate_index,
+                            original_name,
+                            payload_product_names,
+                            "missing_or_invalid_evidence_product",
+                            detail=str(resolution.get("reason") or evidence.get("reason") or "")[:500],
+                        )
+                    )
+                    continue
+
+                substrate["name"] = resolved_name
+                substrate["original_name"] = original_name
+                substrate["resolution_source"] = "product_name"
+                substrate["resolution_method"] = "gp_product_to_substrate_mapping"
+                substrate["resolution_confidence"] = str(
+                    resolution.get("resolution_confidence") or "high"
+                ).strip() or "high"
+                substrate["resolution_evidence"] = evidence
+                stats["resolved"] += 1
+            new_reaction["substrates"] = substrates
+            resolved_reactions.append(new_reaction)
+
+        stats["reviewed"] = len(reviews)
+        self.last_generic_substrate_resolution_reviews = reviews
+        self.last_generic_substrate_resolution_stats = stats
+        return resolved_reactions
+
+    def validate_substrate_name_resolutions(self, reactions: List[Dict]) -> List[Dict]:
+        """Accept only auditable, high-confidence product-derived completions."""
+        validated = []
+        reviews = list(getattr(self, "last_generic_substrate_resolution_reviews", []) or [])
+        existing_review_keys = {
+            (review.get("reaction_id"), review.get("substrate_index"))
+            for review in reviews
+            if isinstance(review, dict)
+        }
+        resolved_count = 0
+        resolution_keys = (
+            "original_name", "resolution_source", "resolution_method",
+            "resolution_confidence", "resolution_evidence",
+        )
+
+        for reaction in reactions or []:
+            if not isinstance(reaction, dict):
+                validated.append(reaction)
+                continue
+            new_reaction = dict(reaction)
+            product_names = self._specific_product_names(new_reaction)
+            normalized_products = {
+                self._normalize_registry_compare_name(name): name
+                for name in product_names
+            }
+            new_substrates = []
+            for index, substrate in enumerate(new_reaction.get("substrates") or []):
+                if not isinstance(substrate, dict):
+                    new_substrates.append(substrate)
+                    continue
+                item = dict(substrate)
+                source = str(item.get("resolution_source") or "").strip()
+                method = str(item.get("resolution_method") or "").strip()
+                is_product_resolution = (
+                    source == "product_name"
+                    or method == "gp_product_to_substrate_mapping"
+                )
+                attempted_review = False
+
+                if is_product_resolution:
+                    original_name = str(item.get("original_name") or "").strip()
+                    candidate_name = str(item.get("name") or "").strip()
+                    confidence = str(item.get("resolution_confidence") or "").strip().casefold()
+                    evidence = item.get("resolution_evidence")
+                    if isinstance(evidence, dict):
+                        evidence_product = str(evidence.get("product_name") or "").strip()
+                    else:
+                        evidence_product = str(evidence or "").strip()
+                    normalized_evidence = self._normalize_registry_compare_name(evidence_product)
+
+                    reason = ""
+                    if not self._is_generic_substrate_name(original_name):
+                        reason = "original_name_is_not_generic"
+                    elif not candidate_name or self._is_generic_substrate_name(candidate_name):
+                        reason = "candidate_name_is_not_specific"
+                    elif confidence != "high":
+                        reason = "resolution_confidence_is_not_high"
+                    elif source != "product_name" or method != "gp_product_to_substrate_mapping":
+                        reason = "invalid_product_resolution_metadata"
+                    elif not normalized_evidence or normalized_evidence not in normalized_products:
+                        reason = "evidence_product_not_found_in_reaction"
+                    elif self._normalize_registry_compare_name(candidate_name) in normalized_products:
+                        reason = "candidate_copies_complete_product_name"
+
+                    if reason:
+                        attempted_review = True
+                        reviews.append({
+                            "reaction_id": str(new_reaction.get("id") or ""),
+                            "substrate_index": index,
+                            "original_name": original_name,
+                            "candidate_name": candidate_name,
+                            "product_names": product_names,
+                            "reason": reason,
+                        })
+                        item["name"] = original_name or "substrate"
+                        for key in resolution_keys:
+                            item.pop(key, None)
+                    else:
+                        item["original_name"] = original_name
+                        item["resolution_source"] = "product_name"
+                        item["resolution_method"] = "gp_product_to_substrate_mapping"
+                        item["resolution_confidence"] = "high"
+                        item["resolution_evidence"] = {"product_name": normalized_products[normalized_evidence]}
+                        resolved_count += 1
+
+                if (
+                    not attempted_review
+                    and not is_product_resolution
+                    and self._is_generic_substrate_name(str(item.get("name") or ""))
+                    and product_names
+                ):
+                    review_key = (str(new_reaction.get("id") or ""), index)
+                    if review_key not in existing_review_keys:
+                        reviews.append({
+                            "reaction_id": str(new_reaction.get("id") or ""),
+                            "substrate_index": index,
+                            "original_name": str(item.get("name") or ""),
+                            "candidate_name": None,
+                            "product_names": product_names,
+                            "reason": "no_high_confidence_resolution_proposed",
+                        })
+                new_substrates.append(item)
+            new_reaction["substrates"] = new_substrates
+            validated.append(new_reaction)
+
+        self.last_substrate_name_resolution_reviews = reviews
+        self.last_substrate_name_resolution_stats = {
+            "resolved": resolved_count,
+            "reviewed": len(reviews),
+        }
+        return validated
+
     def _should_registry_overwrite_name(
         self,
         name: str,
@@ -4425,6 +5980,7 @@ Available GP candidates:
         item,
         registry: Dict[str, str],
         normalized_registry: Dict[str, str],
+        allow_generic_name: bool = False,
     ) -> Tuple[object, str]:
         if isinstance(item, str):
             lookup = self._registry_lookup(item, registry, normalized_registry)
@@ -4454,11 +6010,24 @@ Available GP candidates:
             return new_item, "none"
 
         symbol, name = lookup
-        if self._should_registry_overwrite_name(raw_name, symbol, registry, normalized_registry):
+        product_inferred = (
+            str(new_item.get("resolution_source") or "") == "product_name"
+            or str(new_item.get("resolution_method") or "") == "gp_product_to_substrate_mapping"
+        )
+        if (
+            product_inferred
+            or self._should_registry_overwrite_name(raw_name, symbol, registry, normalized_registry)
+            or (allow_generic_name and self._is_generic_substrate_name(raw_name))
+        ):
+            original_name = str(new_item.get("original_name") or raw_name).strip()
             new_item["name"] = name
             new_item["symbol"] = raw_symbol or symbol
             new_item["resolution_source"] = "name_registry"
             new_item["resolution_method"] = "same_paper_symbol"
+            new_item["resolution_confidence"] = "high"
+            if allow_generic_name and self._is_generic_substrate_name(original_name):
+                new_item["original_name"] = original_name
+            new_item.pop("resolution_evidence", None)
             return new_item, "resolved"
 
         new_item["registry_name"] = name
@@ -4506,6 +6075,7 @@ Available GP candidates:
                             item,
                             registry,
                             normalized_registry,
+                            allow_generic_name=(field == "substrates"),
                         )
                         if status == "resolved":
                             stats["resolved"] += 1
@@ -4556,6 +6126,17 @@ Available GP candidates:
 
         # 重置统计
         self.stage2_audit_recovered = 0
+        self.last_substrate_name_resolution_reviews = []
+        self.last_substrate_name_resolution_stats = {"resolved": 0, "reviewed": 0}
+        self.last_generic_substrate_resolution_reviews = []
+        self.last_generic_substrate_resolution_stats = {
+            "candidates": 0,
+            "llm_calls": 0,
+            "candidate_substrates": 0,
+            "candidate_products": 0,
+            "resolved": 0,
+            "reviewed": 0,
+        }
         file_stats = {'total_pages': 0, 'filtered_pages': 0,
                       'total_chunks': 0, 'screened_pass': 0, 'screened_fail': 0,
                       'registry_size': 0, 'gp_templates': 0,
@@ -4745,9 +6326,18 @@ Available GP candidates:
                 file_stats['registry_conflict_count'] = 0
 
             # --- Stage 5b: GP 条件来源标记 ---
-            if gp_templates and merged:
-                print("[Stage 5b] GP 条件来源标记（兜底）...")
-                merged = self.apply_gp_templates(merged, gp_templates)
+            merged = self.resolve_generic_substrates_from_products(merged)
+            generic_resolution_stats = getattr(self, "last_generic_substrate_resolution_stats", {}) or {}
+            file_stats["generic_substrate_resolution_candidates"] = generic_resolution_stats.get("candidates", 0)
+            file_stats["generic_substrate_resolution_llm_calls"] = generic_resolution_stats.get("llm_calls", 0)
+            file_stats["generic_substrate_resolution_candidate_substrates"] = generic_resolution_stats.get("candidate_substrates", 0)
+            file_stats["generic_substrate_resolution_candidate_products"] = generic_resolution_stats.get("candidate_products", 0)
+            merged = self.validate_substrate_name_resolutions(merged)
+            substrate_resolution_stats = getattr(self, "last_substrate_name_resolution_stats", {}) or {}
+            file_stats["substrate_names_resolved_from_product"] = substrate_resolution_stats.get("resolved", 0)
+            file_stats["generic_substrates_resolved_from_product"] = substrate_resolution_stats.get("resolved", 0)
+            file_stats["substrate_name_resolution_review_count"] = substrate_resolution_stats.get("reviewed", 0)
+            file_stats["generic_substrate_resolution_review_count"] = substrate_resolution_stats.get("reviewed", 0)
             merged = self.sanitize_reactions_schema(merged)
             file_stats['stage2_audit_recovered'] = self.stage2_audit_recovered
 
@@ -4761,6 +6351,9 @@ Available GP candidates:
                 "general_procedures": {k: v[:300] + "..." if len(v) > 300 else v for k, v in gp_texts.items()} if gp_texts else {},
                 "general_procedure_templates": gp_templates,
                 "stats": file_stats,
+                "substrate_name_resolution_reviews": list(
+                    getattr(self, "last_substrate_name_resolution_reviews", []) or []
+                ),
                 "reactions": merged,
             }
             with open(output_file, 'w', encoding='utf-8') as f:
