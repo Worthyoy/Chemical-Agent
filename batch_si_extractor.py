@@ -463,6 +463,12 @@ Return only a valid JSON array of reaction objects.
 
 2. GP template usage
 - A GP-referenced entry explicitly says or clearly means it was prepared according to, following, or using one of the supplied canonical General Procedure templates. For that entry only, copy applicable shared GP fields into the complete reaction record and set "_gp_source" to the matching GP id.
+- If a supplied GP template was selected for this chunk, product characterization entries in the same GP section or product series may rely on that GP even when the individual entry does not explicitly say "according to General Procedure".
+- A valid no-reference GP-continuation entry has a concrete product name or symbol plus yield, ee, or er; appears in a GP section, product synthesis section, product scope series, or characterization series; and matches the supplied GP reaction family, product series, or numbering pattern.
+- For these no-reference GP-continuation entries, set _gp_source, copy the GP template shared fields, and extract products, targets, and source_pages from the concrete product entry. Each product/yield entry must become its own reaction object.
+- When multiple supplied GP templates could match a product series, choose the template that provides meaningful shared reaction fields needed to complete the reaction: substrates, catalysts, ligands, other_components, conditions, intermediates, or step_count.
+- Do not use a supplied GP template as _gp_source if it has no meaningful shared fields and another supplied template provides the actual substrates/conditions for the same product series.
+- Do not choose an empty or title-only template merely because its label resembles the section title. Choose the template containing the actual reaction materials and conditions. If no supplied template provides meaningful shared fields, do not invent substrates; extract the entry as standalone non-GP only if the current paragraph reports real substrates.
 - GP templates provide shared reaction_type, substrates, catalysts, ligands, other_components, conditions, intermediates, and step schema only for GP-referenced entries. Products, targets, and source_pages always come from the concrete entry text.
 - If the supplied GP template has no step_count, the GP-referenced entry is single-step: copy shared fields, add entry products/targets/source_pages, and do not use item-level step.
 - If the supplied GP template has step_count >= 2, every GP-referenced entry must keep the same step_count and the same multi-step schema surface.
@@ -497,6 +503,7 @@ Return only a valid JSON array of reaction objects.
 6. Literature and published procedure entries
 - reported literature procedure, published procedure, reported procedure, literature procedure, and previously reported method are not supplied GP templates.
 - Extract these as standalone non-GP reactions with no _gp_source and no inherited GP fields.
+- A literature/published/standalone procedure entry does not inherit GP even if a supplied GP template was selected for other entries in the same chunk.
 - They are usually single-step unless the paragraph itself reports multiple sequential chemical transformations.
 
 7. Targets normalization
@@ -4182,6 +4189,46 @@ Available GP candidates:
             return any(SIExtractor._has_meaningful_value(item) for item in value.values())
         return True
 
+    @classmethod
+    def _gp_template_inheritance_info(cls, template: Optional[Dict]) -> Dict:
+        reasons = []
+        if not isinstance(template, dict) or template.get("status") != "valid":
+            return {"inheritable": False, "score": 0, "reasons": reasons}
+        for field in ("substrates", "catalysts", "ligands", "other_components", "intermediates"):
+            if cls._has_meaningful_value(template.get(field)):
+                reasons.append(field)
+        conditions = template.get("conditions")
+        if isinstance(conditions, dict):
+            for key, value in conditions.items():
+                if cls._has_meaningful_value(value):
+                    reasons.append(f"conditions.{key}")
+        elif cls._has_meaningful_value(conditions):
+            reasons.append("conditions")
+        if template.get("step_count") is not None:
+            reasons.append("step_count")
+        return {
+            "inheritable": bool(reasons),
+            "score": len(reasons),
+            "reasons": reasons,
+        }
+
+    def _split_inheritable_gp_keys(
+        self,
+        selected_gp_keys: List[str],
+        gp_templates: Optional[Dict[str, Dict]],
+    ) -> Tuple[List[str], List[str], Dict[str, Dict]]:
+        injected = []
+        skipped = []
+        inheritance = {}
+        for key in selected_gp_keys or []:
+            info = self._gp_template_inheritance_info((gp_templates or {}).get(key))
+            inheritance[key] = info
+            if info.get("inheritable"):
+                injected.append(key)
+            else:
+                skipped.append(key)
+        return injected, skipped, inheritance
+
     def _template_for_gp_job_reaction(
         self,
         reaction: Dict,
@@ -4264,6 +4311,81 @@ Available GP candidates:
             f"Missing GP-derived fields: {preview}."
         )
 
+    def _detect_empty_substrate_gp_continuation_for_retry(
+        self,
+        reactions: List[Dict],
+        job: Dict,
+        gp_selection_debug: Optional[Dict] = None,
+    ) -> Optional[str]:
+        mode = str(job.get("mode") or "")
+        gp_keys = [str(key) for key in (job.get("gp_keys") or []) if str(key)]
+        if mode != "mixed" or not gp_keys:
+            return None
+        empty_non_gp_results = []
+        for reaction in reactions or []:
+            if not isinstance(reaction, dict):
+                continue
+            if self._has_meaningful_value(reaction.get("substrates")):
+                continue
+            if not self._has_meaningful_value(reaction.get("products")):
+                continue
+            if not self._has_meaningful_value(reaction.get("targets")):
+                continue
+            empty_non_gp_results.append(str(reaction.get("id") or "<missing id>"))
+        if not empty_non_gp_results:
+            return None
+        preview = ", ".join(empty_non_gp_results[:8])
+        if len(empty_non_gp_results) > 8:
+            preview += f", ... (+{len(empty_non_gp_results) - 8} more)"
+        selection_mode = ""
+        if isinstance(gp_selection_debug, dict) and gp_selection_debug.get("mode"):
+            selection_mode = f" GP selection mode was {gp_selection_debug.get('mode')}."
+        return (
+            "The GP selector selected a supplied GP for this chunk."
+            f"{selection_mode} Do not output matching product-series characterization "
+            "entries as empty-substrate NonGP reactions. If they belong to the selected "
+            "GP section/product series, set _gp_source and copy the GP template shared "
+            "fields. If the chosen _gp_source template has empty shared fields, switch "
+            "to another supplied GP template that provides the actual shared substrates/"
+            "conditions for this product series. If any entry is truly standalone non-GP, "
+            "extract its real substrates from the current paragraph instead of leaving "
+            "substrates empty. "
+            f"Empty-substrate product/yield reactions: {preview}."
+        )
+
+    def _detect_uninjected_gp_source_for_retry(
+        self,
+        reactions: List[Dict],
+        job: Dict,
+        gp_selection_debug: Optional[Dict] = None,
+    ) -> Optional[str]:
+        mode = str(job.get("mode") or "")
+        injected_keys = {str(key) for key in (job.get("gp_keys") or []) if str(key)}
+        if mode not in {"gp", "mixed"} or not injected_keys:
+            return None
+        offenders = []
+        for reaction in reactions or []:
+            if not isinstance(reaction, dict):
+                continue
+            gp_source = str(reaction.get("_gp_source") or "").strip()
+            if gp_source and gp_source not in injected_keys:
+                offenders.append(f"{reaction.get('id') or '<missing id>'}: {gp_source}")
+        if not offenders:
+            return None
+        preview = "; ".join(offenders[:8])
+        if len(offenders) > 8:
+            preview += f"; ... (+{len(offenders) - 8} more)"
+        skipped = []
+        if isinstance(gp_selection_debug, dict):
+            skipped = list(gp_selection_debug.get("skipped_non_inheritable_gp_templates") or [])
+        skipped_text = f" Skipped non-inheritable GP templates: {', '.join(skipped)}." if skipped else ""
+        return (
+            "Previous output used a GP template that was not injected for this job. "
+            "Use only the supplied injected GP template ids as _gp_source, because "
+            "non-inheritable or title-only templates are not valid reaction inheritance "
+            f"sources.{skipped_text} Invalid _gp_source values: {preview}."
+        )
+
     def _stage2_user_content_for_job(
         self,
         chunk_text: str,
@@ -4272,6 +4394,7 @@ Available GP candidates:
         gp_block: str,
         previous_schema_error: Optional[str] = None,
         previous_target_error: Optional[str] = None,
+        gp_selection_debug: Optional[Dict] = None,
     ) -> str:
         mode = str(job.get("mode") or "")
         if mode == "gp":
@@ -4283,12 +4406,32 @@ Available GP candidates:
         elif mode == "mixed":
             instruction = (
                 "Extract all qualifying reactions in this mixed chunk. Use the supplied "
-                "canonical General Procedure template(s) only for entries that explicitly "
-                "rely on them and mark those records with _gp_source. Extract standalone "
-                "or downstream transformations as non-GP reactions without inheriting GP "
-                "fields and without _gp_source. Do not output the same concrete reaction "
-                "twice as both GP and non-GP.\n"
+                "canonical General Procedure template(s) for entries that explicitly rely "
+                "on them or clearly match a selected GP section/product series, and mark "
+                "those records with _gp_source. Extract standalone or downstream "
+                "transformations as non-GP reactions without inheriting GP fields and "
+                "without _gp_source. Do not output the same concrete reaction twice as "
+                "both GP and non-GP.\n"
             )
+            if (
+                isinstance(gp_selection_debug, dict)
+                and gp_selection_debug.get("mode") == "llm_resolved_no_reference"
+                and job.get("gp_keys")
+            ):
+                instruction += (
+                    "GP selection determined that this chunk belongs to the supplied GP "
+                    "even though entries may not explicitly name the GP. Treat matching "
+                    "product-series characterization entries as GP-continuation reactions "
+                    "unless the text explicitly indicates a separate literature, published, "
+                    "or standalone procedure.\n"
+                )
+                if len(job.get("gp_keys") or []) > 1:
+                    instruction += (
+                        "Multiple GP templates may be supplied. For no-reference product-series "
+                        "entries, inherit the template that contains the actual shared substrates, "
+                        "catalysts, reagents, and conditions. Do not choose an empty or title-only "
+                        "template merely because its label resembles the section title.\n"
+                    )
         else:
             instruction = (
                 "Extract all standalone qualifying reactions in this chunk that do not rely on "
@@ -4335,6 +4478,7 @@ Available GP candidates:
         gp_block: str,
         allowed_page_nums: Optional[List[int]],
         gp_templates: Optional[Dict[str, Dict]] = None,
+        gp_selection_debug: Optional[Dict] = None,
         allow_non_gp_split_fallback: bool = False,
     ) -> Dict:
         system_prompt, prompt_mode = self._stage2_prompt_for_job(job)
@@ -4357,6 +4501,7 @@ Available GP candidates:
                                 gp_block,
                                 previous_schema_error=previous_schema_error,
                                 previous_target_error=previous_target_error,
+                                gp_selection_debug=gp_selection_debug,
                             ),
                         },
                     ],
@@ -4381,13 +4526,27 @@ Available GP candidates:
                 template_error = self._detect_missing_gp_template_fields_for_retry(
                     reactions, job, gp_templates
                 )
+                continuation_error = self._detect_empty_substrate_gp_continuation_for_retry(
+                    reactions, job, gp_selection_debug
+                )
+                uninjected_gp_error = self._detect_uninjected_gp_source_for_retry(
+                    reactions, job, gp_selection_debug
+                )
                 target_error = self._detect_missing_gp_targets_for_retry(chunk_text, reactions, job)
-                quality_errors = [error for error in (template_error, target_error) if error]
+                quality_errors = [
+                    error
+                    for error in (template_error, continuation_error, uninjected_gp_error, target_error)
+                    if error
+                ]
                 if quality_errors and attempt < 2:
                     if len(quality_errors) > 1:
                         exception_type = "ExtractionQualityRetry"
                     elif template_error:
                         exception_type = "MissingGPTemplateFields"
+                    elif continuation_error:
+                        exception_type = "EmptySubstrateGPContinuation"
+                    elif uninjected_gp_error:
+                        exception_type = "UninjectedGPSource"
                     else:
                         exception_type = "MissingTargets"
                     quality_error = "\n".join(quality_errors)
@@ -4561,12 +4720,17 @@ Available GP candidates:
             for key in (selected_gp_texts or {}).keys()
             if isinstance(key, str) and key
         ]
-        if selected_gp_keys:
+        injected_gp_keys, skipped_gp_keys, gp_template_inheritance = self._split_inheritable_gp_keys(
+            selected_gp_keys,
+            gp_templates,
+        )
+        all_selected_gp_templates_non_inheritable = bool(selected_gp_keys) and not injected_gp_keys
+        if injected_gp_keys:
             dispatch_mode = "gp_template_forced_mixed"
             executable_jobs = [{
                 "job_id": "mixed_1",
                 "mode": "mixed",
-                "gp_keys": selected_gp_keys,
+                "gp_keys": injected_gp_keys,
                 "source_pages": allowed_page_nums,
             }]
         else:
@@ -4579,9 +4743,21 @@ Available GP candidates:
             }]
         dispatch_info = {
             "dispatch_mode": dispatch_mode,
-            "selected_gp_keys": selected_gp_keys,
+            "selected_gp_keys": injected_gp_keys,
+            "selected_gp_keys_raw": selected_gp_keys,
+            "selected_gp_keys_injected": injected_gp_keys,
+            "skipped_non_inheritable_gp_templates": skipped_gp_keys,
+            "gp_template_inheritance": gp_template_inheritance,
             "router_disabled": True,
         }
+        if all_selected_gp_templates_non_inheritable:
+            dispatch_info["all_selected_gp_templates_non_inheritable"] = True
+        gp_selection_debug["selected_gp_keys_raw"] = selected_gp_keys
+        gp_selection_debug["selected_gp_keys_injected"] = injected_gp_keys
+        gp_selection_debug["skipped_non_inheritable_gp_templates"] = skipped_gp_keys
+        gp_selection_debug["gp_template_inheritance"] = gp_template_inheritance
+        if all_selected_gp_templates_non_inheritable:
+            gp_selection_debug["all_selected_gp_templates_non_inheritable"] = True
 
         for job in executable_jobs:
             gp_block = ""
@@ -4616,6 +4792,7 @@ Available GP candidates:
                 gp_block=gp_block,
                 allowed_page_nums=allowed_page_nums,
                 gp_templates=gp_templates,
+                gp_selection_debug=gp_selection_debug,
             )
             job_log = result.get("job_log") or {}
             if result.get("error"):

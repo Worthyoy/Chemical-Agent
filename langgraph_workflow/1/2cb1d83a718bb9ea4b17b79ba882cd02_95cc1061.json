@@ -1,0 +1,1460 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2cb1d83a718bb9ea4b17b79ba882cd02.pdf",
+  "paper_key": "2cb1d83a718bb9ea4b17b79ba882cd02",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2cb1d83a718bb9ea4b17b79ba882cd02.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v8_two_column_cli",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2cb1d83a718bb9ea4b17b79ba882cd02.pdf",
+    "source_mtime_ns": 1782048801000000000,
+    "source_size": 955671,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "two_column",
+    "enable_stage2_audit": true,
+    "paper_key": "2cb1d83a718bb9ea4b17b79ba882cd02",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2cb1d83a718bb9ea4b17b79ba882cd02.pdf"
+  },
+  "extracted_at": "2026-06-22T00:25:24.803784",
+  "total_reactions": 29,
+  "filtered_reactions": 28,
+  "filter_stats": {
+    "input_reactions": 29,
+    "basic_failed": 1,
+    "target_failed": 0,
+    "retained": 28
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedure_synthesis_of_isoquinolines_via_a_microwave_assisted_pictet_spengler_oxidation_method_amine-Entry1",
+      "reaction_type": "microwave-assisted Pictet-Spengler/oxidation",
+      "substrates": [
+        {
+          "name": "3,4-dimethoxyphenethylamine",
+          "symbol": null,
+          "amount": "83 μL, 0.5 mmol"
+        },
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "50 μL, 0.6 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxy-1-phenylisoquinoline",
+          "symbol": "1b",
+          "amount": "98mg",
+          "registry_name": "6,7-Dimethoxy-1-phenylisoquinoline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "10% Pd/C",
+          "symbol": null,
+          "amount": "70 mg"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": null,
+          "amount": "4 mmol"
+        }
+      ],
+      "reagents": [],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "1mL; additional toluene(5mL); toluene (4 mL) with Pd/C",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "140(cid:1)C; reflux",
+        "time": "30min; 2-12 h"
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_synthesis_of_isoquinolines_via_a_microwave_assisted_pictet_spengler_oxidation_method_amine-Entry1"
+    },
+    {
+      "id": "GeneralProcedure_microwave_assisted_bischler_napieralskisynthesisof3_4_dihydroisoquinolines_amine_1mmol_carboxyli-Entry1",
+      "reaction_type": "microwave-assisted Bischler-Napieralski cyclization",
+      "substrates": [
+        {
+          "name": "3,4-dimethoxyphenethylamine",
+          "symbol": null,
+          "amount": "166μL,1mmol"
+        },
+        {
+          "name": "benzoicacid",
+          "symbol": null,
+          "amount": "122mg,1mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3,4-Dihydro-6,7-dimethoxy-1-phenylisoquinoline",
+          "symbol": null,
+          "amount": "259 mg"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "POCl",
+          "symbol": null,
+          "amount": "4mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "2mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "140(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_microwave_assisted_bischler_napieralskisynthesisof3_4_dihydroisoquinolines_amine_1mmol_carboxyli-Entry1"
+    },
+    {
+      "id": "ResultsandDiscussion-Entry1",
+      "reaction_type": "dehydrogenation (Pd/C)",
+      "substrates": [
+        {
+          "name": "1-(3,4-dimethoxyphenyl)-6,7-dimethoxy-1,2,3,4-tetrahydroisoquinoline",
+          "symbol": "4a",
+          "amount": null,
+          "registry_name": "1-(3,4-dimethoxyphenyl)-6,7-dimethoxy-1,2,3,4-tetrahydroisoquinoline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": null,
+          "symbol": "4b",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd/C",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "ResultsandDiscussion-Entry1"
+    },
+    {
+      "id": "ResultsandDiscussion-Entry3",
+      "reaction_type": "microwave-assisted cyclization",
+      "substrates": [
+        {
+          "name": "Ethyl 3,4-Dimethoxyphenethylcarbamate",
+          "symbol": "20",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-dimethoxy-3,4-dihydroisoquinolin-1(2H)-one",
+          "symbol": "21",
+          "amount": null,
+          "registry_name": "3,4-Dihydro-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "P O ",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "POCl ",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "hexamethyldisiloxane",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "microwave",
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "ResultsandDiscussion-Entry3"
+    },
+    {
+      "id": "ResultsandDiscussion-Entry4",
+      "reaction_type": "dehydrogenation (Pd/C)",
+      "substrates": [
+        {
+          "name": "6,7-dimethoxy-3,4-dihydroisoquinolin-1(2H)-one",
+          "symbol": "21",
+          "amount": null,
+          "registry_name": "3,4-Dihydro-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxyisoquinolone",
+          "symbol": "22",
+          "amount": null,
+          "registry_name": "6,7-Dimethoxyisoquinolone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd/C",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "ResultsandDiscussion-Entry4"
+    },
+    {
+      "id": "ResultsandDiscussion-Entry5",
+      "reaction_type": "Suzuki cross-coupling (palladium-mediated)",
+      "substrates": [
+        {
+          "name": "4-Bromo-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "symbol": "23",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxy-4-phenylisoquinolin-1(2H)-one",
+          "symbol": "24",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "additives": [
+        {
+          "name": "1,3,5,7-tetramethyl-2,4,8-trioxa-6-phenyl-6-phosphaadamantane (PA-Ph)",
+          "symbol": "PA-Ph",
+          "amount": null
+        }
+      ],
+      "reagents": [],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "ResultsandDiscussion-Entry5"
+    },
+    {
+      "id": "ResultsandDiscussion-Entry6",
+      "reaction_type": "cyanation (CuCN)",
+      "substrates": [
+        {
+          "name": "4-Bromo-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "symbol": "23",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxy-1-oxo-1,2-dihydroisoquinoline-4-carbonitrile",
+          "symbol": "25",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "CuCN",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "1-methylpyrrolidinone",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "1-methylpyrrolidinone",
+        "volume": null,
+        "light source": "microwave",
+        "wavelength": null,
+        "temperature": "200(cid:1)C",
+        "time": "40min"
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "ResultsandDiscussion-Entry6"
+    },
+    {
+      "id": "ResultsandDiscussion-Entry7",
+      "reaction_type": "microwave-assisted halogenation (POBr)",
+      "substrates": [
+        {
+          "name": "6,7-dimethoxy-4-phenylisoquinolin-1(2H)-one",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Bromo-6,7-dimethoxy-4-phenylisoquinoline",
+          "symbol": "26",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "POBr",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "DCM",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "volume": null,
+        "light source": "microwave",
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "ResultsandDiscussion-Entry7"
+    },
+    {
+      "id": "ResultsandDiscussion-Entry8",
+      "reaction_type": "Suzuki cross-coupling (arylative derivatization)",
+      "substrates": [
+        {
+          "name": "1-Bromo-6,7-dimethoxy-4-phenylisoquinoline",
+          "symbol": "26",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxy-1,4-diphenylisoquinoline",
+          "symbol": "27",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "additives": [
+        {
+          "name": "PA-Ph",
+          "symbol": "PA-Ph",
+          "amount": null
+        }
+      ],
+      "reagents": [],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "microwave",
+        "wavelength": null,
+        "temperature": "90(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "ResultsandDiscussion-Entry8"
+    },
+    {
+      "id": "ResultsandDiscussion-Entry9",
+      "reaction_type": "amination",
+      "substrates": [
+        {
+          "name": "1-Bromo-6,7-dimethoxy-4-phenylisoquinoline",
+          "symbol": "26",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxy-4-phenyl-1-(piperidin-1-yl)isoquinoline",
+          "symbol": "28",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "piperidine",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "NaOtBu",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "toluene",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": null,
+        "light source": "microwave",
+        "wavelength": null,
+        "temperature": "180(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "ResultsandDiscussion-Entry9"
+    },
+    {
+      "id": "ResultsandDiscussion-Entry10",
+      "reaction_type": "microwave-assisted bromination",
+      "substrates": [
+        {
+          "name": "6,7-Dimethoxy-1-oxo-1,2-dihydroisoquinoline-4-carbonitrile",
+          "symbol": "25",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Bromo-6,7-dimethoxyisoquinoline-4-carbonitrile",
+          "symbol": "32",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "Br",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "anisole",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "anisole",
+        "volume": null,
+        "light source": "microwave",
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "ResultsandDiscussion-Entry10"
+    },
+    {
+      "id": "GeneralProcedure_Microwave-Assisted_Pictet-Spengler_Synthesis_of_1,2,3,4-Tetrahydroisoquinolines-Entry1",
+      "reaction_type": "microwave-assisted Pictet-Spengler",
+      "substrates": [
+        {
+          "name": "3,4-dimethoxyphenethylamine",
+          "symbol": null,
+          "amount": "166μL,1mmol"
+        },
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "100μL,1.2mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1,2,3,4-Tetrahydro-6,7-dimethoxy-1-phenylisoquinoline",
+          "symbol": "1a",
+          "amount": "264mg"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": null,
+          "amount": "8mmol"
+        }
+      ],
+      "reagents": [],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "1mL",
+        "light source": "microwave",
+        "wavelength": null,
+        "temperature": "140(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_Microwave-Assisted_Pictet-Spengler_Synthesis_of_1,2,3,4-Tetrahydroisoquinolines-Entry1"
+    },
+    {
+      "id": "GeneralProcedure_synthesis_of_isoquinolines_via_a_microwave_assisted_bischler_napieralski_reaction_oxidation_meth-Entry1",
+      "reaction_type": "Bischler-Napieralski reaction/oxidation",
+      "substrates": [
+        {
+          "name": "3,4-dimethoxyphenethylamine",
+          "symbol": null,
+          "amount": "83μL,0.5mmol"
+        },
+        {
+          "name": "4-bromobenzoic acid",
+          "symbol": null,
+          "amount": "100mg,0.5mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(4-Bromophenyl)-6,7-dimethoxyisoquinoline",
+          "symbol": "10",
+          "amount": "137 mg",
+          "registry_name": "1-(4-Bromophenyl)-6,7-dimethoxyisoquinoline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd/C (70mg,10%)",
+          "symbol": "Pd/C",
+          "amount": "70mg,10%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "POCl",
+          "symbol": null,
+          "amount": "2mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "2mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "140(cid:1)C; then 150(cid:1)C",
+        "time": "30min; then 30min"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_synthesis_of_isoquinolines_via_a_microwave_assisted_bischler_napieralski_reaction_oxidation_meth-Entry1"
+    },
+    {
+      "id": "Experimental-Entry1",
+      "reaction_type": "carbamate formation (ethyl chloroformate)",
+      "substrates": [
+        {
+          "name": "3,4-dimethoxyphenethylamine",
+          "symbol": null,
+          "amount": "0.55 mL, 3.3 mol"
+        },
+        {
+          "name": "triethylamine",
+          "symbol": null,
+          "amount": "0.51mL,3.6mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 3,4-Dimethoxyphenethylcarbamate",
+          "symbol": "20",
+          "amount": "802mg",
+          "registry_name": "Ethyl 3,4-Dimethoxyphenethylcarbamate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ethylchloroformate",
+          "symbol": null,
+          "amount": "0.35mL,3.6mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "volume": "10mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "0(cid:1)C to room temperature",
+        "time": "12 h"
+      },
+      "targets": {
+        "yield": "96%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry1"
+    },
+    {
+      "id": "Experimental-Entry2",
+      "reaction_type": "Bischler-Napieralski cyclization",
+      "substrates": [
+        {
+          "name": "Ethyl 3,4-dimethoxyphenethylcarbamate",
+          "symbol": "20",
+          "amount": "229mg,1mmol",
+          "registry_name": "Ethyl 3,4-Dimethoxyphenethylcarbamate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "3,4-Dihydro-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "symbol": "21",
+          "amount": "199 mg",
+          "registry_name": "3,4-Dihydro-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "POCl",
+          "symbol": null,
+          "amount": "6 mL, 60 mmol"
+        },
+        {
+          "name": "hexamethyldisiloxane",
+          "symbol": null,
+          "amount": "6mL,27.6mmol"
+        },
+        {
+          "name": "P O",
+          "symbol": null,
+          "amount": "892mg,6mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "150(cid:1)C",
+        "time": "40min"
+      },
+      "targets": {
+        "yield": "96%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry2"
+    },
+    {
+      "id": "Experimental-Entry3",
+      "reaction_type": "dehydrogenation (thermal Pd/C)",
+      "substrates": [
+        {
+          "name": "3,4-dihydro-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "symbol": "21",
+          "amount": "198.8 mg, 0.96 mmol",
+          "registry_name": "3,4-Dihydro-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoyisoquinolin-1(2H)-one",
+          "symbol": "22",
+          "amount": "194mg",
+          "registry_name": "6,7-Dimethoxyisoquinolone",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "10% Pd/C",
+          "symbol": "Pd/C",
+          "amount": "100 mg"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "DCM",
+        "volume": "100 mL (suspension after heating)",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "150(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry3"
+    },
+    {
+      "id": "Experimental-Entry4",
+      "reaction_type": "bromination",
+      "substrates": [
+        {
+          "name": "6,7-dimethoxyisoquinolin-1(2H)-one",
+          "symbol": "22",
+          "amount": "205mg,1mmol",
+          "registry_name": "6,7-Dimethoxyisoquinolone",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-Bromo-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "symbol": "23",
+          "amount": "271mg",
+          "registry_name": "4-Bromo-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "Br",
+          "symbol": null,
+          "amount": "51 μL, 1 mmol"
+        },
+        {
+          "name": "glacial acetic acid",
+          "symbol": null,
+          "amount": "1.2mL (solution) and 760 μL (Br solution)"
+        }
+      ],
+      "conditions": {
+        "solvent": "glacial acetic acid",
+        "volume": "1.2mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "1 h"
+      },
+      "targets": {
+        "yield": "96%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry4"
+    },
+    {
+      "id": "Experimental-Entry5",
+      "reaction_type": "Suzuki coupling",
+      "substrates": [
+        {
+          "name": "4-bromo-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "symbol": "23",
+          "amount": "100mg 0.35mmol",
+          "registry_name": "4-Bromo-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "phenylboronicacid",
+          "symbol": null,
+          "amount": "64.6mg,0.52mmol"
+        },
+        {
+          "name": "Cs CO",
+          "symbol": "CsCO3",
+          "amount": "84.5mg,0.26mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxy-4-phenylisoquinolin-1(2H)-one",
+          "symbol": "24",
+          "amount": "96mg",
+          "registry_name": "6,7-Dimethoxy-4-phenylisoquinolin-1(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·3CHCl3",
+          "symbol": "Pd2(dba)3·3CHCl3",
+          "amount": "7.2mg,0.007mmol,2mol%"
+        },
+        {
+          "name": "PA-Ph",
+          "symbol": "PA-Ph",
+          "amount": "4.1mg,0.014mmol,4mmol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "3mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "90(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry5"
+    },
+    {
+      "id": "Experimental-Entry6",
+      "reaction_type": "cyanation (CuCN)",
+      "substrates": [
+        {
+          "name": "4-bromo-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "symbol": "23",
+          "amount": "0.96mmol,270.7mg",
+          "registry_name": "4-Bromo-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "CuCN",
+          "symbol": null,
+          "amount": "193.8 mg, 2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxy-1-oxo-1,2-dihydroisoquinoline-4-carbonitrile",
+          "symbol": "25",
+          "amount": "198mg",
+          "registry_name": "6,7-Dimethoxy-1-oxo-1,2-dihydroisoquinoline-4-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "N-methyl-2-pyrrolidone",
+        "volume": "4mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "200(cid:1)C",
+        "time": "40min"
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry6"
+    },
+    {
+      "id": "Experimental-Entry7",
+      "reaction_type": "halogenation (POBr)",
+      "substrates": [
+        {
+          "name": "6,7-dimethoxy-4-phenylisoquinolin-1(2H)-one",
+          "symbol": "24",
+          "amount": "80mg, 0.28mmol",
+          "registry_name": "6,7-Dimethoxy-4-phenylisoquinolin-1(2H)-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "POBr",
+          "symbol": null,
+          "amount": "253.7mg,0.84mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Bromo-6,7-dimethoxy-4-phenylisoquinoline",
+          "symbol": "26",
+          "amount": null,
+          "registry_name": "1-Bromo-6,7-dimethoxy-4-phenylisoquinoline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "DCM",
+        "volume": "3mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "120(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry7"
+    },
+    {
+      "id": "Experimental-Entry8",
+      "reaction_type": "Suzuki coupling",
+      "substrates": [
+        {
+          "name": "1-bromo-6,7-dimethoxy-4-phenylisoquinoline",
+          "symbol": "26",
+          "amount": "0.107 mmol, 36.7 mg",
+          "registry_name": "1-Bromo-6,7-dimethoxy-4-phenylisoquinoline",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "phenylboronic acid",
+          "symbol": null,
+          "amount": "0.161mmol, 16.6mg"
+        },
+        {
+          "name": "Cs CO",
+          "symbol": "CsCO3",
+          "amount": "0.24mmol,78.2mg"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxy-1,4-diphenylisoquinoline",
+          "symbol": "27",
+          "amount": "35mg",
+          "registry_name": "6,7-Dimethoxy-1,4-diphenylisoquinoline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·3CHCl3",
+          "symbol": "Pd2(dba)3·3CHCl3",
+          "amount": "2.3mg,0.0021mmol,2mol%"
+        },
+        {
+          "name": "PA-Ph",
+          "symbol": "PA-Ph",
+          "amount": "1.3mg.0.0043mmol,4mmol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "1.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "90(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry8"
+    },
+    {
+      "id": "Experimental-Entry9",
+      "reaction_type": "C–N coupling (amination)",
+      "substrates": [
+        {
+          "name": "1-bromo-6,7-dimethoxy-4-phenylisoquinoline",
+          "symbol": "26",
+          "amount": "36mg,0.1mmol",
+          "registry_name": "1-Bromo-6,7-dimethoxy-4-phenylisoquinoline",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "piperidine",
+          "symbol": null,
+          "amount": "15μL,0.15mmol"
+        },
+        {
+          "name": "NaOtBu",
+          "symbol": null,
+          "amount": "14.4mg,0.15"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxy-4-phenyl-1-(piperidin-1-yl)isoquinoline",
+          "symbol": "28",
+          "amount": "22mg",
+          "registry_name": "6,7-Dimethoxy-4-phenyl-1-(piperidin-1-yl)isoquinoline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·3CHCl3",
+          "symbol": "Pd2(dba)3·3CHCl3",
+          "amount": "2.3mg,0.0021mmol,2mol%"
+        },
+        {
+          "name": "PA-Ph",
+          "symbol": "PA-Ph",
+          "amount": "1.3mg.0.0043mmol,4mmol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "2mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "180(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry9"
+    },
+    {
+      "id": "Experimental-Entry10",
+      "reaction_type": "chlorination (POCl)",
+      "substrates": [
+        {
+          "name": "4-bromo-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "symbol": "23",
+          "amount": "283mg,1mmol",
+          "registry_name": "4-Bromo-6,7-dimethoxyisoquinolin-1(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-Bromo-1-chloro-6,7-dimethoxyisoquinoline",
+          "symbol": "29",
+          "amount": "296mg",
+          "registry_name": "4-Bromo-1-chloro-6,7-dimethoxyisoquinoline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "POCl",
+          "symbol": null,
+          "amount": "2 mL, 20mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "100(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry10"
+    },
+    {
+      "id": "Experimental-Entry11",
+      "reaction_type": "nucleophilic substitution (ethoxy formation)",
+      "substrates": [
+        {
+          "name": "4-bromo-1-chloro-6,7-dimethoxyisoquinoline",
+          "symbol": "29",
+          "amount": "50mg, 0.17mmol",
+          "registry_name": "4-Bromo-1-chloro-6,7-dimethoxyisoquinoline",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "NaOEt",
+          "symbol": null,
+          "amount": "46.7mg,0.33 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-Bromo-1-ethoxy-6,7-dimethoxyisoquinoline",
+          "symbol": "30",
+          "amount": "45mg",
+          "registry_name": "4-Bromo-1-ethoxy-6,7-dimethoxyisoquinoline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "ethanol",
+        "volume": "2mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "90(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry11"
+    },
+    {
+      "id": "Experimental-Entry12",
+      "reaction_type": "Suzuki coupling",
+      "substrates": [
+        {
+          "name": "4-bromo-1-ethoxy-6,7-dimethoxyisoquinoline",
+          "symbol": "30",
+          "amount": "30 mg, 0.096 mmol",
+          "registry_name": "4-Bromo-1-ethoxy-6,7-dimethoxyisoquinoline",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "phenylboronicacid",
+          "symbol": null,
+          "amount": "17.9mg,0.144mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Ethoxy-6,7-dimethoxy-4-phenylisoquinoline",
+          "symbol": "31",
+          "amount": "29 mg",
+          "registry_name": "1-Ethoxy-6,7-dimethoxy-4-phenylisoquinoline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·3CHCl3",
+          "symbol": "Pd2(dba)3·3CHCl3",
+          "amount": "7.2mg,0.007mmol,2mol%"
+        },
+        {
+          "name": "PA-Ph",
+          "symbol": "PA-Ph",
+          "amount": "4.1mg,0.014mmol,4mmol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "Cs CO",
+          "symbol": "CsCO3",
+          "amount": "84.5mg,0.26mmol"
+        }
+      ],
+      "reagents": [],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "3mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "90(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry12"
+    },
+    {
+      "id": "Experimental-Entry13",
+      "reaction_type": "halogenation (POBr)",
+      "substrates": [
+        {
+          "name": "6,7-dimethoxy-1-oxo-1,2-dihydroisoquinoline-4-carbonitrile",
+          "symbol": "25",
+          "amount": "150.1 mg, 0.652 mmol",
+          "registry_name": "6,7-Dimethoxy-1-oxo-1,2-dihydroisoquinoline-4-carbonitrile",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "POBr",
+          "symbol": null,
+          "amount": "0.59 g, 1.956 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Bromo-6,7-dimethoxyisoquinoline-4-carbonitrile",
+          "symbol": "32",
+          "amount": "169 mg",
+          "registry_name": "1-Bromo-6,7-dimethoxyisoquinoline-4-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "dicholoromethane",
+        "volume": "4 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "150(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry13"
+    },
+    {
+      "id": "GeneralProcedure_Coupling_of_1-Bromo-6,7-dimethoxy-isoquinoline-4-carbonitrilewithAldehydesviaNucleophilicAroylation-Entry1",
+      "reaction_type": "nucleophilic aroylation",
+      "substrates": [
+        {
+          "name": "1-bromo-6,7-dimethoxyisoquinoline-4-carbonitrile",
+          "symbol": "32",
+          "amount": "30.1 mg, 0.102 mmol",
+          "registry_name": "1-Bromo-6,7-dimethoxyisoquinoline-4-carbonitrile",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "4-methoxybenzaldehyde",
+          "symbol": null,
+          "amount": "20mg,0.15mmol"
+        },
+        {
+          "name": "1,3-dimethylimidazoliumiodide",
+          "symbol": null,
+          "amount": "0.15mmol"
+        },
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "0.15mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxy-1-(4-methoxyphenylcarbonyl)isoquinoline-4-carbonitrile",
+          "symbol": "33",
+          "amount": "35 mg",
+          "registry_name": "6,7-Dimethoxy-1-(4-methoxyphenylcarbonyl)isoquinoline-4-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "DMF",
+        "volume": "1.5mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "2h"
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_Coupling_of_1-Bromo-6,7-dimethoxy-isoquinoline-4-carbonitrilewithAldehydesviaNucleophilicAroylation-Entry1"
+    },
+    {
+      "id": "Experimental-Entry14",
+      "reaction_type": "Suzuki coupling",
+      "substrates": [
+        {
+          "name": "1-bromo-6,7-dimethoxyisoquinoline-4-carbonitrile",
+          "symbol": "32",
+          "amount": "20 mg,0.068mmol",
+          "registry_name": "1-Bromo-6,7-dimethoxyisoquinoline-4-carbonitrile",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "phenylboronicacid",
+          "symbol": null,
+          "amount": "13mg,0.102mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,7-Dimethoxy-1-phenylisoquinoline-4-carbonitrile",
+          "symbol": "36",
+          "amount": "19mg",
+          "registry_name": "6,7-Dimethoxy-1-phenylisoquinoline-4-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·3CHCl3",
+          "symbol": "Pd2(dba)3·3CHCl3",
+          "amount": "7.2mg,0.007mmol,2mol%"
+        },
+        {
+          "name": "PA-Ph",
+          "symbol": "PA-Ph",
+          "amount": "4.1mg,0.014mmol,4mmol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "Cs CO",
+          "symbol": "CsCO3",
+          "amount": "84.5mg,0.26mmol"
+        }
+      ],
+      "reagents": [],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "3mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "90(cid:1)C",
+        "time": "30min"
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Experimental-Entry14"
+    }
+  ]
+}

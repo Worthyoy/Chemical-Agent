@@ -1,0 +1,186 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/The first asymmetric Sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes.pdf",
+  "paper_key": "the first asymmetric sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/The first asymmetric Sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v8_two_column_cli",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/The first asymmetric Sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes.pdf",
+    "source_mtime_ns": 1782048731000000000,
+    "source_size": 3685200,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "enable_stage2_audit": true,
+    "paper_key": "the first asymmetric sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/The first asymmetric Sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes.pdf"
+  },
+  "extracted_at": "2026-06-22T18:26:10.786721",
+  "total_reactions": 18,
+  "filtered_reactions": 2,
+  "filter_stats": {
+    "input_reactions": 18,
+    "basic_failed": 16,
+    "target_failed": 0,
+    "retained": 2
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry1",
+      "reaction_type": "Appel reaction",
+      "substrates": [
+        {
+          "name": "1,4-bis(6-hydroxy-1-hexyl)benzene1",
+          "symbol": "1,4-bis(6-hydroxy-1-hexyl)benzene1",
+          "amount": "0.765 g, 2.75 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1,4-Bis(6-bromo-1-hexyl)benzene",
+          "symbol": "3b",
+          "amount": "1.05 g",
+          "registry_name": "1,4-Bis(6-bromo-1-hexyl)benzene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "CHCl3",
+          "symbol": "CHCl3",
+          "amount": "27 mL"
+        },
+        {
+          "name": "CBr4",
+          "symbol": "CBr4",
+          "amount": "2.79 g, 8.24 mmol"
+        },
+        {
+          "name": "PPh3",
+          "symbol": "PPh3",
+          "amount": "1.92 g, 6.87 mmol"
+        },
+        {
+          "name": "saturated NaHCO3 solution",
+          "symbol": "saturated NaHCO3 solution",
+          "amount": null
+        },
+        {
+          "name": "brine",
+          "symbol": "brine",
+          "amount": null
+        },
+        {
+          "name": "Na2SO4",
+          "symbol": "Na2SO4",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "27 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "0 οC then room temperature",
+        "time": "5 min"
+      },
+      "targets": {
+        "yield": "95 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1-Entry1"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry1",
+      "reaction_type": "Williamson ether synthesis",
+      "substrates": [
+        {
+          "name": "2,5-diiodohydroquinone3",
+          "symbol": "3",
+          "amount": "362.3 mg, 1.0 mmol"
+        },
+        {
+          "name": "1,4-bis(6-bromo-1-hexyl)benzene",
+          "symbol": "3b",
+          "amount": "404.7 mg, 1.0 mmol",
+          "registry_name": "1,4-Bis(6-bromo-1-hexyl)benzene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "22,25-Diiodo-1,20-dioxa[7.7]paracyclophane",
+          "symbol": "1b",
+          "amount": "284.1 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "K2CO3",
+          "symbol": "K CO",
+          "amount": "346.3 mg, 2.5 mmol"
+        },
+        {
+          "name": "DMF",
+          "symbol": "DMF",
+          "amount": "30 mL (substrates) + 50 mL (suspension)"
+        },
+        {
+          "name": "EtOAc",
+          "symbol": "EtOAc",
+          "amount": null
+        },
+        {
+          "name": "1N HCl",
+          "symbol": "1N HCl",
+          "amount": null
+        },
+        {
+          "name": "saturated NaHCO3 solution",
+          "symbol": "saturated NaHCO3 solution",
+          "amount": null
+        },
+        {
+          "name": "water",
+          "symbol": "water",
+          "amount": null
+        },
+        {
+          "name": "brine",
+          "symbol": "brine",
+          "amount": null
+        },
+        {
+          "name": "Na2SO4",
+          "symbol": "Na2SO4",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "volume": "30 mL (substrates) + 50 mL (suspension)",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "120°C",
+        "time": "added within 6 h"
+      },
+      "targets": {
+        "yield": "47 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry1"
+    }
+  ]
+}

@@ -1,0 +1,2033 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides.pdf",
+  "paper_key": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v8_two_column_cli",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides.pdf",
+    "source_mtime_ns": 1782048615000000000,
+    "source_size": 7969496,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "enable_stage2_audit": true,
+    "paper_key": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides.pdf"
+  },
+  "extracted_at": "2026-06-22T17:35:07.605189",
+  "total_reactions": 30,
+  "filtered_reactions": 30,
+  "filter_stats": {
+    "input_reactions": 30,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 30
+  },
+  "reactions": [
+    {
+      "id": "Synthesis of Amides-Entry1",
+      "reaction_type": "nitrile reduction and acylation",
+      "substrates": [
+        {
+          "name": "4-trifluoromethylbenzyl cyanide",
+          "symbol": "4-trifluoromethylbenzyl cyanide",
+          "amount": "20.0 g, 20 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(4-(trifluoromethyl)phenethyl)acetamide",
+          "symbol": "N-(4-(trifluoromethyl)phenethyl)acetamide",
+          "amount": "1.80 g"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "1M BH ·THF",
+          "symbol": "1M BH ·THF",
+          "amount": "40 mL, 40 mmol"
+        },
+        {
+          "name": "THF",
+          "symbol": "THF",
+          "amount": "25 mL"
+        },
+        {
+          "name": "3 M HCl",
+          "symbol": "3 M HCl",
+          "amount": "20 mL"
+        },
+        {
+          "name": "10% NaOH",
+          "symbol": "10% NaOH",
+          "amount": "30 mL"
+        },
+        {
+          "name": "EA",
+          "symbol": "EA",
+          "amount": "75mL × 2"
+        },
+        {
+          "name": "Mg SO",
+          "symbol": "Mg SO",
+          "amount": null
+        },
+        {
+          "name": "CH Cl",
+          "symbol": "CH Cl",
+          "amount": "50 mL"
+        },
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "5.6 mL, 40 mmol"
+        },
+        {
+          "name": "acetyl chloride",
+          "symbol": "acetyl chloride",
+          "amount": "1.7 mL, 24 mmol"
+        },
+        {
+          "name": "1 M HCl",
+          "symbol": "1 M HCl",
+          "amount": "2 × 50 mL"
+        },
+        {
+          "name": "15% NaOH",
+          "symbol": "15% NaOH",
+          "amount": null
+        },
+        {
+          "name": "MeOH in CH Cl",
+          "symbol": "MeOH in CH Cl",
+          "amount": "1.5% (eluent)"
+        },
+        {
+          "name": "EtOAc in hexanes",
+          "symbol": "EtOAc in hexanes",
+          "amount": "60% to 100% (gradient, eluent)"
+        },
+        {
+          "name": "silica",
+          "symbol": "silica",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF; CH Cl",
+        "volume": "THF (25 mL); CH Cl (50 mL)",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "0 ºC (addition), room temperature",
+        "time": "24 h; 30 minutes"
+      },
+      "targets": {
+        "yield": "39%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis of Amides-Entry1"
+    },
+    {
+      "id": "Synthesis of methyl N-acetyl-N-(tert-butoxycarbonyl)-L-lysinate-Entry1",
+      "reaction_type": "acetylation",
+      "substrates": [
+        {
+          "name": "N-(tert-butoxycarbonyl)-L-lysine methyl ester acetate salt",
+          "symbol": null,
+          "amount": "1.0 g, 3.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl N-acetyl-N-(tert-butoxycarbonyl)-L-lysinate",
+          "symbol": null,
+          "amount": "631 mg"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "H O",
+          "symbol": "H O",
+          "amount": "2 x 20 mL"
+        },
+        {
+          "name": "Na SO ",
+          "symbol": "Na SO ",
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "NEt",
+          "symbol": "NEt",
+          "amount": "2.2 mL, 16 mmol, 5.2 equiv."
+        },
+        {
+          "name": "acetic anhydride",
+          "symbol": null,
+          "amount": "0.38 mL, 4.0 mmol, 1.3 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH Cl",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "cooled to 0 °C then warmed to RT",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis of methyl N-acetyl-N-(tert-butoxycarbonyl)-L-lysinate-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "reaction_type": "HAT-driven Enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methylquinoline",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-acetylphenethylamine",
+          "symbol": null,
+          "amount": "326 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(4-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "3",
+          "amount": "44.4 mg",
+          "registry_name": "(S)-N-(1-(4-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": null,
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "10 equiv., 174 L"
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": null,
+          "amount": "16 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "95%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "reaction_type": "HAT-driven Enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methyl quinoline",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-(4-fluorophenethyl)acetamide",
+          "symbol": null,
+          "amount": "362, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(2-(4-fluorophenyl)-1-(4-methylquinolin-2-yl)ethyl)acetamide",
+          "symbol": "4",
+          "amount": "51.2 mg",
+          "registry_name": "(S)-N-(2-(4-fluorophenyl)-1-(4-methylquinolin-2-yl)ethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": null,
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "10 equiv., 174 L"
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": null,
+          "amount": "16 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "95%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "reaction_type": "HAT-driven Enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methyl quinoline",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol"
+        },
+        {
+          "name": "N-(4-trifluoromethylphenethyl)acetamide",
+          "symbol": null,
+          "amount": "462 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(4-methylquinolin-2-yl)-2-(4-(trifluoromethyl)phenyl)ethyl)acetamide",
+          "symbol": "5",
+          "amount": "46.4 mg",
+          "registry_name": "(S)-N-(1-(4-methylquinolin-2-yl)-2-(4-(trifluoromethyl)phenyl)ethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": null,
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "10 equiv., 174 L"
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": null,
+          "amount": "16 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "reaction_type": "HAT-driven Enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methyl quinoline",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol"
+        },
+        {
+          "name": "N-(3-bromophenethyl)acetamide",
+          "symbol": null,
+          "amount": "484 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(2-(3-bromophenyl)-1-(4-methylquinolin-2-yl)ethyl)acetamide",
+          "symbol": "7",
+          "amount": "39.5 mg",
+          "registry_name": "(S)-N-(2-(3-bromophenyl)-1-(4-methylquinolin-2-yl)ethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": null,
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "10 equiv., 174 L"
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": null,
+          "amount": "16 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": "94%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry5",
+      "reaction_type": "HAT-driven Enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methyl quinoline",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol"
+        },
+        {
+          "name": "N-(3,4-dichlorophenethyl)acetamide",
+          "symbol": null,
+          "amount": "464 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(2-(3,4-dichlorophenyl)-1-(4-methylquinolin-2-yl)ethyl)acetamide",
+          "symbol": "8",
+          "amount": "50.8 mg",
+          "registry_name": "(S)-N-(2-(3,4-dichlorophenyl)-1-(4-methylquinolin-2-yl)ethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": null,
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "10 equiv., 174 L"
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": null,
+          "amount": "16 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "98%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry6",
+      "reaction_type": "HAT-driven Enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methyl quinoline",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol"
+        },
+        {
+          "name": "N-(3-phenylpropyl)acetamide",
+          "symbol": null,
+          "amount": "354 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(4-methylquinolin-2-yl)-3-phenylpropyl)acetamide",
+          "symbol": "9",
+          "amount": "33.8 mg",
+          "registry_name": "(S)-N-(1-(4-methylquinolin-2-yl)-3-phenylpropyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-DIP",
+          "symbol": null,
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "10 equiv., 174 L"
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": null,
+          "amount": "16 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": "87%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry7",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methyl quinoline",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol"
+        },
+        {
+          "name": "N-(4-phenylbutyl)acetamide",
+          "symbol": null,
+          "amount": "383 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(4-methylquinolin-2-yl)-4-phenylbutyl)acetamide",
+          "symbol": "10",
+          "amount": "30.6 mg",
+          "registry_name": "(S)-N-(1-(4-methylquinolin-2-yl)-4-phenylbutyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-DIP",
+          "symbol": "(R)-DIP",
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "10 equiv., 174 μL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour) at a distance of 2 cm",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": "86%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry8",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methylquinoline",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-ethylacetamide",
+          "symbol": null,
+          "amount": "189 μL, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(1-(4-methylquinolin-2-yl)ethyl)acetamide",
+          "symbol": "11",
+          "amount": "34.2 mg",
+          "registry_name": "N-(1-(4-methylquinolin-2-yl)ethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": "(R)-TRIP",
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "10 equiv., 174 μL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour) at a distance of 2 cm",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "86%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry9",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methylquinoline",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-nonylacetamide",
+          "symbol": null,
+          "amount": "370 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(4-methylquinolin-2-yl)nonyl)acetamide",
+          "symbol": "12",
+          "amount": "25.5 mg",
+          "registry_name": "(S)-N-(1-(4-methylquinolin-2-yl)nonyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-DIP",
+          "symbol": "(R)-DIP",
+          "amount": "13.4 mg, 0.02 mmol, 10 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "10 equiv., 174 μL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour) at a distance of 2 cm",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "48 hours"
+      },
+      "targets": {
+        "yield": "39%",
+        "ee": "85%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry10",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methylquinoline",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-isobutylacetamide",
+          "symbol": null,
+          "amount": "130 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(2-methyl-1-(4-methylquinolin-2-yl)propyl)acetamide",
+          "symbol": "13",
+          "amount": "28.2 mg",
+          "registry_name": "(S)-N-(2-methyl-1-(4-methylquinolin-2-yl)propyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": "(R)-TRIP",
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "10 equiv., 174 μL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour) at a distance of 2 cm",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "97%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry11",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methylquinoline",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "tert-butyl 4-acetamidobutanoate",
+          "symbol": null,
+          "amount": "403 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-butyl (S)-4-acetamido-4-(4-methylquinolin-2-yl)butanoate",
+          "symbol": "15",
+          "amount": "42.7 mg",
+          "registry_name": "tert-butyl (S)-4-acetamido-4-(4-methylquinolin-2-yl)butanoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-DIP",
+          "symbol": "(R)-DIP",
+          "amount": "6.7 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "10 equiv., 174 μL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour) at a distance of 2 cm",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "48 hours"
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry12",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methylquinoline",
+          "symbol": null,
+          "amount": "21.5 mg, 0.15 mmol, 1.0 equiv."
+        },
+        {
+          "name": "methyl N-acetyl-N-(tert-butoxycarbonyl)-L-lysinate",
+          "symbol": null,
+          "amount": "454 mg, 1.5 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (2S,6S)-6-acetamido-2-((t-butoxycarbonyl)amino)-6-(4-methylquinolin-2-yl)hexanoate",
+          "symbol": "16",
+          "amount": "34 mg",
+          "registry_name": "Methyl (2S,6S)-6-acetamido-2-((t-butoxycarbonyl)amino)-6-(4-methylquinolin-2-yl)hexanoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-DIP",
+          "symbol": "(R)-DIP",
+          "amount": "5.0 mg, 0.008 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": null,
+          "amount": "130 μL, 1.5 mmol, 10 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour) at a distance of 2 cm",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry13",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "quinoline",
+          "symbol": "quinoline",
+          "amount": "26.4 mg, 0.204 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-phenethylacetamide",
+          "symbol": "N-phenethylacetamide",
+          "amount": "326.4 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(2-phenyl-1-(quinolin-2-yl)ethyl)acetamide",
+          "symbol": "17",
+          "amount": "25 mg",
+          "registry_name": "(S)-N-(2-phenyl-1-(quinolin-2-yl)ethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": "(R)-TRIP",
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "10 equiv., 174 μL",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": "tert-butyl acetate",
+          "amount": "16 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "42%",
+        "ee": "95%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry17"
+    },
+    {
+      "id": "GeneralProcedureA-Entry14",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "6-methoxyquinoline",
+          "symbol": "6-methoxyquinoline",
+          "amount": "31.8 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-phenethylacetamide",
+          "symbol": "N-phenethylacetamide",
+          "amount": "326.4 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(6-methoxyquinolin-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "18",
+          "amount": "39.1 mg",
+          "registry_name": "(S)-N-(1-(6-methoxyquinolin-2-yl)-2-phenylethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": "(R)-TRIP",
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "10 equiv., 174 μL",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": "tert-butyl acetate",
+          "amount": "16 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry18"
+    },
+    {
+      "id": "GeneralProcedureA-Entry15",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "6-chloroquinoline",
+          "symbol": "6-chloroquinoline",
+          "amount": "32.7 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-phenethylacetamide",
+          "symbol": "N-phenethylacetamide",
+          "amount": "326.4 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(6-chloroquinolin-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "19",
+          "amount": "45.5 mg",
+          "registry_name": "(S)-N-(1-(6-chloroquinolin-2-yl)-2-phenylethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": "(R)-TRIP",
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "10 equiv., 174 μL",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": "tert-butyl acetate",
+          "amount": "16 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "70% yield",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry19"
+    },
+    {
+      "id": "GeneralProcedureA-Entry16",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "3-methylquinoline",
+          "symbol": "3-methylquinoline",
+          "amount": "28.6 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-phenethylacetamide",
+          "symbol": "N-phenethylacetamide",
+          "amount": "326.4 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(3-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "20",
+          "amount": "51.7 mg",
+          "registry_name": "(S)-N-(1-(3-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": "(R)-TRIP",
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "10 equiv., 174 μL",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": "tert-butyl acetate",
+          "amount": "16 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "85% yield",
+        "ee": "93%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry20"
+    },
+    {
+      "id": "GeneralProcedureA-Entry17",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "phenanthridine",
+          "symbol": "phenanthridine",
+          "amount": "35.8 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-phenethylacetamide",
+          "symbol": "N-phenethylacetamide",
+          "amount": "326.4 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(phenanthridin-6-yl)-2-phenylethyl)acetamide",
+          "symbol": "21",
+          "amount": "48.3 mg",
+          "registry_name": "(S)-N-(1-(phenanthridin-6-yl)-2-phenylethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": "(R)-TRIP",
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "10 equiv., 174 μL",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": "tert-butyl acetate",
+          "amount": "16 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "83%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry21"
+    },
+    {
+      "id": "GeneralProcedureA-Entry18",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "N-heteroarene",
+          "symbol": "N-heteroarene",
+          "amount": "0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "amide",
+          "symbol": "amide",
+          "amount": "2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(3-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "20",
+          "amount": "50.7 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "chiral phosphoric acid",
+          "symbol": "CPA",
+          "amount": "0.010 mmol, 5 mol%",
+          "registry_name": "chiral phosphoric acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "10 equiv., 174 L",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        }
+      ],
+      "reagents": [
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "96%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry19",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "methyl 2-methylnicotinate",
+          "symbol": "methyl 2-methylnicotinate",
+          "amount": "30.2 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (S)-6-(1-acetamido-2-phenylethyl)-2-methylnicotinate",
+          "symbol": "23",
+          "amount": "38.1 mg",
+          "registry_name": "methyl (S)-6-(1-acetamido-2-phenylethyl)-2-methylnicotinate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TCYP",
+          "symbol": "(R)-TCYP",
+          "amount": "19.8 mg, 0.02 mmol, 10 mol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "348 L, 4.0 mmol, 20 equiv.",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        }
+      ],
+      "reagents": [
+        {
+          "name": "N-phenethylacetamide",
+          "symbol": "N-phenethylacetamide",
+          "amount": "326.4 mg, 2.0 mmol, 10 equiv."
+        },
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "48 h"
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": "86%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry20",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "methyl methyl nicotinate",
+          "symbol": "methyl methyl nicotinate",
+          "amount": "27.4 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (S)-6-(1-acetamido-2-phenylethyl)nicotinate",
+          "symbol": "24",
+          "amount": "27.4 mg",
+          "registry_name": "methyl (S)-6-(1-acetamido-2-phenylethyl)nicotinate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TCYP",
+          "symbol": "(R)-TCYP",
+          "amount": "19.8 mg, 0.02 mmol, 10 mol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "348 L, 4.0 mmol, 20 equiv.",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        }
+      ],
+      "reagents": [
+        {
+          "name": "N-phenethylacetamide",
+          "symbol": "N-phenethylacetamide",
+          "amount": "326.4 mg, 2.0 mmol, 10 equiv."
+        },
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "48 h"
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": "81%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry21",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "methyl methyl 4-methylnicotinate",
+          "symbol": "methyl methyl 4-methylnicotinate",
+          "amount": "30.2 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (S)-6-(1-acetamido-2-phenylethyl)-4-methylnicotinate",
+          "symbol": "25",
+          "amount": "23.1 mg",
+          "registry_name": "methyl (S)-6-(1-acetamido-2-phenylethyl)-4-methylnicotinate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TCYP",
+          "symbol": "(R)-TCYP",
+          "amount": "19.8 mg, 0.02 mmol, 10 mol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "348 L, 4.0 mmol, 20 equiv.",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        }
+      ],
+      "reagents": [
+        {
+          "name": "N-phenethylacetamide",
+          "symbol": "N-phenethylacetamide",
+          "amount": "326.4 mg, 2.0 mmol, 10 equiv."
+        },
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "48 h"
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": "79%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry22",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "methyl methyl 5-methylnicotinate",
+          "symbol": "methyl methyl 5-methylnicotinate",
+          "amount": "30.2 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (S)-6-(1-acetamido-2-phenylethyl)-5-methylnicotinate",
+          "symbol": "26",
+          "amount": "37.5 mg",
+          "registry_name": "methyl (S)-6-(1-acetamido-2-phenylethyl)-5-methylnicotinate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": "(R)-TRIP",
+          "amount": "15.0 mg, 0.02 mmol, 10 mol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "348 L, 4.0 mmol, 20 equiv.",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        }
+      ],
+      "reagents": [
+        {
+          "name": "N-phenethylacetamide",
+          "symbol": "N-phenethylacetamide",
+          "amount": "326.4 mg, 2.0 mmol, 10 equiv."
+        },
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "48 h"
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "73%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry23",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "methyl 1-(pyridin-3-yl)propan-1-one",
+          "symbol": "methyl 1-(pyridin-3-yl)propan-1-one",
+          "amount": "27.0 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(2-phenyl-1-(5-propionylpyridin-2-yl)ethyl)acetamide",
+          "symbol": "27",
+          "amount": "35.0 mg",
+          "registry_name": "(S)-N-(2-phenyl-1-(5-propionylpyridin-2-yl)ethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TCYP",
+          "symbol": "(R)-TCYP",
+          "amount": "19.8 mg, 0.02 mmol, 10 mol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "348 L, 4.0 mmol, 20 equiv.",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        }
+      ],
+      "reagents": [
+        {
+          "name": "N-phenethylacetamide",
+          "symbol": "N-phenethylacetamide",
+          "amount": "326.4 mg, 2.0 mmol, 10 equiv."
+        },
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "48 h"
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": "87%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry24",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "2-methylnicotinonitrile",
+          "symbol": "2-methylnicotinonitrile",
+          "amount": "23.6 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(5-cyano-6-methylpyridin-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "28",
+          "amount": "26.8 mg",
+          "registry_name": "(S)-N-(1-(5-cyano-6-methylpyridin-2-yl)-2-phenylethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TCYP",
+          "symbol": "(R)-TCYP",
+          "amount": "19.8 mg, 0.02 mmol, 10 mol%"
+        }
+      ],
+      "additives": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "348 L, 4.0 mmol, 20 equiv.",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        }
+      ],
+      "reagents": [
+        {
+          "name": "N-phenethylacetamide",
+          "symbol": "N-phenethylacetamide",
+          "amount": "326.4 mg, 2.0 mmol, 10 equiv."
+        },
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "48 h"
+      },
+      "targets": {
+        "yield": "48%",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry7"
+    },
+    {
+      "id": "GeneralProcedureA-Entry25",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "2-methyl-4-methylpyrimidine",
+          "symbol": null,
+          "amount": "28.6 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "tert-butyl 4-acetamidobutanoate",
+          "symbol": null,
+          "amount": "403 mg, 2.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(2-methyl-6-phenylpyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "29",
+          "amount": "21.0 mg",
+          "registry_name": "(S)-N-(1-(2-methyl-6-phenylpyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": "(R)-TRIP",
+          "amount": "7.5 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "10 equiv., 174 L",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": "tert-butyl acetate",
+          "amount": "16 mL"
+        },
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "a few drops"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "16 mL",
+        "light source": "Kessil Tuna blue lamp (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "48 h"
+      },
+      "targets": {
+        "yield": "32%",
+        "ee": "95%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "1 mmol scale-Entry1",
+      "reaction_type": "HAT-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methylquinoline",
+          "symbol": "4-methylquinoline",
+          "amount": "143 mg, 1 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-acetylphenethylamine",
+          "symbol": "N-acetylphenethylamine",
+          "amount": "1.63 g, 10.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(4-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "3",
+          "amount": "223 mg",
+          "registry_name": "(S)-N-(1-(4-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": "(R)-TRIP",
+          "amount": "38 mg, 0.05 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "0.87 mL, 10.0 mmol, 10 equiv.",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        },
+        {
+          "name": "tert-butyl acetate",
+          "symbol": "tert-butyl acetate",
+          "amount": "80 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "80 mL",
+        "light source": "two Kessil Tuna blue lamps (100% intensity, 100% Ocean Blue colour) mounted within 2 cm to the edge of the reaction flask",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "95%",
+        "er": null
+      },
+      "_original_id": "1 mmol scale-Entry1"
+    },
+    {
+      "id": "Deprotection of acetyl protecting group without loss of stereochemical integrity-Entry1",
+      "reaction_type": "deprotection and Boc protection",
+      "substrates": [
+        {
+          "name": "(S)-N-(1-(4-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "3",
+          "amount": "80 mg, 0.26 mmol",
+          "registry_name": "(S)-N-(1-(4-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(2-methyl-6-phenylpyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "29",
+          "amount": "52 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "methanol",
+          "symbol": "methanol",
+          "amount": "8 mL"
+        },
+        {
+          "name": "6M HCl",
+          "symbol": "6M HCl",
+          "amount": "8 mL"
+        },
+        {
+          "name": "dichloromethane",
+          "symbol": "CH2Cl2",
+          "amount": "3 x 30 ml extraction; 12 mL"
+        },
+        {
+          "name": "Na SO",
+          "symbol": "Na SO",
+          "amount": null
+        },
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "55 μL, 0.40 mmol, 1.5 equiv."
+        },
+        {
+          "name": "di-tert-butyl dicarbonate",
+          "symbol": "di-tert-butyl dicarbonate",
+          "amount": "69 mg, 0.32 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol; dichloromethane (CH2Cl2)",
+        "volume": "methanol (8 mL); 6M HCl (8 mL); CH2Cl2 (3 x 30 ml extraction; 12 mL)",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "45 °C (first step); 0 °C to RT (second step)",
+        "time": "36 h (first step); 4 h (second step)"
+      },
+      "targets": {
+        "yield": "55% yield over two steps",
+        "ee": "95%",
+        "er": null
+      },
+      "_original_id": "Deprotection of acetyl protecting group without loss of stereochemical integrity-Entry1"
+    },
+    {
+      "id": "GeneralProcedure_diacetyl_and_tert_butyl_acetate_were_thoroughly_degassed_via_freeze_pump_thaw-Entry1",
+      "reaction_type": "hydrogen-atom-transfer-driven enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methylquinoline",
+          "symbol": null,
+          "amount": "143 mg, 1 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-acetylphenethylamine",
+          "symbol": null,
+          "amount": "1.63 g, 10.0 mmol, 10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(4-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "3",
+          "amount": "223 mg",
+          "registry_name": "(S)-N-(1-(4-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": "(R)-TRIP",
+          "amount": "38 mg, 0.05 mmol, 5 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "diacetyl",
+          "symbol": "diacetyl",
+          "amount": "0.87 mL, 10.0 mmol, 10 equiv.",
+          "resolved_smiles": "CC(=O)C(=O)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "hydrogen-atom-transfer-driven-enantioselective-minisci-reaction-of-amides_image_4_3.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl acetate",
+        "volume": "80 mL",
+        "light source": "two Kessil Tuna blue lamps mounted within 2 cm to the edge of the reaction flask (100% intensity, 100% Ocean Blue colour)",
+        "wavelength": null,
+        "temperature": "approximately room temperature",
+        "time": "24 hours"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "95%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_diacetyl_and_tert_butyl_acetate_were_thoroughly_degassed_via_freeze_pump_thaw-Entry1"
+    }
+  ]
+}

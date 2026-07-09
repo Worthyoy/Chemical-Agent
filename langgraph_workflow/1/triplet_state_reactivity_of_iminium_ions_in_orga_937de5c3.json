@@ -1,0 +1,3473 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Triplet state reactivity of iminium ions in organocatalytic asymmetric [2 + 2] photocycloadditions_si.pdf",
+  "paper_key": "triplet state reactivity of iminium ions in organocatalytic asymmetric [2 + 2] photocycloadditions",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Triplet state reactivity of iminium ions in organocatalytic asymmetric [2 + 2] photocycloadditions_si.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v8_two_column_cli",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Triplet state reactivity of iminium ions in organocatalytic asymmetric [2 + 2] photocycloadditions_si.pdf",
+    "source_mtime_ns": 1782048794000000000,
+    "source_size": 13093378,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "enable_stage2_audit": true,
+    "paper_key": "triplet state reactivity of iminium ions in organocatalytic asymmetric [2 + 2] photocycloadditions",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Triplet state reactivity of iminium ions in organocatalytic asymmetric [2 + 2] photocycloadditions_si.pdf"
+  },
+  "extracted_at": "2026-06-22T18:48:40.996144",
+  "total_reactions": 53,
+  "filtered_reactions": 53,
+  "filter_stats": {
+    "input_reactions": 53,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 53
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "1.09 g, 7.5 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "306 μL, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(Pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "1",
+          "amount": "511 mg",
+          "registry_name": "1-(Pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "18.3 mg, 0.15 mmol, 0.05 equiv."
+        },
+        {
+          "name": "2,6-lu(cid:415)dine",
+          "symbol": null,
+          "amount": "35 μL, 0.3 mmol, 0.1 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "Boc O",
+          "symbol": null,
+          "amount": "1.7 2 mL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "volume": "7.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "30 °C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "5-bromo-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "672 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM1",
+          "amount": "578 mg",
+          "registry_name": "5-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": null,
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50 °C; 0 °C (acyl chloride addition)",
+        "time": "2 hours; 3 hours"
+      },
+      "targets": {
+        "yield": "63 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "5-fluoro-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "1.22 g, 7.5 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "306 μL, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM2",
+          "amount": "489 mg",
+          "registry_name": "5-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "18.3 mg, 0.15 mmol, 0.05 equiv."
+        },
+        {
+          "name": "2,6-lu(cid:415)dine",
+          "symbol": null,
+          "amount": "35 μL, 0.3 mmol, 0.1 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "Boc O",
+          "symbol": null,
+          "amount": "1.7 mL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "volume": "7.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "30 °C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "5-cyano-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "1.27 g, 7.5 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "306 μL, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Formyl-1-(pent-4-enoyl)-1H-indole-5-carbonitrile",
+          "symbol": "SM3",
+          "amount": "295 mg",
+          "registry_name": "3-formyl-1-(pent-4-enoyl)-1H-indole-5-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "18.3 mg, 0.15 mmol, 0.05 equiv"
+        },
+        {
+          "name": "2,6-lu(cid:415)dine",
+          "symbol": null,
+          "amount": "35 μL, 0.3 mmol, 0.1 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "Boc O",
+          "symbol": null,
+          "amount": "1.7 mL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "volume": "7.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "30 °C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "39%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "3-formyl-1H-indol-5-yl 4-methylbenzenesulfonate",
+          "symbol": null,
+          "amount": "946 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Formyl-1-(pent-4-enoyl)-1H-indol-5-yl 4-methylbenzenesulfonate",
+          "symbol": "SM4",
+          "amount": "918 mg",
+          "registry_name": "3-formyl-1-(pent-4-enoyl)-1H-indol-5-yl 4-methylbenzenesulfonate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": null,
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50 °C",
+        "time": "2 hours"
+      },
+      "targets": {
+        "yield": "77 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "813 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(Pent-4-enoyl)-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM5",
+          "amount": "397 mg"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": null,
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50 °C",
+        "time": "2 hours"
+      },
+      "targets": {
+        "yield": "37 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "5-(trifluoromethyl)-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "639 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(Pent-4-enoyl)-6-(trifluoromethyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM6",
+          "amount": "522 mg",
+          "registry_name": "1-(pent-4-enoyl)-6-(trifluoromethyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": null,
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50 °C",
+        "time": "2 hours"
+      },
+      "targets": {
+        "yield": "59 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "6-methyl-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "1.19 g, 7.5 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "306 μL, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "6-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM7",
+          "amount": "391 mg"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "18.3 mg, 0.15 mmol, 0.05 equiv."
+        },
+        {
+          "name": "2,6-lu(cid:415)dine",
+          "symbol": null,
+          "amount": "35 μL, 0.3 mmol, 0.1 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "Boc O",
+          "symbol": null,
+          "amount": "1.7 mL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "volume": "7.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "30 °C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry5",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "6-bromo-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "672 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "6-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM8",
+          "amount": "587 mg",
+          "registry_name": "6-bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": null,
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50 °C",
+        "time": "2 hours"
+      },
+      "targets": {
+        "yield": "64 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry6",
+      "reaction_type": "N-acylation",
+      "substrates": [
+        {
+          "name": "methyl 3-formyl-1H-indole-5-carboxylate",
+          "symbol": null,
+          "amount": "609 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-formyl-1-(pent-4-enoyl)-1H-indole-6-carboxylate",
+          "symbol": "SM9",
+          "amount": "256 mg",
+          "registry_name": "Methyl 3-formyl-1-(pent-4-enoyl)-1H-indole-6-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": "DMAP",
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": "SOCl",
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": "Et N",
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50 °C (acid chloride formation), 0 °C (addition)",
+        "time": "2 hours (acid chloride formation), 3 hours (acylation)"
+      },
+      "targets": {
+        "yield": "33 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry7",
+      "reaction_type": "N-acylation",
+      "substrates": [
+        {
+          "name": "6-fluoro-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "489 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "6-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM10",
+          "amount": "368 mg",
+          "registry_name": "6-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": "DMAP",
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": "SOCl",
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": "Et N",
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50 °C (acid chloride formation), 0 °C (addition)",
+        "time": "2 hours (acid chloride formation), 3 hours (acylation)"
+      },
+      "targets": {
+        "yield": "50 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry8",
+      "reaction_type": "N-acylation",
+      "substrates": [
+        {
+          "name": "4-methyl-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "477 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "4-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM11",
+          "amount": "485 mg",
+          "registry_name": "4-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": "DMAP",
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": "SOCl",
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": "Et N",
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50 °C (acid chloride formation), 0 °C (addition)",
+        "time": "2 hours (acid chloride formation), 3 hours (acylation)"
+      },
+      "targets": {
+        "yield": "67 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry9",
+      "reaction_type": "N-acylation",
+      "substrates": [
+        {
+          "name": "4-cyano-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "510 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Formyl-1-(pent-4-enoyl)-1H-indole-4-carbonitrile",
+          "symbol": "SM12",
+          "amount": "560 mg",
+          "registry_name": "3-Formyl-1-(pent-4-enoyl)-1H-indole-4-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": "DMAP",
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": "SOCl",
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": "Et N",
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50 °C (acid chloride formation), 0 °C (addition)",
+        "time": "2 hours (acid chloride formation), 3 hours (acylation)"
+      },
+      "targets": {
+        "yield": "74 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry10",
+      "reaction_type": "N-acylation",
+      "substrates": [
+        {
+          "name": "4-fluoro-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "489 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "4-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM13",
+          "amount": "441 mg",
+          "registry_name": "4-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": "DMAP",
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": "SOCl",
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": "Et N",
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50 °C (acid chloride formation), 0 °C (addition)",
+        "time": "2 hours (acid chloride formation), 3 hours (acylation)"
+      },
+      "targets": {
+        "yield": "60 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry11",
+      "reaction_type": "N-acylation",
+      "substrates": [
+        {
+          "name": "4-bromo-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "672 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "4-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM14",
+          "amount": "569 mg",
+          "registry_name": "4-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": "DMAP",
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": "SOCl",
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": "Et N",
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50 °C (acid chloride formation), 0 °C (addition)",
+        "time": "2 hours (acid chloride formation), 3 hours (acylation)"
+      },
+      "targets": {
+        "yield": "62 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry6"
+    },
+    {
+      "id": "GeneralProcedureB-Entry12",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "7-methyl-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "477 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM15",
+          "amount": "521 mg",
+          "registry_name": "7-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": null,
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "72 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry13",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "7-chloro-1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "539 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "4-pentenoic acid",
+          "symbol": null,
+          "amount": "765 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM16",
+          "amount": "149 mg",
+          "registry_name": "7-Chloro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": null,
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH 2 Cl 2",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "19 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry5",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "1.09 g, 7.5 mmol, 2.5 equiv."
+        },
+        {
+          "name": "5-hexenoic acid",
+          "symbol": null,
+          "amount": "356 μL, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(Hex-5-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM17",
+          "amount": "304 mg",
+          "registry_name": "1-(Hex-5-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "18.3 mg, 0.15 mmol, 0.05 equiv"
+        },
+        {
+          "name": "2,6-lu(cid:415)dine",
+          "symbol": null,
+          "amount": "35 μL, 0.3 mmol, 0.1 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "Boc O",
+          "symbol": null,
+          "amount": "1.7 mL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "volume": "7.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "42%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry14",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "435 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "(E)-hex-4-enoic acid",
+          "symbol": null,
+          "amount": "856 mg, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-1-(hex-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "7-(E)",
+          "amount": "608 mg",
+          "registry_name": "(E)-1-(hex-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": null,
+          "amount": "711 μL 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry15",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "435 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "(Z)-hex-4-enoic acid",
+          "symbol": null,
+          "amount": "856 mg, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(Z)-1-(hex-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "7-(Z)",
+          "amount": "246mg",
+          "registry_name": "(Z)-1-(hex-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": null,
+          "amount": "711 μL, 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry16",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "435 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "3,3-dimethylpent-4-enoic acid",
+          "symbol": null,
+          "amount": "961 mg, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(3,3-Dimethylpent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM18",
+          "amount": "597 mg",
+          "registry_name": "1-(3,3-Dimethylpent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": null,
+          "amount": "711 μL, 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry17",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "435 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "valeric acid",
+          "symbol": null,
+          "amount": "815 μL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Pentanoyl-1H-indole-3-carbaldehyde",
+          "symbol": "SM19",
+          "amount": "323 mg",
+          "registry_name": "1-Pentanoyl-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "9.2 mg, 0.075 mmol, 0.025 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "SOCl",
+          "symbol": null,
+          "amount": "711 μL, 9.75 mmol, 3.25 equiv."
+        },
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.8 mL, 13.2 mmol, 4.4 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "24 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "47 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry6"
+    },
+    {
+      "id": "S17-Entry1",
+      "reaction_type": "acylation",
+      "substrates": [
+        {
+          "name": "1H-indole-3-carbaldehyde",
+          "symbol": null,
+          "amount": "435 mg, 3 mmol, 1 equiv."
+        },
+        {
+          "name": "ace(cid:415)c anhydride",
+          "symbol": null,
+          "amount": "500 μL, 5 mmol, 1.7 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Acetyl-1H-indole-3-carbaldehyde",
+          "symbol": "29",
+          "amount": "454 mg",
+          "registry_name": "1-Acetyl-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "37 mg, 0.3 mmol, 0.1 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "Et N",
+          "symbol": null,
+          "amount": "1.0 mL, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry CH Cl",
+        "volume": "18 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "81 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "S17-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry1",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "1",
+          "amount": "22.7 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "1-(Pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-1-yl)acrylate",
+          "symbol": "3",
+          "amount": "47.6 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "80 %",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry2",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-(pent-4-enoyl)-4-methyl-1H-indole-3-carbaldehyde",
+          "symbol": "SM11",
+          "amount": "24.1 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "4-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-9-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "symbol": "10",
+          "amount": "47.9 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-9-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "77 %",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry3",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-(pent-4-enoyl)-4-bromo-1H-indole-3-carbaldehyde",
+          "symbol": "SM14",
+          "amount": "30.6 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "4-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-9-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "symbol": "11",
+          "amount": "63.2 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-9-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "84 %",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry4",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-(pent-4-enoyl)-4-fluoro-1H-indole-3-carbaldehyde",
+          "symbol": "SM13",
+          "amount": "24.5 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "4-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-9-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "symbol": "12",
+          "amount": "51.7 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-9-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "82 %",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry5",
+      "reaction_type": "organocatalytic asymmetric [2+2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "3-formyl-1-(pent-4-enoyl)-1H-indole-4-carbonitrile",
+          "symbol": "SM12",
+          "amount": "25.2 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "3-Formyl-1-(pent-4-enoyl)-1H-indole-4-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1a R,9bS)-9-cyano-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "symbol": "13",
+          "amount": "42.6 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-9-cyano-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": null,
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "Argon",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": null,
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "1:1 mixture of CHCl and chlorobenzene",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "400 nm",
+        "temperature": null,
+        "time": "18 h; 16 h"
+      },
+      "targets": {
+        "yield": "66 %",
+        "ee": "82%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry6",
+      "reaction_type": "organocatalytic asymmetric [2+2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "5-bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM1",
+          "amount": "30.6 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "5-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1a R,9bS)-8-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "symbol": "14",
+          "amount": "54.2 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-8-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": null,
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "Argon",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": null,
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "6 h; 16 h"
+      },
+      "targets": {
+        "yield": "72 %",
+        "ee": "88%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry7",
+      "reaction_type": "organocatalytic asymmetric [2+2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "3-formyl-1-(pent-4-enoyl)-1H-indole-5-carbonitrile",
+          "symbol": "SM3",
+          "amount": "25.2 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "3-formyl-1-(pent-4-enoyl)-1H-indole-5-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1a R,9bS)-8-cyano-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "symbol": "15",
+          "amount": "32.2 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-8-cyano-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": null,
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "Argon",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": null,
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "400 nm",
+        "temperature": null,
+        "time": "18 h; 16 h"
+      },
+      "targets": {
+        "yield": "50 %",
+        "ee": "89%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry8",
+      "reaction_type": "organocatalytic asymmetric [2+2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "3-formyl-1-(pent-4-enoyl)-1H-indol-5-yl 4-methylbenzenesulfonate",
+          "symbol": "SM4",
+          "amount": "39.7 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "3-formyl-1-(pent-4-enoyl)-1H-indol-5-yl 4-methylbenzenesulfonate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1a R,9bS)-4-oxo-8-(tosyloxy)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "symbol": "16",
+          "amount": "76 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-4-oxo-8-(tosyloxy)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": null,
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "Argon",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": null,
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "18 h; 16 h"
+      },
+      "targets": {
+        "yield": "82 %",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry9",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "5-fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM2",
+          "amount": "24.5 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "5-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-8-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "symbol": "17",
+          "amount": "46.1 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-8-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        },
+        {
+          "name": "Argon",
+          "symbol": "Argon",
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp set at 50% of its maximum output power",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "73 %",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry10",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-(pent-4-enoyl)-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM5",
+          "amount": "35.3 mg, 0.1 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-4-oxo-8-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "symbol": "18",
+          "amount": "68 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-4-oxo-8-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        },
+        {
+          "name": "Argon",
+          "symbol": "Argon",
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp set at 50% of its maximum output power",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "81 %",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry11",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "6-methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM7",
+          "amount": "24.1 mg, 0.1 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-7-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "symbol": "19",
+          "amount": "43.0 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-7-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        },
+        {
+          "name": "Argon",
+          "symbol": "Argon",
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp set at 50% of its maximum output power",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "18 h"
+      },
+      "targets": {
+        "yield": "69 %",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry12",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "methyl methyl 3-formyl-1-(pent-4-enoyl)-1H-indole-6-carboxylate",
+          "symbol": "SM9",
+          "amount": "28.5 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "Methyl 3-formyl-1-(pent-4-enoyl)-1H-indole-6-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (1aR,1aR,9bS)-9b-((E)-3-ethoxy-3-oxoprop-1-en-1-yl)-4-oxo-1a,1a1,2,3,4,9b-hexahydro-1H-benzo[b]cyclobuta[hi]indolizine-7-carboxylate",
+          "symbol": "20",
+          "amount": "49.8 mg",
+          "registry_name": "Methyl (1aR,1a R,9bS)-9b-((E)-3-ethoxy-3-oxoprop-1-en-1-yl)-4-oxo-1a,1a1,2,3,4,9b-hexahydro-1H-benzo[b]cyclobuta[hi]indolizine-7-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        },
+        {
+          "name": "Argon",
+          "symbol": "Argon",
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp set at 50% of its maximum output power",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "12 h"
+      },
+      "targets": {
+        "yield": "70 %",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry13",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-(pent-4-enoyl)-6-(trifluoromethyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM6",
+          "amount": "29.5 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "1-(pent-4-enoyl)-6-(trifluoromethyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-7-(trifluoromethyl)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "symbol": "21",
+          "amount": "51.9 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-7-(trifluoromethyl)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "400 nm",
+        "temperature": null,
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "71 %",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry14",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "6-bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM8",
+          "amount": "30.6 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "6-bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-7-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "symbol": "22",
+          "amount": "50.4 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-7-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "67 %",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry15",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "6-fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM10",
+          "amount": "24.5 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "6-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-7-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "symbol": "23",
+          "amount": "27.7 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-7-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "44 %",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry16",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "7-methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM15",
+          "amount": "24.1 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "7-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-6-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "symbol": "24",
+          "amount": "48.6 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1a R,9bS)-6-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)acrylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": "ethyl(triphenylphosphoranylidene)acetate",
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp (50% output)",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "78 %",
+        "ee": "88%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry17",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "7-chloro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM16",
+          "amount": "26.1 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "7-Chloro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-6-chloro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "symbol": "25",
+          "amount": "30.52 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1aR,9bS)-6-chloro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1aH)-yl)acrylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": null,
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp",
+        "wavelength": "400 nm",
+        "temperature": null,
+        "time": "18 h"
+      },
+      "targets": {
+        "yield": "46 %",
+        "ee": "72%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry18",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-(hex-5-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM17",
+          "amount": "24.1 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "1-(Hex-5-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aR,1aR,9bS)-5-oxo-1a,1a1,2,3,4,5-hexahydro-5a-azabenzo[a]cyclobuta[cd]azulen-9b(1H)-yl)acrylate",
+          "symbol": "26",
+          "amount": "24.9 mg",
+          "registry_name": "Ethyl (E)-3-((1aR,1aR,9bS)-5-oxo-1a,1a1,2,3,4,5-hexahydro-5a-azabenzo[a]cyclobuta[cd]azulen-9b(1H)-yl)acrylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": null,
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "18 h"
+      },
+      "targets": {
+        "yield": "40 %",
+        "ee": "94%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry19",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-(3,3-dimethylpent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "SM18",
+          "amount": "25.5 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "1-(3,3-Dimethylpent-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1aS,1aR,9bS)-2,2-dimethyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)acrylate",
+          "symbol": "27",
+          "amount": "52.0 mg",
+          "registry_name": "Ethyl (E)-3-((1aS,1aR,9bS)-2,2-dimethyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)acrylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": null,
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "80 %",
+        "ee": "84%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry20",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "(E)-1-(hex-4-enoyl)-1H-indole-3-carbaldehyde",
+          "symbol": "7-(E)",
+          "amount": "25.5 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "(E)-1-(hex-4-enoyl)-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (E)-3-((1R,1aR,1a1R,9bR)-1-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)acrylate",
+          "symbol": "28",
+          "amount": "52.0 mg",
+          "registry_name": "Ethyl (E)-3-((1R,1aR,1a1R,9bR)-1-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)acrylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ethyl(triphenylphosphoranylidene)acetate",
+          "symbol": null,
+          "amount": "87 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp",
+        "wavelength": "427 nm",
+        "temperature": "0 °C",
+        "time": "3 h"
+      },
+      "targets": {
+        "yield": "84 %",
+        "ee": "75%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureE-Entry1",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-acetyl-1H-indole-3-carbaldehyde",
+          "symbol": "29",
+          "amount": "18.7 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "1-Acetyl-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-hexene",
+          "symbol": "1-hexene",
+          "amount": "38 μL, 0.3 mmol,. 3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,2aR,7bS)-3-acetyl-1-butyl-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde",
+          "symbol": "30",
+          "amount": "10.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "CHCl3",
+          "symbol": "CHCl3",
+          "amount": "400 μL",
+          "resolved_smiles": "ClC(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "conditions",
+            "item_index": 3,
+            "image_name": "page_3_image_1.png"
+          }
+        },
+        {
+          "name": "Argon",
+          "symbol": "Argon",
+          "amount": null
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "18 h"
+      },
+      "targets": {
+        "yield": "38 %",
+        "ee": "77%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureE-Entry1"
+    },
+    {
+      "id": "GeneralProcedureE-Entry2",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-acetyl-1H-indole-3-carbaldehyde",
+          "symbol": "29",
+          "amount": "18.7 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "1-Acetyl-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-hexene",
+          "symbol": "1-hexene",
+          "amount": "38 μL, 0.3 mmol,. 3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,2aR,7bS)-3-acetyl-1-butyl-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde",
+          "symbol": "30’",
+          "amount": "3.3 mg",
+          "registry_name": "(1S,2aR,7bS)-3-acetyl-1-butyl-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "CHCl3",
+          "symbol": "CHCl3",
+          "amount": "400 μL",
+          "resolved_smiles": "ClC(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "conditions",
+            "item_index": 3,
+            "image_name": "page_3_image_1.png"
+          }
+        },
+        {
+          "name": "Argon",
+          "symbol": "Argon",
+          "amount": null
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "18 h"
+      },
+      "targets": {
+        "yield": "13 %",
+        "ee": "73%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureE-Entry2"
+    },
+    {
+      "id": "GeneralProcedureE-Entry3",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-acetyl-1H-indole-3-carbaldehyde",
+          "symbol": "29",
+          "amount": "18.7 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "1-Acetyl-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methylenecyclohexane",
+          "symbol": "methylenecyclohexane",
+          "amount": "36 μL, 0.3 mmol,. 3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(2aR,7bS)-3-acetyl-2a,3-dihydrospiro[cyclobuta[b]indole-1,1'-cyclohexane]-7b(2H)-carbaldehyde",
+          "symbol": "31",
+          "amount": "20.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "CHCl3",
+          "symbol": "CHCl3",
+          "amount": "400 μL",
+          "resolved_smiles": "ClC(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "conditions",
+            "item_index": 3,
+            "image_name": "page_3_image_1.png"
+          }
+        },
+        {
+          "name": "Argon",
+          "symbol": "Argon",
+          "amount": null
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "18 h"
+      },
+      "targets": {
+        "yield": "70 %",
+        "ee": "94%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureE-Entry3"
+    },
+    {
+      "id": "GeneralProcedureE-Entry4",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-acetyl-1H-indole-3-carbaldehyde",
+          "symbol": "29",
+          "amount": "18.7 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "1-Acetyl-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methyl acrylate",
+          "symbol": "methyl acrylate",
+          "amount": "27 μL, 0.3 mmol,. 3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (1R,2aR,7bS)-3-acetyl-7b-formyl-2,2a,3,7b-tetrahydro-1H-cyclobuta[b]indole-1-carboxylate",
+          "symbol": "32",
+          "amount": "10.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "CHCl3",
+          "symbol": "CHCl3",
+          "amount": "400 μL",
+          "resolved_smiles": "ClC(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "conditions",
+            "item_index": 3,
+            "image_name": "page_3_image_1.png"
+          }
+        },
+        {
+          "name": "Argon",
+          "symbol": "Argon",
+          "amount": null
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "18 h"
+      },
+      "targets": {
+        "yield": "30 %",
+        "ee": "88%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureE-Entry4"
+    },
+    {
+      "id": "GeneralProcedureE-Entry5",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-acetyl-1H-indole-3-carbaldehyde",
+          "symbol": "29",
+          "amount": "18.7 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "1-Acetyl-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,2aR,7bS)-3-acetyl-1-methyl-1-((R)-4-methyl-5-oxocyclohex-3-en-1-yl)-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde",
+          "symbol": "33",
+          "amount": "11.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "(R)-(-)-Carvone",
+          "symbol": "(R)-(-)-Carvone",
+          "amount": "46 μL, 0.3 mmol,. 3 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        },
+        {
+          "name": "Argon",
+          "symbol": "Argon",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "18 h"
+      },
+      "targets": {
+        "yield": "33 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureE-Entry1"
+    },
+    {
+      "id": "GeneralProcedureE-Entry6",
+      "reaction_type": "organocatalytic asymmetric [2 + 2] photocycloaddition",
+      "substrates": [
+        {
+          "name": "1-acetyl-1H-indole-3-carbaldehyde",
+          "symbol": "29",
+          "amount": "18.7 mg, 0.1 mmol, 1 equiv.",
+          "registry_name": "1-Acetyl-1H-indole-3-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,2aR,7bS)-3-acetyl-1-methyl-1-((R)-4-methyl-5-oxocyclohex-3-en-1-yl)-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde",
+          "symbol": "33’",
+          "amount": "4.0 mg",
+          "registry_name": "(1R,2aR,7bS)-3-acetyl-1-methyl-1-((R)-4-methyl-5-oxocyclohex-3-en-1-yl)-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "symbol": "2d",
+          "amount": "5.3 mg, 0.02 mmol, 20 mol%",
+          "registry_name": "(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [
+        {
+          "name": "TFA",
+          "symbol": "TFA",
+          "amount": "19 μL, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "(R)-(-)-Carvone",
+          "symbol": "(R)-(-)-Carvone",
+          "amount": "46 μL, 0.3 mmol,. 3 equiv."
+        },
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": "4 Å molecular sieves",
+          "amount": null
+        },
+        {
+          "name": "Argon",
+          "symbol": "Argon",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "volume": "400 μL",
+        "light source": "Kessil lamp",
+        "wavelength": "427 nm",
+        "temperature": null,
+        "time": "18 h"
+      },
+      "targets": {
+        "yield": "12 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureE-Entry2"
+    },
+    {
+      "id": "Synthesis and Characterization-Entry1",
+      "reaction_type": "Pinnick oxidation",
+      "substrates": [
+        {
+          "name": "cycloadduct 6",
+          "symbol": "6",
+          "amount": "36.4 mg, 0.16 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aR,1a R,9bS)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizine-9b(1a H)-carboxylic acid",
+          "symbol": "34",
+          "amount": "26 mg",
+          "registry_name": "(1aR,1a R,9bS)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizine-9b(1a H)-carboxylic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "KH PO",
+          "symbol": null,
+          "amount": "24.5 mg, 0.18 mmol, 1.1 equiv."
+        },
+        {
+          "name": "MeCN",
+          "symbol": null,
+          "amount": "420 μL"
+        },
+        {
+          "name": "H O",
+          "symbol": null,
+          "amount": "100 μL"
+        },
+        {
+          "name": "30% aqueous solution of H O",
+          "symbol": null,
+          "amount": "20 μL"
+        },
+        {
+          "name": "NaClO",
+          "symbol": null,
+          "amount": "16.3 mg, 0.18 mmol, 1.1 equiv."
+        },
+        {
+          "name": "NaHSO",
+          "symbol": null,
+          "amount": "saturated aqueous solution (for quench)"
+        },
+        {
+          "name": "AcOEt",
+          "symbol": null,
+          "amount": "used for dilution/extraction"
+        },
+        {
+          "name": "Na CO",
+          "symbol": null,
+          "amount": "saturated aqueous solution (wash, 3 times)"
+        },
+        {
+          "name": "concentrated HCl",
+          "symbol": null,
+          "amount": "to acidify to pH 1"
+        },
+        {
+          "name": "CH Cl",
+          "symbol": null,
+          "amount": "used for extraction"
+        },
+        {
+          "name": "MgSO 4",
+          "symbol": null,
+          "amount": "for drying organic layer"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeCN; H O",
+        "volume": "420 μL MeCN; 100 μL H O",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "3h"
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "Synthesis and Characterization-Entry1"
+    },
+    {
+      "id": "Synthesis and Characterization-Entry2",
+      "reaction_type": "Corey–Fuchs reaction",
+      "substrates": [
+        {
+          "name": "cycloadduct 6",
+          "symbol": "6",
+          "amount": "43.1 mg, 0.19 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aR,1a1R,9bS)-9b-(2,2-dibromovinyl)-1,1a,1a1,2,3,9b-hexahydro-4H-benzo[b]cyclobuta[hi]indolizin-4-one",
+          "symbol": "35’",
+          "amount": "57 mg",
+          "registry_name": "(1aR,1a1R,9bS)-9b-(2,2-dibromovinyl)-1,1a,1a1,2,3,9b-hexahydro-4H-benzo[b]cyclobuta[hi]indolizin-4-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "CBr",
+          "symbol": null,
+          "amount": "200 mg, 0.6 mmol, 3 equiv."
+        },
+        {
+          "name": "anhydrous CH Cl",
+          "symbol": null,
+          "amount": "800 μL (initial)"
+        },
+        {
+          "name": "PPh",
+          "symbol": null,
+          "amount": "315 mg, 1.2 mmol, 6 equiv."
+        },
+        {
+          "name": "CH Cl",
+          "symbol": null,
+          "amount": "1.2 mL (for PPh solution)"
+        },
+        {
+          "name": "AcOEt",
+          "symbol": null,
+          "amount": "for extraction"
+        },
+        {
+          "name": "NH Cl",
+          "symbol": null,
+          "amount": "saturated aqueous solution (for dilution)"
+        },
+        {
+          "name": "brine",
+          "symbol": null,
+          "amount": "wash"
+        },
+        {
+          "name": "MgSO",
+          "symbol": null,
+          "amount": "for drying organic phase"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH Cl",
+        "volume": "800 μL (plus 1.2 mL for PPh solution)",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "0°C, then let reach room temperature",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "Synthesis and Characterization-Entry2"
+    },
+    {
+      "id": "Synthesis and Characterization-Entry3",
+      "reaction_type": "double dehydrohalogenation (formation of alkyne)",
+      "substrates": [
+        {
+          "name": "dibromide 35’",
+          "symbol": "35’",
+          "amount": "57 mg, 0.15 mmol, 1 equiv.",
+          "registry_name": "(1aR,1a1R,9bS)-9b-(2,2-dibromovinyl)-1,1a,1a1,2,3,9b-hexahydro-4H-benzo[b]cyclobuta[hi]indolizin-4-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aR,1a1R,9bS)-9b-ethynyl-1,1a,1a1,2,3,9b-hexahydro-4H-benzo[b]cyclobuta[hi]indolizin-4-one",
+          "symbol": "35",
+          "amount": "23 mg",
+          "registry_name": "(1aR,1a1R,9bS)-9b-ethynyl-1,1a,1a1,2,3,9b-hexahydro-4H-benzo[b]cyclobuta[hi]indolizin-4-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "DMSO",
+          "symbol": null,
+          "amount": "2.8 mL"
+        },
+        {
+          "name": "Cs CO",
+          "symbol": null,
+          "amount": "150 mg, 0.45 mmol, 3 equiv."
+        },
+        {
+          "name": "CH Cl",
+          "symbol": null,
+          "amount": "for dilution"
+        },
+        {
+          "name": "water",
+          "symbol": null,
+          "amount": "5 times wash"
+        },
+        {
+          "name": "brine",
+          "symbol": null,
+          "amount": "wash"
+        },
+        {
+          "name": "MgSO",
+          "symbol": null,
+          "amount": "for drying organic phase"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMSO",
+        "volume": "2.8 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "120°C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "Synthesis and Characterization-Entry3"
+    },
+    {
+      "id": "36-Entry1",
+      "reaction_type": "reduction",
+      "substrates": [
+        {
+          "name": "cycloadduct 6",
+          "symbol": "6",
+          "amount": "40.9 mg, 0.18 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "((1aR,1a R,9bS)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)methanol",
+          "symbol": "36",
+          "amount": "25 mg",
+          "registry_name": "((1aR,1a R,9bS)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a H)-yl)methanol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "LiAlH4",
+          "symbol": "LiAlH4",
+          "amount": "38 mg, 1 mmol, 5.5 equiv."
+        },
+        {
+          "name": "H2O",
+          "symbol": "H2O",
+          "amount": null
+        },
+        {
+          "name": "AcOEt",
+          "symbol": "AcOEt",
+          "amount": null
+        },
+        {
+          "name": "celite",
+          "symbol": "celite",
+          "amount": null
+        },
+        {
+          "name": "brine",
+          "symbol": "brine",
+          "amount": null
+        },
+        {
+          "name": "MgSO4",
+          "symbol": "MgSO4",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "volume": "1.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "0 °C (addition); room temperature (overnight)",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "36-Entry1"
+    }
+  ]
+}

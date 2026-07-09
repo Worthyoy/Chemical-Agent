@@ -14,6 +14,45 @@ def _valid_gp_template(label):
     }
 
 
+def _empty_gp_template(label="EmptyGP"):
+    return {
+        "status": "valid",
+        "gp_id": label,
+        "reaction_type": "title-only GP",
+        "substrates": [],
+        "catalysts": [],
+        "ligands": [],
+        "other_components": [],
+        "intermediates": [],
+        "conditions": {"solvent": None, "time": None},
+    }
+
+
+def test_gp_template_inheritance_info_distinguishes_empty_and_useful_templates():
+    empty_info = SIExtractor._gp_template_inheritance_info(_empty_gp_template())
+    useful_info = SIExtractor._gp_template_inheritance_info(_valid_gp_template("UsefulGP"))
+    time_info = SIExtractor._gp_template_inheritance_info({
+        "status": "valid",
+        "gp_id": "TimeGP",
+        "conditions": {"time": "12 h"},
+    })
+    reaction_type_only_info = SIExtractor._gp_template_inheritance_info({
+        "status": "valid",
+        "gp_id": "TitleGP",
+        "reaction_type": "some reaction",
+        "procedure_details": [{"detail": "text"}],
+    })
+
+    assert empty_info == {"inheritable": False, "score": 0, "reasons": []}
+    assert useful_info["inheritable"] is True
+    assert "substrates" in useful_info["reasons"]
+    assert "catalysts" in useful_info["reasons"]
+    assert any(reason.startswith("conditions.") for reason in useful_info["reasons"])
+    assert time_info["inheritable"] is True
+    assert "conditions.time" in time_info["reasons"]
+    assert reaction_type_only_info["inheritable"] is False
+
+
 def test_gp_template_chunks_force_single_mixed_job_without_router():
     extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
     extractor.route_reaction_chunk = lambda *_args, **_kwargs: (_ for _ in ()).throw(
@@ -66,6 +105,140 @@ def test_gp_template_chunks_force_single_mixed_job_without_router():
     assert len(result["reactions"]) == 1
 
 
+def test_non_inheritable_gp_templates_are_not_injected_into_mixed_job():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    extractor.select_gp_for_chunk = lambda *_args, **_kwargs: {
+        "EmptyGP": "title-only GP text",
+        "UsefulGP": "useful GP text",
+    }
+    calls = []
+
+    def _fake_run(chunk_text, chunk_label, job, gp_block, **_kwargs):
+        calls.append({"job": dict(job), "gp_block": gp_block})
+        return {
+            "reactions": [],
+            "audit_recovered": 0,
+            "error": None,
+            "job_log": {
+                "job_id": job.get("job_id"),
+                "mode": job.get("mode"),
+                "prompt_mode": "mixed_gp_non_gp",
+                "gp_keys": list(job.get("gp_keys") or []),
+                "reaction_count": 0,
+                "reaction_ids": [],
+                "attempts": [],
+            },
+        }
+
+    extractor._run_stage2_job = _fake_run
+
+    result = extractor.stage2_extract_with_meta(
+        "--- Page 9 ---\nproduct series, 88% yield.",
+        "chunk",
+        gp_texts={"EmptyGP": "title-only GP text", "UsefulGP": "useful GP text"},
+        gp_templates={
+            "EmptyGP": _empty_gp_template("EmptyGP"),
+            "UsefulGP": _valid_gp_template("UsefulGP"),
+        },
+    )
+
+    assert calls[0]["job"]["mode"] == "mixed"
+    assert calls[0]["job"]["gp_keys"] == ["UsefulGP"]
+    assert "=== UsefulGP ===" in calls[0]["gp_block"]
+    assert "=== EmptyGP ===" not in calls[0]["gp_block"]
+    assert result["dispatch"]["selected_gp_keys_raw"] == ["EmptyGP", "UsefulGP"]
+    assert result["dispatch"]["selected_gp_keys_injected"] == ["UsefulGP"]
+    assert result["dispatch"]["skipped_non_inheritable_gp_templates"] == ["EmptyGP"]
+    assert result["dispatch"]["gp_template_inheritance"]["EmptyGP"]["inheritable"] is False
+    assert result["dispatch"]["gp_template_inheritance"]["UsefulGP"]["inheritable"] is True
+
+
+def test_all_non_inheritable_selected_gp_templates_dispatch_as_non_gp():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    extractor.select_gp_for_chunk = lambda *_args, **_kwargs: {
+        "EmptyGP": "title-only GP text",
+    }
+    calls = []
+
+    def _fake_run(chunk_text, chunk_label, job, gp_block, **_kwargs):
+        calls.append({"job": dict(job), "gp_block": gp_block})
+        return {
+            "reactions": [],
+            "audit_recovered": 0,
+            "error": None,
+            "job_log": {
+                "job_id": job.get("job_id"),
+                "mode": job.get("mode"),
+                "prompt_mode": "non_gp",
+                "gp_keys": list(job.get("gp_keys") or []),
+                "reaction_count": 0,
+                "reaction_ids": [],
+                "attempts": [],
+            },
+        }
+
+    extractor._run_stage2_job = _fake_run
+
+    result = extractor.stage2_extract_with_meta(
+        "--- Page 9 ---\nproduct series, 88% yield.",
+        "chunk",
+        gp_texts={"EmptyGP": "title-only GP text"},
+        gp_templates={"EmptyGP": _empty_gp_template("EmptyGP")},
+    )
+
+    assert calls[0]["job"]["mode"] == "non_gp"
+    assert calls[0]["job"]["gp_keys"] == []
+    assert calls[0]["gp_block"] == ""
+    assert result["dispatch"]["dispatch_mode"] == "non_gp_only"
+    assert result["dispatch"]["selected_gp_keys_raw"] == ["EmptyGP"]
+    assert result["dispatch"]["selected_gp_keys_injected"] == []
+    assert result["dispatch"]["skipped_non_inheritable_gp_templates"] == ["EmptyGP"]
+    assert result["dispatch"]["all_selected_gp_templates_non_inheritable"] is True
+
+
+def test_forced_mixed_job_receives_gp_selection_debug():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+
+    def _select_gp(_chunk_text, _gp_texts):
+        extractor.last_gp_selection_debug = {
+            "mode": "llm_resolved_no_reference",
+            "selected_gp_keys": ["GeneralProcedureUnlabeled1"],
+        }
+        return {"GeneralProcedureUnlabeled1": "GP text"}
+
+    extractor.select_gp_for_chunk = _select_gp
+    calls = []
+
+    def _fake_run(chunk_text, chunk_label, job, gp_block, **kwargs):
+        calls.append(kwargs)
+        return {
+            "reactions": [],
+            "audit_recovered": 0,
+            "error": None,
+            "job_log": {
+                "job_id": job.get("job_id"),
+                "mode": job.get("mode"),
+                "prompt_mode": "mixed_gp_non_gp",
+                "gp_keys": list(job.get("gp_keys") or []),
+                "reaction_count": 0,
+                "reaction_ids": [],
+                "attempts": [],
+            },
+        }
+
+    extractor._run_stage2_job = _fake_run
+
+    result = extractor.stage2_extract_with_meta(
+        "--- Page 9 ---\nproduct series, 88% yield.",
+        "chunk",
+        gp_texts={"GeneralProcedureUnlabeled1": "GP text"},
+        gp_templates={"GeneralProcedureUnlabeled1": _valid_gp_template("GeneralProcedureUnlabeled1")},
+    )
+
+    assert calls[0]["gp_selection_debug"]["mode"] == "llm_resolved_no_reference"
+    assert result["gp_selection_debug"]["mode"] == "llm_resolved_no_reference"
+
+
 def test_mixed_prompt_and_user_content_include_downstream_boundary_rules():
     extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
     prompt, prompt_mode = extractor._stage2_prompt_for_job({"mode": "mixed"})
@@ -84,6 +257,17 @@ def test_mixed_prompt_and_user_content_include_downstream_boundary_rules():
     assert "reported literature procedure" in prompt
     assert "published procedure" in prompt
     assert "previously reported method" in prompt
+    assert "product characterization entries" in prompt
+    assert "same GP section or product series" in prompt
+    assert 'does not explicitly say "according to General Procedure"' in prompt
+    assert "set _gp_source" in prompt
+    assert "copy the GP template shared fields" in prompt
+    assert "multiple supplied GP templates" in prompt
+    assert "meaningful shared reaction fields" in prompt
+    assert "Do not use a supplied GP template as _gp_source if it has no meaningful shared fields" in prompt
+    assert "another supplied template provides the actual substrates/conditions" in prompt
+    assert "empty or title-only template" in prompt
+    assert "literature/published/standalone procedure entry does not inherit GP" in prompt
     assert "Extract all qualifying entries in source order" in prompt
     assert '"source_pages":[18]' in prompt
     assert '"symbol":"29"' in prompt
@@ -99,6 +283,62 @@ def test_mixed_prompt_and_user_content_include_downstream_boundary_rules():
     assert "standalone or downstream transformations as non-GP reactions" in user_content
     assert "without inheriting GP fields" in user_content
     assert "GENERAL PROCEDURE CONTEXT" in user_content
+
+
+def test_mixed_user_content_mentions_no_reference_gp_selection_when_applicable():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+
+    user_content = extractor._stage2_user_content_for_job(
+        "--- Page 9 ---\nproduct series entries, 88% yield.",
+        "chunk",
+        {"job_id": "mixed_1", "mode": "mixed", "gp_keys": ["GeneralProcedureUnlabeled1"]},
+        gp_block="GENERAL PROCEDURE CONTEXT\n=== GeneralProcedureUnlabeled1 ===\n{}",
+        gp_selection_debug={
+            "mode": "llm_resolved_no_reference",
+            "selected_gp_keys": ["GeneralProcedureUnlabeled1"],
+        },
+    )
+
+    assert "GP selection determined that this chunk belongs to the supplied GP" in user_content
+    assert "entries may not explicitly name the GP" in user_content
+    assert "GP-continuation reactions" in user_content
+    assert "separate literature, published, or standalone procedure" in user_content
+
+
+def test_mixed_user_content_mentions_multiple_gp_template_choice_for_no_reference_selection():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+
+    user_content = extractor._stage2_user_content_for_job(
+        "--- Page 9 ---\nproduct series entries, 88% yield.",
+        "chunk",
+        {"job_id": "mixed_1", "mode": "mixed", "gp_keys": ["EmptyTitleGP", "UsefulGP"]},
+        gp_block="GENERAL PROCEDURE CONTEXT\n=== EmptyTitleGP ===\n{}\n=== UsefulGP ===\n{}",
+        gp_selection_debug={
+            "mode": "llm_resolved_no_reference",
+            "selected_gp_keys": ["EmptyTitleGP", "UsefulGP"],
+        },
+    )
+
+    assert "Multiple GP templates may be supplied" in user_content
+    assert "actual shared substrates, catalysts, reagents, and conditions" in user_content
+    assert "Do not choose an empty or title-only template" in user_content
+
+
+def test_mixed_user_content_does_not_add_no_reference_note_for_explicit_selection():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+
+    user_content = extractor._stage2_user_content_for_job(
+        "--- Page 9 ---\nPrepared according to General Procedure A.",
+        "chunk",
+        {"job_id": "mixed_1", "mode": "mixed", "gp_keys": ["GeneralProcedureA"]},
+        gp_block="GENERAL PROCEDURE CONTEXT\n=== GeneralProcedureA ===\n{}",
+        gp_selection_debug={
+            "mode": "explicit_match",
+            "selected_gp_keys": ["GeneralProcedureA"],
+        },
+    )
+
+    assert "GP selection determined that this chunk belongs to the supplied GP" not in user_content
 
 
 def test_mixed_template_retry_checks_only_reactions_with_gp_source():
@@ -141,6 +381,131 @@ def test_mixed_target_retry_is_enabled():
 
     assert message
     assert "Previous output missed targets" in message
+
+
+def test_empty_substrate_gp_continuation_retry_for_selected_gp_product_result():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+
+    message = extractor._detect_empty_substrate_gp_continuation_for_retry(
+        [
+            {
+                "id": "NonGP-Entry1",
+                "substrates": [],
+                "products": [{"name": "product", "symbol": "3ma"}],
+                "targets": {"yield": "88%"},
+            }
+        ],
+        {"job_id": "mixed_1", "mode": "mixed", "gp_keys": ["GeneralProcedureUnlabeled1"]},
+        {"mode": "llm_resolved_no_reference"},
+    )
+
+    assert message
+    assert "GP selector selected a supplied GP" in message
+    assert "llm_resolved_no_reference" in message
+    assert "empty-substrate NonGP reactions" in message
+    assert "set _gp_source and copy the GP template shared fields" in message
+    assert "NonGP-Entry1" in message
+
+
+def test_empty_substrate_gp_continuation_retry_ignores_gp_source_and_complete_standalone():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+
+    message = extractor._detect_empty_substrate_gp_continuation_for_retry(
+        [
+            {
+                "id": "gp_empty_substrates",
+                "_gp_source": "GeneralProcedureUnlabeled1",
+                "substrates": [],
+                "products": [{"name": "product", "symbol": "3ma"}],
+                "targets": {"yield": "88%"},
+            },
+            {
+                "id": "standalone_ok",
+                "substrates": [{"name": "reported substrate"}],
+                "products": [{"name": "standalone product"}],
+                "targets": {"yield": "70%"},
+            },
+        ],
+        {"job_id": "mixed_1", "mode": "mixed", "gp_keys": ["GeneralProcedureUnlabeled1"]},
+        {"mode": "llm_resolved_no_reference"},
+    )
+
+    assert message
+    assert "gp_empty_substrates" in message
+    assert "standalone_ok" not in message
+
+
+def test_empty_substrate_gp_continuation_retry_ignores_complete_gp_source_and_complete_standalone():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+
+    message = extractor._detect_empty_substrate_gp_continuation_for_retry(
+        [
+            {
+                "id": "gp_ok",
+                "_gp_source": "GeneralProcedureUnlabeled1",
+                "substrates": [{"name": "Aldehyde"}],
+                "products": [{"name": "product", "symbol": "3ma"}],
+                "targets": {"yield": "88%"},
+            },
+            {
+                "id": "standalone_ok",
+                "substrates": [{"name": "reported substrate"}],
+                "products": [{"name": "standalone product"}],
+                "targets": {"yield": "70%"},
+            },
+        ],
+        {"job_id": "mixed_1", "mode": "mixed", "gp_keys": ["GeneralProcedureUnlabeled1"]},
+        {"mode": "llm_resolved_no_reference"},
+    )
+
+    assert message is None
+
+
+def test_empty_substrate_retry_mentions_switching_from_empty_gp_source_template():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+
+    message = extractor._detect_empty_substrate_gp_continuation_for_retry(
+        [
+            {
+                "id": "r1",
+                "_gp_source": "EmptyTitleGP",
+                "substrates": [],
+                "products": [{"name": "product", "symbol": "3ma"}],
+                "targets": {"yield": "88%"},
+            }
+        ],
+        {"job_id": "mixed_1", "mode": "mixed", "gp_keys": ["EmptyTitleGP", "UsefulGP"]},
+        {"mode": "llm_resolved_no_reference"},
+    )
+
+    assert message
+    assert "chosen _gp_source template has empty shared fields" in message
+    assert "switch to another supplied GP template" in message
+    assert "actual shared substrates/conditions" in message
+
+
+def test_uninjected_gp_source_retry_rejects_skipped_template():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+
+    message = extractor._detect_uninjected_gp_source_for_retry(
+        [
+            {
+                "id": "r1",
+                "_gp_source": "EmptyTitleGP",
+                "substrates": [{"name": "Aldehyde"}],
+                "products": [{"name": "product", "symbol": "3ma"}],
+                "targets": {"yield": "88%"},
+            }
+        ],
+        {"job_id": "mixed_1", "mode": "mixed", "gp_keys": ["UsefulGP"]},
+        {"skipped_non_inheritable_gp_templates": ["EmptyTitleGP"]},
+    )
+
+    assert message
+    assert "not injected for this job" in message
+    assert "non-inheritable or title-only templates" in message
+    assert "EmptyTitleGP" in message
+    assert "UsefulGP" not in message
 
 
 def test_mixed_schema_retry_mentions_multistep_step_repair_and_single_step_literature_procedure():
