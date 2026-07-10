@@ -390,6 +390,106 @@ def _public_option_key(option: dict) -> str:
     return json.dumps(option, sort_keys=True, ensure_ascii=False)
 
 
+def _canonical_grouping_text(value, *, mode: str = "condition") -> str:
+    """Normalize display-only text into a conservative benchmark grouping key.
+
+    This is intentionally less aggressive than chemical entity normalization: it
+    removes punctuation/encoding noise that should not split Q2 groups, but it
+    does not infer missing quantities or merge aliases.
+    """
+    text = str(value or "").strip().casefold()
+    if not text:
+        return ""
+
+    replacements = {
+        "渭": "u",
+        "碌": "u",
+        "μ": "u",
+        "µ": "u",
+        "掳": "deg",
+        "°": "deg",
+        "–": "-",
+        "—": "-",
+        "−": "-",
+        "，": ",",
+        "；": ";",
+        "：": ":",
+        "（": "(",
+        "）": ")",
+    }
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+
+    text = re.sub(r"\bhours?\b", "h", text)
+    text = re.sub(r"\bhrs?\b", "h", text)
+    text = re.sub(r"\bminutes?\b", "min", text)
+    text = re.sub(r"\bmins?\b", "min", text)
+    text = re.sub(r"\bmicroliters?\b", "ul", text)
+    text = re.sub(r"\bmicrolitres?\b", "ul", text)
+    text = re.sub(r"\bu\s*l\b", "ul", text)
+    text = re.sub(r"\bdeg\s*c\b", "degc", text)
+    text = re.sub(r"\bmol\s*%\b", "mol%", text)
+
+    if mode in {"condition", "amount"}:
+        # For grouping, punctuation and parentheses around condition/amount
+        # qualifiers should not distinguish otherwise identical text.
+        text = re.sub(r"[()\[\]{}]", " ", text)
+        text = re.sub(r"[,;:]", " ", text)
+    else:
+        # Names are normalized conservatively. Do not remove parentheses from
+        # chemical names such as Pd2(dba)3 or (R,R)-QuinoxP*.
+        text = re.sub(r"[,;:]", " ", text)
+
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def _canonical_grouping_value(value, *, mode: str = "condition"):
+    if _is_empty_public_value(value):
+        return None
+    if isinstance(value, str):
+        canonical = _canonical_grouping_text(value, mode=mode)
+        return canonical or None
+    if isinstance(value, (int, float, bool)):
+        return value
+    if isinstance(value, list):
+        items = [
+            _canonical_grouping_value(item, mode=mode)
+            for item in value
+        ]
+        items = [item for item in items if not _is_empty_public_value(item)]
+        if not items:
+            return None
+        return sorted(
+            items,
+            key=lambda item: json.dumps(item, sort_keys=True, ensure_ascii=False),
+        )
+    if isinstance(value, dict):
+        cleaned = {}
+        for key, item_value in value.items():
+            item_mode = "condition"
+            if str(key) == "name":
+                item_mode = "name"
+            elif str(key) == "amount":
+                item_mode = "amount"
+            canonical = _canonical_grouping_value(item_value, mode=item_mode)
+            if not _is_empty_public_value(canonical):
+                cleaned[key] = canonical
+        return cleaned or None
+    return _canonical_grouping_text(value, mode=mode) or None
+
+
+def _condition_grouping_signature(public_condition_option: dict) -> dict:
+    """Return the canonical Q2 grouping signature for reaction conditions.
+
+    The original public condition option is kept for display. This canonical
+    version is used only for grouping/key generation, so harmless punctuation
+    differences do not split benchmark questions.
+    """
+    canonical = _canonical_grouping_value(public_condition_option or {}, mode="condition")
+    return canonical if isinstance(canonical, dict) else {}
+
+
 def _substrate_combo_public(substrates: List[dict]) -> List[dict]:
     substrate_info = []
     for sub in substrates or []:
@@ -852,7 +952,8 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
             continue
 
         condition_signature = _public_condition_option(reaction)
-        cond_key = _public_option_key(condition_signature)
+        condition_grouping_signature = _condition_grouping_signature(condition_signature)
+        cond_key = _public_option_key(condition_grouping_signature)
 
         key = (paper, reaction_type, combo, cond_key)
         paper_combo_data[key].append(reaction)
@@ -871,6 +972,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
         first_entry = entries[0]
         conditions = first_entry.get("conditions", {})
         condition_signature = _public_condition_option(first_entry)
+        condition_grouping_signature = _condition_grouping_signature(condition_signature)
 
         for variable_scaffold in combo:
             variable_candidates = []
@@ -898,6 +1000,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                         "reaction_type": reaction_type,
                         "conditions": conditions,
                         "condition_signature": condition_signature,
+                        "condition_grouping_signature": condition_grouping_signature,
                         "scaffold_combo": list(combo),
                         "variable_scaffold": variable_scaffold,
                         "details": bad_entries,
@@ -917,6 +1020,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                         "reaction_type": reaction_type,
                         "conditions": conditions,
                         "condition_signature": condition_signature,
+                        "condition_grouping_signature": condition_grouping_signature,
                         "scaffold_combo": list(combo),
                         "variable_scaffold": variable_scaffold,
                         "reaction_ids": [reaction.get("id") for _, reaction, _ in variable_candidates],
@@ -980,6 +1084,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                         "reaction_type": reaction_type,
                         "conditions": conditions,
                         "condition_signature": condition_signature,
+                        "condition_grouping_signature": condition_grouping_signature,
                         "scaffold_combo": list(combo),
                         "variable_scaffold": variable_scaffold,
                         "scored_option_count": len(options),
@@ -1033,16 +1138,17 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                 review_set.append(
                     {
                         "reason": "duplicate_variable_substrate_conflicting_results",
+                        "action": "omitted_conflicting_variable_substrate",
                         "source_paper": paper,
                         "reaction_type": reaction_type,
                         "conditions": conditions,
                         "condition_signature": condition_signature,
+                        "condition_grouping_signature": condition_grouping_signature,
                         "scaffold_combo": list(combo),
                         "variable_scaffold": variable_scaffold,
                         "details": duplicate_conflicts,
                     }
                 )
-                continue
 
             if len(deduped_options) < 2:
                 review_set.append(
@@ -1052,10 +1158,12 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                         "reaction_type": reaction_type,
                         "conditions": conditions,
                         "condition_signature": condition_signature,
+                        "condition_grouping_signature": condition_grouping_signature,
                         "scaffold_combo": list(combo),
                         "variable_scaffold": variable_scaffold,
                         "distinct_option_count": len(deduped_options),
                         "duplicate_option_count": duplicate_option_count,
+                        "omitted_conflicting_duplicate_options": duplicate_conflicts,
                         "omitted_no_targets": omitted_no_targets,
                     }
                 )
@@ -1096,6 +1204,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                     "reaction_type": reaction_type,
                     "reaction_conditions": conditions,
                     "condition_signature": condition_signature,
+                    "condition_grouping_signature": condition_grouping_signature,
                     "fixed_substrates": fixed_substrates,
                     "variable_substrate_scaffold": variable_scaffold,
                     "product_scaffold_class": product_class,
@@ -1119,6 +1228,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                         ],
                         "has_top_score_tie": len(gold_option_ids) > 1,
                         "omitted_no_targets": omitted_no_targets,
+                        "omitted_conflicting_duplicate_options": duplicate_conflicts,
                         "deduped_duplicate_option_count": duplicate_option_count,
                     },
                 }
