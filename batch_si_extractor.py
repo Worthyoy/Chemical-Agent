@@ -4725,22 +4725,17 @@ Available GP candidates:
             gp_templates,
         )
         all_selected_gp_templates_non_inheritable = bool(selected_gp_keys) and not injected_gp_keys
-        if injected_gp_keys:
-            dispatch_mode = "gp_template_forced_mixed"
-            executable_jobs = [{
-                "job_id": "mixed_1",
-                "mode": "mixed",
-                "gp_keys": injected_gp_keys,
-                "source_pages": allowed_page_nums,
-            }]
-        else:
-            dispatch_mode = "non_gp_only"
-            executable_jobs = [{
-                "job_id": "non_gp_1",
-                "mode": "non_gp",
-                "gp_keys": [],
-                "source_pages": allowed_page_nums,
-            }]
+        dispatch_mode = (
+            "mixed_with_gp_templates"
+            if injected_gp_keys
+            else "mixed_without_gp_templates"
+        )
+        executable_jobs = [{
+            "job_id": "mixed_1",
+            "mode": "mixed",
+            "gp_keys": injected_gp_keys,
+            "source_pages": allowed_page_nums,
+        }]
         dispatch_info = {
             "dispatch_mode": dispatch_mode,
             "selected_gp_keys": injected_gp_keys,
@@ -4749,6 +4744,7 @@ Available GP candidates:
             "skipped_non_inheritable_gp_templates": skipped_gp_keys,
             "gp_template_inheritance": gp_template_inheritance,
             "router_disabled": True,
+            "non_gp_prompt_disabled": True,
         }
         if all_selected_gp_templates_non_inheritable:
             dispatch_info["all_selected_gp_templates_non_inheritable"] = True

@@ -99,8 +99,9 @@ def test_gp_template_chunks_force_single_mixed_job_without_router():
     assert calls[0]["job"]["gp_keys"] == ["GeneralProcedureA", "GeneralProcedureB"]
     assert "=== GeneralProcedureA ===" in calls[0]["gp_block"]
     assert "=== GeneralProcedureB ===" in calls[0]["gp_block"]
-    assert result["dispatch"]["dispatch_mode"] == "gp_template_forced_mixed"
+    assert result["dispatch"]["dispatch_mode"] == "mixed_with_gp_templates"
     assert result["dispatch"]["router_disabled"] is True
+    assert result["dispatch"]["non_gp_prompt_disabled"] is True
     assert result["jobs"][0]["prompt_mode"] == "mixed_gp_non_gp"
     assert len(result["reactions"]) == 1
 
@@ -169,7 +170,7 @@ def test_all_non_inheritable_selected_gp_templates_dispatch_as_non_gp():
             "job_log": {
                 "job_id": job.get("job_id"),
                 "mode": job.get("mode"),
-                "prompt_mode": "non_gp",
+                "prompt_mode": "mixed_gp_non_gp",
                 "gp_keys": list(job.get("gp_keys") or []),
                 "reaction_count": 0,
                 "reaction_ids": [],
@@ -186,10 +187,12 @@ def test_all_non_inheritable_selected_gp_templates_dispatch_as_non_gp():
         gp_templates={"EmptyGP": _empty_gp_template("EmptyGP")},
     )
 
-    assert calls[0]["job"]["mode"] == "non_gp"
+    assert calls[0]["job"]["job_id"] == "mixed_1"
+    assert calls[0]["job"]["mode"] == "mixed"
     assert calls[0]["job"]["gp_keys"] == []
     assert calls[0]["gp_block"] == ""
-    assert result["dispatch"]["dispatch_mode"] == "non_gp_only"
+    assert result["dispatch"]["dispatch_mode"] == "mixed_without_gp_templates"
+    assert result["dispatch"]["non_gp_prompt_disabled"] is True
     assert result["dispatch"]["selected_gp_keys_raw"] == ["EmptyGP"]
     assert result["dispatch"]["selected_gp_keys_injected"] == []
     assert result["dispatch"]["skipped_non_inheritable_gp_templates"] == ["EmptyGP"]
@@ -527,7 +530,7 @@ def test_mixed_schema_retry_mentions_multistep_step_repair_and_single_step_liter
     assert "every substrate/product/catalyst/ligand/other_component object must include integer step" in user_content
 
 
-def test_no_gp_template_chunks_use_non_gp_prompt_without_gp_block():
+def test_no_gp_template_chunks_use_mixed_prompt_without_gp_block():
     extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
     extractor.route_reaction_chunk = lambda *_args, **_kwargs: (_ for _ in ()).throw(
         AssertionError("router should not be called")
@@ -544,7 +547,7 @@ def test_no_gp_template_chunks_use_non_gp_prompt_without_gp_block():
             "job_log": {
                 "job_id": job.get("job_id"),
                 "mode": job.get("mode"),
-                "prompt_mode": job.get("mode"),
+                "prompt_mode": "mixed_gp_non_gp",
                 "gp_keys": list(job.get("gp_keys") or []),
                 "reaction_count": 0,
                 "reaction_ids": [],
@@ -562,8 +565,10 @@ def test_no_gp_template_chunks_use_non_gp_prompt_without_gp_block():
     )
 
     assert len(calls) == 1
-    assert calls[0]["job"]["mode"] == "non_gp"
-    assert calls[0]["job"]["job_id"] == "non_gp_1"
+    assert calls[0]["job"]["mode"] == "mixed"
+    assert calls[0]["job"]["job_id"] == "mixed_1"
     assert calls[0]["gp_block"] == ""
-    assert result["dispatch"]["dispatch_mode"] == "non_gp_only"
+    assert result["dispatch"]["dispatch_mode"] == "mixed_without_gp_templates"
     assert result["dispatch"]["router_disabled"] is True
+    assert result["dispatch"]["non_gp_prompt_disabled"] is True
+    assert result["jobs"][0]["prompt_mode"] == "mixed_gp_non_gp"
