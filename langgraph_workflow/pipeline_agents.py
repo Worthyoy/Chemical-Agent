@@ -76,7 +76,7 @@ class PipelineConfig:
     pdf_text_layout: str = "single"
     pdf_text_x_tolerance: float = 3.0
     pdf_text_y_tolerance: float = 5.0
-    pipeline_version: str = "parallel_pdf_v15_gp_llm_boundary_trim"
+    pipeline_version: str = "parallel_pdf_v16_mixed_entry_override_precedence"
     skip_reaction_type_normalization: bool = False
     skip_chemeagle_normalization: bool = False
     skip_downstream_build: bool = False

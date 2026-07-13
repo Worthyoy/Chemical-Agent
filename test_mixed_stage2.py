@@ -257,6 +257,15 @@ def test_mixed_prompt_and_user_content_include_downstream_boundary_rules():
     assert "standalone/downstream reaction" in prompt
     assert "Do not output the same concrete reaction twice as both GP and non-GP" in prompt
     assert "GP templates provide shared reaction_type" in prompt
+    assert "concrete entry text override > canonical GP template default" in prompt
+    assert "Override only fields explicitly reported by the concrete entry" in prompt
+    assert "preserve applicable template fields that the entry does not mention" in prompt
+    assert "class-level identity, role description, short label, or otherwise incomplete identity" in prompt
+    assert "do not guess from textual similarity" in prompt
+    assert "Do not keep both a generic template item and its more specific concrete-entry form" in prompt
+    assert '"name":"catalyst label"' in prompt
+    assert '"name":"full reported catalyst identity"' in prompt
+    assert "organocatalyst 2d" not in prompt
     assert "reported literature procedure" in prompt
     assert "published procedure" in prompt
     assert "previously reported method" in prompt
@@ -285,6 +294,9 @@ def test_mixed_prompt_and_user_content_include_downstream_boundary_rules():
     assert "do not inherit GP" in prompt
     assert "standalone or downstream transformations as non-GP reactions" in user_content
     assert "without inheriting GP fields" in user_content
+    assert "concrete entry text override > canonical GP template default" in user_content
+    assert "Replace a matching generic, label-level, or incomplete template component" in user_content
+    assert "preserve unrelated template fields that the entry does not mention" in user_content
     assert "GENERAL PROCEDURE CONTEXT" in user_content
 
 

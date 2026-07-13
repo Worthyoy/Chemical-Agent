@@ -32,7 +32,7 @@ from pdf_to_gpt_extractor import PDFReactionExtractor, PDF_LIBRARY
 GP_CONTEXT_CHAR_LIMIT = 1500
 GP_TEMPLATE_SOURCE_CHAR_LIMIT = 12000
 GP_TEMPLATE_SCHEMA_VERSION = "gp_template_v1"
-GP_TEMPLATE_PROMPT_VERSION = "gp_template_prompt_v5"
+GP_TEMPLATE_PROMPT_VERSION = "gp_template_prompt_v6"
 
 
 class SIExtractor(PDFReactionExtractor):
@@ -470,6 +470,11 @@ Return only a valid JSON array of reaction objects.
 - Do not use a supplied GP template as _gp_source if it has no meaningful shared fields and another supplied template provides the actual substrates/conditions for the same product series.
 - Do not choose an empty or title-only template merely because its label resembles the section title. Choose the template containing the actual reaction materials and conditions. If no supplied template provides meaningful shared fields, do not invent substrates; extract the entry as standalone non-GP only if the current paragraph reports real substrates.
 - GP templates provide shared reaction_type, substrates, catalysts, ligands, other_components, conditions, intermediates, and step schema only for GP-referenced entries. Products, targets, and source_pages always come from the concrete entry text.
+- Treat every supplied GP field as a shared default, not as permission to ignore more specific concrete-entry evidence. Precedence is concrete entry text override > canonical GP template default.
+- This precedence applies independently to substrates, catalysts, ligands, other_components, and each conditions field. Override only fields explicitly reported by the concrete entry; preserve applicable template fields that the entry does not mention.
+- When a template component is a class-level identity, role description, short label, or otherwise incomplete identity and the concrete entry explicitly reports the same component with a more specific chemical identity, symbol, or amount, replace that template item with the concrete-entry item. Match the same component only from an explicit shared label, explicit reference, unambiguous chemical identity, or unambiguous role in the reported procedure; do not guess from textual similarity.
+- Do not keep both a generic template item and its more specific concrete-entry form. If the entry explicitly substitutes a different component or condition, write the actual entry value and do not retain the replaced template default. Do not remove unrelated template components merely because the entry does not repeat them.
+- Abstract override example: template default {"name":"catalyst label","symbol":null,"amount":"reported loading"}; concrete entry {"name":"full reported catalyst identity","symbol":"reported label","amount":"reported mass, mmol, mol%"}. The final reaction contains only the concrete-entry catalyst object, while unrelated template fields remain inherited.
 - If the supplied GP template has no step_count, the GP-referenced entry is single-step: copy shared fields, add entry products/targets/source_pages, and do not use item-level step.
 - If the supplied GP template has step_count >= 2, every GP-referenced entry must keep the same step_count and the same multi-step schema surface.
 - For multi-step GP-referenced entries, entry-specific starting materials usually belong to step 1, and the final isolated product usually belongs to step=step_count. If the concrete entry explicitly assigns a compound to another chemical step, use the entry evidence.
@@ -623,6 +628,11 @@ Rules:
 - temperature records temperature values only; time records duration values only.
 - When duration is embedded in a temperature phrase, split it into both fields. For example, "20 °C for 1 h, then 60 °C for 20 h" becomes temperature "20 °C then 60 °C" and time "1 h then 20 h".
 - Do not leave time null when a duration such as min, h, hour(s), day(s), or overnight is reported in the procedure.
+- For substrates, catalysts, and other_components, name stores chemical identity only. amount stores every reported numerical quantity, concentration, loading, equivalent, mass, volume, or molar amount.
+- Keep chemical-identity parentheses, coordination notation, stereochemical descriptors, and ligand names in name. Move any parenthetical text that reports a numerical quantity or loading into amount.
+- When source text is "reported catalyst (reported mass, reported mmol, reported mol%)", output {{"name":"reported catalyst","amount":"reported mass, reported mmol, reported mol%"}}.
+- Never output {{"name":"reported catalyst (reported mass, reported mol%)","amount":null}}. Do not place mg, mL, mmol, mol%, equiv, concentration, loading, mass, volume, or molar amount in name when that quantity is reported.
+- A preformed metal-ligand complex remains a complete catalyst name; its reported numerical quantity still belongs in amount. If its ligand is identifiable, list that ligand separately in ligands without an amount.
 - In multi-step templates, substrates are main externally supplied starting-material classes, generic substrate classes, substrate ranges, or variable substrate-scope components that define the reaction series.
 - A material generated in an earlier step and consumed in a later step is an intermediate, not a new external substrate.
 - Pronouns, generic descriptions, or references to material obtained from a previous step must be assigned by role: use intermediates when they carry material forward between chemical transformations.
@@ -4411,7 +4421,13 @@ Available GP candidates:
                 "those records with _gp_source. Extract standalone or downstream "
                 "transformations as non-GP reactions without inheriting GP fields and "
                 "without _gp_source. Do not output the same concrete reaction twice as "
-                "both GP and non-GP.\n"
+                "both GP and non-GP. For every GP-referenced entry, treat template fields "
+                "as defaults: concrete entry text override > canonical GP template default. "
+                "Apply explicit entry evidence independently to substrates, catalysts, "
+                "ligands, other_components, and each conditions field. Replace a matching "
+                "generic, label-level, or incomplete template component with its explicitly "
+                "reported concrete-entry identity, symbol, or amount; do not output both "
+                "forms, and preserve unrelated template fields that the entry does not mention.\n"
             )
             if (
                 isinstance(gp_selection_debug, dict)
