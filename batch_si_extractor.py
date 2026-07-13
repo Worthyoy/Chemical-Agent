@@ -6243,7 +6243,7 @@ Available GP candidates:
         aligned = []
         stats = {"resolved": 0, "verified": 0, "conflicts": 0}
         fields = [
-            'substrates', 'products', 'intermediates', 'catalysts',
+            'substrates', 'products', 'intermediates', 'catalysts', 'ligands',
             'other_components', 'additives', 'reagents',
         ]
         for reaction in reactions:

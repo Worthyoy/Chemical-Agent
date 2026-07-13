@@ -122,3 +122,108 @@ def test_sanitize_splits_multistep_intermediate_symbol():
     assert sanitized["intermediates"][0]["symbol"] == "7-(E)"
     assert sanitized["products"][0]["name"] == "final product"
     assert sanitized["products"][0]["symbol"] == "36"
+
+
+def test_registry_alignment_resolves_ligand_label_and_preserves_step():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    ligand_name = (
+        "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-"
+        "diethylethane-1,2-diamine"
+    )
+    reactions = [
+        {"id": "r1", "ligands": [{"name": "L6", "step": 2}]}
+    ]
+
+    aligned = extractor.align_names_in_reactions(reactions, {"L6": ligand_name})
+
+    assert aligned[0]["ligands"] == [
+        {
+            "name": ligand_name,
+            "symbol": "L6",
+            "step": 2,
+            "resolution_source": "name_registry",
+            "resolution_method": "same_paper_symbol",
+            "resolution_confidence": "high",
+        }
+    ]
+
+
+def test_registry_alignment_leaves_unknown_ligand_unchanged():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    ligand = {"name": "unknown ligand", "step": 2}
+
+    aligned = extractor.align_names_in_reactions(
+        [{"id": "r1", "ligands": [ligand]}],
+        {"L6": "registered ligand"},
+    )
+
+    assert aligned[0]["ligands"] == [ligand]
+
+
+def test_registry_alignment_reports_ligand_name_conflict_without_overwrite():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    extracted_name = "explicitly extracted ligand name"
+    registry_name = "registered ligand name"
+
+    aligned = extractor.align_names_in_reactions(
+        [
+            {
+                "id": "r1",
+                "ligands": [
+                    {"name": extracted_name, "symbol": "L6", "step": 2}
+                ],
+            }
+        ],
+        {"L6": registry_name},
+    )
+
+    assert aligned[0]["ligands"] == [
+        {
+            "name": extracted_name,
+            "symbol": "L6",
+            "step": 2,
+            "registry_name": registry_name,
+            "registry_match_status": "conflict",
+            "registry_conflict_reason": (
+                "extracted_name_differs_from_registry_symbol_name"
+            ),
+        }
+    ]
+
+
+def test_sanitize_preserves_resolved_ligand_identity_but_drops_amount():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    ligand_name = (
+        "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-"
+        "diethylethane-1,2-diamine"
+    )
+    reaction = {
+        "id": "r1",
+        "source_pages": [32],
+        "reaction_type": "test",
+        "step_count": 3,
+        "substrates": [{"name": "substrate", "step": 1}],
+        "products": [{"name": "product", "step": 3}],
+        "catalysts": [],
+        "ligands": [
+            {
+                "name": ligand_name,
+                "symbol": "L6",
+                "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+                "step": 2,
+                "resolution_source": "name_registry",
+                "resolution_method": "same_paper_symbol",
+                "resolution_confidence": "high",
+            }
+        ],
+        "other_components": [],
+        "intermediates": [],
+        "conditions": {},
+        "targets": {"yield": "76%", "ee": "94%", "er": None},
+    }
+
+    sanitized = extractor.sanitize_reaction_schema(reaction)
+
+    assert sanitized["ligands"] == [
+        {"name": ligand_name, "symbol": "L6", "step": 2}
+    ]
