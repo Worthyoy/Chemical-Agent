@@ -12,7 +12,12 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from batch_si_extractor import GP_TEMPLATE_PROMPT_VERSION, SIExtractor
+from batch_si_extractor import (
+    GP_TEMPLATE_PROMPT_VERSION,
+    MIXED_REACTION_PROMPT_VERSION,
+    STAGE1_SCREEN_PROMPT_VERSION,
+    SIExtractor,
+)
 from merge_filtered import merge_filtered_reactions_from_files
 from normalize_reaction_types_llm import normalize_reaction_types_file
 from reaction_filter import filter_reaction_file
@@ -76,7 +81,9 @@ class PipelineConfig:
     pdf_text_layout: str = "single"
     pdf_text_x_tolerance: float = 3.0
     pdf_text_y_tolerance: float = 5.0
-    pipeline_version: str = "parallel_pdf_v17_ligand_registry_resolution"
+    generic_resolution_batch_size: int = 10
+    enable_stage1_page_trimming: bool = False
+    pipeline_version: str = "parallel_pdf_v21_targets_dr"
     skip_reaction_type_normalization: bool = False
     skip_chemeagle_normalization: bool = False
     skip_downstream_build: bool = False
@@ -128,6 +135,10 @@ class PipelineConfig:
     @property
     def gp_template_logs_dir(self) -> Path:
         return self.intermediate_dir / "gp_template_logs"
+
+    @property
+    def generic_substrate_resolution_logs_dir(self) -> Path:
+        return self.intermediate_dir / "generic_substrate_resolution_logs"
 
     @property
     def section_chunks_dir(self) -> Path:
@@ -302,6 +313,8 @@ def make_extractor(config: PipelineConfig) -> SIExtractor:
         pdf_text_layout=config.pdf_text_layout,
         pdf_text_x_tolerance=config.pdf_text_x_tolerance,
         pdf_text_y_tolerance=config.pdf_text_y_tolerance,
+        generic_resolution_batch_size=config.generic_resolution_batch_size,
+        enable_stage1_page_trimming=config.enable_stage1_page_trimming,
     )
 
 
@@ -413,6 +426,10 @@ def source_metadata(pdf_path: Path, config: PipelineConfig) -> Dict:
         "pdf_text_layout": config.pdf_text_layout,
         "pdf_text_x_tolerance": config.pdf_text_x_tolerance,
         "pdf_text_y_tolerance": config.pdf_text_y_tolerance,
+        "generic_resolution_batch_size": config.generic_resolution_batch_size,
+        "stage1_screen_prompt_version": STAGE1_SCREEN_PROMPT_VERSION,
+        "mixed_reaction_prompt_version": MIXED_REACTION_PROMPT_VERSION,
+        "enable_stage1_page_trimming": config.enable_stage1_page_trimming,
         "enable_stage2_audit": config.enable_stage2_audit,
     }
 
@@ -469,6 +486,12 @@ def reusable_entity_context(path: Path, expected: Dict) -> Optional[Dict]:
         "parallel_pdf_v10_gp_templates_ligands",
         "parallel_pdf_v11_generic_substrate_resolution",
         "parallel_pdf_v12_gp_template_logs_structured_prompt",
+        "parallel_pdf_v15_gp_llm_boundary_trim",
+        "parallel_pdf_v17_ligand_registry_resolution",
+        "parallel_pdf_v18_batched_generic_substrate_resolution",
+        "parallel_pdf_v19_safe_compound_symbol_normalization",
+        "parallel_pdf_v20_stage1_cross_page_target_evidence",
+        "parallel_pdf_v21_targets_dr",
     }
     if actual.get("pipeline_version") not in compatible_versions:
         return None
@@ -478,7 +501,16 @@ def reusable_entity_context(path: Path, expected: Dict) -> Optional[Dict]:
             return None
         if template.get("prompt_version") != GP_TEMPLATE_PROMPT_VERSION:
             return None
-    keys = tuple(key for key in expected if key != "pipeline_version")
+    keys = tuple(
+        key for key in expected
+        if key not in {
+            "pipeline_version",
+            "generic_resolution_batch_size",
+            "stage1_screen_prompt_version",
+            "mixed_reaction_prompt_version",
+            "enable_stage1_page_trimming",
+        }
+    )
     if not all(actual.get(key) == expected.get(key) for key in keys):
         return None
     return payload
@@ -892,6 +924,8 @@ class PrepareJobsAgent:
             "limit": self.config.limit,
             "max_parallel_pdfs": self.config.max_parallel_pdfs,
             "max_parallel_text_chunks": self.config.max_parallel_text_chunks,
+            "generic_resolution_batch_size": self.config.generic_resolution_batch_size,
+            "enable_stage1_page_trimming": self.config.enable_stage1_page_trimming,
             "pdf_text_layout": self.config.pdf_text_layout,
             "pdf_text_x_tolerance": self.config.pdf_text_x_tolerance,
             "pdf_text_y_tolerance": self.config.pdf_text_y_tolerance,
@@ -2734,6 +2768,9 @@ class ReportAgent:
                 "page_cache": str(self.config.page_cache_dir),
                 "entity_context": str(self.config.entity_context_dir),
                 "gp_template_logs": str(self.config.gp_template_logs_dir),
+                "generic_substrate_resolution_logs": str(
+                    self.config.generic_substrate_resolution_logs_dir
+                ),
                 "section_chunks": str(self.config.section_chunks_dir),
                 "registry_debug": str(self.config.registry_debug_dir),
             },
@@ -2746,6 +2783,8 @@ class ReportAgent:
                 "base_url": self.config.base_url,
                 "max_parallel_pdfs": self.config.max_parallel_pdfs,
                 "max_parallel_text_chunks": self.config.max_parallel_text_chunks,
+                "generic_resolution_batch_size": self.config.generic_resolution_batch_size,
+                "enable_stage1_page_trimming": self.config.enable_stage1_page_trimming,
                 "pdf_text_layout": self.config.pdf_text_layout,
                 "pdf_text_x_tolerance": self.config.pdf_text_x_tolerance,
                 "pdf_text_y_tolerance": self.config.pdf_text_y_tolerance,

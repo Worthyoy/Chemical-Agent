@@ -50,7 +50,7 @@ Rules
 - Extract every qualifying reaction entry in source order with no omissions. Only use reported data.
 - Different ee/yield = separate records even if substrates match.
 - Keep numbers exactly as written (units, significant figures, ranges).
-  Use null for missing yield, ee, or er fields.
+  Use null for missing yield, ee, er, or dr fields.
 - Classify catalyst complexes/precatalysts under catalysts, ligands under ligands, and all other reacting materials under other_components. Do NOT drop any.
 - ligands items contain name only for single-step reactions; multi-step ligands contain name and step only. Never put ligand loading in ligands.
 
@@ -68,9 +68,9 @@ Page provenance:
 An extractable prose reaction entry is any sentence or paragraph that contains:
 - a specific compound/product/substrate name, label, code, or symbol, and
 - wording indicating preparation, synthesis, isolation, furnishing, affording, obtaining, or reaction under/according to a procedure, and
-- at least one reported target value: isolated yield, ee, or er.
+- at least one reported target value: isolated yield, ee, er, or dr.
 
-Yield alone is sufficient. ee and er are optional.
+Yield alone is sufficient. ee, er, and dr are optional.
 
 For a consecutive series of similar product entries, extract every entry in order.
 Do not skip middle entries in a repeated series.
@@ -80,7 +80,7 @@ Product characterization entries are valid reaction entries when they report a s
 Ignore NMR, HRMS, HPLC, spectra, exact mass, melting point, optical rotation, and analytical details after the yield; they are not separate reactions.
 
 General Procedure text is context only:
-- Do not output a standalone reaction for the GP paragraph itself unless it reports a specific product/substrate and yield, ee, or er.
+- Do not output a standalone reaction for the GP paragraph itself unless it reports a specific product/substrate and yield, ee, er, or dr.
 - Use GP text only to fill shared reagents, catalysts, solvents, and conditions for later prose entries that reference that procedure.
 
 Multi-step reactions and General Procedures:
@@ -107,11 +107,11 @@ Multi-step reactions and General Procedures:
 - Single-step reactions must keep the ordinary schema below: do not add step_count, step annotations, or intermediates.
 
 Do NOT extract from tables, optimization tables, screening tables, entry tables, figure captions, or tabular lists.
-Ignore table content completely even if it contains yield, ee, er, conditions, substrates, or entry numbers.
+Ignore table content completely even if it contains yield, ee, er, dr, conditions, substrates, or entry numbers.
 
 General Procedure entries
-Many SI docs have a GP paragraph followed by individual entries specifying only compound, yield, ee/er, and sometimes time.
-Product characterization entries after a GP are separate reaction entries when they report a specific product and isolated yield, ee, or er.
+Many SI docs have a GP paragraph followed by individual entries specifying only compound, yield, ee/er/dr, and sometimes time.
+Product characterization entries after a GP are separate reaction entries when they report a specific product and isolated yield, ee, er, or dr.
 1. conditions — Entry-specified reagents/solvents/conditions ALWAYS override GP conditions.
 2. substrates — Use GP substrate symbols/ranges. Do NOT set substrates = products.
    For compound-range GPs (e.g. "1a-19a"): use general class name (e.g. "alkene derivative"), keep symbol.
@@ -159,7 +159,7 @@ For normal extraction, each entry:
   "ligands": [{"name": "..."}],
   "other_components": [{"name": "...", "symbol": "...", "amount": "..."}],
   "conditions": {"solvent": "...", "volume": "...", "concentration": "...", "atmosphere": "...", "light_source": "...", "wavelength": "...", "temperature": "...", "time": "..."},
-  "targets": {"yield": "...", "ee": "...%", "er": "..."}
+  "targets": {"yield": "...", "ee": "...%", "er": "...", "dr": "..."}
 }
 
 For a multi-step entry, extend that object as follows:
@@ -189,7 +189,8 @@ name/symbol rules
   NOT {"name": "aldehyde 5b", "symbol": "5b"}. Scan entire section for longest, most complete name.
 - Same name rules apply to substrates, products, catalysts, ligands, and other_components.
 - products[].amount = mass/volume ONLY (e.g. "511 mg"), NEVER yield.
-- yield/ee/er MUST be inside "targets", NOT top-level. Extract er when reported.
+- yield/ee/er/dr MUST be inside "targets", NOT top-level. Extract er and dr when explicitly reported.
+- Keep dr as the reported ratio: "91:9 dr" -> "91:9", "dr = 95:5" -> "95:5", and ">20:1 dr" -> ">20:1". Do not infer dr from de, an unlabeled ratio, or generic selectivity text.
 - Use null for unreported fields."""
     
     def __init__(self, api_key: Optional[str] = None,

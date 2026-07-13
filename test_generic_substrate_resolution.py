@@ -3,7 +3,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from batch_si_extractor import SIExtractor
+from batch_si_extractor import GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION, SIExtractor
 
 
 class _FakeCompletions:
@@ -15,260 +15,252 @@ class _FakeCompletions:
         index = min(self.calls, len(self.contents) - 1)
         self.calls += 1
         message = SimpleNamespace(content=self.contents[index])
-        choice = SimpleNamespace(message=message)
-        return SimpleNamespace(choices=[choice])
+        return SimpleNamespace(choices=[SimpleNamespace(message=message)])
+
+
+class _DynamicCompletions:
+    def __init__(self, *, fail_multi=False):
+        self.calls = 0
+        self.fail_multi = fail_multi
+
+    def create(self, **kwargs):
+        self.calls += 1
+        user = kwargs["messages"][1]["content"].split("\n\nPrevious response", 1)[0]
+        payload = json.loads(user)
+        content = "not json" if self.fail_multi and len(payload["reactions"]) > 1 else json.dumps(_specific_response(payload))
+        return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content=content))])
 
 
 class _FakeClient:
-    def __init__(self, *contents):
-        self.chat = SimpleNamespace(completions=_FakeCompletions(contents))
+    def __init__(self, completions):
+        self.chat = SimpleNamespace(completions=completions)
 
 
-def _extractor_with_response(content):
-    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
-    extractor.client = _FakeClient(content)
+def _extractor_with_contents(*contents, batch_size=10):
+    extractor = SIExtractor(
+        api_key="test", enable_stage2_audit=False,
+        generic_resolution_batch_size=batch_size,
+    )
+    extractor.client = _FakeClient(_FakeCompletions(contents))
     return extractor
 
 
-def test_generic_substrate_resolution_prompt_is_generic_and_has_two_current_examples():
-    prompt = SIExtractor.GENERIC_SUBSTRATE_RESOLUTION_PROMPT
+def _reaction(reaction_id, substrate="aniline", products=None):
+    return {
+        "id": reaction_id,
+        "reaction_type": "test",
+        "substrates": [{"name": substrate, "amount": "0.8 equiv"}],
+        "products": products or [{"name": "reported concrete product"}],
+        "targets": {"yield": "81%", "ee": None, "er": None},
+    }
 
+
+def _specific_response(payload):
+    return {
+        "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
+        "batch_id": payload["batch_id"],
+        "reaction_assessments": [
+            {
+                "reaction_id": reaction["reaction_id"],
+                "substrate_assessments": [
+                    {
+                        "substrate_index": substrate["index"],
+                        "identity_status": "specific",
+                        "classification_confidence": "high",
+                        "can_resolve": False,
+                        "resolved_name": None,
+                        "resolution_confidence": None,
+                        "evidence_product_index": None,
+                        "reason": "The name is a concrete identity.",
+                    }
+                    for substrate in reaction["substrates"]
+                ],
+            }
+            for reaction in payload["reactions"]
+        ],
+    }
+
+
+def _resolution_response(batch_id, reaction_id, resolved_name, product_index=0):
+    return {
+        "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
+        "batch_id": batch_id,
+        "reaction_assessments": [{
+            "reaction_id": reaction_id,
+            "substrate_assessments": [{
+                "substrate_index": 0,
+                "identity_status": "generic",
+                "classification_confidence": "high",
+                "can_resolve": True,
+                "resolved_name": resolved_name,
+                "resolution_confidence": "high",
+                "evidence_product_index": product_index,
+                "reason": "A unique complete starting-material fragment is retained.",
+            }],
+        }],
+    }
+
+
+def test_prompt_combines_classification_and_resolution_without_generic_vocabulary():
+    prompt = SIExtractor.GENERIC_SUBSTRATE_RESOLUTION_PROMPT
     for phrase in (
+        "specific, generic, label_only, or ambiguous",
+        "Do not use or invent a fixed vocabulary",
         "complete starting-material identity",
         "not the minimal scaffold",
-        "heteroatom substituents",
-        "protecting groups",
-        "one-to-one",
-        "final product scaffold alone",
-        "chemically meaningful fragment",
-        "uniquely recoverable",
-        "can_resolve=false",
+        "evidence_product_index",
+        "Every supplied substrate_index must appear exactly once",
     ):
         assert phrase in prompt
-
     assert prompt.count("generic substrate:") == 2
-    assert prompt.count("resolved substrate:") == 2
     assert "2-bromoaniline" in prompt
     assert "2-bromo-N-(methoxymethyl)aniline" in prompt
-    assert "6-bromo-2,2-difluorobenzo[d][1,3]dioxol-5-amine" not in prompt
-    assert "2-bromo-4-methoxyaniline" not in prompt
 
 
-def test_generic_substrate_resolution_parser_accepts_json_object():
-    extractor = _extractor_with_response('{"reaction_id":"r1","resolutions":[]}')
-
-    parsed = extractor._call_generic_substrate_resolution_llm({"reaction_id": "r1"})
-
-    assert parsed == {"reaction_id": "r1", "resolutions": []}
-
-
-def test_generic_substrate_resolution_parser_accepts_fenced_json_object():
-    extractor = _extractor_with_response(
-        '```json\n{"reaction_id":"r1","resolutions":[]}\n```'
-    )
-
-    parsed = extractor._call_generic_substrate_resolution_llm({"reaction_id": "r1"})
-
-    assert parsed["reaction_id"] == "r1"
-    assert parsed["resolutions"] == []
+def test_batch_parser_accepts_object_and_fenced_object():
+    payload = {"schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION, "batch_id": "b", "reactions": []}
+    response = _specific_response(payload)
+    extractor = _extractor_with_contents(json.dumps(response), f"```json\n{json.dumps(response)}\n```")
+    assert extractor._call_generic_substrate_resolution_llm(payload) == response
+    assert extractor._call_generic_substrate_resolution_llm(payload) == response
 
 
-def test_generic_substrate_resolution_parser_rejects_json_list():
-    extractor = _extractor_with_response('[{"reaction_id":"r1","resolutions":[]}]')
-
+def test_batch_parser_rejects_json_list():
+    extractor = _extractor_with_contents("[]")
     with pytest.raises(ValueError, match="must be a JSON object"):
-        extractor._call_generic_substrate_resolution_llm({"reaction_id": "r1"})
+        extractor._call_generic_substrate_resolution_llm({"batch_id": "b", "reactions": []})
 
 
-def test_generic_substrate_resolution_writes_back_valid_resolution():
-    llm_payload = {
-        "reaction_id": "GeneralProcedureA-Entry1",
-        "resolutions": [
-            {
-                "substrate_index": 0,
-                "can_resolve": True,
-                "resolved_name": "2-bromoaniline",
-                "original_name": "aniline",
-                "resolution_source": "product_name",
-                "resolution_method": "gp_product_to_substrate_mapping",
-                "resolution_confidence": "high",
-                "resolution_evidence": {
-                    "product_name": "(Z)-N-(2-bromophenyl)-N,2-dimethylbut-2-enamide",
-                    "reason": "The N-(2-bromophenyl) fragment maps to 2-bromoaniline.",
-                },
-            }
-        ],
-    }
-    extractor = _extractor_with_response(json.dumps(llm_payload))
-    reactions = [
-        {
-            "id": "GeneralProcedureA-Entry1",
-            "reaction_type": "test",
-            "substrates": [{"name": "aniline", "amount": "0.8 equiv"}],
-            "products": [
-                {"name": "(Z)-N-(2-bromophenyl)-N,2-dimethylbut-2-enamide"}
-            ],
-            "targets": {"yield": "81%", "ee": None, "er": None},
-        }
-    ]
-
-    resolved = extractor.resolve_generic_substrates_from_products(reactions)
-    validated = extractor.validate_substrate_name_resolutions(resolved)
-
-    substrate = validated[0]["substrates"][0]
+def test_valid_resolution_writes_back_and_survives_validator():
+    product = "(Z)-N-(2-bromophenyl)-N,2-dimethylbut-2-enamide"
+    response = _resolution_response("paper_batch_0001", "r1", "2-bromoaniline")
+    extractor = _extractor_with_contents(json.dumps(response))
+    resolved = extractor.resolve_generic_substrates_from_products([_reaction("r1", products=[{"name": product}])])
+    substrate = extractor.validate_substrate_name_resolutions(resolved)[0]["substrates"][0]
     assert substrate["name"] == "2-bromoaniline"
     assert substrate["original_name"] == "aniline"
-    assert substrate["resolution_source"] == "product_name"
-    assert extractor.last_substrate_name_resolution_stats["resolved"] == 1
+    assert substrate["resolution_method"] == "product_name_to_substrate_mapping"
+    assert substrate["resolution_evidence"]["product_index"] == 0
+    assert not any(key.startswith("_resolution_") for key in substrate)
 
 
-def test_generic_substrate_resolution_writes_back_complete_heteroatom_substituted_aniline():
-    product_name = "(Z)-N-(2-bromophenyl)-N-(methoxymethyl)-2-methylbut-2-enamide"
-    llm_payload = {
-        "reaction_id": "GeneralProcedureA-Entry10",
-        "resolutions": [
-            {
+def test_complete_heteroatom_substituted_name_is_preserved():
+    product = "(Z)-N-(2-bromophenyl)-N-(methoxymethyl)-2-methylbut-2-enamide"
+    response = _resolution_response("paper_batch_0001", "r10", "2-bromo-N-(methoxymethyl)aniline")
+    extractor = _extractor_with_contents(json.dumps(response))
+    result = extractor.validate_substrate_name_resolutions(
+        extractor.resolve_generic_substrates_from_products([_reaction("r10", products=[{"name": product}])])
+    )
+    assert result[0]["substrates"][0]["name"] == "2-bromo-N-(methoxymethyl)aniline"
+
+
+def test_out_of_vocabulary_generic_name_is_sent_to_llm_and_resolved():
+    response = _resolution_response("paper_batch_0001", "r1", "specific radical precursor name")
+    extractor = _extractor_with_contents(json.dumps(response))
+    result = extractor.validate_substrate_name_resolutions(
+        extractor.resolve_generic_substrates_from_products([_reaction("r1", substrate="radical precursor")])
+    )
+    assert extractor.client.chat.completions.calls == 1
+    assert result[0]["substrates"][0]["name"] == "specific radical precursor name"
+
+
+def test_label_only_product_is_still_assessed_without_forced_resolution():
+    response = {
+        "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
+        "batch_id": "paper_batch_0001",
+        "reaction_assessments": [{
+            "reaction_id": "r1",
+            "substrate_assessments": [{
                 "substrate_index": 0,
-                "can_resolve": True,
-                "resolved_name": "2-bromo-N-(methoxymethyl)aniline",
-                "original_name": "aniline",
-                "resolution_source": "product_name",
-                "resolution_method": "gp_product_to_substrate_mapping",
-                "resolution_confidence": "high",
-                "resolution_evidence": {
-                    "product_name": product_name,
-                    "reason": "The product preserves the N-(2-bromophenyl)-N-(methoxymethyl) aniline identity.",
-                },
-            }
-        ],
+                "identity_status": "generic",
+                "classification_confidence": "high",
+                "can_resolve": False,
+                "resolved_name": None,
+                "resolution_confidence": None,
+                "evidence_product_index": None,
+                "reason": "The product is label-only.",
+            }],
+        }],
     }
-    extractor = _extractor_with_response(json.dumps(llm_payload))
-    reactions = [
-        {
-            "id": "GeneralProcedureA-Entry10",
-            "reaction_type": "test",
-            "substrates": [{"name": "aniline", "amount": "0.8 equiv"}],
-            "products": [{"name": product_name}],
-            "targets": {"yield": "46%", "ee": None, "er": None},
-        }
-    ]
-
-    resolved = extractor.resolve_generic_substrates_from_products(reactions)
-    validated = extractor.validate_substrate_name_resolutions(resolved)
-
-    substrate = validated[0]["substrates"][0]
-    assert substrate["name"] == "2-bromo-N-(methoxymethyl)aniline"
-    assert substrate["original_name"] == "aniline"
-    assert extractor.last_substrate_name_resolution_stats["resolved"] == 1
+    extractor = _extractor_with_contents(json.dumps(response))
+    result = extractor.resolve_generic_substrates_from_products(
+        [_reaction("r1", substrate="substrate amide", products=[{"name": "Oxindole 2"}])]
+    )
+    assert extractor.client.chat.completions.calls == 1
+    assert result[0]["substrates"][0]["name"] == "substrate amide"
+    assert extractor.last_generic_substrate_resolution_reviews[-1]["reason"] == "generic_substrate_not_resolved"
 
 
-def test_generic_substrate_resolution_validator_rolls_back_invalid_product_copy():
-    product_name = "(Z)-N-(2-bromophenyl)-N,2-dimethylbut-2-enamide"
+def test_multi_product_resolution_uses_explicit_product_index():
+    response = _resolution_response("paper_batch_0001", "r1", "2-bromoaniline", product_index=1)
+    extractor = _extractor_with_contents(json.dumps(response))
+    products = [{"name": "unrelated product"}, {"name": "mapped concrete product"}]
+    result = extractor.validate_substrate_name_resolutions(
+        extractor.resolve_generic_substrates_from_products([_reaction("r1", products=products)])
+    )
+    evidence = result[0]["substrates"][0]["resolution_evidence"]
+    assert evidence["product_index"] == 1
+    assert evidence["product_name"] == "mapped concrete product"
+
+
+def test_missing_confidence_is_not_defaulted_to_high():
+    product = "mapped product"
     extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
-    reactions = [
-        {
-            "id": "r1",
-            "substrates": [
-                {
-                    "name": product_name,
-                    "original_name": "aniline",
-                    "resolution_source": "product_name",
-                    "resolution_method": "gp_product_to_substrate_mapping",
-                    "resolution_confidence": "high",
-                    "resolution_evidence": {"product_name": product_name},
-                }
-            ],
-            "products": [{"name": product_name}],
-        }
-    ]
-
-    validated = extractor.validate_substrate_name_resolutions(reactions)
-
-    assert validated[0]["substrates"][0]["name"] == "aniline"
-    assert "resolution_source" not in validated[0]["substrates"][0]
-    assert extractor.last_substrate_name_resolution_stats["reviewed"] == 1
-
-
-def test_generic_substrate_resolution_validator_rolls_back_low_confidence():
-    product_name = "(Z)-N-(2-bromophenyl)-N,2-dimethylbut-2-enamide"
-    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
-    reactions = [
-        {
-            "id": "r1",
-            "substrates": [
-                {
-                    "name": "2-bromoaniline",
-                    "original_name": "aniline",
-                    "resolution_source": "product_name",
-                    "resolution_method": "gp_product_to_substrate_mapping",
-                    "resolution_confidence": "low",
-                    "resolution_evidence": {"product_name": product_name},
-                }
-            ],
-            "products": [{"name": product_name}],
-        }
-    ]
-
-    validated = extractor.validate_substrate_name_resolutions(reactions)
-
-    assert validated[0]["substrates"][0]["name"] == "aniline"
-    assert "resolution_source" not in validated[0]["substrates"][0]
+    reaction = _reaction("r1", products=[{"name": product}])
+    reaction["substrates"][0].update({
+        "name": "resolved name", "original_name": "radical precursor",
+        "resolution_source": "product_name",
+        "resolution_method": "product_name_to_substrate_mapping",
+        "resolution_evidence": {"product_index": 0, "product_name": product},
+        "_resolution_identity_status": "generic",
+        "_resolution_classification_confidence": "high",
+        "_resolution_input_name": "radical precursor",
+        "_resolution_substrate_index": 0,
+    })
+    validated = extractor.validate_substrate_name_resolutions([reaction])
+    assert validated[0]["substrates"][0]["name"] == "radical precursor"
     assert extractor.last_substrate_name_resolution_reviews[-1]["reason"] == "resolution_confidence_is_not_high"
 
 
-def test_generic_substrate_resolution_skips_label_only_product_without_llm_call():
-    extractor = _extractor_with_response('{"reaction_id":"unused","resolutions":[]}')
-    reactions = [
-        {
-            "id": "GeneralProcedureC-Entry1",
-            "reaction_type": "test",
-            "substrates": [{"name": "substrate amide"}],
-            "products": [{"name": "Oxindole 2"}],
-            "targets": {"yield": "92%", "ee": "95%", "er": None},
-        }
-    ]
-
-    resolved = extractor.resolve_generic_substrates_from_products(reactions)
-
-    assert resolved[0]["substrates"][0]["name"] == "substrate amide"
-    assert extractor.client.chat.completions.calls == 0
-    assert extractor.last_generic_substrate_resolution_stats["llm_calls"] == 0
-    assert extractor.last_generic_substrate_resolution_reviews[-1]["reason"] == "label_only_product_name"
+def test_twenty_three_reactions_use_three_batch_calls():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False, generic_resolution_batch_size=10)
+    completions = _DynamicCompletions()
+    extractor.client = _FakeClient(completions)
+    result = extractor.resolve_generic_substrates_from_products(
+        [_reaction(f"r{i}", substrate=f"specific substrate {i}") for i in range(23)]
+    )
+    assert len(result) == 23
+    assert completions.calls == 3
+    assert extractor.last_generic_substrate_resolution_stats["substrates_assessed_by_llm"] == 23
 
 
-def test_generic_substrate_resolution_multi_product_requires_explicit_evidence_product():
-    product_a = "(Z)-N-(2-bromophenyl)-N,2-dimethylbut-2-enamide"
-    product_b = "specific byproduct name"
-    llm_payload = {
-        "reaction_id": "r1",
-        "resolutions": [
-            {
-                "substrate_index": 0,
-                "can_resolve": True,
-                "resolved_name": "2-bromoaniline",
-                "original_name": "aniline",
-                "resolution_source": "product_name",
-                "resolution_method": "gp_product_to_substrate_mapping",
-                "resolution_confidence": "high",
-                "resolution_evidence": {
-                    "product_name": product_a,
-                    "reason": "The named product contains the one-to-one aniline fragment.",
-                },
-            }
-        ],
+def test_failed_multi_batch_is_bisected_without_losing_reactions():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False, generic_resolution_batch_size=10)
+    completions = _DynamicCompletions(fail_multi=True)
+    extractor.client = _FakeClient(completions)
+    result = extractor.resolve_generic_substrates_from_products([_reaction("r1"), _reaction("r2")])
+    assert len(result) == 2
+    assert completions.calls == 4
+    assert extractor.last_generic_substrate_resolution_stats["resolution_batch_retries"] == 1
+
+
+def test_resolution_batch_cache_avoids_llm_call():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    completions = _DynamicCompletions()
+    extractor.client = _FakeClient(completions)
+    candidate = extractor._generic_substrate_resolution_candidate(
+        _reaction("r1", substrate="specific substrate")
+    )
+    payload = {
+        "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
+        "batch_id": "p_batch_0001",
+        "reactions": [candidate],
     }
-    extractor = _extractor_with_response(json.dumps(llm_payload))
-    reactions = [
-        {
-            "id": "r1",
-            "reaction_type": "test",
-            "substrates": [{"name": "aniline"}],
-            "products": [{"name": product_a}, {"name": product_b}],
-        }
-    ]
-
-    resolved = extractor.resolve_generic_substrates_from_products(reactions)
-    validated = extractor.validate_substrate_name_resolutions(resolved)
-
-    assert validated[0]["substrates"][0]["name"] == "2-bromoaniline"
-    assert extractor.last_substrate_name_resolution_stats["resolved"] == 1
+    response = _specific_response(payload)
+    cache = {extractor._generic_resolution_cache_key(payload): response}
+    stats = {"resolution_cache_hits": 0, "llm_calls": 0, "resolution_batch_calls": 0,
+             "resolution_batch_retries": 0, "resolution_batch_failures": 0}
+    result = extractor._run_generic_resolution_batch(payload, cache, [], stats)
+    assert result == response
+    assert completions.calls == 0
+    assert stats["resolution_cache_hits"] == 1

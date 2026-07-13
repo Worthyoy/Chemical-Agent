@@ -9,6 +9,8 @@ def test_reaction_prompts_describe_name_symbol_separation():
     ):
         assert "name stores the chemical name only" in prompt
         assert "symbol stores the reported label" in prompt
+        assert "Chemical formulas, counterions, coordination fragments" in prompt
+        assert "Do not infer symbol merely because" in prompt
         assert "carboxylic acid (34)" in prompt
         assert "dibromovinyl ... (35')" in prompt
         assert "methanol (36)" in prompt
@@ -37,13 +39,16 @@ def test_sanitize_splits_trailing_reported_product_symbol():
     assert sanitized["products"][0]["symbol"] == "34"
 
 
-def test_sanitize_splits_prime_and_code_symbols():
+def test_sanitize_splits_numeric_labels_but_preserves_unconfirmed_letter_codes():
     extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
     reaction = {
         "id": "r1",
         "source_pages": [35],
         "reaction_type": "test",
-        "substrates": [{"name": "starting material (SM15)"}],
+        "substrates": [
+            {"name": "starting material (SM15)"},
+            {"name": "numbered starting material (3a)"},
+        ],
         "products": [
             {"name": "reported dibromovinyl compound (35')"},
             {"name": "reported methanol (36)"},
@@ -57,15 +62,48 @@ def test_sanitize_splits_prime_and_code_symbols():
 
     sanitized = extractor.sanitize_reaction_schema(reaction)
 
-    assert sanitized["substrates"][0]["name"] == "starting material"
-    assert sanitized["substrates"][0]["symbol"] == "SM15"
+    assert sanitized["substrates"][0] == {"name": "starting material (SM15)"}
+    assert sanitized["substrates"][1]["name"] == "numbered starting material"
+    assert sanitized["substrates"][1]["symbol"] == "3a"
     assert sanitized["products"][0]["name"] == "reported dibromovinyl compound"
     assert sanitized["products"][0]["symbol"] == "35'"
     assert sanitized["products"][1]["name"] == "reported methanol"
     assert sanitized["products"][1]["symbol"] == "36"
-    assert sanitized["ligands"][0] == {"name": "reported ligand", "symbol": "L1"}
-    assert sanitized["other_components"][0]["name"] == "reported reagent"
-    assert sanitized["other_components"][0]["symbol"] == "3a"
+    assert sanitized["ligands"][0] == {"name": "reported ligand (L1)"}
+    assert sanitized["other_components"][0] == {"name": "reported reagent (3a)"}
+
+
+def test_sanitize_preserves_formula_counterions_and_coordination_fragments():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    reaction = {
+        "id": "r1",
+        "source_pages": [1],
+        "reaction_type": "test",
+        "substrates": [],
+        "products": [],
+        "catalysts": [
+            {
+                "name": "Ir[dF(CF3)ppy]2(dtbbpy)(PF6)",
+                "symbol": None,
+                "amount": "5.5 mg, 0.0050 mmol",
+            },
+            {"name": "reported metal complex (BF4)"},
+        ],
+        "ligands": [],
+        "other_components": [{"name": "reported salt (ClO4)"}],
+        "conditions": {},
+        "targets": {"yield": None, "ee": None, "er": None},
+    }
+
+    sanitized = extractor.sanitize_reaction_schema(reaction)
+
+    assert sanitized["catalysts"][0] == {
+        "name": "Ir[dF(CF3)ppy]2(dtbbpy)(PF6)",
+        "symbol": None,
+        "amount": "5.5 mg, 0.0050 mmol",
+    }
+    assert sanitized["catalysts"][1] == {"name": "reported metal complex (BF4)"}
+    assert sanitized["other_components"][0] == {"name": "reported salt (ClO4)"}
 
 
 def test_sanitize_does_not_split_chemical_parentheticals_or_existing_symbol():
@@ -146,6 +184,33 @@ def test_registry_alignment_resolves_ligand_label_and_preserves_step():
             "resolution_confidence": "high",
         }
     ]
+
+
+def test_registry_alignment_splits_matching_trailing_letter_code():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    full_name = "7-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde"
+
+    aligned = extractor.align_names_in_reactions(
+        [{"id": "r1", "products": [{"name": f"{full_name} (SM15)"}]}],
+        {"SM15": full_name},
+    )
+
+    product = aligned[0]["products"][0]
+    assert product["name"] == full_name
+    assert product["symbol"] == "SM15"
+    assert product["registry_match_status"] == "verified"
+
+
+def test_registry_alignment_does_not_strip_counterion_on_name_mismatch():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    catalyst_name = "Ir[dF(CF3)ppy]2(dtbbpy)(PF6)"
+
+    aligned = extractor.align_names_in_reactions(
+        [{"id": "r1", "catalysts": [{"name": catalyst_name}]}],
+        {"PF6": "hexafluorophosphate"},
+    )
+
+    assert aligned[0]["catalysts"] == [{"name": catalyst_name}]
 
 
 def test_registry_alignment_leaves_unknown_ligand_unchanged():

@@ -222,6 +222,17 @@ def parse_args():
         default=1,
         help="Maximum chunk-level concurrency inside each text extraction PDF. 1 preserves serial behavior.",
     )
+    parser.add_argument(
+        "--generic_resolution_batch_size",
+        type=int,
+        default=10,
+        help="Reaction count per combined generic-substrate classification/resolution LLM call (default: 10).",
+    )
+    parser.add_argument(
+        "--enable_stage1_page_trimming",
+        action="store_true",
+        help="Enable legacy Stage1 relevant_pages trimming. Disabled by default to preserve cross-page target evidence.",
+    )
     parser.add_argument("--skip_reaction_type_normalization", action="store_true")
     parser.add_argument("--skip_stage2_audit", action="store_true")
     parser.add_argument(
@@ -443,6 +454,8 @@ def config_from_args(args) -> PipelineConfig:
         pdf_text_layout=args.pdf_text_layout,
         pdf_text_x_tolerance=args.pdf_text_x_tolerance,
         pdf_text_y_tolerance=args.pdf_text_y_tolerance,
+        generic_resolution_batch_size=max(1, args.generic_resolution_batch_size),
+        enable_stage1_page_trimming=args.enable_stage1_page_trimming,
         skip_reaction_type_normalization=args.skip_reaction_type_normalization,
         skip_chemeagle_normalization=args.skip_chemeagle_normalization,
         skip_downstream_build=args.skip_downstream_build,

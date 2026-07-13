@@ -147,6 +147,24 @@ class ReactionFilter:
             return False
         return value_str.casefold() not in self.INVALID_TARGET_PLACEHOLDERS
 
+    def is_valid_ratio_value(self, value, invalid_patterns) -> bool:
+        if value is None:
+            return False
+        value_str = str(value).strip()
+        if not value_str or value_str.casefold() in self.INVALID_TARGET_PLACEHOLDERS:
+            return False
+        for pattern in invalid_patterns:
+            if re.match(pattern, value_str, re.IGNORECASE):
+                return False
+        return bool(
+            re.fullmatch(
+                r'[<>≥≤~]?\s*\d+(?:\.\d+)?\s*[:/]\s*'
+                r'[<>≥≤~]?\s*\d+(?:\.\d+)?(?:\s*(?:er|dr))?',
+                value_str,
+                re.IGNORECASE,
+            )
+        )
+
     def is_negative_value(self, value) -> bool:
         if value is None:
             return False
@@ -181,7 +199,7 @@ class ReactionFilter:
         yield_valid = self.is_valid_target_presence(yield_val)
         ee_valid = self.is_valid_target_presence(ee_val)
         er_valid = self.is_valid_number_value(er_val, self.INVALID_ER_PATTERNS)
-        dr_valid = self.is_valid_target_presence(dr_val)
+        dr_valid = self.is_valid_ratio_value(dr_val, self.INVALID_DR_PATTERNS)
 
         all_invalid = not yield_valid and not ee_valid and not er_valid and not dr_valid
         return not all_invalid

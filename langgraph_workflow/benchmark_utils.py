@@ -176,10 +176,12 @@ def _product_scaffold_class(entries: List[dict]) -> str:
     return "corresponding reaction product"
 
 
-def _option_sort_key(option: dict) -> Tuple[float, str]:
+def _option_sort_key(option: dict) -> Tuple[int, float, str]:
+    metadata = option["metadata_hidden"]
     return (
-        -float(option["metadata_hidden"]["score"]),
-        str(option["metadata_hidden"]["original_answer_index"]),
+        0 if metadata.get("rankable") else 1,
+        -float(metadata.get("score") or 0.0),
+        str(metadata["original_answer_index"]),
     )
 
 
@@ -282,6 +284,7 @@ def _generate_q1_benchmark_legacy(q1_data: List[dict]) -> List[dict]:
                 "ee": ee,
                 "yield": yield_val,
                 "er": targets.get("er"),
+                "dr": targets.get("dr"),
                 "reaction_id": reaction.get("id"),
                 "source_paper": reaction.get("source_paper"),
             }
@@ -319,6 +322,7 @@ def _generate_q1_benchmark_legacy(q1_data: List[dict]) -> List[dict]:
                     "ee": entry["ee"],
                     "yield": entry["yield"],
                     "er": entry["er"],
+                    "dr": entry["dr"],
                     "score": score,
                     "reaction_id": entry.get("reaction_id"),
                     "source_paper": entry.get("source_paper"),
@@ -358,6 +362,10 @@ def _score_from_targets(targets: Dict) -> Tuple[Optional[float], Optional[float]
         score += yield_val
         count += 1
     return ee, yield_val, score / count if count else 0.0, count
+
+
+def _has_reported_target(value) -> bool:
+    return value not in (None, "", [], {})
 
 
 def _public_condition_option(reaction: dict) -> dict:
@@ -725,7 +733,9 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
         for original_answer_index, reaction in enumerate(entries):
             targets = reaction.get("targets", {}) or {}
             ee, yield_val, score, target_count = _score_from_targets(targets)
-            if target_count == 0:
+            er = targets.get("er")
+            dr = targets.get("dr")
+            if target_count == 0 and not _has_reported_target(er) and not _has_reported_target(dr):
                 omitted_no_targets.append(reaction.get("id"))
                 continue
 
@@ -738,10 +748,13 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
                         "reaction_id": reaction.get("id"),
                         "ee_raw": targets.get("ee"),
                         "yield_raw": targets.get("yield"),
+                        "dr_raw": dr,
                         "ee": ee,
                         "yield": yield_val,
-                        "er": targets.get("er"),
+                        "er": er,
+                        "dr": dr,
                         "score": score,
+                        "rankable": target_count > 0,
                         "source_paper": reaction.get("source_paper"),
                     },
                 }
@@ -773,18 +786,36 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
         conflicting_duplicate_keys = []
         deduped_options = []
         for duplicate_options in by_public_key.values():
-            scores = {
-                duplicate["metadata_hidden"]["score"]
+            results = {
+                (
+                    duplicate["metadata_hidden"].get("ee"),
+                    duplicate["metadata_hidden"].get("yield"),
+                    duplicate["metadata_hidden"].get("er"),
+                    duplicate["metadata_hidden"].get("dr"),
+                    duplicate["metadata_hidden"].get("score"),
+                    duplicate["metadata_hidden"].get("rankable"),
+                )
                 for duplicate in duplicate_options
             }
-            if len(duplicate_options) > 1 and len(scores) > 1:
+            if len(duplicate_options) > 1 and len(results) > 1:
                 conflicting_duplicate_keys.append(
                     {
                         "reaction_ids": [
                             duplicate["metadata_hidden"]["reaction_id"]
                             for duplicate in duplicate_options
                         ],
-                        "scores": sorted(scores, reverse=True),
+                        "results": [
+                            {
+                                "ee": result[0],
+                                "yield": result[1],
+                                "er": result[2],
+                                "dr": result[3],
+                                "dr_raw": result[3],
+                                "score": result[4],
+                                "rankable": result[5],
+                            }
+                            for result in sorted(results, key=lambda item: repr(item))
+                        ],
                     }
                 )
             else:
@@ -820,8 +851,31 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
             )
             continue
 
+        rankable_options = [
+            option for option in deduped_options if option["metadata_hidden"].get("rankable")
+        ]
+        if not rankable_options:
+            review_set.append(
+                {
+                    "reason": "no_rankable_yield_or_ee",
+                    **_q1_review_context(
+                        paper,
+                        reaction_type,
+                        combo_key,
+                        product_combo,
+                    ),
+                    "reaction_ids": [
+                        option["metadata_hidden"].get("reaction_id")
+                        for option in deduped_options
+                    ],
+                }
+            )
+            continue
+
         ranked_options = sorted(deduped_options, key=_option_sort_key)
-        max_score = ranked_options[0]["metadata_hidden"]["score"]
+        max_score = max(
+            option["metadata_hidden"]["score"] for option in rankable_options
+        )
 
         shuffled_options = _shuffle_options(deduped_options, f"{paper}|{combo_key}|{product_key}")
         by_original_index = {
@@ -831,7 +885,8 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
         gold_option_ids = [
             option["option_id"]
             for option in shuffled_options
-            if option["metadata_hidden"]["score"] == max_score
+            if option["metadata_hidden"].get("rankable")
+            and option["metadata_hidden"]["score"] == max_score
         ]
         gold_ranked_option_ids = [
             by_original_index[option["metadata_hidden"]["original_answer_index"]][
@@ -1049,7 +1104,8 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                 targets = reaction.get("targets", {})
                 ee, yield_val, score, target_count = _score_from_targets(targets)
                 er = targets.get("er")
-                if target_count == 0 and er in (None, "", [], {}):
+                dr = targets.get("dr")
+                if target_count == 0 and not _has_reported_target(er) and not _has_reported_target(dr):
                     omitted_no_targets.append(
                         {
                             "reaction_id": reaction.get("id"),
@@ -1067,10 +1123,13 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                             "reaction_id": reaction.get("id"),
                             "ee_raw": targets.get("ee"),
                             "yield_raw": targets.get("yield"),
+                            "dr_raw": dr,
                             "ee": ee,
                             "yield": yield_val,
                             "er": er,
+                            "dr": dr,
                             "score": score,
+                            "rankable": target_count > 0,
                             "source_paper": reaction.get("source_paper"),
                         },
                     }
@@ -1108,7 +1167,9 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                         item["metadata_hidden"].get("ee"),
                         item["metadata_hidden"].get("yield"),
                         item["metadata_hidden"].get("er"),
+                        item["metadata_hidden"].get("dr"),
                         item["metadata_hidden"].get("score"),
+                        item["metadata_hidden"].get("rankable"),
                     )
                     for item in duplicate_options
                 }
@@ -1125,7 +1186,10 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                                     "ee": item["metadata_hidden"].get("ee"),
                                     "yield": item["metadata_hidden"].get("yield"),
                                     "er": item["metadata_hidden"].get("er"),
+                                    "dr": item["metadata_hidden"].get("dr"),
+                                    "dr_raw": item["metadata_hidden"].get("dr_raw"),
                                     "score": item["metadata_hidden"].get("score"),
+                                    "rankable": item["metadata_hidden"].get("rankable"),
                                 }
                                 for item in duplicate_options
                             ],
@@ -1169,8 +1233,32 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                 )
                 continue
 
+            rankable_options = [
+                option for option in deduped_options if option["metadata_hidden"].get("rankable")
+            ]
+            if not rankable_options:
+                review_set.append(
+                    {
+                        "reason": "no_rankable_yield_or_ee",
+                        "source_paper": paper,
+                        "reaction_type": reaction_type,
+                        "conditions": conditions,
+                        "condition_signature": condition_signature,
+                        "condition_grouping_signature": condition_grouping_signature,
+                        "scaffold_combo": list(combo),
+                        "variable_scaffold": variable_scaffold,
+                        "reaction_ids": [
+                            option["metadata_hidden"].get("reaction_id")
+                            for option in deduped_options
+                        ],
+                    }
+                )
+                continue
+
             ranked_options = sorted(deduped_options, key=_option_sort_key)
-            max_score = ranked_options[0]["metadata_hidden"]["score"]
+            max_score = max(
+                option["metadata_hidden"]["score"] for option in rankable_options
+            )
 
             seed = f"{paper}|{combo}|{cond_key}|{variable_scaffold}"
             shuffled_options = _shuffle_options(deduped_options, seed)
@@ -1181,7 +1269,8 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
             gold_option_ids = [
                 option["option_id"]
                 for option in shuffled_options
-                if option["metadata_hidden"]["score"] == max_score
+                if option["metadata_hidden"].get("rankable")
+                and option["metadata_hidden"]["score"] == max_score
             ]
             gold_ranked_option_ids = [
                 by_original_index[option["metadata_hidden"]["original_answer_index"]][
