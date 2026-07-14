@@ -257,9 +257,17 @@ def test_mixed_prompt_and_user_content_include_downstream_boundary_rules():
     assert "standalone/downstream reaction" in prompt
     assert "Do not output the same concrete reaction twice as both GP and non-GP" in prompt
     assert "GP templates provide shared reaction_type" in prompt
-    assert "concrete entry text override > canonical GP template default" in prompt
-    assert "Override only fields explicitly reported by the concrete entry" in prompt
-    assert "preserve applicable template fields that the entry does not mention" in prompt
+    assert "GP role/step topology > entry surface wording" in prompt
+    assert "within the same role" in prompt
+    assert "concrete entry text override > canonical GP template default" not in prompt
+    assert '"with X", "charged with X", or "using X" does not by itself establish substrate role' in prompt
+    assert "must not replace a template external substrate" in prompt
+    assert "generated within the sequence and consumed later is an internal intermediate" in prompt
+    assert "do not duplicate X across substrates and intermediates" in prompt
+    assert '"reactive species from label"' in prompt
+    assert "otherwise do not guess the symbol assignment" in prompt
+    assert "Change the template role topology only when the concrete entry explicitly changes the reaction boundary" in prompt
+    assert "Do not remove unrelated template components merely because the entry does not repeat them" in prompt
     assert "class-level identity, role description, short label, or otherwise incomplete identity" in prompt
     assert "do not guess from textual similarity" in prompt
     assert "Do not keep both a generic template item and its more specific concrete-entry form" in prompt
@@ -294,10 +302,50 @@ def test_mixed_prompt_and_user_content_include_downstream_boundary_rules():
     assert "do not inherit GP" in prompt
     assert "standalone or downstream transformations as non-GP reactions" in user_content
     assert "without inheriting GP fields" in user_content
-    assert "concrete entry text override > canonical GP template default" in user_content
+    assert "GP role/step topology > entry surface wording" in user_content
+    assert "within the same role" in user_content
+    assert "concrete entry text override > canonical GP template default" not in user_content
+    assert "charged with X, or using X does not by itself make X an external substrate" in user_content
+    assert "Never replace an external template substrate" in user_content
+    assert "keep internally generated species in intermediates" in user_content
     assert "Replace a matching generic, label-level, or incomplete template component" in user_content
     assert "preserve unrelated template fields that the entry does not mention" in user_content
     assert "GENERAL PROCEDURE CONTEXT" in user_content
+
+
+def test_mixed_prompt_has_role_first_lineage_and_reaction_boundary_examples():
+    prompt = SIExtractor.MIXED_REACTION_PROMPT
+
+    assert "Template: substrate class A at step 1" in prompt
+    assert 'Entry: "procedure followed with B7 and reactive X derived from A3"' in prompt
+    assert "substrates contain A with symbol A3 at step 1" in prompt
+    assert "substrate class B at step 2" in prompt
+    assert "X is not a substrate" in prompt
+    assert "pre-prepared or isolated X" in prompt
+    assert "extract that new reaction with X as its external substrate" in prompt
+    assert "Merely saying \"X from A7\" or \"X derived from A7\" does not omit the upstream step" in prompt
+    assert "silently reconcile roles in this order" in prompt
+    assert "Do not output this reasoning or extra audit fields" in prompt
+
+
+def test_gp_injection_template_uses_role_first_precedence():
+    template = SIExtractor.GP_INJECTION_TEMPLATE
+
+    assert "authoritative for the reaction boundary, chemical roles" in template
+    assert "GP role/step topology > entry surface wording" in template
+    assert "Within an already matched role" in template
+    assert "pre-prepared or isolated material" in template
+    assert "GP-generated intermediates" in template
+
+
+def test_mixed_prompt_requires_role_and_cross_page_target_self_check():
+    prompt = SIExtractor.MIXED_REACTION_PROMPT
+
+    assert "supplied from outside the current reaction sequence" in prompt
+    assert "generated within the supplied GP sequence" in prompt
+    assert "no internally generated material or alias is duplicated" in prompt
+    assert "every page supplying a non-null yield, ee, er, or dr value" in prompt
+    assert "included in source_pages" in prompt
 
 
 def test_mixed_user_content_mentions_no_reference_gp_selection_when_applicable():

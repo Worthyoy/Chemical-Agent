@@ -42,7 +42,7 @@ def _gp_c_payload():
 def test_gp_template_prompt_requires_atomic_name_and_amount_fields():
     prompt = SIExtractor.GP_TEMPLATE_PROMPT
 
-    assert GP_TEMPLATE_PROMPT_VERSION == "gp_template_prompt_v6"
+    assert GP_TEMPLATE_PROMPT_VERSION == "gp_template_prompt_v7"
     assert "name stores chemical identity only" in prompt
     assert "amount stores every reported numerical quantity" in prompt
     assert "Move any parenthetical text that reports a numerical quantity or loading into amount" in prompt
@@ -50,6 +50,18 @@ def test_gp_template_prompt_requires_atomic_name_and_amount_fields():
     assert '"name":"reported catalyst (reported mass, reported mol%)","amount":null' in prompt
     assert "preformed metal-ligand complex remains a complete catalyst name" in prompt
     assert "ligands without an amount" in prompt
+
+
+def test_gp_template_prompt_counts_main_lineage_and_not_parallel_catalyst_premixing():
+    prompt = SIExtractor.GP_TEMPLATE_PROMPT
+
+    assert "main substrate-to-final-product transformation lineage" in prompt
+    assert "Parallel preparation, premixing, activation, or aging" in prompt
+    assert "does not create step 3" in prompt
+    assert "A -> intermediate X -> final product" in prompt
+    assert "General Procedure C" in prompt
+    assert "Never use the GP id" in prompt
+    assert "reaction boundary controls role assignment" in prompt
 
 
 def test_gp_c_atomic_catalyst_fixture_preserves_name_amount_and_step():

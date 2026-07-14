@@ -32,12 +32,12 @@ from pdf_to_gpt_extractor import PDFReactionExtractor, PDF_LIBRARY
 GP_CONTEXT_CHAR_LIMIT = 1500
 GP_TEMPLATE_SOURCE_CHAR_LIMIT = 12000
 GP_TEMPLATE_SCHEMA_VERSION = "gp_template_v1"
-GP_TEMPLATE_PROMPT_VERSION = "gp_template_prompt_v6"
+GP_TEMPLATE_PROMPT_VERSION = "gp_template_prompt_v7"
 GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION = "generic_substrate_resolution_v2"
-GENERIC_SUBSTRATE_RESOLUTION_PROMPT_VERSION = "generic_substrate_resolution_prompt_v2"
+GENERIC_SUBSTRATE_RESOLUTION_PROMPT_VERSION = "generic_substrate_resolution_prompt_v3_role_preserving"
 GENERIC_SUBSTRATE_RESOLUTION_BATCH_SIZE = 10
 STAGE1_SCREEN_PROMPT_VERSION = "stage1_screen_prompt_v3_targets_dr"
-MIXED_REACTION_PROMPT_VERSION = "mixed_reaction_prompt_v3_targets_dr"
+MIXED_REACTION_PROMPT_VERSION = "mixed_reaction_prompt_v5_role_first_precedence"
 
 
 class SIExtractor(PDFReactionExtractor):
@@ -385,6 +385,11 @@ Identity principles:
 - Apply these principles chemically. Do not use or invent a fixed vocabulary of generic compound classes.
 
 Resolution principles:
+- Resolution is role-preserving. A generic substrate may only be resolved to the concrete identity of that same externally supplied starting material.
+- Never resolve a substrate into an intermediate, catalyst, ligand, reagent, other_component, activated species, or species generated in situ within the current reaction sequence.
+- Use the supplied canonical GP role context as authoritative for external substrates, internal intermediates, and step lineage. The extracted reaction fields may be incomplete or role-inconsistent and must not override an explicit canonical GP role assignment.
+- If the product identifies an internal intermediate but does not uniquely recover the external precursor substrate, return can_resolve=false.
+- Use catalysts, ligands, other_components, and symbol_evidence only to disambiguate fragment origin and reaction role. Do not turn those components into substrates.
 - Resolve only when the inference is chemically valid, high confidence, and one-to-one.
 - The resolved substrate must be the complete starting-material identity, not the minimal scaffold. Preserve all ring substituents, chain substituents, heteroatom substituents, protecting groups, and N/O/S substituents that can be mapped from the product back to that substrate.
 - Do not copy the complete product name as a substrate.
@@ -396,6 +401,11 @@ Resolution principles:
 - Do not infer a substrate from the final product scaffold alone. Resolve only when a chemically meaningful product fragment maps one-to-one to the complete starting-material identity.
 - specific, label_only, and ambiguous assessments must use can_resolve=false.
 - Never claim high confidence when evidence is incomplete.
+
+Batch context:
+- gp_templates contains each referenced canonical GP once per batch, projected to reaction_type, step_count, substrates, intermediates, catalysts, ligands, and other_components.
+- symbol_evidence contains only same-paper symbol/name evidence relevant to compounds in this batch. An absent mapping is not permission to invent a name.
+- Each reaction contains all chemically relevant roles but omits targets, source pages, amounts, and routine conditions because they do not establish substrate identity.
 
 Current-paper regression examples:
 - generic substrate: aniline
@@ -492,15 +502,24 @@ Return only a valid JSON array of reaction objects.
 - When multiple supplied GP templates could match a product series, choose the template that provides meaningful shared reaction fields needed to complete the reaction: substrates, catalysts, ligands, other_components, conditions, intermediates, or step_count.
 - Do not use a supplied GP template as _gp_source if it has no meaningful shared fields and another supplied template provides the actual substrates/conditions for the same product series.
 - Do not choose an empty or title-only template merely because its label resembles the section title. Choose the template containing the actual reaction materials and conditions. If no supplied template provides meaningful shared fields, do not invent substrates; extract the entry as standalone non-GP only if the current paragraph reports real substrates.
-- GP templates provide shared reaction_type, substrates, catalysts, ligands, other_components, conditions, intermediates, and step schema only for GP-referenced entries. Products, targets, and source_pages always come from the concrete entry text.
-- Treat every supplied GP field as a shared default, not as permission to ignore more specific concrete-entry evidence. Precedence is concrete entry text override > canonical GP template default.
-- This precedence applies independently to substrates, catalysts, ligands, other_components, and each conditions field. Override only fields explicitly reported by the concrete entry; preserve applicable template fields that the entry does not mention.
-- When a template component is a class-level identity, role description, short label, or otherwise incomplete identity and the concrete entry explicitly reports the same component with a more specific chemical identity, symbol, or amount, replace that template item with the concrete-entry item. Match the same component only from an explicit shared label, explicit reference, unambiguous chemical identity, or unambiguous role in the reported procedure; do not guess from textual similarity.
-- Do not keep both a generic template item and its more specific concrete-entry form. If the entry explicitly substitutes a different component or condition, write the actual entry value and do not retain the replaced template default. Do not remove unrelated template components merely because the entry does not repeat them.
-- Abstract override example: template default {"name":"catalyst label","symbol":null,"amount":"reported loading"}; concrete entry {"name":"full reported catalyst identity","symbol":"reported label","amount":"reported mass, mmol, mol%"}. The final reaction contains only the concrete-entry catalyst object, while unrelated template fields remain inherited.
+- GP templates provide shared reaction_type, substrates, catalysts, ligands, other_components, conditions, intermediates, reaction boundary, and step schema only for GP-referenced entries. Products, targets, and source_pages always come from the concrete entry text.
+- Apply this precedence hierarchy in order: (1) the GP template reaction boundary, chemical roles, and step lineage; (2) an explicit concrete-entry change to the reaction boundary; (3) concrete-entry identity, symbol, amount, and conditions within the same role; (4) remaining generic GP defaults. GP role/step topology > entry surface wording. Within an already matched role, explicit concrete-entry identity/amount/condition > generic GP default.
+- First determine roles from the GP lineage, then make same-role values more specific. Never replace a name first and infer its role afterward. Concrete-entry overrides are role-preserving unless the entry explicitly establishes a different reaction boundary.
+- Surface wording such as "with X", "charged with X", or "using X" does not by itself establish substrate role. If X corresponds to a species generated inside the GP sequence, keep X in intermediates even when the entry uses this abbreviated wording.
+- A concrete intermediate may update a template intermediate but must not replace a template external substrate. Likewise, a substrate, catalyst, ligand, reagent, or other_component may update only the same chemical role.
+- Determine substrate status from the boundary of the current reaction sequence: an external precursor or building block supplied from outside that sequence is a substrate; a material generated within the sequence and consumed later is an internal intermediate.
+- Change the template role topology only when the concrete entry explicitly changes the reaction boundary, for example by stating that an upstream formation step is omitted, that pre-prepared or isolated X is used, or that the current standalone reaction starts directly from isolated X. In that new reaction X is an external substrate. Merely saying "X from A7" or "X derived from A7" does not omit the upstream step.
+- If the GP lineage is A -> X and the entry says X is from or derived from A7, retain the external precursor A in substrates, use A7 as precursor identity or symbol evidence when the mapping is explicit, and retain X only in intermediates. Do not replace A with X and do not duplicate X across substrates and intermediates.
+- Wording such as "reactive species from label" or "derived from label" normally identifies precursor provenance, not the generated species' own symbol. Assign the label to the corresponding external precursor only when the GP lineage, same-paper registry, or concrete entry explicitly establishes that mapping; otherwise do not guess the symbol assignment.
+- When a template component is a class-level identity, role description, short label, or otherwise incomplete identity and the concrete entry explicitly reports the same component with a more specific chemical identity, symbol, or amount, replace that template item only within the same role. Match the same component only from an explicit shared label, explicit reference, unambiguous chemical identity, or unambiguous role in the reported procedure; do not guess from textual similarity.
+- Do not keep both a generic template item and its more specific concrete-entry form within one role. If the entry explicitly substitutes a different component or condition within that role, write the actual entry value and do not retain the replaced template default. Do not remove unrelated template components merely because the entry does not repeat them.
+- Abstract same-role override example: template default {"name":"catalyst label","symbol":null,"amount":"reported loading"}; concrete entry {"name":"full reported catalyst identity","symbol":"reported label","amount":"reported mass, mmol, mol%"}. The final reaction contains only the concrete-entry catalyst object, while unrelated template fields remain inherited.
+- Abstract lineage example. Template: substrate class A at step 1; intermediate X produced in step 1 and consumed in step 2; substrate class B at step 2. Entry: "procedure followed with B7 and reactive X derived from A3". Output: substrates contain A with symbol A3 at step 1 and B with symbol B7 at step 2; intermediates contain X with produced_in_step=1 and consumed_in_step=2. X is not a substrate.
+- Abstract reaction-boundary counterexample. If a separate entry explicitly says it starts from pre-prepared or isolated X and omits the step that forms X, extract that new reaction with X as its external substrate. Do not apply this exception when the wording only says X is from or derived from a precursor.
+- Before producing JSON, silently reconcile roles in this order: determine the current reaction boundary; copy GP role and step topology; map every entry material to the corresponding existing role; update name, symbol, amount, or condition within that role; check for semantic substrate/intermediate duplicates; then emit the final object. Do not output this reasoning or extra audit fields.
 - If the supplied GP template has no step_count, the GP-referenced entry is single-step: copy shared fields, add entry products/targets/source_pages, and do not use item-level step.
 - If the supplied GP template has step_count >= 2, every GP-referenced entry must keep the same step_count and the same multi-step schema surface.
-- For multi-step GP-referenced entries, entry-specific starting materials usually belong to step 1, and the final isolated product usually belongs to step=step_count. If the concrete entry explicitly assigns a compound to another chemical step, use the entry evidence.
+- For multi-step GP-referenced entries, assign an entry-specific compound to substrates only when it is supplied from outside the current reaction sequence. Assign its step from the chemical transformation in which that external material is introduced. If the compound is generated within the supplied GP sequence, keep it in intermediates regardless of abbreviated wording in the product entry. The final isolated product usually belongs to step=step_count; explicit concrete-entry evidence controls when it assigns another chemical step.
 
 3. Output schema
 - Every reaction has id, source_pages, reaction_type, substrates, products, catalysts, ligands, other_components, conditions, and targets.
@@ -544,6 +563,7 @@ Return only a valid JSON array of reaction objects.
 - Invalid single-step format: never output {"products":["product A (81% yield)"]}; use object arrays and put yield only in targets.
 - Invalid multi-step format: never output a product, substrate, catalyst, ligand, or other_component without integer step when step_count is present.
 - Invalid multi-step format: never output conditions as a top-level list.
+- Before returning JSON, verify that no internally generated material or alias is duplicated across substrates and intermediates, every multi-step role agrees with the supplied GP step lineage, and every page supplying a non-null yield, ee, er, or dr value is included in source_pages.
 - Do not output explanations, Markdown, coverage lists, conversion, selectivity, NMR_yield, or GC_yield."""
 
     CHUNK_REACTION_ROUTER_PROMPT = """Route chemistry SI reaction extraction for one chunk.
@@ -596,8 +616,9 @@ GENERAL PROCEDURE CONTEXT — apply these conditions when the entry specifies no
 {gp_block}
 
 Use only the matching template for each entry. Return its gp_id in _gp_source.
-The template is authoritative for shared fields and step_count; do not re-parse it.
-If an entry overrides the template, write the overridden value directly in the top-level reaction field. Never copy products into substrates.
+The template is authoritative for the reaction boundary, chemical roles, shared fields, and step_count; do not re-parse it.
+GP role/step topology > entry surface wording. Within an already matched role, explicit concrete-entry identity/amount/condition > generic GP default.
+Apply entry evidence within the same role. Change role topology only when the entry explicitly starts a different reaction boundary from a pre-prepared or isolated material. Never copy products or GP-generated intermediates into substrates.
 """
 
     STAGE2_AUDIT_PROMPT = """Audit source_text against current_extraction for omitted qualifying prose reaction entries.
@@ -647,6 +668,9 @@ GP ID: {gp_label}
 
 Rules:
 - step_count is present only for two or more genuine sequential chemical transformations.
+- Count steps along the main substrate-to-final-product transformation lineage, not by the number of vessels, mixtures, transfers, or parallel preparations described.
+- Parallel preparation, premixing, activation, or aging of a catalyst/ligand solution is not a separate synthetic step unless it produces an isolated compound that is itself a reported synthetic intermediate or product.
+- Assign catalysts and ligands to the chemical step in which they are used. Preserve catalyst-premixing temperature, time, and operations in that step's conditions or procedure_details without incrementing step_count solely for catalyst preparation.
 - Heating/cooling, staged addition, stirring, workup, extraction, washing, drying, filtration, concentration, and purification are not new steps.
 - Single-step templates must not contain step_count or item-level step.
 - Multi-step templates require step_count >= 2 and a valid step on every substrate, catalyst, ligand, other_component, and every condition value.
@@ -659,6 +683,7 @@ Rules:
 - Never output {{"name":"reported catalyst (reported mass, reported mol%)","amount":null}}. Do not place mg, mL, mmol, mol%, equiv, concentration, loading, mass, volume, or molar amount in name when that quantity is reported.
 - A preformed metal-ligand complex remains a complete catalyst name; its reported numerical quantity still belongs in amount. If its ligand is identifiable, list that ligand separately in ligands without an amount.
 - In multi-step templates, substrates are main externally supplied starting-material classes, generic substrate classes, substrate ranges, or variable substrate-scope components that define the reaction series.
+- The reaction boundary controls role assignment: a material supplied before or during the sequence from outside that sequence is a substrate; a material formed inside the sequence and consumed later is an intermediate. A previously isolated material used in a separate reaction is a substrate in that separate reaction.
 - A material generated in an earlier step and consumed in a later step is an intermediate, not a new external substrate.
 - Pronouns, generic descriptions, or references to material obtained from a previous step must be assigned by role: use intermediates when they carry material forward between chemical transformations.
 - A newly added material in a later step is a substrate only when it is a main building block or variable substrate-scope component.
@@ -671,7 +696,12 @@ Rules:
 - Exclude workup, extraction, washing, drying, and purification materials.
 - Ignore later product examples, characterization entries, spectra, and analytical data even when they are present in the candidate text.
 - If a substrate is a generic class, keep that reported class name and set is_generic_class=true.
+- reaction_type must describe the chemical transformation. Never use the GP id, a phrase such as "General Procedure C", or a bare procedure/section label as reaction_type. Infer the most specific supported transformation class from the reported chemistry.
 - Preserve important order, sealing, degassing, pressure, and staged operation details in procedure_details.
+
+Abstract step example:
+- The main lineage is external starting material A -> intermediate X -> final product, while a catalyst/ligand solution is prepared in parallel before the final transformation.
+- Output step_count=2: A belongs to step 1; X uses produced_in_step=1 and consumed_in_step=2; the second external building block, catalyst, and ligand belong to step 2; catalyst premixing remains a condition/procedure detail of step 2 and does not create step 3.
 
 Single-step shape:
 {{"reaction_type":"...","substrates":[{{"name":"...","amount":"... or null","is_generic_class":true}}],"catalysts":[{{"name":"...","amount":"... or null"}}],"ligands":[{{"name":"..."}}],"other_components":[{{"name":"...","amount":"... or null"}}],"intermediates":[],"conditions":{{"solvent":"... or null","solvent_amount":"... or null","temperature":"... or null","time":"... or null","atmosphere":"... or null","light_source":"... or null","wavelength":"... or null"}},"procedure_details":[{{"sequence":1,"detail":"...","evidence":"exact source text"}}],"evidence":{{"ligands":[{{"index":0,"text":"exact source text"}}]}}}}
@@ -4382,7 +4412,10 @@ Available GP candidates:
             "Previous output omitted shared GP template fields. For every GP-referenced entry, "
             "output a complete reaction by copying applicable substrates, catalysts, ligands, "
             "other_components, conditions, intermediates, reaction_type, and step schema from "
-            "the supplied canonical GP template, then apply entry-specific overrides. "
+            "the supplied canonical GP template, then apply entry-specific values only "
+            "within the same chemical role. Preserve the GP reaction boundary, role topology, "
+            "and substrate/intermediate lineage unless the concrete entry explicitly starts "
+            "a different reaction from a pre-prepared or isolated material. "
             "Do not treat products or targets as GP-template fields; products and yield/ee/er/dr "
             "must come from the concrete entry text. "
             f"Missing GP-derived fields: {preview}."
@@ -4488,13 +4521,19 @@ Available GP candidates:
                 "those records with _gp_source. Extract standalone or downstream "
                 "transformations as non-GP reactions without inheriting GP fields and "
                 "without _gp_source. Do not output the same concrete reaction twice as "
-                "both GP and non-GP. For every GP-referenced entry, treat template fields "
-                "as defaults: concrete entry text override > canonical GP template default. "
-                "Apply explicit entry evidence independently to substrates, catalysts, "
-                "ligands, other_components, and each conditions field. Replace a matching "
+                "both GP and non-GP. For every GP-referenced entry, apply this precedence: "
+                "GP role/step topology > entry surface wording. Within an already matched role, "
+                "explicit concrete-entry identity/amount/condition > generic GP default. "
+                "First preserve the GP reaction boundary and substrate/intermediate lineage, "
+                "then apply explicit entry evidence within the same role. Wording such as with X, "
+                "charged with X, or using X does not by itself make X an external substrate. "
+                "Never replace an external template substrate with a species generated inside "
+                "the GP sequence. Change that topology only when the entry explicitly starts a "
+                "different reaction from a pre-prepared or isolated material. Replace a matching "
                 "generic, label-level, or incomplete template component with its explicitly "
                 "reported concrete-entry identity, symbol, or amount; do not output both "
-                "forms, and preserve unrelated template fields that the entry does not mention.\n"
+                "forms, preserve unrelated template fields that the entry does not mention, "
+                "and keep internally generated species in intermediates.\n"
             )
             if (
                 isinstance(gp_selection_debug, dict)
@@ -5710,6 +5749,8 @@ Available GP candidates:
             merged,
             log_path=generic_resolution_log_path,
             paper_key=output_file.stem,
+            gp_templates=gp_templates,
+            symbol_registry=registry,
         )
         generic_resolution_stats = getattr(self, "last_generic_substrate_resolution_stats", {}) or {}
         file_stats["generic_substrate_resolution_candidates"] = generic_resolution_stats.get("candidates", 0)
@@ -6316,7 +6357,6 @@ Available GP candidates:
                 "index": index,
                 "name": name,
                 "symbol": substrate.get("symbol"),
-                "amount": substrate.get("amount"),
                 "step": substrate.get("step"),
             })
 
@@ -6349,6 +6389,22 @@ Available GP candidates:
                     "produced_in_step": item.get("produced_in_step"),
                     "consumed_in_step": item.get("consumed_in_step"),
                 })
+        role_context = {}
+        for field in ("catalysts", "ligands", "other_components"):
+            values = []
+            for item in reaction.get(field) or []:
+                if not isinstance(item, dict):
+                    continue
+                name = str(item.get("name") or "").strip()
+                symbol = str(item.get("symbol") or "").strip()
+                if not name and not symbol:
+                    continue
+                values.append({
+                    "name": name or symbol,
+                    "symbol": item.get("symbol"),
+                    "step": item.get("step"),
+                })
+            role_context[field] = values
         return {
             "reaction_id": str(reaction.get("id") or ""),
             "reaction_type": str(reaction.get("reaction_type") or ""),
@@ -6357,7 +6413,78 @@ Available GP candidates:
             "substrates": substrates,
             "products": products,
             "intermediates": intermediates,
+            **role_context,
         }
+
+    @staticmethod
+    def _generic_resolution_gp_context(
+        gp_templates: Optional[Dict[str, Dict]],
+        gp_keys: List[str],
+    ) -> Dict[str, Dict]:
+        """Project canonical GP role/lineage fields once per resolution batch."""
+        projected = {}
+        for gp_key in gp_keys:
+            raw_template = (gp_templates or {}).get(gp_key)
+            if not isinstance(raw_template, dict):
+                continue
+            template = raw_template.get("template")
+            if not isinstance(template, dict):
+                template = raw_template
+            context = {
+                "reaction_type": template.get("reaction_type"),
+                "step_count": template.get("step_count"),
+            }
+            for field in ("substrates", "intermediates", "catalysts", "ligands", "other_components"):
+                values = []
+                for item in template.get(field) or []:
+                    if not isinstance(item, dict):
+                        continue
+                    name = str(item.get("name") or "").strip()
+                    if not name:
+                        continue
+                    allowed = (
+                        ("name", "symbol", "produced_in_step", "consumed_in_step")
+                        if field == "intermediates"
+                        else ("name", "symbol", "step")
+                    )
+                    values.append({key: item.get(key) for key in allowed if item.get(key) is not None})
+                context[field] = values
+            projected[gp_key] = context
+        return projected
+
+    def _generic_resolution_symbol_evidence(
+        self,
+        symbol_registry: Optional[Dict[str, str]],
+        candidates: List[Dict],
+    ) -> Dict[str, str]:
+        """Project only same-paper registry mappings referenced by this batch."""
+        if not isinstance(symbol_registry, dict) or not symbol_registry:
+            return {}
+        symbols = set()
+        for reaction in candidates:
+            if not isinstance(reaction, dict):
+                continue
+            for field in (
+                "substrates", "products", "intermediates", "catalysts", "ligands",
+                "other_components",
+            ):
+                for item in reaction.get(field) or []:
+                    if isinstance(item, dict) and str(item.get("symbol") or "").strip():
+                        symbols.add(str(item.get("symbol")).strip())
+        normalized_registry = {
+            str(symbol).strip().casefold(): str(symbol).strip()
+            for symbol in symbol_registry
+            if str(symbol).strip()
+        }
+        evidence = {}
+        for symbol in sorted(symbols):
+            lookup = self._registry_lookup(symbol, symbol_registry, normalized_registry)
+            if not lookup:
+                continue
+            matched_symbol, name = lookup
+            if isinstance(name, str) and name.strip():
+                evidence[matched_symbol] = name.strip()
+        return evidence
 
     def _call_generic_substrate_resolution_llm(
         self,
@@ -6471,6 +6598,8 @@ Available GP candidates:
             "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
             "prompt_version": GENERIC_SUBSTRATE_RESOLUTION_PROMPT_VERSION,
             "model": self.extract_model,
+            "gp_templates": payload.get("gp_templates") or {},
+            "symbol_evidence": payload.get("symbol_evidence") or {},
             "reactions": payload.get("reactions") or [],
         }
         raw = json.dumps(material, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
@@ -6549,6 +6678,8 @@ Available GP candidates:
                 child_payload = {
                     "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
                     "batch_id": f"{payload.get('batch_id')}_{suffix}",
+                    "gp_templates": payload.get("gp_templates") or {},
+                    "symbol_evidence": payload.get("symbol_evidence") or {},
                     "reactions": subset,
                 }
                 child = self._run_generic_resolution_batch(child_payload, cache, batch_logs, stats)
@@ -6579,6 +6710,8 @@ Available GP candidates:
         *,
         log_path: Optional[Path] = None,
         paper_key: str = "paper",
+        gp_templates: Optional[Dict[str, Dict]] = None,
+        symbol_registry: Optional[Dict[str, str]] = None,
     ) -> List[Dict]:
         """Batch-classify all named substrates and resolve high-confidence generic names."""
         resolved_reactions = [
@@ -6625,10 +6758,20 @@ Available GP candidates:
         safe_paper_key = re.sub(r"[^A-Za-z0-9_.-]+", "_", str(paper_key or "paper")).strip("_") or "paper"
         for start in range(0, len(candidates), batch_size):
             batch_number = start // batch_size + 1
+            batch_candidates = [candidate for _, candidate in candidates[start:start + batch_size]]
+            batch_gp_keys = sorted({
+                str(candidate.get("gp_source") or "").strip()
+                for candidate in batch_candidates
+                if str(candidate.get("gp_source") or "").strip()
+            })
             payload = {
                 "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
                 "batch_id": f"{safe_paper_key}_batch_{batch_number:04d}",
-                "reactions": [candidate for _, candidate in candidates[start:start + batch_size]],
+                "gp_templates": self._generic_resolution_gp_context(gp_templates, batch_gp_keys),
+                "symbol_evidence": self._generic_resolution_symbol_evidence(
+                    symbol_registry, batch_candidates
+                ),
+                "reactions": batch_candidates,
             }
             result = self._run_generic_resolution_batch(payload, cache, batch_logs, stats)
             if isinstance(result, dict):
@@ -6772,6 +6915,15 @@ Available GP candidates:
             normalized_products = {
                 self._normalize_registry_compare_name(name): name for name in product_names
             }
+            normalized_non_substrate_roles = {}
+            for role in ("intermediates", "catalysts", "ligands", "other_components"):
+                for role_item in new_reaction.get(role) or []:
+                    if not isinstance(role_item, dict):
+                        continue
+                    role_name = str(role_item.get("name") or "").strip()
+                    normalized_role_name = self._normalize_registry_compare_name(role_name)
+                    if normalized_role_name:
+                        normalized_non_substrate_roles[normalized_role_name] = role
             new_substrates = []
             for index, substrate in enumerate(new_reaction.get("substrates") or []):
                 if not isinstance(substrate, dict):
@@ -6818,6 +6970,11 @@ Available GP candidates:
                     reason = "evidence_product_index_mismatch"
                 elif not normalized_evidence or normalized_evidence not in normalized_products:
                     reason = "evidence_product_not_found_in_reaction"
+                elif self._normalize_registry_compare_name(candidate_name) in normalized_non_substrate_roles:
+                    reason = (
+                        "resolved_name_matches_non_substrate_role:"
+                        f"{normalized_non_substrate_roles[self._normalize_registry_compare_name(candidate_name)]}"
+                    )
                 elif self._normalize_registry_compare_name(candidate_name) in normalized_products:
                     reason = "candidate_copies_complete_product_name"
                 elif self._normalize_registry_compare_name(candidate_name) == self._normalize_registry_compare_name(original_name):
@@ -7250,6 +7407,8 @@ Available GP candidates:
                 merged,
                 log_path=generic_resolution_log_path,
                 paper_key=Path(pdf_path).stem,
+                gp_templates=gp_templates,
+                symbol_registry=registry,
             )
             generic_resolution_stats = getattr(self, "last_generic_substrate_resolution_stats", {}) or {}
             file_stats["generic_substrate_resolution_candidates"] = generic_resolution_stats.get("candidates", 0)

@@ -83,7 +83,7 @@ class PipelineConfig:
     pdf_text_y_tolerance: float = 5.0
     generic_resolution_batch_size: int = 10
     enable_stage1_page_trimming: bool = False
-    pipeline_version: str = "parallel_pdf_v21_targets_dr"
+    pipeline_version: str = "parallel_pdf_v23_mixed_role_first"
     skip_reaction_type_normalization: bool = False
     skip_chemeagle_normalization: bool = False
     skip_downstream_build: bool = False
@@ -492,6 +492,8 @@ def reusable_entity_context(path: Path, expected: Dict) -> Optional[Dict]:
         "parallel_pdf_v19_safe_compound_symbol_normalization",
         "parallel_pdf_v20_stage1_cross_page_target_evidence",
         "parallel_pdf_v21_targets_dr",
+        "parallel_pdf_v22_gp_role_lineage",
+        "parallel_pdf_v23_mixed_role_first",
     }
     if actual.get("pipeline_version") not in compatible_versions:
         return None

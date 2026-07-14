@@ -117,6 +117,17 @@ def test_prompt_combines_classification_and_resolution_without_generic_vocabular
     assert "2-bromo-N-(methoxymethyl)aniline" in prompt
 
 
+def test_prompt_requires_role_preserving_resolution_with_canonical_gp_context():
+    prompt = SIExtractor.GENERIC_SUBSTRATE_RESOLUTION_PROMPT
+
+    assert "Resolution is role-preserving" in prompt
+    assert "same externally supplied starting material" in prompt
+    assert "Never resolve a substrate into an intermediate" in prompt
+    assert "canonical GP role context as authoritative" in prompt
+    assert "return can_resolve=false" in prompt
+    assert "symbol_evidence" in prompt
+
+
 def test_batch_parser_accepts_object_and_fenced_object():
     payload = {"schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION, "batch_id": "b", "reactions": []}
     response = _specific_response(payload)
@@ -142,6 +153,89 @@ def test_valid_resolution_writes_back_and_survives_validator():
     assert substrate["resolution_method"] == "product_name_to_substrate_mapping"
     assert substrate["resolution_evidence"]["product_index"] == 0
     assert not any(key.startswith("_resolution_") for key in substrate)
+
+
+def test_resolution_batch_payload_includes_compact_gp_roles_and_symbol_evidence_once():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    captured = []
+
+    def _fake_batch(payload, _cache, _logs, _stats):
+        captured.append(payload)
+        return _specific_response(payload)
+
+    extractor._run_generic_resolution_batch = _fake_batch
+    reaction = _reaction("r1", substrate="generic starting material")
+    reaction["_gp_source"] = "GeneralProcedureA"
+    reaction["step_count"] = 2
+    reaction["substrates"][0].update({"symbol": "S1", "step": 1})
+    reaction["products"][0]["step"] = 2
+    reaction["intermediates"] = [{
+        "name": "internal intermediate X", "produced_in_step": 1, "consumed_in_step": 2,
+    }]
+    reaction["catalysts"] = [{"name": "catalyst C", "amount": "10 mol%", "step": 2}]
+    reaction["ligands"] = [{"name": "ligand L", "step": 2}]
+    reaction["other_components"] = [{"name": "reagent R", "amount": "2 equiv", "step": 2}]
+    gp_templates = {
+        "GeneralProcedureA": {
+            "status": "valid",
+            "gp_id": "GeneralProcedureA",
+            "reaction_type": "test transformation",
+            "step_count": 2,
+            "substrates": [{"name": "generic starting material", "step": 1}],
+            "intermediates": [{
+                "name": "internal intermediate X", "produced_in_step": 1,
+                "consumed_in_step": 2,
+            }],
+            "catalysts": [{"name": "catalyst C", "amount": "10 mol%", "step": 2}],
+            "ligands": [{"name": "ligand L", "step": 2}],
+            "other_components": [{"name": "reagent R", "amount": "2 equiv", "step": 2}],
+        }
+    }
+
+    extractor.resolve_generic_substrates_from_products(
+        [reaction], gp_templates=gp_templates, symbol_registry={"S1": "specific substrate S1"}
+    )
+
+    assert len(captured) == 1
+    payload = captured[0]
+    assert list(payload["gp_templates"]) == ["GeneralProcedureA"]
+    assert payload["gp_templates"]["GeneralProcedureA"]["step_count"] == 2
+    assert payload["gp_templates"]["GeneralProcedureA"]["intermediates"][0]["name"] == "internal intermediate X"
+    assert payload["symbol_evidence"] == {"S1": "specific substrate S1"}
+    candidate = payload["reactions"][0]
+    assert candidate["catalysts"] == [{"name": "catalyst C", "symbol": None, "step": 2}]
+    assert candidate["ligands"] == [{"name": "ligand L", "symbol": None, "step": 2}]
+    assert candidate["other_components"] == [{"name": "reagent R", "symbol": None, "step": 2}]
+    assert "amount" not in candidate["substrates"][0]
+    assert "amount" not in candidate["catalysts"][0]
+
+
+def test_validator_rejects_resolution_that_matches_an_intermediate_role():
+    product = "mapped product"
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    reaction = _reaction("r1", substrate="generic starting material", products=[{"name": product}])
+    reaction["intermediates"] = [{
+        "name": "internal intermediate X", "produced_in_step": 1, "consumed_in_step": 2,
+    }]
+    reaction["substrates"][0].update({
+        "name": "internal intermediate X",
+        "original_name": "generic starting material",
+        "resolution_source": "product_name",
+        "resolution_method": "product_name_to_substrate_mapping",
+        "resolution_confidence": "high",
+        "resolution_evidence": {"product_index": 0, "product_name": product},
+        "_resolution_identity_status": "generic",
+        "_resolution_classification_confidence": "high",
+        "_resolution_input_name": "generic starting material",
+        "_resolution_substrate_index": 0,
+    })
+
+    validated = extractor.validate_substrate_name_resolutions([reaction])
+
+    assert validated[0]["substrates"][0]["name"] == "generic starting material"
+    assert extractor.last_substrate_name_resolution_reviews[-1]["reason"].startswith(
+        "resolved_name_matches_non_substrate_role:intermediates"
+    )
 
 
 def test_complete_heteroatom_substituted_name_is_preserved():
