@@ -7,7 +7,16 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Set, Tuple
 
 
-TEXT_COMPOUND_FIELDS = ("substrates", "products", "catalysts", "additives", "reagents")
+TEXT_COMPOUND_FIELDS = (
+    "substrates",
+    "products",
+    "intermediates",
+    "catalysts",
+    "ligands",
+    "other_components",
+    "additives",
+    "reagents",
+)
 CONDITION_ROLES = {
     "solvent",
     "temperature",
@@ -29,11 +38,26 @@ COMPOUND_LIKE_ROLES = {
     "additive",
     "additives",
     "ligand",
+    "ligands",
+    "other_component",
+    "other_components",
+    "other component",
+    "other components",
     "precatalyst",
 }
 TARGET_ROLES = {"yield", "ee", "er", "dr"}
 UNCERTAIN_TEXT_MARKERS = ("maybe wrong", "please check", "not sure", "uncertain")
 GENERIC_NAMES = {"compound", "substrate", "product", "reagent", "ligand", "catalyst", "additive", "base", "unknown"}
+
+AMOUNT_FIELD_BY_RELATIONSHIP = {
+    "USES_SUBSTRATE": "substrate_amount",
+    "PRODUCES": "product_amount",
+    "USES_CATALYST": "catalyst_amount",
+    "USES_SOLVENT": "solvent_amount",
+    "USES_OTHER_COMPONENT": "other_component_amount",
+    "USES_ADDITIVE": "additive_amount",
+    "USES_REAGENT": "reagent_amount",
+}
 
 EDGE_FIELDNAMES = [
     "x_name",
@@ -42,6 +66,16 @@ EDGE_FIELDNAMES = [
     "y_name",
     "y_type",
     "pdf_name",
+    "reaction_id",
+    "source_pages",
+    "step",
+    "substrate_amount",
+    "product_amount",
+    "catalyst_amount",
+    "solvent_amount",
+    "other_component_amount",
+    "additive_amount",
+    "reagent_amount",
     "yield",
     "ee",
     "er",
@@ -240,6 +274,87 @@ def target_values(reaction: Dict[str, Any]) -> Dict[str, str]:
     }
 
 
+def entity_amount_fields(
+    relationship: str,
+    entity: Optional[Dict[str, Any]],
+) -> Dict[str, str]:
+    """Return the one role-specific amount column for a direct reaction-entity edge."""
+    field = AMOUNT_FIELD_BY_RELATIONSHIP.get(clean_text(relationship))
+    if not field or not entity:
+        return {}
+    amount = clean_text(entity.get("amount"))
+    return {field: amount} if amount else {}
+
+
+def normalize_step_value(value: Any) -> str:
+    """Normalize step attributes for KG edge properties."""
+    if isinstance(value, bool) or value is None:
+        return ""
+    if isinstance(value, int):
+        return str(value) if value > 0 else ""
+    if isinstance(value, float) and value.is_integer():
+        number = int(value)
+        return str(number) if number > 0 else ""
+    match = re.fullmatch(r"(?i)\s*(?:step\s*)?(\d+)\s*", str(value))
+    return match.group(1) if match else ""
+
+
+def entity_step_field(entity: Optional[Dict[str, Any]]) -> Dict[str, str]:
+    """Return item-level step for direct multi-step reaction-entity edges."""
+    if not entity:
+        return {}
+    step = normalize_step_value(entity.get("step"))
+    return {"step": step} if step else {}
+
+
+def intermediate_step_fields(
+    relationship: str,
+    entity: Optional[Dict[str, Any]],
+) -> Dict[str, str]:
+    """Map explicit intermediate production/consumption steps to KG edges."""
+    if not entity:
+        return {}
+    source_key = {
+        "PRODUCES_INTERMEDIATE": "produced_in_step",
+        "USES_INTERMEDIATE": "consumed_in_step",
+    }.get(clean_text(relationship))
+    if not source_key:
+        return {}
+    step = normalize_step_value(entity.get(source_key))
+    return {"step": step} if step else {}
+
+
+def edge_step_field(
+    relationship: str,
+    entity: Optional[Dict[str, Any]],
+) -> Dict[str, str]:
+    """Return the step edge property for direct or intermediate KG edges."""
+    intermediate_step = intermediate_step_fields(relationship, entity)
+    if intermediate_step:
+        return intermediate_step
+    return entity_step_field(entity)
+
+
+def format_source_pages(value: Any) -> str:
+    """Format normalized text reaction PDF pages for CSV output."""
+    if not isinstance(value, list):
+        return ""
+    pages = []
+    seen = set()
+    for item in value:
+        if isinstance(item, bool):
+            continue
+        try:
+            page = int(item)
+        except (TypeError, ValueError):
+            continue
+        if page <= 0 or page in seen:
+            continue
+        seen.add(page)
+        pages.append(page)
+    return ", ".join(str(page) for page in sorted(pages))
+
+
 def make_triple(
     x_name: str,
     x_type: str,
@@ -270,6 +385,16 @@ def make_triple(
     text_iupac_name: str = "",
     image_smiles: str = "",
     image_iupac_name: str = "",
+    substrate_amount: str = "",
+    product_amount: str = "",
+    catalyst_amount: str = "",
+    solvent_amount: str = "",
+    other_component_amount: str = "",
+    additive_amount: str = "",
+    reagent_amount: str = "",
+    reaction_id: str = "",
+    source_pages: str = "",
+    step: str = "",
 ) -> Dict[str, str]:
     return {
         "x_name": clean_text(x_name),
@@ -278,6 +403,16 @@ def make_triple(
         "y_name": clean_text(y_name),
         "y_type": clean_text(y_type),
         "pdf_name": clean_text(pdf_name),
+        "reaction_id": clean_text(reaction_id),
+        "source_pages": clean_text(source_pages),
+        "step": clean_text(step),
+        "substrate_amount": clean_text(substrate_amount),
+        "product_amount": clean_text(product_amount),
+        "catalyst_amount": clean_text(catalyst_amount),
+        "solvent_amount": clean_text(solvent_amount),
+        "other_component_amount": clean_text(other_component_amount),
+        "additive_amount": clean_text(additive_amount),
+        "reagent_amount": clean_text(reagent_amount),
         "yield": clean_text(yield_value),
         "ee": clean_text(ee),
         "er": clean_text(er),
@@ -320,27 +455,109 @@ def iter_image_reaction_payloads(paths: Iterable[Path]) -> Iterable[Tuple[Path, 
             yield path, data
 
 
-def condition_summary_from_text(reaction: Dict[str, Any]) -> str:
+def condition_values_by_step(raw_value: Any) -> Dict[str, List[str]]:
+    """Normalize scalar/list condition values without splitting their source text."""
+    grouped: Dict[str, List[str]] = {}
+    values = raw_value if isinstance(raw_value, list) else [raw_value]
+    for item in values:
+        if isinstance(item, dict):
+            value = clean_text(item.get("value"))
+            step = normalize_step_value(item.get("step"))
+        else:
+            value = clean_text(item)
+            step = ""
+        if value:
+            grouped.setdefault(step, []).append(value)
+    return grouped
+
+
+def solvent_entries_from_text(
+    reaction: Dict[str, Any],
+) -> Tuple[List[Tuple[str, str, str]], List[Tuple[str, str]]]:
+    """Return paired (name, amount, step) entries and unmatched amount evidence."""
     conditions = reaction.get("conditions") or {}
     if not isinstance(conditions, dict):
-        return "not specified"
-    parts = []
+        return [], []
+
+    solvents = condition_values_by_step(conditions.get("solvent"))
+    amounts = condition_values_by_step(conditions.get("solvent_amount"))
+    if not amounts:
+        # Older normalized payloads used volume for the solvent quantity.
+        amounts = condition_values_by_step(conditions.get("volume"))
+    steps = list(solvents)
+    steps.extend(step for step in amounts if step not in solvents)
+
+    entries: List[Tuple[str, str, str]] = []
+    unmatched_amounts: List[Tuple[str, str]] = []
+    for step in steps:
+        step_solvents = solvents.get(step, [])
+        step_amounts = amounts.get(step, [])
+        for index, solvent in enumerate(step_solvents):
+            amount = step_amounts[index] if index < len(step_amounts) else ""
+            entries.append((solvent, amount, step))
+        for amount in step_amounts[len(step_solvents):]:
+            unmatched_amounts.append((amount, step))
+    return entries, unmatched_amounts
+
+
+def condition_summaries_from_text(reaction: Dict[str, Any]) -> List[Tuple[str, str]]:
+    """Return non-solvent (condition text, step) pairs plus unmatched amount evidence."""
+    conditions = reaction.get("conditions") or {}
+    if not isinstance(conditions, dict):
+        return []
+
     role_labels = {
-        "solvent": "solvent",
         "temperature": "temp",
         "time": "time",
         "concentration": "conc",
-        "volume": "vol",
         "atmosphere": "atm",
         "light source": "light",
         "light_source": "light",
         "wavelength": "wl",
     }
+    step_parts: Dict[str, List[str]] = {}
+    has_step_values = False
+    single_parts = []
+    _, unmatched_solvent_amounts = solvent_entries_from_text(reaction)
+    for value, step in unmatched_solvent_amounts:
+        part = f"solvent_amount: {value}"
+        if step:
+            has_step_values = True
+            step_parts.setdefault(step, []).append(part)
+        else:
+            single_parts.append(part)
     for role, label in role_labels.items():
-        value = clean_text(conditions.get(role))
-        if value:
-            parts.append(f"{label}: {value}")
-    return ", ".join(parts) if parts else "not specified"
+        raw_value = conditions.get(role)
+        if isinstance(raw_value, list):
+            for item in raw_value:
+                if not isinstance(item, dict):
+                    continue
+                value = clean_text(item.get("value"))
+                if not value:
+                    continue
+                step = normalize_step_value(item.get("step"))
+                if step:
+                    has_step_values = True
+                    step_parts.setdefault(step, []).append(f"{label}: {value}")
+                else:
+                    single_parts.append(f"{label}: {value}")
+        else:
+            value = clean_text(raw_value)
+            if value:
+                single_parts.append(f"{label}: {value}")
+
+    if has_step_values:
+        results = [
+            ("; ".join(step_parts[step]), step)
+            for step in sorted(step_parts, key=lambda item: int(item))
+            if step_parts[step]
+        ]
+        if single_parts:
+            results.append(("; ".join(single_parts), ""))
+        return results
+
+    summary = "; ".join(single_parts)
+    return [(summary, "")] if summary else []
 
 
 def extract_reaction_types(reaction: Dict[str, Any]) -> List[str]:
@@ -360,6 +577,7 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
                 continue
             reaction_id = clean_text(raw_rxn.get("id")) or f"text_reaction_{rxn_index}"
             reaction_node = f"TextReaction:{source_paper}:{reaction_id}"
+            source_pages = format_source_pages(raw_rxn.get("source_pages"))
             targets = target_values(raw_rxn)
 
             def add(
@@ -385,16 +603,68 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
                         targets["dr"],
                         source_modality="text",
                         text_reaction_id=reaction_id,
+                        reaction_id=reaction_node,
+                        source_pages=source_pages,
                         evidence_type="text_extraction",
                         text_role=text_role,
                         resolution_source=clean_text(entity.get("resolution_source")) if entity else "",
                         resolution_method=clean_text(entity.get("resolution_method")) if entity else "",
                         resolution_confidence=clean_text(entity.get("resolution_confidence")) if entity else "",
+                        **entity_amount_fields(relationship, entity),
+                        **edge_step_field(relationship, entity),
                     ),
                 )
 
             add("REPORTED_IN", source_paper, "Paper")
-            add("HAS_CONDITION", condition_summary_from_text(raw_rxn), "Condition", "condition")
+            for solvent, solvent_amount, solvent_step in solvent_entries_from_text(raw_rxn)[0]:
+                add_unique(
+                    triples,
+                    seen,
+                    make_triple(
+                        reaction_node,
+                        "Reaction",
+                        "USES_SOLVENT",
+                        solvent,
+                        "Solvent",
+                        source_paper,
+                        targets["yield"],
+                        targets["ee"],
+                        targets["er"],
+                        targets["dr"],
+                        source_modality="text",
+                        text_reaction_id=reaction_id,
+                        reaction_id=reaction_node,
+                        source_pages=source_pages,
+                        step=solvent_step,
+                        solvent_amount=solvent_amount,
+                        evidence_type="text_extraction",
+                        text_role="solvent",
+                    ),
+                )
+            for condition_text, condition_step in condition_summaries_from_text(raw_rxn):
+                add_unique(
+                    triples,
+                    seen,
+                    make_triple(
+                        reaction_node,
+                        "Reaction",
+                        "HAS_CONDITION",
+                        condition_text,
+                        "Condition",
+                        source_paper,
+                        targets["yield"],
+                        targets["ee"],
+                        targets["er"],
+                        targets["dr"],
+                        source_modality="text",
+                        text_reaction_id=reaction_id,
+                        reaction_id=reaction_node,
+                        source_pages=source_pages,
+                        step=condition_step,
+                        evidence_type="text_extraction",
+                        text_role="condition",
+                    ),
+                )
             for reaction_type in extract_reaction_types(raw_rxn):
                 add("OF_TYPE", reaction_type, "ReactionType")
 
@@ -402,8 +672,11 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
                 "substrates": ("USES_SUBSTRATE", "Substrate", "substrate"),
                 "products": ("PRODUCES", "Product", "product"),
                 "catalysts": ("USES_CATALYST", "Catalyst", "catalyst"),
-                "additives": ("USES_ADDITIVE", "Additive", "additive"),
-                "reagents": ("USES_REAGENT", "Reagent", "reagent"),
+                "ligands": ("USES_LIGAND", "Ligand", "ligand"),
+                "other_components": ("USES_OTHER_COMPONENT", "OtherComponent", "other_component"),
+                # Legacy text fields are folded into the canonical other_components role.
+                "additives": ("USES_OTHER_COMPONENT", "OtherComponent", "additive"),
+                "reagents": ("USES_OTHER_COMPONENT", "OtherComponent", "reagent"),
             }
             for field, (relationship, node_type, role) in field_specs.items():
                 values = raw_rxn.get(field) or []
@@ -415,6 +688,7 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
                     add(relationship, name, node_type, role, comp)
                     if field != "substrates":
                         continue
+                    substrate_step = normalize_step_value(comp.get("step"))
                     scaffold = clean_text(comp.get("scaffold"))
                     if scaffold:
                         add_unique(
@@ -433,6 +707,9 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
                                 targets["dr"],
                                 source_modality="text",
                                 text_reaction_id=reaction_id,
+                                reaction_id=reaction_node,
+                                source_pages=source_pages,
+                                step=substrate_step,
                                 evidence_type="text_extraction",
                                 text_role="substrate",
                                 resolution_source=clean_text(comp.get("resolution_source")),
@@ -459,6 +736,9 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
                                     targets["dr"],
                                     source_modality="text",
                                     text_reaction_id=reaction_id,
+                                    reaction_id=reaction_node,
+                                    source_pages=source_pages,
+                                    step=substrate_step,
                                     evidence_type="text_extraction",
                                     text_role="substrate",
                                     resolution_source=clean_text(comp.get("resolution_source")),
@@ -466,6 +746,14 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
                                     resolution_confidence=clean_text(comp.get("resolution_confidence")),
                                 ),
                             )
+
+            for item in raw_rxn.get("intermediates") or []:
+                comp = normalize_entity(item)
+                name = text_compound_display_name(comp)
+                if not name:
+                    continue
+                add("PRODUCES_INTERMEDIATE", name, "Intermediate", "intermediate", comp)
+                add("USES_INTERMEDIATE", name, "Intermediate", "intermediate", comp)
     return triples
 
 
@@ -571,11 +859,21 @@ def image_condition_summary(condition_like: List[Dict[str, Any]]) -> str:
 
 def image_role_to_edge(role: str) -> Tuple[str, str]:
     normalized = clean_role(role)
-    if normalized in {"catalyst", "catalysts", "ligand", "precatalyst"}:
+    if normalized in {"ligand", "ligands"}:
+        return "USES_LIGAND", "Ligand"
+    if normalized in {"catalyst", "catalysts", "precatalyst"}:
         return "USES_CATALYST", "Catalyst"
-    if normalized in {"base", "additive", "additives"}:
-        return "USES_ADDITIVE", "Additive"
-    return "USES_REAGENT", "Reagent"
+    if normalized in {
+        "base",
+        "reagent",
+        "reagents",
+        "additive",
+        "additives",
+        "other component",
+        "other components",
+    }:
+        return "USES_OTHER_COMPONENT", "OtherComponent"
+    return "USES_OTHER_COMPONENT", "OtherComponent"
 
 
 def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[str, str]]:
@@ -618,6 +916,7 @@ def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[s
                         source_modality="image",
                         source_image=source_image,
                         image_reaction_id=image_reaction_id,
+                        reaction_id=reaction_node,
                         evidence_type="chemeagle_extraction",
                         image_role=image_role,
                         original_role=condition_original_role(entity) if entity else "",
@@ -626,12 +925,62 @@ def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[s
                         resolution_source=clean_text(entity.get("resolution_source")) if entity else "",
                         resolution_method=clean_text(entity.get("resolution_method")) if entity else "",
                         resolution_confidence=clean_text(entity.get("resolution_confidence")) if entity else "",
+                        **entity_amount_fields(relationship, entity),
+                        **edge_step_field(relationship, entity),
                     ),
                 )
 
             add("REPORTED_IN", source_paper, "Paper")
             add("EXTRACTED_FROM_IMAGE", image_node, "Image")
-            add("HAS_CONDITION", condition_summary_from_text(rxn), "Condition", "condition")
+            for solvent, solvent_amount, solvent_step in solvent_entries_from_text(rxn)[0]:
+                add_unique(
+                    triples,
+                    seen,
+                    make_triple(
+                        reaction_node,
+                        "Reaction",
+                        "USES_SOLVENT",
+                        solvent,
+                        "Solvent",
+                        source_paper,
+                        targets["yield"],
+                        targets["ee"],
+                        targets["er"],
+                        targets["dr"],
+                        source_modality="image",
+                        source_image=source_image,
+                        image_reaction_id=image_reaction_id,
+                        reaction_id=reaction_node,
+                        step=solvent_step,
+                        solvent_amount=solvent_amount,
+                        evidence_type="chemeagle_extraction",
+                        image_role="solvent",
+                    ),
+                )
+            for condition_text, condition_step in condition_summaries_from_text(rxn):
+                add_unique(
+                    triples,
+                    seen,
+                    make_triple(
+                        reaction_node,
+                        "Reaction",
+                        "HAS_CONDITION",
+                        condition_text,
+                        "Condition",
+                        source_paper,
+                        targets["yield"],
+                        targets["ee"],
+                        targets["er"],
+                        targets["dr"],
+                        source_modality="image",
+                        source_image=source_image,
+                        image_reaction_id=image_reaction_id,
+                        reaction_id=reaction_node,
+                        step=condition_step,
+                        evidence_type="chemeagle_extraction",
+                        image_role="condition",
+                    ),
+                )
             for reaction_type in extract_reaction_types(rxn):
                 add("OF_TYPE", reaction_type, "ReactionType")
 
@@ -639,8 +988,11 @@ def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[s
                 "substrates": ("USES_SUBSTRATE", "Substrate", "substrate"),
                 "products": ("PRODUCES", "Product", "product"),
                 "catalysts": ("USES_CATALYST", "Catalyst", "catalyst"),
-                "additives": ("USES_ADDITIVE", "Additive", "additive"),
-                "reagents": ("USES_REAGENT", "Reagent", "reagent"),
+                "ligands": ("USES_LIGAND", "Ligand", "ligand"),
+                "other_components": ("USES_OTHER_COMPONENT", "OtherComponent", "other_component"),
+                # Legacy image fields are folded into the canonical other_components role.
+                "additives": ("USES_OTHER_COMPONENT", "OtherComponent", "additive"),
+                "reagents": ("USES_OTHER_COMPONENT", "OtherComponent", "reagent"),
             }
             for field, (relationship, node_type, role) in field_specs.items():
                 values = rxn.get(field) or []
@@ -652,6 +1004,7 @@ def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[s
                     add(relationship, name, node_type, role, comp)
                     if field != "substrates":
                         continue
+                    substrate_step = normalize_step_value(comp.get("step"))
                     scaffold = clean_text(comp.get("scaffold"))
                     if scaffold:
                         add_unique(
@@ -671,6 +1024,8 @@ def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[s
                                 source_modality="image",
                                 source_image=source_image,
                                 image_reaction_id=image_reaction_id,
+                                reaction_id=reaction_node,
+                                step=substrate_step,
                                 evidence_type="chemeagle_extraction",
                                 image_role="substrate",
                                 resolution_source=clean_text(comp.get("resolution_source")),
@@ -698,6 +1053,8 @@ def build_image_reaction_triples(chemeagle_paths: Iterable[Path]) -> List[Dict[s
                                     source_modality="image",
                                     source_image=source_image,
                                     image_reaction_id=image_reaction_id,
+                                    reaction_id=reaction_node,
+                                    step=substrate_step,
                                     evidence_type="chemeagle_extraction",
                                     image_role="substrate",
                                     resolution_source=clean_text(comp.get("resolution_source")),
@@ -754,6 +1111,8 @@ def extract_chemeagle_compounds(paths: Iterable[Path]) -> List[Entity]:
                 "substrates": "substrate",
                 "products": "product",
                 "catalysts": "catalyst",
+                "ligands": "ligand",
+                "other_components": "other_component",
                 "additives": "additive",
                 "reagents": "reagent",
             }
@@ -1014,8 +1373,13 @@ def build_cross_modal_kg(
             "notes": {
                 "same_as_policy": "Only exact normalized IUPAC-name matches create SAME_AS. Image nodes display SMILES when available, with image_iupac_name retained as evidence.",
                 "symbol_resolution_policy": "Symbol-only completion creates NAME_RESOLVED_BY evidence, not SAME_AS.",
-                "condition_policy": "SAME_CONDITION_AS is intentionally not emitted in the v1 main KG.",
+                "condition_policy": "Solvents are emitted as USES_SOLVENT edges; HAS_CONDITION contains only non-solvent conditions plus explicit unmatched solvent_amount evidence. SAME_CONDITION_AS is intentionally not emitted in the v1 main KG.",
                 "target_policy": "yield/ee/er/dr are edge attributes; KG inputs are filtered reactions only.",
+                "intermediate_policy": "Explicitly named intermediates create PRODUCES_INTERMEDIATE and USES_INTERMEDIATE text edges; reaction-step nodes are not emitted.",
+                "amount_policy": "Raw entity amount strings populate only the matching substrate/product/catalyst/solvent/other_component column on direct reaction-entity edges for both text and image modalities. Solvent and solvent_amount values are paired by step and source order without splitting source text. Ligand has no amount column by design. additive_amount and reagent_amount are retained only as legacy CSV columns.",
+                "reaction_id_policy": "All text/image reaction-derived edges carry the full TextReaction/ImageReaction node identifier; cross-modal alignment edges remain empty.",
+                "source_pages_policy": "Text reaction-derived edges carry source_pages from reaction JSON; image and cross-modal alignment edges remain empty.",
+                "step_policy": "Direct multi-step entity edges carry item step, explicit intermediate edges use produced_in_step/consumed_in_step, multi-step condition edges are split per step, and single-step/alignment edges remain empty.",
             },
         },
     )

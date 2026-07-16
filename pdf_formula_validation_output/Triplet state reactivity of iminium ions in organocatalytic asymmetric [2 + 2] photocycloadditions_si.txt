@@ -1,0 +1,2424 @@
+--- Page 1 ---
+nature chemistry
+ASurtpicplleementary information https://doi.org/10.1038/s41557-025-01960-3
+Triplet state reactivity of iminium ions in
+organocatalytic asymmetric [2 + 2]
+photocycloadditions
+In the format provided by the
+authors and unedited
+
+--- Page 2 ---
+Table of Contents
+General informa(cid:415)on ...................................................................................................................................... 2
+Experimental setup for light irradia(cid:415)on ........................................................................................................ 5
+Reac(cid:415)on op(cid:415)miza(cid:415)on ................................................................................................................................... 6
+Synthesis and characterisa(cid:415)on of star(cid:415)ng materials .................................................................................... 9
+Organocataly(cid:415)c enan(cid:415)oselec(cid:415)ve dearoma(cid:415)ve [2 + 2] cycloaddi(cid:415)on ......................................................... 18
+Characterisa(cid:415)on of cycloadducts ................................................................................................................ 20
+Synthe(cid:415)c transforma(cid:415)ons ........................................................................................................................... 33
+X-Ray Crystallographic data ......................................................................................................................... 37
+Steady-state absorp(cid:415)on spectroscopy ........................................................................................................ 39
+Photophysical characteriza(cid:415)on of iminium 4 and 5. ................................................................................... 40
+Computa(cid:415)onal studies ................................................................................................................................ 47
+NMR Spectra ............................................................................................................................................... 61
+Determina(cid:415)on of the rela(cid:415)ve configura(cid:415)on through selec(cid:415)ve NOESY experiments ............................... 121
+UPC2 traces ................................................................................................................................................ 133
+References ................................................................................................................................................. 161
+S1
+
+--- Page 3 ---
+General information
+Reagents, solvents and experimental condi(cid:415)ons
+All required fine chemicals were purchased from Acros (Fisher), Aldrich (Merck), Alfa Aesar (Fisher),
+Fluorochem, TCI, BLDpharm and used without further purifica(cid:415)on unless otherwise stated. Organic
+solvents were purchased from Sigma–Aldrich and dried with 4 Å molecular sieves. CHCl3 was neutralized
+by passing it through a column of basic alumina and then dried with 4 Å molecular sieves. Organocatalyst
+2d1 and the related deriva(cid:415)ves, as well as 4CzIPN2 were prepared according to reported literature
+procedures.
+The photocatalyzed reac(cid:415)ons were set-up under an argon atmosphere in flame-dried screw-cap 4 mL glass
+vials and sealed with parafilm®. Photochemical reac(cid:415)ons at controlled temperatures were carried out glass
+reactors equipped with a cooling jacket and a huber minichiller 300.
+Thin-layer chromatography (TLC) analysis was performed on pre-coated Merck TLC plates (silica gel 60
+GF254, 0.25 mm). Visualiza(cid:415)on of the developed chromatography was performed by checking UV
+absorbance (254 nm) as well as with aqueous ceric ammonium molybdate and potassium permanganate
+solu(cid:415)ons.
+Chromatographic purifica(cid:415)on of products was accomplished using flash chromatography on silica gel
+(SiO2, 0.04-0.063 mm, 60 Å) purchased from Machery-Nagel, with the indicated solvent system according
+to the standard techniques or using a Biotage Isolera automated flash chromatography system with
+cartridges packed with silica (SiO2, 0.04-0.063 mm, 60 Å).
+Organic solu(cid:415)ons were concentrated under reduced pressure on a Heidolph rotary evaporator.
+The Kessil lamps PR160L (50W) were purchased from Kessil webpage and used as light sources at 400 and
+427 nm. The light emission spectra of Kessil lamps can be found at the same website:
+www.kessil.com/science/PR160L.php.
+Analy(cid:415)cal techniques
+NMR spectra were recorded on Bruker 400 Avance III HD equipped with a BBI-z grad probe head 5mm and
+Bruker 500 Avance III equipped with a BBI-ATM-z grad probe head 5mm. The chemical shi(cid:332)s (δ) for 1H and
+13C are given in ppm rela(cid:415)ve to residual signals of the solvents (CHCl3 @ 7.26 ppm for 1H NMR, and @
+77.16 ppm for 13C NMR; CFCl3 @ 0.0 ppm for 19F NMR spectra). Coupling constants are given in Hz. The
+following abbrevia(cid:415)ons are used to indicate the mul(cid:415)plicity: s, singlet; d, doublet; dd, double doublet; t,
+triplet; q, quartet; m, mul(cid:415)plet; br, broad signal. NMR yields were calculated by using trimethoxy benzene
+or dibromomethane as internal standard.
+Enan(cid:415)omeric excess (e.e.) values were determined with Waters Acquity UPC2-MS (Ultraperformance
+Convergence Chromatography) analysis, employing a chiral sta(cid:415)onary phase column from Daicel Chiralpak
+with the model and the mobile phase specified in the individual experiment, by comparing the samples
+with the appropriate racemic mixtures. The peaks of the enan(cid:415)omers were verified by iden(cid:415)cal UV-Vis
+spectra for the integrated peaks.
+Op(cid:415)cal rota(cid:415)ons were determined with a Jasco P-1010 Polarimeter at 589 nm at the specified
+temperature. Data are reported as follows: [𝛼](cid:3047)(cid:3032)(cid:3040)(cid:3043), concentra(cid:415)on (c; g/100 mL), and solvents.
+(cid:3005)
+Steady-state absorp(cid:415)on spectroscopy
+UV-Vis absorp(cid:415)on spectroscopy studies were performed at room temperature on a Varian Cary 50 UV-Vis
+double beam spectrophotometer; 1 cm and 300 µm path length Hellma Analy(cid:415)cs quartz cuve(cid:425)es have
+been used.
+S2
+
+--- Page 4 ---
+Steady-state fluorescence spectroscopy
+Emission spectra were taken on an Edinburgh Instrument spectrofluorometer equipped with a 900 W Xe
+arc lamp as an excita(cid:415)on source, a photomul(cid:415)plier tube, and an InGaAs detector for the visible and the
+NIR detec(cid:415)on, respec(cid:415)vely. Fluorescence quantum yields were es(cid:415)mated with the rela(cid:415)ve method using
+quinine disulphate as a standard ( = 0.54 in 0.1 M H2SO4).
+Time-correlated single-photon coun(cid:415)ng (TCSPC)
+Fluorescence life(cid:415)mes were measured using a TCSPC apparatus (PicoQuant Picoharp 300) equipped with
+subnanosecond LED sources at 380 nm (500−700 ps pulse width) powered by a PicoQuant PDL 800-B
+variable (2.5−40 MHz) pulsed power supply. The decays were analyzed by means of PicoQuant FluoFit
+Global Fluorescence Decay Analysis So(cid:332)ware.
+Nanosecond laser flash photolysis
+Laser flash photolysis measurements were conducted using a custom laser spectrometer comprised of a
+Con(cid:415)nuum Surelite II Nd:YAG laser (FWHM = 8 ns) with a frequency tripled op(cid:415)on (355 nm, 18 mJ/pulse)
+and an Applied Photophysics xenon light source. Laser excita(cid:415)on was provided at 90° with respect to the
+white light probe beam. Light transmi(cid:425)ed by the sample was focused onto the entrance slit of a 300 mm
+focal length Acton SpectraPro 2300i triple gra(cid:415)ng, double exit monochromator equipped with a
+photomul(cid:415)plier detector (Hamamatsu R3896) and a Princeton Instruments PIMAX II gated intensified CCD
+camera. PMT signals (kine(cid:415)c traces) were processed using a Teledyne LeCroy 604Zi (400 MHz, 20 GS/s)
+digital oscilloscope.
+High-Resolu(cid:415)on Mass Spectra (HRMS)
+were obtained using Waters GCT gas chromatograph coupled with a (cid:415)me-of-flight mass spectrometer
+(GC/MS-TOF) with electron ioniza(cid:415)on (EI).
+Computa(cid:415)onal details
+All unrestricted Density Func(cid:415)onal Theory (DFT) and Time-Dependent-DFT (TD-DFT)3;4 calcula(cid:415)ons were
+carried out using the Gaussian16 suite (Rev. C02)5, at the ωB97XD level6 of DFT, and with a 6-31+G** basis
+set. Open-shell S0 (OSS0), closed-shell S0, and T1 geometries were modelled with unrestricted DFT (using
+the guess=(Mix,Always) op(cid:415)on). Op(cid:415)miza(cid:415)on of T1 downstream of the T2-T1 crossing point was also
+explored with TD-DFT. We explored the complete pathway leading to the observed enan(cid:415)omer, but also
+explored key salient points in the pathway towards the unobserved enan(cid:415)omer, formed when the olefin
+a(cid:425)acks the indole from the Re face of the C=C bond. All calcula(cid:415)ons featured in this work, along with exact
+inputs and resul(cid:415)ng geometries, are accessible from a dedicated repository on the ioChem-BD pla(cid:414)orm7 (
+All calcula(cid:415)ons are provided electronically on the ioChem-BD repository 10.19061/iochem-bd-6-426).
+Calcula(cid:415)ons were carried out in implicit CHCl3, as modelled by the C-PCM implicit solva(cid:415)on model8. Prior
+to the main inves(cid:415)ga(cid:415)on, a systema(cid:415)c conforma(cid:415)onal explora(cid:415)on of the intermediate 4 and of smaller
+models was carried out in slightly different condi(cid:415)ons; details of this explora(cid:415)on, based on which we chose
+the substrate conformer with which to start our in silico inves(cid:415)ga(cid:415)on, are reported in the “Computa(cid:415)onal
+studies” sec(cid:415)on and these calcula(cid:415)ons too are provided electronically7.
+Op(cid:415)miza(cid:415)on of structures along the reac(cid:415)on path to minima or 1st-order transi(cid:415)on states (TSs) was carried
+out using standard Gaussian16 algorithms5, with no (cid:415)ghtening of convergence condi(cid:415)ons. Similarly,
+standard convergence criteria were retained in the solu(cid:415)on of SCF equa(cid:415)ons, with the quadra(cid:415)c
+convergence algorithm9 required in a minority of cases. For TD-DFT calcula(cid:415)ons, we inten(cid:415)onally
+considered a high number of transi(cid:415)ons (nstates=30).
+S3
+
+--- Page 5 ---
+Minima and TSs were discriminated via frequency calcula(cid:415)ons, expec(cid:415)ng no nega(cid:415)ve vibra(cid:415)ons in the
+former case, and one in the la(cid:425)er. TSs themselves were located with either the Opt=TS op(cid:415)on (a(cid:332)er a
+relaxed PES scan), or the STQN method10. All encountered TSs leading to the observed enan(cid:415)omer were
+subjected to IRC calcula(cid:415)ons11 for a few steps on either side of the TS, whence their re-op(cid:415)miza(cid:415)on to the
+expected adjacent minima was duly verified.
+Minimum Energy Crossing Points (MECPs;) were located using the easyMECP code
+(h(cid:425)ps://doi.org/10.5281/zenodo.4293422), which exploits Gaussian16 and is a redevelopment of the
+original Fortran implementa(cid:415)on by Harvey et al.12. Ini(cid:415)al MECP geometries for MECP1 with the iminium
+distorted towards the Re face of the indole C=C and for MECP2 were extracted from the op(cid:415)miza(cid:415)on of 4
+(S1) and MECP1, respec(cid:415)vely. The ini(cid:415)al geometry for MECP3 was directly derived from Int-A and those for
+MECP1 but with the iminium distor(cid:415)ng towards the Si face of the indole C=C were obtained via a 180°-
+rota(cid:415)on of the iminium-photocatalyst moiety.
+Orbital and electron density illustra(cid:415)ons were drawn using dedicated Gaussian16 u(cid:415)li(cid:415)es5 cubegen and
+cubman. Different isosurfaces were chosen to represent orbitals in individual cases, for the sake of easier
+discussion and be(cid:425)er representability: chosen values are clearly reported in each figure. When illustra(cid:415)ng
+changes in electronic distribu(cid:415)on in TD-DFT calcula(cid:415)ons, we have opted for the (more intui(cid:415)ve) Natural
+Transi(cid:415)on Orbital (NTO) representa(cid:415)on13, for example taking differences of individual squared NTOs. We
+indicate where we have done so. Orbital figures were prepared using PyMOL14.
+S4
+
+--- Page 6 ---
+Experimental setup for light irradiation
+Supplementary Figure 1 shows the general setup of a batch reac(cid:415)on performed at room temperature (le(cid:332))
+or at controlled temperature (center) under Kessil LED PR160L light irradia(cid:415)on (400 nm, 427 nm, 467 nm).
+For the reac(cid:415)on at room temperature the reac(cid:415)on vessel is placed at a fixed distance (about 5 cm) from
+the light source and s(cid:415)rred vigorously. A maximum of three reac(cid:415)on vessels were irradiated at the same
+(cid:415)me placing them following the lines of homogeneous irradiance provided by the producer. To maintain a
+stable reac(cid:415)on temperature one fan was placed above the irradiated vials.
+For the reac(cid:415)ons at controlled temperature: the glass reactor (detailed in Supplementary Figure 1c,
+internal diameter = 1 cm, external diameter = 2cm ) containing the reac(cid:415)on mixture was placed at 1 cm
+from the light source and s(cid:415)rred vigorously. The temperature was controlled with a chiller connected to
+the glass reactor, using a mixture of H2O/i-PrOH 7:3 as the circula(cid:415)ng refrigerant liquid.
+Supplementary Figure 1. Panel a: Reac(cid:415)on set up. Panel b: reac(cid:415)on set up at low temperature. Panel c: glass vial
+provided with a cooling jacket.
+S5
+
+--- Page 7 ---
+Reaction optimization
+Supplementary Table 1. Screening of various organocatalysts. a) Substrate 1 (0.1 mmol), organocatalyst (20 mol%,
+0.02 mmol), TFA (1 equiv.), 1,2-dichloroethane (0.4 mL), inert atmosphere. b) Reac(cid:415)on yields were measured by 1H
+NMR analysis of the crude reac(cid:415)on mixtures using dibromomethane as internal standard. c) The e.e. values were
+determined by chiral sta(cid:415)onary phase ultra-performance convergence chromatography (UPC2) a(cid:332)er deriva(cid:415)za(cid:415)on of
+the [2 + 2] adduct with (carbethoxymethylene)triphenylphosphorane.
+S6
+
+--- Page 8 ---
+Supplementary Table 2. Screening of various solvents. a) Substrate 1 (0.1 mmol), organocatalyst 2d (20 mol%, 0.02
+mmol), TFA (1 equiv.), solvent (0.4 mL), inert atmosphere. b) Reac(cid:415)on yields were measured by 1H NMR analysis of
+the crude reac(cid:415)on mixtures using dibromomethane as internal standard. c) The e.e. values were determined by chiral
+sta(cid:415)onary phase ultra-performance convergence chromatography (UPC2) a(cid:332)er deriva(cid:415)za(cid:415)on of the [2 + 2] adduct
+with (carbethoxymethylene)triphenylphosphorane.
+S7
+
+--- Page 9 ---
+Supplementary Table 3. Screening of various acids, catalyst loadings or reac(cid:415)on temperatures. a) Substrate 1 (0.1
+mmol), organocatalyst 2d (20 mol%, 0.02 mmol), TFA (1 equiv.), CHCl3 (0.4 mL), inert atmosphere. b) Reac(cid:415)on yields
+were measured by 1H NMR analysis of the crude reac(cid:415)on mixtures using dibromomethane as internal standard. c)
+The e.e. values were determined by chiral sta(cid:415)onary phase ultra-performance convergence chromatography (UPC2)
+a(cid:332)er deriva(cid:415)za(cid:415)on of the [2 + 2] adduct with (carbethoxymethylene)triphenylphosphorane. d) Reac(cid:415)on carried out
+in presence of 10 mol% of organocatalyst 2d. e) Reac(cid:415)on carried out at 0 °C.
+S8
+
+--- Page 10 ---
+Synthesis and characterisation of starting materials
+Vilsmeier-Haack formyla(cid:415)on reac(cid:415)on.
+The Vilsmeier-Haack formyla(cid:415)on procedure was carried out following a reported literature procedure.15
+General Procedure A
+The synthesis follows the reported literature procedure.16 A 50 mL round bo(cid:425)om flask equipped with a
+magne(cid:415)c s(cid:415)rring bar, was charged with the corresponding subs(cid:415)tuted 1H-indole-3-carbaldehyde (2.5
+equiv.), the corresponding carboxylic acid (1 equiv.), 2,6-lu(cid:415)dine (0.1 equiv.) and DMAP (0.05 equiv.) in dry
+MeCN (1mL/mmol of 1H-indole-3-carbaldehyde) under Ar atmosphere. Then Boc2O was added and the
+reac(cid:415)on mixture was warmed to 30 °C by water bath and s(cid:415)rred overnight. The resul(cid:415)ng mixture was
+concentrated under reduced pressure and the crude was purified by silica gel column chromatography.
+General Procedure B
+A 50 mL round bo(cid:425)om flask, equipped with a magne(cid:415)c s(cid:415)rring bar, was charged with the corresponding
+carboxylic acid (2.5 equiv.) and SOCl2 (3.25 equiv.) under Ar atmosphere. Then the mixture was heated to
+50 °C and s(cid:415)rred for 2 hours. The resul(cid:415)ng mixture was dissolved in dry CH2Cl2 (2mL/mmol of carboxylic
+acid) and added to a 100 mL round bo(cid:425)om flask charged with the corresponding 1H-indole-3-
+carbaldehyde deriva(cid:415)ve (1 equiv.), DMAP (0.025 equiv.) and Et3N (4.4 equiv.) in dry CH2Cl2 (3mL/mmol of
+1H-indole-3-carbaldehyde) under Ar atmosphere. The addi(cid:415)on of the acyl chloride was performed at 0 °C
+using a syringe pump with a 0.5 mL/min addi(cid:415)on rate. A(cid:332)er 3 hours the reac(cid:415)on was quenched with a
+saturated aqueous solu(cid:415)on of Na2CO3. The layers are separated and the aqueous phase is extracted with
+CH2Cl2. The combined organic layers are washed with brine, dried over MgSO4 and concentrated under
+reduced pressure. The crude mixture was purified by silica gel column chromatography.
+Note: In some cases, the excess of carboxylic acid contaminated the desired product. However, this
+impurity could be easily removed by dissolving the desired product in AcOEt and washing it with a
+saturated solu(cid:415)on of Na2CO3. The collected organic phase was dried over MgSO4 and concentrated under
+reduced pressure to afford the pure desired compound.
+S9
+
+--- Page 11 ---
+1-(Pent-4-enoyl)-1H-indole-3-carbaldehyde 1.
+Synthesized following the general procedure A star(cid:415)ng from 1H-indole-3-carbaldehyde
+(1.09 g, 7.5 mmol, 2.5 equiv.), 4-pentenoic acid (306 μL, 3 mmol, 1 equiv.), DMAP (18.3
+mg, 0.15 mmol, 0.05 equiv.), 2,6-lu(cid:415)dine (35 μL, 0.3 mmol, 0.1 equiv.) and Boc2O (1.7
+mL, 7.5 mmol, 2.5 equiv.) in 7.5 mL of dry MeCN. Purifica(cid:415)on by column chromatography
+(petroleum ether/AcOEt 9:1) yielded 1 (511 mg, 75%) as a white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.12 (s, 1H), 8.42 (dd, J = 7.3, 1.4 Hz, 1H), 8.27 (dd,
+J = 7.3, 1.7 Hz, 1H), 8.10 (s, 1H), 7.53 – 7.37 (m, 2H), 5.94 (ddt, J = 16.9, 10.2, 6.5 Hz, 1H), 5.22 – 5.14 (m,
+1H), 5.14 – 5.09 (m, 1H), 3.10 (t, J = 7.4 Hz, 2H), 2.68 – 2.58 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 185.7, 170.8, 136.6, 135.9, 134.6, 127.0, 126.1, 125.5, 122.8, 122.0,
+116.7, 116.6, 35.3, 28.3.
+HRMS (ESI+): m/z calcd. for [C14H13NO2]+: 242.1176; found: 242.1173.
+5-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM1.
+Br O Synthesized following the general procedure B star(cid:415)ng from 5-bromo-1H-indole-3-
+H carbaldehyde (672 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5 mmol, 2.5
+N
+equiv.), SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.) and
+DMAP (9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by column
+O chromatography (petroleum ether/AcOEt 9:1 to 8:2) yielded SM1 (578 mg, 63 %) as a
+SM1 light pink solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.06 (s, 1H), 8.40 (d, J = 2.0 Hz, 1H), 8.28 (d, J = 8.8 Hz, 1H), 8.08 (s,
+1H), 7.52 (dd, J = 8.9, 2.0 Hz, 1H), 5.93 (ddt, J = 16.9, 10.2, 6.5 Hz, 1H), 5.21 – 5.14 (m, 1H), 5.14 – 5.08 (m,
+1H), 3.09 (t, J = 7.3 Hz, 2H), 2.72 – 2.51 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 185.2, 170.6, 135.8, 135.8, 135.2, 135.0, 129.9, 127.6, 124.8, 121.8,
+119.1, 118.0, 116.9, 116.8, 35.1, 28.2.
+HRMS (ESI+): m/z calcd. for [C14H12BrNO2]+: 306.0124; found: 306.0145.
+5-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM2.
+Synthesized following the general procedure A star(cid:415)ng from 5-fluoro-1H-indole-3-
+carbaldehyde (1.22 g, 7.5 mmol, 2.5 equiv.), 4-pentenoic acid (306 μL, 3 mmol, 1 equiv.),
+DMAP (18.3 mg, 0.15 mmol, 0.05 equiv.), 2,6-lu(cid:415)dine (35 μL, 0.3 mmol, 0.1 equiv.) and
+Boc2O (1.7 mL, 7.5 mmol, 2.5 equiv.) in 7.5 mL of dry MeCN. Purifica(cid:415)on by column
+chromatography (petroleum ether/AcOEt 9:1 to 7:3) yielded SM2 (489 mg, 61%) as an
+off-white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.09 (s, 1H), 8.40 (dd, J = 9.1, 4.5 Hz, 1H), 8.14 (s, 1H), 7.94 (dd, J =
+8.7, 2.6 Hz, 1H), 7.16 (ddd, J = 9.4, 8.9, 2.6 Hz, 1H), 5.93 (ddt, J = 16.9, 10.1, 6.6 Hz, 1H), 5.22 – 5.14 (m,
+1H), 5.14 – 5.08 (m, 1H), 3.10 (t, J = 7.6 Hz, 2H), 2.69 – 2.58 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 185.3, 170.6, 160.7 (d, J = 243.0 Hz), 135.8, 135.4, 132.9, 127.2 (d, J
+= 10.9 Hz), 122.37 (d, J = 4.1 Hz), 117.85 (d, J = 9.2 Hz), 116.8, 114.9 (d, J = 24.9 Hz), 108.0 (d, J = 25.0 Hz),
+35.0, 28.3.
+19F NMR (377 MHz, Chloroform-d) δ -116.31.
+HRMS (ESI+): m/z calcd. for [C14H12FNO2]+: 246.0925; found: 246.0956.
+S10
+
+--- Page 12 ---
+3-Formyl-1-(pent-4-enoyl)-1H-indole-5-carbonitrile SM3.
+Synthesized following the general procedure A star(cid:415)ng from 5-cyano-1H-indole-3-
+carbaldehyde (1.27 g, 7.5 mmol, 2.5 equiv.), 4-pentenoic acid (306 μL, 3 mmol, 1
+equiv.), DMAP (18.3 mg, 0.15 mmol, 0.05 equiv), 2,6-lu(cid:415)dine (35 μL, 0.3 mmol, 0.1
+equiv.) and Boc2O (1.7 mL, 7.5 mmol, 2.5 equiv.) in 7.5 mL of dry MeCN. Purifica(cid:415)on
+by column chromatography (petroleum ether/AcOEt 9:1 to 6:4) yielded SM3 (295 mg,
+39%) as an off-white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.14 (s, 1H), 8.65 – 8.62 (m, 1H), 8.56 (d, J = 8.7 Hz, 1H), 8.24 (s, 1H),
+7.69 (dd, J = 8.7, 1.6 Hz, 1H), 5.93 (ddt, J = 16.9, 10.2, 6.5 Hz, 1H), 5.24 – 5.15 (m, 1H), 5.15 – 5.10 (m, 1H),
+3.14 (t, J = 7.3 Hz, 2H), 2.69 – 2.59 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 185.1, 185.0, 184.9, 170.7, 138.2, 136.0, 135.6, 135.5, 130.2, 127.1,
+126.9, 126.2, 122.1, 119.0, 117.7, 117.6, 117.1, 109.3, 35.3, 28.1.
+HRMS (ESI+): m/z calcd. for [C15H12N2O2]+: 253.0972; found: 253.0976.
+3-Formyl-1-(pent-4-enoyl)-1H-indol-5-yl 4-methylbenzenesulfonate SM4.
+Synthesized following the general procedure B star(cid:415)ng from 3-formyl-1H-indol-5-yl 4-
+methylbenzenesulfonate (946 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5
+mmol, 2.5 equiv.), SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4
+equiv.) and DMAP (9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2.
+Purifica(cid:415)on by column chromatography (petroleum ether/CH2Cl2 80:20 to 70:30)
+yielded SM4 (918 mg, 77 %) as a white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.01 (s, 1H), 8.35 (d, J = 9.1 Hz, 1H), 8.15 (s, 1H), 7.87 (d, J = 2.5 Hz,
+1H), 7.78 – 7.67 (m, 2H), 7.32 (d, J = 8.0 Hz, 2H), 7.07 (dd, J = 9.1, 2.4 Hz, 1H), 6.05 – 5.85 (m, 1H), 5.26 –
+5.06 (m, 2H), 3.10 (t, J = 7.3 Hz, 2H), 2.62 (q, J = 7.1 Hz, 2H), 2.46 (s, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 185.0, 170.6, 147.0, 145.6, 135.7, 135.4, 134.7, 132.3, 129.8, 128.5,
+126.7, 122.1, 121.2, 117.4, 116.7, 115.6, 34.9, 28.1, 21.7.
+HRMS (ESI+): m/z calcd. for [C21H20NO5S]+: 398.1057; found 398.1089.
+1-(Pent-4-enoyl)-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-1H-indole-3-carbaldehyde SM5.
+Synthesized following the general procedure B star(cid:415)ng from 5-(4,4,5,5-tetramethyl-
+1,3,2-dioxaborolan-2-yl)-1H-indole-3-carbaldehyde (813 mg, 3 mmol, 1 equiv.), 4-
+pentenoic acid (765 μL, 7.5 mmol, 2.5 equiv.), SOCl2 (711 μL 9.75 mmol, 3.25 equiv.),
+Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.) and DMAP (9.2 mg, 0.075 mmol, 0.025 equiv.) in
+24 mL of dry CH2Cl2. Purifica(cid:415)on by column chromatography (petroleum ether/CH2Cl2
+80:20 to 70:30) yielded SM5 (397 mg, 37 %) as a white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.16 (s, 1H), 8.73 (s, 1H), 8.41 (d, J = 8.4 Hz, 1H), 8.12 (s, 1H), 7.90
+(dd, J = 8.4, 1.3 Hz, 1H), 6.07 – 5.79 (m, 1H), 5.32 – 5.02 (m, 2H), 3.12 (t, J = 7.4 Hz, 2H), 2.64 (q, J = 7.1 Hz,
+2H), 1.39 (s, 12H).
+13C NMR (101 MHz, Chloroform-d) 185.4, 170.8, 138.3, 135.8, 134.2, 133.1, 128.7, 125.6, 122.8, 116.6,
+115.7, 84.0, 35.2, 28.1, 24.9.
+HRMS (ESI+): m/z calcd. for [C20H25BNO4]+: 354.1821 found 354.1898.
+S11
+
+--- Page 13 ---
+1-(Pent-4-enoyl)-6-(trifluoromethyl)-1H-indole-3-carbaldehyde SM6.
+Synthesized following the general procedure B star(cid:415)ng from 5-(trifluoromethyl)-1H-
+indole-3-carbaldehyde (639 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5
+mmol, 2.5 equiv.), SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol,
+4.4 equiv.) and DMAP (9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2.
+Purifica(cid:415)on by column chromatography (petroleum ether/CH2Cl2 1:1 to 1:2) yielded
+SM6 (522 mg, 59 %) as a yellowish solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.07 (s, 1H), 8.70 (s, 1H), 8.28 (d, J = 8.3 Hz, 1H), 8.19 (s, 1H), 7.58
+(dd, J = 8.3, 1.6 Hz, 1H), 5.93 (ddt, J = 16.9, 10.2, 6.5 Hz, 1H), 5.21 – 5.14 (m, 1H), 5.14 – 5.08 (m, 1H), 3.11
+(t, J = 7.3 Hz, 2H), 2.69 – 2.58 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 185.2, 170.7, 136.1, 135.7, 128.8 (q, J = 32.3 Hz), 128.5, 124.4 (q, J =
+273.3 Hz), 122.4, 122.2 (q, J = 3.6 Hz), 122.1, 116.8, 114.1 (q, J = 4.4 Hz), 35.0, 28.0.
+19F NMR (377 MHz, Chloroform-d) δ -61.32.
+HRMS (ESI+): m/z calcd. for [C15H12F3NO2]+: 296.0893; found: 296.0930.
+6-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM7.
+Synthesized following the general procedure A star(cid:415)ng from 6-methyl-1H-indole-3-
+carbaldehyde (1.19 g, 7.5 mmol, 2.5 equiv.), 4-pentenoic acid (306 μL, 3 mmol, 1
+equiv.), DMAP (18.3 mg, 0.15 mmol, 0.05 equiv.), 2,6-lu(cid:415)dine (35 μL, 0.3 mmol, 0.1
+equiv.) and Boc2O (1.7 mL, 7.5 mmol, 2.5 equiv.) in 7.5 mL of dry MeCN. Purifica(cid:415)on
+by column chromatography (petroleum ether/AcOEt 9:1 to 8:2) yielded SM7 (391
+mg, 54%) as an off-white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.08 (s, 1H), 8.25 (s, 1H), 8.12 (d, J = 8.0 Hz, 1H), 8.02 (s, 1H), 7.23
+(dd, J = 8.0, 1.4 Hz, 1H), 5.94 (ddt, J = 16.9, 10.2, 6.5 Hz, 1H), 5.23 – 5.14 (m, 1H), 5.14 – 5.06 (m, 1H), 3.08
+(t, J = 7.3 Hz, 2H), 2.67 – 2.58 (m, 2H), 2.50 (s, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 185.7, 170.9, 137.3, 137.0, 136.0, 134.1, 126.9, 123.7, 122.9, 121.5,
+116.74, 116.67, 35.2, 28.3, 22.2.
+HRMS (ESI+): m/z calcd. for [C15H15NO2]+: 242.1176; found: 242.1170.
+6-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM8.
+Synthesized following the general procedure B star(cid:415)ng from 6-bromo-1H-indole-3-
+carbaldehyde (672 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5 mmol, 2.5
+equiv.), SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.)
+and DMAP (9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by
+column chromatography (petroleum ether/AcOEt 9:1 to 8:2) yielded SM8 (587 mg,
+64 %) as a dark orange solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.07 (s, 1H), 8.62 (d, J = 1.7 Hz, 1H), 8.10 (d, J = 8.4 Hz, 1H), 8.05 (s,
+1H), 7.50 (dd, J = 8.4, 1.8 Hz, 1H), 5.92 (ddt, J = 16.9, 10.2, 6.5 Hz, 1H), 5.21 – 5.14 (m, 1H), 5.14 – 5.09 (m,
+1H), 3.08 (t, J = 7.3 Hz, 2H), 2.67 – 2.58 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 185.3, 170.6, 137.0, 135.8, 134.5, 128.8, 124.8, 123.1, 122.4, 120.8,
+119.8, 116.9, 35.1, 28.2.
+HRMS (ESI+): m/z calcd. for [C14H12BrNO2]+: 306.0124; found: 306.0145.
+S12
+
+--- Page 14 ---
+Methyl 3-formyl-1-(pent-4-enoyl)-1H-indole-6-carboxylate SM9.
+Synthesized following the general procedure B star(cid:415)ng from methyl 3-formyl-1H-
+indole-5-carboxylate (609 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5
+mmol, 2.5 equiv.), SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol,
+4.4 equiv.) and DMAP (9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2.
+Purifica(cid:415)on by column chromatography (petroleum ether/AcOEt 9:1 to 6:4)
+yielded SM9 (256 mg, 33 %) as a white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.13 (s, 1H), 9.08 (d, J = 1.5 Hz, 1H), 8.30 (d,
+J = 8.4 Hz, 1H), 8.25 (s, 1H), 8.09 (dd, J = 8.3, 1.4 Hz, 1H), 5.94 (ddt, J = 16.8, 10.2, 6.5 Hz, 1H), 5.22 – 5.14
+(m, 1H), 5.14 – 5.08 (m, 1H), 3.96 (s, 3H), 3.14 (t, J = 7.3 Hz, 2H), 2.70 – 2.60 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 185.3, 170.6, 167.1, 136.4, 136.0, 135.8, 129.7, 128.7, 126.7, 122.3,
+121.8, 118.3, 116.9, 52.5, 35.3, 28.2.
+HRMS (ESI+): m/z calcd. for [C16H16NO4]+:286.1074; found: 286.1068.
+6-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM10.
+Synthesized following the general procedure B star(cid:415)ng from 6-fluoro-1H-indole-3-
+carbaldehyde (489 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5 mmol, 2.5
+equiv.), SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.)
+and DMAP (9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by
+column chromatography (petroleum ether/AcOEt 9:1 to 8:2) yielded SM10 (368 mg,
+50 %) as a light yellow solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.08 (s, 1H), 8.26 – 8.14 (m, 2H), 8.09 (s, 1H), 7.19 – 7.11 (m, 1H),
+5.93 (ddt, J = 16.9, 10.2, 6.5 Hz, 1H), 5.21 – 5.14 (m, 1H), 5.14 – 5.09 (m, 1H), 3.09 (t, J = 7.3 Hz, 2H), 2.67
+– 2.58 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 185.4, 170.7, 162.1 (d, J = 243.9 Hz), 136.8 (d, J = 13.0 Hz), 134.6 (d,
+J = 3.2 Hz), 123.0 (d, J = 9.8 Hz), 122.6, 122.30 (d, J = 1.7 Hz), 116.8, 113.9 (d, J = 24.0 Hz), 104.2 (d, J = 28.9
+Hz), 35.1, 28.2.
+19F NMR (377 MHz, Chloroform-d) δ -113.16.
+HRMS (ESI+): m/z calcd. for [C14H12FNO2]+: 246.0925; found: 246.0956.
+4-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM11.
+Synthesized following the general procedure B star(cid:415)ng from 4-methyl-1H-indole-3-
+carbaldehyde (477 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5 mmol, 2.5 equiv.),
+SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.) and DMAP
+(9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by column
+chromatography (petroleum ether/AcOEt 9:1 to 8:2) yielded SM11 (485 mg, 67 %) as a
+light brown solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.25 (s, 1H), 8.34 (d, J = 8.4 Hz, 1H), 8.16 (s, 1H), 7.32 (dd, J = 8.4, 7.4
+Hz, 1H), 7.18 (d, J = 7.4 Hz, 1H), 5.93 (ddt, J = 16.9, 10.3, 6.5 Hz, 1H), 5.20 – 5.13 (m, 1H), 5.13 – 5.07 (m,
+1H), 3.09 (t, J = 7.4 Hz, 2H), 2.79 (s, 3H), 2.66 – 2.57 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 185.9, 171.0, 137.2, 136.0, 133.5, 132.0, 127.1, 126.5, 125.6, 124.4,
+116.6, 114.4, 35.2, 28.3, 22.6.
+HRMS (ESI+): m/z calcd. for [C15H15NO2]+: 242.1176; found: 242.1170.
+S13
+
+--- Page 15 ---
+3-Formyl-1-(pent-4-enoyl)-1H-indole-4-carbonitrile SM12.
+Synthesized following the general procedure B star(cid:415)ng from 4-cyano-1H-indole-3-
+carbaldehyde (510 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5 mmol, 2.5 equiv.),
+SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.) and DMAP
+(9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by column
+chromatography (petroleum ether/CH2Cl2 2:1 to 1:2) yielded SM12 (560 mg, 74 %) as an
+off-white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.67 (s, 1H), 8.80 (dd, J = 8.6, 1.5 Hz, 1H), 8.38 (s, 1H), 7.75 (dd, J =
+7.7, 1.5 Hz, 1H), 7.57 – 7.48 (m, 1H), 5.91 (ddt, J = 16.8, 9.6, 6.5 Hz, 1H), 5.20 – 5.14 (m, 1H), 5.14 – 5.08
+(m, 1H), 3.14 (t, J = 7.1 Hz, 2H), 2.66 – 2.57 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 184.9, 171.0, 136.7, 135.4, 132.1, 130.8, 127.3, 126.2, 121.9, 121.0,
+118.6, 116.9, 103.3, 35.1, 28.0.
+HRMS (ESI+): m/z calcd. for [C15H12N2O2]+: 253.0972; found: 253.0975.
+4-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM13.
+Synthesized following the general procedure B star(cid:415)ng from 4-fluoro-1H-indole-3-
+carbaldehyde (489 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5 mmol, 2.5 equiv.),
+SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.) and DMAP
+(9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by column
+chromatography (petroleum ether/CH2Cl2 1:1 to 1:2) yielded SM13 (441 mg, 60 %) as a
+white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.35 (s, 1H), 8.30 (d, J = 8.4 Hz, 1H), 8.19 (s, 1H), 7.43 – 7.34 (m, 1H),
+7.12 (dd, J = 10.1, 8.1 Hz, 1H), 5.92 (ddt, J = 16.9, 10.2, 6.5 Hz, 1H), 5.22 – 5.13 (m, 1H), 5.13 – 5.06 (m,
+1H), 3.10 (t, J = 7.3 Hz, 2H), 2.69 – 2.54 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 186.3 (d, J = 4.1 Hz), 171.2, 156.3 (d, J = 249.6 Hz), 138.3 (d, J = 9.9
+Hz), 135.8, 129.4, 127.3 (d, J = 7.3 Hz), 121.0 (d, J = 5.5 Hz), 116.8, 115.7 (d, J = 21.6 Hz), 113.3 (d, J = 4.0
+Hz), 111.01 (d, J = 18.9 Hz), 35.2, 28.2.
+19F NMR (377 MHz, Chloroform-d) δ -115.20.
+HRMS (ESI+): m/z calcd. for [C14H12FNO2]+: 246.0925; found: 246.0956.
+4-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM14.
+Synthesized following the general procedure B star(cid:415)ng from 4-bromo-1H-indole-3-
+carbaldehyde (672 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5 mmol, 2.5 equiv.),
+SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.) and DMAP
+(9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by column
+chromatography (petroleum ether/CH2Cl2 1:1 to 1:2) yielded SM14 (569 mg, 62 %) as an
+off-white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.98 (s, 1H), 8.56 – 8.50 (m, 1H), 8.29 (s, 1H), 7.62 – 7.55 (m, 1H),
+7.32 – 7.23 (m, 1H), 5.91 (ddt, J = 16.9, 10.2, 6.5 Hz, 1H), 5.22 – 5.13 (m, 1H), 5.12 – 5.07 (m, 1H), 3.10 (t,
+J = 7.4 Hz, 2H), 2.70 – 2.54 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 187.1, 171.2, 137.8, 135.7, 130.3, 129.4, 127.0, 126.9, 122.4, 116.8,
+116.3, 113.5, 35.2, 28.2.
+HRMS (ESI+): m/z calcd. for [C14H12BrNO2]+: 306.0124; found: 306.0145.
+S14
+
+--- Page 16 ---
+7-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM15.
+Synthesized following the general procedure B star(cid:415)ng from 7-methyl-1H-indole-3-
+carbaldehyde (477 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5 mmol, 2.5
+equiv.), SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.) and
+DMAP (9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by column
+chromatography (petroleum ether/AcOEt 9:1 to 7:3) yielded SM15 (521 mg, 72 %) as a
+light yellow solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.10 (s, 1H), 8.15 (d, J = 7.8 Hz, 1H), 8.06 (s, 1H), 7.36 – 7.31 (m, 1H),
+7.24 (d, J = 7.5 Hz, 1H), 5.93 (ddt, J = 16.8, 10.2, 6.5 Hz, 1H), 5.22 – 5.15 (m, 1H), 5.14 – 5.06 (m, 1H), 3.13
+(t, J = 7.3 Hz, 2H), 2.74 – 2.59 (m, 2H), 2.51 (s, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 185.5, 170.3, 136.10, 136.05, 135.8, 129.9, 127.5, 126.5, 125.8, 122.5,
+119.5, 116.9, 36.0, 29.1, 22.5.
+HRMS (ESI+): m/z calcd. for [C15H15NO2]+: 242.1176; found: 242.1170.
+7-Chloro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM16.
+O Synthesized following the general procedure B star(cid:415)ng from 7-chloro-1H-indole-3-
+H carbaldehyde (539 mg, 3 mmol, 1 equiv.), 4-pentenoic acid (765 μL, 7.5 mmol, 2.5
+N
+equiv.), SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.) and
+Cl DMAP (9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by column
+O chromatography (petroleum ether/AcOEt 9:1 to 8:2) yielded SM16 (149 mg, 19 %) as a
+SM16 yellowish solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.10 (s, 1H), 8.26 (dd, J = 7.8, 1.2 Hz, 1H), 8.08 (d, J = 1.6 Hz, 1H), 7.45
+(dd, J = 7.8, 1.2 Hz, 1H), 7.36 (dd, J = 8.6, 7.1 Hz, 1H), 5.89 (ddt, J = 16.8, 10.2, 6.6 Hz, 1H), 5.20 – 5.12 (m,
+1H), 5.12 – 5.04 (m, 1H), 3.13 (d, J = 7.1 Hz, 2H), 2.77 – 2.56 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 185.2, 170.5, 136.9, 135.5, 133.4, 129.7, 128.3, 126.4, 121.7, 121.0,
+120.8, 117.0, 37.2, 29.2.
+HRMS (ESI+): m/z calcd. for [C14H12ClNO2]+: 262.0629; found: 262.0627.
+1-(Hex-5-enoyl)-1H-indole-3-carbaldehyde SM17.
+Synthesized following the general procedure A star(cid:415)ng from 1H-indole-3-carbaldehyde
+(1.09 g, 7.5 mmol, 2.5 equiv.), 5-hexenoic acid (356 μL, 3 mmol, 1 equiv.), DMAP (18.3
+mg, 0.15 mmol, 0.05 equiv), 2,6-lu(cid:415)dine (35 μL, 0.3 mmol, 0.1 equiv.) and Boc2O (1.7
+mL, 7.5 mmol, 2.5 equiv.) in 7.5 mL of dry MeCN. Purifica(cid:415)on by column
+chromatography (petroleum ether/AcOEt 9:1 to 8:2) yielded SM17 (304 mg, 42%) as a
+light brown solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.12 (s, 1H), 8.44 – 8.39 (m, 1H), 8.31 – 8.23 (m,
+1H), 8.10 (s, 1H), 7.51 – 7.36 (m, 2H), 5.84 (ddt, J = 16.9, 10.1, 6.7 Hz, 1H), 5.14 – 5.04 (m, 2H), 3.00 (t, J =
+7.3 Hz, 2H), 2.30 – 2.20 (m, 2H), 1.99 (p, J = 7.3 Hz, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 185.7, 171.5, 137.3, 136.6, 134.7, 127.0, 126.1, 125.5, 122.7, 122.0,
+116.6, 116.3, 34.9, 32.9, 23.4.
+HRMS (ESI+): m/z calcd. for [C15H15NO2]+: 242.1176; found: 242.1170.
+S15
+
+--- Page 17 ---
+(E)-1-(hex-4-enoyl)-1H-indole-3-carbaldehyde 7-(E).
+Synthesised following the general procedure B star(cid:415)ng from 1H-indole-3-
+carbaldehyde (435 mg, 3 mmol, 1 equiv.), (E)-hex-4-enoic acid (856 mg, 7.5 mmol, 2.5
+equiv.), SOCl2 (711 μL 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.)
+and DMAP (9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by
+column chromatography (petroleum ether/AcOEt 9:1 to 7:3) yielded 7-(E) (608 mg,
+84%) as a white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.12 (s, 1H), 8.46 – 8.39 (m, 1H), 8.27 (dd, J = 8.1, 1.5 Hz, 1H), 8.11
+(s, 1H), 7.49 – 7.36 (m, 2H), 5.57 (qt, J = 15.0, 7.5 Hz, 2H), 3.06 (t, J = 7.3 Hz, 2H), 2.63 – 2.51 (m, 2H), 1.72
+– 1.65 (m, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 185.7, 171.1, 136.6, 134.7, 128.4, 127.5, 127.0, 126.1, 125.5, 122.8,
+122.0, 116.6, 36.1, 27.4, 18.0.
+HRMS (ESI+): m/z calcd. for [C15H15NO2]+: 242.1176; found:242.1170.
+(E)-hex-4-enoic acid was synthesized following a reported literature procedure.17
+(Z)-1-(hex-4-enoyl)-1H-indole-3-carbaldehyde 7-(Z).
+Synthesized following the general procedure B star(cid:415)ng from 1H-indole-3-carbaldehyde
+(435 mg, 3 mmol, 1 equiv.), (Z)-hex-4-enoic acid (856 mg, 7.5 mmol, 2.5 equiv.), SOCl2
+(711 μL, 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.) and DMAP (9.2
+mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by column
+chromatography (petroleum ether/AcOEt 9:1 to 7:3) yielded 7-(Z) (246mg, 34%) as a
+yellow oil.
+1H NMR (400 MHz, Chloroform-d) δ 10.11 (s, 1H), 8.49 – 8.39 (m, 1H), 8.27 (dd, J = 7.4, 1.7 Hz, 1H), 8.11
+(s, 1H), 7.52 – 7.32 (m, 2H), 5.64 – 5.54 (m, 1H), 5.52 – 5.43 (m, 1H), 3.05 (t, J = 7.4 Hz, 2H), 2.70 – 2.56 (m,
+2H), 1.68 (dd, J = 6.8, 1.8 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 185.7, 171.1, 136.6, 134.7, 127.5, 127.0, 126.6, 126.1, 125.5, 122.7,
+122.0, 116.6, 35.8, 21.9, 13.0.
+HRMS (ESI+): m/z calcd. for [C15H15NO2]+: 242.1176; found: 242.1173.
+(Z)-hex-4-enoic acid was synthesized following a reported literature procedure.18
+1-(3,3-Dimethylpent-4-enoyl)-1H-indole-3-carbaldehyde SM18.
+Synthesized following the general procedure B star(cid:415)ng from 1H-indole-3-carbaldehyde
+(435 mg, 3 mmol, 1 equiv.), 3,3-dimethylpent-4-enoic acid (961 mg, 7.5 mmol, 2.5
+equiv.), SOCl2 (711 μL, 9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.) and
+DMAP (9.2 mg, 0.075 mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by column
+chromatography (petroleum ether/CH2Cl2 2:1 to 1:3) yielded SM18 (597 mg, 78%) as an
+off-white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.12 (s, 1H), 8.52 – 8.41 (m, 1H), 8.32 – 8.19 (m, 1H), 8.09 (s, 1H),
+7.50 – 7.37 (m, 2H), 6.00 (dd, J = 17.4, 10.7 Hz, 1H), 5.07 (dd, J = 17.4, 1.2 Hz, 1H), 5.02 (dd, J = 10.7, 1.2
+Hz, 1H), 2.98 (s, 2H), 1.30 (s, 6H).
+13C NMR (101 MHz, Chloroform-d) δ 185.7, 169.8, 146.0, 136.7, 135.3, 126.9, 126.2, 125.5, 122.5, 121.9,
+116.9, 112.2, 47.2, 37.1, 27.3.
+3,3-dimethylpent-4-enoic acid was synthesized following a reported literature procedure.17
+HRMS (ESI+): m/z calcd. for [C16H17NO2]+:256.1332; found: 256.1348.
+S16
+
+--- Page 18 ---
+1-Pentanoyl-1H-indole-3-carbaldehyde SM19.
+Synthesized following the general procedure B star(cid:415)ng from 1H-indole-3-carbaldehyde
+(435 mg, 3 mmol, 1 equiv.), valeric acid (815 μL, 7.5 mmol, 2.5 equiv.), SOCl2 (711 μL,
+9.75 mmol, 3.25 equiv.), Et3N (1.8 mL, 13.2 mmol, 4.4 equiv.) and DMAP (9.2 mg, 0.075
+mmol, 0.025 equiv.) in 24 mL of dry CH2Cl2. Purifica(cid:415)on by column chromatography
+(petroleum ether/AcOEt 9:1 to 8:2) yielded SM19 (323 mg, 47 %) as a white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.12 (s, 1H), 8.47 – 8.40 (m, 1H), 8.31 – 8.23 (m,
+1H), 8.11 (s, 1H), 7.50 – 7.35 (m, 2H), 2.99 (t, J = 7.4 Hz, 2H), 1.86 (p, J = 7.5 Hz, 2H), 1.56 – 1.43 (m, 2H),
+1.01 (t, J = 7.4 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 185.7, 171.7, 136.6, 134.7, 126.9, 126.1, 125.4, 122.7, 122.0, 116.6,
+35.7, 26.6, 22.4, 13.9.
+HRMS (ESI+): m/z calcd. for [C14H15NO2]+: 230.1176; found: 230.1175.
+1-Acetyl-1H-indole-3-carbaldehyde 29.
+Synthesised according to a reported literature procedure19 star(cid:415)ng from 1H-indole-3-
+carbaldehyde (435 mg, 3 mmol, 1 equiv.), ace(cid:415)c anhydride (500 μL, 5 mmol, 1.7 equiv.),
+Et3N (1.0 mL, 7.5 mmol, 2.5 equiv.) and DMAP (37 mg, 0.3 mmol, 0.1 equiv.) in 18 mL of dry
+CH2Cl2. Purifica(cid:415)on by column chromatography (petroleum ether/AcOEt 9:1 to 8:2) yielded
+29 (454 mg, 81 %) as a white solid.
+1H NMR (400 MHz, Chloroform-d) δ 10.14 (s, 1H), 8.40 (d, J = 8.2 Hz, 1H), 8.28 (d, J = 7.6 Hz,
+1H), 8.08 (s, 1H), 7.48-7.39 (m, 2H), 2.75 (s, 3H).
+S17
+
+--- Page 19 ---
+Organocatalytic enantioselective dearomative [2 + 2]
+cycloaddition
+General Procedure C for the prepara(cid:415)on of enan(cid:415)oenriched cycloadducts.
+A 4 mL screw-cap vial equipped with a magne(cid:415)c s(cid:415)rring bar, was charged with the indole substrate (1
+equiv.), organocatalyst 2d (20 mol%) and filled with Argon. Then, CHCl3 (0.25 M) was added a(cid:332)er being
+dried with 4 Å molecular sieves and degassed by sparging Argon for ten minutes. TFA was added (2.5
+equiv.) and the vial was sealed. The mixture was irradiated un(cid:415)l full consump(cid:415)on of the star(cid:415)ng material
+with a Kessil lamp set at 50% of its maximum output power, unless otherwise stated. Then, the solvent
+was evaporated and the crude product was subjected to 1H-NMR analysis to determine the NMR yield and
+the d.r. value. A(cid:332)erwards, the crude of the reac(cid:415)on was dissolved in CH2Cl2 (0.25 M) and
+ethyl(triphenylphosphoranylidene)acetate (2.5 equiv.) was added. A(cid:332)er s(cid:415)rring for 16 hours, the crude
+mixture was directly purified by column chromatography on silica gel. The products were obtained as an
+inseparable mixture of E and Z isomers deriving from the Wi(cid:427)g deriva(cid:415)za(cid:415)on. The enan(cid:415)omeric excess
+was determined by UPC2 analysis on chiral sta(cid:415)onary phase.
+General Procedure D for the prepara(cid:415)on of racemic samples.
+A 4 mL screw-cap vial equipped with a magne(cid:415)c s(cid:415)rring bar, was charged with the indole substrate (1
+equiv.), 4CzIPN (2.5 mol%) and filled with Argon. Then, CHCl3 (0.25 M) was added a(cid:332)er being degassed by
+sparging Argon for ten minutes and the vial was sealed. The mixture was irradiated un(cid:415)l full consump(cid:415)on
+of the star(cid:415)ng material with a Kessil lamp set at 50% of its maximum output power, unless otherwise
+stated. Then, the solvent was evaporated and the crude product was subjected to 1H-NMR analysis to
+determine the d.r. value. A(cid:332)erwards, the crude of the reac(cid:415)on was dissolved in CH2Cl2 (0.25 M) and
+ethyl(triphenylphosphoranylidene)acetate (2.5 equiv.) was added. A(cid:332)er s(cid:415)rring for 16 hours, the crude
+mixture was directly purified by column chromatography on silica gel. The crude mixture was directly
+purified by column chromatography on silica gel elu(cid:415)ng with pure CH2Cl2 first to remove all the 4CzIPN
+and then with a mixture of petroleum ether/AcOEt 7:3, affording the desired products.
+S18
+
+--- Page 20 ---
+General Procedure E
+A 4 mL screw-cap vial equipped with a magne(cid:415)c s(cid:415)rring bar, was charged with the indole substrate (1
+equiv.), organocatalyst 2d (20 mol%), the appropriate olefine (3 equiv.) and filled with Argon. Then, CHCl3
+(0.25 M) was added a(cid:332)er being dried with 4 Å molecular sieves and degassed by sparging Argon for ten
+minutes. TFA was added (2.5 equiv.) and the vial was sealed. The mixture was irradiated for 18 h with a
+Kessil lamp set at 50% of its maximum output power, unless otherwise stated. Then, the solvent was
+evaporated and the crude product was subjected to 1H-NMR analysis to determine the NMR yield and the
+d.r. value. The crude mixture was directly purified by column chromatography on silica gel affording the
+desired products. The enan(cid:415)omeric excess was determined by UPC2 analysis on chiral sta(cid:415)onary phase.
+General Procedure F
+A 4 mL screw-cap vial equipped with a magne(cid:415)c s(cid:415)rring bar, was charged with the indole substrate (1
+equiv.), 4CzIPN (2.5 mol%), the appropriate olefine (3 equiv.) and filled with Argon. Then, CHCl3 (0.25 M)
+was added a(cid:332)er being degassed by sparging Argon for ten minutes and the vial was sealed. The mixture
+was irradiated for 18 h with a Kessil lamp set at 50% of its maximum output power, unless otherwise
+stated. Then, the solvent was evaporated and the crude product was subjected to 1H-NMR analysis to
+determine the d.r. value. A(cid:332)erwards, the crude mixture was directly purified by column chromatography
+on silica gel elu(cid:415)ng with pure CH2Cl2 first to remove all the 4CzIPN and then with a mixture of petroleum
+ether/AcOEt 7:3, affording the desired products.
+S19
+
+--- Page 21 ---
+Characterisation of cycloadducts
+Ethyl (E)-3-((1aR,1a1R,9bS)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-
+yl)acrylate 3.
+Following the General Procedure C applying 1-(pent-4-enoyl)-1H-indole-3-carbaldehyde 1
+(22.7 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine 2d (5.3
+mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.) in 400 μL of CHCl3, full
+conversion of 1 was observed a(cid:332)er 6 h under 427 nm irradia(cid:415)on (>20:1 d.r.). The final
+product was obtained a(cid:332)er reac(cid:415)on with ethyl(triphenylphosphoranylidene)acetate (87 mg,
+0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons were conducted in parallel under iden(cid:415)cal condi(cid:415)ons
+and then combined. The reported yield is calculated based on a total of 0.2 mmol.
+Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 7:3) yielded 3 as a mixture of E and Z isomers
+(47.6 mg, 80 % yield, 92% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.91 (d, J = 7.8 Hz, 1H), 7.28 – 7.19 (m, 2H), 7.07 – 6.95 (m, 2H), 6.14
+:12.4, 8.9, 3.4 Hz, 1H), 2.53 – 2.43 (m, 1H), 2.35 – 2.14 (m, 3H), 1.67 – 1.51 (m, 1H), 1.32 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.2, 166.3, 146.7, 145.3, 136.2, 128.4, 124.4, 122.9, 122.7, 117.7,
+77.2, 67.4, 60.8, 50.1, 41.0, 34.9, 28.4, 26.1, 14.4.
+HRMS (ESI+): m/z calcd. for [C18H19NO3]+: 298.1438; found: 298.1503.
+UPC2: IBN-3, CO2/i-PrOH, isocra(cid:415)c [90:10], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 3.73 min; tminor = 3.24 min.
+[𝜶] 𝑫 𝟑𝟓= +97.4 (c=0.63, CHCl3) for 92% e.e.
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 10.
+Following the General Procedure C applying 1-(pent-4-enoyl)-4-methyl-1H-indole-3-
+carbaldehyde SM11 (24.1 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.) in
+400 μL of CHCl3, full conversion of SM11 was observed a(cid:332)er 6 h under 427 nm irradia(cid:415)on
+(>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 6:4)
+yielded 10 as a mixture of E and Z isomers (47.9 mg, 77 % yield, 92% e.e., E:Z = 99:1).
+1H NMR (500 MHz, Chloroform-d) δ 7.75 (d, J = 8.0 Hz, 1H), 7.29 (d, J = 15.9 Hz, 1H), 7.13 (t, J = 7.8 Hz, 1H),
+6.80 (d, J = 7.7 Hz, 1H), 6.15 (d, J = 15.9 Hz, 1H), 4.35 (dd, J = 6.0, 3.7 Hz, 1H), 4.24 (q, J = 7.1 Hz, 2H), 3.10
+– 2.93 (m, 2H), 2.45 (ddd, J = 14.2, 3.5, 2.4 Hz, 1H), 2.32 – 2.24 (m, 1H), 2.22 – 2.11 (m, 2H), 2.10 (s, 3H),
+1.60 – 1.50 (m, 1H), 1.31 (t, J = 7.1 Hz, 3H).
+13C NMR (126 MHz, Chloroform-d) δ 171.2, 166.3, 148.5, 145.4, 134.7, 133.9, 128.4, 126.6, 122.1, 115.2,
+67.2, 60.8, 49.9, 38.4, 34.9, 28.0, 26.2, 19.3, 14.4.
+HRMS (ESI+): m/z calcd. for [C19H21NO3]+: 312.1594; found: 312.1657.
+UPC2: IG-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.14 min; tminor = 2.46 min.
+[𝜶] 𝑫 𝟑𝟎= +180.0 (c=0.77, CHCl3) for 92% e.e.
+S20
+
+--- Page 22 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 11.
+Following the General Procedure C applying 1-(pent-4-enoyl)-4-bromo-1H-indole-3-
+carbaldehyde SM14 (30.6 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.)
+in 400 μL of CHCl3, full conversion of SM14 was observed a(cid:332)er 6 h under 427 nm irradia(cid:415)on
+(>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 7:3)
+yielded 11 as a mixture of E and Z isomers (63.2 mg, 84 % yield, 92% e.e., E:Z = 85:15).
+1H NMR (400 MHz, Chloroform-d) δ 7.86 (d, J = 7.6 Hz, 1H), 7.38 (d, J = 15.9 Hz, 1H), 7.18 – 7.06 (m, 2H),
+6.15 (d, J = 15.9 Hz, 1H), 4.39 (dd, J = 6.1, 3.7 Hz, 1H), 4.24 (q, J = 7.1 Hz, 2H), 3.13 – 2.95 (m, 2H), 2.47 (dt,
+J = 14.3, 3.1 Hz, 1H), 2.35 – 2.25 (m, 1H), 2.25 – 2.15 (m, 2H), 1.62 – 1.49 (m, 1H), 1.31 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.3, 166.3, 147.4, 146.8, 136.3, 130.0, 128.4, 122.5, 117.9, 116.4,
+67.0, 60.8, 50.9, 38.9, 34.9, 28.1, 26.1, 14.4.
+HRMS (ESI+): m/z calcd. for [C18H18BrNO3]+:376.0543; found: 376.0613.
+UPC2: IC-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 3.24 min; tminor = 3.56 min.
+[𝜶] 𝑫 𝟑𝟎= not measured because product 11 was isolated as a 85:15 mixture of E:Z isomers.
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 12.
+Following the General Procedure C applying 1-(pent-4-enoyl)-4-fluoro-1H-indole-3-
+carbaldehyde SM13 (24.5 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.) in
+400 μL of CHCl3, full conversion of SM13 was observed a(cid:332)er 6 h under 427 nm irradia(cid:415)on
+(>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 7:3)
+yielded 12 as a mixture of E and Z isomers (51.7 mg, 82 % yield, 90% e.e., E:Z = 82:18).
+1H NMR (400 MHz, Chloroform-d) δ 7.70 (d, J = 8.0 Hz, 1H), 7.36 (d, J = 15.8 Hz, 1H), 7.24 – 7.16 (m, 1H),
+6.72 (t, J = 8.8 Hz, 1H), 6.11 (d, J = 15.9 Hz, 1H), 4.51 (dd, J = 6.2, 3.4 Hz, 1H), 4.24 (q, J = 7.2 Hz, 2H), 3.12
+– 3.01 (m, 1H), 2.94 (ddd, J = 12.6, 9.1, 3.5 Hz, 1H), 2.57 – 2.43 (m, 1H), 2.35 – 2.14 (m, 3H), 1.65 – 1.50
+(m, 1H), 1.37 – 1.28 (m, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.2, 166.3, 158.2 (d, J = 247.7 Hz), 147.4 (d, J = 7.7 Hz), 145.9 (d, J
+= 1.7 Hz), 130.4 (d, J = 8.1 Hz), 122.24 (d, J = 18.7 Hz), 122.19, 113.6 (d, J = 3.3 Hz), 112.1 (d, J = 20.4 Hz),
+67.4, 60.8, 48.7 (d, J = 1.9 Hz), 40.9, 34.9, 28.3, 26.0, 14.4.
+19F NMR (377 MHz, Chloroform-d) δ -118.27.
+HRMS (ESI+): m/z calcd. for [C18H18FNO3]+: 316.1343; found: 316.1431.
+UPC2: IC-3, CO2/EtOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.09 min; tminor = 2.25 min.
+[𝜶] 𝑫 𝟑𝟎= not measured because product 12 was isolated as a 85:15 mixture of E:Z isomers.
+S21
+
+--- Page 23 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-cyano-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 13.
+Following the General Procedure C applying 3-formyl-1-(pent-4-enoyl)-1H-indole-4-
+carbonitrile SM12 (25.2 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.) in
+400 μL of a 1:1 mixture of CHCl3 and chlorobenzene, full conversion of SM12 was observed
+a(cid:332)er 18 h under 400 nm irradia(cid:415)on (>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on
+with ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two
+reac(cid:415)ons were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield
+is calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to
+6:4) yielded 13 as a mixture of E and Z isomers (42.6 mg, 66 % yield, 82% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 8.13 (dd, J = 7.9, 1.2 Hz, 1H), 7.37 – 7.27 (m, 3H), 6.23 (d, J = 15.8 Hz,
+1H), 4.52 (dd, J = 6.1, 3.6 Hz, 1H), 4.26 (q, J = 7.1 Hz, 2H), 3.18 – 3.01 (m, 2H), 2.58 – 2.46 (m, 1H), 2.40 –
+2.28 (m, 1H), 2.28 – 2.15 (m, 2H), 1.65 – 1.52 (m, 1H), 1.32 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.3, 165.8, 146.5, 143.8, 139.5, 129.4, 128.2, 124.7, 121.6, 116.2,
+107.8, 67.6, 61.0, 49.9, 40.0, 34.8, 28.4, 25.9, 14.3.
+HRMS (ESI+): m/z calcd. for [C19H19N2O3]+: 323.1390; found: 323.1438.
+UPC2: IC-3, CO2/EtOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.96 min; tminor = 3.55 min.
+[𝜶] 𝑫 𝟑𝟓= +111.4 (c=0.65, CHCl3) for 82% e.e.
+Ethyl (E)-3-((1aR,1a1R,9bS)-8-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 14.
+Following the General Procedure C applying 5-bromo-1-(pent-4-enoyl)-1H-indole-3-
+carbaldehyde SM1 (30.6 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.)
+in 400 μL of CHCl3, full conversion of SM1 was observed a(cid:332)er 6 h under 427 nm irradia(cid:415)on
+(>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 6:4)
+yielded 14 as a mixture of E and Z isomers (54.2 mg, 72 % yield, 88% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.78 (d, J = 8.4 Hz, 1H), 7.34 (dd, J = 8.4, 2.0 Hz, 1H), 7.19 (d, J = 15.8
+Hz, 1H), 7.07 (d, J = 2.0 Hz, 1H), 6.13 (d, J = 15.9 Hz, 1H), 4.51 (dd, J = 6.1, 3.5 Hz, 1H), 4.25 (q, J = 7.1 Hz,
+2H), 3.10 – 2.97 (m, 1H), 2.87 (ddd, J = 12.5, 9.0, 3.5 Hz, 1H), 2.53 – 2.44 (m, 1H), 2.35 – 2.13 (m, 3H), 1.64
+– 1.51 (m, 1H), 1.33 (t, J = 7.2 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.1, 166.1, 145.6, 144.4, 138.5, 131.2, 126.2, 123.3, 119.0, 116.9,
+67.7, 61.0, 49.9, 41.1, 34.8, 28.6, 26.1, 14.4.
+HRMS (ESI+): m/z calcd. for [C18H18BrNO3]+: 376.0543; found: 376.0533.
+UPC2: IC-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 3.27 min; tminor = 3.82 min.
+[𝜶] 𝑫 𝟑𝟓= +95.0 (c=0.55, CHCl3) for 88% e.e.
+S22
+
+--- Page 24 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-8-cyano-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 15.
+Following the General Procedure C applying 3-formyl-1-(pent-4-enoyl)-1H-indole-5-
+carbonitrile SM3 (25.2 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.)
+in 400 μL of CHCl3, full conversion of SM3 was observed a(cid:332)er 18 h under 400 nm irradia(cid:415)on
+(>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 6:4)
+yielded 15 as a mixture of E and Z isomers (32.2 mg, 50 % yield, 89% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.99 (d, J = 8.2 Hz, 1H), 7.56 (dd, J = 8.3, 1.6 Hz, 1H), 7.25 – 7.15 (m,
+2H), 6.16 (d, J = 15.8 Hz, 1H), 4.57 (dd, J = 6.1, 3.5 Hz, 1H), 4.27 (q, J = 7.2 Hz, 2H), 3.17 – 3.03 (m, 1H), 2.92
+(ddd, J = 12.4, 9.0, 3.4 Hz, 1H), 2.59 – 2.49 (m, 1H), 2.39 – 2.17 (m, 3H), 1.68 – 1.56 (m, 1H), 1.34 (t, J = 7.1
+Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.4, 165.9, 148.9, 144.8, 137.6, 133.7, 126.7, 123.9, 119.0, 117.8,
+107.6, 67.7, 61.1, 49.8, 41.2, 34.9, 28.8, 25.9, 14.4.
+HRMS (ESI+): m/z calcd. for [C19H18N2O3]+: 323.1390; found: 323.1438.
+UPC2: IG-3, CO2/EtOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.31 min; tminor = 2.64 min.
+[𝜶] 𝑫 𝟑𝟎= +136.4 (c=0.60, CHCl3) for 89% e.e.
+Ethyl (E)-3-((1aR,1a1R,9bS)-4-oxo-8-(tosyloxy)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 16.
+Following the General Procedure C applying 3-formyl-1-(pent-4-enoyl)-1H-indol-5-yl 4-
+methylbenzenesulfonate SM4 (39.7 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-
+(pyrrolidin-1-yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25
+mmol, 2.5 equiv.) in 400 μL of CHCl3, full conversion of SM4 was observed a(cid:332)er 18 h
+under 427 nm irradia(cid:415)on (>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is calculated based on
+a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 8:2 to 1:1) yielded 16 as a
+mixture of E and Z isomers (76 mg, 82 % yield, 90% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.76 (d, J = 8.6 Hz, 1H), 7.68 (d, J = 8.1 Hz, 2H), 7.31 (d, J = 8.1 Hz, 2H),
+7.13 (d, J = 15.9 Hz, 1H), 6.72 (dd, J = 8.6, 2.4 Hz, 1H), 6.66 (d, J = 2.4 Hz, 1H), 6.08 (d, J = 15.9 Hz, 1H), 4.51
+(dd, J = 6.1, 3.4 Hz, 1H), 4.26 (q, J = 7.1 Hz, 2H), 3.10 – 2.98 (m, 1H), 2.90 – 2.78 (m, 1H), 2.45 (s, 4H), 2.36
+– 2.22 (m, 1H), 2.22 – 2.12 (m, 2H), 1.65 – 1.51 (m, 1H), 1.34 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.0, 165.9, 145.9, 145.5, 145.3, 143.9, 137.8, 132.1, 129.8, 128.5,
+123.2, 121.9, 117.8, 117.7, 67.8, 60.8, 49.6, 41.0, 34.6, 28.4, 25.9, 21.7, 14.3.
+HRMS (ESI+): m/z calcd. for [C25H26NO6S]+: 468.1475; found: 468.1533.
+UPC2: IG-3, CO2/MeOH, isocra(cid:415)c [70:30], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.80 min; tminor = 3.06 min.
+[𝜶] 𝑫 𝟐𝟐= +29.5 (c=0.80, CHCl3) for 90% e.e.
+S23
+
+--- Page 25 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-8-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 17.
+Following the General Procedure C applying 5-fluoro-1-(pent-4-enoyl)-1H-indole-3-
+carbaldehyde SM2 (24.5 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.)
+in 400 μL of CHCl3, full conversion of SM2 was observed a(cid:332)er 6 h under 427 nm irradia(cid:415)on
+(>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 6:4)
+yielded 17 as a mixture of E and Z isomers (46.1 mg, 73 % yield, 90% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.84 (dd, J = 8.7, 4.7 Hz, 1H), 7.20 (d, J = 15.8 Hz, 1H), 6.95 – 6.87 (m,
+1H), 6.68 (dd, J = 8.0, 2.6 Hz, 1H), 6.14 (d, J = 15.9 Hz, 1H), 4.52 (dd, J = 6.1, 3.5 Hz, 1H), 4.25 (q, J = 7.1 Hz,
+2H), 3.12 – 2.97 (m, 1H), 2.87 (ddd, J = 12.5, 9.0, 3.5 Hz, 1H), 2.53 – 2.43 (m, 1H), 2.34 – 2.12 (m, 3H), 1.65
+– 1.52 (m, 1H), 1.32 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 170.9, 166.1, 159.8 (d, J = 243.4 Hz), 145.8, 141.3 (d, J = 2.2 Hz), 138.2
+(d, J = 7.8 Hz), 123.1, 118.4 (d, J = 8.3 Hz), 114.4 (d, J = 23.0 Hz), 110.6 (d, J = 24.6 Hz), 67.9, 60.9, 49.9 (d,
+J = 1.8 Hz), 41.0, 34.6, 28.4, 26.1, 14.3.
+19F NMR (377 MHz, Chloroform-d) δ -117.91.
+HRMS (ESI+): m/z calcd. for [C18H18FNO3]+: 316.1343; found: 316.1431.
+UPC2: IC-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.17 min; tminor = 2.32 min.
+[𝜶] 𝑫 𝟑𝟎= +105.2 (c=0.59, CHCl3) for 90% e.e.
+Ethyl (E)-3-((1aR,1a1R,9bS)-4-oxo-8-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-1a,2,3,4-tetrahydro-
+1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)acrylate 18.
+Following the General Procedure C applying 1-(pent-4-enoyl)-5-(4,4,5,5-tetramethyl-
+1,3,2-dioxaborolan-2-yl)-1H-indole-3-carbaldehyde SM5 (35.3 mg, 0.1 mmol, 1 equiv.),
+(1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%)
+and TFA (19 μL, 0.25 mmol, 2.5 equiv.) in 400 μL of CHCl3, full conversion of SM5 was
+observed a(cid:332)er 6 h under 427 nm irradia(cid:415)on (>20:1 d.r.). The final product was obtained
+a(cid:332)er reac(cid:415)on with ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5
+equiv.). Two reac(cid:415)ons were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield
+is calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 8:2 to
+1:1) yielded 18 as a mixture of E and Z isomers (68 mg, 81 % yield, 91% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.91 (d, J = 7.9 Hz, 1H), 7.73 (d, J = 7.9 Hz, 1H), 7.40 (s, 1H), 7.27 (d, J
+= 15.8 Hz, 1H), 6.15 (d, J = 15.8 Hz, 1H), 4.51 (dd, J = 6.1, 3.4 Hz, 1H), 4.26 (q, J = 7.2 Hz, 2H), 3.09 – 2.96
+(m, 1H), 2.90 – 2.82 (m, 1H), 2.53 – 2.44 (m, 1H), 2.34 – 2.12 (m, 3H), 1.62 – 1.51 (m, 1H), 1.34 – 1.32 (m,
+14H).
+13C NMR (101 MHz, Chloroform-d) δ 171.2, 166.3, 147.7, 146.5, 135.8, 135.7, 128.9, 122.7, 116.8, 83.9,
+67.2, 60.8, 49.9, 41.0, 35.0, 28.5, 26.0, 24.95, 24.89, 14.4.
+HRMS (ESI+): m/z calcd. for [C24H31BNO5]+: 424.2290; found: 424.2326.
+UPC2: IC-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.27 min; tminor = 2.70 min.
+[𝜶] 𝑫 𝟐𝟐= +97.2 (c=0.76, CHCl3) for 91% e.e.
+S24
+
+--- Page 26 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 19.
+Following the General Procedure C applying 6-methyl-1-(pent-4-enoyl)-1H-indole-3-
+carbaldehyde SM7 (24.1 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5
+equiv.) in 400 μL of CHCl3, full conversion of SM7 was observed a(cid:332)er 18 h under 427 nm
+irradia(cid:415)on (>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 7:3)
+yielded 19 as a mixture of E and Z isomers (43.0 mg, 69 % yield, 92% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.76 (s, 1H), 7.23 (d, J = 15.9 Hz, 1H), 6.84 (d, J = 2.0 Hz, 2H), 6.13 (d,
+J = 15.8 Hz, 1H), 4.48 (dd, J = 6.2, 3.5 Hz, 1H), 4.24 (q, J = 7.1 Hz, 2H), 3.08 – 2.95 (m, 1H), 2.85 (ddd, J =
+12.4, 9.0, 3.5 Hz, 1H), 2.52 – 2.42 (m, 1H), 2.36 (s, 3H), 2.32 – 2.12 (m, 3H), 1.64 – 1.51 (m, 1H), 1.32 (t, J =
+7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.2, 166.4, 147.0, 145.4, 138.6, 133.5, 125.0, 122.6, 122.5, 118.5,
+67.7, 60.8, 49.8, 41.1, 34.9, 28.4, 26.2, 21.7, 14.4.
+HRMS (ESI+): m/z calcd. for [C19H21NO3]+: 312.1594; found: 312.1657.
+UPC2: IC-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.48 min; tminor = 2.87 min.
+[𝜶] 𝑫 𝟑𝟎= +82.1 (c=0.66, CHCl3) for 92% e.e.
+Methyl (1aR,1a1R,9bS)-9b-((E)-3-ethoxy-3-oxoprop-1-en-1-yl)-4-oxo-1a,1a1,2,3,4,9b-hexahydro-1H-
+benzo[b]cyclobuta[hi]indolizine-7-carboxylate 20.
+Following the General Procedure C applying methyl methyl 3-formyl-1-(pent-4-enoyl)-
+1H-indole-6-carboxylate SM9 (28.5 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-
+(pyrrolidin-1-yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25
+mmol, 2.5 equiv.) in 400 μL of CHCl3, full conversion of SM9 was observed a(cid:332)er 12 h
+under 427 nm irradia(cid:415)on (>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on
+with ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two
+reac(cid:415)ons were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The
+reported yield is calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography
+(hexane/AcOEt 9:1 to 7:3) yielded 20 as a mixture of E and Z isomers (49.8 mg, 70 % yield, 90% e.e., E:Z =
+95:5).
+1H NMR (400 MHz, Chloroform-d) δ 8.47 (d, J = 1.7 Hz, 1H), 7.74 (dd, J = 7.8, 1.5 Hz, 1H), 7.22 (d, J = 15.8
+Hz, 1H), 7.02 (d, J = 7.8 Hz, 1H), 6.14 (d, J = 15.8 Hz, 1H), 4.54 (dd, J = 6.1, 3.4 Hz, 1H), 4.24 (q, J = 7.1 Hz,
+2H), 3.89 (s, 3H), 3.14 – 3.00 (m, 1H), 2.88 (ddd, J = 12.4, 9.0, 3.4 Hz, 1H), 2.56 – 2.43 (m, 1H), 2.35 – 2.13
+(m, 3H), 1.67 – 1.51 (m, 1H), 1.31 (t, J = 7.2 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.1, 166.7, 166.1, 145.7, 145.5, 141.3, 130.5, 126.5, 123.2, 122.7,
+118.1, 67.5, 60.9, 52.3, 50.0, 41.2, 34.7, 28.6, 26.0, 14.3.
+HRMS (ESI+): m/z calcd. for [C20H21NO5]+: 356.1492; found: 356.1588.
+UPC2: IC-3, CO2/MeOH, gradient [90:10 to 60:40 in 5 min , then 60:40 for 6 min], automa(cid:415)c back-pressure
+regulator (ABPR) = 2500 psi, 40 °C, 3 mL/min; tmajor = 6.26 min; tminor = 8.27 min.
+[𝜶] 𝑫 𝟑𝟎= +55.2 (c=0.70, CHCl3) for 90% e.e.
+S25
+
+--- Page 27 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-(trifluoromethyl)-4-oxo-1a,2,3,4-tetrahydro-1H-
+benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)acrylate 21.
+Following the General Procedure C applying 1-(pent-4-enoyl)-6-(trifluoromethyl)-1H-
+indole-3-carbaldehyde SM6 (29.5 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-
+(pyrrolidin-1-yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25
+mmol, 2.5 equiv.) in 400 μL of CHCl3, full conversion of SM6 was observed a(cid:332)er 6 h under
+400 nm irradia(cid:415)on (>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 7:3)
+yielded 21 as a mixture of E and Z isomers (51.9 mg, 71 % yield, 90% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 8.15 (d, J = 1.8 Hz, 1H), 7.34 – 7.26 (m, 1H), 7.23 (d, J = 15.8 Hz, 1H),
+7.06 (d, J = 7.8 Hz, 1H), 6.15 (d, J = 15.8 Hz, 1H), 4.55 (dd, J = 6.0, 3.4 Hz, 1H), 4.24 (q, J = 7.1 Hz, 2H), 3.13
+– 3.01 (m, 1H), 2.89 (ddd, J = 12.5, 9.0, 3.4 Hz, 1H), 2.53 – 2.44 (m, 1H), 2.38 – 2.16 (m, 3H), 1.67 – 1.51
+(m, 1H), 1.31 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.2, 166.0, 145.7, 145.5, 140.1 (q, J = 1.5 Hz), 130.8 (q, J = 32.4 Hz),
+124.1 (q, J = 272.5 Hz), 123.4, 123.1, 121.6 (q, J = 4.0 Hz), 114.44 (q, J = 3.9 Hz), 67.6, 61.0, 49.9, 41.1, 34.7,
+28.7, 26.0, 14.3.
+19F NMR (377 MHz, Chloroform-d) δ -62.22.
+HRMS (ESI+): m/z calcd. for [C19H18F3NO3]+: 366.1312; found: 366.1402.
+UPC2: IG-3, CO2/EtOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 1.05 min; tminor = 1.22 min.
+[𝜶] 𝑫 𝟑𝟓= +97.1 (c=0.69, CHCl3) for 90% e.e.
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 22.
+Following the General Procedure C applying 6-bromo-1-(pent-4-enoyl)-1H-indole-3-
+carbaldehyde SM8 (30.6 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.)
+in 400 μL of CHCl3, full conversion of SM8 was observed a(cid:332)er 6 h under 427 nm irradia(cid:415)on
+(>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 7:3)
+yielded 22 as a mixture of E and Z isomers (50.4 mg, 67 % yield, 91% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 8.08 (d, J = 1.8 Hz, 1H), 7.20 (d, J = 15.9 Hz, 1H), 7.15 (dd, J = 8.0, 1.8
+Hz, 1H), 6.82 (d, J = 7.9 Hz, 1H), 6.12 (d, J = 15.8 Hz, 1H), 4.51 (dd, J = 6.1, 3.4 Hz, 1H), 4.24 (q, J = 7.1 Hz,
+2H), 3.13 – 2.96 (m, 1H), 2.86 (ddd, J = 12.4, 9.0, 3.4 Hz, 1H), 2.55 – 2.44 (m, 1H), 2.36 – 2.09 (m, 3H), 1.65
+– 1.51 (m, 1H), 1.32 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.2, 166.1, 146.5, 145.9, 135.4, 127.3, 124.0, 123.1, 122.0, 120.8,
+67.8, 60.9, 49.7, 41.1, 34.8, 28.5, 26.1, 14.4.
+HRMS (ESI+): m/z calcd. for [C18H18BrNO3]+: 376.0543; found: 376.0613.
+UPC2: IC-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 3.63 min; tminor = 4.54 min.
+[𝜶] 𝑫 𝟑𝟎= +60.5 (c=0.66, CHCl3) for 91% e.e.
+S26
+
+--- Page 28 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 23.
+Following the General Procedure C applying 6-fluoro-1-(pent-4-enoyl)-1H-indole-3-
+carbaldehyde SM10 (24.5 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.)
+in 400 μL of CHCl3, full conversion of SM10 was observed a(cid:332)er 24 h under 427 nm
+irradia(cid:415)on (>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 7:3)
+yielded 23 as a mixture of E and Z isomers (27.7 mg, 44 % yield, 90% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.64 (dd, J = 9.6, 2.5 Hz, 1H), 7.21 (d, J = 15.8 Hz, 1H), 6.88 (dd, J = 8.3,
+5.4 Hz, 1H), 6.76 – 6.64 (m, 1H), 6.13 (d, J = 15.8 Hz, 1H), 4.54 (dd, J = 6.1, 3.4 Hz, 1H), 4.24 (q, J = 7.1 Hz,
+2H), 3.11 – 2.95 (m, 1H), 2.87 (ddd, J = 12.5, 9.0, 3.5 Hz, 1H), 2.54 – 2.43 (m, 1H), 2.36 – 2.10 (m, 3H), 1.64
+– 1.51 (m, 1H), 1.32 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.2, 166.2, 162.8 (d, J = 244.9 Hz), 146.6 (d, J = 12.5 Hz), 146.3,
+131.81 (d, J = 2.6 Hz), 123.4 (d, J = 10.1 Hz), 122.9, 110.7 (d, J = 22.9 Hz), 106.11 (d, J = 28.1 Hz), 68.2, 60.9,
+49.5, 41.2, 34.8, 28.4, 26.1, 14.4.
+19F NMR (377 MHz, Chloroform-d) δ -112.97.
+HRMS (ESI+): m/z calcd. for [C18H18FNO3]+: 316.1343; found: 316.1431.
+UPC2: IC-3, CO2/EtOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.07 min; tminor = 2.38 min.
+[𝜶] 𝑫 𝟑𝟓= +100.5 (c=0.68, CHCl3) for 90% e.e.
+Ethyl (E)-3-((1aR,1a1R,9bS)-6-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 24.
+Following the General Procedure C applying 7-methyl-1-(pent-4-enoyl)-1H-indole-3-
+carbaldehyde SM15 (24.1 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.)
+in 400 μL of CHCl3, full conversion of SM15 was observed a(cid:332)er 6 h under 427 nm irradia(cid:415)on
+(>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 6:4)
+yielded 24 as a mixture of E and Z isomers (48.6 mg, 78 % yield, 88% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.14 (d, J = 15.8 Hz, 1H), 7.09 – 6.96 (m, 2H), 6.78 (dd, J = 7.3, 1.4 Hz,
+1H), 6.11 (d, J = 15.8 Hz, 1H), 4.57 (dd, J = 5.9, 3.7 Hz, 1H), 4.23 (q, J = 7.1 Hz, 2H), 3.08 – 2.95 (m, 1H), 2.82
+(ddd, J = 12.4, 8.9, 3.7 Hz, 1H), 2.51 – 2.43 (m, 1H), 2.41 (s, 3H), 2.38 – 2.25 (m, 2H), 2.21 (dd, J = 12.1, 9.9
+Hz, 1H), 1.75 – 1.59 (m, 1H), 1.30 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.4, 166.3, 147.2, 144.4, 137.7, 130.9, 129.7, 125.7, 122.5, 120.2,
+70.5, 60.8, 51.1, 39.1, 34.6, 28.3, 26.4, 21.0, 14.3.
+HRMS (ESI+): m/z calcd. for [C19H21NO3]+: 312.1594; found: 312.1657.
+UPC2: IG-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 1.64 min; tminor = 1.86 min.
+[𝜶] 𝑫 𝟑𝟎= +185.9 (c=0.69, CHCl3) for 88% e.e.
+S27
+
+--- Page 29 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-6-chloro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 25.
+Following the General Procedure C applying 7-chloro-1-(pent-4-enoyl)-1H-indole-3-
+carbaldehyde SM16 (26.1 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.) in
+400 μL of CHCl3, almost full conversion of SM16 was observed a(cid:332)er 18 h under 400 nm
+irradia(cid:415)on (>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 7:3)
+yielded 25 as a mixture of E and Z isomers (30.52 mg, 46 % yield, 72% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.26 (dd, J = 8.1, 1.2 Hz, 1H), 7.12 (d, J = 15.8 Hz, 1H), 7.03 (t, J = 7.8
+Hz, 1H), 6.87 (dd, J = 7.3, 1.3 Hz, 1H), 6.13 (d, J = 15.9 Hz, 1H), 4.66 (dd, J = 5.7, 3.7 Hz, 1H), 4.24 (q, J = 7.1
+Hz, 2H), 3.11 – 2.95 (m, 1H), 2.84 (ddd, J = 12.4, 8.9, 3.7 Hz, 1H), 2.58 – 2.47 (m, 1H), 2.44 – 2.30 (m, 2H),
+2.25 (dd, J = 12.2, 10.1 Hz, 1H), 1.79 – 1.65 (m, 1H), 1.32 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.0, 166.1, 146.2, 143.3, 140.5, 130.2, 126.8, 125.4, 123.2, 121.3,
+71.6, 61.0, 51.6, 39.1, 34.3, 28.3, 26.5, 14.4.
+HRMS (ESI+): m/z calcd. for [C18H18ClNO3]+: 332.1048; found: 332.1106.
+UPC2: IG-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.22 min; tminor = 2.38 min.
+[𝜶] 𝑫 𝟑𝟎= +14.1 (c=0.58, CHCl3) for 72% e.e.
+Ethyl (E)-3-((1aR,1a1R,9bS)-5-oxo-1a,1a1,2,3,4,5-hexahydro-5a-azabenzo[a]cyclobuta[cd]azulen-
+9b(1H)-yl)acrylate 26.
+Following the General Procedure C applying 1-(hex-5-enoyl)-1H-indole-3-carbaldehyde
+SM17 (24.1 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine
+2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.) in 400 μL of CHCl3,
+full conversion of SM17 was observed a(cid:332)er 18 h under 427 nm irradia(cid:415)on (>20:1 d.r.). The
+final product was obtained a(cid:332)er reac(cid:415)on with ethyl(triphenylphosphoranylidene)acetate
+(87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons were conducted under iden(cid:415)cal condi(cid:415)ons
+and then combined. The reported yield is calculated based on a total of 0.2 mmol.
+Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 6:4) yielded 26 as a mixture of E and Z
+isomers (24.9 mg, 40 % yield, 94% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 8.18 (d, J = 8.0 Hz, 1H), 7.25 – 7.16 (m, 2H), 7.07 – 6.95 (m, 2H), 6.03
+(d, J = 15.8 Hz, 1H), 4.68 (dd, J = 6.8, 2.2 Hz, 1H), 4.22 (q, J = 7.1 Hz, 2H), 2.85 – 2.76 (m, 1H), 2.76 – 2.65
+(m, 1H), 2.51 – 2.41 (m, 2H), 2.02 (dd, J = 12.0, 7.0 Hz, 1H), 1.99 – 1.87 (m, 1H), 1.85 – 1.75 (m, 1H), 1.70
+– 1.56 (m, 1H), 1.52 (ddd, J = 13.5, 11.8, 5.0 Hz, 1H), 1.30 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 170.9, 166.5, 148.4, 144.2, 136.5, 128.7, 124.2, 123.3, 121.4, 117.2,
+66.8, 60.8, 49.1, 39.7, 35.4, 32.3, 27.7, 21.7, 14.4.
+HRMS (ESI+): m/z calcd. for [C19H21NO3]+: 312.1594; found: 312.1657.
+UPC2: IG-3, CO2/EtOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.68 min; tminor = 3.36 min.
+[𝜶] 𝑫 𝟑𝟎= +104.2 (c=0.65, CHCl3) for 94% e.e.
+S28
+
+--- Page 30 ---
+Ethyl (E)-3-((1aS,1a1R,9bS)-2,2-dimethyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 27.
+Following the General Procedure C applying 1-(3,3-dimethylpent-4-enoyl)-1H-indole-3-
+carbaldehyde SM18 (25.5 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-
+yl)ethan-1-amine 2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.)
+in 400 μL of CHCl3, full conversion of SM18 was observed a(cid:332)er 6 h under 427 nm
+irradia(cid:415)on (>20:1 d.r.). The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 7:3)
+yielded 27 as a mixture of E and Z isomers (52.0 mg, 80 % yield, 84% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.88 (d, J = 7.9 Hz, 1H), 7.29 – 7.17 (m, 2H), 7.08 – 6.90 (m, 2H), 6.15
+(d, J = 15.8 Hz, 1H), 4.52 (dd, J = 6.0, 3.4 Hz, 1H), 4.24 (q, J = 7.1 Hz, 2H), 2.77 – 2.68 (m, 1H), 2.63 (ddd, J =
+12.7, 9.3, 3.4 Hz, 1H), 2.34 (dd, J = 12.2, 9.6 Hz, 1H), 2.26 – 2.16 (m, 2H), 1.31 (t, J = 7.1 Hz, 3H), 1.13 (s,
+3H), 0.90 (s, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 170.2, 166.3, 146.7, 144.9, 136.7, 128.3, 124.4, 122.9, 122.8, 117.8,
+67.7, 60.8, 49.5, 49.0, 39.3, 35.4, 33.1, 32.2, 26.1, 14.4.
+HRMS (ESI+): m/z calcd. for [C20H23NO3]+: 326.1751; found: 326.1856.
+UPC2: IG-3, CO2/IPA, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.11 min; tminor = 2.72 min.
+[𝜶] 𝑫 𝟑𝟓= +84.9 (c=0.62, CHCl3) for 84% e.e.
+Ethyl (E)-3-((1R,1aR,1a1R,9bR)-1-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-
+yl)acrylate 28.
+Following the General Procedure C applying (E)-1-(hex-4-enoyl)-1H-indole-3-carbaldehyde
+7-(E) (25.5 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine
+2d (5.3 mg, 0.02 mmol, 20 mol%) and TFA (19 μL, 0.25 mmol, 2.5 equiv.) in 400 μL of CHCl3,
+full conversion of 7-(E) was observed a(cid:332)er 3 h under 427 nm irradia(cid:415)on at 0 °C (9:1 d.r.).
+The final product was obtained a(cid:332)er reac(cid:415)on with
+ethyl(triphenylphosphoranylidene)acetate (87 mg, 0.25 mmol, 2.5 equiv.). Two reac(cid:415)ons
+were conducted under iden(cid:415)cal condi(cid:415)ons and then combined. The reported yield is
+calculated based on a total of 0.2 mmol. Purifica(cid:415)on by column chromatography (hexane/AcOEt 9:1 to 7:3)
+yielded 28 as a mixture of E and Z isomers (52.0 mg, 84 % yield, 75% e.e., E:Z = 95:5).
+1H NMR (400 MHz, Chloroform-d) δ 7.90 (d, J = 7.9 Hz, 1H), 7.38 (d, J = 15.9 Hz, 1H), 7.25 – 7.17 (m, 1H),
+7.14 – 7.07 (m, 1H), 7.07 – 6.99 (m, 1H), 6.03 (d, J = 16.1 Hz, 1H), 4.56 (d, J = 5.4 Hz, 1H), 4.23 (q, J = 7.1
+Hz, 2H), 2.61 – 2.43 (m, 3H), 2.34 – 2.18 (m, 2H), 1.61 – 1.47 (m, 1H), 1.30 (t, J = 7.2 Hz, 3H), 1.11 (d, J =
+6.5 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 171.0, 166.2, 144.8, 143.8, 136.5, 128.0, 124.3, 122.8, 122.1, 118.0,
+64.1, 60.8, 53.1, 51.6, 37.0, 34.8, 24.7, 15.6, 14.3.
+HRMS (ESI+): m/z calcd. for [C19H21NO3]+: 312.1594; found: 312.1657
+UPC2: IC-3, CO2/EtOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.51 min; tminor = 2.82 min.
+[𝜶] 𝑫 𝟑𝟓= not measured because product 28 was isolated in a 9:1 d.r.
+S29
+
+--- Page 31 ---
+(1R,2aR,7bS)-3-acetyl-1-butyl-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde 30.
+Following the General Procedure E applying 1-acetyl-1H-indole-3-carbaldehyde 29 (18.7
+mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine 2d (5.3
+mg, 0.02 mmol, 20 mol%), 1-hexene (38 μL, 0.3 mmol,. 3 equiv.) and TFA (19 μL, 0.25
+mmol, 2.5 equiv.) in 400 μL of CHCl3, 90% conversion of 29 and a 2.5:1 d.r. of the desired
+product were observed a(cid:332)er 18 h under 427 nm irradia(cid:415)on. Purifica(cid:415)on by column
+chromatography (hexane/AcOEt 8:2 to 6:4) yielded the (cid:415)tle compound 30 (10.5 mg, 38
+% yield, 77% e.e.).
+1H NMR (400 MHz, Chloroform-d) δ 9.86 (s, 1H), 8.29 (d, J = 8.2 Hz, 1H), 7.38 (d, J = 7.5
+Hz, 1H), 7.35 – 7.30 (m, 1H), 7.17 – 7.10 (m, 1H), 5.09 (dd, J = 7.6, 4.9 Hz, 1H), 2.81 – 2.71 (m, 1H), 2.40 –
+2.32 (m, 1H), 2.28 – 2.21 (m, 1H), 2.19 (s, 3H), 1.81 – 1.68 (m, 1H), 1.48 – 1.37 (m, 1H), 1.36 – 1.20 (m, 3H),
+1.20 – 1.10 (m, 1H), 0.89 (t, J = 7.1 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 197.8, 168.6, 144.1, 131.2, 129.6, 124.5, 123.6, 118.3, 62.8, 55.9,
+46.9, 33.1, 32.2, 29.8, 24.1, 22.6, 14.1.
+HRMS (ESI+): m/z calcd. for [C17H22NO2]+: 272.1645; found: 272.1653.
+UPC2: IG-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.35 min; tminor = 2.81 min.
+[𝜶] 𝑫 𝟏𝟗= +100.4 (c=0.25, CHCl3) for 77% e.e.
+(1S,2aR,7bS)-3-acetyl-1-butyl-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde 30’.
+Me Following the General Procedure E applying 1-acetyl-1H-indole-3-carbaldehyde 29 (18.7
+O mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine 2d (5.3
+H mg, 0.02 mmol, 20 mol%), 1-hexene (38 μL, 0.3 mmol,. 3 equiv.) and TFA (19 μL, 0.25
+mmol, 2.5 equiv.) in 400 μL of CHCl3, 90% conversion of 29 and a 2.5:1 d.r. of the desired
+N H product were observed a(cid:332)er 18 h under 427 nm irradia(cid:415)on. As the minor diastereomer
+O Me co-elutes with unreacted 29, a second purifica(cid:415)on by column chromatography was
+30' carried out first using CH2Cl2 as eluent un(cid:415)l the unreacted 29 elutes from the column
+then the eluent was switched to hexane/AcOEt 9:1 to 6:4. The second purifica(cid:415)on
+yielded the (cid:415)tle compound 30’ (3.3 mg, 13 % yield, 73% e.e.).
+1H NMR (400 MHz, Chloroform-d) δ 9.72 (s, 1H), 8.33 (d, J = 8.2 Hz, 1H), 7.39 – 7.32 (m, 1H), 7.23 – 7.18
+(m, 1H), 7.16 – 7.09 (m, 1H), 4.93 – 4.80 (m, 1H), 2.94 – 2.82 (m, 1H), 2.75 – 2.64 (m, 1H), 2.18 (s, 3H), 1.85
+– 1.69 (m, 1H), 1.48 – 1.37 (m, 1H), 1.32 – 1.11 (m, 5H), 0.85 (t, J = 7.0 Hz, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 198.0, 168.0, 145.6, 130.0, 126.7, 126.4, 124.2, 118.6, 64.8, 56.8,
+38.7, 33.0, 31.7, 29.4, 24.1, 22.6, 14.1.
+HRMS (ESI+): m/z calcd. for [C17H22NO2]+: 272.1645; found: 272.1653.
+UPC2: IG-3, CO2/IPA, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 1.97 min; tminor = 1.83 min.
+[𝜶] 𝑫 𝟐𝟐= -23.9 (c=0.15, CHCl3) for 73% e.e.
+S30
+
+--- Page 32 ---
+(2aR,7bS)-3-acetyl-2a,3-dihydrospiro[cyclobuta[b]indole-1,1'-cyclohexane]-7b(2H)-carbaldehyde 31.
+Following the General Procedure E applying 1-acetyl-1H-indole-3-carbaldehyde 29 (18.7
+mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine 2d (5.3
+mg, 0.02 mmol, 20 mol%), methylenecyclohexane (36 μL, 0.3 mmol,. 3 equiv.) and TFA (19
+μL, 0.25 mmol, 2.5 equiv.) in 400 μL of CHCl3, full conversion of 29 was observed a(cid:332)er 18
+h under 427 nm irradia(cid:415)on. Purifica(cid:415)on by column chromatography (hexane/AcOEt 8:2 to
+7:3) yielded the (cid:415)tle compound 31 (20.0 mg, 70 % yield, 94% e.e.).
+1H NMR (400 MHz, Chloroform-d) δ 9.81 (s, 1H), 8.35 – 8.25 (m, 1H), 7.39 – 7.31 (m, 2H),
+7.17 – 7.11 (m, 1H), 5.09 (dd, J = 7.6, 5.8 Hz, 1H), 2.43 (dd, J = 12.5, 7.6 Hz, 1H), 2.22 (s, 3H), 1.85 (dd, J =
+12.5, 5.8 Hz, 1H), 1.76 – 1.68 (m, 1H), 1.64 – 1.51 (m, 4H), 1.47 – 1.32 (m, 3H), 1.28 – 1.15 (m, 2H).
+13C NMR (101 MHz, Chloroform-d) δ 197.3, 168.4, 144.7, 129.7, 127.1, 125.9, 123.9, 118.5, 67.5, 53.6,
+47.6, 38.7, 35.7, 35.0, 25.5, 24.1, 22.7, 22.6.
+HRMS (ESI+): m/z calcd. for [C18H22NO2]+: 284.1645; found: 284.1646.
+UPC2: IC-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.84 min; tminor = 3.05 min.
+[𝜶] 𝑫 𝟏𝟗= -73.2 (c=0.58, CHCl3) for 94% e.e.
+Methyl (1R,2aR,7bS)-3-acetyl-7b-formyl-2,2a,3,7b-tetrahydro-1H-cyclobuta[b]indole-1-carboxylate 32.
+Following the General Procedure E applying 1-acetyl-1H-indole-3-carbaldehyde 29 (18.7
+mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine 2d (5.3
+mg, 0.02 mmol, 20 mol%), methyl acrylate (27 μL, 0.3 mmol,. 3 equiv.) and TFA (19 μL,
+0.25 mmol, 2.5 equiv.) in 400 μL of CHCl3, 91% conversion of 29 was observed a(cid:332)er 18 h
+under 427 nm irradia(cid:415)on. Purifica(cid:415)on by column chromatography (hexane/AcOEt 8:2 to
+6:4) yielded the (cid:415)tle compound 32 (10.0 mg, 30 % yield, 88% e.e.).
+1H NMR (400 MHz, Chloroform-d) δ 9.68 (s, 1H), 8.30 (d, J = 8.2 Hz, 1H), 7.42 – 7.31 (m, 2H), 7.21 – 7.11
+(m, 1H), 5.26 – 5.21 (m, 1H), 3.78 (s, 3H), 3.50 (dd, J = 9.6, 4.6 Hz, 1H), 2.93 – 2.82 (m, 1H), 2.49 – 2.39 (m,
+1H), 2.23 (s, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 194.8, 172.8, 168.2, 144.4, 130.6, 128.7, 124.9, 124.8, 118.6, 62.1,
+57.8, 52.7, 46.8, 30.0, 24.1.
+HRMS (ESI+): m/z calcd. for [C15H16NO4]+: 274.1074; found: 274.1110
+UPC2: IC-3, CO2/IPA, gradient [95:5 to 60:40 in 5 min, then 60:40 for 2 min], automa(cid:415)c back-pressure
+regulator (ABPR) = 2500 psi, 40 °C, 3 mL/min; tmajor = 2.64 min; tminor = 3.50 min.
+[𝜶] 𝑫 𝟐𝟐= -13.8 (c=0.30, CHCl3) for 88% e.e.
+S31
+
+--- Page 33 ---
+(1S,2aR,7bS)-3-acetyl-1-methyl-1-((R)-4-methyl-5-oxocyclohex-3-en-1-yl)-1,2,2a,3-tetrahydro-7bH-
+cyclobuta[b]indole-7b-carbaldehyde 33.
+Following the General Procedure E applying 1-acetyl-1H-indole-3-carbaldehyde 29
+(18.7 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine
+2d (5.3 mg, 0.02 mmol, 20 mol%), (R)-(-)-Carvone (46 μL, 0.3 mmol,. 3 equiv.) and
+TFA (19 μL, 0.25 mmol, 2.5 equiv.) in 400 μL of CHCl3, 94% conversion of 29 and a
+1.7:1 d.r. of the desired product were observed a(cid:332)er 18 h under 427 nm irradia(cid:415)on.
+Purifica(cid:415)on by column chromatography (hexane/AcOEt 8:2 to 1:1) yielded the (cid:415)tle
+compound 33 (11.0 mg, 33 % yield).
+1H NMR (400 MHz, Chloroform-d) δ 9.92 (s, 1H), 8.31 (d, J = 8.2 Hz, 1H), 7.44 – 7.31
+(m, 1H), 7.29 – 7.25 (m, 1H), 7.21 – 7.12 (m, 1H), 6.77 (d, J = 6.3 Hz, 1H), 4.99 (dd, J = 7.9, 4.8 Hz, 1H), 2.58
+(dd, J = 13.0, 7.9 Hz, 1H), 2.52 – 2.40 (m, 1H), 2.36 – 2.21 (m, 3H), 2.17 (s, 3H), 2.13 – 2.01 (m, 1H), 1.87
+(dd, J = 13.0, 4.8 Hz, 1H), 1.78 (s, 3H), 0.93 (s, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 198.2, 197.0, 168.6, 145.3, 144.1, 136.0, 130.0, 127.1, 125.4, 124.3,
+118.4, 67.1, 53.5, 50.7, 42.1, 40.5, 38.5, 27.0, 24.1, 20.3, 15.7.
+HRMS (ESI+): m/z calcd. for [C21H24NO3]+: 338.1751; found: 338.1731.
+[𝜶] 𝑫 𝟐𝟐= -140.0 (c=0.30, CHCl3).
+(1R,2aR,7bS)-3-acetyl-1-methyl-1-((R)-4-methyl-5-oxocyclohex-3-en-1-yl)-1,2,2a,3-tetrahydro-7bH-
+cyclobuta[b]indole-7b-carbaldehyde 33’.
+O Following the General Procedure E applying 1-acetyl-1H-indole-3-carbaldehyde 29
+O Me Me (18.7 mg, 0.1 mmol, 1 equiv.), (1S,2S)-1,2-diphenyl-2-(pyrrolidin-1-yl)ethan-1-amine
+H 2d (5.3 mg, 0.02 mmol, 20 mol%), (R)-(-)-Carvone (46 μL, 0.3 mmol,. 3 equiv.) and
+TFA (19 μL, 0.25 mmol, 2.5 equiv.) in 400 μL of CHCl3, 94% conversion of 29 and a
+N H 1.7:1 d.r. of the desired product were observed a(cid:332)er 18 h under 427 nm irradia(cid:415)on.
+Me Purifica(cid:415)on by column chromatography (hexane/AcOEt 8:2 to 1:1) yielded the (cid:415)tle
+O
+33' compound 33’ (4.0 mg, 12 % yield).
+1H NMR (400 MHz, Chloroform-d) δ 9.70 (s, 1H), 8.33 (d, J = 8.1 Hz, 1H), 7.40 – 7.32 (m, 1H), 7.28 – 7.25
+(m, 1H), 7.16 – 7.09 (m, 1H), 6.79 (d, J = 5.5 Hz, 1H), 5.13 – 5.08 (m, 1H), 2.54 – 2.44 (m, 1H), 2.37 – 2.27
+(m, 1H), 2.26 – 2.14 (m, 5H), 2.11 – 2.01 (m, 2H), 1.91 (dd, J = 12.1, 6.8 Hz, 1H), 1.74 (s, 3H), 1.21 (s, 3H).
+13C NMR (101 MHz, Chloroform-d) δ 199.0, 196.4, 168.1, 145.1, 143.8, 136.2, 130.5, 126.0, 125.9, 124.4,
+119.1, 68.7, 54.3, 48.3, 40.9, 39.1, 38.3, 28.7, 24.2, 19.6, 15.8.
+HRMS (ESI+): m/z calcd. for [C21H24NO3]+: 338.1751; found: 338.1731.
+[𝜶] 𝑫 𝟐𝟐= -51.2 (c=0.10, CHCl3).
+S32
+
+--- Page 34 ---
+Synthetic transformations
+Synthesis and Characteriza(cid:415)on
+(1aR,1a1R,9bS)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizine-9b(1a1H)-carboxylic acid
+34.
+Cycloadduct 6 was obtained following General Procedure C star(cid:415)ng from indole 1 (45.4 mg. 0.2 mmol, 1
+equiv.). The yield of the reac(cid:415)on was measured by 1H NMR analysis of the crude reac(cid:415)on mixture using
+dibromomethane as internal standard. This value was used for the stoichiometric calcula(cid:415)ons and the
+yield determina(cid:415)on of the following reac(cid:415)on. A(cid:332)er evapora(cid:415)on of the solvent the crude is dissolved in
+EtOAc and washed with a 2M solu(cid:415)on of HCl. The organic phase was washed with brine, dried over MgSO4
+and concentrated under reduced pressure. The crude was used for the next step without further
+purifica(cid:415)on.
+A 8 mL screw-cap vial equipped with a magne(cid:415)c s(cid:415)rring bar, was charged with the cycloadduct 6 (36.4 mg,
+0.16 mmol, 1 equiv.), KH2PO4 (24.5 mg, 0.18 mmol, 1.1 equiv.) and dissolved with 420 μL of MeCN and
+100 μL of H2O. Then 20 μL of a 30% aqueous solu(cid:415)on of H2O2 were added. In another vessel, NaClO2 (16.3
+mg, 0.18 mmol, 1.1 equiv.) is dissolved in 100 μL of H2O and added dropwise to the reac(cid:415)on. The mixture
+is le(cid:332) s(cid:415)rring 3h at room temperature. The reac(cid:415)on was then quenched with a saturated aqueous solu(cid:415)on
+of NaHSO3, and diluted with AcOEt. The organic phase was separated and washed 3 (cid:415)mes with a saturated
+aqueous solu(cid:415)on of Na2CO3. The aqueous frac(cid:415)ons were collected, acidified to pH 1 with concentrated HCl
+and extracted with CH2Cl2. The organic layer was separated, dried over MgSO4. Removal of the solvent
+yielded 34 (26 mg, 68% yield, 92% e.e.) as a yellow solid.
+1H NMR (400 MHz, Chloroform-d) δ 7.96 (d, J = 8.0 Hz, 1H), 7.41 (d, J = 7.5 Hz, 1H), 7.33 – 7.29 (m, 1H),
+7.09 (t, J = 7.5 Hz, 1H), 4.88 (dd, J = 6.2, 3.4 Hz, 1H), 3.35 – 3.22 (m, 1H), 3.22 – 3.11 (m, 1H), 2.59 – 2.47
+(m, 1H), 2.41 – 2.18 (m, 3H), 1.73 – 1.51 (m, 1H).
+13C NMR (101 MHz, Chloroform-d) δ δ 175.7, 171.3, 145.3, 132.4, 128.6, 124.4, 123.5, 117.6, 64.9, 51.9,
+41.6, 34.8, 29.2, 26.2.
+HRMS (ESI+): m/z calcd. for [C14H14NO3]+: 244.0968; found: 244.0988
+UPC2: IC-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 1.48 min; tminor = 2.25 min
+[𝜶] 𝑫 𝟐𝟐= +96.0 (c=0.50, MeOH) for 92% e.e.
+S33
+
+--- Page 35 ---
+(1aR,1a1R,9bS)-9b-(2,2-dibromovinyl)-1,1a,1a1,2,3,9b-hexahydro-4H-benzo[b]cyclobuta[hi]indolizin-4-
+one 35’.
+Cycloadduct 6 was obtained following General Procedure C star(cid:415)ng from indole 1 (45.4 mg. 0.2 mmol, 1
+equiv.). The yield of the reac(cid:415)on was measured by 1H NMR analysis of the crude reac(cid:415)on mixture using
+dibromomethane as internal standard. This value was used for the stoichiometric calcula(cid:415)ons and the
+yield determina(cid:415)on of the following reac(cid:415)on. A(cid:332)er evapora(cid:415)on of the solvent the crude is dissolved in
+EtOAc and washed with a 2M solu(cid:415)on of HCl. The organic phase was washed with brine, dried over MgSO4
+and concentrated under reduced pressure. The crude was used for the next step without further
+purifica(cid:415)on.
+A 8 mL screw-cap vial equipped with a magne(cid:415)c s(cid:415)rring bar, was charged with the CBr4 (200 mg, 0.6 mmol,
+3 equiv.) and dissolved with 800 μL of anhydrous CH2Cl2 under Argon atmosphere. In a separated vessel,
+PPh3 (315 mg, 1.2 mmol, 6 equiv.) was dissolved with 1.2 mL of anhydrous CH2Cl2 under Argon atmosphere
+and added dropwise at 0°C to the CBr4 solu(cid:415)on. A(cid:332)er 5 min of s(cid:415)rring at 0°C, a solu(cid:415)on of cycloadduct 6
+(43.1 mg, 0.19 mmol, 1 equiv.) in 800 μL of anhydrous CH2Cl2 was added to the reac(cid:415)on mixture. Then it
+is let reaching room temperature and s(cid:415)rred overnight. The reac(cid:415)on was then diluted with a saturated
+aqueous solu(cid:415)on of NH4Cl and extracted with AcOEt. The organic phase was washed with brine, dried over
+MgSO4 and concentrated under reduced pressure. Purifica(cid:415)on by column chromatography (hexane/AcOEt
+7:3) yielded 35’ (57 mg, 80% yield, 92% e.e.) as a yellow solid.
+1H NMR (400 MHz, Chloroform-d) δ 7.9 (d, J = 7.91 Hz, 1H), 7.3 – 7.2 (m, 1H), 7.2 – 7.1 (m, 1H), 7.1 – 7.0
+(m, 2H), 4.7 (dd, J = 5.81, 3.86 Hz, 1H), 3.1 – 3.0 (m, 2H), 2.6 – 2.4 (m, 1H), 2.4 – 2.1 (m, 3H), 1.6 – 1.5 (m,
+1H).
+13C NMR (101 MHz, Chloroform-d) δ 171.0, 145.3, 139.0, 135.5, 128.0, 124.3, 122.9, 117.4, 93.4, 67.1,
+51.0, 43.2, 34.8, 29.1, 26.1.
+HRMS (ESI+): m/z calcd. for [C15H14Br2NO]+: 381.9437; found: 381.9474.
+UPC2: IC-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 3.32 min; tminor = 3.58 min.
+S34
+
+--- Page 36 ---
+(1aR,1a1R,9bS)-9b-ethynyl-1,1a,1a1,2,3,9b-hexahydro-4H-benzo[b]cyclobuta[hi]indolizin-4-one 35.
+A 8 mL screw-cap vial equipped with a magne(cid:415)c s(cid:415)rring bar, was charged with dibromide 35’ (57 mg, 0.15
+mmol, 1 equiv.) and dissolved with 2.8 mL of DMSO. Cs2CO3 (150 mg, 0.45 mmol, 3 equiv.) was added and
+the reac(cid:415)on was s(cid:415)rred overnight at 120°C. Then it was diluted with CH2Cl2 and washed with 5 (cid:415)mes with
+water. The organic phase was washed with brine, dried over MgSO4 and concentrated under reduced
+pressure. Purifica(cid:415)on by column chromatography (hexane/AcOEt 7:3) yielded 35 (23 mg, 69% yield, 92%
+e.e.) as a yellow solid. The overall yield of the two steps is 55%.
+1H NMR (400 MHz, Chloroform-d) δ 7.89 (d, J = 7.9 Hz, 1H), 7.28 – 7.22 (m, 2H), 7.09 (td, J = 7.5, 1.1 Hz,
+1H), 4.65 (dd, J = 6.0, 3.5 Hz, 1H), 3.34 (dtd, J = 15.3, 9.4, 5.7 Hz, 1H), 2.96 (ddd, J = 12.2, 9.0, 3.4 Hz, 1H),
+2.54 – 2.46 (m, 2H), 2.37 – 2.18 (m, 3H), 1.58 (tdd, J = 12.6, 5.2, 3.3 Hz, 1H).
+13C NMR (101 MHz, Chloroform-d) δ 170.8, 144.5, 135.4, 128.3, 124.5, 122.7, 117.5, 83.8, 72.4, 68.1, 44.7,
+41.0, 34.6, 28.9, 26.0.
+HRMS (ESI+): m/z calcd. for [C15H14NO]+: 224.1070; found: 224.1074.
+UPC2: IC-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 1.54 min; tminor = 1.66 min.
+[𝜶] 𝑫 𝟐𝟐= +22.6 (c=0.20, CHCl3) for 92% e.e.
+S35
+
+--- Page 37 ---
+((1aR,1a1R,9bS)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)methanol 36.
+Cycloadduct 6 was obtained following General Procedure C star(cid:415)ng from indole 1 (45.4 mg. 0.2 mmol, 1
+equiv.). The yield of the reac(cid:415)on was measured by 1H NMR analysis of the crude reac(cid:415)on mixture using
+dibromomethane as internal standard. This value was used for the stoichiometric calcula(cid:415)ons and the
+yield determina(cid:415)on of the following reac(cid:415)on. A(cid:332)er evapora(cid:415)on of the solvent the crude is dissolved in
+EtOAc and washed with a 2M solu(cid:415)on of HCl. The organic phase was washed with brine, dried over MgSO4
+and concentrated under reduced pressure. The crude was used for the next step without further
+purifica(cid:415)on.
+A 8 mL screw-cap vial equipped with a magne(cid:415)c s(cid:415)rring bar, was charged with the cycloadduct 6 (40.9 mg,
+0.18 mmol, 1 equiv.) and dissolved with 1.5 mL of anhydrous THF under Argon atmosphere. Then LiAlH4
+(38 mg, 1 mmol, 5.5 equiv.) was added por(cid:415)on wise at 0 °C. The mixture was let s(cid:415)rring overnight at room
+temperature. The reac(cid:415)on was then quenched with H2O, diluted with AcOEt and filtrated through a celite
+pad. The organic phase was washed with brine, dried over MgSO4 and concentrated under reduced
+pressure. Purifica(cid:415)on by column chromatography (CH2Cl2/MeOH 98:2) yielded 36 (25 mg, 64% yield, 91%
+e.e.) as a yellow oil.
+1H NMR (400 MHz, Chloroform-d) δ 7.12 – 7.05 (m, 1H), 6.91 (d, J = 7.2 Hz, 1H), 6.64 (t, J = 7.3 Hz, 1H),
+6.56 (d, J = 7.9 Hz, 1H), 4.14 (dd, J = 6.5, 2.5 Hz, 1H), 4.04 (d, J = 11.3 Hz, 1H), 3.96 (d, J = 11.3 Hz, 1H), 3.65
+– 3.55 (m, 1H), 3.04 – 2.91 (m, 1H), 2.79 – 2.62 (m, 1H), 2.25 (ddd, J = 12.5, 10.1, 2.6 Hz, 1H), 1.98 (dd, J =
+12.2, 8.7 Hz, 1H), 1.81 – 1.59 (m, 2H), 1.56 – 1.48 (m, 1H), 1.46 – 1.39 (m, 1H).
+13C NMR (101 MHz, Chloroform-d) δ 155.3, 136.5, 128.4, 121.3, 118.2, 109.8, 64.5, 60.1, 50.7, 45.7, 36.0,
+29.4, 25.2, 19.8.
+HRMS (ESI+): m/z calcd. for [C14H18NO]+: 216.1383; found: 216.1387.
+UPC2: IG-3, CO2/MeOH, isocra(cid:415)c [80:20], automa(cid:415)c back-pressure regulator (ABPR) = 2500 psi, 40 °C, 3
+mL/min; tmajor = 2.26 min; tminor = 2.02 min.
+[𝜶] 𝑫 𝟐𝟐= +37.0 (c=0.10, CHCl3) for 91% e.e.
+S36
+
+--- Page 38 ---
+X-Ray Crystallographic data
+X-ray crystallographic data for compound 14:
+Compound 14
+Empirical formula C18 H18 Br N O3
+Formula weight 376.24
+Temperature/K 200.0
+Diffractometer/detector Bruker D8 Venture / PhotonII area detector
+Radiation CuKα (λ = 1.54184)
+Crystal system Orthorhombic
+Space group P212121
+a/Å 5.10490(10)
+b/Å 8.37430(10)
+c/Å 38.8682(7)
+α/° 90
+β/° 90
+γ/° 90
+Volume/Å3 1661.61(5)
+Z 4
+ρcalc /g·cm-3 1.504
+μ/mm-1 3.494
+F(000) 768
+Θ range for data 4.55-72.28
+collection/° -6<h<6
+Index ranges -10<k<10
+-47<l<47
+Reflections collected 32627
+Unique reflections 3191
+Parameters 209
+Goodness-of-fit on F2 1.056
+Final R indexes [I>=2σ (I)] R=0.038, wR2=0.099
+Flack Parameter -0.026(9)
+CCDC Number 2392077
+S37
+
+--- Page 39 ---
+Supplementary Figure 2. ORTEP representa(cid:415)on of compound 14.
+S38
+
+--- Page 40 ---
+Steady-state absorption spectroscopy
+The UV-vis spectra were recorded CHCl3 as solvent.
+Supplementary Figure 3. Absorp(cid:415)on profiles of the reac(cid:415)on components: 1 (1 mM), 2d (1 mM).
+S39
+
+--- Page 41 ---
+Photophysical characterization of iminium 4 and 5.
+Supplementary Figure 4 and Supplementary Figure 6 display the fluorescence of iminium 4 and 5,
+respec(cid:415)vely, measured in CLF solu(cid:415)on upon excita(cid:415)on at 360 nm. A quantum yield of φF = 0.14 and φF =
+0.15 can be es(cid:415)mated for 4 and 5, respec(cid:415)vely, using quinine disulfate as a standard. A life(cid:415)me of τ = 2.06
+ns and τ = 1.96 ns can be es(cid:415)mated for 4 and 5, respec(cid:415)vely, by TCSPC upon excita(cid:415)on at 380 nm (see
+Supplementary Figure 5 and Supplementary Figure 7).
+400 450 500 550 600 650 700
+Supplementary Figure 4. Luminescence spectrum of iminium 4 in CLF upon excita(cid:415)on at 360 nm.
+Supplementary Figure 5. Fluorescence decay of 4 in CLF measured by TCSPC (excita(cid:415)on at 380 nm, analysis at 450
+nm): a life(cid:415)me of 2.06 ns is es(cid:415)mated upon deconvolu(cid:415)on and single-exponen(cid:415)al fi(cid:427)ng (top panel shows the
+experimental trace associated with the decay in blue, the instrument response func(cid:415)on in red and the fi(cid:427)ng in black.
+The bo(cid:425)om panel shows the residuals associated with the fi(cid:427)ng).
+S40
+.u.a
+/
+ytisnetnI
+l / nm
+
+--- Page 42 ---
+400 450 500 550 600 650 700
+Supplementary Figure 6. Luminescence spectrum of iminium 5 in CLF upon excita(cid:415)on at 360 nm.
+Supplementary Figure 7. Fluorescence decay of 5 in CLF measured by TCSPC (excita(cid:415)on at 380 nm, analysis at 450
+nm): a life(cid:415)me of 1.96 ns is es(cid:415)mated upon deconvolu(cid:415)on and single-exponen(cid:415)al fi(cid:427)ng (top panel shows the
+experimental trace associated with the decay in blue, the instrument response func(cid:415)on in red and the fi(cid:427)ng in black.
+The bo(cid:425)om panel shows the residuals associated with the fi(cid:427)ng).
+The similar behaviour observed in both 4 and 5 confirms that the singlet excited state S1 is not involve in
+the photoreac(cid:415)on. We then performed laser flash photolysis (LFP) studies to follow the fate of the triplet
+excited state expected to be populated upon intersystem crossing from the singlet.
+Supplementary Figure 8 and Supplementary Figure 9 compare the spectral evolu(cid:415)on obtained by LFP of 4
+and 5, respec(cid:415)vely, upon excita(cid:415)on at 355 nm. For both compounds the prompt spectra detected
+immediately a(cid:332)er the laser pulse are similar and show the ground-state bleaching below 400 nm, a sharp
+absorp(cid:415)on centred at 410 nm, and a broad absorp(cid:415)on in the red por(cid:415)on of the visible. In this regard, the
+absorp(cid:415)on spectrum of the triplet T1 (see Supplementary Figure 24) simulated by TD-DFT shows the
+presence of a broad absorp(cid:415)on above 500 nm as a characteris(cid:415)c spectral fingerprint. Thus, the transient
+S41
+.u.a
+/
+ytisnetnI
+l / nm
+
+--- Page 43 ---
+absorp(cid:415)on band above 500 nm in both 4 and 5 can be reasonably assigned to the triplet T1 of the iminium
+ion.
+0.06
+0.04
+0.02
+0.00
+-0.02
+400 500 600 700 800
+Supplementary Figure 8. Transient absorp(cid:415)on spectra (gate width = 50 ns) of 4 in CLF obtained by LFP (excita(cid:415)on at
+355 nm).
+Supplementary Figure 9. Transient absorp(cid:415)on spectra (gate width = 50 ns) of 5 (bo(cid:425)om) in CLF obtained by LFP
+(excita(cid:415)on at 355 nm).
+To further substan(cid:415)ate the a(cid:425)ribu(cid:415)on made, in the case of the model iminium 5 the decay of the
+absorp(cid:415)on at 700 nm was studied both under air-equilibrated condi(cid:415)ons and under N2. The kine(cid:415)c traces
+are reported in Supplementary Figure 10 and show that the life(cid:415)me of the transient-associated species
+becomes longer upon removal of dioxygen. This behaviour is characteris(cid:415)c of triplet excited states, thus
+confirming the assignment made. A life(cid:415)me of τ = 12 μs can be es(cid:415)mated for the T1 in 5 from a single-
+exponen(cid:415)al fi(cid:427)ng of the kine(cid:415)c trace under oxygen-free condi(cid:415)ons (Supplementary Figure 12).
+We next move to follow the fate of the triplet excited state in the two iminium 4 and 5 by monitoring the
+kine(cid:415)c traces at 700 nm. As it can be seen from Supplementary Figure 11 and Supplementary Figure 12,
+S42
+DOD
+50 ns
+200 ns
+1500 ns
+l / nm
+0.08
+0.06
+0.04
+0.02
+0.00
+-0.02
+400 500 600 700 800
+DOD
+0.1 ms
+4 ms
+8 ms
+15 ms
+l / nm
+
+--- Page 44 ---
+the decay of the transient absorp(cid:415)on at 700 nm is considerably faster in 4 than in 5. This is consistent with
+reac(cid:415)vity of the triplet T1 with the olefin fragment.
+0.03
+0.02
+0.01
+0.00
+-0.01
+0 1 2 3 4 5
+Supplementary Figure 10. Kine(cid:415)c traces at 700 nm obtained by LFP (excita(cid:415)on at 355 nm) of 5 in CLF under air-
+equilibrated condi(cid:415)ons and under N2.
+Supplementary Figure 11. Kine(cid:415)c traces at 700 nm obtained by LFP (excita(cid:415)on at 355 nm) of 4 in CLF under N2 with
+related fi(cid:427)ng.
+S43
+mn
+007@
+DOD
+under air
+under N2
+Time / ms
+0.020
+t1 = 170 ns (80%)
+0.015 t2 = 2890 ns (20%)
+0.010
+0.005
+0.000
+-0.005
+-1 0 1 2 3 4 5
+mn
+007@
+DOD
+Time / ms
+
+--- Page 45 ---
+0.020
+0.015
+0.010
+0.005
+0.000
+-0.005
+-0.010
+-20 0 20 40 60 80 100
+Supplementary Figure 12. Kine(cid:415)c traces at 700 nm obtained by LFP (excita(cid:415)on at 355 nm) of 5 in CLF under N2 with
+related fi(cid:427)ng.
+Interes(cid:415)ngly, the decay of the transient absorp(cid:415)on at 700 nm in the case of the iminium ion 4 is well
+described using a bi-exponen(cid:415)al func(cid:415)on (see fi(cid:427)ng in Supplementary Figure 11.). The first component
+((cid:415)me-constant of τ1 = 170 ns) can be presumably assigned to the reac(cid:415)on between the T1 state and the
+olefin leading to the forma(cid:415)on of the reac(cid:415)on intermediate Int-A (see Fig. 3c). For this la(cid:425)er, TD-DFT
+indeed predicts an absorp(cid:415)on band in the red por(cid:415)on of the visible spectrum but featuring lower
+absorp(cid:415)on coefficients than the triplet T1 (see Supplementary Figure 25). The subsequent event ((cid:415)me-
+constant of τ2 = 2890 ns) can be reasonably a(cid:425)ributed to the eventual forma(cid:415)on of the cycloadduct from
+the reac(cid:415)on intermediate (Int-A).
+S44
+mn
+007@
+DOD
+t = 12 ms
+Time / ms
+
+--- Page 46 ---
+Rate enhancement studies.
+A set of rate accelera(cid:415)on studies were carried out in presence of two different iridium complexes to further
+prove the involvement of the triplet state of iminium ion 4. If so, the sensi(cid:415)za(cid:415)on process via energy
+transfer should enhance the reac(cid:415)on rate of the [2 + 2] cycloaddi(cid:415)on.
+As shown in Supplementary Scheme 1, when the iridium photocatalysts were added to the reac(cid:415)on
+mixture, a great rate enhancement could be observed, reaching full conversion of the star(cid:415)ng material 1
+in just 1h. While the addi(cid:415)on of the Ir-1 complex yields the corresponding cycloadduct in considerably
+lower op(cid:415)cal purity compared to the use of the organocatalyst alone (Supplementary Scheme 2a), Ir-2
+provides the same rate accelera(cid:415)on with be(cid:425)er enan(cid:415)oselec(cid:415)vity (Supplementary Scheme 2b).
+This effect can be explained considering that the Ir-1 photosensi(cid:415)zer is able to ac(cid:415)vate substrate 1
+resul(cid:415)ng in background reac(cid:415)vity, lowering the enan(cid:415)omeric excess of the desired product. On the other
+hand, Ir-2 can probably discriminate be(cid:425)er between substrate 1 and iminium ion 4, resul(cid:415)ng in a more
+selec(cid:415)ve ac(cid:415)va(cid:415)on process via energy transfer.
+S45
+
+--- Page 47 ---
+Supplementary Scheme 1. Rate enhancement experiments with Ir-based triplet sensi(cid:415)zers. Conversion
+and yield values were determined by 1H NMR analysis on the reac(cid:415)on crude using CH2Br2 as internal
+standard.
+S46
+
+--- Page 48 ---
+Computational studies
+In the subsec(cid:415)ons that follow, we start with an account of our conforma(cid:415)onal explora(cid:415)on of the
+photocatalyst. We then provide a more detailed overview of the mechanism, and therea(cid:332)er speculate on
+likely sources for enan(cid:415)oselec(cid:415)vity based on the evidence we have collected from our calcula(cid:415)ons. All
+calcula(cid:415)ons are provided electronicallyErrore. Il segnalibro non è definito..
+Conforma(cid:415)onal explora(cid:415)on of the photocatalyst: Introduc(cid:415)on. To ensure mechanis(cid:415)c calcula(cid:415)ons on our
+substrate were run on its global minimum or at the very least on a conformer as close as possible to it, we
+performed a series of systema(cid:415)c conforma(cid:415)onal explora(cid:415)ons using the substrate itself, as well as Models
+1 and 2 shown in Supplementary Chart 1. We considered torsions around bonds marked A, B, C, and D
+(Supplementary Chart 1; le(cid:332)), as well as rota(cid:415)ons of the phenyl rings.
+Supplementary Chart 1. 4 (le(cid:332)) with four of its rotatable bonds explicitly marked, and reduced Models 1 and 2 used
+in its conforma(cid:415)onal explora(cid:415)on.
+2D Poten(cid:415)al Energy Scan of Torsions B and C on Model 1. To begin with, we performed a full relaxed two-
+dimensional poten(cid:415)al energy surface scan of torsions B) and C (360° × 360°) using Model 1 (Supplementary
+Chart 1). This systema(cid:415)c scan was carried out at the same level of theory discussed in the main text, but
+in the gas phase. Results shown inErrore. L'origine riferimento non è stata trovata. suggest an overall
+minimum at B = +90.3°, as measured from the iminium C to its closest phenyl C, and C = +72.0°, as
+measured from one phenyl C to the other.
+S47
+
+--- Page 49 ---
+Supplementary Figure 13. Relaxed 2D poten(cid:415)al energy surface scan about the complete torsions of dihedrals B and
+C in Model 1 (Supplementary Chart 1).
+Poten(cid:415)al Energy Scans of Torsion D on Model 1. Since bond D was seen to spontaneously rotate during
+the 2D scan shown in Supplementary Figure 13, we performed a full (360°) scan of its torsion at the three
+different minima in Supplementary Figure 13 to further clarify which rotamer was the most stable
+energe(cid:415)cally. The scans confirmed that the overall minimum for this torsion features the proton on the
+pyrrolidine N and the methine H trans to each other (cf. electronically provided calcula(cid:415)ons).
+Supplementary Figure 14. Relaxed 2D poten(cid:415)al energy surface scan about the 180°-torsions of the two phenyl
+dihedrals in Model 1 (Supplementary Chart 1).
+2D Poten(cid:415)al Energy Scan of Phenyl Torsions on Model 1. Having established the lowest-energy
+combina(cid:415)on of torsions B, C, and D, we finally turned to explore the preferred orienta(cid:415)on of the phenyl
+rings. In order to do so, we performed another relaxed 2D scan on Model 1, in which each phenyl was
+allowed to rotate 180°. Results are plo(cid:425)ed in Supplementary Figure 14, and it is from the overall minimum
+of this scan that we derive the final phenyl conforma(cid:415)on adopted in our calcula(cid:415)ons.
+Further Tests on Torsion C and Trial of the PCM Solva(cid:415)on Model using Model 2. Introducing PCM as a
+first candidate implicit solva(cid:415)on model20, we carried out further tests op(cid:415)mizing Model 2 (Supplementary
+Chart 1) at various geometries, differing in their star(cid:415)ng value of dihedral C. Results are shown in
+Supplementary Table 4, whereby it is once again confirmed that the torsion shows a lowest-energy
+minimum in the region of +67.7°C (compared to +72.0°C in the gas phase).
+Supplementary Table 4. Op(cid:415)miza(cid:415)on of Model 2 at different values of torsion C (Supplementary Chart 1).
+Min. Relative electronic energy kcal mol–1 Relative free energy kcal mol–1 Value of C (°)
+1 5.70 5.84 171.3
+2 5.29 5.27 –25.0
+3 4.31 5.23 138.9
+4 5.01 6.76 154.4
+5 0.00 0.00 67.7
+6 6.03 6.25 –48.3
+S48
+
+--- Page 50 ---
+Tests on Dihedral A using the Full Substrate and the PCM Solva(cid:415)on Model. Due to iminium-indole
+conjuga(cid:415)on, dihedral A can only either orient NH+ trans to the bulk of the indole ring, or cis (i.e., as
+represented in Supplementary Chart 1).
+Supplementary Table 5. Op(cid:415)miza(cid:415)on of 15 randomly selected representa(cid:415)ve isomers of the full substrate.
+Relative electronic Relative free
+Min. energy kcal mol–1 energy kcal mol–1 A as: Value of B (°) Value of C (°)
+CIS_+145.5_+168.6 5.39 7.73 CIS 145.5 168.6
+TRANS_+30.5_+148.0 7.40 9.54 TRANS 30.5 148
+CIS_+150.2_+146.0 4.78 7.62 CIS 150.2 146
+CIS_+153.1_+145.7 4.83 8.21 CIS 153.1 145.7
+TRANS_+24.9_+142.4 7.30 8.99 TRANS 24.9 142.4
+TRANS_+28.4_+142.3 7.33 7.99 TRANS 28.4 142.3
+TRANS_+105.4_+75.3 2.79 4.54 TRANS 105.4 75.3
+TRANS_+85.6_+74.2 3.35 10.31 TRANS 85.6 74.2
+CIS_+90.3_+72.6 0.00 0.00 CIS 90.3 72.6
+CIS_-147.7_-29.6 11.30 12.30 CIS –147.7 –29.6
+CIS_-87.4_-36.8 5.46 9.10 CIS –87.4 –36.8
+CIS_+121.4_-37.6 5.32 7.34 CIS 121.4 –37.6
+TRANS_+27.8_-46.6 11.91 13.04 TRANS 27.8 –46.6
+TRANS_+92.7_-47.3 7.14 11.87 TRANS 92.7 –47.3
+CIS_+103.4_-53.3 3.88 3.88 CIS 103.4 –53.3
+To assess which of the two orienta(cid:415)ons of A was preferred, we systema(cid:415)cally op(cid:415)mized the full substrate
+(with the olefin ‘ready’ for Si-face a(cid:425)ack), doing so with 15 randomly chosen ini(cid:415)al combina(cid:415)ons of B and
+C: 7 of these geometries had A in trans configura(cid:415)on and the other 8 in cis. Results in Supplementary Table
+4 suggest that cis configura(cid:415)ons are generally favored over their conforma(cid:415)onally closest trans
+counterpart. Again, the combina(cid:415)on of torsion C at +67.7°C and torsion B at +90.3° are confirmed to
+cons(cid:415)tute the most energe(cid:415)cally favorable conforma(cid:415)on (minimum labeled CIS_+90.3_+72.6).
+In fact, other combina(cid:415)ons of B and C were explored in this phase, and when it became clear that the PCM
+solva(cid:415)on model led to several convergence issues, it was replaced by the C-PCM method referenced
+earlier.
+Olefin Conforma(cid:415)on and Configura(cid:415)on of Iminium C=N bond. Remaining degrees of freedom were not
+explored systema(cid:415)cally, since:
+ a cis configura(cid:415)on of the subs(cid:415)tuents on the iminium C=N bond is sterically impossible; and
+ forma(cid:415)on of the first C–C bond between the olefin and the indole is only sterically possible with
+the amide carbonyl poin(cid:415)ng cis to the indole ring, as represented in Supplementary Chart 1.
+S49
+
+--- Page 51 ---
+Supplementary Figure 15. Representa(cid:415)on of the 4 (S0) to 4 (S1) excita(cid:415)on as the difference between its highest
+occupied and lowest unoccupied natural transi(cid:415)on orbitals (NTOs), squared. a): side view; b): view from above the
+Si face, with the indole ring parallel to the plane of the page. Orange areas show whereto the electron is excited;
+purple areas denote the hole le(cid:332) behind. Atom colors: grey, C; blue, N; red, O; white, H. Isosurface: 0.0004.
+The proposed mechanism: T1 is mainly accessible from S1 via T2. DFT and TD-DFT calcula(cid:415)ons show that
+the mainly HOMO-LUMO photoexcita(cid:415)on of the reactant 4 (S0) to S1 (Supplementary Figure 15; with the
+inner olefin ready to a(cid:425)ack the Si-face of the indole C=C) leads to relaxed intermediates 4 (S1+) or 4 (S1–),
+in which the iminium moiety has distorted, respec(cid:415)vely, by about +75.2° or –77.0° towards the Re or Si
+face of the indole ring (Supplementary Figure 16 panels a and b). 4 (S1+) is simply referred to as 4 (S1) in
+the main text, as we believe (vide infra) that the reac(cid:415)on is likelier to proceed from this intermediate.
+Absence of direct reac(cid:415)vity in 4 (S1+), despite electron density being slightly depleted in the inner olefin
+carbon (Supplementary Figure 15; only visible at isosurface 0.0004), is confirmed through a relaxed TD-
+DFT poten(cid:415)al energy surface scan forcing the forma(cid:415)on of the first C–C bond in the final 4-membered ring:
+this clearly shows there is no energe(cid:415)c minimum (Supplementary Figure 17; the scan had to be interrupted
+once the ground state func(cid:415)on began to be contaminated).
+Supplementary Figure 16. a), Structure of 4 (S1+). b), Structure of 4 (S1-). Atom colors in a) and b) are the same as in
+Supplementary Figure 13.
+S50
+
+--- Page 52 ---
+Supplementary Figure 17. TD-DFT relaxed poten(cid:415)al energy surface scans for C-C bond forma(cid:415)on in 4 (S1+), shown
+un(cid:415)l emergence of spin contamina(cid:415)on of in the perturbed S0 wavefunc(cid:415)on.
+Supplementary Figure 18. Rela(cid:415)ve electronic energy profile for the unconstrained TD-DFT minimiza(cid:415)on of 4 (S1+)
+upon photoexcita(cid:415)on of 4 (S0), viewed with out-of-plane iminium distor(cid:415)on towards the Re face as the reac(cid:415)on
+coordinate (in °): surfaces for S0, T1, and T2 are also shown for comparison; all other low-lying excited states are
+omi(cid:425)ed. The plot is the same as the one in Fig. 3a.
+While the singlet state of 4 alone cannot be responsible for reac(cid:415)vity (as is indeed confirmed by our own
+spectroscopic studies which detect a triplet), calcula(cid:415)ons also clearly show that direct S1–T1 crossing is
+una(cid:425)ainable during iminium distor(cid:415)on—see for example Supplementary Figure 18 and Fig. 3a showing all
+states during relaxa(cid:415)on from photoexcited 4 (S1) to relaxed 4 (S1+)—on top of being spin- and symmetry-
+forbidden (S1 and T1 transi(cid:415)ons are characterized by exactly the same orbitals). While there s(cid:415)ll remains a
+possibility of a S1–T1 intersystem crossing given the +1.66 kcal mol–1 gap, we therefore believe that in order
+to reach T1, S1 has easier access by transi(cid:415)ng through a third electronic state; our calcula(cid:415)ons suggest that
+this is in all likelihood T2, which (cf. again Supplementary Figure 18) is encountered roughly halfway along
+S51
+
+--- Page 53 ---
+the distor(cid:415)on paths from 4 (S1) to relaxed 4 (S1+) (and—we find—to relaxed 4 (S1–)). Similar types of S1–T2–
+T1 decay are indeed reported in the literature21.
+Supplementary Figure 19. Representa(cid:415)ons of (top) the S1 and (bo(cid:425)om) the T2 excited states at MECP1+, as electron-
+hole pairs (difference between squared NTOs). a), c): side view; b), d) right: view from above the Si face, with the
+indole ring parallel to the plane of the page. The iminium distor(cid:415)on dihedral is labeled and marked in green (units:
+degrees). Atom and orbital color codes are iden(cid:415)cal to Supplementary Figure 13. Isosurface: 0.001. The Figure is also
+reported in Fig. 3b.
+We were indeed able to locateErrore. Il segnalibro non è definito. the two S1–T2 MECPs encountered by 4 (S1) on the
+way to 4 (S1+) and 4 (S1-): we term these, respec(cid:415)vely, MECP1+ (simply referred to as MECP1 in the main
+text) and MECP1-, and show the former in Supplementary Figure 19 and Fig. 3b, wherein it is clear that the
+iminium is distorted at +37.4° towards the Re face (–42.3° in the Si-face-distorted MECP1-).
+S52
+
+--- Page 54 ---
+Supplementary Figure 20. Rela(cid:415)ve electronic energy profile (∆E) of the reac(cid:415)on in the segments 4 (S0) - 4 (S1+) -
+MECP1+ (blue) and 4 (S0) - 4 (S1–) - MECP1– (cyan), accessible immediately a(cid:332)er photoexcita(cid:415)on of 4 (S0) to 4 (S1) and
+its subsequent relaxa(cid:415)on. All energies are rela(cid:415)ve to 4 (S0) (∆E = 0.0), which is omi(cid:425)ed from the scale for clarity.
+Incidentally, while TD-DFT does not allow for precise quan(cid:415)fica(cid:415)on of spin-orbit coupling effects, it is safe
+to assume that due to the spin-prohibited nature of S1–T2 transi(cid:415)on only a frac(cid:415)on of all photoexcited 4
+(S1) molecules will directly cross to T2 as soon as they reach MECP1+ or MECP1-. On the other hand, it is
+likelier that most photoexcited 4 (S1) molecules have the (cid:415)me to reach relaxed 4 (S1+) or 4 (S1-)
+(Supplementary Figure 16) first, before either fluorescing to restore 4 (S0), or reclimbing up to MECP1+ or
+MECP1–. In this respect, if we focus on the rela(cid:415)ve electronic energy profile (∆E) for the 4 (S0) - 4 (S1+) -
+MECP1+ and 4 (S0) - 4 (S1–) - MECP1– segments of the reac(cid:415)on (blue and cyan, respec(cid:415)vely in Supplementary
+Figure 20), we note that while MECP1+ and MECP1– are roughly similar in electronic energy, 4 (S1+) is less
+stable than 4 (S1-), and has a more modest barrier to overcome to reach its corresponding MECP1+ (+10.6
+vs. +14.5 kcal mol–1): once compared to profiles for Re-face a(cid:425)ack (see Supplementary Figure 23), we
+speculate that this might be one of the sources of the observed enan(cid:415)oselec(cid:415)vity. Given the two different
+barriers, going forth from MECP1+ we have only chosen to explore the ‘+’ route (iminium distorted to Re
+face of the reac(cid:415)ve double bond of the indole moiety), and this is why we have dropped the + subscript
+from subsequent points and in the main text.
+Natural Transi(cid:415)on Orbital (NTO) representa(cid:415)ons13 of states S1 and T2 at crossing point MECP1+ in
+Supplementary Figure 19a and 19b, respec(cid:415)vely, show that while the excited electron localizes at almost
+iden(cid:415)cal spots, i.e., indole C2 and iminium N and C atoms, the hole le(cid:332) by the transi(cid:415)on (i.e., its ‘source’)
+differs significantly in shape and extent, spanning differently shaped areas of the indole and of the olefin.
+However, precise quan(cid:415)fica(cid:415)on of the spin-orbit coupling effects behind this event would require higher-
+level calcula(cid:415)ons.
+S53
+
+--- Page 55 ---
+Supplementary Figure 21. Representa(cid:415)ons of (top) the T2 and (bo(cid:425)om) the T1 excited states at MECP2, again
+represented as electron-hole pairs (difference between NTOs, squared). a), c): side view; b), d): view from above the
+Si face, with the indole ring parallel to the plane of the page. Color codes are iden(cid:415)cal to Supplementary Figure 19.
+Isosurface 0.004
+In any case, once MECP1+ has crossed to T2, further unconstrained TD-DFT reveals that, unlike S1, T2 readily
+encounters a crossing point with T1 once the iminium moiety has almost fully re-planarized: we label this
+second MECP MECP2, and illustrate it in Supplementary Figure 21. Squared NTO analysis of MECP2
+(contracted to a higher isosurface for be(cid:425)er visualiza(cid:415)on) show that the excited electron mainly
+delocalizes across the iminium carbon and indole C2.
+S54
+
+--- Page 56 ---
+Supplementary Figure 22. Final stages of cycloaddi(cid:415)on. (a) TS1. Top: {[α-SOMO]2 – [β-SUMO]2} (orange >0; purple
+<0); bo(cid:425)om: {[α-SOMO–1]2 – [β-SUMO+1]2} (green: > 0; dark blue < 0). (b) Int-A (orange: [α-SOMO]2; green: [α-
+SOMO–1]2). (c) Int-B, β – α spin difference (green: maximum α; dark blue: maximum β); (d) TS2, β – α spin difference
+(green: maximum α; dark blue: maximum β). Chosen isosurfaces: 0.004 in (a); 0.008 in (b); 0.01 in (c) and (d). In all
+panels: le(cid:332): side view; right: view from above the Si face, with the indole ring parallel to the plane of the page. Atom
+color codes are iden(cid:415)cal to Supplementary Figure 19.
+Anatomy of the [2+2] cycloaddi(cid:415)on. As shown in the main text (Fig. 3c), access to T1 finally paves the way
+for the forma(cid:415)on of the first C–C bond. While olefin involvement in MECP2 excita(cid:415)ons is negligible
+S55
+
+--- Page 57 ---
+(Supplementary Figure 21), a last bout of TD-DFT op(cid:415)miza(cid:415)on on T1 shows that MECP2 relaxes towards
+the TS for the first C–C bond forma(cid:415)on (TS1), with a T1 minimum 4 (T1) also theore(cid:415)cally accessible (cf.
+electronically provided calcula(cid:415)ons7,Errore. Il segnalibro non è definito.). Analysis of the two spin-α unpaired electrons
+in TS1 and their holes (Supplementary Figure 22a; top and bo(cid:425)om) clearly shows one unpaired spin-α
+electron located on the indole C2 ready to occupy a hole on the inner olefin carbon, and, conversely,
+another unpaired spin-α electron in the π system of the olefin ready to occupy a hole located on the indole
+C2.
+In the ensuing T1 intermediate Int-A with the first C–C bond fully formed (Supplementary Figure 22b), one
+can clearly recognize one unpaired electron on the external (former) olefin carbon, and another
+delocalized not just on the indole C3 but also across both iminium atoms. Spin inversion of one of these
+via MECP3 yields the open-shell S0 counterpart Int-B (Supplementary Figure 22c), in which the –CH2• tail
+rotates in an a(cid:425)empt to maximally an(cid:415)parallelize the now opposite-spin electrons (spin contamina(cid:415)on: S2
+= 0.1263). This step is predicted to be virtually barrierless (∆E = + 0.06 kcal mol–1; Supplementary Figure
+23b and ∆G = – 0.90 kcal mol–1; Supplementary Figure 23a and main text Fig. 3c).
+Forma(cid:415)on of the second and final C–C bond that completes the 4-membered ring transits through a
+second TS2 (Supplementary Figure 22d). We were intrigued to observe that the nega(cid:415)ve mode
+characterizing TS2 is not a C···C compression, but a rota(cid:415)on of –CH2• that orients its spin-α electron within
+equidistance of indole C3 and iminium C, over which unpaired spin-β electron is partly delocalized. We
+noted that since this electron is not confined to C3, one could well expect the –CH2• tail to a(cid:425)ack the
+iminium C to form a 5-membered ring just as much as it could a(cid:425)ack the indole C3 to form our main
+cycloadduct product 9. Our calcula(cid:415)ons fully support this picture: proceeding downhill from TS2, we
+indeed find that, concomitantly with S0 shell closure, there is a bifurca(cid:415)on on the poten(cid:415)al energy surface.
+One branch of the bifurca(cid:415)on leads to product 9, the other to a side product SP that features a 5-
+membered ring. Proper elucida(cid:415)on of this bifurca(cid:415)on (in essence, making sure that TS2 could directly
+op(cid:415)mize to both SP and 9) required repeatedly op(cid:415)mizing a geometry issued from the customary IRC
+calcula(cid:415)on on (open-shell singlet) TS2 (see Computa(cid:415)onal Details in General Informa(cid:415)on) with increasingly
+frequent Hessian evalua(cid:415)on and increasingly narrow op(cid:415)miza(cid:415)on steps.
+We should note that the side product is itself theore(cid:415)cally conver(cid:415)ble to 9 through a closed-shell TS3, but
+needs to overcome a free energy barrier of +19.7 kcal mol–1. Calcula(cid:415)ons to characterize SP and TS3 are
+provided electronically7,Errore. Il segnalibro non è definito..
+S56
+
+--- Page 58 ---
+Supplementary Figure 23. a Replot of the rela(cid:415)ve free energy profile (∆G) of the proposed reac(cid:415)on path for the [2+2]
+cycloaddi(cid:415)on, as shown in the main text (Fig. 3c) for Si-face olefin a(cid:425)ack (blue line), but this (cid:415)me with calculated
+energies for Re-face olefin a(cid:425)ack also added and displayed in red. We also add free energy profiles for the Si-4 (S1–)
+– Si-MECP1– segment (cyan) and that for the Re-4 (S1–) – Re-MECP1– (orange; see text for label details). b Exactly as in
+a, but with rela(cid:415)ve electronic energies (∆E); the segment shown in Supplementary Figure 20 is in fact a por(cid:415)on of
+this plot. All energies are rela(cid:415)ve to 4 (S0). Note that some points are missing from the Re-face a(cid:425)ack pathways, as
+they were not determined. c. Zoom of the energy profiles plo(cid:425)ed in panel b) to be(cid:425)er show the energy differences
+between the pathways leading to the enan(cid:415)omers of the desired product.
+Possible source of enan(cid:415)oselec(cid:415)vity. While not central to the aims of our inves(cid:415)ga(cid:415)on, we wondered if
+a further series of TD-DFT calcula(cid:415)ons—this (cid:415)me retracing key stages of a hypothe(cid:415)cal Re face a(cid:425)ack (i.e.,
+towards the enan(cid:415)omer that is experimentally unobserved)—could help us get closer to explaining the
+causes of the evident enan(cid:415)oselec(cid:415)vity that is observed experimentally. In Supplementary Figure 23a, we
+juxtapose the free energy profile for the Re a(cid:425)ack pathway next to the one previously shown in Fig. 3c
+(and show the corresponding electronic energy profile in Supplementary Figure 23b and its zoomed plot
+be(cid:425)er showing the profile up to MECP1).
+S57
+
+--- Page 59 ---
+While both profiles show that energies beyond MECP1 are generally slightly higher for the (disfavored) Re-
+face olefin a(cid:425)ack than for the (favored) Si-face a(cid:425)ack, the rela(cid:415)vely small gap between the two is not really
+consistent with the elevated enan(cid:415)opurity encountered experimentally.
+Rather, we speculate that such a clear enan(cid:415)opreference for Si-face a(cid:425)ack could arise from the four
+different electronic energy barriers (∆E; Supplementary Figure 23b) that each of the four post-excita(cid:415)on
+intermediates Si-4 (S1+), Si-4 (S1-), Re-4 (S1+), and Re-4 (S1-) has to overcome to reach its corresponding S1–
+T2 crossing point (i.e., Si-MECP1+, Si-MECP1–, Re-MECP1+ or Re-MECP1–). (Prefixes Re- / Si- indicate the indole
+C=C face undergoing olefin a(cid:425)ack, while—as men(cid:415)oned earlier—+ / – denote iminium distor(cid:415)on towards
+the Re or Si face, respec(cid:415)vely). Combined with the spin-prohibited nature of the S1–T2 transi(cid:415)on itself,
+these four different 4 (S1) – MECP1 barriers (vide infra)—which are a direct consequence of the asymmetry
+of the photocataly(cid:415)c moiety—are the highest in the reac(cid:415)on profile; this is likely to make the S1 to T2
+transi(cid:415)on the rate-determining step for the en(cid:415)re reac(cid:415)on, and even rela(cid:415)vely small energy differences
+at this step could have large effects on the stereochemistry of the final product.
+That said, if one assumes similarly sized spin-orbit coupling effects governing the S1–T2 crossing in all four
+scenarios (Re- vs. Si- a(cid:425)ack × Re- vs. Si- iminium distor(cid:415)on), and that a majority of photoexcited molecules
+won’t have the opportunity to cross directly to T2 but will first relax to 4 (S1) before returning to MECP1, it
+is encouraging to note that the lowest poten(cid:415)al energy barrier to overcome is precisely one of the two
+that paves the way for the observed product 9—i.e., the Si-4 (S1+) to Si-MECP1+ barrier at ∆E = +10.6 kcal
+mol–1. For comparison, the most favorable barrier on the path to the unobserved enan(cid:415)omer of 9 is the
+one from Re-4 (S1+) to Re-MECP1+, at +12.0 kcal mol–1.
+Further consolida(cid:415)on of this hypothesis requires quan(cid:415)fica(cid:415)on of S1–T2 spin-orbit coupling effects at Si-
+MECP1+, Si-MECP1–, Re-MECP1+, and Re-MECP1– in order to calculate overall transi(cid:415)on rates. Quan(cid:415)fica(cid:415)on
+of spin-orbit coupling effects in Gaussian16 is not directly possible at the TD-DFT level, either requiring a
+switch of so(cid:332)ware; or adop(cid:415)on of a computa(cid:415)onally demanding and tedious CASSCF approach; or reliance
+on an ad hoc Python wrapper22. For these reasons, and in light of our clear confirma(cid:415)on of T1 accessibility,
+we opted not to explore this issue further.
+S58
+
+--- Page 60 ---
+Supplementary Figure 24. Simulated spectrum of 4 (T1), directly issuing from the TD-DFT calcula(cid:415)on on
+the op(cid:415)mised geometry.
+S59
+
+--- Page 61 ---
+Ph N
+H N H Ph
+N
+Int-A
+O
+Supplementary Figure 25. Simulated spectrum of Int-A, directly issuing from the TD-DFT calcula(cid:415)on on
+the op(cid:415)mised geometry.
+S60
+
+--- Page 62 ---
+NMR Spectra
+1-(Pent-4-enoyl)-1H-indole-3-carbaldehyde 1.
+10.5 10.0 9.5 9.0 8.5 8.0 7.5 7.0 6.5 6.0 5.f51 (ppm5).0 4.5 4.0 3.5 3.0 2.5 2.0 1.5 1.0 0.5 0.0
+S61
+21.01
+69.0
+34.8 14.8
+00.1
+82.8
+00.1
+01.8
+40.1
+06.7 74.7 54.7 34.7
+50.2
+34.7 04.7 93.7
+3lCDC
+62.7 99.5 79.5 69.5 69.5 59.5
+69.0
+39.5 29.5 19.5 09.5 98.5
+10.2
+02.5 61.5 21.5 01.5 21.3 01.3
+31.2
+80.3 66.2 46.2
+11.2
+26.2 06.2
+
+--- Page 63 ---
+5-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM1.
+Br O
+H
+N
+O
+SM1
+S62
+
+--- Page 64 ---
+5-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM2.
+S63
+
+--- Page 65 ---
+S64
+
+--- Page 66 ---
+3-Formyl-1-(pent-4-enoyl)-1H-indole-5-carbonitrile SM3.
+S65
+
+--- Page 67 ---
+3-Formyl-1-(pent-4-enoyl)-1H-indol-5-yl 4-methylbenzenesulfonate SM4.
+S66
+
+--- Page 68 ---
+1-(Pent-4-enoyl)-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-1H-indole-3-carbaldehyde SM5.
+S67
+
+--- Page 69 ---
+1-(Pent-4-enoyl)-6-(trifluoromethyl)-1H-indole-3-carbaldehyde SM6.
+S68
+
+--- Page 70 ---
+S69
+
+--- Page 71 ---
+6-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM7.
+S70
+
+--- Page 72 ---
+6-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM8.
+S71
+
+--- Page 73 ---
+Methyl 3-formyl-1-(pent-4-enoyl)-1H-indole-6-carboxylate SM9.
+S72
+
+--- Page 74 ---
+6-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM10.
+S73
+
+--- Page 75 ---
+S74
+
+--- Page 76 ---
+4-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM11.
+S75
+
+--- Page 77 ---
+3-Formyl-1-(pent-4-enoyl)-1H-indole-4-carbonitrile SM12.
+S76
+
+--- Page 78 ---
+4-Fluoro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM13.
+S77
+
+--- Page 79 ---
+S78
+
+--- Page 80 ---
+4-Bromo-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM14.
+S79
+
+--- Page 81 ---
+7-Methyl-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM15.
+S80
+
+--- Page 82 ---
+7-Chloro-1-(pent-4-enoyl)-1H-indole-3-carbaldehyde SM16.
+O
+H
+N
+Cl
+O
+SM16
+S81
+
+--- Page 83 ---
+1-(Hex-5-enoyl)-1H-indole-3-carbaldehyde SM17.
+S82
+
+--- Page 84 ---
+(E)-1-(hex-4-enoyl)-1H-indole-3-carbaldehyde 7-(E).
+S83
+
+--- Page 85 ---
+(Z)-1-(hex-4-enoyl)-1H-indole-3-carbaldehyde 7-(Z).
+S84
+
+--- Page 86 ---
+1-(3,3-Dimethylpent-4-enoyl)-1H-indole-3-carbaldehyde SM18.
+S85
+
+--- Page 87 ---
+1-Pentanoyl-1H-indole-3-carbaldehyde SM19.
+S86
+
+--- Page 88 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-
+yl)acrylate 3.
+S87
+
+--- Page 89 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 10.
+S88
+
+--- Page 90 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 11.
+S89
+
+--- Page 91 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 12.
+S90
+
+--- Page 92 ---
+S91
+
+--- Page 93 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-cyano-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 13.
+S92
+
+--- Page 94 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-8-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 14.
+S93
+
+--- Page 95 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-8-cyano-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 15.
+S94
+
+--- Page 96 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-4-oxo-8-(tosyloxy)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 16.
+S95
+
+--- Page 97 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-8-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 17.
+S96
+
+--- Page 98 ---
+S97
+
+--- Page 99 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-4-oxo-8-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-1a,2,3,4-tetrahydro-
+1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)acrylate 18.
+S98
+
+--- Page 100 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 19.
+S99
+
+--- Page 101 ---
+Methyl (1aR,1a1R,9bS)-9b-((E)-3-ethoxy-3-oxoprop-1-en-1-yl)-4-oxo-1a,1a1,2,3,4,9b-hexahydro-1H-
+benzo[b]cyclobuta[hi]indolizine-7-carboxylate 20.
+S100
+
+--- Page 102 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-(trifluoromethyl)-4-oxo-1a,2,3,4-tetrahydro-1H-
+benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)acrylate 21.
+S101
+
+--- Page 103 ---
+S102
+
+--- Page 104 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 22.
+S103
+
+--- Page 105 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 23.
+S104
+
+--- Page 106 ---
+S105
+
+--- Page 107 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-6-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 24.
+S106
+
+--- Page 108 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-6-chloro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 25.
+S107
+
+--- Page 109 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-5-oxo-1a,1a1,2,3,4,5-hexahydro-5a-azabenzo[a]cyclobuta[cd]azulen-
+9b(1H)-yl)acrylate 26.
+S108
+
+--- Page 110 ---
+Ethyl (E)-3-((1aS,1a1R,9bS)-2,2-dimethyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 27.
+S109
+
+--- Page 111 ---
+Ethyl (E)-3-((1R,1aR,1a1R,9bR)-1-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-
+yl)acrylate 28.
+S110
+
+--- Page 112 ---
+(1R,2aR,7bS)-3-acetyl-1-butyl-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde 30.
+S111
+
+--- Page 113 ---
+(1S,2aR,7bS)-3-acetyl-1-butyl-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde 30’.
+Me
+O
+H
+N H
+Me
+O
+30'
+S112
+
+--- Page 114 ---
+(2aR,7bS)-3-acetyl-2a,3-dihydrospiro[cyclobuta[b]indole-1,1'-cyclohexane]-7b(2H)-carbaldehyde 31.
+S113
+
+--- Page 115 ---
+Methyl (1R,2aR,7bS)-3-acetyl-7b-formyl-2,2a,3,7b-tetrahydro-1H-cyclobuta[b]indole-1-carboxylate 32.
+S114
+
+--- Page 116 ---
+(1S,2aR,7bS)-3-acetyl-1-methyl-1-((R)-4-methyl-5-oxocyclohex-3-en-1-yl)-1,2,2a,3-tetrahydro-7bH-
+cyclobuta[b]indole-7b-carbaldehyde 33.
+S115
+
+--- Page 117 ---
+(1R,2aR,7bS)-3-acetyl-1-methyl-1-((R)-4-methyl-5-oxocyclohex-3-en-1-yl)-1,2,2a,3-tetrahydro-7bH-
+cyclobuta[b]indole-7b-carbaldehyde 33’.
+O
+Me
+O Me
+H
+N H
+Me
+O
+33'
+S116
+
+--- Page 118 ---
+(1aR,1a1R,9bS)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizine-9b(1a1H)-carboxylic acid
+34.
+O OH
+N
+O
+34
+S117
+
+--- Page 119 ---
+(1aR,1a1R,9bS)-9b-(2,2-dibromovinyl)-1,1a,1a1,2,3,9b-hexahydro-4H-benzo[b]cyclobuta[hi]indolizin-4-
+one 35’.
+S118
+
+--- Page 120 ---
+(1aR,1a1R,9bS)-9b-ethynyl-1,1a,1a1,2,3,9b-hexahydro-4H-benzo[b]cyclobuta[hi]indolizin-4-one 35.
+N
+O
+35
+S119
+
+--- Page 121 ---
+((1aR,1a1R,9bS)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)methanol 36.
+S120
+
+--- Page 122 ---
+Determination of the relative configuration through
+selective NOESY experiments
+NOE-NMR spectra of 28
+The stereocenters below marked with asterisks (*) were assigned by 1H―1H NOESY correla(cid:415)ons:
+HC
+HE HA
+HD HB
+Supplementary Figure 24. NMR spectrum (400 MHz in Toluene-d8) of 28.
+S121
+
+--- Page 123 ---
+HE
+28
+HA
+Supplementary Figure 25. NOE spectrum (400 MHz in Toluene d8) on satura(cid:415)on of HA.
+HB
+Supplementary Figure 26. NOE spectrum (400 MHz in Toluene d8) on satura(cid:415)on of HB.
+S122
+
+--- Page 124 ---
+HD
+HC
+Supplementary Figure 27. NOE spectrum (400 MHz in Toluene d8) on satura(cid:415)on of HC.
+S123
+
+--- Page 125 ---
+NOE-NMR spectra of 32
+The stereocenters below marked with asterisks (*) were assigned by 1H―1H NOESY correla(cid:415)ons:
+HE HD
+HC
+HA
+HB
+Supplementary Figure 28. NMR spectrum (400 MHz in CDCl3) of 32.
+S124
+
+--- Page 126 ---
+HE HB
+32
+HA
+Supplementary Figure 29. NOE spectrum (400 MHz in CDCl3) on satura(cid:415)on of HA.
+HC
+32
+HD
+Supplementary Figure 30. NOE spectrum (400 MHz in CDCl3) on satura(cid:415)on of HD.
+S125
+
+--- Page 127 ---
+NOE-NMR spectra of 30.
+The stereocenters below marked with asterisks (*) were assigned by 1H―1H NOESY correla(cid:415)ons:
+30
+HC HB
+HE
+HA
+HD
+Supplementary Figure 31. NMR spectrum (400 MHz in CDCl3) of 30.
+S126
+
+--- Page 128 ---
+Me
+O
+HE
+N * HA
+H
+H
+D
+H B C
+HE
+HE O Me
+2930
+HA
+Supplementary Figure 32. NOE spectrum (400 MHz in CDCl3) on satura(cid:415)on of HA.
+HC
+30
+HD
+Supplementary Figure 33. NOE spectrum (400 MHz in CDCl3) on satura(cid:415)on of HD.
+S127
+
+--- Page 129 ---
+NOE-NMR spectra of 30’.
+The stereocenter below marked with asterisk (*) was assigned by 1H―1H NOESY correla(cid:415)ons:
+30’
+HE
+HB HC
+HD
+HA
+Supplementary Figure 34. NMR spectra (400 MHz in CDCl3) of 30’.
+S128
+
+--- Page 130 ---
+HE HD
+30’
+HA
+Supplementary Figure 35. NOE spectrum (400 MHz in CDCl3) on satura(cid:415)on of HA.
+HE HA
+30’
+HD
+Supplementary Figure 36. NOE spectrum (400 MHz in CDCl3) on satura(cid:415)on of HD.
+S129
+
+--- Page 131 ---
+NOE-NMR spectra of 33.
+HA = 4.99 ppm HB = 2.58 ppm
+HC = 1.87 ppm HD = 0.93 ppm
+HE = 9.92 ppm
+33
+HD
+HE
+HC
+HB
+HA
+Supplementary Figure 37. NMR spectrum (400 MHz in CDCl3) of 33.
+S130
+
+--- Page 132 ---
+O
+Me
+O C(H3)D
+HE
+HE
+O
+N *
+M
+HA
+e
+H H B C HB
+3233
+HA
+Supplementary Figure 38. NOE spectrum (400 MHz in CDCl3) on satura(cid:415)on of HA.
+HC
+HA
+33
+HB
+Supplementary Figure 39. NOE spectrum (400 MHz in CDCl3) on satura(cid:415)on of HB.
+S131
+
+--- Page 133 ---
+HB
+HD
+33
+HC
+Supplementary Figure 40. NOE spectrum (400 MHz in CDCl3) on satura(cid:415)on of HC.
+HC
+33
+HD
+Supplementary Figure 41. NOE spectrum (400 MHz in CDCl3) on satura(cid:415)on of HD.
+S132
+
+--- Page 134 ---
+UPC2 traces
+Ethyl (E)-3-((1aR,1a1R,9bS)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-
+yl)acrylate 3.
+S133
+
+--- Page 135 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 10.
+S134
+
+--- Page 136 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 11.
+S135
+
+--- Page 137 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 12.
+S136
+
+--- Page 138 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-9-cyano-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 13.
+S137
+
+--- Page 139 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-8-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 14.
+S138
+
+--- Page 140 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-8-cyano-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 15.
+S139
+
+--- Page 141 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-4-oxo-8-(tosyloxy)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 16.
+S140
+
+--- Page 142 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-8-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 17.
+S141
+
+--- Page 143 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-4-oxo-8-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)-1a,2,3,4-tetrahydro-
+1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)acrylate 18.
+S142
+
+--- Page 144 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 19.
+S143
+
+--- Page 145 ---
+Methyl (1aR,1a1R,9bS)-9b-((E)-3-ethoxy-3-oxoprop-1-en-1-yl)-4-oxo-1a,1a1,2,3,4,9b-hexahydro-1H-
+benzo[b]cyclobuta[hi]indolizine-7-carboxylate 20.
+S144
+
+--- Page 146 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-(trifluoromethyl)-4-oxo-1a,2,3,4-tetrahydro-1H-
+benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)acrylate 21.
+S145
+
+--- Page 147 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-bromo-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 22.
+S146
+
+--- Page 148 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-7-fluoro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 23.
+S147
+
+--- Page 149 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-6-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 24.
+S148
+
+--- Page 150 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-6-chloro-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 25.
+S149
+
+--- Page 151 ---
+Ethyl (E)-3-((1aR,1a1R,9bS)-5-oxo-1a,1a1,2,3,4,5-hexahydro-5a-azabenzo[a]cyclobuta[cd]azulen-
+9b(1H)-yl)acrylate 26.
+S150
+
+--- Page 152 ---
+Ethyl (E)-3-((1aS,1a1R,9bS)-2,2-dimethyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-
+9b(1a1H)-yl)acrylate 27.
+S151
+
+--- Page 153 ---
+Ethyl (E)-3-((1R,1aR,1a1R,9bR)-1-methyl-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-
+yl)acrylate 28.
+28
+S152
+
+--- Page 154 ---
+(1R,2aR,7bS)-3-acetyl-1-butyl-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde 30.
+30
+S153
+
+--- Page 155 ---
+(1S,2aR,7bS)-3-acetyl-1-butyl-1,2,2a,3-tetrahydro-7bH-cyclobuta[b]indole-7b-carbaldehyde 30’.
+Me
+O
+H
+N H
+Me
+O
+2390'’
+S154
+
+--- Page 156 ---
+(2aR,7bS)-3-acetyl-2a,3-dihydrospiro[cyclobuta[b]indole-1,1'-cyclohexane]-7b(2H)-carbaldehyde 31.
+31
+S155
+
+--- Page 157 ---
+Methyl (1R,2aR,7bS)-3-acetyl-7b-formyl-2,2a,3,7b-tetrahydro-1H-cyclobuta[b]indole-1-carboxylate 32.
+32
+S156
+
+--- Page 158 ---
+(1aR,1a1R,9bS)-4-oxo-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizine-9b(1a1H)-carboxylic acid
+34.
+34
+S157
+
+--- Page 159 ---
+(1aR,1a1R,9bS)-9b-(2,2-dibromovinyl)-1,1a,1a1,2,3,9b-hexahydro-4H-benzo[b]cyclobuta[hi]indolizin-4-
+one 35’.
+35’
+S158
+
+--- Page 160 ---
+(1aR,1a1R,9bS)-9b-ethynyl-1,1a,1a1,2,3,9b-hexahydro-4H-benzo[b]cyclobuta[hi]indolizin-4-one 35.
+35
+S159
+
+--- Page 161 ---
+((1aR,1a1R,9bS)-1a,2,3,4-tetrahydro-1H-benzo[b]cyclobuta[hi]indolizin-9b(1a1H)-yl)methanol 36.
+36
+S160
+
+--- Page 162 ---
+References
+1 Huifeng, Y., Huayin, H., Guangling, B., Hua, Z., Fangling, L., Ling S. Enan(cid:415)oselec(cid:415)vity switch controlled by N,N′-di- or
+N,N,N′,N′-tetra-subs(cid:415)tuted chiral thiophosphorodiamide ligands, structural rela(cid:415)ves of thioureas, in cataly(cid:415)c
+addi(cid:415)ons of diethylzinc to aldehydes Tetrahedron Asymmetry, 25, 170–180 (2014).
+2 Speckmeier, E., Fischer, T. G., Zeitler, K. A Toolbox Approach To Construct Broadly Applicable Metal-Free Catalysts
+for Photoredox Chemistry: Deliberate Tuning of Redox Poten(cid:415)als and Importance of Halogens in Donor–Acceptor
+Cyanoarenes J. Am. Chem. Soc. 140, 15353–15365 (2018).
+3 Bauernschmi(cid:425), R., Ahlrichs R. Treatment of electronic excita(cid:415)ons within the adiaba(cid:415)c approxima(cid:415)on of (cid:415)me
+dependent density func(cid:415)onal theory Chemical Physics Le(cid:425)ers 256, 454–464 (1996).
+4 Scalmani, G., Frisch M. J., Mennucci, B., Tomasi J., Cammi; R., Barone V. Geometries and proper(cid:415)es of excited states
+in the gas phase and in solu(cid:415)on: Theory and applica(cid:415)on of a (cid:415)me-dependent density func(cid:415)onal theory polarizable
+con(cid:415)nuum model J. Chem. Phys. 124, 094107 (2006).
+5 Gaussian 16, Revision C.02, Frisch, M. J.; Trucks, G. W.; Schlegel, H. B.; Scuseria, G. E.; Robb, M. A.; Cheeseman, J.
+R.; Scalmani, G.; Barone, V.; Petersson, G. A.; Nakatsuji, H.; Li, X.; Caricato, M.; Marenich, A. V.; Bloino, J.; Janesko, B.
+G.; Gomperts, R.; Mennucci, B.; Hratchian, H. P.; Or(cid:415)z, J. V.; Izmaylov, A. F.; Sonnenberg, J. L.; Williams-Young, D.;
+Ding, F.; Lipparini, F.; Egidi, F.; Goings, J.; Peng, B.; Petrone, A.; Henderson, T.; Ranasinghe, D.; Zakrzewski, V. G.; Gao,
+J.; Rega, N.; Zheng, G.; Liang, W.; Hada, M.; Ehara, M.; Toyota, K.; Fukuda, R.; Hasegawa, J.; Ishida, M.; Nakajima, T.;
+Honda, Y.; Kitao, O.; Nakai, H.; Vreven, T.; Throssell, K.; Montgomery, J. A., Jr.; Peralta, J. E.; Ogliaro, F.; Bearpark, M.
+J.; Heyd, J. J.; Brothers, E. N.; Kudin, K. N.; Staroverov, V. N.; Keith, T. A.; Kobayashi, R.; Normand, J.; Raghavachari, K.;
+Rendell, A. P.; Burant, J. C.; Iyengar, S. S.; Tomasi, J.; Cossi, M.; Millam, J. M.; Klene, M.; Adamo, C.; Cammi, R.;
+Ochterski, J. W.; Mar(cid:415)n, R. L.; Morokuma, K.; Farkas, O.; Foresman, J. B.; Fox, D. J. Gaussian, Inc., Wallingford CT, 2016.
+6 Chaia, J.-D., Head-Gordon M. Long-range corrected hybrid density func(cid:415)onals with damped atom–atom dispersion
+correc(cid:415)ons Phys. Chem. Chem. Phys. 10, 6615–6620 (2008).
+7 Álvarez-Moreno, M., de Graaf, C. López, N., Maseras F., Poblet, J. M., Bo, C. Managing the Computa(cid:415)onal Chemistry
+Big Data Problem: The ioChem-BD Pla(cid:414)orm J. Chem. Inf. Model. 55, 95–103 (2015).
+8 Cossi, M., Rega, N., Scalmani, G., Barone, V. Energies, Structures, and Electronic Proper(cid:415)es of Molecules in Solu(cid:415)on
+with the C-PCM Solva(cid:415)on Model J. Comput. Chem 24, 669–681 (2003).
+9 Bacskay, G. B. A quadra(cid:415)cally convergent Hartree—Fock (QC-SCF) method. Applica(cid:415)on to closed shell systems
+Chemical Physics 61, 385-404 (1981).
+10 Peng, C., Schlegel H. B. Combining Synchronous Transit and Quasi-Newton Methods to Find Transi(cid:415)on States Israel
+Journal of Chemistry 33, 449-454 (1993).
+11 Fukui, K. The path of chemical reac(cid:415)ons - the IRC approach Acc. Chem. Res. 14, 363–368 (1981).
+12 Harvey, J. N., Aschi, M., Schwarz, H., Koch W. The singlet and triplet states of phenyl ca(cid:415)on. A hybrid approach for
+loca(cid:415)ng minimum energy crossing points between non-interac(cid:415)ng poten(cid:415)al energy surfaces Theor Chem Acc 99, 95–
+99 (1998).
+13 Mar(cid:415)n, R. L. Natural transi(cid:415)on orbitals J. Chem. Phys. 118, 4775–4777 (2003).
+14 The PyMOL Molecular Graphics System, Version 3.0 Schrödinger, LLC.
+15 a) Chen, W., Xia, Y., Lin, L., Yuan, X., Guo, S., Liu, X., Feng X. Asymmetric Synthesis of Furo[3,4-b]indoles by Cataly(cid:415)c
+[3+2] Cycloaddi(cid:415)on of Indoles with Epoxides. Chem. Eur. J. 21, 15104–15107 (2015). b) Muratore, M. E., Holloway, C.
+A., Pilling, A. W., Storer, R. I., Trevi(cid:425), G., Dixon, D. J. Enan(cid:415)oselec(cid:415)ve Brønsted Acid-Catalyzed N-Acyliminium
+Cycliza(cid:415)on Cascades J. Am. Chem. Soc. 131, 10796–10797 (2009).
+16 Umehara, A., Ueda, H., Tokuyama, H. Condensa(cid:415)on of Carboxylic Acids with Non-Nucleophilic N-Heterocycles and
+Anilides Using Boc2O. J. Org. Chem. 81, 11444–11453 (2016).
+17 Palomo, E., Sharma, A. K., Wang, Z., Jiang, L., Maseras, F., Suero, M. G. Genera(cid:415)ng Fischer-Type Rh-Carbenes with
+Rh-Carbynoids J. Am. Chem. Soc. 145 4975–4981 (2023).
+18 Brimioulle, R., Bauer, A., Bach, T. Enan(cid:415)oselec(cid:415)ve Lewis Acid Catalysis in Intramolecular [2 + 2] Photocycloaddi(cid:415)on
+Reac(cid:415)ons: A Mechanis(cid:415)c Comparison between Representa(cid:415)ve Coumarin and Enone Substrates J. Am. Chem. Soc.
+137, 5170–5176 (2015).
+19 Onodera, K., Takashima, R., Suzuki, Y. Org. Le(cid:425). 23, 4197–4202 (2021).
+S161
+
+--- Page 163 ---
+20 Scalmani, G., Frisch, M. J. J. Chem. Phys. 132, 114110 (2010).
+21 Aizawa, N., Harabuchi, Y., Maeda, S., Pu, Y.-J. Kine(cid:415)c predic(cid:415)on of reverse intersystem crossing in organic donor–
+acceptor molecules. Nat Commun 11, 3909 (2020).
+22 Gao, X., Bai, S., Fazzi, D., Niehaus, T., Barba(cid:427), M., Thiel, W. Evalua(cid:415)on of Spin-Orbit Couplings with Linear-Response
+Time-Dependent Density Func(cid:415)onal Methods. J. Chem. Theory Comput. 13, 515–524 (2017).
+S162

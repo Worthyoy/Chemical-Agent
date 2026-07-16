@@ -74,6 +74,17 @@ def has_valid_condition(reaction: dict) -> bool:
     for key, value in conditions.items():
         if value and isinstance(value, str) and value.strip().lower() not in ('not specified', 'null', 'n/a', ''):
             return True
+        if isinstance(value, list):
+            for item in value:
+                if not isinstance(item, dict):
+                    continue
+                item_value = item.get("value")
+                if (
+                    item_value is not None
+                    and str(item_value).strip().lower()
+                    not in ('not specified', 'null', 'n/a', '')
+                ):
+                    return True
     return False
 
 
@@ -300,8 +311,37 @@ def batch_llm_parse(names: List[str], client: OpenAI, model: str = "gpt-5-mini",
 def classify_and_enrich_reactions(reactions: List[dict], client: OpenAI,
                                    model: str = "gpt-5-mini",
                                    batch_size: int = 50,
-                                   cache_path: Optional[Path] = None
+                                   cache_path: Optional[Path] = None,
+                                   allow_llm: bool = True,
                                    ) -> Tuple[List[dict], List[dict]]:
+    from compound_structure_parser import enrich_reactions_with_structure
+
+    print("[Step 1] Enriching reactions with shared compound structure cache...")
+    enrich_reactions_with_structure(
+        reactions,
+        cache_path=cache_path,
+        client=client,
+        model=model,
+        batch_size=batch_size,
+        roles=("substrates", "products"),
+        allow_llm=allow_llm,
+    )
+
+    print("[Step 2] Classifying reactions for Q1/Q2...")
+    Q1_reactions = []
+    Q2_reactions = []
+    for reaction in reactions:
+        if not has_valid_condition(reaction):
+            continue
+        Q1_reactions.append(reaction)
+        has_parseable_substrate = any(
+            substrate.get("parseable") and substrate.get("scaffold")
+            for substrate in reaction.get("substrates", [])
+        )
+        if has_parseable_substrate:
+            Q2_reactions.append(reaction)
+    return Q1_reactions, Q2_reactions
+
     """
     Q1: 有有效反应条件的反应（用于：给定底物名称 -> 预测最佳条件）
     Q2: Q1 的子集，至少一个底物可解析为骨架+取代基（用于：给定骨架+条件 -> 预测最佳取代基）
@@ -417,10 +457,12 @@ def split_reactions(input_path="filtered/merged_filtered_reactions.json",
                     model: str = "gpt-5-mini",
                     batch_size: int = 30,
                     api_key: Optional[str] = None,
-                    base_url: str = "https://hk.xty.app/v1"):
+                    base_url: str = "https://hk.xty.app/v1",
+                    allow_llm: bool = True):
     input_path = Path(input_path)
     output_dir = Path(output_dir)
     cache_path = Path(cache_path) if cache_path else output_dir / "substrate_parse_cache.json"
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     with open(input_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -428,25 +470,34 @@ def split_reactions(input_path="filtered/merged_filtered_reactions.json",
     reactions = data.get('reactions', [])
     print(f"Total reactions: {len(reactions)}")
 
-    if not api_key:
+    if allow_llm and not api_key:
         if dotenv_values is None:
             print("ERROR: python-dotenv is required. Install with: pip install python-dotenv")
             return
         env_values = dotenv_values(DOTENV_PATH)
         api_key = env_values.get("OPENAI_API_KEY")
 
-    if not api_key:
+    if allow_llm and not api_key:
         print("ERROR: set OPENAI_API_KEY in .env")
         print(f"  .env path: {DOTENV_PATH}")
         return
 
-    client = OpenAI(
-        base_url=base_url,
-        api_key=api_key
+    client = (
+        OpenAI(
+            base_url=base_url,
+            api_key=api_key
+        )
+        if allow_llm
+        else None
     )
 
     Q1_reactions, Q2_reactions = classify_and_enrich_reactions(
-        reactions, client, model=model, batch_size=batch_size, cache_path=cache_path
+        reactions,
+        client,
+        model=model,
+        batch_size=batch_size,
+        cache_path=cache_path,
+        allow_llm=allow_llm,
     )
 
     # 统计
@@ -485,6 +536,33 @@ def split_reactions(input_path="filtered/merged_filtered_reactions.json",
     with open(Q2_output, 'w', encoding='utf-8') as f:
         json.dump(Q2_reactions, f, ensure_ascii=False, indent=2)
 
+    missing_substrate_structure_count = 0
+    missing_product_scaffold_count = 0
+    for reaction in Q1_reactions:
+        for substrate in reaction.get("substrates", []) or []:
+            if not substrate.get("scaffold"):
+                missing_substrate_structure_count += 1
+        for product in reaction.get("products", []) or []:
+            if not product.get("scaffold"):
+                missing_product_scaffold_count += 1
+
+    report_output = output_dir / "q1q2_split_report.json"
+    split_report = {
+        "input": str(input_path),
+        "output_dir": str(output_dir),
+        "cache": str(cache_path),
+        "model": model,
+        "llm_enabled": bool(allow_llm),
+        "cache_only": not bool(allow_llm),
+        "total_reactions": len(reactions),
+        "q1_reactions": len(Q1_reactions),
+        "q2_reactions": len(Q2_reactions),
+        "missing_substrate_structure_count": missing_substrate_structure_count,
+        "missing_product_scaffold_count": missing_product_scaffold_count,
+    }
+    with open(report_output, "w", encoding="utf-8") as f:
+        json.dump(split_report, f, ensure_ascii=False, indent=2)
+
     # 报告
     print()
     print("=" * 60)
@@ -515,6 +593,7 @@ def split_reactions(input_path="filtered/merged_filtered_reactions.json",
     print(f"Output files:")
     print(f"  Q1:    {Q1_output}")
     print(f"  Q2:    {Q2_output}")
+    print(f"  Report:{report_output}")
     print(f"  Cache: {cache_path}")
     print("=" * 60)
     return {
@@ -522,10 +601,15 @@ def split_reactions(input_path="filtered/merged_filtered_reactions.json",
         "output_dir": str(output_dir),
         "q1_output": str(Q1_output),
         "q2_output": str(Q2_output),
+        "report_output": str(report_output),
         "cache": str(cache_path),
+        "llm_enabled": bool(allow_llm),
+        "cache_only": not bool(allow_llm),
         "total_reactions": len(reactions),
         "q1_reactions": len(Q1_reactions),
         "q2_reactions": len(Q2_reactions),
+        "missing_substrate_structure_count": missing_substrate_structure_count,
+        "missing_product_scaffold_count": missing_product_scaffold_count,
     }
 
 

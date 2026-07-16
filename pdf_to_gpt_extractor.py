@@ -50,18 +50,27 @@ Rules
 - Extract every qualifying reaction entry in source order with no omissions. Only use reported data.
 - Different ee/yield = separate records even if substrates match.
 - Keep numbers exactly as written (units, significant figures, ranges).
-  Use null for missing yield, ee, or er fields.
-- All reagents must appear in one of: catalysts, additives, reagents. Do NOT drop any.
+  Use null for missing yield, ee, er, or dr fields.
+- Classify catalyst complexes/precatalysts under catalysts, ligands under ligands, and all other reacting materials under other_components. Do NOT drop any.
+- ligands items contain name only for single-step reactions; multi-step ligands contain name and step only. Never put ligand loading in ligands.
 
 Coverage-first extraction:
 Internally identify every extractable paragraph/prose reaction entry in source order before writing the final JSON.
 
+Page provenance:
+- Every reaction object must include "source_pages": [positive PDF page numbers].
+- Read page numbers only from the "--- Page N ---" markers surrounding the specific reaction entry in source_text.
+- Include only pages containing concrete reaction entry evidence: its specific substrate/product, operation, or reported result.
+- Do not include a General Procedure definition page merely because GP context was supplied or referenced.
+- If the concrete entry spans pages, include every evidence page once in ascending order.
+- If the page cannot be determined, use "source_pages": []. Never invent a page number.
+
 An extractable prose reaction entry is any sentence or paragraph that contains:
 - a specific compound/product/substrate name, label, code, or symbol, and
 - wording indicating preparation, synthesis, isolation, furnishing, affording, obtaining, or reaction under/according to a procedure, and
-- at least one reported target value: isolated yield, ee, or er.
+- at least one reported target value: isolated yield, ee, er, or dr.
 
-Yield alone is sufficient. ee and er are optional.
+Yield alone is sufficient. ee, er, and dr are optional.
 
 For a consecutive series of similar product entries, extract every entry in order.
 Do not skip middle entries in a repeated series.
@@ -71,15 +80,38 @@ Product characterization entries are valid reaction entries when they report a s
 Ignore NMR, HRMS, HPLC, spectra, exact mass, melting point, optical rotation, and analytical details after the yield; they are not separate reactions.
 
 General Procedure text is context only:
-- Do not output a standalone reaction for the GP paragraph itself unless it reports a specific product/substrate and yield, ee, or er.
+- Do not output a standalone reaction for the GP paragraph itself unless it reports a specific product/substrate and yield, ee, er, or dr.
 - Use GP text only to fill shared reagents, catalysts, solvents, and conditions for later prose entries that reference that procedure.
 
+Multi-step reactions and General Procedures:
+- Before extracting GP-referenced entries, determine whether the referenced GP describes one chemical transformation or multiple sequential chemical transformations. Do not output this decision separately.
+- A multi-step reaction or GP contains two or more sequential chemical transformations leading to one final reported product/result. Keep that sequence as ONE reaction object.
+- A synthetic step requires a chemical transformation, not just an operational step.
+- Do not count workup or purification as a synthetic step: quench, extraction, washing, drying, concentration, filtration, and chromatography are not separate steps unless the source explicitly performs another chemical transformation.
+- Expressions such as "over two steps", "used directly in the next step", "without isolation/further purification", or "the crude product/residue was subjected to another transformation" are evidence to review; they are not sufficient by themselves unless the text describes multiple chemical transformations.
+- If a supplied GP is multi-step, every concrete entry that references that GP must inherit the multi-step schema.
+- For a multi-step reaction only, add integer "step_count" and integer "step" to every item in substrates, products, catalysts, ligands, and other_components.
+- If any substrate, product, catalyst, additive, reagent, intermediate, or condition uses a step field, the reaction must include integer "step_count".
+- Assign each chemical to the step where it is actually used or formed. Do not flatten chemicals from different steps into an unlabelled list.
+- For multi-step conditions, every condition field must be a list of {"step": N, "value": "reported value"} objects. Preserve separate solvent, volume, atmosphere, light source, wavelength, temperature, and time values by step.
+- Normalize condition fields by meaning:
+  * solvent records solvent identity only, without quantities, equivalents, or procedural roles.
+  * volume records solvent quantities and short role notes for separate portions, addition solutions, suspensions, dilutions, or reaction mixtures.
+  * When the same solvent appears in multiple portions in one synthetic step, keep the solvent identity once and keep the distinct quantities/purposes in volume.
+  * Do not duplicate the same quantity in both solvent and volume.
+  * Exclude workup, extraction, washing, and chromatography solvents from reaction conditions unless the text uses them as the reaction medium.
+- Add "intermediates" for multi-step reactions. Include an intermediate only when the source explicitly gives its chemical name or symbol/code. Each intermediate must contain name, symbol, amount, produced_in_step, and consumed_in_step.
+- Do not invent an intermediate identity from phrases such as "crude product", "residue obtained above", or "corresponding intermediate". If no intermediate is explicitly identified, use "intermediates": [].
+- An intermediate belongs only in intermediates; do not duplicate it in substrates or products.
+- Keep an overall reported yield exactly scoped as written, for example "66% yield over two steps" rather than "66%".
+- Single-step reactions must keep the ordinary schema below: do not add step_count, step annotations, or intermediates.
+
 Do NOT extract from tables, optimization tables, screening tables, entry tables, figure captions, or tabular lists.
-Ignore table content completely even if it contains yield, ee, er, conditions, substrates, or entry numbers.
+Ignore table content completely even if it contains yield, ee, er, dr, conditions, substrates, or entry numbers.
 
 General Procedure entries
-Many SI docs have a GP paragraph followed by individual entries specifying only compound, yield, ee/er, and sometimes time.
-Product characterization entries after a GP are separate reaction entries when they report a specific product and isolated yield, ee, or er.
+Many SI docs have a GP paragraph followed by individual entries specifying only compound, yield, ee/er/dr, and sometimes time.
+Product characterization entries after a GP are separate reaction entries when they report a specific product and isolated yield, ee, er, or dr.
 1. conditions — Entry-specified reagents/solvents/conditions ALWAYS override GP conditions.
 2. substrates — Use GP substrate symbols/ranges. Do NOT set substrates = products.
    For compound-range GPs (e.g. "1a-19a"): use general class name (e.g. "alkene derivative"), keep symbol.
@@ -89,8 +121,21 @@ Product characterization entries after a GP are separate reaction entries when t
 4. When text references a GP (e.g. "Following GP5", "Following General Procedure A"), use that GP's scope in id.
    DO NOT use "SubstrateScope-Entry{N}" for GP-referenced reactions.
 5. For characterization-only product entries, infer substrates/reagents/conditions from the referenced GP context.
-   The product header supplies products[].name/symbol only; it must never be copied into substrates[].
-   If the exact substrate identity is not stated in the entry, use the GP's generic substrate class/range instead of guessing.
+   The product header supplies products[].name/symbol only; the complete product name must never be copied into substrates[].
+
+Generic substrate name completion:
+- A GP substrate such as "aniline", "amine", "substrate", or another generic class can be a placeholder shared by many concrete entries.
+- Resolve a generic substrate with this strict priority: (1) a specific name stated in the current entry, (2) a specific name supplied by the same-paper name registry, then (3) a high-confidence one-to-one inference from the reported product name.
+- Product-based completion is allowed only when the original substrate name is generic and the product unambiguously preserves the substrate-derived group. Do not apply this rule to an already specific substrate name.
+- Never copy the complete product name into substrates[]. Derive only the corresponding substrate identity; if more than one substrate could give the product, keep the generic name.
+- Preserve symbol, amount, step, and role when completing a name.
+- For a high-confidence product-derived completion, write name as the specific substrate and also include original_name, resolution_source="product_name", resolution_method="gp_product_to_substrate_mapping", resolution_confidence="high", and resolution_evidence={"product_name":"the exact reported product name"}.
+- If the relationship is absent, ambiguous, or low-confidence, keep the generic substrate name. Do not guess.
+
+Product-derived completion examples (the product name is evidence, not the substrate value):
+1. Generic substrate "aniline" plus product "(Z)-N-(2-bromophenyl)-N,2-dimethylbut-2-enamide" -> substrate name "2-bromoaniline".
+2. Generic substrate "aniline" plus product "(Z)-N-(6-bromo-2,2-difluorobenzo[d][1,3]dioxol-5-yl)-N,2-dimethylbut-2-enamide" -> substrate name "6-bromo-2,2-difluorobenzo[d][1,3]dioxol-5-amine".
+3. Generic substrate "aniline" plus product "(Z)-N-(2-bromo-4-methoxyphenyl)-N,2-dimethylbut-2-enamide" -> substrate name "2-bromo-4-methoxyaniline".
 
 Reaction type
 - Include reaction_type for every record.
@@ -106,14 +151,32 @@ Never include coverage lists, explanations, headings, bullets, prose prefaces, M
 For normal extraction, each entry:
 {
   "id": "...",
+  "source_pages": [1],
   "reaction_type": "...",
-  "substrates": [{"name": "...", "symbol": "...", "amount": "..."}],
+  "substrates": [{"name": "...", "symbol": "...", "amount": "...", "original_name": "... only when resolved from a generic name", "resolution_source": "product_name only when applicable", "resolution_method": "gp_product_to_substrate_mapping only when applicable", "resolution_confidence": "high only when applicable", "resolution_evidence": {"product_name": "exact reported product name"}}],
   "products": [{"name": "...", "symbol": "...", "amount": "..."}],
   "catalysts": [{"name": "...", "symbol": "...", "amount": "..."}],
-  "additives": [{"name": "...", "symbol": "...", "amount": "..."}],
-  "reagents": [{"name": "...", "symbol": "...", "amount": "..."}],
-  "conditions": {"solvent": "...", "volume": "...", "light source": "...", "wavelength": "...", "temperature": "...", "time": "..."},
-  "targets": {"yield": "...", "ee": "...%", "er": "..."}
+  "ligands": [{"name": "..."}],
+  "other_components": [{"name": "...", "symbol": "...", "amount": "..."}],
+  "conditions": {"solvent": "...", "volume": "...", "concentration": "...", "atmosphere": "...", "light_source": "...", "wavelength": "...", "temperature": "...", "time": "..."},
+  "targets": {"yield": "...", "ee": "...%", "er": "...", "dr": "..."}
+}
+
+For a multi-step entry, extend that object as follows:
+{
+  "step_count": 2,
+  "substrates": [{"name": "...", "symbol": "...", "amount": "...", "step": 1}],
+  "products": [{"name": "...", "symbol": "...", "amount": "...", "step": 2}],
+  "catalysts": [{"name": "...", "symbol": "...", "amount": "...", "step": 1}],
+  "ligands": [{"name": "...", "step": 1}],
+  "other_components": [{"name": "...", "symbol": "...", "amount": "...", "step": 2}],
+  "intermediates": [{"name": "...", "symbol": "...", "amount": "...", "produced_in_step": 1, "consumed_in_step": 2}],
+  "conditions": {
+    "solvent": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}],
+    "volume": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}],
+    "temperature": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}],
+    "time": [{"step": 1, "value": "..."}, {"step": 2, "value": "..."}]
+  }
 }
 
 name/symbol rules
@@ -124,9 +187,10 @@ name/symbol rules
   Example: Header="...cyclobutane-1-carbaldehyde (5b)", Results="aldehyde 5b [10.4 mg, ...]"
   → {"name": "...cyclobutane-1-carbaldehyde", "symbol": "5b", "amount": "10.4 mg"}
   NOT {"name": "aldehyde 5b", "symbol": "5b"}. Scan entire section for longest, most complete name.
-- Same rules apply to ALL fields: substrates, products, catalysts, additives, reagents.
+- Same name rules apply to substrates, products, catalysts, ligands, and other_components.
 - products[].amount = mass/volume ONLY (e.g. "511 mg"), NEVER yield.
-- yield/ee/er MUST be inside "targets", NOT top-level. Extract er when reported.
+- yield/ee/er/dr MUST be inside "targets", NOT top-level. Extract er and dr when explicitly reported.
+- Keep dr as the reported ratio: "91:9 dr" -> "91:9", "dr = 95:5" -> "95:5", and ">20:1 dr" -> ">20:1". Do not infer dr from de, an unlabeled ratio, or generic selectivity text.
 - Use null for unreported fields."""
     
     def __init__(self, api_key: Optional[str] = None,

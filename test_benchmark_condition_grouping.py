@@ -1,0 +1,239 @@
+from langgraph_workflow.benchmark_utils import (
+    _condition_grouping_signature,
+    _public_option_key,
+    generate_q1_benchmark_package,
+    generate_q2_benchmark_package,
+)
+
+
+def _group_key(condition_option):
+    return _public_option_key(_condition_grouping_signature(condition_option))
+
+
+def test_q2_condition_grouping_ignores_amount_punctuation_only():
+    left = {
+        "other_components": [
+            {"name": "SOCl2", "amount": "711 μL 9.75 mmol, 3.25 equiv."}
+        ]
+    }
+    right = {
+        "other_components": [
+            {"name": "SOCl2", "amount": "711 μL, 9.75 mmol, 3.25 equiv."}
+        ]
+    }
+    assert _group_key(left) == _group_key(right)
+
+
+def test_q2_condition_grouping_ignores_parentheses_around_condition_qualifier():
+    left = {
+        "conditions": {
+            "light_source": "Kessil lamp set at 50% of its maximum output power, 427 nm"
+        }
+    }
+    right = {
+        "conditions": {
+            "light_source": "Kessil lamp set at 50% of its maximum output power (427 nm)"
+        }
+    }
+    assert _group_key(left) == _group_key(right)
+
+
+def test_q2_condition_grouping_does_not_infer_missing_amount_tokens():
+    left = {
+        "catalysts": [
+            {"name": "Pd2(dba)3", "amount": "4.6 mg, 0.005 mmol, 5 mol%"}
+        ]
+    }
+    right = {
+        "catalysts": [
+            {"name": "Pd2(dba)3", "amount": "4.6 mg, 5 mol%"}
+        ]
+    }
+    assert _group_key(left) != _group_key(right)
+
+
+def _q2_reaction(reaction_id, variable_name, yield_value):
+    return {
+        "id": reaction_id,
+        "source_paper": "paper",
+        "source_modality": "text",
+        "reaction_type": "test reaction",
+        "substrates": [
+            {
+                "name": variable_name,
+                "scaffold": "benzaldehyde",
+                "substituents": [],
+            },
+            {
+                "name": "glycine",
+                "scaffold": "glycine",
+                "substituents": [],
+            },
+        ],
+        "products": [
+            {
+                "name": f"product from {variable_name}",
+                "scaffold": "amino alcohol",
+            }
+        ],
+        "catalysts": [{"name": "photocatalyst", "amount": "1 mol%"}],
+        "ligands": [],
+        "other_components": [],
+        "conditions": {"time": "12 h", "light_source": "photoreactor"},
+        "targets": {"yield": yield_value, "ee": None, "er": None},
+    }
+
+
+def test_q2_omits_conflicting_duplicate_variable_substrate_not_whole_question():
+    reactions = [
+        _q2_reaction("r1", "benzaldehyde", "91%"),
+        _q2_reaction("r2", "benzaldehyde", "92%"),
+        _q2_reaction("r3", "benzaldehyde", "90%"),
+        _q2_reaction("r4", "4-chlorobenzaldehyde", "88%"),
+        _q2_reaction("r5", "4-bromobenzaldehyde", "85%"),
+    ]
+
+    package = generate_q2_benchmark_package(reactions)
+    questions = package["benchmark"]
+    reviews = package["review_set"]
+
+    assert len(questions) == 1
+    assert questions[0]["option_count"] == 2
+    option_names = {
+        option["variable_substrate"]["name"]
+        for option in questions[0]["options"]
+    }
+    assert option_names == {"4-chlorobenzaldehyde", "4-bromobenzaldehyde"}
+    assert questions[0]["metadata_hidden"]["omitted_conflicting_duplicate_options"]
+
+    duplicate_reviews = [
+        review
+        for review in reviews
+        if review.get("reason") == "duplicate_variable_substrate_conflicting_results"
+    ]
+    assert len(duplicate_reviews) == 1
+    assert duplicate_reviews[0]["action"] == "omitted_conflicting_variable_substrate"
+
+
+def _q1_reaction(reaction_id, condition_name, yield_value):
+    return {
+        "id": reaction_id,
+        "source_paper": "paper",
+        "source_modality": "text",
+        "reaction_type": "test reaction",
+        "substrates": [
+            {
+                "name": "benzaldehyde",
+                "scaffold": "benzaldehyde",
+                "substituents": [],
+            }
+        ],
+        "products": [
+            {
+                "name": "(R)-1-phenylethanol",
+                "scaffold": "benzene",
+            }
+        ],
+        "catalysts": [],
+        "ligands": [],
+        "other_components": [],
+        "conditions": {"solvent": condition_name},
+        "targets": {"yield": yield_value, "ee": None, "er": None, "dr": None},
+    }
+
+
+def test_q1_omits_conflicting_duplicate_condition_not_whole_question():
+    reactions = [
+        _q1_reaction("r1", "condition A", "91%"),
+        _q1_reaction("r2", "condition A", "82%"),
+        _q1_reaction("r3", "condition B", "88%"),
+        _q1_reaction("r4", "condition C", "95%"),
+    ]
+
+    package = generate_q1_benchmark_package(reactions)
+
+    assert len(package["benchmark"]) == 1
+    question = package["benchmark"][0]
+    assert question["option_count"] == 2
+    assert {
+        option["conditions"]["solvent"] for option in question["options"]
+    } == {"condition B", "condition C"}
+    assert len(question["gold_option_ids"]) == 1
+    gold_option_id = question["gold_option_ids"][0]
+    gold_option = next(
+        option for option in question["options"] if option["option_id"] == gold_option_id
+    )
+    assert gold_option["conditions"]["solvent"] == "condition C"
+
+    omitted = question["metadata_hidden"]["omitted_conflicting_duplicate_options"]
+    assert len(omitted) == 1
+    assert omitted[0]["public_condition"]["conditions"]["solvent"] == "condition A"
+    assert omitted[0]["reaction_ids"] == ["r1", "r2"]
+
+    conflict_reviews = [
+        review
+        for review in package["review_set"]
+        if review.get("reason") == "duplicate_public_conditions_conflicting_results"
+    ]
+    assert len(conflict_reviews) == 1
+    assert conflict_reviews[0]["action"] == "omitted_conflicting_public_condition"
+
+
+def test_q1_conflict_removal_can_leave_too_few_distinct_conditions():
+    reactions = [
+        _q1_reaction("r1", "condition A", "91%"),
+        _q1_reaction("r2", "condition A", "82%"),
+        _q1_reaction("r3", "condition B", "88%"),
+    ]
+
+    package = generate_q1_benchmark_package(reactions)
+
+    assert package["benchmark"] == []
+    review_by_reason = {review["reason"]: review for review in package["review_set"]}
+    assert "duplicate_public_conditions_conflicting_results" in review_by_reason
+    insufficient = review_by_reason["insufficient_distinct_conditions"]
+    assert insufficient["option_count"] == 1
+    assert len(insufficient["omitted_conflicting_duplicate_options"]) == 1
+
+
+def test_q1_dedupes_identical_condition_results_without_conflict_review():
+    reactions = [
+        _q1_reaction("r1", "condition A", "91%"),
+        _q1_reaction("r2", "condition A", "91%"),
+        _q1_reaction("r3", "condition B", "88%"),
+    ]
+
+    package = generate_q1_benchmark_package(reactions)
+
+    assert len(package["benchmark"]) == 1
+    question = package["benchmark"][0]
+    assert question["option_count"] == 2
+    assert question["metadata_hidden"]["omitted_conflicting_duplicate_options"] == []
+    assert not any(
+        review.get("reason") == "duplicate_public_conditions_conflicting_results"
+        for review in package["review_set"]
+    )
+
+
+def test_q1_omits_all_conflicting_condition_groups():
+    reactions = [
+        _q1_reaction("r1", "condition A", "91%"),
+        _q1_reaction("r2", "condition A", "82%"),
+        _q1_reaction("r3", "condition B", "88%"),
+        _q1_reaction("r4", "condition B", "77%"),
+        _q1_reaction("r5", "condition C", "75%"),
+        _q1_reaction("r6", "condition D", "80%"),
+    ]
+
+    package = generate_q1_benchmark_package(reactions)
+
+    assert len(package["benchmark"]) == 1
+    question = package["benchmark"][0]
+    assert {
+        option["conditions"]["solvent"] for option in question["options"]
+    } == {"condition C", "condition D"}
+    omitted = question["metadata_hidden"]["omitted_conflicting_duplicate_options"]
+    assert len(omitted) == 2
+    assert {
+        item["public_condition"]["conditions"]["solvent"] for item in omitted
+    } == {"condition A", "condition B"}

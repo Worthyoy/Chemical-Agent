@@ -72,10 +72,13 @@ class PipelineState(TypedDict, total=False):
     chemeagle_structure_enriched_kg_inputs: List[str]
     q1_path: Optional[str]
     q2_path: Optional[str]
+    q1q2_split_report: Optional[str]
     q1_benchmark: Optional[str]
     q2_benchmark: Optional[str]
     q1_benchmark_review: Optional[str]
     q1_benchmark_report: Optional[str]
+    q2_benchmark_review: Optional[str]
+    q2_benchmark_report: Optional[str]
     workflow_report: str
     has_successful_pdfs: bool
     steps: Dict
@@ -202,10 +205,33 @@ def parse_args():
         help="PDF text extraction layout: single keeps current whole-page extraction; two_column reads left/right columns; auto detects two-column pages.",
     )
     parser.add_argument(
+        "--pdf_text_x_tolerance",
+        type=float,
+        default=3.0,
+        help="pdfplumber horizontal character tolerance (default: 3.0).",
+    )
+    parser.add_argument(
+        "--pdf_text_y_tolerance",
+        type=float,
+        default=5.0,
+        help="pdfplumber vertical line tolerance (default: 5.0).",
+    )
+    parser.add_argument(
         "--max_parallel_text_chunks",
         type=int,
         default=1,
         help="Maximum chunk-level concurrency inside each text extraction PDF. 1 preserves serial behavior.",
+    )
+    parser.add_argument(
+        "--generic_resolution_batch_size",
+        type=int,
+        default=10,
+        help="Reaction count per combined generic-substrate classification/resolution LLM call (default: 10).",
+    )
+    parser.add_argument(
+        "--enable_stage1_page_trimming",
+        action="store_true",
+        help="Enable legacy Stage1 relevant_pages trimming. Disabled by default to preserve cross-page target evidence.",
     )
     parser.add_argument("--skip_reaction_type_normalization", action="store_true")
     parser.add_argument("--skip_stage2_audit", action="store_true")
@@ -426,6 +452,10 @@ def config_from_args(args) -> PipelineConfig:
         max_parallel_pdfs=max(1, args.max_parallel_pdfs),
         max_parallel_text_chunks=max(1, args.max_parallel_text_chunks),
         pdf_text_layout=args.pdf_text_layout,
+        pdf_text_x_tolerance=args.pdf_text_x_tolerance,
+        pdf_text_y_tolerance=args.pdf_text_y_tolerance,
+        generic_resolution_batch_size=max(1, args.generic_resolution_batch_size),
+        enable_stage1_page_trimming=args.enable_stage1_page_trimming,
         skip_reaction_type_normalization=args.skip_reaction_type_normalization,
         skip_chemeagle_normalization=args.skip_chemeagle_normalization,
         skip_downstream_build=args.skip_downstream_build,

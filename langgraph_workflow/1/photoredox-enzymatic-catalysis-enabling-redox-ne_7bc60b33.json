@@ -1,0 +1,2150 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1).pdf",
+  "paper_key": "photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1)",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1).pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v8_two_column_cli",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1).pdf",
+    "source_mtime_ns": 1782048671000000000,
+    "source_size": 3624667,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "enable_stage2_audit": true,
+    "paper_key": "photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1)",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1).pdf"
+  },
+  "extracted_at": "2026-06-22T17:54:59.312961",
+  "total_reactions": 38,
+  "filtered_reactions": 38,
+  "filter_stats": {
+    "input_reactions": 38,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 38
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry1",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(4-chlorophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3aa",
+          "amount": null,
+          "registry_name": "1-(4-chlorophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry1"
+    },
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry2",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-phenyl-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ba",
+          "amount": null,
+          "registry_name": "1-phenyl-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry2"
+    },
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry3",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(p-tolyl)ethan-1-ol",
+          "symbol": "3ca",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(p-tolyl)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry3"
+    },
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry4",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(4-methoxyphenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3da",
+          "amount": null,
+          "registry_name": "1-(4-methoxyphenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry4"
+    },
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry5",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(4-(methylthio)phenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ea",
+          "amount": null,
+          "registry_name": "1-(4-(methylthio)phenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry5"
+    },
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry6",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(4-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3fa",
+          "amount": null,
+          "registry_name": "1-(4-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry6"
+    },
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry7",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(4-(trifluoromethyl)phenyl)ethan-1-ol",
+          "symbol": "3ga",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(4-(trifluoromethyl)phenyl)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry7"
+    },
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry8",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(m-tolyl)ethan-1-ol",
+          "symbol": "3ha",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(m-tolyl)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry8"
+    },
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry9",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(3-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ia",
+          "amount": null,
+          "registry_name": "1-(3-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry9"
+    },
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry10",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(o-tolyl)ethan-1-ol",
+          "symbol": "3ja",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(o-tolyl)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry10"
+    },
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry11",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(2-fluorophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ka",
+          "amount": null,
+          "registry_name": "1-(2-fluorophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry11"
+    },
+    {
+      "id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry12",
+      "reaction_type": "photoredox decarboxylative C-C coupling",
+      "substrates": [
+        {
+          "name": "Aldehyde",
+          "symbol": "Aldehyde",
+          "amount": "0.4 mmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1-hydroxy-2-(phenylamino)ethyl)phenol",
+          "symbol": "3la",
+          "amount": null,
+          "registry_name": "2-(1-hydroxy-2-(phenylamino)ethyl)phenol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy) (dtbbpy)PF2 6",
+          "symbol": "Ir(ppy) (dtbbpy)PF2 6",
+          "amount": "(0.004 mmol, 1 mol%)"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N2",
+          "symbol": "N2",
+          "amount": "bubbling for 5 minutes"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_product_synthesis_synthesis_of_racemic_products-Entry12"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry1",
+      "reaction_type": "photoenzymatic synthesis",
+      "substrates": [
+        {
+          "name": "aldehyde",
+          "symbol": "aldehyde",
+          "amount": "40 μL, 500 mM stock in DMSO, 20 μmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "50 μL, 1200 mM stock in DMSO, 60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(thiophen-2-yl)ethan-1-ol",
+          "symbol": "3ma",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(thiophen-2-yl)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "enzyme",
+          "symbol": "enzyme",
+          "amount": "2 ml, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 with DMSO stock solutions",
+        "volume": "2 ml",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry1"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry2",
+      "reaction_type": "photoenzymatic synthesis",
+      "substrates": [
+        {
+          "name": "aldehyde",
+          "symbol": "aldehyde",
+          "amount": "40 μL, 500 mM stock in DMSO, 20 μmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "50 μL, 1200 mM stock in DMSO, 60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(naphthalen-2-yl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3na",
+          "amount": null,
+          "registry_name": "1-(naphthalen-2-yl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "enzyme",
+          "symbol": "enzyme",
+          "amount": "2 ml, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 with DMSO stock solutions",
+        "volume": "2 ml",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry2"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry3",
+      "reaction_type": "photoenzymatic synthesis",
+      "substrates": [
+        {
+          "name": "aldehyde",
+          "symbol": "aldehyde",
+          "amount": "40 μL, 500 mM stock in DMSO, 20 μmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "50 μL, 1200 mM stock in DMSO, 60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((4-fluorophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "3bb",
+          "amount": null,
+          "registry_name": "2-((4-fluorophenyl)amino)-1-phenylethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "enzyme",
+          "symbol": "enzyme",
+          "amount": "2 ml, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 with DMSO stock solutions",
+        "volume": "2 ml",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry3"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry4",
+      "reaction_type": "photoenzymatic synthesis",
+      "substrates": [
+        {
+          "name": "aldehyde",
+          "symbol": "aldehyde",
+          "amount": "40 μL, 500 mM stock in DMSO, 20 μmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "50 μL, 1200 mM stock in DMSO, 60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((4-chlorophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "3bc",
+          "amount": null,
+          "registry_name": "2-((4-chlorophenyl)amino)-1-phenylethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "enzyme",
+          "symbol": "enzyme",
+          "amount": "2 ml, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 with DMSO stock solutions",
+        "volume": "2 ml",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry4"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry5",
+      "reaction_type": "photoenzymatic synthesis",
+      "substrates": [
+        {
+          "name": "aldehyde",
+          "symbol": "aldehyde",
+          "amount": "40 μL, 500 mM stock in DMSO, 20 μmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "50 μL, 1200 mM stock in DMSO, 60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((4-bromophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "3bd",
+          "amount": null,
+          "registry_name": "2-((4-bromophenyl)amino)-1-phenylethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "enzyme",
+          "symbol": "enzyme",
+          "amount": "2 ml, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 with DMSO stock solutions",
+        "volume": "2 ml",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry5"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry6",
+      "reaction_type": "photoenzymatic synthesis",
+      "substrates": [
+        {
+          "name": "aldehyde",
+          "symbol": "aldehyde",
+          "amount": "40 μL, 500 mM stock in DMSO, 20 μmol, 1 equiv"
+        },
+        {
+          "name": "glycine",
+          "symbol": "glycine",
+          "amount": "50 μL, 1200 mM stock in DMSO, 60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((3-methoxyphenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "3be",
+          "amount": null,
+          "registry_name": "2-((3-methoxyphenyl)amino)-1-phenylethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "enzyme",
+          "symbol": "enzyme",
+          "amount": "2 ml, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 with DMSO stock solutions",
+        "volume": "2 ml",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry6"
+    },
+    {
+      "id": "Synthetic Transformation-Entry1",
+      "reaction_type": "cyclization (oxazolidinone formation)",
+      "substrates": [
+        {
+          "name": "(S)-3ba",
+          "symbol": "(S)-3ba",
+          "amount": "8.4 mg, 40 μmol, 1 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "S-3,5-diphenyloxazolidin-2-one",
+          "symbol": "6",
+          "amount": null,
+          "registry_name": "S-3,5-diphenyloxazolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "1,1'-carbonyldiimidazole",
+          "symbol": "1,1'-carbonyldiimidazole",
+          "amount": "7.1 mg, 44 μmol, 1.1 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "volume": "1 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "12 hours"
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthetic Transformation-Entry1"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry7",
+      "reaction_type": "photoenzymatic decarboxylative C–C coupling",
+      "substrates": [
+        {
+          "name": "4-chlorobenzaldehyde",
+          "symbol": "1a",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(4-chlorophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3aa",
+          "amount": null,
+          "registry_name": "1-(4-chlorophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "1,3,5-trimethoxybenzene",
+          "symbol": "1,3,5-trimethoxybenzene",
+          "amount": "100 μL of 10 mg/mL 1,3,5-trimethoxybenzene in EtOAc"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMSO (stock solutions), 100 mM KPi buffer pH 7.5",
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "96%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry1"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry8",
+      "reaction_type": "photoenzymatic decarboxylative C–C coupling",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": "1b",
+          "amount": "20 μmol, 1 equiv",
+          "registry_name": "benzaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-phenyl-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ba",
+          "amount": null,
+          "registry_name": "1-phenyl-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "1,3,5-trimethoxybenzene",
+          "symbol": "1,3,5-trimethoxybenzene",
+          "amount": "100 μL of 10 mg/mL 1,3,5-trimethoxybenzene in EtOAc"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMSO (stock solutions), 100 mM KPi buffer pH 7.5",
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry2"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry9",
+      "reaction_type": "photoenzymatic decarboxylative C–C coupling",
+      "substrates": [
+        {
+          "name": "4-methylbenzaldehyde",
+          "symbol": "1c",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(phenylamino)-1-(p-tolyl)ethan-1-ol",
+          "symbol": "3ca",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(p-tolyl)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "1,3,5-trimethoxybenzene",
+          "symbol": "1,3,5-trimethoxybenzene",
+          "amount": "100 μL of 10 mg/mL 1,3,5-trimethoxybenzene in EtOAc"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMSO (stock solutions), 100 mM KPi buffer pH 7.5",
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry3"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry10",
+      "reaction_type": "photoenzymatic decarboxylative C–C coupling",
+      "substrates": [
+        {
+          "name": "4-methoxybenzaldehyde",
+          "symbol": "1d",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(4-methoxyphenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3da",
+          "amount": null,
+          "registry_name": "1-(4-methoxyphenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "1,3,5-trimethoxybenzene",
+          "symbol": "1,3,5-trimethoxybenzene",
+          "amount": "100 μL of 10 mg/mL 1,3,5-trimethoxybenzene in EtOAc"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMSO (stock solutions), 100 mM KPi buffer pH 7.5",
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry4"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry11",
+      "reaction_type": "photoenzymatic decarboxylative C–C coupling",
+      "substrates": [
+        {
+          "name": "4-(methylthio)benzaldehyde",
+          "symbol": "1e",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)- 1-(4-(methylthio)phenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ea",
+          "amount": null,
+          "registry_name": "1-(4-(methylthio)phenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "1,3,5-trimethoxybenzene",
+          "symbol": "1,3,5-trimethoxybenzene",
+          "amount": "100 μL of 10 mg/mL 1,3,5-trimethoxybenzene in EtOAc"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMSO (stock solutions), 100 mM KPi buffer pH 7.5",
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "97%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry5"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry12",
+      "reaction_type": "decarboxylative asymmetric C-C coupling",
+      "substrates": [
+        {
+          "name": "4-bromobenzaldehyde",
+          "symbol": "1f",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)- 1-(4-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3fa",
+          "amount": null,
+          "registry_name": "1-(4-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "DMSO, 100 mM KPi buffer pH 7.5",
+        "volume": "2 mL",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "94%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry1"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry13",
+      "reaction_type": "decarboxylative asymmetric C-C coupling",
+      "substrates": [
+        {
+          "name": "4-(trifluoromethyl)benzaldehyde",
+          "symbol": "1g",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(phenylamino)-1-(4-(trifluoromethyl)phenyl)ethan-1-ol",
+          "symbol": "3ga",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(4-(trifluoromethyl)phenyl)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "DMSO, 100 mM KPi buffer pH 7.5",
+        "volume": "2 mL",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "46%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry2"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry14",
+      "reaction_type": "decarboxylative asymmetric C-C coupling",
+      "substrates": [
+        {
+          "name": "3-methylbenzaldehyde",
+          "symbol": "1h",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)- 2-(phenylamino)-1-(m-tolyl)ethan-1-ol",
+          "symbol": "3ha",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(m-tolyl)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "DMSO, 100 mM KPi buffer pH 7.5",
+        "volume": "2 mL",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "71%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry3"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry15",
+      "reaction_type": "decarboxylative asymmetric C-C coupling",
+      "substrates": [
+        {
+          "name": "3-bromobenzaldehyde",
+          "symbol": "1i",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)- 1-(3-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ia",
+          "amount": null,
+          "registry_name": "1-(3-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "DMSO, 100 mM KPi buffer pH 7.5",
+        "volume": "2 mL",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry4"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry16",
+      "reaction_type": "decarboxylative asymmetric C-C coupling",
+      "substrates": [
+        {
+          "name": "2-methylbenzaldehyde",
+          "symbol": "1j",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)- 2-(phenylamino)-1-(o-tolyl)ethan-1-ol",
+          "symbol": "3ja",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(o-tolyl)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205V",
+          "symbol": "RasADH F205V",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "DMSO, 100 mM KPi buffer pH 7.5",
+        "volume": "2 mL",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry5"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry17",
+      "reaction_type": "photoredox-enzymatic decarboxylative C–C coupling",
+      "substrates": [
+        {
+          "name": "2-fluorobenzaldehyde",
+          "symbol": "1k",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(2-fluorophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ka",
+          "amount": null,
+          "registry_name": "1-(2-fluorophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205V",
+          "symbol": "RasADH F205V",
+          "amount": "2 ml, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 (cell-free extract solution) with DMSO from stock solutions",
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "85% ee",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry1"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry18",
+      "reaction_type": "photoredox-enzymatic decarboxylative C–C coupling",
+      "substrates": [
+        {
+          "name": "2-hydroxybenzaldehyde",
+          "symbol": "1l",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1-hydroxy-2-(phenylamino)ethyl)phenol",
+          "symbol": "3la",
+          "amount": null,
+          "registry_name": "2-(1-hydroxy-2-(phenylamino)ethyl)phenol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205V",
+          "symbol": "RasADH F205V",
+          "amount": "2 ml, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 (cell-free extract solution) with DMSO from stock solutions",
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "98% ee",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry2"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry19",
+      "reaction_type": "photoredox-enzymatic decarboxylative C–C coupling",
+      "substrates": [
+        {
+          "name": "thiophene-2-carbaldehyde",
+          "symbol": "1m",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(thiophen-2-yl)ethan-1-ol",
+          "symbol": "3ma",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(thiophen-2-yl)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205V",
+          "symbol": "RasADH F205V",
+          "amount": "2 ml, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 (cell-free extract solution) with DMSO from stock solutions",
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "95% ee",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry3"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry20",
+      "reaction_type": "photoredox-enzymatic decarboxylative C–C coupling",
+      "substrates": [
+        {
+          "name": "2-naphthaldehyde",
+          "symbol": "1n",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(naphthalen-2-yl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3na",
+          "amount": null,
+          "registry_name": "1-(naphthalen-2-yl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "2 ml, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 (cell-free extract solution) with DMSO from stock solutions",
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "88% ee",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry4"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry21",
+      "reaction_type": "photoredox-enzymatic decarboxylative C–C coupling",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": "1b",
+          "amount": "20 μmol, 1 equiv",
+          "registry_name": "benzaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(4-fluorophenyl)glycine",
+          "symbol": "2b",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((4-fluorophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "3bb",
+          "amount": null,
+          "registry_name": "2-((4-fluorophenyl)amino)-1-phenylethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "2 ml, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "(4-fluorophenyl)glycine",
+          "symbol": "2b",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 (cell-free extract solution) with DMSO from stock solutions",
+        "volume": null,
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": ">99% ee",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry5"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry22",
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": "1b",
+          "amount": "20 μmol, 1 equiv",
+          "registry_name": "benzaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(4-chlorophenyl)glycine",
+          "symbol": "2c",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)- 2-((4-chlorophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "(S)-3bc",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "1,3,5-trimethoxybenzene",
+          "symbol": "1,3,5-trimethoxybenzene",
+          "amount": "100 μL of 10 mg/mL (in EtOAc)"
+        },
+        {
+          "name": "EtOAc",
+          "symbol": "EtOAc",
+          "amount": "2 mL×2"
+        }
+      ],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 (cell-free extract), DMSO (from stock solutions)",
+        "volume": "2 mL (cell-free extract) (plus 40 μL aldehyde, 50 μL glycine, 10 μL eosin Y)",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "93%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry1"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry23",
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": "1b",
+          "amount": "20 μmol, 1 equiv",
+          "registry_name": "benzaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(4-bromophenyl)glycine",
+          "symbol": "2d",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)- 2-((4-bromophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "(S)-3bd",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "1,3,5-trimethoxybenzene",
+          "symbol": "1,3,5-trimethoxybenzene",
+          "amount": "100 μL of 10 mg/mL (in EtOAc)"
+        },
+        {
+          "name": "EtOAc",
+          "symbol": "EtOAc",
+          "amount": "2 mL×2"
+        }
+      ],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 (cell-free extract), DMSO (from stock solutions)",
+        "volume": "2 mL (cell-free extract) (plus 40 μL aldehyde, 50 μL glycine, 10 μL eosin Y)",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry2"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry24",
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": "1b",
+          "amount": "20 μmol, 1 equiv",
+          "registry_name": "benzaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(3-methoxyphenyl)glycine",
+          "symbol": "2e",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)- 2-((3-methoxyphenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "(S)-3be",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "RasADH F205N",
+          "symbol": "RasADH F205N",
+          "amount": "50 mg/mL"
+        }
+      ],
+      "additives": [
+        {
+          "name": "eosin Y",
+          "symbol": "eosin Y",
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "1,3,5-trimethoxybenzene",
+          "symbol": "1,3,5-trimethoxybenzene",
+          "amount": "100 μL of 10 mg/mL (in EtOAc)"
+        },
+        {
+          "name": "EtOAc",
+          "symbol": "EtOAc",
+          "amount": "2 mL×2"
+        }
+      ],
+      "conditions": {
+        "solvent": "100 mM KPi buffer pH 7.5 (cell-free extract), DMSO (from stock solutions)",
+        "volume": "2 mL (cell-free extract) (plus 40 μL aldehyde, 50 μL glycine, 10 μL eosin Y)",
+        "light source": "photoreactor",
+        "wavelength": null,
+        "temperature": null,
+        "time": "16 hours"
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled2-Entry3"
+    },
+    {
+      "id": "3,5-diphenyloxazolidin-2-one-Entry1",
+      "reaction_type": "oxazolidinone formation",
+      "substrates": [
+        {
+          "name": "(S)-1-phenyl-2-(phenylamino)ethan-1-ol",
+          "symbol": "(S)-3bb",
+          "amount": "20 μmol, 1 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-3,5-diphenyloxazolidin-2-one",
+          "symbol": "6",
+          "amount": null,
+          "registry_name": "S-3,5-diphenyloxazolidin-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "1,1'-Carbonyldiimidazole",
+          "symbol": "5",
+          "amount": "22 μmol, 1.1 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "3,5-diphenyloxazolidin-2-one-Entry1"
+    }
+  ]
+}

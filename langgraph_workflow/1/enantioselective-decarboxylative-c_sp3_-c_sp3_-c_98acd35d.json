@@ -1,0 +1,3390 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-decarboxylative-c(sp3)-c(sp3)-cross-coupling-of-aliphatic-redox-active-esters-with-gem-borazirconocene.pdf",
+  "paper_key": "enantioselective-decarboxylative-c(sp3)-c(sp3)-cross-coupling-of-aliphatic-redox-active-esters-with-gem-borazirconocene",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-decarboxylative-c(sp3)-c(sp3)-cross-coupling-of-aliphatic-redox-active-esters-with-gem-borazirconocene.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v8_two_column_cli",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-decarboxylative-c(sp3)-c(sp3)-cross-coupling-of-aliphatic-redox-active-esters-with-gem-borazirconocene.pdf",
+    "source_mtime_ns": 1782048588000000000,
+    "source_size": 21225424,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "enable_stage2_audit": true,
+    "paper_key": "enantioselective-decarboxylative-c(sp3)-c(sp3)-cross-coupling-of-aliphatic-redox-active-esters-with-gem-borazirconocene",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-decarboxylative-c(sp3)-c(sp3)-cross-coupling-of-aliphatic-redox-active-esters-with-gem-borazirconocene.pdf"
+  },
+  "extracted_at": "2026-06-22T17:09:42.475337",
+  "total_reactions": 49,
+  "filtered_reactions": 49,
+  "filter_stats": {
+    "input_reactions": 49,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 49
+  },
+  "reactions": [
+    {
+      "id": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine-L6-Entry1",
+      "reaction_type": "multi-step synthesis",
+      "substrates": [
+        {
+          "name": "2-Bromobenzaldehyde",
+          "symbol": null,
+          "amount": "2.18g, 11.8mmol, 1.0 eq"
+        },
+        {
+          "name": "N,N'-((1R,2R)-1,2-bis(2-bromophenyl)ethane-1,2-diyl)diacetamide",
+          "symbol": null,
+          "amount": "1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "843mg",
+          "registry_name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "acetic acid",
+          "symbol": null,
+          "amount": "6.0 eq"
+        },
+        {
+          "name": "N-(3-dimethylaminopropyl)-N-ethylcarbodiimide hydrochloride",
+          "symbol": null,
+          "amount": "3.0 eq"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ammonia",
+          "symbol": null,
+          "amount": "25.2mL, 15 eq, 7 M in MeOH"
+        },
+        {
+          "name": "THF",
+          "symbol": null,
+          "amount": "59mL"
+        },
+        {
+          "name": "chiral diboron",
+          "symbol": null,
+          "amount": "4.187g, 5.9mmol, 0.5eq"
+        },
+        {
+          "name": "methanol",
+          "symbol": null,
+          "amount": "5 mL"
+        },
+        {
+          "name": "HCl",
+          "symbol": null,
+          "amount": "2 N"
+        },
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "3×100 mL"
+        },
+        {
+          "name": "NaOH",
+          "symbol": null,
+          "amount": "2 N"
+        },
+        {
+          "name": "CH2Cl2",
+          "symbol": null,
+          "amount": "16mL"
+        },
+        {
+          "name": "Na2SO4",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "BH3",
+          "symbol": null,
+          "amount": "5.0 eq"
+        },
+        {
+          "name": "Sat. NH4Cl aqueous solution",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "ethyl acetate",
+          "symbol": null,
+          "amount": "3 x 100 mL"
+        },
+        {
+          "name": "petroleum ether: ethyl acetate",
+          "symbol": null,
+          "amount": "6:1"
+        },
+        {
+          "name": "silica gel",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF, CH2Cl2, dichloromethane, methanol, ethyl acetate",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "0 °C; room temperature; 70oC",
+        "time": "1 h; 24 h; heated at 70oC"
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": ">99%",
+        "er": null
+      },
+      "_original_id": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine-L6-Entry1"
+    },
+    {
+      "id": "(1S,2S)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine-L6-Entry1",
+      "reaction_type": "multi-step synthesis",
+      "substrates": [
+        {
+          "name": "2-Bromobenzaldehyde",
+          "symbol": null,
+          "amount": "2.18g, 11.8mmol, 1.0 eq"
+        },
+        {
+          "name": "N,N'-((1R,2R)-1,2-bis(2-bromophenyl)ethane-1,2-diyl)diacetamide",
+          "symbol": null,
+          "amount": "1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,2S)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": null,
+          "registry_name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "acetic acid",
+          "symbol": null,
+          "amount": "6.0 eq"
+        },
+        {
+          "name": "N-(3-dimethylaminopropyl)-N-ethylcarbodiimide hydrochloride",
+          "symbol": null,
+          "amount": "3.0 eq"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "ammonia",
+          "symbol": null,
+          "amount": "25.2mL, 15 eq, 7 M in MeOH"
+        },
+        {
+          "name": "THF",
+          "symbol": null,
+          "amount": "59mL"
+        },
+        {
+          "name": "chiral diboron",
+          "symbol": null,
+          "amount": "4.187g, 5.9mmol, 0.5eq"
+        },
+        {
+          "name": "methanol",
+          "symbol": null,
+          "amount": "5 mL"
+        },
+        {
+          "name": "HCl",
+          "symbol": null,
+          "amount": "2 N"
+        },
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "3×100 mL"
+        },
+        {
+          "name": "NaOH",
+          "symbol": null,
+          "amount": "2 N"
+        },
+        {
+          "name": "CH2Cl2",
+          "symbol": null,
+          "amount": "16mL"
+        },
+        {
+          "name": "Na2SO4",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "BH3",
+          "symbol": null,
+          "amount": "5.0 eq"
+        },
+        {
+          "name": "Sat. NH4Cl aqueous solution",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "ethyl acetate",
+          "symbol": null,
+          "amount": "3 x 100 mL"
+        },
+        {
+          "name": "petroleum ether: ethyl acetate",
+          "symbol": null,
+          "amount": "6:1"
+        },
+        {
+          "name": "silica gel",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF, CH2Cl2, dichloromethane, methanol, ethyl acetate",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "0 °C; room temperature; 70oC",
+        "time": "1 h; 24 h; heated at 70oC"
+      },
+      "targets": {
+        "yield": null,
+        "ee": ">99%",
+        "er": null
+      },
+      "_original_id": "(1S,2S)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine-L6-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry1",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol, 1.0 eq",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(4-phenylbutan-2-yl)-1,3,2-dioxaborolane",
+          "symbol": "3a",
+          "amount": "39.5mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(4-phenylbutan-2-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene (from 2a)",
+          "symbol": "2a",
+          "amount": null
+        },
+        {
+          "name": "alkenyl boronates",
+          "symbol": "alkenyl boronates",
+          "amount": "0.5 mmol, 2.5 eq"
+        },
+        {
+          "name": "NHPI ester",
+          "symbol": "NHPI ester",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC then 4oC",
+        "time": "1 h then 24 h"
+      },
+      "targets": {
+        "yield": "76 %",
+        "ee": "94%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry2",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "1.5 mmol, 442.5mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(4-phenylbutan-2-yl)-1,3,2-dioxaborolane",
+          "symbol": "3a",
+          "amount": "227.6 mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(4-phenylbutan-2-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "borazirconocene (from 2a)",
+          "symbol": "borazirconocene",
+          "amount": "2.5 eq"
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": "3.7 mmol"
+        },
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "4.1 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": null,
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC then 4oC",
+        "time": "1 h then 24 h"
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry3",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol, 1.0 eq",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(1-phenyldecan-3-yl)-1,3,2-dioxaborolane",
+          "symbol": "4b",
+          "amount": "56.4 mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(1-phenyldecan-3-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "alkyl borazirconocene (from 2b)",
+          "symbol": "2b",
+          "amount": null
+        },
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkenyl boronates",
+          "symbol": "alkenyl boronates",
+          "amount": "0.5 mmol, 2.5 eq"
+        },
+        {
+          "name": "NHPI ester",
+          "symbol": "NHPI ester",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC then 4oC",
+        "time": "1 h then 24 h"
+      },
+      "targets": {
+        "yield": "82 %",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry4",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol, 1.0 eq",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(1-phenyloctan-3-yl)-1,3,2-dioxaborolane",
+          "symbol": "4C",
+          "amount": "48.0 mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(1-phenyloctan-3-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "alkyl borazirconocene (from 2c)",
+          "symbol": "2c",
+          "amount": null
+        },
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkenyl boronates",
+          "symbol": "alkenyl boronates",
+          "amount": "0.5 mmol, 2.5 eq"
+        },
+        {
+          "name": "NHPI ester",
+          "symbol": "NHPI ester",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC then 4oC",
+        "time": "1 h then 24 h"
+      },
+      "targets": {
+        "yield": "76 % yield",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry5",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol",
+          "registry_name": "NHPI ester",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "alkyl borazirconocene from 2d",
+          "symbol": "2d",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(7-chloro-1-phenylheptan-3-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": "4d",
+          "amount": "54.0mg",
+          "registry_name": "(R)-2-(7-chloro-1-phenylheptan-3-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC (1 h for borazirconocene formation); 4oC (24 h for coupling)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry6",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol",
+          "registry_name": "NHPI ester",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "alkyl borazirconocene from 2e",
+          "symbol": "2e",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(5,5-dimethyl-1-phenylhexan-3-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": "4e",
+          "amount": "36.6 mg",
+          "registry_name": "(R)-2-(5,5-dimethyl-1-phenylhexan-3-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC (1 h for borazirconocene formation); 4oC (24 h for coupling)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "58 %",
+        "ee": "75%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry7",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol",
+          "registry_name": "NHPI ester",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "alkyl borazirconocene from 2f",
+          "symbol": "2f",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(1-cyclohexyl-4-phenylbutan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": "4f",
+          "amount": "43.0 mg",
+          "registry_name": "(R)-2-(1-cyclohexyl-4-phenylbutan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC (1 h for borazirconocene formation); 4oC (24 h for coupling)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "64 %",
+        "ee": "87%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry8",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol",
+          "registry_name": "NHPI ester",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "alkyl borazirconocene from 2g",
+          "symbol": "2g",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-trimethyl(4-phenyl-2-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)butyl)silane",
+          "symbol": "4g",
+          "amount": "42.5 mg",
+          "registry_name": "(R)-trimethyl(4-phenyl-2-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)butyl)silane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC (1 h for borazirconocene formation); 4oC (24 h for coupling)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "64 %",
+        "ee": "83%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry9",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol, 1.0 eq",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        },
+        {
+          "name": "alkyl borazirconocene from 2h",
+          "symbol": "2h",
+          "amount": "0.5 mmol, 2.5 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-1,6-diphenylhexan-3-ol",
+          "symbol": "4h-OH",
+          "amount": "43.0 mg",
+          "registry_name": "(R)-1,6-diphenylhexan-3-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "anhydrous THF",
+          "symbol": "THF",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "NaBO3·4H2O",
+          "symbol": "NaBO3·4H2O",
+          "amount": "3.0 eq",
+          "resolved_smiles": "O=[B-](O)O.[Na+].[O].[O].[O].[O]",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "conditions",
+            "item_index": 2,
+            "image_name": "page_4_image_1.png"
+          }
+        },
+        {
+          "name": "THF/H2O",
+          "symbol": "THF/H2O",
+          "amount": "1:1, 2.0~3.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h; 4oC for 24 h",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "85 %",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry10",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol, 1.0 eq",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        },
+        {
+          "name": "alkyl borazirconocene from 2i",
+          "symbol": "2i",
+          "amount": "0.5 mmol, 2.5 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N,4-dimethyl-N-(7-phenyl-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)heptyl)benzenesulfonamide",
+          "symbol": "4i",
+          "amount": "79.0 mg",
+          "registry_name": "(R)-N,4-dimethyl-N-(7-phenyl-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)heptyl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "anhydrous THF",
+          "symbol": "THF",
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h; 4oC for 24 h",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "81 %",
+        "ee": "88%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry11",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol, 1.0 eq",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        },
+        {
+          "name": "alkyl borazirconocene from 2j",
+          "symbol": "2j",
+          "amount": "0.5 mmol, 2.5 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-1-(7-phenyl-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)heptyl)-1H-indole",
+          "symbol": "4j",
+          "amount": "72.8 mg",
+          "registry_name": "(R)-1-(7-phenyl-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)heptyl)-1H-indole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "anhydrous THF",
+          "symbol": "THF",
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h; 4oC for 24 h",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "87 %",
+        "ee": "89%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry12",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol, 1.0 eq",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        },
+        {
+          "name": "alkyl borazirconocene from 2k",
+          "symbol": "2k",
+          "amount": "0.5 mmol, 2.5 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(7-phenoxy-1-phenylheptan-3-yl)-1,3,2-dioxaborolane",
+          "symbol": "4k",
+          "amount": "67.5 mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(7-phenoxy-1-phenylheptan-3-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "anhydrous THF",
+          "symbol": "THF",
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h; 4oC for 24 h",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "85 %",
+        "ee": "89%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry13",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-1,4-diphenylbutan-2-ol",
+          "symbol": "4l-OH",
+          "amount": "28.5 mg",
+          "registry_name": "(R)-1,4-diphenylbutan-2-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2l",
+          "symbol": "2l",
+          "amount": "0.5 mmol"
+        },
+        {
+          "name": "NaBO3·4H2O",
+          "symbol": "NaBO3·4H2O",
+          "amount": "3.0 eq",
+          "resolved_smiles": "O=[B-](O)O.[Na+].[O].[O].[O].[O]",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "conditions",
+            "item_index": 2,
+            "image_name": "page_4_image_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC (1 h, formation), 4oC (photoreaction)",
+        "time": "1 h (formation), 24 h (photoreaction)"
+      },
+      "targets": {
+        "yield": "63 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry14",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((R)-7-(((3aR,5R,6S,6aR)-5-((R)-2,2-dimethyl-1,3-dioxolan-4-yl)-2,2-dimethyltetrahydrofuro[2,3 d][1,3]dioxol-6-yl)oxy)-1-phenylheptan-3-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": "4m",
+          "amount": "71.0 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2m",
+          "symbol": "2m",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC (1 h, formation), 4oC (photoreaction)",
+        "time": "1 h (formation), 24 h (photoreaction)"
+      },
+      "targets": {
+        "yield": "63 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry15",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "4,4,5,5-tetramethyl-2-((R)-1-phenyl-7-(((R)-2,5,7,8-tetramethyl-2-((4R,8R)-4,8,12-trimethyltridecyl)chroman-6-yl)oxy)heptan-3-yl)-1,3,2-dioxaborolane",
+          "symbol": "4n",
+          "amount": "114.9 mg",
+          "registry_name": "4,4,5,5-tetramethyl-2-((R)-1-phenyl-7-(((R)-2,5,7,8-tetramethyl-2-((4R,8R)-4,8,12trimethyltridecyl) chroman -6-yl) oxy) heptan-3-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2n",
+          "symbol": "2n",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC (1 h, formation), 4oC (photoreaction)",
+        "time": "1 h (formation), 24 h (photoreaction)"
+      },
+      "targets": {
+        "yield": "78 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry16",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-7-(((3S,8S,9S,10R,13R,14S,17R)-10,13-dimethyl-17-((R)-6-methylheptan-2-yl)2,3,4,7,8,9,10,11,12,13,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-3-yl)oxy)-1-phenylheptan-3-ol",
+          "symbol": "4o-OH",
+          "amount": "78.4 mg",
+          "registry_name": "(R)-7-(((3S,8S,9S,10R,13R,14S,17R)-10,13-dimethyl-17-((R)-6-methylheptan-2-yl) 2,3,4,7,8,9,10,11,12,13,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-3-yl)oxy)-1-phenylheptan-3-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2o",
+          "symbol": "2o",
+          "amount": "0.5 mmol"
+        },
+        {
+          "name": "NaBO3·4H2O",
+          "symbol": "NaBO3·4H2O",
+          "amount": "3.0 eq",
+          "resolved_smiles": "O=[B-](O)O.[Na+].[O].[O].[O].[O]",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "conditions",
+            "item_index": 2,
+            "image_name": "page_4_image_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC (1 h, formation), 4oC (photoreaction)",
+        "time": "1 h (formation), 24 h (photoreaction)"
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry17",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        },
+        {
+          "name": "alkyl borazirconocene from 2p",
+          "symbol": "2p",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(1-phenylhexan-3-yl)-1,3,2-dioxaborolane",
+          "symbol": "4p",
+          "amount": "30.1 mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(1-phenylhexan-3-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2p",
+          "symbol": "2p",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "110oC",
+        "time": "5 h"
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": "87%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry18",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        },
+        {
+          "name": "alkyl borazirconocene from 2q",
+          "symbol": "2q",
+          "amount": "3.7 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(1-phenylpentan-3-yl)-1,3,2-dioxaborolane",
+          "symbol": "4q",
+          "amount": "47.0 mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(1-phenylpentan-3-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2q",
+          "symbol": "2q",
+          "amount": "3.7 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "110oC",
+        "time": "5 h"
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "93%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry19",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1b",
+          "symbol": "1b",
+          "amount": "0.2 mmol"
+        },
+        {
+          "name": "alkyl borazirconocene from 2a",
+          "symbol": "2a",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(4-(4-fluorophenyl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": "3b",
+          "amount": "39.7mg",
+          "registry_name": "(R)-2-(4-(4-fluorophenyl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2a",
+          "symbol": "2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "50oC",
+        "time": "1 h"
+      },
+      "targets": {
+        "yield": "71 %",
+        "ee": "94%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry20",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1c",
+          "symbol": "1c",
+          "amount": "0.2 mmol"
+        },
+        {
+          "name": "alkyl borazirconocene",
+          "symbol": "from 2a",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(4-(4-(trifluoromethyl)phenyl)butan-2-yl)-1,3,2-dioxaborolane",
+          "symbol": "3c",
+          "amount": "51mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(4-(4-(trifluoromethyl)phenyl)butan-2-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol, 2.5 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h (formation of alkyl borazirconocene); 4oC (photoreaction)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "77 %",
+        "ee": "95%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry21",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1d",
+          "symbol": "1d",
+          "amount": "0.2 mmol"
+        },
+        {
+          "name": "alkyl borazirconocene",
+          "symbol": "from 2a",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(4-(p-tolyl)butan-2-yl)-1,3,2-dioxaborolane",
+          "symbol": "3d",
+          "amount": "42.0mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(4-(p-tolyl)butan-2-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol, 2.5 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h (formation of alkyl borazirconocene); 4oC (photoreaction)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "76 %",
+        "ee": "95%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry22",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1e",
+          "symbol": "1e",
+          "amount": "0.2 mmol"
+        },
+        {
+          "name": "alkyl borazirconocene",
+          "symbol": "from 2a",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4-(3-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)butyl)phenyl acetate",
+          "symbol": "3e",
+          "amount": "35.6mg",
+          "registry_name": "(R)-4-(3-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)butyl)phenyl acetate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol, 2.5 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h (formation of alkyl borazirconocene); 4oC (photoreaction)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "56 %",
+        "ee": "95%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry23",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1f",
+          "symbol": "1f",
+          "amount": "0.2 mmol"
+        },
+        {
+          "name": "alkyl borazirconocene",
+          "symbol": "from 2a",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4-methyl-N-(4-(3-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)butyl)phenyl)benzenesulfonamide",
+          "symbol": "3f",
+          "amount": "58.0mg",
+          "registry_name": "(R)-4-methyl-N-(4-(3-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)butyl)phenyl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol, 2.5 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h (formation of alkyl borazirconocene); 4oC (photoreaction)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "68 %",
+        "ee": "96%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry24",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1g",
+          "amount": "0.2 mmol"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(4-(4-chlorophenyl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": "3g",
+          "amount": "31.0mg",
+          "registry_name": "(R)-2-(4-(4-chlorophenyl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene (from 2a)",
+          "symbol": "alkyl borazirconocene from 2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50 oC (preformation), 4oC (photoreaction)",
+        "time": "1 h (preformation), 24 h (photoreaction)"
+      },
+      "targets": {
+        "yield": "52 %",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry25",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1h",
+          "amount": "0.2 mmol"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(4-(o-tolyl)butan-2-yl)-1,3,2-dioxaborolane",
+          "symbol": "3h",
+          "amount": "39.6mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(4-(o-tolyl)butan-2-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene (from 2a)",
+          "symbol": "alkyl borazirconocene from 2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50 oC (preformation), 4oC (photoreaction)",
+        "time": "1 h (preformation), 24 h (photoreaction)"
+      },
+      "targets": {
+        "yield": "72 %",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry26",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1i",
+          "amount": "0.2 mmol"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(4-(2-fluorophenyl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": "3i",
+          "amount": "30.9mg",
+          "registry_name": "(R)-2-(4-(2-fluorophenyl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene (from 2a)",
+          "symbol": "alkyl borazirconocene from 2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50 oC (preformation), 4oC (photoreaction)",
+        "time": "1 h (preformation), 24 h (photoreaction)"
+      },
+      "targets": {
+        "yield": "55 %",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry27",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "NHPI ester",
+          "symbol": "1j",
+          "amount": "0.2 mmol"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(4-(3,4-dimethoxyphenyl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": "3j",
+          "amount": "40mg",
+          "registry_name": "(R)-2-(4-(3,4-dimethoxyphenyl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene (from 2a)",
+          "symbol": "alkyl borazirconocene from 2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50 oC (preformation), 4oC (photoreaction)",
+        "time": "1 h (preformation), 24 h (photoreaction)"
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry28",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1k",
+          "symbol": "1k",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(4-(m-tolyl)butan-2-yl)-1,3,2-dioxaborolane",
+          "symbol": "3k",
+          "amount": "31.8mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(4-(m-tolyl)butan-2-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2a",
+          "symbol": "2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "4oC",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "58 %",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry29",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1l",
+          "symbol": "1l",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(4-(3-chloro-4-fluorophenyl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": "3l",
+          "amount": "35.0mg",
+          "registry_name": "(R)-2-(4-(3-chloro-4-fluorophenyl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2a",
+          "symbol": "2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "4oC",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "56 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry30",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1m",
+          "symbol": "1m",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(4-(naphthalen-2-yl)butan-2-yl)-1,3,2-dioxaborolane",
+          "symbol": "3m",
+          "amount": "34.7mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(4-(naphthalen-2-yl)butan-2-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkylzirconocene from 2a",
+          "symbol": "2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "4oC",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "56 %",
+        "ee": "89%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry31",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1n",
+          "symbol": "1n",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(4-(thiophen-2-yl)butan-2-yl)-1,3,2-dioxaborolane",
+          "symbol": "3n",
+          "amount": "34.7mg",
+          "registry_name": "(R)-4,4,5,5-tetramethyl-2-(4-(thiophen-2-yl)butan-2-yl)-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2n",
+          "symbol": "2n",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "4oC",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "65 %",
+        "ee": "97%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry32",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1o",
+          "symbol": "1o",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(4-(furan-2-yl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": "3o",
+          "amount": "33.0mg",
+          "registry_name": "(R)-2-(4-(furan-2-yl)butan-2-yl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol, 2.5 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2a",
+          "symbol": "alkyl borazirconocene from 2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h (zirconocene formation); 4oC (photoreaction)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "66 %",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry33",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1p",
+          "symbol": "1p",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-3-(4-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)pentyl)-1H-indole",
+          "symbol": "3p",
+          "amount": "38.9mg",
+          "registry_name": "(R)-3-(4-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)pentyl)-1H-indole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol, 2.5 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2a",
+          "symbol": "alkyl borazirconocene from 2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h (zirconocene formation); 4oC (photoreaction)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "62 %",
+        "ee": "89%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry34",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1q",
+          "symbol": "1q",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(4-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)pentyl)isoindoline-1,3-dione",
+          "symbol": "3q",
+          "amount": "39.6mg",
+          "registry_name": "(R)-2-(4-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)pentyl)isoindoline-1,3-dione",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol, 2.5 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2a",
+          "symbol": "alkyl borazirconocene from 2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h (zirconocene formation); 4oC (photoreaction)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "57 %",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry35",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1r",
+          "symbol": "1r",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4-methyl-N-(6-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)heptyl)benzenesulfonamide",
+          "symbol": "3r",
+          "amount": "61.1mg",
+          "registry_name": "(R)-4-methyl-N-(6-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)heptyl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "alkenyl boronate",
+          "symbol": "2a",
+          "amount": "0.5 mmol, 2.5 eq"
+        },
+        {
+          "name": "alkyl borazirconocene from 2a",
+          "symbol": "alkyl borazirconocene from 2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h (zirconocene formation); 4oC (photoreaction)",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "77 %",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry36",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1s",
+          "symbol": "1s",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R,E)-7-hydroxy-6-(6-hydroxy-3-methylhept-2-en-1-yl)-5-methoxy-4-methylisobenzofuran-1(3H)-one",
+          "symbol": "3s-OH",
+          "amount": "19.8mg",
+          "registry_name": "(R,E)-7-hydroxy-6-(6-hydroxy-3-methylhept-2-en-1-yl)-5-methoxy-4-methylisobenzofuran-1(3H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "alkyl borazirconocene from 2a",
+          "symbol": "alkyl borazirconocene (2a)",
+          "amount": null
+        },
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h; 4oC for 24 h",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "31 %",
+        "ee": "93%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry37",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1t",
+          "symbol": "1t",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N,N-bis(2-chloroethyl)-4-(4-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)pentyl)aniline",
+          "symbol": "3t",
+          "amount": "60.0mg",
+          "registry_name": "(R)-N,N-bis(2-chloroethyl)-4-(4-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)pentyl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "alkyl borazirconocene from 2a",
+          "symbol": "alkyl borazirconocene (2a)",
+          "amount": null
+        },
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h; 4oC for 24 h",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "72 %",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry38",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1u",
+          "symbol": "1u",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,5S,7R,8R,9S,10S,13R,14R,17R)-10,13-dimethyl-17-((2R,5R)-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)hexan-2-yl)hexadecahydro-1H-cyclopenta[a]phenanthrene-3,7-diol",
+          "symbol": "3u",
+          "amount": "79.0mg",
+          "registry_name": "(3R,5S,7R,8R,9S,10S,13R,14R,17R)-10,13-dimethyl-17-((2R,5R)-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)hexan-2-yl)hexadecahydro-1H-cyclopenta[a]phenanthrene-3,7-diol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "alkyl borazirconocene from 2a",
+          "symbol": "alkyl borazirconocene (2a)",
+          "amount": null
+        },
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h; 4oC for 24 h",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry39",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "1v",
+          "symbol": "1v",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(5S,8R,9S,10S,13R,14R,17R)-17-((2R,5R)-5-hydroxy-8-phenyloctan-2-yl)-10,13-dimethyldodecahydro-3H-cyclopenta[a]phenanthrene-3,7,12(2H,4H)-trione",
+          "symbol": "3v-OH",
+          "amount": "77.0mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "alkyl borazirconocene from 2h",
+          "symbol": "alkyl borazirconocene (2h)",
+          "amount": null
+        },
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        },
+        {
+          "name": "2h",
+          "symbol": "2h",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "50oC for 1 h; 4oC for 24 h",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "76 %",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry4"
+    },
+    {
+      "id": "GeneralProcedureD-Entry1",
+      "reaction_type": "oxidation",
+      "substrates": [
+        {
+          "name": "boronic ester product",
+          "symbol": "3v",
+          "amount": "1.0 eq",
+          "registry_name": "(5S,8R,9S,10S,13R,14R,17R)-17-((2R,5R)-5-hydroxy-8-phenyloctan-2-yl)-10,13-dimethyldodecahydro-3H-cyclopenta[a]phenanthrene-3,7,12(2H,4H)-trione",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "3v-OH",
+          "symbol": "3v-OH",
+          "amount": null
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "NaBO3·4H2O",
+          "symbol": "NaBO3·4H2O",
+          "amount": "3.0 eq",
+          "resolved_smiles": "O=[B-](O)O.[Na+].[O].[O].[O].[O]",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "conditions",
+            "item_index": 2,
+            "image_name": "page_4_image_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "THF and H2O (1:1)",
+        "volume": "2.0~3.0 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureD-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry40",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "alkenyl boronates",
+          "symbol": "alkenyl boronates",
+          "amount": "0.5 mmol, 2.5 eq"
+        },
+        {
+          "name": "NHPI ester",
+          "symbol": "NHPI ester",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-1-morpholino-8-phenyl-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)octan-1-one",
+          "symbol": "3w",
+          "amount": "62.9mg",
+          "registry_name": "(R)-1-morpholino-8-phenyl-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)octan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "4oC",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "76 %",
+        "ee": "30%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry41",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "alkenyl boronates",
+          "symbol": "alkenyl boronates",
+          "amount": "0.5 mmol, 2.5 eq"
+        },
+        {
+          "name": "NHPI ester",
+          "symbol": "NHPI ester",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-1-([1,1'-biphenyl]-4-yl)-4-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)pentan-1-one",
+          "symbol": "3x",
+          "amount": "37.9mg",
+          "registry_name": "(R)-1-([1,1'-biphenyl]-4-yl)-4-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)pentan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "4oC",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "52 %",
+        "ee": "61%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry42",
+      "reaction_type": "enantioselective decarboxylative C(sp3)-C(sp3) cross-coupling",
+      "substrates": [
+        {
+          "name": "alkenyl boronates",
+          "symbol": "alkenyl boronates",
+          "amount": "0.5 mmol, 2.5 eq"
+        },
+        {
+          "name": "NHPI ester",
+          "symbol": "NHPI ester",
+          "amount": "0.2 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4,5-diphenyl-2-(3-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)butyl)oxazole",
+          "symbol": "3y",
+          "amount": "48.0mg",
+          "registry_name": "(R)-4,5-diphenyl-2-(3-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)butyl)oxazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(BF4)•6H2O",
+          "symbol": "Ni(BF4)•6H2O",
+          "amount": "6.8 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-diethylethane-1,2-diamine",
+          "symbol": "L6",
+          "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ZrCp2HCl",
+          "symbol": "ZrCp2HCl",
+          "amount": "139.2 mg, 0.5 mmol, 2.7 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.0 mL",
+        "light source": "0.5 W blue LED",
+        "wavelength": null,
+        "temperature": "4oC",
+        "time": "24 h"
+      },
+      "targets": {
+        "yield": "60 %",
+        "ee": "26%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureC-Entry3"
+    },
+    {
+      "id": "SyntheticApplication-Entry1",
+      "reaction_type": "nucleophilic addition",
+      "substrates": [
+        {
+          "name": "furan",
+          "symbol": "furan",
+          "amount": "47mg, 0.7 mmol, 4.0 eq"
+        },
+        {
+          "name": "(R)-3a",
+          "symbol": "(R)-3a",
+          "amount": "45mg, 0.17 mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(4-phenylbutan-2-yl)furan",
+          "symbol": "5a",
+          "amount": "17.9mg",
+          "registry_name": "(R)-2-(4-phenylbutan-2-yl)furan",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "n-BuLi",
+          "symbol": "n-BuLi",
+          "amount": "277uL, 0.7 mmol, 4.0 eq, 2.5 M in hexanes"
+        },
+        {
+          "name": "2,3-Dichloro-5,6-dicyano-1,4-benzoquinone",
+          "symbol": "2,3-Dichloro-5,6-dicyano-1,4-benzoquinone",
+          "amount": "169mg, 0.74mmol, 4.3 eq"
+        },
+        {
+          "name": "saturated aqueous Na2S2O3",
+          "symbol": "Na2S2O3",
+          "amount": "2 mL"
+        },
+        {
+          "name": "CH2Cl2",
+          "symbol": "CH2Cl2",
+          "amount": "15 mL (extraction)"
+        },
+        {
+          "name": "MgSO4",
+          "symbol": "MgSO4",
+          "amount": "drying agent"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "519uL initial; (R)-3a in THF 369uL; DDQ in THF 2.4 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "cooled to –78 °C; warmed to room temperature",
+        "time": "cooled to –78 °C; stirred at room temperature for 1 h; stirred at –78 °C for 1 h; DDQ added dropwise, after 1 h at –78 °C, warmed to room temperature"
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "SyntheticApplication-Entry1"
+    },
+    {
+      "id": "SyntheticApplication-Entry2",
+      "reaction_type": "oxidation (boronic ester to alcohol)",
+      "substrates": [
+        {
+          "name": "boronic ester product",
+          "symbol": "boronic ester product",
+          "amount": "40mg, 0.15mmol, 1.0 eq"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4-phenylbutan-2-ol",
+          "symbol": "5b",
+          "amount": "20.3mg",
+          "registry_name": "(R)-4-phenylbutan-2-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "NaBO3·4H2O",
+          "symbol": "NaBO3·4H2O",
+          "amount": "71mg, 0.46mmol, 3.0 eq",
+          "resolved_smiles": "O=[B-](O)O.[Na+].[O].[O].[O].[O]",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "conditions",
+            "item_index": 2,
+            "image_name": "page_4_image_1.png"
+          }
+        },
+        {
+          "name": "Na2SO4",
+          "symbol": "Na2SO4",
+          "amount": "drying agent"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF and H2O (1:1)",
+        "volume": "2.0~3.0 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "stirred at room temperature and checked by TLC until completion"
+      },
+      "targets": {
+        "yield": "88 %",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "SyntheticApplication-Entry2"
+    },
+    {
+      "id": "SyntheticApplication-Entry3",
+      "reaction_type": "bromination",
+      "substrates": [
+        {
+          "name": "1-bromo-3,5-bis(trifluoromethyl)benzene",
+          "symbol": "1-bromo-3,5-bis(trifluoromethyl)benzene",
+          "amount": "55.8mg, 0.19 mmol, 1.5 eq"
+        },
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(4-phenylbutan-2-yl)-1,3,2-dioxaborolane",
+          "symbol": "3a",
+          "amount": "33mg, 0.13 mmol, 1.0 eq",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-(3-bromobutyl)benzene",
+          "symbol": "5c",
+          "amount": "14.6mg",
+          "registry_name": "(S)-(3-bromobutyl)benzene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "n-BuLi",
+          "symbol": "n-BuLi",
+          "amount": "118.9uL,1.60 M in hexanes, 0.19 mmol, 1.5 eq"
+        },
+        {
+          "name": "NBS",
+          "symbol": "NBS",
+          "amount": "33.1mg, 0.19 mmol, 1.5 eq"
+        },
+        {
+          "name": "Sat. aq. Na2S2O3",
+          "symbol": "Na2S2O3",
+          "amount": "2 mL"
+        },
+        {
+          "name": "EtOAc",
+          "symbol": "EtOAc",
+          "amount": "extraction solvent"
+        },
+        {
+          "name": "MgSO4",
+          "symbol": "MgSO4",
+          "amount": "drying agent"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "THF (1.6 mL + 528uL + 1.6 mL)",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "-78 °C to room temperature",
+        "time": "stirred 1 h at -78 °C before addition; then 30 min at -78 °C and 30 min at room temperature to form ate-complex; after NBS addition stirred at –78 °C for 10 min then warmed to room temperature and stirred 1 h"
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": "85%",
+        "er": null
+      },
+      "_original_id": "SyntheticApplication-Entry3"
+    },
+    {
+      "id": "SyntheticApplication-Entry4",
+      "reaction_type": "acylation (trifluoroacetylation)",
+      "substrates": [
+        {
+          "name": "(R)-4,4,5,5-tetramethyl-2-(4-phenylbutan-2-yl)-1,3,2-dioxaborolane",
+          "symbol": "3a",
+          "amount": "77mg, 0.29mmol, 1.0eq",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2,2,2-trifluoro-N-(4-phenylbutan-2-yl)acetamide",
+          "symbol": "5d",
+          "amount": "53.3mg",
+          "registry_name": "(R)-2,2,2-trifluoro-N-(4-phenylbutan-2-yl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "NH2-DABCO",
+          "symbol": "NH2-DABCO",
+          "amount": "113.4mg, 0.29mmol, 1.0eq"
+        },
+        {
+          "name": "tBuOK",
+          "symbol": "tBuOK",
+          "amount": "83mg, 0.72 mmol, 2.5eq"
+        },
+        {
+          "name": "TFAA",
+          "symbol": "TFAA",
+          "amount": "82 μL, 0.58mmol, 2.0eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "3.7 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "80 °C",
+        "time": "heated to 80 °C and stirred for 1 hour; after TFAA addition heated to 80 °C for 1 hour"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "SyntheticApplication-Entry4"
+    }
+  ]
+}

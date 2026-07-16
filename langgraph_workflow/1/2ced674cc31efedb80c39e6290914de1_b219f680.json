@@ -1,0 +1,757 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2ced674cc31efedb80c39e6290914de1.pdf",
+  "paper_key": "2ced674cc31efedb80c39e6290914de1",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2ced674cc31efedb80c39e6290914de1.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v8_two_column_cli",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2ced674cc31efedb80c39e6290914de1.pdf",
+    "source_mtime_ns": 1782048803000000000,
+    "source_size": 209111,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "two_column",
+    "enable_stage2_audit": true,
+    "paper_key": "2ced674cc31efedb80c39e6290914de1",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2ced674cc31efedb80c39e6290914de1.pdf"
+  },
+  "extracted_at": "2026-06-22T00:28:37.980624",
+  "total_reactions": 15,
+  "filtered_reactions": 15,
+  "filter_stats": {
+    "input_reactions": 15,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 15
+  },
+  "reactions": [
+    {
+      "id": "Synthesis2012-Entry1",
+      "reaction_type": "hydrolysis",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonitrile",
+          "symbol": "3",
+          "amount": null,
+          "registry_name": "5-(p-tolyl)isoxazole-3-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carboxylic acid",
+          "symbol": "4",
+          "amount": null,
+          "registry_name": "5-(p-tolyl)isoxazole-3-carboxylic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "aqueous ethanol",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry1"
+    },
+    {
+      "id": "Synthesis2012-Entry2",
+      "reaction_type": "acid to acid chloride formation",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carboxylic acid",
+          "symbol": "4",
+          "amount": null,
+          "registry_name": "5-(p-tolyl)isoxazole-3-carboxylic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl chloride",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry2"
+    },
+    {
+      "id": "Synthesis2012-Entry3",
+      "reaction_type": "azidation",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl chloride",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl Azide",
+          "symbol": "5",
+          "amount": null
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "sodium azide",
+          "symbol": "NaN3",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "97% yield",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry3"
+    },
+    {
+      "id": "Synthesis2012-Entry4",
+      "reaction_type": "carbamate formation",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl Azide",
+          "symbol": "5",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl [5-(p-tolyl)isoxazol-3-yl]carbamate",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "ethanol",
+          "symbol": "EtOH",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "ethanol",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "reflux",
+        "time": null
+      },
+      "targets": {
+        "yield": "did not exceed 52%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry4"
+    },
+    {
+      "id": "Synthesis2012-Entry5",
+      "reaction_type": "carbamate formation",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl Azide",
+          "symbol": "5",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "Phenyl [5-(p-Tolyl)isoxazol-3-yl]carbamate",
+          "symbol": "6",
+          "amount": null,
+          "registry_name": "phenyl [5-(p-tolyl)isoxazol-3-yl]carbamate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "phenol",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry5"
+    },
+    {
+      "id": "Synthesis2012-Entry6",
+      "reaction_type": "hydrolysis/deprotection",
+      "substrates": [
+        {
+          "name": "Phenyl [5-(p-Tolyl)isoxazol-3-yl]carbamate",
+          "symbol": "6",
+          "amount": null,
+          "registry_name": "phenyl [5-(p-tolyl)isoxazol-3-yl]carbamate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-amine",
+          "symbol": "1",
+          "amount": null,
+          "registry_name": "5-(p-tolyl)isoxazol-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "potassium hydroxide",
+          "symbol": "KOH",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "ethanol–water",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry6"
+    },
+    {
+      "id": "Synthesis2012-Entry7",
+      "reaction_type": "complexation (ligand exchange)",
+      "substrates": [
+        {
+          "name": "bis(acetonitrile)dichloropalladium(II)",
+          "symbol": "PdCl(MeCN)2",
+          "amount": null
+        },
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-amine",
+          "symbol": "1",
+          "amount": null,
+          "registry_name": "5-(p-tolyl)isoxazol-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "trans-Dichlorobis[5-(p-tolyl)isoxazol-kN-3-amine]palladium(II)",
+          "symbol": "7",
+          "amount": null,
+          "registry_name": "trans-dichlorobis[5-(p-tolyl)isoxazol-kN-3-amine]palladium(II)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "acetonitrile",
+          "symbol": "MeCN",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "acetonitrile",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": "10 minutes"
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry7"
+    },
+    {
+      "id": "Synthesis2012-Entry8",
+      "reaction_type": "Suzuki–Miyaura coupling",
+      "substrates": [
+        {
+          "name": "5-iodosalicylic acid",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "2,4-difluorophenylboronic acid",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "2',4'-difluoro-4-hydroxybiphenyl-3-carboxylic acid (diflunisal)",
+          "symbol": "11",
+          "amount": null,
+          "registry_name": "2¢,4¢-difluoro-4-hydroxybiphenyl-3-carboxylic acid",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "trans-Dichlorobis[5-(p-tolyl)isoxazol-kN-3-amine]palladium(II)",
+          "symbol": "7",
+          "amount": "0.01 mol%",
+          "registry_name": "trans-dichlorobis[5-(p-tolyl)isoxazol-kN-3-amine]palladium(II)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "10 minutes"
+      },
+      "targets": {
+        "yield": "97% isolated yield",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry8"
+    },
+    {
+      "id": "Synthesis2012-Entry9",
+      "reaction_type": "Suzuki–Miyaura coupling",
+      "substrates": [
+        {
+          "name": "5-iodosalicylic acid",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "2,4-difluorophenylboronic acid",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "2',4'-difluoro-4-hydroxybiphenyl-3-carboxylic acid (diflunisal)",
+          "symbol": "11",
+          "amount": null,
+          "registry_name": "2¢,4¢-difluoro-4-hydroxybiphenyl-3-carboxylic acid",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "trans-Dichlorobis[5-(p-tolyl)isoxazol-kN-3-amine]palladium(II)",
+          "symbol": "7",
+          "amount": "0.0001 mol% (1 ppm)",
+          "registry_name": "trans-dichlorobis[5-(p-tolyl)isoxazol-kN-3-amine]palladium(II)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "100 °C",
+        "time": "less than 5 minutes"
+      },
+      "targets": {
+        "yield": "98% yield",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry9"
+    },
+    {
+      "id": "Synthesis2012-Entry10",
+      "reaction_type": "dehydration (oxime to nitrile)",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbaldehyde oxime",
+          "symbol": "2",
+          "amount": "10.11 g, 50 mmol",
+          "registry_name": "5-(p-tolyl)isoxazole-3-carbaldehyde oxime",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonitrile",
+          "symbol": "3",
+          "amount": "9.03 g",
+          "registry_name": "5-(p-tolyl)isoxazole-3-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous pyridine",
+          "symbol": null,
+          "amount": "20 mL"
+        },
+        {
+          "name": "AcO",
+          "symbol": "AcO",
+          "amount": "7.66 g, 75 mmol"
+        },
+        {
+          "name": "water",
+          "symbol": "H2O",
+          "amount": "100 mL"
+        },
+        {
+          "name": "hydrochloric acid",
+          "symbol": "HCl",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous pyridine",
+        "volume": "20 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "90–95 °C",
+        "time": "7 h"
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry10"
+    },
+    {
+      "id": "Synthesis2012-Entry11",
+      "reaction_type": "hydrolysis",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonitrile",
+          "symbol": "3",
+          "amount": "2.00 g, 10.86 mmol",
+          "registry_name": "5-(p-tolyl)isoxazole-3-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carboxylic acid",
+          "symbol": "4",
+          "amount": "1.94 g",
+          "registry_name": "5-(p-tolyl)isoxazole-3-carboxylic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "potassium hydroxide",
+          "symbol": "KOH",
+          "amount": "1.3 g, 23.17 mmol"
+        },
+        {
+          "name": "ethanol",
+          "symbol": "EtOH",
+          "amount": "20 mL"
+        },
+        {
+          "name": "water",
+          "symbol": "H2O",
+          "amount": "150 mL"
+        },
+        {
+          "name": "hydrochloric acid",
+          "symbol": "HCl",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and water",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "reflux",
+        "time": "until no ammonia was present"
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry11"
+    },
+    {
+      "id": "Synthesis2012-Entry12",
+      "reaction_type": "acid chloride formation",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carboxylic acid",
+          "symbol": "4",
+          "amount": "3.00 g, 14.76 mmol",
+          "registry_name": "5-(p-tolyl)isoxazole-3-carboxylic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl chloride",
+          "symbol": null,
+          "amount": "3.17 g"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "thionyl chloride",
+          "symbol": "SOCl2",
+          "amount": "2.11 g, 17.74 mmol"
+        },
+        {
+          "name": "DMF",
+          "symbol": "DMF",
+          "amount": "2 drops"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "reflux",
+        "time": "4 h"
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry12"
+    },
+    {
+      "id": "Synthesis2012-Entry13",
+      "reaction_type": "azidation (acyl chloride to acyl azide)",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl chloride",
+          "symbol": null,
+          "amount": "4.38 g, 19.76 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl Azide",
+          "symbol": "5",
+          "amount": "4.37 g"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "sodium azide",
+          "symbol": "NaN3",
+          "amount": "1.67 g, 25.69 mmol"
+        },
+        {
+          "name": "acetone",
+          "symbol": null,
+          "amount": "50 mL"
+        },
+        {
+          "name": "water",
+          "symbol": "H2O",
+          "amount": "250 mL (dilution)"
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone",
+        "volume": "50 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "10 °C then 30 °C",
+        "time": "30 min at 10 °C and 30 min at 30 °C"
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry13"
+    },
+    {
+      "id": "Synthesis2012-Entry14",
+      "reaction_type": "carbamate formation",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl Azide",
+          "symbol": "5",
+          "amount": "8.38 g, 36.72 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Phenyl [5-(p-Tolyl)isoxazol-3-yl]carbamate",
+          "symbol": "6",
+          "amount": "9.73 g",
+          "registry_name": "phenyl [5-(p-tolyl)isoxazol-3-yl]carbamate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "phenol",
+          "symbol": null,
+          "amount": "4.16 g, 44.20 mmol"
+        },
+        {
+          "name": "dry benzene",
+          "symbol": null,
+          "amount": "50 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry benzene",
+        "volume": "50 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "reflux",
+        "time": "4 h"
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry14"
+    },
+    {
+      "id": "Synthesis2012-Entry15",
+      "reaction_type": "hydrolysis/deprotection",
+      "substrates": [
+        {
+          "name": "Phenyl [5-(p-Tolyl)isoxazol-3-yl]carbamate (urethane 6)",
+          "symbol": "6",
+          "amount": "3.97 g, 13.49 mmol",
+          "registry_name": "phenyl [5-(p-tolyl)isoxazol-3-yl]carbamate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-amine",
+          "symbol": "1",
+          "amount": "2.1 g",
+          "registry_name": "5-(p-tolyl)isoxazol-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "potassium hydroxide",
+          "symbol": "KOH",
+          "amount": "2 g, 35.7 mmol"
+        },
+        {
+          "name": "water",
+          "symbol": "H2O",
+          "amount": "10 mL"
+        },
+        {
+          "name": "ethanol",
+          "symbol": "EtOH",
+          "amount": "40 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH",
+        "volume": "40 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "85 °C",
+        "time": "7 h"
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Synthesis2012-Entry15"
+    }
+  ]
+}

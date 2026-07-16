@@ -1,0 +1,119 @@
+[33mcommit 6165ec91ec8f7ea842333f26e362978aca54e8ec[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mworkflow-multimodal-kg-cleanup[m[33m)[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Mon Jul 6 16:29:53 2026 +0800
+
+    General Procedure 单次结构化与确定性继承(未跑真实数据验证)
+
+[33mcommit f10a3bcbb15d334b771ae2972133716fbcda13ae[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sun Jul 5 13:48:07 2026 +0800
+
+    能够成功提取化学式下角标信息了
+
+[33mcommit a6b5a047b72259fc5cbfeac1393a913942ec3556[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sat Jul 4 17:49:31 2026 +0800
+
+    benchmark 优化，Q1和Q2的日志更加全
+
+[33mcommit 77d4f3c6cf9c10a3fe966010faac44f6d81eb435[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Tue Jun 30 20:42:36 2026 +0800
+
+    完成多步合成GP的分布生成reaction
+
+[33mcommit 4b07c7724efd71c5cf08f7fe5ceaaf3a487d840d[m[33m ([m[1;31morigin/workflow-multimodal-kg-cleanup[m[33m)[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sun Jun 21 14:41:39 2026 +0800
+
+    Add two-column PDF text layout option
+
+[33mcommit b31d8855cbdc335ecb1c4c44829fe8e8164a6c72[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sun Jun 21 02:37:06 2026 +0800
+
+    GP注入的修改
+
+[33mcommit 93b56c59e7b9120a05dfbc9f6030cf1fa7308374[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sat Jun 20 17:43:21 2026 +0800
+
+    Fix GP title aliases and hyphenated GP references
+
+[33mcommit 1cfb54fa42f33119da6b53551a69e3b435c234f2[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sat Jun 20 16:50:02 2026 +0800
+
+    test 修改GP
+
+[33mcommit cc199176626d6edbcd7e00ed330d6923856b9a28[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Wed Jun 17 20:30:23 2026 +0800
+
+    Add plural GP procedure aliases
+
+[33mcommit af5630c48f2a651b9c00c8fb6f6db78abf963645[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Tue Jun 16 20:58:55 2026 +0800
+
+    实现了全流程并行
+
+[33mcommit 529997f07115c8990de5e811bcc57d1977425bb4[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Tue Jun 16 14:19:24 2026 +0800
+
+    图片侧流程实现并行
+
+[33mcommit b841044657a9a3987d92073585dee92699c76e55[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sun Jun 14 16:51:18 2026 +0800
+
+    实现文本侧抽取按chunk并行
+
+[33mcommit a78e4b6ff16123d53a17dd3a079bec636e3c63dc[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sun Jun 14 13:43:13 2026 +0800
+
+    文本侧流程处理完毕
+
+[33mcommit 81373d7cd1b378afc1eeb045bf35768dd209613b[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sat Jun 13 16:21:35 2026 +0800
+
+    分块策略去掉按heading规则分块
+
+[33mcommit ee9f96b1c34dc26860d3a6cb4b4fba3b648784d9[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sat Jun 13 14:49:38 2026 +0800
+
+    可以完整抽取出reactions
+
+[33mcommit f9238359b65643f3f0b78fd4586b117b07a3aa34[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Thu Jun 11 20:51:42 2026 +0800
+
+    在处理reaction抽取代码前
+
+[33mcommit 2ab37a5cef974f0ce00804181f73c3735a5454f3[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Mon Jun 8 00:08:20 2026 +0800
+
+    分块从之前的固定分块改成按文章section分块，registry提取改成了llm提取，现在可以完整提取好
+
+[33mcommit a06d99df5ebe243bba93f844dda1ae776259a28e[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sat Jun 6 18:00:39 2026 +0800
+
+    将所有模型都换成gpt-5-mini
+
+[33mcommit e32024b20767e5df25ad3af57eea8b8078bebde0[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Thu Jun 4 17:48:19 2026 +0800
+
+    Update multimodal workflow and KG generation
+
+[33mcommit b759bd6e67d3ac274617edb5bb9cfa3e435e70af[m[33m ([m[1;33mtag: [m[1;33mstable-multimodal-kg-20260530[m[33m)[m
+Author: Han Wenyuan <972333749@qq.com>
+Date:   Sat May 30 10:25:14 2026 +0800
+
+    Save multimodal LangGraph workflow snapshot

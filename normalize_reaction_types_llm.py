@@ -21,7 +21,7 @@ CLASSIFY_USER_PROMPT = """Assign the primary reaction type for each reaction.
 
 Rules:
 - Use a short, standard English main reaction class.
-- Base the label on the paper title, section/procedure context when present, substrates, products, catalysts, reagents, and conditions.
+- Base the label on the paper title, section/procedure context when present, substrates, products, catalysts, ligands, other components, and conditions.
 - Do not output mechanism details, catalyst names, optimization labels, or broad condition labels as the reaction type.
 - Do not use "photocatalysis", "metal-catalyzed reaction", "optimization", or similar context labels as the main type unless the source explicitly defines the reaction that way.
 - If the evidence is insufficient, output "unknown reaction".
@@ -107,9 +107,10 @@ def _reaction_summary(reaction: dict, index: int) -> dict:
         "section": reaction.get("section") or reaction.get("chunk_label"),
         "substrates": names("substrates"),
         "products": names("products"),
+        "intermediates": names("intermediates"),
         "catalysts": names("catalysts"),
-        "additives": names("additives"),
-        "reagents": names("reagents"),
+        "ligands": names("ligands"),
+        "other_components": names("other_components"),
         "conditions": {
             key: value
             for key, value in conditions.items()
@@ -118,6 +119,7 @@ def _reaction_summary(reaction: dict, index: int) -> dict:
         "targets": {
             key: value for key, value in targets.items() if value not in (None, "", "null")
         },
+        "step_count": reaction.get("step_count"),
         "raw_reaction_type": reaction.get("reaction_type"),
     }
 

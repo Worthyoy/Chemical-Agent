@@ -1,0 +1,4109 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-decarboxylative-arylation-of-α-amino-acids-via-the-merger-of-photoredox-and-nickel-catalysis.pdf",
+  "paper_key": "enantioselective-decarboxylative-arylation-of-α-amino-acids-via-the-merger-of-photoredox-and-nickel-catalysis",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-decarboxylative-arylation-of-α-amino-acids-via-the-merger-of-photoredox-and-nickel-catalysis.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v8_two_column_cli",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-decarboxylative-arylation-of-α-amino-acids-via-the-merger-of-photoredox-and-nickel-catalysis.pdf",
+    "source_mtime_ns": 1782048483000000000,
+    "source_size": 18292460,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "enable_stage2_audit": true,
+    "paper_key": "enantioselective-decarboxylative-arylation-of-α-amino-acids-via-the-merger-of-photoredox-and-nickel-catalysis",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-decarboxylative-arylation-of-α-amino-acids-via-the-merger-of-photoredox-and-nickel-catalysis.pdf"
+  },
+  "extracted_at": "2026-06-22T17:08:19.696002",
+  "total_reactions": 54,
+  "filtered_reactions": 54,
+  "filter_stats": {
+    "input_reactions": 54,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 54
+  },
+  "reactions": [
+    {
+      "id": "Step5-Entry1",
+      "reaction_type": "reduction",
+      "substrates": [
+        {
+          "name": "S2",
+          "symbol": "S2",
+          "amount": "2.5 g, 7.6 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "S–6",
+          "symbol": "S–6",
+          "amount": "1.5 g (crude product)"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "Lithium aluminum hydride",
+          "symbol": "LAH",
+          "amount": "1.2 g, 21 mmol"
+        },
+        {
+          "name": "H O-15 wt% NaOH solution-H O",
+          "symbol": "H O-15 wt% NaOH solution-H O",
+          "amount": null
+        },
+        {
+          "name": "KOH",
+          "symbol": "KOH",
+          "amount": "14 g, 0.25 mol"
+        },
+        {
+          "name": "H O",
+          "symbol": "H O",
+          "amount": "25 mL"
+        },
+        {
+          "name": "MeOH",
+          "symbol": "MeOH",
+          "amount": "25 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF; H O; MeOH",
+        "volume": "60 mL; 25 mL; 25 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "0 °C; 75 °C",
+        "time": "3 h; 14 h"
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Step5-Entry1"
+    },
+    {
+      "id": "Step7-Entry1",
+      "reaction_type": "cyanation",
+      "substrates": [
+        {
+          "name": "S–7",
+          "symbol": "S–7",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "(S,S)-5",
+          "symbol": "(S,S)-5",
+          "amount": "0.96 g"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "n-BuLi",
+          "symbol": "n-BuLi",
+          "amount": "1.4 mL, 2.5 M in hexanes. 3.6 mmol"
+        },
+        {
+          "name": "TMEDA",
+          "symbol": "TMEDA",
+          "amount": "0.54 mL, 3.6 mmol"
+        },
+        {
+          "name": "p-toluenesulfonyl cyanide",
+          "symbol": "p-toluenesulfonyl cyanide",
+          "amount": "0.66 g, 3.6 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "40 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "stirred under nitrogen at –78 °C for 20 min, then at 0 °C for 30 min, and cooled again to –78 °C; warmed to room temperature and stirred for 12 h",
+        "time": "20 min; 30 min; 12 h"
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Step7-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl 1-(4-cyanophenyl)-3-methylbutyl)carbamate",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "2.5 mg, 0.0055 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene, DME",
+        "volume": "22.5 mL toluene, 1.0 mL DME",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "94%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl 1-(4-cyanophenyl)-3-methylbutyl)carbamate",
+          "symbol": null,
+          "amount": "52 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "2.5 mg, 0.0055 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene, DME",
+        "volume": "22.5 mL toluene, 1.0 mL DME",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Cbz-L-leucine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl [1-(4-cyanophenyl)-3-methylbutyl]carbamate",
+          "symbol": null,
+          "amount": "35 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "2.5 mg, 0.0055 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Cbz-L-leucine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene, DME",
+        "volume": "22.5 mL toluene, 1.0 mL DME",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "43%",
+        "ee": "88%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Cbz-L-leucine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl [1-(4-cyanophenyl)-3-methylbutyl]carbamate",
+          "symbol": null,
+          "amount": "37 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "2.5 mg, 0.0055 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Cbz-L-leucine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene, DME",
+        "volume": "22.5 mL toluene, 1.0 mL DME",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": "87%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry5",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-norleucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(4-cyanophenyl)pentyl]carbamate",
+          "symbol": null,
+          "amount": "60 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.74 mg, 0.0125 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "6.09 mg, 0.0138 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-norleucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene, DME",
+        "volume": "22.5 mL toluene, 1.0 mL DME",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry6",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-norleucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(4-cyanophenyl)pentyl]carbamate",
+          "symbol": null,
+          "amount": "61 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.74 mg, 0.0125 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "6.09 mg, 0.0138 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-norleucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene, DME",
+        "volume": "22.5 mL toluene, 1.0 mL DME",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry7",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "N-Boc-O-benzyl-L-serine",
+          "symbol": null,
+          "amount": "112 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [2-(benzyloxy)-1-(4-cyanophenyl)ethyl]carbamate",
+          "symbol": null,
+          "amount": "75 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.74 mg, 0.0125 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "6.09 mg, 0.0138 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "DME rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "84%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry8",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "N-Boc-O-benzyl-L-serine",
+          "symbol": null,
+          "amount": "112 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [2-(benzyloxy)-1-(4-cyanophenyl)ethyl]carbamate",
+          "symbol": null,
+          "amount": "72 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.74 mg, 0.0125 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "6.09 mg, 0.0138 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "DME rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "84%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry9",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "N-Boc-L-aspartic acid 4-methyl ester",
+          "symbol": null,
+          "amount": "93 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-[(t-butoxycarbonyl)amino]-3-(4-cyanophenyl)propanoate",
+          "symbol": null,
+          "amount": "60 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "DME rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "84%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry10",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "N-Boc-L-aspartic acid 4-methyl ester",
+          "symbol": null,
+          "amount": "93 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-[(t-butoxycarbonyl)amino]-3-(4-cyanophenyl)propanoate",
+          "symbol": null,
+          "amount": "61 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "DME rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "80%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry11",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "N-Boc-L-glutamic acid 5-methyl ester",
+          "symbol": null,
+          "amount": "98 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-[(t-butoxycarbonyl)amino]-4-(4-cyanophenyl)butanoate",
+          "symbol": null,
+          "amount": "69 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "DME rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "78%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry12",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "N-Boc-L-glutamic acid 5-methyl ester",
+          "symbol": null,
+          "amount": "98 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-[(t-butoxycarbonyl)amino]-4-(4-cyanophenyl)butanoate",
+          "symbol": null,
+          "amount": "65 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "DME rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "84%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry13",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "Nε-Z-Nα-Boc-L-lysine",
+          "symbol": null,
+          "amount": "144 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl t-butyl [1-(4-cyanophenyl)pentane-1,5-diyl]carbamate",
+          "symbol": null,
+          "amount": "80 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.74 mg, 0.0125 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "6.09 mg, 0.0138 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "DME rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "86%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry7"
+    },
+    {
+      "id": "GeneralProcedureA-Entry14",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "Nε-Z-Nα-Boc-L-lysine",
+          "symbol": null,
+          "amount": "144 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl t-butyl [1-(4-cyanophenyl)pentane-1,5-diyl]carbamate",
+          "symbol": null,
+          "amount": "82 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.74 mg, 0.0125 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "6.09 mg, 0.0138 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "DME rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "85%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry8"
+    },
+    {
+      "id": "GeneralProcedureA-Entry15",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "N-Boc-δ-chloro-L-norvaline",
+          "symbol": null,
+          "amount": "94 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [4-chloro-1-(4-cyanophenyl)butyl]carbamate",
+          "symbol": null,
+          "amount": "56 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "DME rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "83%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry9"
+    },
+    {
+      "id": "GeneralProcedureA-Entry16",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "N-Boc-δ-chloro-L-norvaline",
+          "symbol": null,
+          "amount": "94 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [4-chloro-1-(4-cyanophenyl)butyl]carbamate",
+          "symbol": null,
+          "amount": "53 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "DME rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "86%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry10"
+    },
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "N-Boc-L-phenylalanine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(4-cyanophenyl)-2-phenylethyl]carbamate",
+          "symbol": null,
+          "amount": "54 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": "(R,R)-5",
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous diglyme",
+          "symbol": "diglyme",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "diglyme rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "N-Boc-L-phenylalanine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(4-cyanophenyl)-2-phenylethyl]carbamate",
+          "symbol": null,
+          "amount": "53 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": "(R,R)-5",
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF )3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "Cs2CO3",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "anhydrous diglyme",
+          "symbol": "diglyme",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "diglyme rinse",
+          "symbol": null,
+          "amount": "1.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": "89%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N,O-bis(Boc)-L-tyrosine",
+          "symbol": null,
+          "amount": "143 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (2-(4-((tert-butoxycarbonyl)oxy)phenyl)-1-(4-cyanophenyl)ethyl)carbamate",
+          "symbol": null,
+          "amount": "80 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "diglyme",
+          "symbol": null,
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "85%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N,O-bis(Boc)-L-tyrosine",
+          "symbol": null,
+          "amount": "143 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (2-(4-((tert-butoxycarbonyl)oxy)phenyl)-1-(4-cyanophenyl)ethyl)carbamate",
+          "symbol": null,
+          "amount": "86 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "diglyme",
+          "symbol": null,
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "84%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry5",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-1-methyl-L-tryptophan",
+          "symbol": null,
+          "amount": "119 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(4-cyanophenyl)-2-(1-methyl-1H-indol-3-yl)ethyl]carbamate",
+          "symbol": null,
+          "amount": "46 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "diglyme",
+          "symbol": null,
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": "83%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry6",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-1-methyl-L-tryptophan",
+          "symbol": null,
+          "amount": "119 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(4-cyanophenyl)-2-(1-methyl-1H-indol-3-yl)ethyl]carbamate",
+          "symbol": null,
+          "amount": "49 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "diglyme",
+          "symbol": null,
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": "85%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry7",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-2-thienylalanine",
+          "symbol": null,
+          "amount": "102 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(4-cyanophenyl)-2-(thiophen-2-yl)ethyl]carbamate",
+          "symbol": null,
+          "amount": "57 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "diglyme",
+          "symbol": null,
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry8",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo benzonitrile",
+          "symbol": null,
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-2-thienylalanine",
+          "symbol": null,
+          "amount": "102 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(4-cyanophenyl)-2-(thiophen-2-yl)ethyl]carbamate",
+          "symbol": null,
+          "amount": "61 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "diglyme",
+          "symbol": null,
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry17",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo-2-fluorobenzonitrile",
+          "symbol": null,
+          "amount": "51 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (1-(4-cyano-3-fluorophenyl)-3-methylbutyl)carbamate",
+          "symbol": null,
+          "amount": "56 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "2.5 mg, 0.0055 mmol"
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "DME",
+          "symbol": null,
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry18",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo-2-fluorobenzonitrile",
+          "symbol": null,
+          "amount": "51 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (1-(4-cyano-3-fluorophenyl)-3-methylbutyl)carbamate",
+          "symbol": null,
+          "amount": "60 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "2.5 mg, 0.0055 mmol"
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "DME",
+          "symbol": null,
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry19",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromoacetophenone",
+          "symbol": null,
+          "amount": "51 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (1-(4-acetylphenyl)-3-methylbutyl)carbamate",
+          "symbol": null,
+          "amount": "45 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "2.5 mg, 0.0055 mmol"
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "DME",
+          "symbol": null,
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry20",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromoacetophenone",
+          "symbol": null,
+          "amount": "51 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (1-(4-acetylphenyl)-3-methylbutyl)carbamate",
+          "symbol": null,
+          "amount": "49 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "2.5 mg, 0.0055 mmol"
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "DME",
+          "symbol": null,
+          "amount": "1.0 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry21",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "5-bromophthalide",
+          "symbol": "5-bromophthalide",
+          "amount": "53 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": "N-Boc-leucine",
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl-(3-methyl-1-(1-oxo-1,3-dihydroisobenzofuran-5-yl)butyl)carbamate",
+          "symbol": null,
+          "amount": "58 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": "NiCl2•glyme",
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "symbol": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": "tetrabutylammonium iodide",
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "anhydrous cesium carbonate",
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene (22.5 mL), DME (1.0 mL; DME rinse 1.5 mL)",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "89%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry22",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "5-bromophthalide",
+          "symbol": "5-bromophthalide",
+          "amount": "53 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": "N-Boc-leucine",
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl-(3-methyl-1-(1-oxo-1,3-dihydroisobenzofuran-5-yl)butyl)carbamate",
+          "symbol": null,
+          "amount": "56 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": "NiCl2•glyme",
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "symbol": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": "tetrabutylammonium iodide",
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "anhydrous cesium carbonate",
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene (22.5 mL), DME (1.0 mL; DME rinse 1.5 mL)",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "89%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry23",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "methyl 3-iodobenzoate",
+          "symbol": "methyl 3-iodobenzoate",
+          "amount": "68 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": "N-Boc-leucine",
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-(1-((t-butoxycarbonyl)amino)-3-methylbutyl)benzoate",
+          "symbol": null,
+          "amount": "59 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": "NiCl2•glyme",
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "symbol": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": "tetrabutylammonium iodide",
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "anhydrous cesium carbonate",
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene (22.5 mL), DME (1.0 mL; DME rinse 1.5 mL)",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "92%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry24",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "methyl 3-iodobenzoate",
+          "symbol": "methyl 3-iodobenzoate",
+          "amount": "68 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": "N-Boc-leucine",
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-(1-((t-butoxycarbonyl)amino)-3-methylbutyl)benzoate",
+          "symbol": null,
+          "amount": "58 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": "NiCl2•glyme",
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "symbol": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": "tetrabutylammonium iodide",
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "anhydrous cesium carbonate",
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene (22.5 mL), DME (1.0 mL; DME rinse 1.5 mL)",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry25",
+      "reaction_type": "two-step sequence: enantioselective decarboxylative arylation then base-mediated cyclization",
+      "substrates": [
+        {
+          "name": "1-iodo-3,5-bis(trifluoromethyl) benzene",
+          "symbol": "1-iodo-3,5-bis(trifluoromethyl) benzene",
+          "amount": "85 mg, 44 uL, 0.25 mmol"
+        },
+        {
+          "name": "(S)-N-Boc-δ-chloro-norvaline",
+          "symbol": "(S)-N-Boc-δ-chloro-norvaline",
+          "amount": "94 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl 2-[3,5-bis(trifluoromethyl)phenyl]pyrrolidine-1-carboxylate",
+          "symbol": null,
+          "amount": "44 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": "NiCl2•glyme",
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "symbol": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": "tetrabutylammonium iodide",
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "anhydrous cesium carbonate",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "Lithium bis(trimethylsilyl)amide",
+          "symbol": "LiHMDS",
+          "amount": "1 M solution in THF, 0.37 mL, 0.37 mmol"
+        },
+        {
+          "name": "anhydrous THF",
+          "symbol": "THF",
+          "amount": "15 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene (22.5 mL) (step 1); THF (15 mL) (step 2); DME (1.0 mL; DME rinse 1.5 mL)",
+        "volume": null,
+        "light source": "blue LED lights (step 1)",
+        "wavelength": null,
+        "temperature": "18 °C (step 1); 0 °C to room temperature (step 2)",
+        "time": "36 h (step 1); 1.5 h (step 2)"
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": "87%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry26",
+      "reaction_type": "two-step sequence: enantioselective decarboxylative arylation then base-mediated cyclization",
+      "substrates": [
+        {
+          "name": "1-iodo-3,5-bis(trifluoromethyl) benzene",
+          "symbol": "1-iodo-3,5-bis(trifluoromethyl) benzene",
+          "amount": "85 mg, 44 uL, 0.25 mmol"
+        },
+        {
+          "name": "(S)-N-Boc-δ-chloro-norvaline",
+          "symbol": "(S)-N-Boc-δ-chloro-norvaline",
+          "amount": "94 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl 2-[3,5-bis(trifluoromethyl)phenyl]pyrrolidine-1-carboxylate",
+          "symbol": null,
+          "amount": "41 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": "NiCl2•glyme",
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "symbol": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": "tetrabutylammonium iodide",
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "anhydrous cesium carbonate",
+          "amount": "150 mg, 0.46 mmol"
+        },
+        {
+          "name": "Lithium bis(trimethylsilyl)amide",
+          "symbol": "LiHMDS",
+          "amount": "1 M solution in THF, 0.37 mL, 0.37 mmol"
+        },
+        {
+          "name": "anhydrous THF",
+          "symbol": "THF",
+          "amount": "15 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene (22.5 mL) (step 1); THF (15 mL) (step 2); DME (1.0 mL; DME rinse 1.5 mL)",
+        "volume": null,
+        "light source": "blue LED lights (step 1)",
+        "wavelength": null,
+        "temperature": "18 °C (step 1); 0 °C to room temperature (step 2)",
+        "time": "36 h (step 1); 1.5 h (step 2)"
+      },
+      "targets": {
+        "yield": "43%",
+        "ee": "88%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry27",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo-2-fluoropyridine",
+          "symbol": "4-bromo-2-fluoropyridine",
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": "N-Boc-leucine",
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (1-(2-fluoropyridin-4-yl)-3-methylbutyl)carbamate",
+          "symbol": null,
+          "amount": "42 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": "NiCl2•glyme",
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "symbol": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": "tetrabutylammonium iodide",
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "anhydrous cesium carbonate",
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene (22.5 mL), DME (1.0 mL; DME rinse 1.5 mL)",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "93%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry7"
+    },
+    {
+      "id": "GeneralProcedureA-Entry28",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo-2-fluoropyridine",
+          "symbol": "4-bromo-2-fluoropyridine",
+          "amount": "46 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": "N-Boc-leucine",
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (1-(2-fluoropyridin-4-yl)-3-methylbutyl)carbamate",
+          "symbol": null,
+          "amount": "46 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": "NiCl2•glyme",
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "symbol": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": "tetrabutylammonium iodide",
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "anhydrous cesium carbonate",
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene (22.5 mL), DME (1.0 mL; DME rinse 1.5 mL)",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "89%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry8"
+    },
+    {
+      "id": "GeneralProcedureA-Entry29",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "5-bromo-2-(trifluoromethyl)pyridine",
+          "symbol": "5-bromo-2-(trifluoromethyl)pyridine",
+          "amount": "59 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": "N-Boc-leucine",
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (3-methyl-1-(6-(trifluoromethyl)pyridin-3-yl)butyl)carbamate",
+          "symbol": null,
+          "amount": "61 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": "NiCl2•glyme",
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "symbol": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": "tetrabutylammonium iodide",
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "anhydrous cesium carbonate",
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene (22.5 mL), DME (1.0 mL; DME rinse 1.5 mL)",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "93%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry9"
+    },
+    {
+      "id": "GeneralProcedureA-Entry30",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "5-bromo-2-(trifluoromethyl)pyridine",
+          "symbol": "5-bromo-2-(trifluoromethyl)pyridine",
+          "amount": "59 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": "N-Boc-leucine",
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (3-methyl-1-(6-(trifluoromethyl)pyridin-3-yl)butyl)carbamate",
+          "symbol": null,
+          "amount": "60 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl2•glyme",
+          "symbol": "NiCl2•glyme",
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "symbol": "Ir[dF(CF3)ppy](dtbbpy)(PF6)2",
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": "tetrabutylammonium iodide",
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": "anhydrous cesium carbonate",
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene (22.5 mL), DME (1.0 mL; DME rinse 1.5 mL)",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry10"
+    },
+    {
+      "id": "GeneralProcedureA-Entry31",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo-2-(trifluoromethyl)pyridine",
+          "symbol": null,
+          "amount": "59 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (3-methyl-1-(2-(trifluoromethyl)pyridin-4-yl)butyl)carbamate",
+          "symbol": null,
+          "amount": "57 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "2.5 mg, 0.0055 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,2-dimethoxyethane (DME) and toluene",
+        "volume": "DME (1.0 mL + 1.5 mL rinse), toluene (22.5 mL)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "94%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry32",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo-2-(trifluoromethyl)pyridine",
+          "symbol": null,
+          "amount": "59 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (3-methyl-1-(2-(trifluoromethyl)pyridin-4-yl)butyl)carbamate",
+          "symbol": null,
+          "amount": "60 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": null,
+          "amount": "2.5 mg, 0.0055 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,2-dimethoxyethane (DME) and toluene",
+        "volume": "DME (1.0 mL + 1.5 mL rinse), toluene (22.5 mL)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry9",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "5-bromophthalide",
+          "symbol": null,
+          "amount": "53 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-phenylalanine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(1-oxo-1,3-dihydroisobenzofuran-5-yl)-2-phenylethyl]carbamate",
+          "symbol": null,
+          "amount": "67 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "diglyme and toluene",
+        "volume": "diglyme (1.0 mL + 1.5 mL rinse), toluene (22.5 mL)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "48 h"
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "94%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry10",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "5-bromophthalide",
+          "symbol": null,
+          "amount": "53 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-phenylalanine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(1-oxo-1,3-dihydroisobenzofuran-5-yl)-2-phenylethyl]carbamate",
+          "symbol": null,
+          "amount": "63 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "diglyme and toluene",
+        "volume": "diglyme (1.0 mL + 1.5 mL rinse), toluene (22.5 mL)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "48 h"
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry11",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "1-iodo-3,5-bis(trifluoromethyl) benzene",
+          "symbol": null,
+          "amount": "85 mg, 44 uL, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-phenylalanine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (1-(3,5-bis(trifluoromethyl)phenyl)-2-phenylethyl)carbamate",
+          "symbol": null,
+          "amount": "61 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "diglyme and toluene",
+        "volume": "diglyme (1.0 mL + 1.5 mL rinse), toluene (22.5 mL)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry12",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "1-iodo-3,5-bis(trifluoromethyl) benzene",
+          "symbol": null,
+          "amount": "85 mg, 44 uL, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-phenylalanine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (1-(3,5-bis(trifluoromethyl)phenyl)-2-phenylethyl)carbamate",
+          "symbol": null,
+          "amount": "68 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "diglyme and toluene",
+        "volume": "diglyme (1.0 mL + 1.5 mL rinse), toluene (22.5 mL)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry13",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo-2-trifluoromethylpyridine",
+          "symbol": null,
+          "amount": "56 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-phenylalanine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (2-phenyl-1-(2-(trifluoromethyl)pyridin-4-yl)ethyl)carbamate",
+          "symbol": null,
+          "amount": "79 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "diglyme and toluene",
+        "volume": "diglyme (1.0 mL + 1.5 mL rinse), toluene (22.5 mL)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry14",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "4-bromo-2-trifluoromethylpyridine",
+          "symbol": null,
+          "amount": "56 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-phenylalanine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (2-phenyl-1-(2-(trifluoromethyl)pyridin-4-yl)ethyl)carbamate",
+          "symbol": null,
+          "amount": "75 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "diglyme and toluene",
+        "volume": "diglyme (1.0 mL + 1.5 mL rinse), toluene (22.5 mL)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry6"
+    },
+    {
+      "id": "GeneralProcedureB-Entry15",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "5-bromo-2,3-difluoropyridine",
+          "symbol": null,
+          "amount": "48 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-phenylalanine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(5,6-difluoropyridin-3-yl)-2-phenylethyl]carbamate",
+          "symbol": null,
+          "amount": "40 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "diglyme and toluene",
+        "volume": "diglyme (1.0 mL + 1.5 mL rinse), toluene (22.5 mL)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "48%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry7"
+    },
+    {
+      "id": "GeneralProcedureB-Entry16",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "5-bromo-2,3-difluoropyridine",
+          "symbol": null,
+          "amount": "48 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-L-phenylalanine",
+          "symbol": null,
+          "amount": "100 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl [1-(5,6-difluoropyridin-3-yl)-2-phenylethyl]carbamate",
+          "symbol": null,
+          "amount": "38 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "2.8 mg, 0.013 mmol"
+        },
+        {
+          "name": "(R,R)-5",
+          "symbol": null,
+          "amount": "7.8 mg, 0.014 mmol"
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "diglyme and toluene",
+        "volume": "diglyme (1.0 mL + 1.5 mL rinse), toluene (22.5 mL)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": "89%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureB-Entry8"
+    },
+    {
+      "id": "GeneralProcedureA-Entry33",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "1-iodo-3,5-bis(trifluoromethyl) benzene",
+          "symbol": null,
+          "amount": "75 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (1-(3,5-bis(trifluoromethyl)phenyl)-3-methylbutyl)carbamate",
+          "symbol": null,
+          "amount": "77 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "97%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry34",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "1-iodo-3,5-bis(trifluoromethyl) benzene",
+          "symbol": null,
+          "amount": "75 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "t-Butyl (1-(3,5-bis(trifluoromethyl)phenyl)-3-methylbutyl)carbamate",
+          "symbol": null,
+          "amount": "74 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous 1,2-dimethoxyethane (DME)",
+          "symbol": "DME",
+          "amount": "1.0 mL"
+        },
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "22.5 mL",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "95%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry35",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "methyl 4-bromobenzoate",
+          "symbol": null,
+          "amount": "55 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-(1-((tert-butoxycarbonyl)amino)-3-methylbutyl)benzoate",
+          "symbol": null,
+          "amount": "59 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene, DME",
+        "volume": "22.5 mL (toluene), 1.0 mL (DME), 1.5 mL (DME rinse)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry36",
+      "reaction_type": "enantioselective decarboxylative arylation",
+      "substrates": [
+        {
+          "name": "methyl 4-bromobenzoate",
+          "symbol": null,
+          "amount": "55 mg, 0.25 mmol"
+        },
+        {
+          "name": "N-Boc-leucine",
+          "symbol": null,
+          "amount": "88 mg, 0.38 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-(1-((tert-butoxycarbonyl)amino)-3-methylbutyl)benzoate",
+          "symbol": null,
+          "amount": "51 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiCl 2•glyme",
+          "symbol": null,
+          "amount": "1.1 mg, 0.0050 mmol"
+        },
+        {
+          "name": "(S,S)-6",
+          "symbol": "(S,S)-6",
+          "amount": "2.5 mg, 0.0055 mmol",
+          "resolved_smiles": "N#CC(C1=NC(N)CO1)=C1[CH]C2(CCCCC2)CO1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 8,
+            "image_name": "page_2_image_1.png"
+          }
+        },
+        {
+          "name": "Ir[dF(CF )ppy] (dtbbpy)(PF ) 3 2 6",
+          "symbol": null,
+          "amount": "5.5 mg, 0.0050 mmol"
+        }
+      ],
+      "additives": [
+        {
+          "name": "tetrabutylammonium iodide",
+          "symbol": null,
+          "amount": "9.2 mg, 0.025 mmol"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "anhydrous cesium carbonate",
+          "symbol": null,
+          "amount": "150 mg, 0.46 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene, DME",
+        "volume": "22.5 mL (toluene), 1.0 mL (DME), 1.5 mL (DME rinse)",
+        "light source": "blue LED lights",
+        "wavelength": null,
+        "temperature": "18 °C",
+        "time": "36 h"
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": "89%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedureA-Entry2"
+    }
+  ]
+}

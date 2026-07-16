@@ -1,0 +1,2055 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Uno - Enantio‐  Diastereo‐ and Regioselective Synthesis of Chiral Cyclic and Acyclic.pdf",
+  "paper_key": "uno - enantio‐ diastereo‐ and regioselective synthesis of chiral cyclic and acyclic",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Uno - Enantio‐  Diastereo‐ and Regioselective Synthesis of Chiral Cyclic and Acyclic.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v8_two_column_cli",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Uno - Enantio‐  Diastereo‐ and Regioselective Synthesis of Chiral Cyclic and Acyclic.pdf",
+    "source_mtime_ns": 1782048788000000000,
+    "source_size": 6388983,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "enable_stage2_audit": true,
+    "paper_key": "uno - enantio‐ diastereo‐ and regioselective synthesis of chiral cyclic and acyclic",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Uno - Enantio‐  Diastereo‐ and Regioselective Synthesis of Chiral Cyclic and Acyclic.pdf"
+  },
+  "extracted_at": "2026-06-22T18:49:50.766126",
+  "total_reactions": 32,
+  "filtered_reactions": 32,
+  "filter_stats": {
+    "input_reactions": 32,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 32
+  },
+  "reactions": [
+    {
+      "id": "Procedure for the preparation of (11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine (L11)-Entry1",
+      "reaction_type": "phosphoramidite synthesis",
+      "substrates": [
+        {
+          "name": "amine",
+          "symbol": "amine",
+          "amount": "602 mg, 2.02 mmol, 1.0 equiv"
+        },
+        {
+          "name": "BINOL",
+          "symbol": "BINOL",
+          "amount": "578 mg, 2.02 mmol, 1.0 equiv"
+        },
+        {
+          "name": "PCl",
+          "symbol": "PCl",
+          "amount": "0.176 mL, 2.02 mmol, 1.0 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "1.09 g",
+          "registry_name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "triethylamine",
+          "symbol": "triethylamine",
+          "amount": "1.4 mL, 10.1 mmol, 5.0 equiv"
+        },
+        {
+          "name": "H2O",
+          "symbol": "H2O",
+          "amount": "null",
+          "resolved_smiles": "O",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "3_1",
+            "field": "conditions",
+            "item_index": 1,
+            "image_name": "page_6_image_1.png"
+          }
+        },
+        {
+          "name": "Na SO .",
+          "symbol": "Na SO .",
+          "amount": "null"
+        }
+      ],
+      "reagents": [
+        {
+          "name": "silica gel",
+          "symbol": "silica gel",
+          "amount": "null"
+        },
+        {
+          "name": "hexane/ EtOAc = 95:5",
+          "symbol": "hexane/ EtOAc = 95:5",
+          "amount": "null"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH Cl",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": "0 ºC; room temperature",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Procedure for the preparation of (11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine (L11)-Entry1"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry1",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1a",
+          "amount": "38.0 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-phenylspiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3a",
+          "amount": "26.1 mg",
+          "registry_name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-phenylspiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "98%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry1"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry2",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1b",
+          "amount": "40.8 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(p-tolyl)spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3b",
+          "amount": "32.2 mg",
+          "registry_name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(p-tolyl)spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry2"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry3",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1c",
+          "amount": "41.6 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-2,2-difluoro-4'-(4-fluorophenyl)-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3c",
+          "amount": "29.1 mg",
+          "registry_name": "(1S,4'S)-2,2-difluoro-4'-(4-fluorophenyl)-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "97%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry3"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry4",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1d",
+          "amount": "44.9 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-4'-(4-chlorophenyl)-2,2-difluoro-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3d",
+          "amount": "28.9 mg",
+          "registry_name": "(1S,4'S)-4'-(4-chlorophenyl)-2,2-difluoro-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "96%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry4"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry5",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1e",
+          "amount": "53.8 mg, 0.20 mmol",
+          "registry_name": "5-(4-bromobenzylidene)-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-4'-(4-bromophenyl)-2,2-difluoro-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3e",
+          "amount": "33.6 mg",
+          "registry_name": "(1S,4'S)-4'-(4-bromophenyl)-2,2-difluoro-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "98%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry5"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry6",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1f",
+          "amount": "51.6 mg, 0.20 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(4-(trifluoromethyl)phenyl) spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3f",
+          "amount": "33.1 mg",
+          "registry_name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(4-(trifluoromethyl)phenyl) spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry1"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry7",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1g",
+          "amount": "40.8 mg, 0.20 mmol",
+          "registry_name": "5-(3-methylbenzylidene)-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(m-tolyl)spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3g",
+          "amount": "25.4 mg",
+          "registry_name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(m-tolyl)spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "96%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry2"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry8",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1h",
+          "amount": "51.6 mg, 0.20 mmol",
+          "registry_name": "5-(3-(trifluoromethyl)benzylidene)-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(3-(trifluoromethyl)phenyl) spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3h",
+          "amount": "23.5 mg",
+          "registry_name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(3-(trifluoromethyl)phenyl) spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": "91%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry3"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry9",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1i",
+          "amount": "53.8 mg, 0.20 mmol",
+          "registry_name": "5-(3-bromobenzylidene)-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-4'-(3-bromophenyl)-2,2-difluoro-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3i",
+          "amount": "30.0 mg",
+          "registry_name": "(1S,4'S)-4'-(3-bromophenyl)-2,2-difluoro-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "L10",
+          "symbol": "L10",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "97%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry4"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry10",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1j",
+          "amount": "40.8 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(o-tolyl)spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3j",
+          "amount": "24.4 mg",
+          "registry_name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(o-tolyl)spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "97%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry1"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry11",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1k",
+          "amount": "41.6 mg, 0.20 mmol",
+          "registry_name": "5-(2-fluorobenzylidene)-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'R)-2,2-difluoro-4'-(2-fluorophenyl)-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3k",
+          "amount": "25.4 mg",
+          "registry_name": "(1S,4'R)-2,2-difluoro-4'-(2-fluorophenyl)-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "90%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry2"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry12",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1l",
+          "amount": "53.8 mg, 0.20mmol",
+          "registry_name": "5-(2-bromobenzylidene)-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'R)-4'-(2-bromophenyl)-2,2-difluoro-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3l",
+          "amount": "21.5 mg",
+          "registry_name": "(1S,4'R)-4'-(2-bromophenyl)-2,2-difluoro-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": "98%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry3"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry13",
+      "reaction_type": "Pd-catalyzed spirocyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1m",
+          "amount": "41.6 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(naphthalen-2-yl)spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3m",
+          "amount": "32.4 mg",
+          "registry_name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-(naphthalen-2-yl)spiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry4"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry14",
+      "reaction_type": "preparation of spirocyclic 1,3-dioxane",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1n",
+          "amount": "36.0 mg, 0.20 mmol",
+          "registry_name": "5-(furan-2-ylmethylene)-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'R)-2,2-difluoro-4'-(furan-2-yl)-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3n",
+          "amount": "23.0 mg",
+          "registry_name": "(1S,4'R)-2,2-difluoro-4'-(furan-2-yl)-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "79%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry1"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry15",
+      "reaction_type": "preparation of spirocyclic 1,3-dioxane",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "18.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1o",
+          "amount": "39.3 mg, 0.20 mmol",
+          "registry_name": "5-(cyclohexylmethylene)-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-4'-cyclohexyl-2,2-difluoro-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3o",
+          "amount": "21.8 mg",
+          "registry_name": "(1S,4'S)-4'-cyclohexyl-2,2-difluoro-5'-methylenespiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "87%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry2"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry16",
+      "reaction_type": "preparation of spirocyclic 1,3-dioxane",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "2",
+          "amount": "23.2 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1p",
+          "amount": "53.8 mg, 0.20 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S)-4'-(4-bromophenyl)-2,2-difluoro-5'-methylenespiro[phenalene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3p",
+          "amount": "43.4 mg",
+          "registry_name": "(1S,4'S)-4'-(4-bromophenyl)-2,2-difluoro-5'-methylenespiro[phenalene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_spirocyclic_1_3_dioxane_3-Entry3"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry1",
+      "reaction_type": "unknown reaction",
+      "substrates": [
+        {
+          "name": "indenedione 4a",
+          "symbol": "4a",
+          "amount": "26.0 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one 1a",
+          "symbol": "1a",
+          "amount": "38.0 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "2,2-difluoro-2-((2R,4S)-5-methylene-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-one",
+          "symbol": "5aa",
+          "amount": "27.1 mg",
+          "registry_name": "2,2-difluoro-2-((2R,4S)-5-methylene-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature under Ar",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "97%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry1"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry2",
+      "reaction_type": "unknown reaction",
+      "substrates": [
+        {
+          "name": "indenedione 4a",
+          "symbol": "4a",
+          "amount": "26.0 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one 1b",
+          "symbol": "1b",
+          "amount": "40.8 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "2,2-difluoro-2-((2R,4S)-5-methylene-2-phenyl-4-(p-tolyl)-1,3-dioxan-2-yl)-1-phenylethan-1-one",
+          "symbol": "5ab",
+          "amount": "29.0 mg",
+          "registry_name": "2,2-difluoro-2-((2R,4S)-5-methylene-2-phenyl-4-(p-tolyl)-1,3-dioxan-2-yl)-1-phenylethan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature under Ar",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "98%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry2"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry3",
+      "reaction_type": "unknown reaction",
+      "substrates": [
+        {
+          "name": "indenedione 4a",
+          "symbol": "4a",
+          "amount": "26.0 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one 1c",
+          "symbol": "1c",
+          "amount": "53.8 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((2R,4S)-4-(4-bromophenyl)-5-methylene-2-phenyl-1,3-dioxan-2-yl)-2,2-difluoro-1-phenylethan-1-one",
+          "symbol": "5ae",
+          "amount": "33.1 mg",
+          "registry_name": "2-((2R,4S)-4-(4-bromophenyl)-5-methylene-2-phenyl-1,3-dioxan-2-yl)-2,2-difluoro-1-phenylethan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature under Ar",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry3"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry4",
+      "reaction_type": "unknown reaction",
+      "substrates": [
+        {
+          "name": "indenedione 4b",
+          "symbol": "4b",
+          "amount": "28.8 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one 1a",
+          "symbol": "1a",
+          "amount": "38.0 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "2,2-difluoro-2-((2R,4S)-5-methylene-4-phenyl-2-(p-tolyl)-1,3-dioxan-2-yl)-1-(p-tolyl)ethan-1-one",
+          "symbol": "5ba",
+          "amount": "17.4 mg",
+          "registry_name": "2,2-difluoro-2-((2R,4S)-5-methylene-4-phenyl-2-(p-tolyl)-1,3-dioxan-2-yl)-1-(p-tolyl)ethan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature under Ar",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "40%",
+        "ee": "97%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry4"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry5",
+      "reaction_type": "unknown reaction",
+      "substrates": [
+        {
+          "name": "indenedione 4c",
+          "symbol": "4c",
+          "amount": "26.0 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one 1a",
+          "symbol": "1a",
+          "amount": "38.0 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(4-bromophenyl)-2-((2R,4S)-2-(4-bromophenyl)-5-methylene-4-phenyl-1,3-dioxan-2-yl)-2,2-difluoroethan-1-one",
+          "symbol": "5e",
+          "amount": "18.6 mg",
+          "registry_name": "1-(4-bromophenyl)-2-((2R,4S)-2-(4-bromophenyl)-5-methylene-4-phenyl-1,3-dioxan-2-yl)-2,2-difluoroethan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature under Ar",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "33%",
+        "ee": "96%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry5"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry6",
+      "reaction_type": "palladium-catalyzed cyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "4a",
+          "amount": "26.0 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1a",
+          "amount": "38.0 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "2,2-difluoro-2-((2R,4S)-5-methylene-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-one",
+          "symbol": "5aa",
+          "amount": "27.1 mg",
+          "registry_name": "2,2-difluoro-2-((2R,4S)-5-methylene-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry1"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry7",
+      "reaction_type": "palladium-catalyzed cyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "4d",
+          "amount": "22.4 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1a",
+          "amount": "38.0 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(2R,4S)-5-methylene-2-(perfluoroethyl)-2,4-diphenyl-1,3-dioxane",
+          "symbol": "5da",
+          "amount": "17.3 mg",
+          "registry_name": "(2R,4S)-5-methylene-2-(perfluoroethyl)-2,4-diphenyl-1,3-dioxane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "47%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry2"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry8",
+      "reaction_type": "palladium-catalyzed cyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "4e",
+          "amount": "29.6 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1a",
+          "amount": "38.0 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl 2,2-difluoro-2-((2R,4S)-5-methylene-4-phenyl-2-(4-(trifluoromethyl)phenyl)-1,3-dioxan-2-yl)acetate",
+          "symbol": "5ea",
+          "amount": "29.9 mg",
+          "registry_name": "ethyl 2,2-difluoro-2-((2R,4S)-5-methylene-4-phenyl-2-(4-(trifluoromethyl)phenyl)-1,3-dioxan-2-yl)acetate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "98%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry3"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry9",
+      "reaction_type": "palladium-catalyzed cyclization",
+      "substrates": [
+        {
+          "name": "indenedione",
+          "symbol": "4f",
+          "amount": "37.8 mg, 0.10 mmol",
+          "registry_name": "indenedione",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "5-benzylidene-1,3-dioxan-2-one",
+          "symbol": "1a",
+          "amount": "38.0 mg, 0.20 mmol",
+          "registry_name": "5-benzylidene-1,3-dioxan-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(2R,4S)-2-(difluoro(tosyl)methyl)-5-methylene-4-phenyl-2-(4-(trifluoromethyl)phenyl)-1,3-dioxane",
+          "symbol": "5fa",
+          "amount": "48.2 mg",
+          "registry_name": "(2R,4S)-2-(difluoro(tosyl)methyl)-5-methylene-4-phenyl-2-(4-(trifluoromethyl)phenyl)-1,3-dioxane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd (dba)",
+          "symbol": "Pd (dba)",
+          "amount": "4.6 mg, 0.005 mmol, 5 mol%"
+        },
+        {
+          "name": "(11bS)-N-(di(naphthalen-1-yl)methyl)-N-methyldinaphtho[2,1-d:1',2'-f][1,3,2]dioxaphosphepin-4-amine",
+          "symbol": "L11",
+          "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "additives": [],
+      "reagents": [],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.5 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 hours"
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "GeneralProcedure_preparation_of_1_3_dioxane_5-Entry4"
+    },
+    {
+      "id": "Procedure for the preparation of (1S,4'S,5'R)-2,2-difluoro-5'-hydroxy-5'-(hydroxymethyl)-4'-phenylspiro[indene-1,2'-[1,3]dioxan]-3(2H)-one-Entry1",
+      "reaction_type": "osmium-catalyzed dihydroxylation",
+      "substrates": [
+        {
+          "name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-phenylspiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3a",
+          "amount": "30.6 mg, 0.093 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4'S,5'R)-2,2-difluoro-5'-hydroxy-5'-(hydroxymethyl)-4'-phenylspiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "7a",
+          "amount": "35.1 mg",
+          "registry_name": "(1S,4'S,5'R)-2,2-difluoro-5'-hydroxy-5'-(hydroxymethyl)-4'-phenylspiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "aqueous OsO solution",
+          "symbol": "aqueous OsO solution",
+          "amount": "30 µL, 5 mol%, 4wt% in H2O"
+        }
+      ],
+      "additives": [
+        {
+          "name": "N-methylmorpholine-N-oxide",
+          "symbol": "NMO",
+          "amount": "26.9 mg, 0.23 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "acetone/H2O",
+          "symbol": "acetone/H2O",
+          "amount": "0.93 mL, 3:1, v/v"
+        },
+        {
+          "name": "saturated aqueous Na2S2O solution",
+          "symbol": "Na2S2O",
+          "amount": null
+        },
+        {
+          "name": "ethyl acetate",
+          "symbol": "EtOAc",
+          "amount": "3 times"
+        },
+        {
+          "name": "brine",
+          "symbol": "brine",
+          "amount": null
+        },
+        {
+          "name": "sodium sulfate",
+          "symbol": "Na2SO4",
+          "amount": null
+        },
+        {
+          "name": "hexane/CHCl3/Et2O",
+          "symbol": "hexane/CHCl3/Et2O",
+          "amount": "2:1:1"
+        },
+        {
+          "name": "silica gel",
+          "symbol": "silica gel",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone/H2O",
+        "volume": "0.93 mL, 3:1, v/v",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": "94% ee (Major diastereomer), 90% ee (Minor diastereomer)",
+        "er": null
+      },
+      "_original_id": "Procedure for the preparation of (1S,4'S,5'R)-2,2-difluoro-5'-hydroxy-5'-(hydroxymethyl)-4'-phenylspiro[indene-1,2'-[1,3]dioxan]-3(2H)-one-Entry1"
+    },
+    {
+      "id": "Procedure for the preparation of 2,2-difluoro-2-((2R,4S,5R)-5-hydroxy-5-(hydroxymethyl)-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-one-Entry1",
+      "reaction_type": "osmium-catalyzed dihydroxylation",
+      "substrates": [
+        {
+          "name": "2,2-difluoro-2-((2R,4S)-5-methylene-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-one",
+          "symbol": "5aa",
+          "amount": "40.1 mg, 0.10 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2,2-difluoro-2-((2R,4S,5R)-5-hydroxy-5-(hydroxymethyl)-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-one",
+          "symbol": "7b",
+          "amount": "35.0 mg",
+          "registry_name": "2,2-difluoro-2-((2R,4S,5R)-5-hydroxy-5-(hydroxymethyl)-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "aqueous OsO solution",
+          "symbol": "aqueous OsO solution",
+          "amount": "32 µL, 5 mol%, 4wt% in H2O"
+        }
+      ],
+      "additives": [
+        {
+          "name": "N-methylmorpholine-N-oxide",
+          "symbol": "NMO",
+          "amount": "29.3 mg, 0.25 mmol, 2.5 equiv."
+        }
+      ],
+      "reagents": [
+        {
+          "name": "acetone/H2O",
+          "symbol": "acetone/H2O",
+          "amount": "1.0 mL, 3:1, v/v"
+        },
+        {
+          "name": "saturated aqueous Na2S2O solution",
+          "symbol": "Na2S2O",
+          "amount": null
+        },
+        {
+          "name": "ethyl acetate",
+          "symbol": "EtOAc",
+          "amount": "3 times"
+        },
+        {
+          "name": "brine",
+          "symbol": "brine",
+          "amount": null
+        },
+        {
+          "name": "sodium sulfate",
+          "symbol": "Na2SO4",
+          "amount": null
+        },
+        {
+          "name": "hexane/CHCl3/Et2O",
+          "symbol": "hexane/CHCl3/Et2O",
+          "amount": "3:1:1"
+        },
+        {
+          "name": "silica gel",
+          "symbol": "silica gel",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone/H2O",
+        "volume": "1.0 mL, 3:1, v/v",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null
+      },
+      "_original_id": "Procedure for the preparation of 2,2-difluoro-2-((2R,4S,5R)-5-hydroxy-5-(hydroxymethyl)-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-one-Entry1"
+    },
+    {
+      "id": "Procedure for the preparation of (1S,4’S)-2,2-difluoro-5’methylene-4’-phenyl-2,3-dihydrospiro[indene-1,2’-[1,3]dioxan]-3-ol (8a)-Entry1",
+      "reaction_type": "reduction",
+      "substrates": [
+        {
+          "name": "(1S,4'S)-2,2-difluoro-5'-methylene-4'-phenylspiro[indene-1,2'-[1,3]dioxan]-3(2H)-one",
+          "symbol": "3a",
+          "amount": "30.4 mg, 0.093 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,4’S)-2,2-difluoro-5’methylene-4’-phenyl-2,3-dihydrospiro[indene-1,2’-[1,3]dioxan]-3-ol",
+          "symbol": "8a",
+          "amount": "26.2 mg",
+          "registry_name": "(1S,4’S)-2,2-difluoro-5’methylene-4’-phenyl-2,3-dihydrospiro[indene-1,2’-[1,3]dioxan]-3-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "K-Selectride",
+          "symbol": "K-Selectride",
+          "amount": "1M THF solution, 0.19 mL, 0.19 mmol, 2.0 equiv."
+        },
+        {
+          "name": "water",
+          "symbol": "water",
+          "amount": null
+        },
+        {
+          "name": "ethyl acetate",
+          "symbol": "EtOAc",
+          "amount": null
+        },
+        {
+          "name": "brine",
+          "symbol": "brine",
+          "amount": null
+        },
+        {
+          "name": "Na2SO4",
+          "symbol": "Na2SO4",
+          "amount": null
+        },
+        {
+          "name": "silica gel",
+          "symbol": "silica gel",
+          "amount": null
+        },
+        {
+          "name": "hexane/CH Cl /Et O",
+          "symbol": "hexane/CH Cl /Et O",
+          "amount": "8:1:1"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "0.9 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "-10℃",
+        "time": "4 h"
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "96%",
+        "er": null
+      },
+      "_original_id": "Procedure for the preparation of (1S,4’S)-2,2-difluoro-5’methylene-4’-phenyl-2,3-dihydrospiro[indene-1,2’-[1,3]dioxan]-3-ol (8a)-Entry1"
+    },
+    {
+      "id": "Procedure for the preparation of 2,2-difluoro-2-((2R,4S)-5-methylene-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-ol (8b)-Entry1",
+      "reaction_type": "reduction",
+      "substrates": [
+        {
+          "name": "5a",
+          "symbol": "5a",
+          "amount": "46.3 mg, 0.114 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2,2-difluoro-2-((2R,4S)-5-methylene-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-ol",
+          "symbol": "8b",
+          "amount": "46.2 mg",
+          "registry_name": "2,2-difluoro-2-((2R,4S)-5-methylene-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [
+        {
+          "name": "water",
+          "symbol": "water",
+          "amount": null
+        },
+        {
+          "name": "brine",
+          "symbol": "brine",
+          "amount": null
+        },
+        {
+          "name": "sodium sulfate",
+          "symbol": "Na2SO4",
+          "amount": null
+        },
+        {
+          "name": "silica gel",
+          "symbol": "silica gel",
+          "amount": null
+        }
+      ],
+      "reagents": [
+        {
+          "name": "K-Selectride",
+          "symbol": "K-Selectride",
+          "amount": "1M THF solution, 0.19 mL, 0.19 mmol, 2.0 equiv."
+        },
+        {
+          "name": "tetrahydrofuran",
+          "symbol": "THF",
+          "amount": "1.1 mL"
+        },
+        {
+          "name": "ethyl acetate",
+          "symbol": "EtOAc",
+          "amount": null
+        },
+        {
+          "name": "hexane/EtOAc",
+          "symbol": "hexane/EtOAc",
+          "amount": "97:3"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": "1.1 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "-10℃",
+        "time": "stirred at -10℃ overnight; then stirred at room temperature for 30 min"
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": "93%",
+        "er": null
+      },
+      "_original_id": "Procedure for the preparation of 2,2-difluoro-2-((2R,4S)-5-methylene-2,4-diphenyl-1,3-dioxan-2-yl)-1-phenylethan-1-ol (8b)-Entry1"
+    },
+    {
+      "id": "9-Entry1",
+      "reaction_type": "unknown reaction",
+      "substrates": [
+        {
+          "name": "5a",
+          "symbol": "5a",
+          "amount": "41.0 mg, 0.10 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(2R,4S)-2-(difluoromethyl)-5-methylene-2,4-diphenyl-1,3-dioxane",
+          "symbol": "9",
+          "amount": "26.7 mg",
+          "registry_name": "(2R,4S)-2-(difluoromethyl)-5-methylene-2,4-diphenyl-1,3-dioxane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "KOH",
+          "symbol": "KOH",
+          "amount": "44.9 mg, 0.80 mmol, 8.0 equiv",
+          "resolved_smiles": "[K+].[OH-]",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "3_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        },
+        {
+          "name": "H O",
+          "symbol": "H O",
+          "amount": "8.1 mg, 0.45 mmol, 4.5 equiv"
+        },
+        {
+          "name": "EtOAc",
+          "symbol": "EtOAc",
+          "amount": null
+        },
+        {
+          "name": "Celite",
+          "symbol": "Celite",
+          "amount": null
+        },
+        {
+          "name": "silica gel",
+          "symbol": "silica gel",
+          "amount": "hexane/EtOAc = 99:1"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "volume": "1 2 mL",
+        "light source": null,
+        "wavelength": null,
+        "temperature": "40℃",
+        "time": "8h"
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "96%",
+        "er": null
+      },
+      "_original_id": "9-Entry1"
+    },
+    {
+      "id": "Procedure for the preparation of 2-((2R,4S,5S)-4-(4-bromophenyl)-5-hydroxy-2-phenyl-5-vinyl-1,3-dioxan-2-yl)-2,2-difluoro-1-phenylethan-1-one (10)-Entry1",
+      "reaction_type": "Grignard addition",
+      "substrates": [
+        {
+          "name": "S2",
+          "symbol": "S2",
+          "amount": "106.0 mg, 0.218 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((2R,4S,5S)-4-(4-bromophenyl)-5-hydroxy-2-phenyl-5-vinyl-1,3-dioxan-2-yl)-2,2-difluoro-1-phenylethan-1-one",
+          "symbol": "10",
+          "amount": "10.3 mg",
+          "registry_name": "2-((2R,4S,5S)-4-(4-bromophenyl)-5-hydroxy-2-phenyl-5-vinyl-1,3-dioxan-2-yl)-2,2-difluoro-1-phenylethan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "additives": [],
+      "reagents": [
+        {
+          "name": "vinyl magnesium bromide",
+          "symbol": null,
+          "amount": "1M THF solution, mL, mmol"
+        },
+        {
+          "name": "silica gel",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "hexane",
+          "symbol": null,
+          "amount": "hexane/EtOAc = 95:5"
+        },
+        {
+          "name": "EtOAc",
+          "symbol": "EtOAc",
+          "amount": "hexane/EtOAc = 95:5"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "volume": null,
+        "light source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "9%",
+        "ee": "99%",
+        "er": null
+      },
+      "_original_id": "Procedure for the preparation of 2-((2R,4S,5S)-4-(4-bromophenyl)-5-hydroxy-2-phenyl-5-vinyl-1,3-dioxan-2-yl)-2,2-difluoro-1-phenylethan-1-one (10)-Entry1"
+    }
+  ]
+}
