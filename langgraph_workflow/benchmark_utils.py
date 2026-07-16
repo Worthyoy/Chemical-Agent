@@ -798,8 +798,14 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
                 for duplicate in duplicate_options
             }
             if len(duplicate_options) > 1 and len(results) > 1:
+                public_condition = {
+                    key: value
+                    for key, value in duplicate_options[0].items()
+                    if key not in {"option_id", "metadata_hidden"}
+                }
                 conflicting_duplicate_keys.append(
                     {
+                        "public_condition": public_condition,
                         "reaction_ids": [
                             duplicate["metadata_hidden"]["reaction_id"]
                             for duplicate in duplicate_options
@@ -825,6 +831,7 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
             review_set.append(
                 {
                     "reason": "duplicate_public_conditions_conflicting_results",
+                    "action": "omitted_conflicting_public_condition",
                     **_q1_review_context(
                         paper,
                         reaction_type,
@@ -834,7 +841,6 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
                     "details": conflicting_duplicate_keys,
                 }
             )
-            continue
 
         if len(deduped_options) < 2:
             review_set.append(
@@ -847,6 +853,7 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
                         product_combo,
                     ),
                     "option_count": len(deduped_options),
+                    "omitted_conflicting_duplicate_options": conflicting_duplicate_keys,
                 }
             )
             continue
@@ -930,6 +937,7 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
                     ],
                     "has_top_score_tie": len(gold_option_ids) > 1,
                     "omitted_no_targets": omitted_no_targets,
+                    "omitted_conflicting_duplicate_options": conflicting_duplicate_keys,
                 },
             }
         )
