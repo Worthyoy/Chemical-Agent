@@ -45,6 +45,7 @@ ROLE_CONFIG = {
     "PRODUCES": (COL_PRODUCT, "product_amount"),
     "USES_CATALYST": (COL_CATALYST, "catalyst_amount"),
     "USES_LIGAND": (COL_LIGAND, ""),
+    "USES_SOLVENT": (COL_SOLVENT, "solvent_amount"),
     "USES_OTHER_COMPONENT": (COL_OTHER_COMPONENT, "other_component_amount"),
     # Legacy KG relationships are accepted and folded into the new summary column.
     "USES_ADDITIVE": (COL_OTHER_COMPONENT, "additive_amount"),
@@ -62,13 +63,13 @@ IGNORED_RELATIONSHIPS = {
     "NAME_RESOLVED_BY",
 }
 
-SOLVENT_CONDITION_LABELS = {
-    "solvent",
+SOLVENT_NAME_LABELS = {"solvent"}
+SOLVENT_AMOUNT_LABELS = {
     "solvent amount",
-    "solvent_amount",
     "vol",
     "volume",
 }
+SOLVENT_CONDITION_LABELS = SOLVENT_NAME_LABELS | SOLVENT_AMOUNT_LABELS
 
 
 def clean_text(value) -> str:
@@ -175,6 +176,38 @@ def is_solvent_condition(part: str) -> bool:
     return condition_label(part) in SOLVENT_CONDITION_LABELS
 
 
+def condition_value(part: str) -> str:
+    match = re.match(r"\s*[^:：]+\s*[:：]\s*(.*)", part)
+    return clean_text(match.group(1)) if match else ""
+
+
+def add_legacy_solvent_part(grouped: Dict[str, Dict[str, List[str]]], step: str, part: str) -> None:
+    key = normalize_step(step)
+    bucket = grouped.setdefault(key, {"names": [], "amounts": []})
+    label = condition_label(part)
+    value = condition_value(part)
+    if not value:
+        return
+    target = bucket["names"] if label in SOLVENT_NAME_LABELS else bucket["amounts"]
+    add_unique(target, value)
+
+
+def merge_legacy_solvents(
+    solvents: Dict[str, List[str]],
+    legacy: Dict[str, Dict[str, List[str]]],
+) -> None:
+    """Pair legacy HAS_CONDITION solvent fields by step and stable source order."""
+    for step, bucket in legacy.items():
+        names = bucket.get("names", [])
+        amounts = bucket.get("amounts", [])
+        for index, name in enumerate(names):
+            amount = amounts[index] if index < len(amounts) else ""
+            value = f"{name} ({amount})" if amount else name
+            add_grouped_value(solvents, step, value)
+        for amount in amounts[len(names):]:
+            add_grouped_value(solvents, step, f"solvent_amount: {amount}")
+
+
 def new_reaction_record(row: Dict[str, str], reaction_id: str) -> Dict:
     return {
         "rows": [],
@@ -187,6 +220,7 @@ def new_reaction_record(row: Dict[str, str], reaction_id: str) -> Dict:
         COL_CATALYST: {},
         COL_LIGAND: {},
         COL_SOLVENT: {},
+        "legacy_solvents": {},
         COL_OTHER_COMPONENT: {},
         COL_CONDITIONS: {},
     }
@@ -221,8 +255,14 @@ def convert_kg_rows(rows: Iterable[Dict[str, str]]) -> List[Dict[str, str]]:
             )
         elif rel == "HAS_CONDITION":
             for part in split_condition_parts(row.get("y_name")):
-                target_field = COL_SOLVENT if is_solvent_condition(part) else COL_CONDITIONS
-                add_grouped_value(reaction[target_field], row.get("step", ""), part)
+                if is_solvent_condition(part):
+                    add_legacy_solvent_part(
+                        reaction["legacy_solvents"], row.get("step", ""), part
+                    )
+                else:
+                    add_grouped_value(
+                        reaction[COL_CONDITIONS], row.get("step", ""), part
+                    )
         elif rel in {"PRODUCES_INTERMEDIATE", "USES_INTERMEDIATE"}:
             # Prefer the produced step when both produced/use edges exist.
             if rel == "USES_INTERMEDIATE":
@@ -243,6 +283,9 @@ def convert_kg_rows(rows: Iterable[Dict[str, str]]) -> List[Dict[str, str]]:
     for reaction in reactions.values():
         source_rows = reaction.pop("rows")
         source_pages = reaction.pop("source_pages")
+        merge_legacy_solvents(
+            reaction[COL_SOLVENT], reaction.pop("legacy_solvents")
+        )
         output.append(
             {
                 COL_PAPER: reaction[COL_PAPER],
@@ -271,6 +314,11 @@ def convert_kg_csv(kg_path: Path | str, output_path: Path | str) -> Dict[str, in
         rows = list(csv.DictReader(handle))
 
     output_rows = convert_kg_rows(rows)
+    # Python's sort is stable, so reaction order within the same paper is retained.
+    output_rows.sort(
+        key=lambda row: clean_text(row.get(COL_PAPER)).casefold(),
+        reverse=True,
+    )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8-sig", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=OUTPUT_FIELDNAMES)
