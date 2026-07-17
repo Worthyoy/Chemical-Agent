@@ -19,6 +19,7 @@ from multimodal_structure_enrichment import apply_enrichment, load_cache
 from split_by_substrate import has_valid_condition
 
 from langgraph_workflow.benchmark_utils import (
+    REACTION_TYPE_POLICIES,
     SUPPORTED_SOURCE_MODALITIES,
     generate_benchmark_packages_by_modality,
     normalize_source_modality,
@@ -91,6 +92,7 @@ def _validate_reaction_modalities(reactions: list[dict]) -> Dict[str, list[dict]
 def build_modality_benchmark_bundle(
     merged_payload: dict,
     cache_path: Path,
+    reaction_type_policy: str = "required",
 ) -> dict:
     reactions = merged_payload.get("reactions")
     if not isinstance(reactions, list):
@@ -128,7 +130,11 @@ def build_modality_benchmark_bundle(
         q1_data.extend(q1_reactions)
         q2_data.extend(q2_reactions)
 
-    generated = generate_benchmark_packages_by_modality(q1_data, q2_data)
+    generated = generate_benchmark_packages_by_modality(
+        q1_data,
+        q2_data,
+        reaction_type_policy=reaction_type_policy,
+    )
 
     by_modality_summary = {}
     for modality in SUPPORTED_SOURCE_MODALITIES:
@@ -142,13 +148,20 @@ def build_modality_benchmark_bundle(
             "q2_reactions": len(modality_bundle["q2_reactions"]),
             "q1_questions": len(q1_questions),
             "q1_review_questions": len(modality_bundle["q1"]["review_set"]),
+            "q1_reaction_type_conflict_questions": modality_bundle["q1"]["report"].get(
+                "reaction_type_conflict_questions", 0
+            ),
             "q1_option_count_distribution": _option_distribution(q1_questions),
             "q2_questions": len(q2_questions),
             "q2_review_questions": len(modality_bundle["q2"]["review_set"]),
+            "q2_reaction_type_conflict_questions": modality_bundle["q2"]["report"].get(
+                "reaction_type_conflict_questions", 0
+            ),
             "q2_option_count_distribution": _option_distribution(q2_questions),
         }
 
     generated["split_report"] = {
+        "reaction_type_policy": reaction_type_policy,
         "total_reactions": len(reactions),
         "q1_reactions": len(q1_data),
         "q2_reactions": len(q2_data),
@@ -163,9 +176,16 @@ def build_modality_benchmark_bundle(
         },
     }
     generated["summary"] = {
+        "reaction_type_policy": reaction_type_policy,
         "input_reactions": len(reactions),
         "q1_questions": len(generated["q1"]["benchmark"]),
         "q2_questions": len(generated["q2"]["benchmark"]),
+        "q1_reaction_type_conflict_questions": generated["q1"]["report"].get(
+            "reaction_type_conflict_questions", 0
+        ),
+        "q2_reaction_type_conflict_questions": generated["q2"]["report"].get(
+            "reaction_type_conflict_questions", 0
+        ),
         "by_modality": by_modality_summary,
         "cross_modal_overlap": generated["cross_modal_overlap"],
     }
@@ -177,6 +197,7 @@ def build_modality_benchmark_bundle(
 
 
 def validate_benchmark_bundle(bundle: dict) -> None:
+    reaction_type_policy = bundle.get("reaction_type_policy", "required")
     seen_question_ids = set()
     for task in ("q1", "q2"):
         combined_questions = bundle[task]["benchmark"]
@@ -206,6 +227,15 @@ def validate_benchmark_bundle(bundle: dict) -> None:
                 raise ValueError(f"Invalid gold option ids for {question_id}")
             if set(question.get("gold_ranked_option_ids", [])) != option_id_set:
                 raise ValueError(f"Invalid ranked option ids for {question_id}")
+            if reaction_type_policy == "ignored":
+                if "reaction_type" in question:
+                    raise ValueError(
+                        f"Ignored policy leaked reaction_type into {question_id}"
+                    )
+                if "Reaction type:" in str(question.get("question_en", "")):
+                    raise ValueError(
+                        f"Ignored policy leaked reaction type text into {question_id}"
+                    )
 
         report_distribution = bundle[task]["report"]["option_count_distribution"]
         if report_distribution != _option_distribution(combined_questions):
@@ -308,6 +338,7 @@ def write_benchmark_bundle(
         "created_at": datetime.now(timezone.utc).isoformat(),
         "run_id": run_id,
         "mode": "offline_modality_regeneration",
+        "reaction_type_policy": bundle.get("reaction_type_policy", "required"),
         "input": str(merged_path),
         "input_sha256": file_sha256(merged_path),
         "structure_cache_sources": [
@@ -329,9 +360,14 @@ def regenerate_benchmark(
     benchmark_dir: Path,
     cache_path: Path,
     backup_existing: bool = True,
+    reaction_type_policy: str = "required",
 ) -> dict:
     merged_payload = read_json(Path(merged_path))
-    bundle = build_modality_benchmark_bundle(merged_payload, Path(cache_path))
+    bundle = build_modality_benchmark_bundle(
+        merged_payload,
+        Path(cache_path),
+        reaction_type_policy=reaction_type_policy,
+    )
     return write_benchmark_bundle(
         bundle,
         benchmark_dir=Path(benchmark_dir),
@@ -392,6 +428,12 @@ def main() -> None:
     parser.add_argument("--cache", type=Path)
     parser.add_argument("--no-backup", action="store_true")
     parser.add_argument("--paper-summary-only", action="store_true")
+    parser.add_argument(
+        "--reaction-type-policy",
+        choices=REACTION_TYPE_POLICIES,
+        default="required",
+        help="Use reaction type for filtering/grouping (required) or ignore it (ignored).",
+    )
     args = parser.parse_args()
     if args.paper_summary_only:
         summary = regenerate_paper_question_summary(
@@ -407,6 +449,7 @@ def main() -> None:
         benchmark_dir=args.benchmark_dir,
         cache_path=args.cache,
         backup_existing=not args.no_backup,
+        reaction_type_policy=args.reaction_type_policy,
     )
     print(json.dumps(manifest, ensure_ascii=True, indent=2))
 

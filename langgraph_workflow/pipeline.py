@@ -234,6 +234,15 @@ def parse_args():
         help="Enable legacy Stage1 relevant_pages trimming. Disabled by default to preserve cross-page target evidence.",
     )
     parser.add_argument("--skip_reaction_type_normalization", action="store_true")
+    parser.add_argument(
+        "--benchmark_reaction_type_policy",
+        choices=("required", "ignored"),
+        default="required",
+        help=(
+            "Use reaction type for benchmark filtering/grouping (required) or "
+            "ignore it and skip reaction-type normalization (ignored)."
+        ),
+    )
     parser.add_argument("--skip_stage2_audit", action="store_true")
     parser.add_argument(
         "--skip_chemeagle_normalization",
@@ -457,6 +466,7 @@ def config_from_args(args) -> PipelineConfig:
         generic_resolution_batch_size=max(1, args.generic_resolution_batch_size),
         enable_stage1_page_trimming=args.enable_stage1_page_trimming,
         skip_reaction_type_normalization=args.skip_reaction_type_normalization,
+        benchmark_reaction_type_policy=args.benchmark_reaction_type_policy,
         skip_chemeagle_normalization=args.skip_chemeagle_normalization,
         skip_downstream_build=args.skip_downstream_build,
         enable_cross_modal_symbol_resolution=args.enable_cross_modal_symbol_resolution,
