@@ -85,6 +85,7 @@ class PipelineConfig:
     enable_stage1_page_trimming: bool = False
     pipeline_version: str = "parallel_pdf_v23_mixed_role_first"
     skip_reaction_type_normalization: bool = False
+    benchmark_reaction_type_policy: str = "required"
     skip_chemeagle_normalization: bool = False
     skip_downstream_build: bool = False
     enable_cross_modal_symbol_resolution: bool = False
@@ -2475,10 +2476,17 @@ class ReactionTypeNormalizationAgent:
         merged_path = Path(state["merged_reactions_path"])
         report_path = self.config.reports_dir / "reaction_type_normalization_report.json"
 
-        if self.config.skip_reaction_type_normalization:
+        ignore_for_benchmark = (
+            self.config.benchmark_reaction_type_policy == "ignored"
+        )
+        if self.config.skip_reaction_type_normalization or ignore_for_benchmark:
             result = {
                 "status": "skipped",
-                "reason": "skip_reaction_type_normalization",
+                "reason": (
+                    "benchmark_reaction_type_policy_ignored"
+                    if ignore_for_benchmark
+                    else "skip_reaction_type_normalization"
+                ),
                 "input": str(merged_path),
                 "output": str(merged_path),
                 "report_output": str(report_path),
@@ -2546,7 +2554,11 @@ class BenchmarkAgent:
         q1_data = read_json(q1_path)
         q2_data = read_json(q2_path)
 
-        generated = generate_benchmark_packages_by_modality(q1_data, q2_data)
+        generated = generate_benchmark_packages_by_modality(
+            q1_data,
+            q2_data,
+            reaction_type_policy=self.config.benchmark_reaction_type_policy,
+        )
         q1_package = generated["q1"]
         q1_benchmark = q1_package["benchmark"]
         q1_review = q1_package["review_set"]
@@ -2574,6 +2586,7 @@ class BenchmarkAgent:
         write_json(q2_review_output, q2_review)
         write_json(q2_report_output, q2_report)
         summary = {
+            "reaction_type_policy": self.config.benchmark_reaction_type_policy,
             "q1_reactions": len(q1_data),
             "q2_reactions": len(q2_data),
             "q1_questions": len(q1_benchmark),
@@ -2628,6 +2641,7 @@ class BenchmarkAgent:
         write_json(paper_summary_output, paper_summary)
 
         state.setdefault("steps", {})["benchmark"] = {
+            "reaction_type_policy": self.config.benchmark_reaction_type_policy,
             "q1": {
                 "output": str(q1_output),
                 "questions": len(q1_benchmark),
@@ -2793,6 +2807,7 @@ class ReportAgent:
                 "resume": self.config.resume,
                 "overwrite": self.config.overwrite,
                 "skip_reaction_type_normalization": self.config.skip_reaction_type_normalization,
+                "benchmark_reaction_type_policy": self.config.benchmark_reaction_type_policy,
                 "skip_chemeagle_normalization": self.config.skip_chemeagle_normalization,
                 "skip_downstream_build": self.config.skip_downstream_build,
                 "enable_cross_modal_symbol_resolution": self.config.enable_cross_modal_symbol_resolution,

@@ -37,6 +37,34 @@ def parse_percentage(val):
 
 
 UNKNOWN_REACTION_TYPE = "unknown reaction"
+REACTION_TYPE_POLICIES = ("required", "ignored")
+
+
+def normalize_reaction_type_policy(value: str = "required") -> str:
+    policy = str(value or "required").strip().casefold()
+    if policy not in REACTION_TYPE_POLICIES:
+        raise ValueError(
+            "Unsupported reaction_type_policy: "
+            f"{value}. Expected one of: {', '.join(REACTION_TYPE_POLICIES)}"
+        )
+    return policy
+
+
+def _reaction_type_context(policy: str, reaction_type: str) -> dict:
+    if normalize_reaction_type_policy(policy) == "required":
+        return {"reaction_type": reaction_type}
+    return {}
+
+
+def _reaction_type_audit(types: List[str]) -> dict:
+    source_types = sorted(
+        {extract_reaction_type({"reaction_type": value}) for value in types},
+        key=str.casefold,
+    )
+    return {
+        "source_reaction_types": source_types,
+        "reaction_type_conflict": len(source_types) > 1,
+    }
 
 
 def extract_reaction_type(reaction_or_paper=None) -> str:
@@ -195,7 +223,7 @@ def _shuffle_options(options: List[dict], seed: str) -> List[dict]:
 
 
 def _build_q2_question_en(
-    reaction_type: str,
+    reaction_type: Optional[str],
     conditions: Dict,
     fixed_substrates: List[dict],
     variable_scaffold: str,
@@ -208,9 +236,11 @@ def _build_q2_question_en(
     if not fixed_text:
         fixed_text = "none"
 
-    return "\n".join(
+    lines = []
+    if reaction_type:
+        lines.append(f"Reaction type: {reaction_type}.")
+    lines.extend(
         [
-            f"Reaction type: {reaction_type}.",
             f"Reaction conditions: {format_conditions_en(conditions)}.",
             f"Fixed substrate(s): {fixed_text}.",
             f"Variable substrate scaffold: {variable_scaffold}.",
@@ -221,6 +251,7 @@ def _build_q2_question_en(
             ),
         ]
     )
+    return "\n".join(lines)
 
 
 def _normalize_compound_name(name: str) -> str:
@@ -625,15 +656,16 @@ def _public_combo_key(items: List[dict]) -> Optional[str]:
 
 def _q1_review_context(
     paper: str,
-    reaction_type: str,
+    reaction_type: Optional[str],
     combo_key: Tuple[str, ...],
     product_combo: Optional[List[dict]] = None,
 ) -> dict:
     context = {
         "source_paper": paper,
-        "reaction_type": reaction_type,
         "substrate_combo": list(combo_key),
     }
+    if reaction_type:
+        context["reaction_type"] = reaction_type
     if product_combo is not None:
         context["product_combo"] = product_combo
     return context
@@ -647,7 +679,7 @@ def _format_named_scaffold(items: List[dict]) -> str:
 
 
 def _build_q1_question_en(
-    reaction_type: str,
+    reaction_type: Optional[str],
     substrates: List[dict],
     products: List[dict],
 ) -> str:
@@ -658,9 +690,11 @@ def _build_q1_question_en(
         )
         for sub in substrates
     )
-    return "\n".join(
+    lines = []
+    if reaction_type:
+        lines.append(f"Reaction type: {reaction_type}.")
+    lines.extend(
         [
-            f"Reaction type: {reaction_type}.",
             f"Substrate combination: {substrate_text}.",
             f"Product(s): {_format_named_scaffold(products)}.",
             (
@@ -669,10 +703,17 @@ def _build_q1_question_en(
             ),
         ]
     )
+    return "\n".join(lines)
 
 
-def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
-    paper_combo_data: Dict[Tuple[str, str, Tuple[str, ...], str], List[dict]] = defaultdict(list)
+def generate_q1_benchmark_package(
+    q1_data: List[dict],
+    reaction_type_policy: str = "required",
+) -> dict:
+    reaction_type_policy = normalize_reaction_type_policy(reaction_type_policy)
+    paper_combo_data: Dict[
+        Tuple[str, Optional[str], Tuple[str, ...], str], List[dict]
+    ] = defaultdict(list)
     review_set: List[dict] = []
 
     for reaction in q1_data:
@@ -685,7 +726,7 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
         if not combo_key:
             continue
 
-        if _is_unknown_reaction_type(reaction_type):
+        if reaction_type_policy == "required" and _is_unknown_reaction_type(reaction_type):
             review_set.append(
                 {
                     "reason": "unknown_reaction_type",
@@ -702,12 +743,19 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
                 {
                     "reason": "missing_product",
                     "reaction_id": reaction.get("id"),
-                    **_q1_review_context(paper, reaction_type, combo_key),
+                    **_q1_review_context(
+                        paper,
+                        reaction_type if reaction_type_policy == "required" else None,
+                        combo_key,
+                    ),
                 }
             )
             continue
 
-        paper_combo_data[(paper, reaction_type, combo_key, product_key)].append(reaction)
+        grouping_reaction_type = (
+            reaction_type if reaction_type_policy == "required" else None
+        )
+        paper_combo_data[(paper, grouping_reaction_type, combo_key, product_key)].append(reaction)
 
     q1_benchmark: List[dict] = []
 
@@ -722,6 +770,10 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
     ):
         if len(entries) < 2:
             continue
+
+        reaction_type_audit = _reaction_type_audit(
+            [extract_reaction_type(entry) for entry in entries]
+        )
 
         substrate_combo = _substrate_combo_public(entries[0].get("substrates", []))
         if not substrate_combo:
@@ -910,7 +962,7 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
         q1_benchmark.append(
             {
                 "id": f"Q1_{len(q1_benchmark) + 1}",
-                "reaction_type": reaction_type,
+                **_reaction_type_context(reaction_type_policy, reaction_type),
                 "substrate_combo": substrate_combo,
                 "product_combo": product_combo,
                 "question_en": _build_q1_question_en(
@@ -928,6 +980,11 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
                     "top3": len(public_options) >= 3,
                 },
                 "metadata_hidden": {
+                    **(
+                        reaction_type_audit
+                        if reaction_type_policy == "ignored"
+                        else {}
+                    ),
                     "option_results": [
                         {
                             "option_id": option["option_id"],
@@ -948,6 +1005,7 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
     }
 
     report = {
+        "reaction_type_policy": reaction_type_policy,
         "input_groups": len(paper_combo_data),
         "main_questions": len(q1_benchmark),
         "review_questions": len(review_set),
@@ -963,6 +1021,16 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
         "top_score_tie_questions": sum(
             1 for item in q1_benchmark if item["metadata_hidden"]["has_top_score_tie"]
         ),
+        "reaction_type_conflict_questions": sum(
+            1
+            for item in q1_benchmark
+            if item.get("metadata_hidden", {}).get("reaction_type_conflict", False)
+        ),
+        "reaction_type_conflict_question_ids": [
+            item["id"]
+            for item in q1_benchmark
+            if item.get("metadata_hidden", {}).get("reaction_type_conflict", False)
+        ],
         "review_reasons": dict(
             sorted(
                 {
@@ -980,12 +1048,24 @@ def generate_q1_benchmark_package(q1_data: List[dict]) -> dict:
     }
 
 
-def generate_q1_benchmark(q1_data: List[dict]) -> List[dict]:
-    return generate_q1_benchmark_package(q1_data)["benchmark"]
+def generate_q1_benchmark(
+    q1_data: List[dict],
+    reaction_type_policy: str = "required",
+) -> List[dict]:
+    return generate_q1_benchmark_package(
+        q1_data,
+        reaction_type_policy=reaction_type_policy,
+    )["benchmark"]
 
 
-def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
-    paper_combo_data: Dict[Tuple[str, str, Tuple[str, ...], str], List[dict]] = defaultdict(list)
+def generate_q2_benchmark_package(
+    q2_data: List[dict],
+    reaction_type_policy: str = "required",
+) -> dict:
+    reaction_type_policy = normalize_reaction_type_policy(reaction_type_policy)
+    paper_combo_data: Dict[
+        Tuple[str, Optional[str], Tuple[str, ...], str], List[dict]
+    ] = defaultdict(list)
     review_set = []
 
     for reaction in q2_data:
@@ -1002,7 +1082,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
         if not combo:
             continue
 
-        if _is_unknown_reaction_type(reaction_type):
+        if reaction_type_policy == "required" and _is_unknown_reaction_type(reaction_type):
             review_set.append(
                 {
                     "reason": "unknown_reaction_type",
@@ -1018,7 +1098,10 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
         condition_grouping_signature = _condition_grouping_signature(condition_signature)
         cond_key = _public_option_key(condition_grouping_signature)
 
-        key = (paper, reaction_type, combo, cond_key)
+        grouping_reaction_type = (
+            reaction_type if reaction_type_policy == "required" else None
+        )
+        key = (paper, grouping_reaction_type, combo, cond_key)
         paper_combo_data[key].append(reaction)
 
     q2_benchmark = []
@@ -1036,6 +1119,9 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
         conditions = first_entry.get("conditions", {})
         condition_signature = _public_condition_option(first_entry)
         condition_grouping_signature = _condition_grouping_signature(condition_signature)
+        reaction_type_audit = _reaction_type_audit(
+            [extract_reaction_type(entry) for entry in entries]
+        )
 
         for variable_scaffold in combo:
             variable_candidates = []
@@ -1060,7 +1146,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                     {
                         "reason": "variable_scaffold_not_unique",
                         "source_paper": paper,
-                        "reaction_type": reaction_type,
+                        **_reaction_type_context(reaction_type_policy, reaction_type),
                         "conditions": conditions,
                         "condition_signature": condition_signature,
                         "condition_grouping_signature": condition_grouping_signature,
@@ -1080,7 +1166,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                     {
                         "reason": "fixed_substrate_mismatch",
                         "source_paper": paper,
-                        "reaction_type": reaction_type,
+                        **_reaction_type_context(reaction_type_policy, reaction_type),
                         "conditions": conditions,
                         "condition_signature": condition_signature,
                         "condition_grouping_signature": condition_grouping_signature,
@@ -1148,7 +1234,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                     {
                         "reason": "insufficient_scored_options",
                         "source_paper": paper,
-                        "reaction_type": reaction_type,
+                        **_reaction_type_context(reaction_type_policy, reaction_type),
                         "conditions": conditions,
                         "condition_signature": condition_signature,
                         "condition_grouping_signature": condition_grouping_signature,
@@ -1212,7 +1298,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                         "reason": "duplicate_variable_substrate_conflicting_results",
                         "action": "omitted_conflicting_variable_substrate",
                         "source_paper": paper,
-                        "reaction_type": reaction_type,
+                        **_reaction_type_context(reaction_type_policy, reaction_type),
                         "conditions": conditions,
                         "condition_signature": condition_signature,
                         "condition_grouping_signature": condition_grouping_signature,
@@ -1227,7 +1313,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                     {
                         "reason": "insufficient_distinct_variable_substrates",
                         "source_paper": paper,
-                        "reaction_type": reaction_type,
+                        **_reaction_type_context(reaction_type_policy, reaction_type),
                         "conditions": conditions,
                         "condition_signature": condition_signature,
                         "condition_grouping_signature": condition_grouping_signature,
@@ -1249,7 +1335,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                     {
                         "reason": "no_rankable_yield_or_ee",
                         "source_paper": paper,
-                        "reaction_type": reaction_type,
+                        **_reaction_type_context(reaction_type_policy, reaction_type),
                         "conditions": conditions,
                         "condition_signature": condition_signature,
                         "condition_grouping_signature": condition_grouping_signature,
@@ -1298,7 +1384,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
             q2_benchmark.append(
                 {
                     "id": f"Q2_{len(q2_benchmark) + 1}",
-                    "reaction_type": reaction_type,
+                    **_reaction_type_context(reaction_type_policy, reaction_type),
                     "reaction_conditions": conditions,
                     "condition_signature": condition_signature,
                     "condition_grouping_signature": condition_grouping_signature,
@@ -1316,6 +1402,11 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
                         "top3": len(public_options) >= 3,
                     },
                     "metadata_hidden": {
+                        **(
+                            reaction_type_audit
+                            if reaction_type_policy == "ignored"
+                            else {}
+                        ),
                         "option_results": [
                             {
                                 "option_id": option["option_id"],
@@ -1337,6 +1428,7 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
     }
 
     report = {
+        "reaction_type_policy": reaction_type_policy,
         "input_groups": len(paper_combo_data),
         "main_questions": len(q2_benchmark),
         "review_questions": len(review_set),
@@ -1352,6 +1444,16 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
         "top_score_tie_questions": sum(
             1 for item in q2_benchmark if item["metadata_hidden"]["has_top_score_tie"]
         ),
+        "reaction_type_conflict_questions": sum(
+            1
+            for item in q2_benchmark
+            if item.get("metadata_hidden", {}).get("reaction_type_conflict", False)
+        ),
+        "reaction_type_conflict_question_ids": [
+            item["id"]
+            for item in q2_benchmark
+            if item.get("metadata_hidden", {}).get("reaction_type_conflict", False)
+        ],
         "review_reasons": dict(
             sorted(
                 {
@@ -1369,8 +1471,14 @@ def generate_q2_benchmark_package(q2_data: List[dict]) -> dict:
     }
 
 
-def generate_q2_benchmark(q2_data: List[dict]) -> List[dict]:
-    return generate_q2_benchmark_package(q2_data)["benchmark"]
+def generate_q2_benchmark(
+    q2_data: List[dict],
+    reaction_type_policy: str = "required",
+) -> List[dict]:
+    return generate_q2_benchmark_package(
+        q2_data,
+        reaction_type_policy=reaction_type_policy,
+    )["benchmark"]
 
 
 SUPPORTED_SOURCE_MODALITIES = ("text", "image")
@@ -1400,9 +1508,18 @@ def _attach_modality_to_package(task: str, modality: str, package: dict) -> dict
             option_result["source_modality"] = modality_key
     for review in package["review_set"]:
         review["source_modality"] = modality_key
+    conflict_question_ids = [
+        question["id"]
+        for question in package["benchmark"]
+        if question.get("metadata_hidden", {}).get(
+            "reaction_type_conflict", False
+        )
+    ]
     package["report"] = {
         **package["report"],
         "source_modality": modality_key,
+        "reaction_type_conflict_questions": len(conflict_question_ids),
+        "reaction_type_conflict_question_ids": conflict_question_ids,
     }
     return package
 
@@ -1419,8 +1536,23 @@ def _aggregate_modality_reports(task: str, packages: Dict[str, dict]) -> dict:
         for review in packages[modality]["review_set"]
     ]
     option_counts = sorted({question["option_count"] for question in questions})
+    policies = {
+        packages[modality]["report"].get("reaction_type_policy", "required")
+        for modality in SUPPORTED_SOURCE_MODALITIES
+    }
+    if len(policies) != 1:
+        raise ValueError("Inconsistent reaction_type_policy across modality packages")
+    reaction_type_policy = policies.pop()
+    conflict_question_ids = [
+        question["id"]
+        for question in questions
+        if question.get("metadata_hidden", {}).get(
+            "reaction_type_conflict", False
+        )
+    ]
     return {
         "task": str(task).upper(),
+        "reaction_type_policy": reaction_type_policy,
         "input_groups": sum(
             packages[modality]["report"].get("input_groups", 0)
             for modality in SUPPORTED_SOURCE_MODALITIES
@@ -1444,6 +1576,8 @@ def _aggregate_modality_reports(task: str, packages: Dict[str, dict]) -> dict:
             for question in questions
             if question["metadata_hidden"]["has_top_score_tie"]
         ),
+        "reaction_type_conflict_questions": len(conflict_question_ids),
+        "reaction_type_conflict_question_ids": conflict_question_ids,
         "review_reasons": dict(
             sorted(
                 {
@@ -1464,14 +1598,12 @@ def _question_fingerprint(task: str, question: dict) -> str:
     if str(task).upper() == "Q1":
         payload = {
             "source_paper": question.get("source_paper"),
-            "reaction_type": question.get("reaction_type"),
             "substrate_combo": question.get("substrate_combo"),
             "product_combo": question.get("product_combo"),
         }
     else:
         payload = {
             "source_paper": question.get("source_paper"),
-            "reaction_type": question.get("reaction_type"),
             "condition_signature": question.get("condition_signature"),
             "fixed_substrates": question.get("fixed_substrates"),
             "variable_substrate_scaffold": question.get(
@@ -1479,6 +1611,8 @@ def _question_fingerprint(task: str, question: dict) -> str:
             ),
             "product_scaffold_class": question.get("product_scaffold_class"),
         }
+    if "reaction_type" in question:
+        payload["reaction_type"] = question.get("reaction_type")
     return json.dumps(payload, sort_keys=True, ensure_ascii=False)
 
 
@@ -1501,7 +1635,9 @@ def _cross_modal_overlap(task: str, packages: Dict[str, dict]) -> dict:
 def generate_benchmark_packages_by_modality(
     q1_data: List[dict],
     q2_data: List[dict],
+    reaction_type_policy: str = "required",
 ) -> dict:
+    reaction_type_policy = normalize_reaction_type_policy(reaction_type_policy)
     q1_by_modality = {modality: [] for modality in SUPPORTED_SOURCE_MODALITIES}
     q2_by_modality = {modality: [] for modality in SUPPORTED_SOURCE_MODALITIES}
     unexpected_modalities = set()
@@ -1529,7 +1665,10 @@ def generate_benchmark_packages_by_modality(
         modality: _attach_modality_to_package(
             "Q1",
             modality,
-            generate_q1_benchmark_package(q1_by_modality[modality]),
+            generate_q1_benchmark_package(
+                q1_by_modality[modality],
+                reaction_type_policy=reaction_type_policy,
+            ),
         )
         for modality in SUPPORTED_SOURCE_MODALITIES
     }
@@ -1537,7 +1676,10 @@ def generate_benchmark_packages_by_modality(
         modality: _attach_modality_to_package(
             "Q2",
             modality,
-            generate_q2_benchmark_package(q2_by_modality[modality]),
+            generate_q2_benchmark_package(
+                q2_by_modality[modality],
+                reaction_type_policy=reaction_type_policy,
+            ),
         )
         for modality in SUPPORTED_SOURCE_MODALITIES
     }
@@ -1561,25 +1703,26 @@ def generate_benchmark_packages_by_modality(
     question_option_counts = []
     for task in ("q1", "q2"):
         for question in combined[task]["benchmark"]:
-            question_option_counts.append(
-                {
-                    "question_id": question["id"],
-                    "task": task.upper(),
-                    "source_modality": question["source_modality"],
-                    "source_paper": question.get("source_paper"),
-                    "reaction_type": question.get("reaction_type"),
-                    "option_count": question["option_count"],
-                    "option_ids": [
-                        option["option_id"] for option in question.get("options", [])
-                    ],
-                    "top3_eligible": question["metric_eligibility"]["top3"],
-                    "has_top_score_tie": question["metadata_hidden"][
-                        "has_top_score_tie"
-                    ],
-                }
-            )
+            count_record = {
+                "question_id": question["id"],
+                "task": task.upper(),
+                "source_modality": question["source_modality"],
+                "source_paper": question.get("source_paper"),
+                "option_count": question["option_count"],
+                "option_ids": [
+                    option["option_id"] for option in question.get("options", [])
+                ],
+                "top3_eligible": question["metric_eligibility"]["top3"],
+                "has_top_score_tie": question["metadata_hidden"][
+                    "has_top_score_tie"
+                ],
+            }
+            if "reaction_type" in question:
+                count_record["reaction_type"] = question.get("reaction_type")
+            question_option_counts.append(count_record)
 
     return {
+        "reaction_type_policy": reaction_type_policy,
         "by_modality": {
             modality: {
                 "q1_reactions": q1_by_modality[modality],
