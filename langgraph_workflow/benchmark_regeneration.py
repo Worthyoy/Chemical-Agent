@@ -19,6 +19,8 @@ from multimodal_structure_enrichment import apply_enrichment, load_cache
 from split_by_substrate import has_valid_condition
 
 from langgraph_workflow.benchmark_utils import (
+    Q2_SYMBOL_POLICY,
+    Q2_VARIABLE_SUBSTRATE_IDENTITY_FIELDS,
     REACTION_TYPE_POLICIES,
     SUPPORTED_SOURCE_MODALITIES,
     generate_benchmark_packages_by_modality,
@@ -177,6 +179,10 @@ def build_modality_benchmark_bundle(
     }
     generated["summary"] = {
         "reaction_type_policy": reaction_type_policy,
+        "q2_symbol_policy": Q2_SYMBOL_POLICY,
+        "q2_variable_substrate_identity_fields": list(
+            Q2_VARIABLE_SUBSTRATE_IDENTITY_FIELDS
+        ),
         "input_reactions": len(reactions),
         "q1_questions": len(generated["q1"]["benchmark"]),
         "q2_questions": len(generated["q2"]["benchmark"]),
@@ -227,6 +233,42 @@ def validate_benchmark_bundle(bundle: dict) -> None:
                 raise ValueError(f"Invalid gold option ids for {question_id}")
             if set(question.get("gold_ranked_option_ids", [])) != option_id_set:
                 raise ValueError(f"Invalid ranked option ids for {question_id}")
+            if task == "q2":
+                if not isinstance(question.get("condition_signature"), dict):
+                    raise ValueError(
+                        f"Q2 question lacks full condition_signature: {question_id}"
+                    )
+                variable_keys = []
+                for fixed_substrate in question.get("fixed_substrates", []):
+                    if not isinstance(fixed_substrate, dict):
+                        raise ValueError(
+                            f"Q2 fixed substrate is invalid: {question_id}"
+                        )
+                    if "symbol" in fixed_substrate:
+                        raise ValueError(
+                            f"Q2 fixed substrate exposes source symbol: {question_id}"
+                        )
+                for option in options:
+                    variable_substrate = option.get("variable_substrate")
+                    if not isinstance(variable_substrate, dict):
+                        raise ValueError(
+                            f"Q2 option lacks variable_substrate: {question_id}"
+                        )
+                    if "symbol" in variable_substrate:
+                        raise ValueError(
+                            f"Q2 option exposes source symbol: {question_id}"
+                        )
+                    variable_keys.append(
+                        json.dumps(
+                            variable_substrate,
+                            sort_keys=True,
+                            ensure_ascii=False,
+                        )
+                    )
+                if len(variable_keys) != len(set(variable_keys)):
+                    raise ValueError(
+                        f"Q2 question contains duplicate variable substrates: {question_id}"
+                    )
             if reaction_type_policy == "ignored":
                 if "reaction_type" in question:
                     raise ValueError(
@@ -339,6 +381,10 @@ def write_benchmark_bundle(
         "run_id": run_id,
         "mode": "offline_modality_regeneration",
         "reaction_type_policy": bundle.get("reaction_type_policy", "required"),
+        "q2_symbol_policy": Q2_SYMBOL_POLICY,
+        "q2_variable_substrate_identity_fields": list(
+            Q2_VARIABLE_SUBSTRATE_IDENTITY_FIELDS
+        ),
         "input": str(merged_path),
         "input_sha256": file_sha256(merged_path),
         "structure_cache_sources": [

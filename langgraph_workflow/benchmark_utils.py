@@ -38,6 +38,13 @@ def parse_percentage(val):
 
 UNKNOWN_REACTION_TYPE = "unknown reaction"
 REACTION_TYPE_POLICIES = ("required", "ignored")
+Q2_SYMBOL_POLICY = "hidden_provenance_only"
+Q2_VARIABLE_SUBSTRATE_IDENTITY_FIELDS = (
+    "name",
+    "scaffold",
+    "substituents",
+    "step",
+)
 
 
 def normalize_reaction_type_policy(value: str = "required") -> str:
@@ -140,6 +147,58 @@ def format_conditions_en(conditions: Dict) -> str:
     return "; ".join(parts) if parts else "not specified"
 
 
+def _format_fixed_condition_value(value) -> str:
+    if isinstance(value, list):
+        rendered = [
+            _format_fixed_condition_value(item)
+            for item in value
+            if not _is_empty_public_value(item)
+        ]
+        return "; ".join(item for item in rendered if item) or "not specified"
+    if isinstance(value, dict):
+        if value.get("name") not in (None, ""):
+            text = str(value["name"])
+            qualifiers = []
+            if value.get("amount") not in (None, ""):
+                qualifiers.append(f"amount: {value['amount']}")
+            if value.get("step") not in (None, ""):
+                qualifiers.append(f"step: {value['step']}")
+            return f"{text} ({', '.join(qualifiers)})" if qualifiers else text
+        parts = []
+        for key in sorted(value, key=lambda item: str(item).casefold()):
+            item = value[key]
+            if _is_empty_public_value(item):
+                continue
+            label = str(key).replace("_", " ")
+            parts.append(f"{label}: {_format_fixed_condition_value(item)}")
+        return "; ".join(parts) or "not specified"
+    return str(value)
+
+
+def format_fixed_conditions_en(condition_signature: Dict) -> List[str]:
+    """Render every Q2 grouping condition in a stable, model-visible order."""
+    signature = condition_signature if isinstance(condition_signature, dict) else {}
+    lines = [
+        f"Reaction conditions: {format_conditions_en(signature.get('conditions') or {})}."
+    ]
+    labels = (
+        ("catalysts", "Catalyst(s)"),
+        ("ligands", "Ligand(s)"),
+        ("additives", "Additive(s)"),
+        ("reagents", "Reagent(s)"),
+        ("other_components", "Other component(s)"),
+        ("electrodes", "Electrode(s)"),
+        ("atmosphere", "Atmosphere"),
+        ("scale", "Reaction scale"),
+    )
+    for key, label in labels:
+        value = signature.get(key)
+        if _is_empty_public_value(value):
+            continue
+        lines.append(f"{label}: {_format_fixed_condition_value(value)}.")
+    return lines
+
+
 def _compound_public_fields(compound: dict) -> dict:
     public = {
         "name": compound.get("name", ""),
@@ -150,6 +209,13 @@ def _compound_public_fields(compound: dict) -> dict:
         public["symbol"] = compound.get("symbol")
     if compound.get("step") is not None:
         public["step"] = compound.get("step")
+    return public
+
+
+def _q2_variable_substrate_public_fields(compound: dict) -> dict:
+    """Return the exact Q2 option identity exposed to benchmark consumers."""
+    public = _compound_public_fields(compound)
+    public.pop("symbol", None)
     return public
 
 
@@ -188,8 +254,35 @@ def _clean_substrates_except_scaffold(substrates: List[dict], variable_scaffold:
             continue
         if str(scaffold).casefold() == str(variable_scaffold or "").casefold():
             continue
-        fixed.append(_compound_public_fields(sub))
+        fixed.append(_q2_variable_substrate_public_fields(sub))
     return sorted(fixed, key=lambda x: str(x.get("name", "")).casefold())
+
+
+def _fixed_substrate_symbol_provenance(
+    substrates: List[dict], variable_scaffold: str
+) -> List[dict]:
+    provenance = []
+    for substrate in substrates or []:
+        scaffold = substrate.get("scaffold")
+        symbol = substrate.get("symbol")
+        if not scaffold or scaffold == "unknown" or symbol in (None, ""):
+            continue
+        if str(scaffold).casefold() == str(variable_scaffold or "").casefold():
+            continue
+        record = {
+            "name": _normalize_compound_name(substrate.get("name", "")),
+            "symbol": symbol,
+        }
+        if substrate.get("step") is not None:
+            record["step"] = substrate.get("step")
+        provenance.append(record)
+    return sorted(
+        provenance,
+        key=lambda item: (
+            str(item.get("name", "")).casefold(),
+            str(item.get("symbol", "")).casefold(),
+        ),
+    )
 
 
 def _product_scaffold_class(entries: List[dict]) -> str:
@@ -224,7 +317,7 @@ def _shuffle_options(options: List[dict], seed: str) -> List[dict]:
 
 def _build_q2_question_en(
     reaction_type: Optional[str],
-    conditions: Dict,
+    condition_signature: Dict,
     fixed_substrates: List[dict],
     variable_scaffold: str,
     product_class: str,
@@ -239,9 +332,9 @@ def _build_q2_question_en(
     lines = []
     if reaction_type:
         lines.append(f"Reaction type: {reaction_type}.")
+    lines.extend(format_fixed_conditions_en(condition_signature))
     lines.extend(
         [
-            f"Reaction conditions: {format_conditions_en(conditions)}.",
             f"Fixed substrate(s): {fixed_text}.",
             f"Variable substrate scaffold: {variable_scaffold}.",
             f"Product scaffold/class: {product_class}.",
@@ -1181,12 +1274,15 @@ def generate_q2_benchmark_package(
             fixed_substrates = _clean_substrates_except_scaffold(
                 first_reaction.get("substrates", []), variable_scaffold
             )
+            fixed_substrate_source_symbols = _fixed_substrate_symbol_provenance(
+                first_reaction.get("substrates", []), variable_scaffold
+            )
             product_class = _product_scaffold_class(
                 [reaction for _, reaction, _ in variable_candidates]
             )
             question_en = _build_q2_question_en(
                 reaction_type,
-                conditions,
+                condition_signature,
                 fixed_substrates,
                 variable_scaffold,
                 product_class,
@@ -1203,18 +1299,31 @@ def generate_q2_benchmark_package(
                     omitted_no_targets.append(
                         {
                             "reaction_id": reaction.get("id"),
-                            "variable_substrate": _compound_public_fields(variable_substrate),
+                            "variable_substrate": _q2_variable_substrate_public_fields(
+                                variable_substrate
+                            ),
+                            "source_symbol": variable_substrate.get("symbol"),
                         }
                     )
                     continue
 
+                source_symbol = variable_substrate.get("symbol")
+                reaction_id = reaction.get("id")
                 options.append(
                     {
                         "option_id": None,
-                        "variable_substrate": _compound_public_fields(variable_substrate),
+                        "variable_substrate": _q2_variable_substrate_public_fields(
+                            variable_substrate
+                        ),
                         "metadata_hidden": {
                             "original_answer_index": original_answer_index,
-                            "reaction_id": reaction.get("id"),
+                            "reaction_id": reaction_id,
+                            "source_symbols": (
+                                [source_symbol] if source_symbol not in (None, "") else []
+                            ),
+                            "source_reaction_ids": (
+                                [reaction_id] if reaction_id not in (None, "") else []
+                            ),
                             "ee_raw": targets.get("ee"),
                             "yield_raw": targets.get("yield"),
                             "dr_raw": dr,
@@ -1271,6 +1380,16 @@ def generate_q2_benchmark_package(
                     duplicate_conflicts.append(
                         {
                             "variable_substrate": duplicate_options[0]["variable_substrate"],
+                            "source_symbols": sorted(
+                                {
+                                    symbol
+                                    for item in duplicate_options
+                                    for symbol in item["metadata_hidden"].get(
+                                        "source_symbols", []
+                                    )
+                                },
+                                key=lambda value: str(value).casefold(),
+                            ),
                             "reaction_ids": [
                                 item["metadata_hidden"].get("reaction_id")
                                 for item in duplicate_options
@@ -1284,13 +1403,35 @@ def generate_q2_benchmark_package(
                                     "dr_raw": item["metadata_hidden"].get("dr_raw"),
                                     "score": item["metadata_hidden"].get("score"),
                                     "rankable": item["metadata_hidden"].get("rankable"),
+                                    "source_symbols": item["metadata_hidden"].get(
+                                        "source_symbols", []
+                                    ),
                                 }
                                 for item in duplicate_options
                             ],
                         }
                     )
                     continue
-                deduped_options.append(sorted(duplicate_options, key=_option_sort_key)[0])
+                representative = sorted(duplicate_options, key=_option_sort_key)[0]
+                representative["metadata_hidden"]["source_symbols"] = sorted(
+                    {
+                        symbol
+                        for item in duplicate_options
+                        for symbol in item["metadata_hidden"].get("source_symbols", [])
+                    },
+                    key=lambda value: str(value).casefold(),
+                )
+                representative["metadata_hidden"]["source_reaction_ids"] = sorted(
+                    {
+                        reaction_id
+                        for item in duplicate_options
+                        for reaction_id in item["metadata_hidden"].get(
+                            "source_reaction_ids", []
+                        )
+                    },
+                    key=lambda value: str(value),
+                )
+                deduped_options.append(representative)
 
             if duplicate_conflicts:
                 review_set.append(
@@ -1414,6 +1555,9 @@ def generate_q2_benchmark_package(
                             }
                             for option in shuffled_options
                         ],
+                        "fixed_substrate_source_symbols": (
+                            fixed_substrate_source_symbols
+                        ),
                         "has_top_score_tie": len(gold_option_ids) > 1,
                         "omitted_no_targets": omitted_no_targets,
                         "omitted_conflicting_duplicate_options": duplicate_conflicts,
@@ -1429,6 +1573,10 @@ def generate_q2_benchmark_package(
 
     report = {
         "reaction_type_policy": reaction_type_policy,
+        "q2_symbol_policy": Q2_SYMBOL_POLICY,
+        "q2_variable_substrate_identity_fields": list(
+            Q2_VARIABLE_SUBSTRATE_IDENTITY_FIELDS
+        ),
         "input_groups": len(paper_combo_data),
         "main_questions": len(q2_benchmark),
         "review_questions": len(review_set),
@@ -1550,7 +1698,7 @@ def _aggregate_modality_reports(task: str, packages: Dict[str, dict]) -> dict:
             "reaction_type_conflict", False
         )
     ]
-    return {
+    report = {
         "task": str(task).upper(),
         "reaction_type_policy": reaction_type_policy,
         "input_groups": sum(
@@ -1592,6 +1740,12 @@ def _aggregate_modality_reports(task: str, packages: Dict[str, dict]) -> dict:
             for modality in SUPPORTED_SOURCE_MODALITIES
         },
     }
+    if str(task).upper() == "Q2":
+        report["q2_symbol_policy"] = Q2_SYMBOL_POLICY
+        report["q2_variable_substrate_identity_fields"] = list(
+            Q2_VARIABLE_SUBSTRATE_IDENTITY_FIELDS
+        )
+    return report
 
 
 def _question_fingerprint(task: str, question: dict) -> str:

@@ -1,6 +1,8 @@
 from langgraph_workflow.benchmark_utils import (
     _condition_grouping_signature,
     _public_option_key,
+    format_fixed_conditions_en,
+    generate_benchmark_packages_by_modality,
     generate_q1_benchmark_package,
     generate_q2_benchmark_package,
 )
@@ -52,10 +54,19 @@ def test_q2_condition_grouping_does_not_infer_missing_amount_tokens():
     assert _group_key(left) != _group_key(right)
 
 
-def _q2_reaction(reaction_id, variable_name, yield_value):
+def _q2_reaction(
+    reaction_id,
+    variable_name,
+    yield_value,
+    *,
+    paper="paper",
+    ligand=None,
+    symbol=None,
+    fixed_symbol=None,
+):
     return {
         "id": reaction_id,
-        "source_paper": "paper",
+        "source_paper": paper,
         "source_modality": "text",
         "reaction_type": "test reaction",
         "substrates": [
@@ -63,11 +74,13 @@ def _q2_reaction(reaction_id, variable_name, yield_value):
                 "name": variable_name,
                 "scaffold": "benzaldehyde",
                 "substituents": [],
+                "symbol": symbol,
             },
             {
                 "name": "glycine",
                 "scaffold": "glycine",
                 "substituents": [],
+                "symbol": fixed_symbol,
             },
         ],
         "products": [
@@ -77,11 +90,149 @@ def _q2_reaction(reaction_id, variable_name, yield_value):
             }
         ],
         "catalysts": [{"name": "photocatalyst", "amount": "1 mol%"}],
-        "ligands": [],
+        "ligands": [{"name": ligand}] if ligand else [],
         "other_components": [],
         "conditions": {"time": "12 h", "light_source": "photoreactor"},
         "targets": {"yield": yield_value, "ee": None, "er": None},
     }
+
+
+def test_q2_question_exposes_every_grouping_condition():
+    reactions = [
+        _q2_reaction("r1", "benzaldehyde", "91%", ligand="(R,S)-L1"),
+        _q2_reaction("r2", "4-fluorobenzaldehyde", "88%", ligand="(R,S)-L1"),
+    ]
+
+    question = generate_q2_benchmark_package(reactions)["benchmark"][0]
+
+    assert question["condition_signature"]["catalysts"] == [
+        {"name": "photocatalyst", "amount": "1 mol%"}
+    ]
+    assert question["condition_signature"]["ligands"] == [{"name": "(R,S)-L1"}]
+    assert "Catalyst(s): photocatalyst (amount: 1 mol%)." in question["question_en"]
+    assert "Ligand(s): (R,S)-L1." in question["question_en"]
+    assert format_fixed_conditions_en(question["condition_signature"])[-1] == (
+        "Ligand(s): (R,S)-L1."
+    )
+
+
+def test_q2_different_grouping_ligands_are_both_visible():
+    reactions = [
+        _q2_reaction("a1", "benzaldehyde", "91%", paper="paper-a", ligand="(R,S)-L1"),
+        _q2_reaction("a2", "4-fluorobenzaldehyde", "88%", paper="paper-a", ligand="(R,S)-L1"),
+        _q2_reaction("b1", "benzaldehyde", "91%", paper="paper-b", ligand="(S,R)-L1"),
+        _q2_reaction("b2", "4-fluorobenzaldehyde", "88%", paper="paper-b", ligand="(S,R)-L1"),
+    ]
+
+    bundle = generate_benchmark_packages_by_modality(
+        [], reactions, reaction_type_policy="ignored"
+    )
+
+    assert len(bundle["q2"]["benchmark"]) == 2
+    assert "(R,S)-L1" in bundle["q2"]["benchmark"][0]["question_en"]
+    assert "(S,R)-L1" in bundle["q2"]["benchmark"][1]["question_en"]
+
+
+def test_q2_identical_public_questions_from_different_papers_are_not_deduplicated():
+    reactions = [
+        _q2_reaction("a1", "benzaldehyde", "91%", paper="paper-a"),
+        _q2_reaction("a2", "4-fluorobenzaldehyde", "88%", paper="paper-a"),
+        _q2_reaction("b1", "benzaldehyde", "91%", paper="paper-b"),
+        _q2_reaction("b2", "4-fluorobenzaldehyde", "88%", paper="paper-b"),
+    ]
+
+    bundle = generate_benchmark_packages_by_modality(
+        [], reactions, reaction_type_policy="ignored"
+    )
+
+    questions = bundle["q2"]["benchmark"]
+    assert len(questions) == 2
+    assert [question["source_paper"] for question in questions] == [
+        "paper-a",
+        "paper-b",
+    ]
+    assert questions[0]["gold_option_ids"]
+    assert questions[0]["gold_option_ids"] == questions[1]["gold_option_ids"]
+
+
+def test_q2_symbol_is_hidden_and_same_result_duplicates_merge_with_provenance():
+    reactions = [
+        _q2_reaction(
+            "r1", "benzaldehyde", "91%", symbol="135-1", fixed_symbol="G1"
+        ),
+        _q2_reaction(
+            "r2", "benzaldehyde", "91%", symbol="S127-4", fixed_symbol="G1"
+        ),
+        _q2_reaction(
+            "r3", "4-fluorobenzaldehyde", "88%", symbol="4-F", fixed_symbol="G1"
+        ),
+    ]
+
+    question = generate_q2_benchmark_package(reactions)["benchmark"][0]
+
+    assert question["option_count"] == 2
+    assert all(
+        "symbol" not in option["variable_substrate"]
+        for option in question["options"]
+    )
+    assert all("symbol" not in substrate for substrate in question["fixed_substrates"])
+    assert question["metadata_hidden"]["fixed_substrate_source_symbols"] == [
+        {"name": "glycine", "symbol": "G1"}
+    ]
+    benzaldehyde_option = next(
+        option
+        for option in question["options"]
+        if option["variable_substrate"]["name"] == "benzaldehyde"
+    )
+    result = next(
+        result
+        for result in question["metadata_hidden"]["option_results"]
+        if result["option_id"] == benzaldehyde_option["option_id"]
+    )
+    assert result["source_symbols"] == ["135-1", "S127-4"]
+    assert result["source_reaction_ids"] == ["r1", "r2"]
+
+
+def test_q2_symbol_and_missing_symbol_do_not_hide_conflicting_results():
+    reactions = [
+        _q2_reaction("r1", "benzaldehyde", "91%", symbol="135-1"),
+        _q2_reaction("r2", "benzaldehyde", "83%"),
+        _q2_reaction("r3", "4-fluorobenzaldehyde", "88%"),
+        _q2_reaction("r4", "4-bromobenzaldehyde", "85%"),
+    ]
+
+    package = generate_q2_benchmark_package(reactions)
+    question = package["benchmark"][0]
+
+    assert question["option_count"] == 2
+    assert {
+        option["variable_substrate"]["name"] for option in question["options"]
+    } == {"4-fluorobenzaldehyde", "4-bromobenzaldehyde"}
+    conflict = next(
+        review
+        for review in package["review_set"]
+        if review["reason"] == "duplicate_variable_substrate_conflicting_results"
+    )
+    assert conflict["details"][0]["source_symbols"] == ["135-1"]
+    assert conflict["details"][0]["reaction_ids"] == ["r1", "r2"]
+
+
+def test_q2_same_symbol_different_chemistry_remains_distinct():
+    reactions = [
+        _q2_reaction("r1", "benzaldehyde", "91%", symbol="1"),
+        _q2_reaction("r2", "4-fluorobenzaldehyde", "88%", symbol="1"),
+    ]
+
+    question = generate_q2_benchmark_package(reactions)["benchmark"][0]
+
+    assert question["option_count"] == 2
+    assert {
+        option["variable_substrate"]["name"] for option in question["options"]
+    } == {"benzaldehyde", "4-fluorobenzaldehyde"}
+    assert all(
+        "symbol" not in option["variable_substrate"]
+        for option in question["options"]
+    )
 
 
 def test_q2_omits_conflicting_duplicate_variable_substrate_not_whole_question():
