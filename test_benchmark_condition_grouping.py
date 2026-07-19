@@ -1,10 +1,12 @@
 from langgraph_workflow.benchmark_utils import (
+    OBJECTIVE_YIELD_ONLY,
     _condition_grouping_signature,
     _public_option_key,
     format_fixed_conditions_en,
     generate_benchmark_packages_by_modality,
     generate_q1_benchmark_package,
     generate_q2_benchmark_package,
+    has_visible_q1_condition,
 )
 
 
@@ -128,9 +130,10 @@ def test_q2_different_grouping_ligands_are_both_visible():
         [], reactions, reaction_type_policy="ignored"
     )
 
-    assert len(bundle["q2"]["benchmark"]) == 2
-    assert "(R,S)-L1" in bundle["q2"]["benchmark"][0]["question_en"]
-    assert "(S,R)-L1" in bundle["q2"]["benchmark"][1]["question_en"]
+    questions = bundle["q2"]["benchmarks"][OBJECTIVE_YIELD_ONLY]
+    assert len(questions) == 2
+    assert "(R,S)-L1" in questions[0]["question_en"]
+    assert "(S,R)-L1" in questions[1]["question_en"]
 
 
 def test_q2_identical_public_questions_from_different_papers_are_not_deduplicated():
@@ -145,7 +148,7 @@ def test_q2_identical_public_questions_from_different_papers_are_not_deduplicate
         [], reactions, reaction_type_policy="ignored"
     )
 
-    questions = bundle["q2"]["benchmark"]
+    questions = bundle["q2"]["benchmarks"][OBJECTIVE_YIELD_ONLY]
     assert len(questions) == 2
     assert [question["source_paper"] for question in questions] == [
         "paper-a",
@@ -290,6 +293,59 @@ def _q1_reaction(reaction_id, condition_name, yield_value):
         "other_components": [],
         "conditions": {"solvent": condition_name},
         "targets": {"yield": yield_value, "ee": None, "er": None, "dr": None},
+    }
+
+
+def test_q1_accepts_any_visible_structured_condition_field():
+    field_values = {
+        "conditions": {"solvent": "THF"},
+        "catalysts": [{"name": "Pd(OAc)2", "amount": "5 mol%"}],
+        "ligands": [{"name": "BINAP"}],
+        "reagents": [{"name": "K2CO3"}],
+        "additives": [{"name": "LiCl"}],
+        "other_components": [{"name": "base", "amount": "2 equiv"}],
+        "electrodes": ["graphite"],
+        "atmosphere": "nitrogen",
+        "scale": "0.1 mmol",
+    }
+    for field, value in field_values.items():
+        reaction = _q1_reaction("r", "", "80%")
+        reaction["conditions"] = {}
+        reaction[field] = value
+        assert has_visible_q1_condition(reaction), field
+
+
+def test_q1_rejects_reaction_without_visible_structured_conditions():
+    reaction = _q1_reaction("r", "", "80%")
+    reaction["conditions"] = {}
+    reaction["targets"] = {"yield": "80%", "ee": "90%"}
+    reaction["source_pages"] = [1]
+    assert not has_visible_q1_condition(reaction)
+
+
+def test_q1_groups_by_name_and_hides_public_substrate_symbol():
+    first = _q1_reaction("r1", "THF", "91%")
+    second = _q1_reaction("r2", "DMF", "88%")
+    first["substrates"][0].update(
+        {"symbol": "1a", "scaffold": "scaffold-a", "substituents": ["4-F"]}
+    )
+    second["substrates"][0].update(
+        {"symbol": "S-22", "scaffold": "scaffold-b", "substituents": ["4-Cl"]}
+    )
+
+    package = generate_q1_benchmark_package([first, second])
+
+    assert len(package["benchmark"]) == 1
+    question = package["benchmark"][0]
+    assert question["option_count"] == 2
+    assert all("symbol" not in substrate for substrate in question["substrate_combo"])
+    provenance = {
+        result["reaction_id"]: result["source_substrate_symbols"]
+        for result in question["metadata_hidden"]["option_results"]
+    }
+    assert provenance == {
+        "r1": [{"name": "benzaldehyde", "symbol": "1a"}],
+        "r2": [{"name": "benzaldehyde", "symbol": "S-22"}],
     }
 
 

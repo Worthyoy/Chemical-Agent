@@ -313,6 +313,7 @@ def classify_and_enrich_reactions(reactions: List[dict], client: OpenAI,
                                    batch_size: int = 50,
                                    cache_path: Optional[Path] = None,
                                    allow_llm: bool = True,
+                                   q1_condition_policy: str = "legacy_conditions_only",
                                    ) -> Tuple[List[dict], List[dict]]:
     from compound_structure_parser import enrich_reactions_with_structure
 
@@ -328,12 +329,23 @@ def classify_and_enrich_reactions(reactions: List[dict], client: OpenAI,
     )
 
     print("[Step 2] Classifying reactions for Q1/Q2...")
+    if q1_condition_policy == "legacy_conditions_only":
+        q1_condition_eligible = has_valid_condition
+    elif q1_condition_policy == "any_visible_structured_condition_v1":
+        from langgraph_workflow.benchmark_utils import has_visible_q1_condition
+
+        q1_condition_eligible = has_visible_q1_condition
+    else:
+        raise ValueError(f"Unsupported Q1 condition policy: {q1_condition_policy}")
+
     Q1_reactions = []
     Q2_reactions = []
     for reaction in reactions:
+        if q1_condition_eligible(reaction):
+            Q1_reactions.append(reaction)
+        # Q2 intentionally retains the legacy conditions-only eligibility.
         if not has_valid_condition(reaction):
             continue
-        Q1_reactions.append(reaction)
         has_parseable_substrate = any(
             substrate.get("parseable") and substrate.get("scaffold")
             for substrate in reaction.get("substrates", [])
@@ -458,7 +470,8 @@ def split_reactions(input_path="filtered/merged_filtered_reactions.json",
                     batch_size: int = 30,
                     api_key: Optional[str] = None,
                     base_url: str = "https://hk.xty.app/v1",
-                    allow_llm: bool = True):
+                    allow_llm: bool = True,
+                    q1_condition_policy: str = "legacy_conditions_only"):
     input_path = Path(input_path)
     output_dir = Path(output_dir)
     cache_path = Path(cache_path) if cache_path else output_dir / "substrate_parse_cache.json"
@@ -498,6 +511,7 @@ def split_reactions(input_path="filtered/merged_filtered_reactions.json",
         batch_size=batch_size,
         cache_path=cache_path,
         allow_llm=allow_llm,
+        q1_condition_policy=q1_condition_policy,
     )
 
     # 统计
@@ -554,6 +568,7 @@ def split_reactions(input_path="filtered/merged_filtered_reactions.json",
         "model": model,
         "llm_enabled": bool(allow_llm),
         "cache_only": not bool(allow_llm),
+        "q1_condition_eligibility_policy": q1_condition_policy,
         "total_reactions": len(reactions),
         "q1_reactions": len(Q1_reactions),
         "q2_reactions": len(Q2_reactions),
@@ -605,6 +620,7 @@ def split_reactions(input_path="filtered/merged_filtered_reactions.json",
         "cache": str(cache_path),
         "llm_enabled": bool(allow_llm),
         "cache_only": not bool(allow_llm),
+        "q1_condition_eligibility_policy": q1_condition_policy,
         "total_reactions": len(reactions),
         "q1_reactions": len(Q1_reactions),
         "q2_reactions": len(Q2_reactions),

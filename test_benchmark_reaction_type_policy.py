@@ -4,6 +4,7 @@ import pytest
 
 import langgraph_workflow.pipeline_agents as pipeline_agents
 from langgraph_workflow.benchmark_utils import (
+    OBJECTIVE_YIELD_ONLY,
     generate_benchmark_packages_by_modality,
     generate_q1_benchmark_package,
     generate_q2_benchmark_package,
@@ -123,8 +124,10 @@ def test_ignored_modality_output_is_deterministic_and_reports_final_ids():
     )
 
     assert first == second
-    assert first["q1"]["report"]["reaction_type_conflict_question_ids"] == [
-        "Q1_TEXT_0001"
+    assert first["q1"]["report"]["by_objective"][OBJECTIVE_YIELD_ONLY][
+        "reaction_type_conflict_question_ids"
+    ] == [
+        "Q1_YIELD_TEXT_0001"
     ]
     assert "reaction_type" not in first["question_option_counts"][0]
 

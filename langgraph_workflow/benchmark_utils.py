@@ -1,7 +1,7 @@
 import json
 import random
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from typing import Dict, List, Optional, Tuple
 
 
@@ -38,6 +38,24 @@ def parse_percentage(val):
 
 UNKNOWN_REACTION_TYPE = "unknown reaction"
 REACTION_TYPE_POLICIES = ("required", "ignored")
+OBJECTIVE_COMBINED = "combined_ee_yield"
+OBJECTIVE_YIELD_ONLY = "yield_only"
+BENCHMARK_OBJECTIVES = (OBJECTIVE_COMBINED, OBJECTIVE_YIELD_ONLY)
+METRIC_COMPLETENESS_POLICY = "strict_within_extracted_data"
+Q1_SYMBOL_POLICY = "hidden_provenance_only"
+Q1_CONDITION_ELIGIBILITY_POLICY = "any_visible_structured_condition_v1"
+Q1_SUBSTRATE_GROUPING_FIELDS = ("name",)
+Q1_STRUCTURED_CONDITION_FIELDS = (
+    "conditions",
+    "catalysts",
+    "ligands",
+    "reagents",
+    "additives",
+    "other_components",
+    "electrodes",
+    "atmosphere",
+    "scale",
+)
 Q2_SYMBOL_POLICY = "hidden_provenance_only"
 Q2_VARIABLE_SUBSTRATE_IDENTITY_FIELDS = (
     "name",
@@ -66,7 +84,7 @@ def _reaction_type_context(policy: str, reaction_type: str) -> dict:
 def _reaction_type_audit(types: List[str]) -> dict:
     source_types = sorted(
         {extract_reaction_type({"reaction_type": value}) for value in types},
-        key=str.casefold,
+        key=lambda value: (str(value).casefold(), str(value)),
     )
     return {
         "source_reaction_types": source_types,
@@ -219,6 +237,37 @@ def _q2_variable_substrate_public_fields(compound: dict) -> dict:
     return public
 
 
+def _q1_substrate_public_fields(compound: dict) -> dict:
+    """Return Q1 substrate details without exposing paper-local symbols."""
+    public = _compound_public_fields(compound)
+    public.pop("symbol", None)
+    return public
+
+
+def _q1_substrate_symbol_provenance(substrates: List[dict]) -> List[dict]:
+    """Keep Q1 paper-local substrate labels only in hidden provenance."""
+    provenance = []
+    for substrate in substrates or []:
+        symbol = substrate.get("symbol")
+        if symbol in (None, ""):
+            continue
+        record = {
+            "name": _normalize_compound_name(substrate.get("name", "")),
+            "symbol": symbol,
+        }
+        if substrate.get("step") is not None:
+            record["step"] = substrate.get("step")
+        provenance.append(record)
+    return sorted(
+        provenance,
+        key=lambda item: (
+            str(item.get("name", "")).casefold(),
+            str(item.get("symbol", "")).casefold(),
+            str(item.get("step", "")),
+        ),
+    )
+
+
 def _compound_identity(compound: dict) -> Tuple[str, str, Tuple[str, ...]]:
     return (
         _normalize_compound_name(compound.get("name", "")).casefold(),
@@ -321,7 +370,9 @@ def _build_q2_question_en(
     fixed_substrates: List[dict],
     variable_scaffold: str,
     product_class: str,
+    objective: str = OBJECTIVE_COMBINED,
 ) -> str:
+    objective = _normalize_benchmark_objective(objective)
     fixed_text = "; ".join(
         f"{sub.get('name', '')} (scaffold: {sub.get('scaffold', 'unknown')})"
         for sub in fixed_substrates
@@ -340,7 +391,12 @@ def _build_q2_question_en(
             f"Product scaffold/class: {product_class}.",
             (
                 "Question: Among substrates with the specified variable scaffold, "
-                "which substituent pattern on that substrate gives the best combined ee and yield?"
+                "which substituent pattern on that substrate gives the "
+                + (
+                    "best combined ee and yield?"
+                    if objective == OBJECTIVE_COMBINED
+                    else "best reported yield?"
+                )
             ),
         ]
     )
@@ -488,6 +544,77 @@ def _score_from_targets(targets: Dict) -> Tuple[Optional[float], Optional[float]
     return ee, yield_val, score / count if count else 0.0, count
 
 
+_EXPLICITLY_UNREPORTED_TARGETS = {
+    "",
+    "n/a",
+    "na",
+    "null",
+    "none",
+    "not reported",
+    "not available",
+    "not determined",
+    "nd",
+    "n.d.",
+}
+
+
+def _is_explicitly_unreported_target(value) -> bool:
+    if value is None:
+        return True
+    return str(value).strip().casefold() in _EXPLICITLY_UNREPORTED_TARGETS
+
+
+def _normalize_benchmark_objective(value: str) -> str:
+    objective = str(value or "").strip().casefold()
+    if objective not in BENCHMARK_OBJECTIVES:
+        raise ValueError(
+            f"Unsupported benchmark objective: {value!r}; "
+            f"expected one of {', '.join(BENCHMARK_OBJECTIVES)}"
+        )
+    return objective
+
+
+def _target_objective_eligibility(targets: Dict, objective: str) -> Tuple[bool, str]:
+    objective = _normalize_benchmark_objective(objective)
+    targets = targets or {}
+    ee = parse_percentage(targets.get("ee"))
+    yield_val = parse_percentage(targets.get("yield"))
+    ee_raw = targets.get("ee")
+    er_raw = targets.get("er")
+
+    if yield_val is None:
+        return False, "missing_or_invalid_yield"
+    if objective == OBJECTIVE_COMBINED:
+        if ee is None:
+            if not _is_explicitly_unreported_target(er_raw):
+                return False, "ambiguous_er_without_ee"
+            return False, "missing_or_invalid_ee"
+        return True, "eligible"
+
+    if ee is not None:
+        return False, "has_ee"
+    if not _is_explicitly_unreported_target(ee_raw):
+        return False, "invalid_ee"
+    if not _is_explicitly_unreported_target(er_raw):
+        return False, "ambiguous_er_without_ee"
+    return True, "eligible"
+
+
+def _score_for_objective(
+    targets: Dict,
+    objective: str,
+) -> Tuple[Optional[float], Optional[float], float, int]:
+    objective = _normalize_benchmark_objective(objective)
+    ee = parse_percentage((targets or {}).get("ee"))
+    yield_val = parse_percentage((targets or {}).get("yield"))
+    eligible, _ = _target_objective_eligibility(targets, objective)
+    if not eligible:
+        return ee, yield_val, 0.0, 0
+    if objective == OBJECTIVE_COMBINED:
+        return ee, yield_val, (float(ee) + float(yield_val)) / 2.0, 2
+    return ee, yield_val, float(yield_val), 1
+
+
 def _has_reported_target(value) -> bool:
     return value not in (None, "", [], {})
 
@@ -516,6 +643,15 @@ def _public_condition_option(reaction: dict) -> dict:
         if value not in (None, "", [], {}):
             public[key] = value
     return public
+
+
+def has_visible_q1_condition(reaction: dict) -> bool:
+    """Whether Q1 has at least one structured condition visible to the model."""
+    public = _public_condition_option(reaction)
+    return any(
+        not _is_empty_public_value(public.get(field))
+        for field in Q1_STRUCTURED_CONDITION_FIELDS
+    )
 
 
 def _public_option_key(option: dict) -> str:
@@ -627,7 +763,7 @@ def _substrate_combo_public(substrates: List[dict]) -> List[dict]:
     for sub in substrates or []:
         sub_name = sub.get("name", "")
         if _is_valid_compound_name(sub_name):
-            clean = _compound_public_fields(sub)
+            clean = _q1_substrate_public_fields(sub)
             clean["name"] = _normalize_compound_name(sub_name)
             substrate_info.append(clean)
     return sorted(substrate_info, key=lambda x: str(x.get("name", "")).casefold())
@@ -775,7 +911,9 @@ def _build_q1_question_en(
     reaction_type: Optional[str],
     substrates: List[dict],
     products: List[dict],
+    objective: str = OBJECTIVE_COMBINED,
 ) -> str:
+    objective = _normalize_benchmark_objective(objective)
     substrate_text = "; ".join(
         (
             f"{sub.get('name', '')}"
@@ -792,7 +930,12 @@ def _build_q1_question_en(
             f"Product(s): {_format_named_scaffold(products)}.",
             (
                 "Question: Which complete reaction conditions, including catalyst "
-                "if applicable, are expected to give the best combined ee and yield?"
+                "if applicable, are expected to give the "
+                + (
+                    "best combined ee and yield?"
+                    if objective == OBJECTIVE_COMBINED
+                    else "best reported yield?"
+                )
             ),
         ]
     )
@@ -802,8 +945,11 @@ def _build_q1_question_en(
 def generate_q1_benchmark_package(
     q1_data: List[dict],
     reaction_type_policy: str = "required",
+    objective: Optional[str] = None,
 ) -> dict:
     reaction_type_policy = normalize_reaction_type_policy(reaction_type_policy)
+    strict_objective = objective is not None
+    objective = _normalize_benchmark_objective(objective or OBJECTIVE_COMBINED)
     paper_combo_data: Dict[
         Tuple[str, Optional[str], Tuple[str, ...], str], List[dict]
     ] = defaultdict(list)
@@ -861,8 +1007,40 @@ def generate_q1_benchmark_package(
             str(item[0][3]).casefold(),
         ),
     ):
-        if len(entries) < 2:
+        objective_entries = list(entries)
+        objective_exclusions = []
+        if strict_objective:
+            objective_entries = []
+            for reaction in entries:
+                eligible, exclusion_reason = _target_objective_eligibility(
+                    reaction.get("targets", {}) or {}, objective
+                )
+                if eligible:
+                    objective_entries.append(reaction)
+                else:
+                    objective_exclusions.append(
+                        {
+                            "reaction_id": reaction.get("id"),
+                            "reason": exclusion_reason,
+                        }
+                    )
+        if len(objective_entries) < 2:
+            review_set.append(
+                {
+                    "reason": "insufficient_objective_options",
+                    "objective": objective,
+                    **_q1_review_context(
+                        paper,
+                        reaction_type,
+                        combo_key,
+                        json.loads(product_key),
+                    ),
+                    "eligible_option_count": len(objective_entries),
+                    "excluded_options": objective_exclusions,
+                }
+            )
             continue
+        entries = objective_entries
 
         reaction_type_audit = _reaction_type_audit(
             [extract_reaction_type(entry) for entry in entries]
@@ -877,7 +1055,12 @@ def generate_q1_benchmark_package(
         omitted_no_targets = []
         for original_answer_index, reaction in enumerate(entries):
             targets = reaction.get("targets", {}) or {}
-            ee, yield_val, score, target_count = _score_from_targets(targets)
+            if strict_objective:
+                ee, yield_val, score, target_count = _score_for_objective(
+                    targets, objective
+                )
+            else:
+                ee, yield_val, score, target_count = _score_from_targets(targets)
             er = targets.get("er")
             dr = targets.get("dr")
             if target_count == 0 and not _has_reported_target(er) and not _has_reported_target(dr):
@@ -891,6 +1074,9 @@ def generate_q1_benchmark_package(
                     "metadata_hidden": {
                         "original_answer_index": original_answer_index,
                         "reaction_id": reaction.get("id"),
+                        "source_substrate_symbols": _q1_substrate_symbol_provenance(
+                            reaction.get("substrates", [])
+                        ),
                         "ee_raw": targets.get("ee"),
                         "yield_raw": targets.get("yield"),
                         "dr_raw": dr,
@@ -1062,6 +1248,12 @@ def generate_q1_benchmark_package(
                     reaction_type,
                     substrate_combo,
                     product_combo,
+                    objective,
+                ),
+                "objective": objective,
+                "metric_completeness_policy": METRIC_COMPLETENESS_POLICY,
+                "source_missingness_verified": (
+                    False if objective == OBJECTIVE_YIELD_ONLY else None
                 ),
                 "source_paper": paper,
                 "option_count": len(public_options),
@@ -1098,6 +1290,11 @@ def generate_q1_benchmark_package(
     }
 
     report = {
+        "objective": objective,
+        "metric_completeness_policy": METRIC_COMPLETENESS_POLICY,
+        "q1_symbol_policy": Q1_SYMBOL_POLICY,
+        "q1_condition_eligibility_policy": Q1_CONDITION_ELIGIBILITY_POLICY,
+        "q1_substrate_grouping_fields": list(Q1_SUBSTRATE_GROUPING_FIELDS),
         "reaction_type_policy": reaction_type_policy,
         "input_groups": len(paper_combo_data),
         "main_questions": len(q1_benchmark),
@@ -1134,6 +1331,9 @@ def generate_q1_benchmark_package(
         ),
     }
 
+    for review in review_set:
+        review.setdefault("objective", objective)
+
     return {
         "benchmark": q1_benchmark,
         "review_set": review_set,
@@ -1144,18 +1344,23 @@ def generate_q1_benchmark_package(
 def generate_q1_benchmark(
     q1_data: List[dict],
     reaction_type_policy: str = "required",
+    objective: Optional[str] = None,
 ) -> List[dict]:
     return generate_q1_benchmark_package(
         q1_data,
         reaction_type_policy=reaction_type_policy,
+        objective=objective,
     )["benchmark"]
 
 
 def generate_q2_benchmark_package(
     q2_data: List[dict],
     reaction_type_policy: str = "required",
+    objective: Optional[str] = None,
 ) -> dict:
     reaction_type_policy = normalize_reaction_type_policy(reaction_type_policy)
+    strict_objective = objective is not None
+    objective = _normalize_benchmark_objective(objective or OBJECTIVE_COMBINED)
     paper_combo_data: Dict[
         Tuple[str, Optional[str], Tuple[str, ...], str], List[dict]
     ] = defaultdict(list)
@@ -1250,6 +1455,47 @@ def generate_q2_benchmark_package(
                 )
                 continue
 
+            objective_candidates = list(variable_candidates)
+            objective_exclusions = []
+            if strict_objective:
+                objective_candidates = []
+                for entry_index, reaction, variable_substrate in variable_candidates:
+                    eligible, exclusion_reason = _target_objective_eligibility(
+                        reaction.get("targets", {}) or {}, objective
+                    )
+                    if eligible:
+                        objective_candidates.append(
+                            (entry_index, reaction, variable_substrate)
+                        )
+                    else:
+                        objective_exclusions.append(
+                            {
+                                "reaction_id": reaction.get("id"),
+                                "reason": exclusion_reason,
+                                "variable_substrate": _q2_variable_substrate_public_fields(
+                                    variable_substrate
+                                ),
+                            }
+                        )
+            if len(objective_candidates) < 2:
+                review_set.append(
+                    {
+                        "reason": "insufficient_objective_options",
+                        "objective": objective,
+                        "source_paper": paper,
+                        **_reaction_type_context(reaction_type_policy, reaction_type),
+                        "conditions": conditions,
+                        "condition_signature": condition_signature,
+                        "condition_grouping_signature": condition_grouping_signature,
+                        "scaffold_combo": list(combo),
+                        "variable_scaffold": variable_scaffold,
+                        "eligible_option_count": len(objective_candidates),
+                        "excluded_options": objective_exclusions,
+                    }
+                )
+                continue
+            variable_candidates = objective_candidates
+
             fixed_keys = {
                 _fixed_substrate_key(reaction.get("substrates", []), variable_scaffold)
                 for _, reaction, _ in variable_candidates
@@ -1286,13 +1532,19 @@ def generate_q2_benchmark_package(
                 fixed_substrates,
                 variable_scaffold,
                 product_class,
+                objective,
             )
 
             options = []
             omitted_no_targets = []
             for original_answer_index, reaction, variable_substrate in variable_candidates:
                 targets = reaction.get("targets", {})
-                ee, yield_val, score, target_count = _score_from_targets(targets)
+                if strict_objective:
+                    ee, yield_val, score, target_count = _score_for_objective(
+                        targets, objective
+                    )
+                else:
+                    ee, yield_val, score, target_count = _score_from_targets(targets)
                 er = targets.get("er")
                 dr = targets.get("dr")
                 if target_count == 0 and not _has_reported_target(er) and not _has_reported_target(dr):
@@ -1388,7 +1640,7 @@ def generate_q2_benchmark_package(
                                         "source_symbols", []
                                     )
                                 },
-                                key=lambda value: str(value).casefold(),
+                                key=lambda value: (str(value).casefold(), str(value)),
                             ),
                             "reaction_ids": [
                                 item["metadata_hidden"].get("reaction_id")
@@ -1419,7 +1671,7 @@ def generate_q2_benchmark_package(
                         for item in duplicate_options
                         for symbol in item["metadata_hidden"].get("source_symbols", [])
                     },
-                    key=lambda value: str(value).casefold(),
+                    key=lambda value: (str(value).casefold(), str(value)),
                 )
                 representative["metadata_hidden"]["source_reaction_ids"] = sorted(
                     {
@@ -1533,6 +1785,11 @@ def generate_q2_benchmark_package(
                     "variable_substrate_scaffold": variable_scaffold,
                     "product_scaffold_class": product_class,
                     "question_en": question_en,
+                    "objective": objective,
+                    "metric_completeness_policy": METRIC_COMPLETENESS_POLICY,
+                    "source_missingness_verified": (
+                        False if objective == OBJECTIVE_YIELD_ONLY else None
+                    ),
                     "source_paper": paper,
                     "option_count": len(public_options),
                     "options": public_options,
@@ -1572,6 +1829,8 @@ def generate_q2_benchmark_package(
     }
 
     report = {
+        "objective": objective,
+        "metric_completeness_policy": METRIC_COMPLETENESS_POLICY,
         "reaction_type_policy": reaction_type_policy,
         "q2_symbol_policy": Q2_SYMBOL_POLICY,
         "q2_variable_substrate_identity_fields": list(
@@ -1612,6 +1871,9 @@ def generate_q2_benchmark_package(
         ),
     }
 
+    for review in review_set:
+        review.setdefault("objective", objective)
+
     return {
         "benchmark": q2_benchmark,
         "review_set": review_set,
@@ -1622,10 +1884,12 @@ def generate_q2_benchmark_package(
 def generate_q2_benchmark(
     q2_data: List[dict],
     reaction_type_policy: str = "required",
+    objective: Optional[str] = None,
 ) -> List[dict]:
     return generate_q2_benchmark_package(
         q2_data,
         reaction_type_policy=reaction_type_policy,
+        objective=objective,
     )["benchmark"]
 
 
@@ -1647,8 +1911,14 @@ def normalize_source_modality(value) -> str:
 def _attach_modality_to_package(task: str, modality: str, package: dict) -> dict:
     task_key = str(task).upper()
     modality_key = normalize_source_modality(modality)
+    objective = _normalize_benchmark_objective(package["report"]["objective"])
+    objective_key = (
+        "COMBINED" if objective == OBJECTIVE_COMBINED else "YIELD"
+    )
     for index, question in enumerate(package["benchmark"], start=1):
-        question["id"] = f"{task_key}_{modality_key.upper()}_{index:04d}"
+        question["id"] = (
+            f"{task_key}_{objective_key}_{modality_key.upper()}_{index:04d}"
+        )
         question["source_modality"] = modality_key
         for option_result in question.get("metadata_hidden", {}).get(
             "option_results", []
@@ -1670,6 +1940,71 @@ def _attach_modality_to_package(task: str, modality: str, package: dict) -> dict
         "reaction_type_conflict_question_ids": conflict_question_ids,
     }
     return package
+
+
+def _bundle_objective_packages(task: str, objective_packages: Dict[str, dict]) -> dict:
+    benchmarks = {
+        objective: objective_packages[objective]["benchmark"]
+        for objective in BENCHMARK_OBJECTIVES
+    }
+    reviews = [
+        review
+        for objective in BENCHMARK_OBJECTIVES
+        for review in objective_packages[objective]["review_set"]
+    ]
+    all_questions = [
+        question
+        for objective in BENCHMARK_OBJECTIVES
+        for question in benchmarks[objective]
+    ]
+    conflict_question_ids = [
+        question["id"]
+        for question in all_questions
+        if question.get("metadata_hidden", {}).get("reaction_type_conflict", False)
+    ]
+    report = {
+        "task": str(task).upper(),
+        "metric_completeness_policy": METRIC_COMPLETENESS_POLICY,
+        "main_questions": len(all_questions),
+        "review_questions": len(reviews),
+        "reaction_type_conflict_questions": len(conflict_question_ids),
+        "reaction_type_conflict_question_ids": conflict_question_ids,
+        "top_score_tie_questions": sum(
+            1
+            for question in all_questions
+            if question.get("metadata_hidden", {}).get("has_top_score_tie", False)
+        ),
+        "objective_counts": {
+            objective: len(benchmarks[objective])
+            for objective in BENCHMARK_OBJECTIVES
+        },
+        "option_count_distribution": {
+            str(count): sum(
+                1 for question in all_questions if question["option_count"] == count
+            )
+            for count in sorted({q["option_count"] for q in all_questions})
+        },
+        "review_reasons": dict(
+            sorted(Counter(review.get("reason") for review in reviews if review.get("reason")).items())
+        ),
+        "by_objective": {
+            objective: objective_packages[objective]["report"]
+            for objective in BENCHMARK_OBJECTIVES
+        },
+    }
+    if str(task).upper() == "Q1":
+        report.update(
+            {
+                "q1_symbol_policy": Q1_SYMBOL_POLICY,
+                "q1_condition_eligibility_policy": Q1_CONDITION_ELIGIBILITY_POLICY,
+                "q1_substrate_grouping_fields": list(Q1_SUBSTRATE_GROUPING_FIELDS),
+            }
+        )
+    return {
+        "benchmarks": benchmarks,
+        "review_set": reviews,
+        "report": report,
+    }
 
 
 def _aggregate_modality_reports(task: str, packages: Dict[str, dict]) -> dict:
@@ -1745,6 +2080,10 @@ def _aggregate_modality_reports(task: str, packages: Dict[str, dict]) -> dict:
         report["q2_variable_substrate_identity_fields"] = list(
             Q2_VARIABLE_SUBSTRATE_IDENTITY_FIELDS
         )
+    elif str(task).upper() == "Q1":
+        report["q1_symbol_policy"] = Q1_SYMBOL_POLICY
+        report["q1_condition_eligibility_policy"] = Q1_CONDITION_ELIGIBILITY_POLICY
+        report["q1_substrate_grouping_fields"] = list(Q1_SUBSTRATE_GROUPING_FIELDS)
     return report
 
 
@@ -1816,50 +2155,78 @@ def generate_benchmark_packages_by_modality(
         )
 
     q1_packages = {
-        modality: _attach_modality_to_package(
-            "Q1",
-            modality,
-            generate_q1_benchmark_package(
-                q1_by_modality[modality],
-                reaction_type_policy=reaction_type_policy,
-            ),
-        )
+        modality: {
+            objective: _attach_modality_to_package(
+                "Q1",
+                modality,
+                generate_q1_benchmark_package(
+                    q1_by_modality[modality],
+                    reaction_type_policy=reaction_type_policy,
+                    objective=objective,
+                ),
+            )
+            for objective in BENCHMARK_OBJECTIVES
+        }
         for modality in SUPPORTED_SOURCE_MODALITIES
     }
     q2_packages = {
-        modality: _attach_modality_to_package(
-            "Q2",
-            modality,
-            generate_q2_benchmark_package(
-                q2_by_modality[modality],
-                reaction_type_policy=reaction_type_policy,
-            ),
-        )
+        modality: {
+            objective: _attach_modality_to_package(
+                "Q2",
+                modality,
+                generate_q2_benchmark_package(
+                    q2_by_modality[modality],
+                    reaction_type_policy=reaction_type_policy,
+                    objective=objective,
+                ),
+            )
+            for objective in BENCHMARK_OBJECTIVES
+        }
         for modality in SUPPORTED_SOURCE_MODALITIES
     }
 
+    by_modality = {}
+    for modality in SUPPORTED_SOURCE_MODALITIES:
+        by_modality[modality] = {
+            "q1_reactions": q1_by_modality[modality],
+            "q2_reactions": q2_by_modality[modality],
+            "q1": _bundle_objective_packages("Q1", q1_packages[modality]),
+            "q2": _bundle_objective_packages("Q2", q2_packages[modality]),
+        }
+
     combined = {}
     for task, packages in (("Q1", q1_packages), ("Q2", q2_packages)):
-        combined[task.lower()] = {
-            "benchmark": [
-                question
+        objective_packages = {}
+        for objective in BENCHMARK_OBJECTIVES:
+            modality_packages = {
+                modality: packages[modality][objective]
                 for modality in SUPPORTED_SOURCE_MODALITIES
-                for question in packages[modality]["benchmark"]
-            ],
-            "review_set": [
-                review
-                for modality in SUPPORTED_SOURCE_MODALITIES
-                for review in packages[modality]["review_set"]
-            ],
-            "report": _aggregate_modality_reports(task, packages),
-        }
+            }
+            objective_packages[objective] = {
+                "benchmark": [
+                    question
+                    for modality in SUPPORTED_SOURCE_MODALITIES
+                    for question in modality_packages[modality]["benchmark"]
+                ],
+                "review_set": [
+                    review
+                    for modality in SUPPORTED_SOURCE_MODALITIES
+                    for review in modality_packages[modality]["review_set"]
+                ],
+                "report": _aggregate_modality_reports(task, modality_packages),
+            }
+        combined[task.lower()] = _bundle_objective_packages(
+            task, objective_packages
+        )
 
     question_option_counts = []
     for task in ("q1", "q2"):
-        for question in combined[task]["benchmark"]:
-            count_record = {
+        for objective in BENCHMARK_OBJECTIVES:
+            for question in combined[task]["benchmarks"][objective]:
+                count_record = {
                 "question_id": question["id"],
                 "task": task.upper(),
+                "objective": objective,
                 "source_modality": question["source_modality"],
                 "source_paper": question.get("source_paper"),
                 "option_count": question["option_count"],
@@ -1870,27 +2237,42 @@ def generate_benchmark_packages_by_modality(
                 "has_top_score_tie": question["metadata_hidden"][
                     "has_top_score_tie"
                 ],
-            }
-            if "reaction_type" in question:
-                count_record["reaction_type"] = question.get("reaction_type")
-            question_option_counts.append(count_record)
+                }
+                if "reaction_type" in question:
+                    count_record["reaction_type"] = question.get("reaction_type")
+                question_option_counts.append(count_record)
 
     return {
         "reaction_type_policy": reaction_type_policy,
-        "by_modality": {
-            modality: {
-                "q1_reactions": q1_by_modality[modality],
-                "q2_reactions": q2_by_modality[modality],
-                "q1": q1_packages[modality],
-                "q2": q2_packages[modality],
-            }
-            for modality in SUPPORTED_SOURCE_MODALITIES
-        },
+        "benchmark_objectives": list(BENCHMARK_OBJECTIVES),
+        "metric_completeness_policy": METRIC_COMPLETENESS_POLICY,
+        "q1_symbol_policy": Q1_SYMBOL_POLICY,
+        "q1_condition_eligibility_policy": Q1_CONDITION_ELIGIBILITY_POLICY,
+        "q1_substrate_grouping_fields": list(Q1_SUBSTRATE_GROUPING_FIELDS),
+        "by_modality": by_modality,
         "q1": combined["q1"],
         "q2": combined["q2"],
         "question_option_counts": question_option_counts,
         "cross_modal_overlap": {
-            "q1": _cross_modal_overlap("Q1", q1_packages),
-            "q2": _cross_modal_overlap("Q2", q2_packages),
+            "q1": {
+                objective: _cross_modal_overlap(
+                    "Q1",
+                    {
+                        modality: q1_packages[modality][objective]
+                        for modality in SUPPORTED_SOURCE_MODALITIES
+                    },
+                )
+                for objective in BENCHMARK_OBJECTIVES
+            },
+            "q2": {
+                objective: _cross_modal_overlap(
+                    "Q2",
+                    {
+                        modality: q2_packages[modality][objective]
+                        for modality in SUPPORTED_SOURCE_MODALITIES
+                    },
+                )
+                for objective in BENCHMARK_OBJECTIVES
+            },
         },
     }

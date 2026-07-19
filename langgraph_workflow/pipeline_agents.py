@@ -34,6 +34,13 @@ from langgraph_workflow.chemeagle_adapter import (
     run_chemeagle_pdf,
 )
 from langgraph_workflow.benchmark_utils import (
+    BENCHMARK_OBJECTIVES,
+    METRIC_COMPLETENESS_POLICY,
+    OBJECTIVE_COMBINED,
+    OBJECTIVE_YIELD_ONLY,
+    Q1_CONDITION_ELIGIBILITY_POLICY,
+    Q1_SUBSTRATE_GROUPING_FIELDS,
+    Q1_SYMBOL_POLICY,
     SUPPORTED_SOURCE_MODALITIES,
     generate_benchmark_packages_by_modality,
 )
@@ -2376,6 +2383,8 @@ class ReactionReorganizationAgent:
                 "output": str(merged_path),
                 "total_reactions": merge_result.get("total_reactions", 0),
                 "total_files": merge_result.get("total_files", 0),
+                "er_to_ee_policy": merge_result.get("er_to_ee_policy"),
+                "er_to_ee_conversion": merge_result.get("er_to_ee_conversion", {}),
                 "input_files": merge_result.get("input_files", []),
                 "text_input_files": state.get("successful_text_filtered_paths", []),
                 "text_structure_enriched_input_files": state.get("successful_text_structure_enriched_paths", []),
@@ -2529,6 +2538,7 @@ class Q1Q2SplitAgent:
                 api_key=self.config.api_key,
                 base_url=self.config.base_url,
                 allow_llm=False,
+                q1_condition_policy=Q1_CONDITION_ELIGIBILITY_POLICY,
             )
         if not split_result:
             raise RuntimeError("Q1/Q2 split failed; no split result was returned.")
@@ -2560,18 +2570,24 @@ class BenchmarkAgent:
             reaction_type_policy=self.config.benchmark_reaction_type_policy,
         )
         q1_package = generated["q1"]
-        q1_benchmark = q1_package["benchmark"]
+        q1_benchmarks = q1_package["benchmarks"]
         q1_review = q1_package["review_set"]
         q1_report = q1_package["report"]
         q2_package = generated["q2"]
-        q2_benchmark = q2_package["benchmark"]
+        q2_benchmarks = q2_package["benchmarks"]
         q2_review = q2_package["review_set"]
         q2_report = q2_package["report"]
 
-        q1_output = self.config.benchmark_dir / "Q1_benchmark.json"
+        q1_outputs = {
+            OBJECTIVE_COMBINED: self.config.benchmark_dir / "Q1_combined_benchmark.json",
+            OBJECTIVE_YIELD_ONLY: self.config.benchmark_dir / "Q1_yield_only_benchmark.json",
+        }
         q1_review_output = self.config.benchmark_dir / "Q1_benchmark_review.json"
         q1_report_output = self.config.benchmark_dir / "Q1_benchmark_report.json"
-        q2_output = self.config.benchmark_dir / "Q2_benchmark.json"
+        q2_outputs = {
+            OBJECTIVE_COMBINED: self.config.benchmark_dir / "Q2_combined_benchmark.json",
+            OBJECTIVE_YIELD_ONLY: self.config.benchmark_dir / "Q2_yield_only_benchmark.json",
+        }
         q2_review_output = self.config.benchmark_dir / "Q2_benchmark_review.json"
         q2_report_output = self.config.benchmark_dir / "Q2_benchmark_report.json"
         summary_output = self.config.benchmark_dir / "benchmark_summary.json"
@@ -2579,18 +2595,28 @@ class BenchmarkAgent:
         paper_summary_output = (
             self.config.benchmark_dir / "paper_question_option_summary.json"
         )
-        write_json(q1_output, q1_benchmark)
+        for objective, output_path in q1_outputs.items():
+            write_json(output_path, q1_benchmarks[objective])
         write_json(q1_review_output, q1_review)
         write_json(q1_report_output, q1_report)
-        write_json(q2_output, q2_benchmark)
+        for objective, output_path in q2_outputs.items():
+            write_json(output_path, q2_benchmarks[objective])
         write_json(q2_review_output, q2_review)
         write_json(q2_report_output, q2_report)
         summary = {
             "reaction_type_policy": self.config.benchmark_reaction_type_policy,
+            "benchmark_objectives": list(BENCHMARK_OBJECTIVES),
+            "metric_completeness_policy": METRIC_COMPLETENESS_POLICY,
+            "yield_only_source_missingness_verified": False,
+            "q1_symbol_policy": Q1_SYMBOL_POLICY,
+            "q1_condition_eligibility_policy": Q1_CONDITION_ELIGIBILITY_POLICY,
+            "q1_substrate_grouping_fields": list(Q1_SUBSTRATE_GROUPING_FIELDS),
             "q1_reactions": len(q1_data),
             "q2_reactions": len(q2_data),
-            "q1_questions": len(q1_benchmark),
-            "q2_questions": len(q2_benchmark),
+            "q1_questions": sum(len(q1_benchmarks[o]) for o in BENCHMARK_OBJECTIVES),
+            "q2_questions": sum(len(q2_benchmarks[o]) for o in BENCHMARK_OBJECTIVES),
+            "q1_objective_counts": {o: len(q1_benchmarks[o]) for o in BENCHMARK_OBJECTIVES},
+            "q2_objective_counts": {o: len(q2_benchmarks[o]) for o in BENCHMARK_OBJECTIVES},
             "cross_modal_overlap": generated["cross_modal_overlap"],
             "by_modality": {},
         }
@@ -2608,7 +2634,14 @@ class BenchmarkAgent:
             for task in ("q1", "q2"):
                 task_label = task.upper()
                 package = modality_bundle[task]
-                write_json(modality_dir / f"{task_label}_benchmark.json", package["benchmark"])
+                write_json(
+                    modality_dir / f"{task_label}_combined_benchmark.json",
+                    package["benchmarks"][OBJECTIVE_COMBINED],
+                )
+                write_json(
+                    modality_dir / f"{task_label}_yield_only_benchmark.json",
+                    package["benchmarks"][OBJECTIVE_YIELD_ONLY],
+                )
                 write_json(
                     modality_dir / f"{task_label}_benchmark_review.json",
                     package["review_set"],
@@ -2620,12 +2653,14 @@ class BenchmarkAgent:
             summary["by_modality"][modality] = {
                 "q1_reactions": len(modality_bundle["q1_reactions"]),
                 "q2_reactions": len(modality_bundle["q2_reactions"]),
-                "q1_questions": len(modality_bundle["q1"]["benchmark"]),
+                "q1_questions": sum(len(modality_bundle["q1"]["benchmarks"][o]) for o in BENCHMARK_OBJECTIVES),
+                "q1_objective_counts": {o: len(modality_bundle["q1"]["benchmarks"][o]) for o in BENCHMARK_OBJECTIVES},
                 "q1_review_questions": len(modality_bundle["q1"]["review_set"]),
                 "q1_option_count_distribution": modality_bundle["q1"]["report"][
                     "option_count_distribution"
                 ],
-                "q2_questions": len(modality_bundle["q2"]["benchmark"]),
+                "q2_questions": sum(len(modality_bundle["q2"]["benchmarks"][o]) for o in BENCHMARK_OBJECTIVES),
+                "q2_objective_counts": {o: len(modality_bundle["q2"]["benchmarks"][o]) for o in BENCHMARK_OBJECTIVES},
                 "q2_review_questions": len(modality_bundle["q2"]["review_set"]),
                 "q2_option_count_distribution": modality_bundle["q2"]["report"][
                     "option_count_distribution"
@@ -2642,16 +2677,23 @@ class BenchmarkAgent:
 
         state.setdefault("steps", {})["benchmark"] = {
             "reaction_type_policy": self.config.benchmark_reaction_type_policy,
+            "benchmark_objectives": list(BENCHMARK_OBJECTIVES),
+            "metric_completeness_policy": METRIC_COMPLETENESS_POLICY,
+            "q1_symbol_policy": Q1_SYMBOL_POLICY,
+            "q1_condition_eligibility_policy": Q1_CONDITION_ELIGIBILITY_POLICY,
+            "q1_substrate_grouping_fields": list(Q1_SUBSTRATE_GROUPING_FIELDS),
             "q1": {
-                "output": str(q1_output),
-                "questions": len(q1_benchmark),
+                "outputs": {o: str(q1_outputs[o]) for o in BENCHMARK_OBJECTIVES},
+                "questions": sum(len(q1_benchmarks[o]) for o in BENCHMARK_OBJECTIVES),
+                "objective_counts": {o: len(q1_benchmarks[o]) for o in BENCHMARK_OBJECTIVES},
                 "review_output": str(q1_review_output),
                 "review_questions": len(q1_review),
                 "report_output": str(q1_report_output),
             },
             "q2": {
-                "output": str(q2_output),
-                "questions": len(q2_benchmark),
+                "outputs": {o: str(q2_outputs[o]) for o in BENCHMARK_OBJECTIVES},
+                "questions": sum(len(q2_benchmarks[o]) for o in BENCHMARK_OBJECTIVES),
+                "objective_counts": {o: len(q2_benchmarks[o]) for o in BENCHMARK_OBJECTIVES},
                 "review_output": str(q2_review_output),
                 "review_questions": len(q2_review),
                 "report_output": str(q2_report_output),
@@ -2660,8 +2702,8 @@ class BenchmarkAgent:
             "question_option_counts_output": str(option_counts_output),
             "paper_question_option_summary_output": str(paper_summary_output),
         }
-        state["q1_benchmark"] = str(q1_output)
-        state["q2_benchmark"] = str(q2_output)
+        state["q1_benchmark"] = {o: str(q1_outputs[o]) for o in BENCHMARK_OBJECTIVES}
+        state["q2_benchmark"] = {o: str(q2_outputs[o]) for o in BENCHMARK_OBJECTIVES}
         state["q1_benchmark_review"] = str(q1_review_output)
         state["q1_benchmark_report"] = str(q1_report_output)
         state["q2_benchmark_review"] = str(q2_review_output)

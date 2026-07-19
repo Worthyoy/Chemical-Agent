@@ -19,11 +19,19 @@ from multimodal_structure_enrichment import apply_enrichment, load_cache
 from split_by_substrate import has_valid_condition
 
 from langgraph_workflow.benchmark_utils import (
+    BENCHMARK_OBJECTIVES,
+    METRIC_COMPLETENESS_POLICY,
+    OBJECTIVE_COMBINED,
+    OBJECTIVE_YIELD_ONLY,
+    Q1_CONDITION_ELIGIBILITY_POLICY,
+    Q1_SUBSTRATE_GROUPING_FIELDS,
+    Q1_SYMBOL_POLICY,
     Q2_SYMBOL_POLICY,
     Q2_VARIABLE_SUBSTRATE_IDENTITY_FIELDS,
     REACTION_TYPE_POLICIES,
     SUPPORTED_SOURCE_MODALITIES,
     generate_benchmark_packages_by_modality,
+    has_visible_q1_condition,
     normalize_source_modality,
 )
 from langgraph_workflow.paper_question_summary import (
@@ -118,10 +126,15 @@ def build_modality_benchmark_bundle(
             roles=("substrates", "products"),
         )
         enriched = enriched_payload["reactions"]
-        q1_reactions = [reaction for reaction in enriched if has_valid_condition(reaction)]
+        q1_reactions = [
+            reaction for reaction in enriched if has_visible_q1_condition(reaction)
+        ]
+        legacy_condition_reactions = [
+            reaction for reaction in enriched if has_valid_condition(reaction)
+        ]
         q2_reactions = [
             reaction
-            for reaction in q1_reactions
+            for reaction in legacy_condition_reactions
             if any(
                 substrate.get("parseable") and substrate.get("scaffold")
                 for substrate in reaction.get("substrates", []) or []
@@ -141,20 +154,36 @@ def build_modality_benchmark_bundle(
     by_modality_summary = {}
     for modality in SUPPORTED_SOURCE_MODALITIES:
         modality_bundle = generated["by_modality"][modality]
-        q1_questions = modality_bundle["q1"]["benchmark"]
-        q2_questions = modality_bundle["q2"]["benchmark"]
+        q1_questions = [
+            question
+            for objective in BENCHMARK_OBJECTIVES
+            for question in modality_bundle["q1"]["benchmarks"][objective]
+        ]
+        q2_questions = [
+            question
+            for objective in BENCHMARK_OBJECTIVES
+            for question in modality_bundle["q2"]["benchmarks"][objective]
+        ]
         by_modality_summary[modality] = {
             "input_reactions": len(input_partitions[modality]),
             "structure_enrichment": enrichment_stats[modality],
             "q1_reactions": len(modality_bundle["q1_reactions"]),
             "q2_reactions": len(modality_bundle["q2_reactions"]),
             "q1_questions": len(q1_questions),
+            "q1_objective_counts": {
+                objective: len(modality_bundle["q1"]["benchmarks"][objective])
+                for objective in BENCHMARK_OBJECTIVES
+            },
             "q1_review_questions": len(modality_bundle["q1"]["review_set"]),
             "q1_reaction_type_conflict_questions": modality_bundle["q1"]["report"].get(
                 "reaction_type_conflict_questions", 0
             ),
             "q1_option_count_distribution": _option_distribution(q1_questions),
             "q2_questions": len(q2_questions),
+            "q2_objective_counts": {
+                objective: len(modality_bundle["q2"]["benchmarks"][objective])
+                for objective in BENCHMARK_OBJECTIVES
+            },
             "q2_review_questions": len(modality_bundle["q2"]["review_set"]),
             "q2_reaction_type_conflict_questions": modality_bundle["q2"]["report"].get(
                 "reaction_type_conflict_questions", 0
@@ -164,6 +193,9 @@ def build_modality_benchmark_bundle(
 
     generated["split_report"] = {
         "reaction_type_policy": reaction_type_policy,
+        "q1_symbol_policy": Q1_SYMBOL_POLICY,
+        "q1_condition_eligibility_policy": Q1_CONDITION_ELIGIBILITY_POLICY,
+        "q1_substrate_grouping_fields": list(Q1_SUBSTRATE_GROUPING_FIELDS),
         "total_reactions": len(reactions),
         "q1_reactions": len(q1_data),
         "q2_reactions": len(q2_data),
@@ -179,13 +211,33 @@ def build_modality_benchmark_bundle(
     }
     generated["summary"] = {
         "reaction_type_policy": reaction_type_policy,
+        "benchmark_objectives": list(BENCHMARK_OBJECTIVES),
+        "metric_completeness_policy": METRIC_COMPLETENESS_POLICY,
+        "yield_only_source_missingness_verified": False,
+        "q1_symbol_policy": Q1_SYMBOL_POLICY,
+        "q1_condition_eligibility_policy": Q1_CONDITION_ELIGIBILITY_POLICY,
+        "q1_substrate_grouping_fields": list(Q1_SUBSTRATE_GROUPING_FIELDS),
         "q2_symbol_policy": Q2_SYMBOL_POLICY,
         "q2_variable_substrate_identity_fields": list(
             Q2_VARIABLE_SUBSTRATE_IDENTITY_FIELDS
         ),
         "input_reactions": len(reactions),
-        "q1_questions": len(generated["q1"]["benchmark"]),
-        "q2_questions": len(generated["q2"]["benchmark"]),
+        "q1_questions": sum(
+            len(generated["q1"]["benchmarks"][objective])
+            for objective in BENCHMARK_OBJECTIVES
+        ),
+        "q2_questions": sum(
+            len(generated["q2"]["benchmarks"][objective])
+            for objective in BENCHMARK_OBJECTIVES
+        ),
+        "q1_objective_counts": {
+            objective: len(generated["q1"]["benchmarks"][objective])
+            for objective in BENCHMARK_OBJECTIVES
+        },
+        "q2_objective_counts": {
+            objective: len(generated["q2"]["benchmarks"][objective])
+            for objective in BENCHMARK_OBJECTIVES
+        },
         "q1_reaction_type_conflict_questions": generated["q1"]["report"].get(
             "reaction_type_conflict_questions", 0
         ),
@@ -206,34 +258,83 @@ def validate_benchmark_bundle(bundle: dict) -> None:
     reaction_type_policy = bundle.get("reaction_type_policy", "required")
     seen_question_ids = set()
     for task in ("q1", "q2"):
-        combined_questions = bundle[task]["benchmark"]
-        expected_count = 0
-        for modality in SUPPORTED_SOURCE_MODALITIES:
-            questions = bundle["by_modality"][modality][task]["benchmark"]
-            expected_count += len(questions)
-            for question in questions:
-                if question.get("source_modality") != modality:
-                    raise ValueError(f"Mixed modality question: {question.get('id')}")
-        if len(combined_questions) != expected_count:
-            raise ValueError(f"Combined {task.upper()} question count is inconsistent")
+        for objective in BENCHMARK_OBJECTIVES:
+            combined_questions = bundle[task]["benchmarks"][objective]
+            expected_count = 0
+            for modality in SUPPORTED_SOURCE_MODALITIES:
+                questions = bundle["by_modality"][modality][task]["benchmarks"][objective]
+                expected_count += len(questions)
+                for question in questions:
+                    if question.get("source_modality") != modality:
+                        raise ValueError(f"Mixed modality question: {question.get('id')}")
+            if len(combined_questions) != expected_count:
+                raise ValueError(
+                    f"{task.upper()} {objective} question count is inconsistent"
+                )
 
-        for question in combined_questions:
-            question_id = question.get("id")
-            if not question_id or question_id in seen_question_ids:
-                raise ValueError(f"Duplicate or missing question id: {question_id}")
-            seen_question_ids.add(question_id)
-            options = question.get("options", [])
-            option_ids = [option.get("option_id") for option in options]
-            if question.get("option_count") != len(options):
-                raise ValueError(f"option_count mismatch for {question_id}")
-            if len(option_ids) != len(set(option_ids)) or None in option_ids:
-                raise ValueError(f"Invalid option ids for {question_id}")
-            option_id_set = set(option_ids)
-            if not set(question.get("gold_option_ids", [])) <= option_id_set:
-                raise ValueError(f"Invalid gold option ids for {question_id}")
-            if set(question.get("gold_ranked_option_ids", [])) != option_id_set:
-                raise ValueError(f"Invalid ranked option ids for {question_id}")
-            if task == "q2":
+            for question in combined_questions:
+                if question.get("objective") != objective:
+                    raise ValueError(
+                        f"Objective mismatch for {question.get('id')}: "
+                        f"{question.get('objective')!r}"
+                    )
+                if question.get("metric_completeness_policy") != METRIC_COMPLETENESS_POLICY:
+                    raise ValueError(
+                        f"Metric completeness policy mismatch: {question.get('id')}"
+                    )
+                if objective == OBJECTIVE_YIELD_ONLY and question.get(
+                    "source_missingness_verified"
+                ) is not False:
+                    raise ValueError(
+                        f"Yield-only verification flag mismatch: {question.get('id')}"
+                    )
+                _validate_question(
+                    question,
+                    task,
+                    objective,
+                    reaction_type_policy,
+                    seen_question_ids,
+                )
+
+            report_distribution = bundle[task]["report"]["by_objective"][objective][
+                "option_count_distribution"
+            ]
+            if report_distribution != _option_distribution(combined_questions):
+                raise ValueError(
+                    f"{task.upper()} {objective} report option distribution is inconsistent"
+                )
+    _validate_bundle_summaries(bundle, seen_question_ids)
+
+
+def _validate_question(
+    question: dict,
+    task: str,
+    objective: str,
+    reaction_type_policy: str,
+    seen_question_ids: set,
+) -> None:
+    question_id = question.get("id")
+    if not question_id or question_id in seen_question_ids:
+        raise ValueError(f"Duplicate or missing question id: {question_id}")
+    seen_question_ids.add(question_id)
+    options = question.get("options", [])
+    option_ids = [option.get("option_id") for option in options]
+    if question.get("option_count") != len(options):
+        raise ValueError(f"option_count mismatch for {question_id}")
+    if len(option_ids) != len(set(option_ids)) or None in option_ids:
+        raise ValueError(f"Invalid option ids for {question_id}")
+    option_id_set = set(option_ids)
+    if not set(question.get("gold_option_ids", [])) <= option_id_set:
+        raise ValueError(f"Invalid gold option ids for {question_id}")
+    if set(question.get("gold_ranked_option_ids", [])) != option_id_set:
+        raise ValueError(f"Invalid ranked option ids for {question_id}")
+    if task == "q1":
+        for substrate in question.get("substrate_combo", []):
+            if not isinstance(substrate, dict):
+                raise ValueError(f"Q1 substrate is invalid: {question_id}")
+            if "symbol" in substrate:
+                raise ValueError(f"Q1 substrate exposes source symbol: {question_id}")
+    if task == "q2":
                 if not isinstance(question.get("condition_signature"), dict):
                     raise ValueError(
                         f"Q2 question lacks full condition_signature: {question_id}"
@@ -269,7 +370,7 @@ def validate_benchmark_bundle(bundle: dict) -> None:
                     raise ValueError(
                         f"Q2 question contains duplicate variable substrates: {question_id}"
                     )
-            if reaction_type_policy == "ignored":
+    if reaction_type_policy == "ignored":
                 if "reaction_type" in question:
                     raise ValueError(
                         f"Ignored policy leaked reaction_type into {question_id}"
@@ -279,10 +380,9 @@ def validate_benchmark_bundle(bundle: dict) -> None:
                         f"Ignored policy leaked reaction type text into {question_id}"
                     )
 
-        report_distribution = bundle[task]["report"]["option_count_distribution"]
-        if report_distribution != _option_distribution(combined_questions):
-            raise ValueError(f"{task.upper()} report option distribution is inconsistent")
 
+
+def _validate_bundle_summaries(bundle: dict, seen_question_ids: set) -> None:
     detail_ids = [row["question_id"] for row in bundle["question_option_counts"]]
     if set(detail_ids) != seen_question_ids or len(detail_ids) != len(seen_question_ids):
         raise ValueError("question_option_counts does not cover every question exactly once")
@@ -309,10 +409,12 @@ def _artifact_payloads(bundle: dict) -> Dict[Path, Any]:
             for reaction in bundle["by_modality"][modality]["q2_reactions"]
         ],
         Path("q1q2_split_report.json"): bundle["split_report"],
-        Path("Q1_benchmark.json"): bundle["q1"]["benchmark"],
+        Path("Q1_combined_benchmark.json"): bundle["q1"]["benchmarks"][OBJECTIVE_COMBINED],
+        Path("Q1_yield_only_benchmark.json"): bundle["q1"]["benchmarks"][OBJECTIVE_YIELD_ONLY],
         Path("Q1_benchmark_review.json"): bundle["q1"]["review_set"],
         Path("Q1_benchmark_report.json"): bundle["q1"]["report"],
-        Path("Q2_benchmark.json"): bundle["q2"]["benchmark"],
+        Path("Q2_combined_benchmark.json"): bundle["q2"]["benchmarks"][OBJECTIVE_COMBINED],
+        Path("Q2_yield_only_benchmark.json"): bundle["q2"]["benchmarks"][OBJECTIVE_YIELD_ONLY],
         Path("Q2_benchmark_review.json"): bundle["q2"]["review_set"],
         Path("Q2_benchmark_report.json"): bundle["q2"]["report"],
         Path("benchmark_summary.json"): bundle["summary"],
@@ -328,10 +430,12 @@ def _artifact_payloads(bundle: dict) -> Dict[Path, Any]:
             {
                 base / "Q1_substrate_to_condition.json": modality_bundle["q1_reactions"],
                 base / "Q2_condition_to_substrate.json": modality_bundle["q2_reactions"],
-                base / "Q1_benchmark.json": modality_bundle["q1"]["benchmark"],
+                base / "Q1_combined_benchmark.json": modality_bundle["q1"]["benchmarks"][OBJECTIVE_COMBINED],
+                base / "Q1_yield_only_benchmark.json": modality_bundle["q1"]["benchmarks"][OBJECTIVE_YIELD_ONLY],
                 base / "Q1_benchmark_review.json": modality_bundle["q1"]["review_set"],
                 base / "Q1_benchmark_report.json": modality_bundle["q1"]["report"],
-                base / "Q2_benchmark.json": modality_bundle["q2"]["benchmark"],
+                base / "Q2_combined_benchmark.json": modality_bundle["q2"]["benchmarks"][OBJECTIVE_COMBINED],
+                base / "Q2_yield_only_benchmark.json": modality_bundle["q2"]["benchmarks"][OBJECTIVE_YIELD_ONLY],
                 base / "Q2_benchmark_review.json": modality_bundle["q2"]["review_set"],
                 base / "Q2_benchmark_report.json": modality_bundle["q2"]["report"],
             }
@@ -367,6 +471,18 @@ def write_benchmark_bundle(
     for relative_path, payload in payloads.items():
         atomic_write_json(benchmark_dir / relative_path, payload)
 
+    legacy_benchmark_paths = [
+        Path("Q1_benchmark.json"),
+        Path("Q2_benchmark.json"),
+        *(Path(modality) / name
+          for modality in SUPPORTED_SOURCE_MODALITIES
+          for name in ("Q1_benchmark.json", "Q2_benchmark.json")),
+    ]
+    for relative_path in legacy_benchmark_paths:
+        legacy_path = benchmark_dir / relative_path
+        if legacy_path.exists():
+            legacy_path.unlink()
+
     artifact_hashes = {
         str(relative_path).replace("\\", "/"): file_sha256(benchmark_dir / relative_path)
         for relative_path in sorted(payloads, key=lambda path: str(path))
@@ -381,6 +497,13 @@ def write_benchmark_bundle(
         "run_id": run_id,
         "mode": "offline_modality_regeneration",
         "reaction_type_policy": bundle.get("reaction_type_policy", "required"),
+        "benchmark_objectives": list(BENCHMARK_OBJECTIVES),
+        "metric_completeness_policy": METRIC_COMPLETENESS_POLICY,
+        "yield_only_source_missingness_verified": False,
+        "er_to_ee_policy": "single_ratio_with_qualifier_and_annotation_v2",
+        "q1_symbol_policy": Q1_SYMBOL_POLICY,
+        "q1_condition_eligibility_policy": Q1_CONDITION_ELIGIBILITY_POLICY,
+        "q1_substrate_grouping_fields": list(Q1_SUBSTRATE_GROUPING_FIELDS),
         "q2_symbol_policy": Q2_SYMBOL_POLICY,
         "q2_variable_substrate_identity_fields": list(
             Q2_VARIABLE_SUBSTRATE_IDENTITY_FIELDS
@@ -440,8 +563,11 @@ def regenerate_paper_question_summary(
 
     actual_option_counts = {}
     for task in ("Q1", "Q2"):
-        for question in read_json(benchmark_dir / f"{task}_benchmark.json"):
-            actual_option_counts[question["id"]] = len(question.get("options", []))
+        for objective_slug in ("combined", "yield_only"):
+            for question in read_json(
+                benchmark_dir / f"{task}_{objective_slug}_benchmark.json"
+            ):
+                actual_option_counts[question["id"]] = len(question.get("options", []))
     for row in question_option_counts:
         question_id = row["question_id"]
         if actual_option_counts.get(question_id) != row["option_count"]:
