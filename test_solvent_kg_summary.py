@@ -8,6 +8,7 @@ from cross_modal_kg import (
 )
 from kg_to_reaction_csv import (
     COL_CONDITIONS,
+    COL_LIGAND,
     COL_SOLVENT,
     convert_kg_csv,
     convert_kg_rows,
@@ -80,6 +81,43 @@ def test_single_step_solvent_amount_is_a_direct_edge_and_paired_in_summary(tmp_p
     summary = _summary(triples)
     assert summary[COL_SOLVENT] == "tert-butyl acetate (16 mL)"
     assert summary[COL_CONDITIONS] == "temp: room temperature; time: 24 h"
+
+
+def test_ligand_amount_is_preserved_on_text_and_image_kg_edges(tmp_path):
+    text_reaction = _reaction({}, reaction_id="text-ligand")
+    text_reaction["ligands"] = [
+        {
+            "name": "L10",
+            "symbol": "L10",
+            "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+        }
+    ]
+    text_path = _write_payload(tmp_path, text_reaction)
+
+    image_reaction = _reaction({}, reaction_id="image-ligand")
+    image_reaction["ligands"] = [{"name": "BINAP", "amount": "20 mol%"}]
+    image_path = _write_payload(tmp_path, image_reaction, image=True)
+
+    text_edge = next(
+        edge
+        for edge in build_text_reaction_triples([text_path])
+        if edge["relationship"] == "USES_LIGAND"
+    )
+    image_edge = next(
+        edge
+        for edge in build_image_reaction_triples([image_path])
+        if edge["relationship"] == "USES_LIGAND"
+    )
+
+    assert "ligand_amount" in EDGE_FIELDNAMES
+    assert text_edge["y_name"] == "L10"
+    assert text_edge["ligand_amount"] == "9.4 mg, 0.015 mmol, 15 mol%"
+    assert text_edge["catalyst_amount"] == ""
+    assert image_edge["y_name"] == "BINAP"
+    assert image_edge["ligand_amount"] == "20 mol%"
+    assert _summary(build_text_reaction_triples([text_path]))[COL_LIGAND] == (
+        "L10 (9.4 mg, 0.015 mmol, 15 mol%)"
+    )
 
 
 def test_multistep_and_mixed_solvent_text_are_paired_without_splitting(tmp_path):

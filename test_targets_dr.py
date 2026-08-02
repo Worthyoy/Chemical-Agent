@@ -1,3 +1,5 @@
+import json
+
 from batch_si_extractor import SIExtractor
 from cross_modal_kg import target_values
 from langgraph_workflow.benchmark_utils import (
@@ -6,7 +8,7 @@ from langgraph_workflow.benchmark_utils import (
 )
 from kg_to_reaction_csv import convert_kg_rows
 from pdf_to_gpt_extractor import PDFReactionExtractor
-from reaction_filter import ReactionFilter
+from reaction_filter import ReactionFilter, filter_reaction_file
 
 
 def _reaction(targets=None, *, reaction_id="r1", variable_name="substrate A"):
@@ -82,6 +84,37 @@ def test_filter_accepts_valid_dr_only_and_rejects_invalid_dr_only():
     assert not reaction_filter.check_numeric_criteria(
         _reaction({"yield": None, "ee": None, "er": None, "dr": "high dr"})
     )
+
+
+def test_filtered_json_preserves_ligand_amount_and_null(tmp_path):
+    reported = _reaction({"yield": "80%", "ee": None, "er": None, "dr": None})
+    reported["ligands"] = [
+        {
+            "name": "L10",
+            "symbol": "L10",
+            "amount": "9.4 mg, 0.015 mmol, 15 mol%",
+        }
+    ]
+    unreported = _reaction(
+        {"yield": "75%", "ee": None, "er": None, "dr": None},
+        reaction_id="r2",
+        variable_name="substrate B",
+    )
+    unreported["ligands"] = [{"name": "BINAP", "amount": None}]
+
+    input_path = tmp_path / "input.json"
+    output_path = tmp_path / "filtered.json"
+    input_path.write_text(
+        json.dumps({"source": "paper", "reactions": [reported, unreported]}),
+        encoding="utf-8",
+    )
+
+    result = filter_reaction_file(input_path, output_path, overwrite=True)
+    payload = json.loads(output_path.read_text(encoding="utf-8"))
+
+    assert result["reactions"] == 2
+    assert payload["reactions"][0]["ligands"] == reported["ligands"]
+    assert payload["reactions"][1]["ligands"] == unreported["ligands"]
 
 
 def test_stage2_target_cue_detects_both_dr_orders():

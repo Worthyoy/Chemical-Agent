@@ -63,6 +63,7 @@ def _q2_reaction(
     *,
     paper="paper",
     ligand=None,
+    ligand_amount=None,
     symbol=None,
     fixed_symbol=None,
 ):
@@ -92,7 +93,11 @@ def _q2_reaction(
             }
         ],
         "catalysts": [{"name": "photocatalyst", "amount": "1 mol%"}],
-        "ligands": [{"name": ligand}] if ligand else [],
+        "ligands": (
+            [{"name": ligand, "amount": ligand_amount}]
+            if ligand
+            else []
+        ),
         "other_components": [],
         "conditions": {"time": "12 h", "light_source": "photoreactor"},
         "targets": {"yield": yield_value, "ee": None, "er": None},
@@ -116,6 +121,37 @@ def test_q2_question_exposes_every_grouping_condition():
     assert format_fixed_conditions_en(question["condition_signature"])[-1] == (
         "Ligand(s): (R,S)-L1."
     )
+
+
+def test_q2_ligand_amount_is_visible_but_does_not_split_condition_group():
+    reactions = [
+        _q2_reaction(
+            "r1",
+            "benzaldehyde",
+            "91%",
+            ligand="L10",
+            ligand_amount="10 mol%",
+        ),
+        _q2_reaction(
+            "r2",
+            "4-fluorobenzaldehyde",
+            "88%",
+            ligand="L10",
+            ligand_amount="20 mol%",
+        ),
+    ]
+
+    assert _group_key({"ligands": [{"name": "L10", "amount": "10 mol%"}]}) == (
+        _group_key({"ligands": [{"name": "L10", "amount": "20 mol%"}]})
+    )
+
+    question = generate_q2_benchmark_package(reactions)["benchmark"][0]
+    assert question["option_count"] == 2
+    assert question["condition_signature"]["ligands"] == [
+        {"name": "L10", "amount": "10 mol%"}
+    ]
+    assert "Ligand(s): L10 (amount: 10 mol%)." in question["question_en"]
+    assert question["condition_grouping_signature"]["ligands"] == [{"name": "l10"}]
 
 
 def test_q2_different_grouping_ligands_are_both_visible():

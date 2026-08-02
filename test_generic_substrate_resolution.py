@@ -3,7 +3,11 @@ from types import SimpleNamespace
 
 import pytest
 
-from batch_si_extractor import GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION, SIExtractor
+from batch_si_extractor import (
+    GENERIC_SUBSTRATE_RESOLUTION_PROMPT_VERSION,
+    GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
+    SIExtractor,
+)
 
 
 class _FakeCompletions:
@@ -66,10 +70,8 @@ def _specific_response(payload):
                     {
                         "substrate_index": substrate["index"],
                         "identity_status": "specific",
-                        "classification_confidence": "high",
                         "can_resolve": False,
                         "resolved_name": None,
-                        "resolution_confidence": None,
                         "evidence_product_index": None,
                         "reason": "The name is a concrete identity.",
                     }
@@ -81,7 +83,12 @@ def _specific_response(payload):
     }
 
 
-def _resolution_response(batch_id, reaction_id, resolved_name, product_index=0):
+def _resolution_response(
+    batch_id,
+    reaction_id,
+    resolved_name,
+    product_index=0,
+):
     return {
         "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
         "batch_id": batch_id,
@@ -90,12 +97,10 @@ def _resolution_response(batch_id, reaction_id, resolved_name, product_index=0):
             "substrate_assessments": [{
                 "substrate_index": 0,
                 "identity_status": "generic",
-                "classification_confidence": "high",
                 "can_resolve": True,
                 "resolved_name": resolved_name,
-                "resolution_confidence": "high",
                 "evidence_product_index": product_index,
-                "reason": "A unique complete starting-material fragment is retained.",
+                "reason": "This is the most plausible complete external starting material.",
             }],
         }],
     }
@@ -108,6 +113,9 @@ def test_prompt_combines_classification_and_resolution_without_generic_vocabular
         "Do not use or invent a fixed vocabulary",
         "complete starting-material identity",
         "not the minimal scaffold",
+        "Best-effort resolution is mandatory",
+        "Every substrate assessment must include a short reason",
+        "exact one-to-one recovery is not required",
         "evidence_product_index",
         "Every supplied substrate_index must appear exactly once",
     ):
@@ -124,8 +132,45 @@ def test_prompt_requires_role_preserving_resolution_with_canonical_gp_context():
     assert "same externally supplied starting material" in prompt
     assert "Never resolve a substrate into an intermediate" in prompt
     assert "canonical GP role context as authoritative" in prompt
-    assert "return can_resolve=false" in prompt
+    assert "specific_product_indices is non-empty" in prompt
+    assert "Return can_resolve=false only when specific_product_indices is empty" in prompt
     assert "symbol_evidence" in prompt
+
+
+def test_prompt_defines_contextual_structural_specificity():
+    prompt = SIExtractor.GENERIC_SUBSTRATE_RESOLUTION_PROMPT
+
+    assert (
+        GENERIC_SUBSTRATE_RESOLUTION_PROMPT_VERSION
+        == "generic_substrate_resolution_prompt_v6_no_confidence"
+    )
+    assert GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION == "generic_substrate_resolution_v4"
+    assert "classification_confidence" not in prompt
+    assert "resolution_confidence" not in prompt
+    for phrase in (
+        "principal scaffold/core",
+        "identity-defining structural features",
+        "halogen, alkyl, aryl, acyl, heteroatom substituents",
+        "product fragment that maps back to that substrate",
+        "Name length is not evidence of genericity",
+        "actual unsubstituted compound",
+        "Do not classify a substrate as generic merely because the reaction forms new bonds",
+        "use identity_status=ambiguous",
+    ):
+        assert phrase in prompt
+
+
+def test_prompt_structural_specificity_examples_cover_indenedione_and_controls():
+    prompt = SIExtractor.GENERIC_SUBSTRATE_RESOLUTION_PROMPT
+
+    assert "reported substrate: indenedione" in prompt
+    assert "a 2,2-difluoro indenedione-derived fragment" in prompt
+    assert "resolved substrate: 2,2-difluoro-1H-indene-1,3(2H)-dione" in prompt
+    assert "reported substrate: 2,2-difluoro-1H-indene-1,3(2H)-dione" in prompt
+    assert "reported substrate: 1H-indene-1,3(2H)-dione" in prompt
+    assert "reported substrate: aryl halide" in prompt
+    assert "reported substrate: 1-bromo-4-methylbenzene" in prompt
+    assert "additional product functionality was newly formed during the reaction" in prompt
 
 
 def test_batch_parser_accepts_object_and_fenced_object():
@@ -150,8 +195,15 @@ def test_valid_resolution_writes_back_and_survives_validator():
     substrate = extractor.validate_substrate_name_resolutions(resolved)[0]["substrates"][0]
     assert substrate["name"] == "2-bromoaniline"
     assert substrate["original_name"] == "aniline"
+    assert substrate["identity_status"] == "generic"
+    assert "classification_confidence" not in substrate
+    assert "resolution_confidence" not in substrate
+    assert substrate["resolution_status"] == "resolved_from_product"
     assert substrate["resolution_method"] == "product_name_to_substrate_mapping"
     assert substrate["resolution_evidence"]["product_index"] == 0
+    assert substrate["resolution_evidence"]["reason"] == (
+        "This is the most plausible complete external starting material."
+    )
     assert not any(key.startswith("_resolution_") for key in substrate)
 
 
@@ -208,6 +260,7 @@ def test_resolution_batch_payload_includes_compact_gp_roles_and_symbol_evidence_
     assert candidate["other_components"] == [{"name": "reagent R", "symbol": None, "step": 2}]
     assert "amount" not in candidate["substrates"][0]
     assert "amount" not in candidate["catalysts"][0]
+    assert candidate["specific_product_indices"] == [0]
 
 
 def test_validator_rejects_resolution_that_matches_an_intermediate_role():
@@ -222,10 +275,8 @@ def test_validator_rejects_resolution_that_matches_an_intermediate_role():
         "original_name": "generic starting material",
         "resolution_source": "product_name",
         "resolution_method": "product_name_to_substrate_mapping",
-        "resolution_confidence": "high",
         "resolution_evidence": {"product_index": 0, "product_name": product},
         "_resolution_identity_status": "generic",
-        "_resolution_classification_confidence": "high",
         "_resolution_input_name": "generic starting material",
         "_resolution_substrate_index": 0,
     })
@@ -233,6 +284,7 @@ def test_validator_rejects_resolution_that_matches_an_intermediate_role():
     validated = extractor.validate_substrate_name_resolutions([reaction])
 
     assert validated[0]["substrates"][0]["name"] == "generic starting material"
+    assert validated[0]["substrates"][0]["resolution_status"] == "rejected_role_conflict"
     assert extractor.last_substrate_name_resolution_reviews[-1]["reason"].startswith(
         "resolved_name_matches_non_substrate_role:intermediates"
     )
@@ -258,6 +310,78 @@ def test_out_of_vocabulary_generic_name_is_sent_to_llm_and_resolved():
     assert result[0]["substrates"][0]["name"] == "specific radical precursor name"
 
 
+def test_specific_substrate_keeps_name_and_persists_identity_without_confidence():
+    response = _specific_response({
+        "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
+        "batch_id": "paper_batch_0001",
+        "reactions": [{
+            "reaction_id": "r1",
+            "substrates": [{"index": 0, "name": "2-bromoaniline"}],
+        }],
+    })
+    extractor = _extractor_with_contents(json.dumps(response))
+
+    result = extractor.resolve_generic_substrates_from_products([
+        _reaction("r1", substrate="2-bromoaniline")
+    ])
+    substrate = result[0]["substrates"][0]
+
+    assert substrate["name"] == "2-bromoaniline"
+    assert substrate["identity_status"] == "specific"
+    assert "classification_confidence" not in substrate
+    assert "resolution_confidence" not in substrate
+    assert "resolution_status" not in substrate
+
+
+@pytest.mark.parametrize("identity_status", ["label_only", "ambiguous"])
+def test_non_generic_identity_status_is_persisted_without_name_change(identity_status):
+    response = {
+        "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
+        "batch_id": "paper_batch_0001",
+        "reaction_assessments": [{
+            "reaction_id": "r1",
+            "substrate_assessments": [{
+                "substrate_index": 0,
+                "identity_status": identity_status,
+                "can_resolve": False,
+                "resolved_name": None,
+                "evidence_product_index": None,
+                "reason": "The available name is not a concrete generic class.",
+            }],
+        }],
+    }
+    extractor = _extractor_with_contents(json.dumps(response))
+
+    result = extractor.resolve_generic_substrates_from_products([
+        _reaction("r1", substrate="S1")
+    ])
+    substrate = result[0]["substrates"][0]
+
+    assert substrate["name"] == "S1"
+    assert substrate["identity_status"] == identity_status
+    assert "classification_confidence" not in substrate
+    assert "resolution_confidence" not in substrate
+    assert "resolution_status" not in substrate
+
+
+def test_best_effort_resolution_accepts_response_without_confidence_fields():
+    response = _resolution_response("paper_batch_0001", "r1", "2-bromoaniline")
+    extractor = _extractor_with_contents(json.dumps(response))
+
+    result = extractor.validate_substrate_name_resolutions(
+        extractor.resolve_generic_substrates_from_products([_reaction("r1")])
+    )
+    substrate = result[0]["substrates"][0]
+
+    assert substrate["name"] == "2-bromoaniline"
+    assert "classification_confidence" not in substrate
+    assert "resolution_confidence" not in substrate
+    assert substrate["resolution_status"] == "resolved_from_product"
+    assert extractor.last_generic_substrate_resolution_stats[
+        "generic_substrates_best_effort_resolved"
+    ] == 1
+
+
 def test_label_only_product_is_still_assessed_without_forced_resolution():
     response = {
         "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
@@ -267,10 +391,8 @@ def test_label_only_product_is_still_assessed_without_forced_resolution():
             "substrate_assessments": [{
                 "substrate_index": 0,
                 "identity_status": "generic",
-                "classification_confidence": "high",
                 "can_resolve": False,
                 "resolved_name": None,
-                "resolution_confidence": None,
                 "evidence_product_index": None,
                 "reason": "The product is label-only.",
             }],
@@ -282,7 +404,41 @@ def test_label_only_product_is_still_assessed_without_forced_resolution():
     )
     assert extractor.client.chat.completions.calls == 1
     assert result[0]["substrates"][0]["name"] == "substrate amide"
-    assert extractor.last_generic_substrate_resolution_reviews[-1]["reason"] == "generic_substrate_not_resolved"
+    assert result[0]["substrates"][0]["identity_status"] == "generic"
+    assert result[0]["substrates"][0]["resolution_status"] == "unresolved_no_specific_product"
+    assert extractor.last_generic_substrate_resolution_reviews[-1]["reason"] == "unresolved_no_specific_product"
+
+
+def test_generic_without_products_is_classified_and_marked_unresolved():
+    response = {
+        "schema_version": GENERIC_SUBSTRATE_RESOLUTION_SCHEMA_VERSION,
+        "batch_id": "paper_batch_0001",
+        "reaction_assessments": [{
+            "reaction_id": "r1",
+            "substrate_assessments": [{
+                "substrate_index": 0,
+                "identity_status": "generic",
+                "can_resolve": False,
+                "resolved_name": None,
+                "evidence_product_index": None,
+                "reason": "No concrete product is available.",
+            }],
+        }],
+    }
+    extractor = _extractor_with_contents(json.dumps(response))
+    reaction = _reaction("r1", substrate="aryl halide")
+    reaction["products"] = []
+
+    result = extractor.resolve_generic_substrates_from_products([reaction])
+    substrate = result[0]["substrates"][0]
+
+    assert substrate["identity_status"] == "generic"
+    assert substrate["resolution_status"] == "unresolved_no_specific_product"
+    assert "classification_confidence" not in substrate
+    assert "resolution_confidence" not in substrate
+    assert extractor.last_generic_substrate_resolution_stats[
+        "generic_substrates_unresolved_no_specific_product"
+    ] == 1
 
 
 def test_multi_product_resolution_uses_explicit_product_index():
@@ -297,7 +453,7 @@ def test_multi_product_resolution_uses_explicit_product_index():
     assert evidence["product_name"] == "mapped concrete product"
 
 
-def test_missing_confidence_is_not_defaulted_to_high():
+def test_missing_confidence_is_valid_metadata_and_survives_validator():
     product = "mapped product"
     extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
     reaction = _reaction("r1", products=[{"name": product}])
@@ -307,13 +463,75 @@ def test_missing_confidence_is_not_defaulted_to_high():
         "resolution_method": "product_name_to_substrate_mapping",
         "resolution_evidence": {"product_index": 0, "product_name": product},
         "_resolution_identity_status": "generic",
-        "_resolution_classification_confidence": "high",
         "_resolution_input_name": "radical precursor",
         "_resolution_substrate_index": 0,
     })
     validated = extractor.validate_substrate_name_resolutions([reaction])
-    assert validated[0]["substrates"][0]["name"] == "radical precursor"
-    assert extractor.last_substrate_name_resolution_reviews[-1]["reason"] == "resolution_confidence_is_not_high"
+    substrate = validated[0]["substrates"][0]
+    assert substrate["name"] == "resolved name"
+    assert substrate["resolution_status"] == "resolved_from_product"
+    assert "classification_confidence" not in substrate
+    assert "resolution_confidence" not in substrate
+    assert not extractor.last_substrate_name_resolution_reviews
+
+
+def test_missing_reason_triggers_schema_retry():
+    invalid = _resolution_response("paper_batch_0001", "r1", "2-bromoaniline")
+    invalid["reaction_assessments"][0]["substrate_assessments"][0].pop("reason")
+    valid = _resolution_response("paper_batch_0001", "r1", "2-bromoaniline")
+    extractor = _extractor_with_contents(json.dumps(invalid), json.dumps(valid))
+
+    result = extractor.validate_substrate_name_resolutions(
+        extractor.resolve_generic_substrates_from_products([_reaction("r1")])
+    )
+
+    assert extractor.client.chat.completions.calls == 2
+    assert result[0]["substrates"][0]["name"] == "2-bromoaniline"
+
+
+def test_schema_failure_records_error_without_confidence_fields():
+    extractor = _extractor_with_contents("not json")
+
+    result = extractor.resolve_generic_substrates_from_products([_reaction("r1")])
+    substrate = result[0]["substrates"][0]
+
+    assert extractor.client.chat.completions.calls == 2
+    assert substrate["name"] == "aniline"
+    assert substrate["identity_status"] == "ambiguous"
+    assert substrate["resolution_status"] == "resolution_error"
+    assert "classification_confidence" not in substrate
+    assert "resolution_confidence" not in substrate
+
+
+def test_unsafe_role_resolution_retries_then_records_rejected_role_conflict():
+    product = "mapped concrete product"
+    response = _resolution_response(
+        "paper_batch_0001", "r1", "internal intermediate X"
+    )
+    extractor = _extractor_with_contents(json.dumps(response))
+    reaction = _reaction(
+        "r1",
+        substrate="generic starting material",
+        products=[{"name": product}],
+    )
+    reaction["intermediates"] = [{
+        "name": "internal intermediate X",
+        "produced_in_step": 1,
+        "consumed_in_step": 2,
+    }]
+
+    result = extractor.resolve_generic_substrates_from_products([reaction])
+    substrate = result[0]["substrates"][0]
+
+    assert extractor.client.chat.completions.calls == 2
+    assert substrate["name"] == "generic starting material"
+    assert substrate["identity_status"] == "ambiguous"
+    assert substrate["resolution_status"] == "rejected_role_conflict"
+    assert "classification_confidence" not in substrate
+    assert "resolution_confidence" not in substrate
+    assert extractor.last_generic_substrate_resolution_stats[
+        "generic_substrate_role_conflicts"
+    ] == 1
 
 
 def test_twenty_three_reactions_use_three_batch_calls():

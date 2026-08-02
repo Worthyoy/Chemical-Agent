@@ -624,7 +624,7 @@ def _public_condition_option(reaction: dict) -> dict:
     catalysts = _catalyst_names_public(reaction.get("catalysts", []))
     if catalysts:
         public["catalysts"] = catalysts
-    ligands = _condition_components_public(reaction.get("ligands", []), include_amount=False)
+    ligands = _condition_components_public(reaction.get("ligands", []), include_amount=True)
     if ligands:
         public["ligands"] = ligands
     other_components = _condition_components_public(
@@ -752,9 +752,19 @@ def _condition_grouping_signature(public_condition_option: dict) -> dict:
 
     The original public condition option is kept for display. This canonical
     version is used only for grouping/key generation, so harmless punctuation
-    differences do not split benchmark questions.
+    differences do not split benchmark questions. Ligand amount remains visible
+    in the public condition option but is intentionally excluded from grouping.
     """
-    canonical = _canonical_grouping_value(public_condition_option or {}, mode="condition")
+    grouping_source = dict(public_condition_option or {})
+    ligands = grouping_source.get("ligands")
+    if isinstance(ligands, list):
+        grouping_source["ligands"] = [
+            {key: value for key, value in ligand.items() if key != "amount"}
+            if isinstance(ligand, dict)
+            else ligand
+            for ligand in ligands
+        ]
+    canonical = _canonical_grouping_value(grouping_source, mode="condition")
     return canonical if isinstance(canonical, dict) else {}
 
 

@@ -44,7 +44,7 @@ ROLE_CONFIG = {
     "USES_SUBSTRATE": (COL_SUBSTRATE, "substrate_amount"),
     "PRODUCES": (COL_PRODUCT, "product_amount"),
     "USES_CATALYST": (COL_CATALYST, "catalyst_amount"),
-    "USES_LIGAND": (COL_LIGAND, ""),
+    "USES_LIGAND": (COL_LIGAND, "ligand_amount"),
     "USES_SOLVENT": (COL_SOLVENT, "solvent_amount"),
     "USES_OTHER_COMPONENT": (COL_OTHER_COMPONENT, "other_component_amount"),
     # Legacy KG relationships are accepted and folded into the new summary column.

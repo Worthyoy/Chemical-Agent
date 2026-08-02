@@ -16,6 +16,21 @@ def test_reaction_prompts_describe_name_symbol_separation():
         assert "methanol (36)" in prompt
 
 
+def test_all_text_reaction_prompts_require_ligand_amount_or_null():
+    for prompt in (
+        SIExtractor.STRUCTURED_REACTION_PROMPT,
+        SIExtractor.NON_GP_REACTION_PROMPT,
+        SIExtractor.MIXED_REACTION_PROMPT,
+    ):
+        assert "ligand" in prompt.casefold()
+        assert "amount=null" in prompt
+        assert "preformed" in prompt.casefold()
+        assert (
+            "Do not infer a separate ligand amount" in prompt
+            or "Do not copy a preformed catalyst-complex amount" in prompt
+        )
+
+
 def test_sanitize_splits_trailing_reported_product_symbol():
     extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
     reaction = {
@@ -69,7 +84,10 @@ def test_sanitize_splits_numeric_labels_but_preserves_unconfirmed_letter_codes()
     assert sanitized["products"][0]["symbol"] == "35'"
     assert sanitized["products"][1]["name"] == "reported methanol"
     assert sanitized["products"][1]["symbol"] == "36"
-    assert sanitized["ligands"][0] == {"name": "reported ligand (L1)"}
+    assert sanitized["ligands"][0] == {
+        "name": "reported ligand (L1)",
+        "amount": None,
+    }
     assert sanitized["other_components"][0] == {"name": "reported reagent (3a)"}
 
 
@@ -169,7 +187,16 @@ def test_registry_alignment_resolves_ligand_label_and_preserves_step():
         "diethylethane-1,2-diamine"
     )
     reactions = [
-        {"id": "r1", "ligands": [{"name": "L6", "step": 2}]}
+        {
+            "id": "r1",
+            "ligands": [
+                {
+                    "name": "L6",
+                    "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+                    "step": 2,
+                }
+            ],
+        }
     ]
 
     aligned = extractor.align_names_in_reactions(reactions, {"L6": ligand_name})
@@ -178,6 +205,7 @@ def test_registry_alignment_resolves_ligand_label_and_preserves_step():
         {
             "name": ligand_name,
             "symbol": "L6",
+            "amount": "10.0 mg, 0.024 mmol, 12 mol%",
             "step": 2,
             "resolution_source": "name_registry",
             "resolution_method": "same_paper_symbol",
@@ -256,7 +284,7 @@ def test_registry_alignment_reports_ligand_name_conflict_without_overwrite():
     ]
 
 
-def test_sanitize_preserves_resolved_ligand_identity_but_drops_amount():
+def test_sanitize_preserves_resolved_ligand_identity_and_amount():
     extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
     ligand_name = (
         "(1R,2R)-1,2-bis(2-bromophenyl)-N1,N2-"
@@ -290,5 +318,10 @@ def test_sanitize_preserves_resolved_ligand_identity_but_drops_amount():
     sanitized = extractor.sanitize_reaction_schema(reaction)
 
     assert sanitized["ligands"] == [
-        {"name": ligand_name, "symbol": "L6", "step": 2}
+        {
+            "name": ligand_name,
+            "amount": "10.0 mg, 0.024 mmol, 12 mol%",
+            "symbol": "L6",
+            "step": 2,
+        }
     ]

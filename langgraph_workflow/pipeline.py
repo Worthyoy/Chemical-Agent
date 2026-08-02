@@ -417,7 +417,7 @@ def config_from_args(args) -> PipelineConfig:
     if dotenv_values is None:
         raise ValueError("python-dotenv is required. Install with: pip install python-dotenv")
     env_values = dotenv_values(DOTENV_PATH)
-    api_key = args.api_key or env_values.get("OPENAI_API_KEY")
+    api_key = args.api_key or os.getenv("OPENAI_API_KEY") or env_values.get("OPENAI_API_KEY")
     if not api_key:
         raise ValueError("Set OPENAI_API_KEY in .env or pass --api_key.")
 
@@ -457,7 +457,7 @@ def config_from_args(args) -> PipelineConfig:
         resume=not args.no_resume,
         limit=args.limit,
         paper_name=args.paper_name,
-        base_url=args.base_url,
+        base_url=os.getenv("LANGGRAPH_BASE_URL") or args.base_url,
         max_parallel_pdfs=max(1, args.max_parallel_pdfs),
         max_parallel_text_chunks=max(1, args.max_parallel_text_chunks),
         pdf_text_layout=args.pdf_text_layout,
@@ -479,12 +479,12 @@ def config_from_args(args) -> PipelineConfig:
         input_mode=input_mode,
         enable_chemeagle=args.enable_chemeagle,
         use_chemeagle=use_chemeagle,
-        chemeagle_dir=chemeagle_dir,
-        chemeagle_python=args.chemeagle_python,
+        chemeagle_dir=Path(os.getenv("CHEMEAGLE_DIR")) if os.getenv("CHEMEAGLE_DIR") else chemeagle_dir,
+        chemeagle_python=os.getenv("CHEMEAGLE_PYTHON") or args.chemeagle_python,
         chemeagle_pdf_model_size=args.chemeagle_pdf_model_size,
-        chemeagle_model_name=args.chemeagle_model_name,
-        chemeagle_base_url=args.chemeagle_base_url,
-        chemeagle_api_key=args.chemeagle_api_key,
+        chemeagle_model_name=os.getenv("CHEMEAGLE_MODEL_NAME") or args.chemeagle_model_name,
+        chemeagle_base_url=os.getenv("CHEMEAGLE_BASE_URL") or args.chemeagle_base_url,
+        chemeagle_api_key=os.getenv("CHEMEAGLE_API_KEY") or args.chemeagle_api_key,
         chemeagle_max_images=max(0, args.chemeagle_max_images),
         chemeagle_max_parallel_images=max(1, args.chemeagle_max_parallel_images),
         chemeagle_use_plan_observer=False,
@@ -596,8 +596,8 @@ def stop_chemeagle_gpu_worker(process) -> None:
             pass
 
 
-def main():
-    config = config_from_args(parse_args())
+def run_pipeline(config: PipelineConfig, *, progress_callback=None) -> Dict:
+    """Run a configured workflow and return its final LangGraph state."""
     gpu_monitor = None
     gpu_summary = None
     chemeagle_gpu_worker = None
@@ -620,6 +620,8 @@ def main():
         chemeagle_gpu_worker = start_chemeagle_gpu_worker(config)
     final_state = None
     try:
+        if progress_callback:
+            progress_callback("starting", {})
         app = build_graph(config)
         final_state = app.invoke({"steps": {}, "pdf_results": []}, config={"max_concurrency": config.max_parallel_pdfs})
     finally:
@@ -638,6 +640,14 @@ def main():
             print(f"  GPU timeline: {config.gpu_timeline_path}")
         if gpu_summary is not None:
             print(f"  GPU samples: {gpu_summary.get('valid_sample_count', 0)} valid / {gpu_summary.get('sample_count', 0)} total")
+    if progress_callback:
+        progress_callback("complete", final_state or {})
+    return final_state or {}
+
+
+def main():
+    config = config_from_args(parse_args())
+    return run_pipeline(config)
 
 
 if __name__ == "__main__":

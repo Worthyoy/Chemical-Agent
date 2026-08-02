@@ -52,7 +52,8 @@ Rules
 - Keep numbers exactly as written (units, significant figures, ranges).
   Use null for missing yield, ee, er, or dr fields.
 - Classify catalyst complexes/precatalysts under catalysts, ligands under ligands, and all other reacting materials under other_components. Do NOT drop any.
-- ligands items contain name only for single-step reactions; multi-step ligands contain name and step only. Never put ligand loading in ligands.
+- ligands items contain name and amount for single-step reactions; multi-step ligands contain name, amount, and step. Preserve every explicitly reported free-ligand quantity or loading in amount and use amount=null when unreported.
+- Do not infer a separate ligand amount from a preformed metal-ligand catalyst-complex amount. Keep that quantity in catalysts[].amount unless the free ligand is separately quantified.
 
 Coverage-first extraction:
 Internally identify every extractable paragraph/prose reaction entry in source order before writing the final JSON.
@@ -156,7 +157,7 @@ For normal extraction, each entry:
   "substrates": [{"name": "...", "symbol": "...", "amount": "...", "original_name": "... only when resolved from a generic name", "resolution_source": "product_name only when applicable", "resolution_method": "gp_product_to_substrate_mapping only when applicable", "resolution_confidence": "high only when applicable", "resolution_evidence": {"product_name": "exact reported product name"}}],
   "products": [{"name": "...", "symbol": "...", "amount": "..."}],
   "catalysts": [{"name": "...", "symbol": "...", "amount": "..."}],
-  "ligands": [{"name": "..."}],
+  "ligands": [{"name": "...", "amount": "... or null"}],
   "other_components": [{"name": "...", "symbol": "...", "amount": "..."}],
   "conditions": {"solvent": "...", "volume": "...", "concentration": "...", "atmosphere": "...", "light_source": "...", "wavelength": "...", "temperature": "...", "time": "..."},
   "targets": {"yield": "...", "ee": "...%", "er": "...", "dr": "..."}
@@ -168,7 +169,7 @@ For a multi-step entry, extend that object as follows:
   "substrates": [{"name": "...", "symbol": "...", "amount": "...", "step": 1}],
   "products": [{"name": "...", "symbol": "...", "amount": "...", "step": 2}],
   "catalysts": [{"name": "...", "symbol": "...", "amount": "...", "step": 1}],
-  "ligands": [{"name": "...", "step": 1}],
+  "ligands": [{"name": "...", "amount": "... or null", "step": 1}],
   "other_components": [{"name": "...", "symbol": "...", "amount": "...", "step": 2}],
   "intermediates": [{"name": "...", "symbol": "...", "amount": "...", "produced_in_step": 1, "consumed_in_step": 2}],
   "conditions": {

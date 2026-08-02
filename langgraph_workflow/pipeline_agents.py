@@ -90,7 +90,7 @@ class PipelineConfig:
     pdf_text_y_tolerance: float = 5.0
     generic_resolution_batch_size: int = 10
     enable_stage1_page_trimming: bool = False
-    pipeline_version: str = "parallel_pdf_v23_mixed_role_first"
+    pipeline_version: str = "parallel_pdf_v24_ligand_amount"
     skip_reaction_type_normalization: bool = False
     benchmark_reaction_type_policy: str = "required"
     skip_chemeagle_normalization: bool = False
@@ -502,6 +502,7 @@ def reusable_entity_context(path: Path, expected: Dict) -> Optional[Dict]:
         "parallel_pdf_v21_targets_dr",
         "parallel_pdf_v22_gp_role_lineage",
         "parallel_pdf_v23_mixed_role_first",
+        "parallel_pdf_v24_ligand_amount",
     }
     if actual.get("pipeline_version") not in compatible_versions:
         return None
@@ -765,14 +766,23 @@ def build_paper_job(
     }
 
 
-def build_dual_folder_jobs(config: PipelineConfig) -> tuple[List[Dict], Dict]:
-    text_files = list_folder_pdf_files(config.si_folder)
-    image_files = list_folder_pdf_files(config.pdf_folder)
+def pair_dual_folder_files(
+    si_folder: Path,
+    pdf_folder: Optional[Path],
+    paper_map: Optional[Path] = None,
+) -> tuple[List[Dict], Dict]:
+    """Pair text/image PDFs using the workflow's canonical key policy.
+
+    The returned records are deliberately configuration-free so the web layer
+    can preview exactly the same pairing later consumed by PrepareJobsAgent.
+    """
+    text_files = list_folder_pdf_files(si_folder)
+    image_files = list_folder_pdf_files(pdf_folder)
     report = {
         "mode": "dual_folder",
-        "si_folder": str(config.si_folder),
-        "pdf_folder": str(config.pdf_folder) if config.pdf_folder else None,
-        "paper_map": str(config.paper_map) if config.paper_map else None,
+        "si_folder": str(si_folder),
+        "pdf_folder": str(pdf_folder) if pdf_folder else None,
+        "paper_map": str(paper_map) if paper_map else None,
         "text_pdf_count": len(text_files),
         "image_pdf_count": len(image_files),
         "matched_papers": [],
@@ -782,14 +792,14 @@ def build_dual_folder_jobs(config: PipelineConfig) -> tuple[List[Dict], Dict]:
         "unmatched_pdf_files": [],
         "duplicate_paper_keys": [],
     }
-    jobs: List[Dict] = []
+    pairs: List[Dict] = []
     used_text: set[Path] = set()
     used_image: set[Path] = set()
 
-    if config.paper_map and config.paper_map.exists():
+    if paper_map and paper_map.exists():
         text_lookup = file_lookup(text_files)
         image_lookup = file_lookup(image_files)
-        with open(config.paper_map, "r", encoding="utf-8-sig", newline="") as f:
+        with open(paper_map, "r", encoding="utf-8-sig", newline="") as f:
             for row_index, row in enumerate(csv.DictReader(f), start=1):
                 paper_key = (row.get("paper_key") or "").strip()
                 text_path = find_mapped_file(row.get("si_file") or row.get("text_file") or "", text_lookup)
@@ -803,16 +813,13 @@ def build_dual_folder_jobs(config: PipelineConfig) -> tuple[List[Dict], Dict]:
                 if image_path:
                     used_image.add(image_path)
                 if text_path or image_path:
-                    jobs.append(
-                        build_paper_job(
-                            paper_key=paper_key,
-                            text_pdf_path=text_path,
-                            image_pdf_path=image_path,
-                            config=config,
-                        )
-                    )
+                    pairs.append({
+                        "paper_key": paper_key,
+                        "text_pdf_path": text_path,
+                        "image_pdf_path": image_path,
+                    })
 
-    if not jobs:
+    if not pairs:
         text_by_key: Dict[str, List[Path]] = {}
         image_by_key: Dict[str, List[Path]] = {}
         for path in text_files:
@@ -834,14 +841,11 @@ def build_dual_folder_jobs(config: PipelineConfig) -> tuple[List[Dict], Dict]:
                 text_path = texts[index] if index < len(texts) else None
                 image_path = images[index] if index < len(images) else None
                 job_key = key if max(len(texts), len(images), 1) == 1 else f"{key}_{index + 1}"
-                jobs.append(
-                    build_paper_job(
-                        paper_key=job_key,
-                        text_pdf_path=text_path,
-                        image_pdf_path=image_path,
-                        config=config,
-                    )
-                )
+                pairs.append({
+                    "paper_key": job_key,
+                    "text_pdf_path": text_path,
+                    "image_pdf_path": image_path,
+                })
                 if text_path:
                     used_text.add(text_path)
                 if image_path:
@@ -849,27 +853,58 @@ def build_dual_folder_jobs(config: PipelineConfig) -> tuple[List[Dict], Dict]:
 
     for path in text_files:
         if path not in used_text:
-            jobs.append(build_paper_job(paper_key=canonical_paper_key(path.name), text_pdf_path=path, image_pdf_path=None, config=config))
+            pairs.append({
+                "paper_key": canonical_paper_key(path.name),
+                "text_pdf_path": path,
+                "image_pdf_path": None,
+            })
     for path in image_files:
         if path not in used_image:
-            jobs.append(build_paper_job(paper_key=canonical_paper_key(path.name), text_pdf_path=None, image_pdf_path=path, config=config))
+            pairs.append({
+                "paper_key": canonical_paper_key(path.name),
+                "text_pdf_path": None,
+                "image_pdf_path": path,
+            })
 
+    for pair in pairs:
+        text_path = pair.get("text_pdf_path")
+        image_path = pair.get("image_pdf_path")
+        mode = "dual_source" if text_path and image_path else "text_only" if text_path else "image_only"
+        pair["mode"] = mode
+        pair["text_pdf_name"] = text_path.name if text_path else None
+        pair["image_pdf_name"] = image_path.name if image_path else None
+        if mode == "dual_source":
+            report["matched_papers"].append(pair["paper_key"])
+        elif mode == "text_only":
+            report["text_only_papers"].append(pair["paper_key"])
+            report["unmatched_si_files"].append(pair["text_pdf_name"])
+        else:
+            report["image_only_papers"].append(pair["paper_key"])
+            report["unmatched_pdf_files"].append(pair["image_pdf_name"])
+    pairs.sort(key=lambda item: (item.get("paper_key") or "", item.get("mode") or ""))
+    return pairs, report
+
+
+def build_dual_folder_jobs(config: PipelineConfig) -> tuple[List[Dict], Dict]:
+    pairs, report = pair_dual_folder_files(
+        config.si_folder,
+        config.pdf_folder,
+        config.paper_map,
+    )
+    jobs = [
+        build_paper_job(
+            paper_key=str(pair.get("paper_key") or ""),
+            text_pdf_path=pair.get("text_pdf_path"),
+            image_pdf_path=pair.get("image_pdf_path"),
+            config=config,
+            mode=pair.get("mode"),
+        )
+        for pair in pairs
+    ]
     jobs = [job for job in jobs if job_matches_filter(job, config.paper_name)]
     jobs.sort(key=lambda item: (item.get("paper_key") or "", item.get("mode") or ""))
     if config.limit is not None:
         jobs = jobs[: config.limit]
-
-    for job in jobs:
-        if job["mode"] == "dual_source":
-            report["matched_papers"].append(job["paper_key"])
-        elif job["mode"] == "text_only":
-            report["text_only_papers"].append(job["paper_key"])
-            if job.get("text_pdf_name"):
-                report["unmatched_si_files"].append(job["text_pdf_name"])
-        elif job["mode"] == "image_only":
-            report["image_only_papers"].append(job["paper_key"])
-            if job.get("image_pdf_name"):
-                report["unmatched_pdf_files"].append(job["image_pdf_name"])
     return jobs, report
 
 
