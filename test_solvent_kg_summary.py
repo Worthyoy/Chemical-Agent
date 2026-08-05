@@ -8,8 +8,12 @@ from cross_modal_kg import (
 )
 from kg_to_reaction_csv import (
     COL_CONDITIONS,
+    COL_CONTEXT_INFERENCE_ERROR,
+    COL_INTRINSIC_EXTRACTION_ERROR,
     COL_LIGAND,
+    COL_PROCEDURAL_FIDELITY_ERROR,
     COL_SOLVENT,
+    OUTPUT_FIELDNAMES,
     convert_kg_csv,
     convert_kg_rows,
 )
@@ -269,6 +273,17 @@ def test_csv_output_sorts_papers_descending_and_preserves_within_paper_order(tmp
     convert_kg_csv(input_path, output_path)
 
     with output_path.open("r", encoding="utf-8-sig", newline="") as handle:
-        summary = list(csv.DictReader(handle))
+        reader = csv.DictReader(handle)
+        summary = list(reader)
     assert [row["文献"] for row in summary] == ["Charlie", "bravo", "Alpha", "Alpha"]
     assert [row["产物"] for row in summary[-2:]] == ["alpha product 1", "alpha product 2"]
+    assert reader.fieldnames == OUTPUT_FIELDNAMES
+    assert reader.fieldnames[-3:] == [
+        COL_INTRINSIC_EXTRACTION_ERROR,
+        COL_PROCEDURAL_FIDELITY_ERROR,
+        COL_CONTEXT_INFERENCE_ERROR,
+    ]
+    for row in summary:
+        assert row[COL_INTRINSIC_EXTRACTION_ERROR] == ""
+        assert row[COL_PROCEDURAL_FIDELITY_ERROR] == ""
+        assert row[COL_CONTEXT_INFERENCE_ERROR] == ""
