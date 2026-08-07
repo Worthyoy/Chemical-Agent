@@ -1,0 +1,4280 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic asymmetric dearomatization of phenols via divergent intermolecular (3 + 2) and alkylation reactions_si.pdf",
+  "paper_key": "catalytic asymmetric dearomatization of phenols via divergent intermolecular (3 + 2) and alkylation reactions",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic asymmetric dearomatization of phenols via divergent intermolecular (3 + 2) and alkylation reactions_si.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic asymmetric dearomatization of phenols via divergent intermolecular (3 + 2) and alkylation reactions_si.pdf",
+    "source_mtime_ns": 1782048361000000000,
+    "source_size": 20465611,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "catalytic asymmetric dearomatization of phenols via divergent intermolecular (3 + 2) and alkylation reactions",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic asymmetric dearomatization of phenols via divergent intermolecular (3 + 2) and alkylation reactions_si.pdf"
+  },
+  "extracted_at": "2026-07-17T01:13:11.847454",
+  "total_reactions": 80,
+  "filtered_reactions": 71,
+  "filter_stats": {
+    "input_reactions": 80,
+    "basic_failed": 9,
+    "target_failed": 0,
+    "retained": 71
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of 4b",
+      "substrates": [
+        {
+          "name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4b",
+          "amount": "61.8 mg, 0.15 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7S,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "8",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "25 °C",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": ">99%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "rxn-1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of 4b",
+      "substrates": [
+        {
+          "name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4b",
+          "amount": "61.8 mg, 0.15 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7R,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "9",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "25 °C",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "84%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "rxn-2"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of 4b",
+      "substrates": [
+        {
+          "name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4b",
+          "amount": "61.8 mg, 0.15 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7R,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "9",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "25 °C",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": ">99%",
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "rxn-3"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of 4b",
+      "substrates": [
+        {
+          "name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4b",
+          "amount": "61.8 mg, 0.15 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7S,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "8",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "25 °C",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "86%",
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "rxn-4"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of 4b",
+      "substrates": [
+        {
+          "name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4b",
+          "amount": "61.8 mg, 0.15 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7S,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "8",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "25 °C",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "10%",
+        "er": null,
+        "dr": "1:1"
+      },
+      "_original_id": "rxn-5"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of 4b",
+      "substrates": [
+        {
+          "name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4b",
+          "amount": "61.8 mg, 0.15 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7R,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "9",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "25 °C",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "23%",
+        "er": null,
+        "dr": "1:1"
+      },
+      "_original_id": "rxn-6"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of racemic 4b",
+      "substrates": [
+        {
+          "name": "4b (racemic)",
+          "symbol": "4b",
+          "amount": "61.8 mg, 0.15 mmol",
+          "registry_name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7S,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "8",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "25 °C",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "80%",
+        "er": null,
+        "dr": "1:1"
+      },
+      "_original_id": "rxn-7"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of racemic 4b",
+      "substrates": [
+        {
+          "name": "4b (racemic)",
+          "symbol": "4b",
+          "amount": "61.8 mg, 0.15 mmol",
+          "registry_name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aR,7S,7aR)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-9",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "25 °C",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "56%",
+        "er": null,
+        "dr": "1:1"
+      },
+      "_original_id": "rxn-8"
+    },
+    {
+      "id": "Gp-5-Entry1",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        12,
+        13
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylphenol",
+          "symbol": "1o",
+          "amount": "0.20 mmol",
+          "registry_name": "2,4,6-trimethylphenol",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "azoalkene 2a",
+          "symbol": "2a",
+          "amount": "0.24 mmol",
+          "registry_name": "azoalkene",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4b",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-9"
+    },
+    {
+      "id": "Gp-5-Entry2",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylphenol",
+          "symbol": "1o",
+          "amount": "0.20 mmol",
+          "registry_name": "2,4,6-trimethylphenol",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "azoalkene 2a",
+          "symbol": "2a",
+          "amount": "0.24 mmol",
+          "registry_name": "azoalkene",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(ent)-4b",
+          "symbol": "(ent)-4b",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-11"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of 4b",
+      "substrates": [
+        {
+          "name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4b",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7S,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "8",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "25 °C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": null,
+        "ee": ">99%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "rxn-13"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of 4b",
+      "substrates": [
+        {
+          "name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4b",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7R,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "9",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "25 °C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": null,
+        "ee": ">99%",
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "rxn-14"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of (ent)-4b",
+      "substrates": [
+        {
+          "name": "(ent)-4b",
+          "symbol": "(ent)-4b",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aR,7R,7aR)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-8",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "25 °C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": null,
+        "ee": ">99%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "rxn-15"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "stereodivergent Brønsted acid-catalyzed transformation of (ent)-4b",
+      "substrates": [
+        {
+          "name": "(ent)-4b",
+          "symbol": "(ent)-4b",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aR,7S,7aR)-1-(((benzyloxy)carbonyl)amino)-2,3a,5,7-tetramethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-9",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "25 °C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": null,
+        "ee": ">99%",
+        "er": null,
+        "dr": "7:1"
+      },
+      "_original_id": "rxn-16"
+    },
+    {
+      "id": "Gp-1-Entry1",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3a",
+          "amount": "61.4 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "Gp-2-Entry1",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "ent-3a",
+          "amount": "70.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "Gp-1-Entry2",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-((methoxycarbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3b",
+          "amount": "50.5 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-((methoxycarbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "Gp-2-Entry2",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-((methoxycarbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "ent-3b",
+          "amount": "53.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "Gp-1-Entry3",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-((ethoxycarbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3c",
+          "amount": "58.6 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-((ethoxycarbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "Gp-2-Entry3",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-((ethoxycarbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "ent-3c",
+          "amount": "56.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-6"
+    },
+    {
+      "id": "Gp-1-Entry4",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-((((9H-fluoren-9-yl)methoxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3d",
+          "amount": "70.8 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-((((9H-fluoren-9-yl)methoxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-7"
+    },
+    {
+      "id": "Gp-2-Entry4",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-((((9H-fluoren-9-yl)methoxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "ent-3d",
+          "amount": "52.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-8"
+    },
+    {
+      "id": "Gp-1-Entry5",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3e",
+          "amount": "63.6 mg",
+          "registry_name": "Methyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "93%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-9"
+    },
+    {
+      "id": "Gp-2-Entry5",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "ent-3e",
+          "amount": "63.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "93%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-10"
+    },
+    {
+      "id": "Gp-1-Entry6",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3f",
+          "amount": "69.7 mg",
+          "registry_name": "Benzyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-11"
+    },
+    {
+      "id": "Gp-2-Entry6",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "ent-3f",
+          "amount": "74.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-12"
+    },
+    {
+      "id": "Gp-1-Entry7",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Isobutyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3g",
+          "amount": "74.5 mg",
+          "registry_name": "Isobutyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn1"
+    },
+    {
+      "id": "Gp-2-Entry7",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Isobutyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3g",
+          "amount": "70.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn2"
+    },
+    {
+      "id": "Gp-1-Entry8",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3h",
+          "amount": "70.0 mg",
+          "registry_name": "Tert-butyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn3"
+    },
+    {
+      "id": "Gp-2-Entry8",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3h",
+          "amount": "64.3 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn4"
+    },
+    {
+      "id": "Gp-1-Entry9",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Allyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3i",
+          "amount": "63.4 mg",
+          "registry_name": "Allyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn5"
+    },
+    {
+      "id": "Gp-2-Entry9",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Allyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3i",
+          "amount": "66.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn6"
+    },
+    {
+      "id": "Gp-1-Entry10",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-methoxyethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3j",
+          "amount": "66.2 mg",
+          "registry_name": "2-methoxyethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "91%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn7"
+    },
+    {
+      "id": "Gp-2-Entry10",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-methoxyethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3j",
+          "amount": "64.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "91%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn8"
+    },
+    {
+      "id": "Gp-1-Entry11",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2-ethyl-3a-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3k",
+          "amount": "54.1 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2-ethyl-3a-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "75%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn9"
+    },
+    {
+      "id": "Gp-2-Entry11",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2-ethyl-3a-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3k",
+          "amount": "66.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "75%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn10"
+    },
+    {
+      "id": "Gp-1-Entry12",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2-butyl-3a-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3l",
+          "amount": "61.8 mg",
+          "registry_name": "Methyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2-butyl-3a-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "44%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn11"
+    },
+    {
+      "id": "Gp-2-Entry12",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2-butyl-3a-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3l",
+          "amount": "62.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "49%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "chunk7-rxn12"
+    },
+    {
+      "id": "Gp-1-Entry13",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-3a-ethyl-2-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3m",
+          "amount": "70.0 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-3a-ethyl-2-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "89%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-1_3m_p23"
+    },
+    {
+      "id": "Gp-2-Entry13",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-3a-ethyl-2-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3m",
+          "amount": "66.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "89%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-2_ent-3m_p23"
+    },
+    {
+      "id": "Gp-1-Entry14",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2-methyl-6-oxo-3a-propyl-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3n",
+          "amount": "75.8 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2-methyl-6-oxo-3a-propyl-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-1_3n_p23"
+    },
+    {
+      "id": "Gp-2-Entry14",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2-methyl-6-oxo-3a-propyl-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3n",
+          "amount": "63.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-2_ent-3n_p23"
+    },
+    {
+      "id": "Gp-1-Entry15",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-3a-butyl-2-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3o",
+          "amount": "75.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-1_3o_p24"
+    },
+    {
+      "id": "Gp-2-Entry15",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-3a-butyl-2-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3o",
+          "amount": "63.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-2_ent-3o_p24"
+    },
+    {
+      "id": "Gp-1-Entry16",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2-methyl-6-oxo-3a-pentyl-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3p",
+          "amount": "66.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-1_3p_p24"
+    },
+    {
+      "id": "Gp-2-Entry16",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2-methyl-6-oxo-3a-pentyl-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3p",
+          "amount": "58.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-2_ent-3p_p24"
+    },
+    {
+      "id": "Gp-1-Entry17",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-3a-allyl-1-(((benzyloxy)carbonyl)amino)-2-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3q",
+          "amount": "67.2 mg",
+          "registry_name": "Ethyl (3aS,7aS)-3a-allyl-1-(((benzyloxy)carbonyl)amino)-2-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "87%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-1_3q_p25"
+    },
+    {
+      "id": "Gp-2-Entry17",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-3a-allyl-1-(((benzyloxy)carbonyl)amino)-2-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3q",
+          "amount": "60.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "86%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-2_ent-3q_p25"
+    },
+    {
+      "id": "Gp-1-Entry18",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-3a-cyclopropyl-2-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3r",
+          "amount": "68.9 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-3a-cyclopropyl-2-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "91%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-1_3r_p25"
+    },
+    {
+      "id": "Gp-2-Entry18",
+      "_gp_source": "Gp-2",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "enantioselective addition of para-substituted phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-3a-cyclopropyl-2-methyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "(ent)-3r",
+          "amount": "59.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ag2CO3",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "(S)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "91%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Gp-2_ent-3r_p25"
+    },
+    {
+      "id": "Gp-1-Entry19",
+      "_gp_source": "Gp-1",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Para substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "Azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aR,7aS)-1-(((benzyloxy)carbonyl)amino)-2-methyl-6-oxo-3a-phenyl-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3s",
+          "amount": "66.0 mg",
+          "registry_name": "Ethyl (3aR,7aS)-1-(((benzyloxy)carbonyl)amino)-2-methyl-6-oxo-3a-phenyl-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "5Å molecular sieves",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "84%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Rxn-3s"
+    },
+    {
+      "id": "Gp-3-Entry1",
+      "_gp_source": "Gp-3",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Chiral phosphoric acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Di-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,5-trimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3t",
+          "amount": "63.7 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,5-trimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-2",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-40 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "95%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Rxn-3t"
+    },
+    {
+      "id": "Gp-3-Entry2",
+      "_gp_source": "Gp-3",
+      "source_pages": [
+        26,
+        27
+      ],
+      "reaction_type": "Chiral phosphoric acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Di-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-((tert-butoxycarbonyl)amino)-2,3a,5-trimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3u",
+          "amount": "64.8 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-((tert-butoxycarbonyl)amino)-2,3a,5-trimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-2",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-40 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "97%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Rxn-3u"
+    },
+    {
+      "id": "Gp-3-Entry3",
+      "_gp_source": "Gp-3",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Chiral phosphoric acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Di-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-5-(tert-butyl)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3v",
+          "amount": "68.6 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-5-(tert-butyl)-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-2",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-40 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "97%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Rxn-3v"
+    },
+    {
+      "id": "Gp-3-Entry4",
+      "_gp_source": "Gp-3",
+      "source_pages": [
+        27,
+        28
+      ],
+      "reaction_type": "Chiral phosphoric acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Di-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-5-methoxy-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3w",
+          "amount": "72.8 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-5-methoxy-2,3a-dimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-2",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-40 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "83%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Rxn-3w"
+    },
+    {
+      "id": "Gp-3-Entry5",
+      "_gp_source": "Gp-3",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Chiral phosphoric acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Di-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,4-trimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "symbol": "3x",
+          "amount": "50.1 mg",
+          "registry_name": "Ethyl (3aS,7aS)-1-(((benzyloxy)carbonyl)amino)-2,3a,4-trimethyl-6-oxo-3a,6,7,7a-tetrahydro-1H-indole-3-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-2",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-40 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "86%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Rxn-3x"
+    },
+    {
+      "id": "Gp-3-Entry6",
+      "_gp_source": "Gp-3",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Chiral phosphoric acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Di-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,9aS)-3-(((benzyloxy)carbonyl)amino)-2-methyl-5-oxo-3a,4,5,7,8,9-hexahydro-3H-cyclopenta[d]indole-1-carboxylate",
+          "symbol": "3y",
+          "amount": "72.2 mg",
+          "registry_name": "Ethyl (3aS,9aS)-3-(((benzyloxy)carbonyl)amino)-2-methyl-5-oxo-3a,4,5,7,8,9-hexahydro-3H-cyclopenta[d]indole-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-2",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-40 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "89%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "Rxn-3y"
+    },
+    {
+      "id": "Gp-3-Entry7",
+      "_gp_source": "Gp-3",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "Chiral phosphoric acid-catalyzed enantioselective addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Di-substituted phenols",
+          "symbol": "1",
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkenes",
+          "symbol": "2",
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,9bS)-9b-(2-cyanoethyl)-3-((methoxycarbonyl)amino)-2-methyl-5-oxo-3a,4,5,9b-tetrahydro-3H-benzo[e]indole-1-carboxylate",
+          "symbol": "3a’",
+          "amount": "50.9 mg",
+          "registry_name": "Ethyl (3aS,9bS)-9b-(2-cyanoethyl)-3-((methoxycarbonyl)amino)-2-methyl-5-oxo-3a,4,5,9b-tetrahydro-3H-benzo[e]indole-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-2",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-40 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "96%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "Gp-4-Entry1",
+      "_gp_source": "Gp-4",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "asymmetric addition of 1-naphthol to an azoalkene",
+      "substrates": [
+        {
+          "name": "1-Naphthol",
+          "symbol": "1z",
+          "amount": "0.20 mmol",
+          "registry_name": "1-Naphthol",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "azoalkene",
+          "symbol": "2b",
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (3aS,9bS)-3-(((benzyloxy)carbonyl)amino)-2,9b-dimethyl-5-oxo-3a,4,5,9b-tetrahydro-3H-benzo[e]indole-1-carboxylate",
+          "symbol": "3b’",
+          "amount": "63.5 mg",
+          "registry_name": "Ethyl (3aS,9bS)-3-(((benzyloxy)carbonyl)amino)-2,9b-dimethyl-5-oxo-3a,4,5,9b-tetrahydro-3H-benzo[e]indole-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-4",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "25 °C",
+        "time": "6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "87%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "Gp-4-Entry2",
+      "_gp_source": "Gp-4",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "asymmetric addition of 1-naphthol to an azoalkene",
+      "substrates": [
+        {
+          "name": "1-Naphthol",
+          "symbol": "1z",
+          "amount": "0.20 mmol",
+          "registry_name": "1-Naphthol",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "azoalkene",
+          "symbol": "2b",
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4b",
+          "amount": "71.2 mg",
+          "registry_name": "Benzyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-CPA-4",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "25 °C",
+        "time": "6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "57%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "Gp-5-Entry3",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Tri-substituted phenols",
+          "symbol": "1",
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkene",
+          "symbol": "2",
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4c",
+          "amount": "80.8 mg",
+          "registry_name": "Methyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "Gp-5-Entry4",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        30,
+        31
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Tri-substituted phenols",
+          "symbol": "1",
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkene",
+          "symbol": "2",
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4d",
+          "amount": "59.8 mg",
+          "registry_name": "Ethyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "Gp-5-Entry5",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Tri-substituted phenols",
+          "symbol": "1",
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkene",
+          "symbol": "2",
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(9H-fluoren-9-yl)methyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4e",
+          "amount": "61.6 mg",
+          "registry_name": "(9H-fluoren-9-yl)methyl (R)-2-(4-ethoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-6"
+    },
+    {
+      "id": "Gp-5-Entry6",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Tri-substituted phenols",
+          "symbol": "1",
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkene",
+          "symbol": "2",
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl (R)-2-(4-methoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4f",
+          "amount": "76.0 mg",
+          "registry_name": "Benzyl (R)-2-(4-methoxy-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-7"
+    },
+    {
+      "id": "Gp-5-Entry7",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Tri-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkene 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl (R)-2-(4-(benzyloxy)-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4g",
+          "amount": "74.1 mg",
+          "registry_name": "Benzyl (R)-2-(4-(benzyloxy)-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk11-rxn1"
+    },
+    {
+      "id": "Gp-5-Entry8",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        32,
+        33
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Tri-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkene 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl (R)-2-(4-(tert-butoxy)-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4h",
+          "amount": "88.2 mg",
+          "registry_name": "Benzyl (R)-2-(4-(tert-butoxy)-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk11-rxn2"
+    },
+    {
+      "id": "Gp-5-Entry9",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Tri-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkene 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl (R)-2-(4-(2-methoxyethoxy)-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4i",
+          "amount": "76.1 mg",
+          "registry_name": "Benzyl (R)-2-(4-(2-methoxyethoxy)-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk11-rxn3"
+    },
+    {
+      "id": "Gp-5-Entry10",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Tri-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkene 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl -2-(1-ethoxy-1-oxo-2-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)pentan-3-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4j",
+          "amount": "51.0 mg",
+          "registry_name": "Ethyl -2-(1-ethoxy-1-oxo-2-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)pentan-3-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "84%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk11-rxn4"
+    },
+    {
+      "id": "Gp-5-Entry11",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Tri-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkene 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl -2-(1-ethoxy-1-oxo-2-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)pentan-3-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4k",
+          "amount": "34.8 mg",
+          "registry_name": "Ethyl -2-(1-ethoxy-1-oxo-2-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)pentan-3-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": "52%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk11-rxn5"
+    },
+    {
+      "id": "Gp-5-Entry12",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "Tri-substituted phenols 1",
+          "symbol": null,
+          "amount": "0.20 mmol"
+        },
+        {
+          "name": "azoalkene 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl (R)-2-(3-(3,5-dimethoxy-1-methyl-4-oxocyclohexa-2,5-dien-1-yl)-4-ethoxy-4-oxobutan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4m",
+          "amount": "75.5 mg",
+          "registry_name": "Benzyl (R)-2-(3-(3,5-dimethoxy-1-methyl-4-oxocyclohexa-2,5-dien-1-yl)-4-ethoxy-4-oxobutan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "temperature": "-30 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk11-rxn6"
+    },
+    {
+      "id": "Gp-5-Entry13",
+      "_gp_source": "Gp-5",
+      "source_pages": [
+        32,
+        33
+      ],
+      "reaction_type": "chiral Brønsted acid-catalyzed addition of phenols to azoalkenes",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylphenol",
+          "symbol": null,
+          "amount": "0.20 mmol",
+          "original_name": "Tri-substituted phenols 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Benzyl (R)-2-(4-(2-methoxyethoxy)-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+            "product_index": 0,
+            "reason": "Product contains a 1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl fragment that maps unambiguously to a 2,4,6-trimethylphenol (mesitol) starting material."
+          }
+        },
+        {
+          "name": "azoalkene 2",
+          "symbol": null,
+          "amount": "0.24 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl (R)-2-(4-(2-methoxyethoxy)-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "symbol": "4i",
+          "amount": "77.5 mg",
+          "registry_name": "Benzyl (R)-2-(4-(2-methoxyethoxy)-4-oxo-3-(1,3,5-trimethyl-4-oxocyclohexa-2,5-dien-1-yl)butan-2-ylidene)hydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-CPA-7",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "3Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1 mL",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "-30 °C",
+        "time": "12 h"
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk11-rxn7"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/catalytic_asymmetric_dearomatization_of_phenols_ea5d6336.json",
+    "input_sha256": "257cb79d9f7b059ee1851d91ef1efd77bff656512e7b04bc06c03f8f023dc72c"
+  }
+}

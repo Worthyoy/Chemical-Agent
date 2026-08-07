@@ -23,7 +23,6 @@ COL_CONDITIONS = "条件（温度、时间、气氛、光源、波长等）"
 COL_YIELD = "产率"
 COL_INTRINSIC_EXTRACTION_ERROR = "直接从文献中抓取的提取错误"
 COL_PROCEDURAL_FIDELITY_ERROR = "实验过程与操作顺序错误"
-COL_CONTEXT_INFERENCE_ERROR = "文献中没有明确给出信息，需要模型进行推断，推断产生的错误"
 
 OUTPUT_FIELDNAMES = [
     COL_PAPER,
@@ -42,7 +41,6 @@ OUTPUT_FIELDNAMES = [
     "er",
     COL_INTRINSIC_EXTRACTION_ERROR,
     COL_PROCEDURAL_FIDELITY_ERROR,
-    COL_CONTEXT_INFERENCE_ERROR,
 ]
 
 
@@ -310,7 +308,6 @@ def convert_kg_rows(rows: Iterable[Dict[str, str]]) -> List[Dict[str, str]]:
                 "er": first_nonempty(source_rows, "er"),
                 COL_INTRINSIC_EXTRACTION_ERROR: "",
                 COL_PROCEDURAL_FIDELITY_ERROR: "",
-                COL_CONTEXT_INFERENCE_ERROR: "",
             }
         )
     return output

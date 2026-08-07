@@ -1,0 +1,4960 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/dual-palladium-photoredox-catalyzed-enantioselective-and-regioselective-decarboxylative-hydroaminoalkylation-of-allenes.pdf",
+  "paper_key": "dual-palladium-photoredox-catalyzed-enantioselective-and-regioselective-decarboxylative-hydroaminoalkylation-of-allenes",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/dual-palladium-photoredox-catalyzed-enantioselective-and-regioselective-decarboxylative-hydroaminoalkylation-of-allenes.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/dual-palladium-photoredox-catalyzed-enantioselective-and-regioselective-decarboxylative-hydroaminoalkylation-of-allenes.pdf",
+    "source_mtime_ns": 1782048500000000000,
+    "source_size": 25150850,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "dual-palladium-photoredox-catalyzed-enantioselective-and-regioselective-decarboxylative-hydroaminoalkylation-of-allenes",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/dual-palladium-photoredox-catalyzed-enantioselective-and-regioselective-decarboxylative-hydroaminoalkylation-of-allenes.pdf"
+  },
+  "extracted_at": "2026-07-17T03:23:57.134215",
+  "total_reactions": 76,
+  "filtered_reactions": 75,
+  "filter_stats": {
+    "input_reactions": 76,
+    "basic_failed": 1,
+    "target_failed": 0,
+    "retained": 75
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Synthesis of L11",
+      "substrates": [
+        {
+          "name": "PCl3",
+          "symbol": null,
+          "amount": "100 µL, 1.0 mmol, 1.0 eq."
+        },
+        {
+          "name": "(R)-bis((R)-1-phenylpropyl)amine",
+          "symbol": null,
+          "amount": "253.4 mg, 1 mmol, 1.0 eq."
+        },
+        {
+          "name": "(S)-binaphthol",
+          "symbol": null,
+          "amount": "343.5 mg, 1.2 mmol, 1.2 eq."
+        }
+      ],
+      "products": [
+        {
+          "name": "L11",
+          "symbol": "L11",
+          "amount": "376.8 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triethylamine",
+          "symbol": null,
+          "amount": "0.7 µL, 5 mmol, 5.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "7 mL / mmol amine",
+        "temperature": "ice-cooled then warmed to room temperature",
+        "time": "5 h then 18 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk3-r1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "base-promoted isomerization of propargyl (prop-2-ynyloxy) ethers to allenyl (propa-1,2-dienyloxy) ethers",
+      "substrates": [
+        {
+          "name": "cyclopentyl-propargyl ether",
+          "symbol": null,
+          "amount": "620 mg, 5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(Propa-1,2-dienyloxy)cyclopentane",
+          "symbol": "2b",
+          "amount": "309 mg",
+          "registry_name": "(Propa-1,2-dienyloxy)cyclopentane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "t-BuOK",
+          "symbol": null,
+          "amount": "112 mg, 1 mmol, 0.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "5 ml",
+        "temperature": "room temperature",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk3-r2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "base-promoted isomerization of propargyl (prop-2-ynyloxy) ethers to allenyl (propa-1,2-dienyloxy) ethers",
+      "substrates": [
+        {
+          "name": "(prop-2-ynyloxy)cycloheptane",
+          "symbol": null,
+          "amount": "800 mg, 5.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(Propa-1,2-dien-1-yloxy)cycloheptane",
+          "symbol": "2c",
+          "amount": "650 mg",
+          "registry_name": "(Propa-1,2-dien-1-yloxy)cycloheptane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "t-BuOK",
+          "symbol": null,
+          "amount": "112 mg, 1 mmol, 0.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "5 ml",
+        "temperature": "room temperature",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk3-r3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "base-promoted isomerization of propargyl (prop-2-ynyloxy) ethers to allenyl (propa-1,2-dienyloxy) ethers",
+      "substrates": [
+        {
+          "name": "1-(prop-2-yn-1-yloxy)nonane",
+          "symbol": null,
+          "amount": "800 mg, 4.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(Propa-1,2-dien-1-yloxy)nonane",
+          "symbol": "2e",
+          "amount": "572 mg",
+          "registry_name": "1-(Propa-1,2-dien-1-yloxy)nonane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "t-BuOK",
+          "symbol": null,
+          "amount": "112 mg, 1 mmol, 0.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "5 ml",
+        "temperature": "room temperature",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk3-r4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "base-promoted isomerization of propargyl (prop-2-ynyloxy) ethers to allenyl (propa-1,2-dienyloxy) ethers",
+      "substrates": [
+        {
+          "name": "1-(tert-butyl)-4-((prop-2-yn-1-yloxy)methyl)benzene",
+          "symbol": null,
+          "amount": "800 mg, 4.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(Tert-butyl)-4-((propa-1,2-dien-1-yloxy)methyl)benzene",
+          "symbol": "2h",
+          "amount": "510 mg",
+          "registry_name": "1-(Tert-butyl)-4-((propa-1,2-dien-1-yloxy)methyl)benzene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "t-BuOK",
+          "symbol": null,
+          "amount": "112 mg, 1 mmol, 0.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "5 ml",
+        "temperature": "room temperature",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk3-r5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry5",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "base-promoted isomerization of propargyl (prop-2-ynyloxy) ethers to allenyl (propa-1,2-dienyloxy) ethers",
+      "substrates": [
+        {
+          "name": "1-((prop-2-yn-1-yloxy)methyl)naphthalene",
+          "symbol": null,
+          "amount": "800 mg, 4.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-((Propa-1,2-dien-1-yloxy)methyl)naphthalene",
+          "symbol": "2i",
+          "amount": "630 mg",
+          "registry_name": "1-((Propa-1,2-dien-1-yloxy)methyl)naphthalene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "t-BuOK",
+          "symbol": null,
+          "amount": "112 mg, 1 mmol, 0.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "5 ml",
+        "temperature": "room temperature",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk3-r6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry6",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "base-promoted isomerization of propargyl (prop-2-ynyloxy) ethers to allenyl (propa-1,2-dienyloxy) ethers",
+      "substrates": [
+        {
+          "name": "(prop-2-ynyloxy)cycloheptane",
+          "symbol": null,
+          "amount": "824 mg, 6.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Methyl-2-(propa-1,2-dienyloxy)butane",
+          "symbol": "2j",
+          "amount": "250 mg",
+          "registry_name": "2-Methyl-2-(propa-1,2-dienyloxy)butane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "t-BuOK",
+          "symbol": null,
+          "amount": "112 mg, 1 mmol, 0.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "5 ml",
+        "temperature": "room temperature",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk3-r7"
+    },
+    {
+      "id": "GeneralProcedureA-Entry7",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "base-promoted isomerization of propargyl (prop-2-ynyloxy) ethers to allenyl (propa-1,2-dienyloxy) ethers",
+      "substrates": [
+        {
+          "name": "((but-3-yn-2-yloxy)methyl)benzene",
+          "symbol": null,
+          "amount": "800 mg, 5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "((buta-2,3-dien-2-yloxy)methyl)benzene",
+          "symbol": "2m",
+          "amount": "470 mg",
+          "registry_name": "((buta-2,3-dien-2-yloxy)methyl)benzene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "t-BuOK",
+          "symbol": null,
+          "amount": "112 mg, 1 mmol, 0.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "5 ml",
+        "temperature": "room temperature",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk3-r8"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "N-arylation to give N-arylated amino acids",
+      "substrates": [
+        {
+          "name": "L-O-tert-butyl-tyrosine",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-3-(4-(Tert-butoxy)phenyl)-2-(phenylamino)propanoic acid",
+          "symbol": "1b",
+          "amount": null,
+          "registry_name": "(S)-3-(4-(Tert-butoxy)phenyl)-2-(phenylamino)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "N-arylation to give N-arylated amino acids",
+      "substrates": [
+        {
+          "name": "L-tyrosine",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "Phenyl-L-tyrosine",
+          "symbol": "1c",
+          "amount": null,
+          "registry_name": "Phenyl-L-tyrosine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "25%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "N-arylation to give N-arylated amino acids",
+      "substrates": [
+        {
+          "name": "3-(naphthalen-2-yl)-2-aminopropanoic acid",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(Naphthalen-2-yl)-2-(phenylamino)propanoic acid",
+          "symbol": "1d",
+          "amount": null,
+          "registry_name": "3-(Naphthalen-2-yl)-2-(phenylamino)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "41%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "N-arylation to give N-arylated amino acids",
+      "substrates": [
+        {
+          "name": "DL-norvaline",
+          "symbol": null,
+          "amount": "824 mg, 6.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(Phenylamino)pentanoic acid",
+          "symbol": "1h",
+          "amount": null,
+          "registry_name": "2-(Phenylamino)pentanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "N-arylation to give N-arylated amino acids",
+      "substrates": [
+        {
+          "name": "O-benzyl -L-serine",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "O-Benzyl-N-phenyl-L-serine",
+          "symbol": "1k",
+          "amount": null,
+          "registry_name": "O-Benzyl-N-phenyl-L-serine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "N-arylation to give N-arylated amino acids",
+      "substrates": [
+        {
+          "name": "3-(naphthalen-2-yl)-2-aminopropanoic acid",
+          "symbol": null,
+          "amount": "824 mg, 6.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(Benzyloxy)-4-oxo-2-(phenylamino)butanoic acid",
+          "symbol": "1n",
+          "amount": null,
+          "registry_name": "4-(Benzyloxy)-4-oxo-2-(phenylamino)butanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "N-arylation to give N-arylated amino acids",
+      "substrates": [
+        {
+          "name": "(S)-5-methoxy-5-oxo-2-(amino)pentanoic acid",
+          "symbol": null,
+          "amount": "10 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-5-Methoxy-5-oxo-2-(phenylamino)pentanoic acid",
+          "symbol": "1o",
+          "amount": null,
+          "registry_name": "(S)-5-Methoxy-5-oxo-2-(phenylamino)pentanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        16,
+        17
+      ],
+      "reaction_type": "hydrolysis (saponification) of amino acid ester to the corresponding acid",
+      "substrates": [
+        {
+          "name": "amino acid ester",
+          "symbol": null,
+          "amount": "20 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(4-Methoxyphenyl)phenylalanine",
+          "symbol": "1q",
+          "amount": null,
+          "registry_name": "(4-Methoxyphenyl)phenylalanine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiOH",
+          "symbol": null,
+          "amount": "2.4 g, 100 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF/H2O",
+        "solvent_amount": "THF (15 ml) and H2O (15 ml)",
+        "temperature": "room temperature",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn8"
+    },
+    {
+      "id": "GeneralProcedureC-Entry1",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Cyclohexyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3aa",
+          "amount": "23.5 mg",
+          "registry_name": "N-(3-(Cyclohexyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": "4.5:1"
+      },
+      "_original_id": "rxn10"
+    },
+    {
+      "id": "GeneralProcedureC-Entry2",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Cyclopentyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ab",
+          "amount": "25.0 mg",
+          "registry_name": "N-(3-(Cyclopentyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "4.3:1"
+      },
+      "_original_id": "GP_C_3ab_p19"
+    },
+    {
+      "id": "GeneralProcedureC-Entry3",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        20,
+        21
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Cycloheptyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ac",
+          "amount": "24.7 mg",
+          "registry_name": "N-(3-(Cycloheptyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": "97:3",
+        "dr": "5.6:1"
+      },
+      "_original_id": "GP_C_3ac_p20-21"
+    },
+    {
+      "id": "GeneralProcedureC-Entry4",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(1-Phenyl-3-(2-(trimethylsilyl)ethoxy)pent-4-en-2-yl)aniline",
+          "symbol": "3ad",
+          "amount": "26.6 mg",
+          "registry_name": "N-(1-Phenyl-3-(2-(trimethylsilyl)ethoxy)pent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": "90:10",
+        "dr": "3.4:1"
+      },
+      "_original_id": "GP_C_3ad_p21"
+    },
+    {
+      "id": "GeneralProcedureC-Entry5",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Nonyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ae",
+          "amount": "27.7 mg",
+          "registry_name": "N-(3-(Nonyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": "2.7:1"
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry6",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Benzyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3af",
+          "amount": "27.7 mg",
+          "registry_name": "N-(3-(Benzyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": "3.9:1"
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry7",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        23,
+        24
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(4-Methoxybenzyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ag",
+          "amount": "30.1 mg",
+          "registry_name": "N-(3-(4-Methoxybenzyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": "3.8:1"
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry8",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(4-Tert-butylbenzyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ah",
+          "amount": "32.2 mg",
+          "registry_name": "N-(3-(4-Tert-butylbenzyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": "4.5:1"
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry9",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        25,
+        26
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Naphthalen-1-ylmethoxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ai",
+          "amount": "30.1 mg",
+          "registry_name": "N-(3-(Naphthalen-1-ylmethoxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null,
+        "dr": "4.7:1"
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry10",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Naphthalen-1-ylmethoxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ai",
+          "amount": null,
+          "registry_name": "N-(3-(Naphthalen-1-ylmethoxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "92:8",
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry11",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Naphthalen-1-ylmethoxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ai",
+          "amount": null,
+          "registry_name": "N-(3-(Naphthalen-1-ylmethoxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "76:24",
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry12",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        26,
+        27
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Tert-pentyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3aj",
+          "amount": "17.0 mg",
+          "registry_name": "N-(3-(Tert-pentyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": null,
+        "dr": "4.5:1"
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry13",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Tert-pentyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3aj",
+          "amount": null,
+          "registry_name": "N-(3-(Tert-pentyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "96:4",
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "GeneralProcedureC-Entry14",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Tert-pentyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3aj",
+          "amount": null,
+          "registry_name": "N-(3-(Tert-pentyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "90:10",
+        "dr": null
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "GeneralProcedureC-Entry15",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Tert-butoxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ak",
+          "amount": "17.6 mg",
+          "registry_name": "N-(3-(Tert-butoxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": "5.7:1"
+      },
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "GeneralProcedureC-Entry16",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Tert-butoxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ak",
+          "amount": null,
+          "registry_name": "N-(3-(Tert-butoxy)-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "96:4",
+        "dr": null
+      },
+      "_original_id": "rxn8"
+    },
+    {
+      "id": "GeneralProcedureC-Entry17",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(4-Tert-butylbenzyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ah",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "90:10",
+        "dr": null
+      },
+      "_original_id": "rxn9"
+    },
+    {
+      "id": "GeneralProcedureC-Entry18",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(4-Tert-butylbenzyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3ah",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "69:31",
+        "dr": null
+      },
+      "_original_id": "rxn10"
+    },
+    {
+      "id": "GeneralProcedureC-Entry19",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-((2S,3S)-1-Phenyl-3-((R)-1-phenylethoxy)pent-4-en-2-yl)aniline",
+          "symbol": "3al",
+          "amount": "29.7 mg",
+          "registry_name": "N-((2S,3S)-1-Phenyl-3-((R)-1-phenylethoxy)pent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "ent-L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": null,
+        "er": "93:7",
+        "dr": "7.3:1"
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry20",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(2-(benzyloxy)-2-methylbut-3-en-1-yl)aniline",
+          "symbol": "3am",
+          "amount": "13.3 mg",
+          "registry_name": "N-(2-(benzyloxy)-2-methylbut-3-en-1-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": null,
+        "er": "95:5",
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry21",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        30,
+        31
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(1-(4-(Tert-butoxy)phenyl)-3-(cyclohexyloxy)pent-4-en-2-yl)aniline",
+          "symbol": "3ba",
+          "amount": "28.7 mg",
+          "registry_name": "N-(1-(4-(Tert-butoxy)phenyl)-3-(cyclohexyloxy)pent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "3.8:1"
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry22",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(3-(Cyclohexyloxy)-2-(phenylamino)pent-4-enyl)phenol",
+          "symbol": "3ca",
+          "amount": "44.3 mg",
+          "registry_name": "4-(3-(Cyclohexyloxy)-2-(phenylamino)pent-4-enyl)phenol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "5:1"
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry23",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "3al’",
+          "symbol": "3al’",
+          "amount": "21.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "16-24 hrs"
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": null,
+        "er": null,
+        "dr": "7.1:1"
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "GeneralProcedureC-Entry24",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Cyclohexyloxy)-1-(naphthalen-2-yl)pent-4-en-2-yl)aniline",
+          "symbol": "3da",
+          "amount": "56.8 mg",
+          "registry_name": "N-(3-(Cyclohexyloxy)-1-(naphthalen-2-yl)pent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "4.2:1"
+      },
+      "_original_id": "rxn_3da_p32"
+    },
+    {
+      "id": "GeneralProcedureC-Entry25",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Cyclohexyloxy)-1-(1H-indol-3-yl)pent-4-en-2-yl)aniline",
+          "symbol": "3ea",
+          "amount": "22.1 mg",
+          "registry_name": "N-(3-(Cyclohexyloxy)-1-(1H-indol-3-yl)pent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "3.6:1"
+      },
+      "_original_id": "rxn_3ea_p33"
+    },
+    {
+      "id": "GeneralProcedureC-Entry26",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        33,
+        34
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Cyclohexyloxy)pent-4-en-2-yl)aniline",
+          "symbol": "3fa",
+          "amount": "22.5 mg",
+          "registry_name": "N-(3-(Cyclohexyloxy)pent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "41%",
+        "ee": null,
+        "er": "94:6",
+        "dr": "3.1:1"
+      },
+      "_original_id": "rxn_3fa_p33-34"
+    },
+    {
+      "id": "GeneralProcedureC-Entry27",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(4-(Cyclohexyloxy)hex-5-en-3-yl)aniline",
+          "symbol": "3ga",
+          "amount": "14.0 mg",
+          "registry_name": "N-(4-(Cyclohexyloxy)hex-5-en-3-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": null,
+        "er": null,
+        "dr": "3.6:1"
+      },
+      "_original_id": "rxn_3ga_p34"
+    },
+    {
+      "id": "GeneralProcedureC-Entry28",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        35,
+        36
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-((3R,4R)-4-(Cyclohexyloxy)-2-methylhex-5-en-3-yl)aniline",
+          "symbol": "3ia",
+          "amount": "12.8 mg",
+          "registry_name": "N-((3R,4R)-4-(Cyclohexyloxy)-2-methylhex-5-en-3-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": "[PC1]",
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "45%",
+        "ee": null,
+        "er": "95:5",
+        "dr": "4:1"
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry29",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Cyclohexyloxy)-6-methylhept-1-en-4-yl)aniline",
+          "symbol": "3ja",
+          "amount": "16.7 mg",
+          "registry_name": "N-(3-(Cyclohexyloxy)-6-methylhept-1-en-4-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": "[PC1]",
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": null,
+        "er": null,
+        "dr": "4.3:1"
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry30",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(1-(Benzyloxy)-3-(cyclohexyloxy)pent-4-en-2-yl)aniline",
+          "symbol": "3ka",
+          "amount": "39.7 mg",
+          "registry_name": "N-(1-(Benzyloxy)-3-(cyclohexyloxy)pent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": "[PC1]",
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": null,
+        "er": "94:6",
+        "dr": "3.2:1"
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry31",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(1-(Tert-butoxy)-3-(cyclohexyloxy)pent-4-en-2-yl)aniline",
+          "symbol": "3la",
+          "amount": "21.0 mg",
+          "registry_name": "N-(1-(Tert-butoxy)-3-(cyclohexyloxy)pent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": "[PC1]",
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": "[PC2]",
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": null,
+        "er": null,
+        "dr": "4.5:1"
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry32",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-((3R,4R)-4-(Cyclohexyloxy)-2-methylhex-5-en-3-yl)aniline",
+          "symbol": "3ia",
+          "amount": "28.2 mg",
+          "registry_name": "N-((3R,4R)-4-(Cyclohexyloxy)-2-methylhex-5-en-3-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": "[PC1]",
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": null,
+        "er": null,
+        "dr": "4:1"
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "GeneralProcedureC-Entry33",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(1-(Tert-butoxy)-3-(cyclohexyloxy)pent-4-en-2-yl)aniline",
+          "symbol": "3la",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "95:5",
+        "dr": null
+      },
+      "_original_id": "3la"
+    },
+    {
+      "id": "GeneralProcedureC-Entry34",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        38,
+        39
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(4-(Cyclohexyloxy)-1-(methylthio)hex-5-en-3-yl)aniline",
+          "symbol": "3ma",
+          "amount": "15.7 mg",
+          "registry_name": "N-(4-(Cyclohexyloxy)-1-(methylthio)hex-5-en-3-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "3.5:1"
+      },
+      "_original_id": "3ma"
+    },
+    {
+      "id": "GeneralProcedureC-Entry35",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl 4-(cyclohexyloxy)-3-(phenylamino)hex-5-enoate",
+          "symbol": "3na",
+          "amount": "45.5 mg",
+          "registry_name": "Benzyl 4-(cyclohexyloxy)-3-(phenylamino)hex-5-enoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": null,
+        "er": "95:5",
+        "dr": "5.3:1"
+      },
+      "_original_id": "3na"
+    },
+    {
+      "id": "GeneralProcedureC-Entry36",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (5-(cyclohexyloxy)-4-(phenylamino)hept-6-enoate",
+          "symbol": "3oa",
+          "amount": "35.4 mg",
+          "registry_name": "Methyl (5-(cyclohexyloxy)-4-(phenylamino)hept-6-enoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "3.8:1"
+      },
+      "_original_id": "3oa"
+    },
+    {
+      "id": "GeneralProcedureC-Entry37",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1-(Cyclohexyloxy)allyl)-1-phenylpyrrolidine",
+          "symbol": "3pa",
+          "amount": "16.7 mg",
+          "registry_name": "2-( 1-(Cyclohexyloxy)allyl)-1-phenylpyrrolidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": null,
+        "er": null,
+        "dr": "4.3:1"
+      },
+      "_original_id": "3pa"
+    },
+    {
+      "id": "GeneralProcedureD-Entry1",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-N-(1,8-diphenyloct-4-en-2-yl)aniline",
+          "symbol": "4a",
+          "amount": "57.1 mg",
+          "registry_name": "(E)-N-(1,8-diphenyloct-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk12-r1-4a"
+    },
+    {
+      "id": "GeneralProcedureD-Entry2",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-N-(1,7-diphenylhept-4-en-2-yl)aniline",
+          "symbol": "4b",
+          "amount": "52.5 mg",
+          "registry_name": "(E)-N-(1,7-diphenylhept-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk12-r2-4b"
+    },
+    {
+      "id": "GeneralProcedureD-Entry3",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-N-(5-cyclohexyl-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "4c",
+          "amount": "46.6 mg",
+          "registry_name": "(E)-N-(5-cyclohexyl-1-phenylpent-4-en-2-yl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk12-r3-4c"
+    },
+    {
+      "id": "GeneralProcedureD-Entry4",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-8-phenyl-7-(phenylamino)oct-4-en-1-ol",
+          "symbol": "4d",
+          "amount": "52.6 mg",
+          "registry_name": "(E)-8-phenyl-7-(phenylamino)oct-4-en-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk12-r4-4d"
+    },
+    {
+      "id": "GeneralProcedureD-Entry5",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-2-(8-phenyl-7-(phenylamino)oct-4-en-1-yl)isoindoline-1,3-dione",
+          "symbol": "4g",
+          "amount": "76.5 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk12-r5-4g"
+    },
+    {
+      "id": "GeneralProcedureD-Entry6",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "dimethyl (E)-2-allyl-2-(6-phenyl-5-(phenylamino)hex-2-en-1-yl)malonate",
+          "symbol": "4h",
+          "amount": "56.3 mg",
+          "registry_name": "dimethyl (E)-2-allyl-2-(6-phenyl-5-(phenylamino)hex-2-en-1-yl)malonate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk12-r6-4h"
+    },
+    {
+      "id": "GeneralProcedureD-Entry7",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-N-allyl-4-methyl-N-(7-phenyl-6-(phenylamino)hept-3-en-1-yl)benzenesulfonamide",
+          "symbol": "4i",
+          "amount": "84.9 mg",
+          "registry_name": "(E)-N-allyl-4-methyl-N-(7-phenyl-6-(phenylamino)hept-3-en-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk12-r7-4i"
+    },
+    {
+      "id": "GeneralProcedureD-Entry8",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(1,3-diphenylpent-4-en-2-yl)aniline",
+          "symbol": "4'",
+          "amount": "12.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "19%",
+        "ee": null,
+        "er": null,
+        "dr": "1:1"
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureD-Entry9",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-7-(phenylamino)oct-4-en-1-ol",
+          "symbol": "4l",
+          "amount": "22.8 mg",
+          "registry_name": "(E)-7-(phenylamino)oct-4-en-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureD-Entry10",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-9-methyl-7-(phenylamino)dec-4-en-1-ol",
+          "symbol": "4m",
+          "amount": "39.1 mg",
+          "registry_name": "(E)-9-methyl-7-(phenylamino)dec-4-en-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureD-Entry11",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-8-(4-(tert-butoxy)phenyl)-7-(phenylamino)oct-4-en-1-ol",
+          "symbol": "4p",
+          "amount": "48.8 mg",
+          "registry_name": "(E)-8-(4-(tert-butoxy)phenyl)-7-(phenylamino)oct-4-en-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureD-Entry12",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-4-(8-hydroxy-2-(phenylamino)oct-4-en-1-yl)phenol",
+          "symbol": "4q",
+          "amount": "41.7 mg",
+          "registry_name": "(E)-4-(8-hydroxy-2-(phenylamino)oct-4-en-1-yl)phenol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureD-Entry13",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2",
+          "symbol": "2",
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-8-(1H-indol-3-yl)-7-(phenylamino)oct-4-en-1-ol",
+          "symbol": "4r",
+          "amount": "63.7 mg",
+          "registry_name": "(E)-8-(1H-indol-3-yl)-7-(phenylamino)oct-4-en-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "symbol": null,
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "symbol": null,
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        53,
+        54
+      ],
+      "reaction_type": "hydroboration-oxidation",
+      "substrates": [
+        {
+          "name": "N-(3-(Cyclohexyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3aa",
+          "amount": "55 mg, 0.16 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "5c",
+          "symbol": "5c",
+          "amount": "36.7 mg",
+          "resolved_smiles": "*[C@H](Cc1ccccc1)[C@@H](CCO)OC1CCCCC1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "3_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_2.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "9-BBN (0.5 M solution in hexane)",
+          "symbol": "9-BBN",
+          "amount": "0.32 mmol, 0.64 mL, 2.0 equiv."
+        },
+        {
+          "name": "ethanol",
+          "symbol": "EtOH",
+          "amount": "0.5 mL"
+        },
+        {
+          "name": "sodium hydroxide (2 M)",
+          "symbol": "2 M NaOH",
+          "amount": "0.5 mL"
+        },
+        {
+          "name": "hydrogen peroxide (30%)",
+          "symbol": "30% H2O2",
+          "amount": "0.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "1.6 mL",
+        "temperature": "cooled to -78 °C, stirred 15 min at 0 °C, then warmed to room temperature and stirred overnight",
+        "time": "15 min at 0 °C, then overnight (reaction); 3 h (post-addition stirring after warming)",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": null,
+        "er": "96:4",
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        54
+      ],
+      "reaction_type": "hydroboration-oxidation",
+      "substrates": [
+        {
+          "name": "N-(4-(Cyclohexyloxy)hex-5-en-3-yl)aniline",
+          "symbol": "3ga",
+          "amount": "19.4 mg, 71 µmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "5ga",
+          "symbol": "5ga",
+          "amount": "20.0 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "9-BBN (0.5 M solution in hexane)",
+          "symbol": "9-BBN",
+          "amount": "0.21 mmol, 0.42 mL, 3.0 equiv."
+        },
+        {
+          "name": "ethanol",
+          "symbol": "EtOH",
+          "amount": "0.5 mL"
+        },
+        {
+          "name": "sodium hydroxide (2 M)",
+          "symbol": "2 M NaOH",
+          "amount": "0.5 mL"
+        },
+        {
+          "name": "hydrogen peroxide (30%)",
+          "symbol": "30% H2O2",
+          "amount": "0.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "1 mL",
+        "temperature": "cooled to -78 °C, stirred 15 min at 0 °C, then warmed to room temperature and stirred overnight",
+        "time": "15 min at 0 °C, then overnight (reaction); 3 h (post-addition stirring after warming)",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": "96:4 (syn, major); 88:12 (anti, major)",
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry13",
+      "source_pages": [
+        55
+      ],
+      "reaction_type": "hydroboration-oxidation",
+      "substrates": [
+        {
+          "name": "N-(3-(Cyclohexyloxy)hept-1-en-4-yl)aniline",
+          "symbol": "3ha",
+          "amount": "24.3 mg, 85 µmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "5ha",
+          "symbol": "5ha",
+          "amount": "19.0 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "9-BBN (0.5 M solution in hexane)",
+          "symbol": null,
+          "amount": "0.26 mmol, 0.51 mL, 3.0 equiv."
+        },
+        {
+          "name": "EtOH",
+          "symbol": null,
+          "amount": "0.5 mL"
+        },
+        {
+          "name": "2 M NaOH",
+          "symbol": null,
+          "amount": "0.5 mL"
+        },
+        {
+          "name": "30% H2O2",
+          "symbol": null,
+          "amount": "0.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry degassed THF",
+        "solvent_amount": "1 mL",
+        "temperature": "cooled to -78 °C, stirred 15 min at 0 °C, warmed to room temperature and stirred overnight; cooled to -10 °C for oxidation, then warmed to room temperature and stirred 3 h",
+        "time": "15 min at 0 °C then overnight; 3 h after oxidation",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": "syn 96:4; anti 89:11",
+        "dr": null
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "NonGP-Entry14",
+      "source_pages": [
+        56
+      ],
+      "reaction_type": "hydroboration-oxidation",
+      "substrates": [
+        {
+          "name": "N-(3-(Cyclohexyloxy)-6-methylhept-1-en-4-yl)aniline",
+          "symbol": "3ja",
+          "amount": "28.3 mg, 98 µmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "5ja",
+          "symbol": "5ja",
+          "amount": "20.2 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "9-BBN (0.5 M solution in hexane)",
+          "symbol": null,
+          "amount": "0.29 mmol, 0.59 mL, 3.0 equiv."
+        },
+        {
+          "name": "EtOH",
+          "symbol": null,
+          "amount": "0.5 mL"
+        },
+        {
+          "name": "2 M NaOH",
+          "symbol": null,
+          "amount": "0.5 mL"
+        },
+        {
+          "name": "30% H2O2",
+          "symbol": null,
+          "amount": "0.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry degassed THF",
+        "solvent_amount": "1 mL",
+        "temperature": "cooled to -78 °C, stirred 15 min at 0 °C, warmed to room temperature and stirred overnight; cooled to -10 °C for oxidation, then warmed to room temperature and stirred 3 h",
+        "time": "15 min at 0 °C then overnight; 3 h after oxidation",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": "syn 97:3; anti 90:10",
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "NonGP-Entry15",
+      "source_pages": [
+        56,
+        57
+      ],
+      "reaction_type": "rhodium-catalyzed carbonylation (CO/H2) followed by Pd/C hydrogenation",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "N-(3-(Cyclohexyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3aa",
+          "amount": "86.5 mg, 0.258 mmol",
+          "step": 1,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "5d",
+          "symbol": "5d",
+          "amount": "54.4 mg",
+          "step": 2
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Rh(acac)(CO)2]",
+          "symbol": null,
+          "amount": "1.3 mg, 5.2 µmol, 2 mol%",
+          "step": 1
+        },
+        {
+          "name": "5% Pd/C",
+          "symbol": null,
+          "amount": "52 mg, 10 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "BIPHEPHOS",
+          "step": 1
+        }
+      ],
+      "other_components": [
+        {
+          "name": "CO/H2 (1:1)",
+          "symbol": null,
+          "amount": "6 atm",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF (2 mL added to vial + 2 mL solution of 3aa in THF)"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/EtOAc (1:1, 6.0 mL)"
+          }
+        ],
+        "solvent_amount": [],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "65 °C"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight"
+          },
+          {
+            "step": 2,
+            "value": "until complete (monitored by TLC)"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "CO/H2 (1:1), 6 atm"
+          },
+          {
+            "step": 2,
+            "value": "hydrogen atmosphere"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": null,
+        "er": "96:4",
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry38",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        58,
+        59
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "1a",
+          "symbol": "1a",
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "6a",
+          "symbol": "6a",
+          "amount": "3.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        },
+        {
+          "name": "ethyl acrylate",
+          "symbol": null,
+          "amount": "33 µL, 0.3 mmol, 3 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "12%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry39",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        59,
+        60
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "L-1a",
+          "symbol": "L-1a",
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Cyclohexyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3aa",
+          "amount": "22.5 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": "96:4",
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry40",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        59,
+        60
+      ],
+      "reaction_type": "photoredox palladium-catalyzed enantioselective decarboxylative hydroaminoalkylation of alkoxyallenes",
+      "substrates": [
+        {
+          "name": "D-1a",
+          "symbol": "D-1a",
+          "amount": "0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": "0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(Cyclohexyloxy)-1-phenylpent-4-en-2-yl)aniline",
+          "symbol": "3aa",
+          "amount": "22.2 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "amount": "2.3 mg, 0.0025 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "amount": "0.9 mg, 0.001 mmol, 1 mol%"
+        },
+        {
+          "name": "[PC2]",
+          "amount": "1.1 mg, 0.001 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "p-CF3-C6H4CO2H",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 0.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "16-24 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue LED strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": null,
+        "er": "96:4",
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureD-Entry14",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        60,
+        61
+      ],
+      "reaction_type": "photoredox palladium-catalyzed decarboxylative hydroaminoalkylation of allenes (linear- and stereoselective)",
+      "substrates": [
+        {
+          "name": "1a",
+          "symbol": "1a",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "cyclohexyl allene",
+          "symbol": null,
+          "amount": "0.24 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Dimer",
+          "symbol": "6c",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[Pd2(dba)3]",
+          "amount": "4.6 mg, 0.005 mmol, 2.5 mol%"
+        },
+        {
+          "name": "[PC1]",
+          "amount": "1.8 mg, 0.002 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "rac-BINAP"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature",
+        "time": "16 hrs",
+        "atmosphere": "argon",
+        "light_source": "blue led strips",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "17%",
+        "ee": null,
+        "er": null,
+        "dr": "1.5:1"
+      },
+      "_original_id": "reaction-4"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/dual-palladium-photoredox-catalyzed-enantioselec_2ee57f5d.json",
+    "input_sha256": "9934583d8c1fc9f96db7205d35cfd3efdcb75a40ff97eb7a790289f9cd4466b1"
+  }
+}

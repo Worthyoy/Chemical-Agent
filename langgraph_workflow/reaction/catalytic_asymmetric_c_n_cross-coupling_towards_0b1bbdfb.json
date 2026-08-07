@@ -1,0 +1,4605 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic asymmetric C–N cross-coupling towards boron-stereogenic 3-aminoBODIPYs.pdf",
+  "paper_key": "catalytic asymmetric c–n cross-coupling towards boron-stereogenic 3-aminobodipys",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic asymmetric C–N cross-coupling towards boron-stereogenic 3-aminoBODIPYs.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic asymmetric C–N cross-coupling towards boron-stereogenic 3-aminoBODIPYs.pdf",
+    "source_mtime_ns": 1784206621000000000,
+    "source_size": 19224504,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "catalytic asymmetric c–n cross-coupling towards boron-stereogenic 3-aminobodipys",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic asymmetric C–N cross-coupling towards boron-stereogenic 3-aminoBODIPYs.pdf"
+  },
+  "extracted_at": "2026-07-17T00:51:10.900682",
+  "total_reactions": 62,
+  "filtered_reactions": 62,
+  "filter_stats": {
+    "input_reactions": 62,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 62
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        4,
+        5
+      ],
+      "reaction_type": "Electrophilic activation of potassium trifluoro(bromomethyl)borate with trimethylsilyl trifluoromethanesulfonate followed by aryl transfer to S2 to form a diazaborinine",
+      "substrates": [
+        {
+          "name": "potassium trifluoro(bromomethyl)borate",
+          "symbol": null,
+          "amount": "41.6 mmol, 8.0 g"
+        },
+        {
+          "name": "S2",
+          "symbol": "S2",
+          "amount": "10.4 mmol, 3.0 g"
+        }
+      ],
+      "products": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "581.0 mg",
+          "registry_name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "83.2 mmol, 16.5 mL"
+        },
+        {
+          "name": "N,N-diisopropylethylamine",
+          "symbol": null,
+          "amount": "31.2 mmol, 5.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeCN then DCM",
+        "solvent_amount": "80 mL then 320 mL",
+        "temperature": "room temperature",
+        "time": "20 min then 10 min then 3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn_1a"
+    },
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Aryl transfer (arylation) to a boron-containing substrate using potassium aryltrifluoroborate (PhBF3K) activated by trimethylsilyl trifluoromethanesulfonate (TMSOTf) to form diazaborinine derivatives",
+      "substrates": [
+        {
+          "name": "potassium mesityltrifluoroborate",
+          "symbol": null,
+          "amount": "1.2 mmol",
+          "original_name": "S3-S6",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,7-Dichloro-10-mesityl-5-phenyl-5-fluoro-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+            "product_index": 0,
+            "reason": "Product 1b has a 10-mesityl substituent — one-to-one mapping identifies the aryl-BF3K as mesityl trifluoroborate (potassium mesityltrifluoroborate)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3,7-Dichloro-10-mesityl-5-phenyl-5-fluoro-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1b",
+          "amount": "356.7 mg",
+          "registry_name": "3,7-Dichloro-5-fluoro-10-mesityl-5-phenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "PhBF3K",
+          "symbol": null,
+          "amount": "4.8 mmol"
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "9.6 mmol, 1.92 mL"
+        },
+        {
+          "name": "N, N-diisopropylethylamine",
+          "symbol": null,
+          "amount": "3.6 mmol, 0.64 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeCN then DCM",
+        "solvent_amount": "10 mL then 40 mL",
+        "temperature": "room temperature",
+        "time": "20 min then 10 min then 3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn_1b"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Aryl transfer (arylation) to a boron-containing substrate using potassium aryltrifluoroborate (PhBF3K) activated by trimethylsilyl trifluoromethanesulfonate (TMSOTf) to form diazaborinine derivatives",
+      "substrates": [
+        {
+          "name": "potassium 4-chlorophenyltrifluoroborate",
+          "symbol": null,
+          "amount": "1.2 mmol",
+          "original_name": "S3-S6",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,7-Dichloro-10-(4-chlorophenyl)-5-phenyl-5-fluoro-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+            "product_index": 0,
+            "reason": "Product 1c contains a 10-(4-chlorophenyl) group indicating the aryl-BF3K is the 4-chlorophenyl trifluoroborate."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3,7-Dichloro-10-(4-chlorophenyl)-5-phenyl-5-fluoro-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1c",
+          "amount": "371.1 mg",
+          "registry_name": "3,7-Dichloro-10-(4-chlorophenyl)-5-fluoro-5-phenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "PhBF3K",
+          "symbol": null,
+          "amount": "4.8 mmol"
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "9.6 mmol, 1.92 mL"
+        },
+        {
+          "name": "N, N-diisopropylethylamine",
+          "symbol": null,
+          "amount": "3.6 mmol, 0.64 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeCN then DCM",
+        "solvent_amount": "10 mL then 40 mL",
+        "temperature": "room temperature",
+        "time": "20 min then 10 min then 3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn_1c"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Aryl transfer (arylation) to a boron-containing substrate using potassium aryltrifluoroborate (PhBF3K) activated by trimethylsilyl trifluoromethanesulfonate (TMSOTf) to form diazaborinine derivatives",
+      "substrates": [
+        {
+          "name": "potassium 3-(trifluoromethyl)phenyltrifluoroborate",
+          "symbol": null,
+          "amount": "1.2 mmol",
+          "original_name": "S3-S6",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,7-Dichloro-5-fluoro-5-phenyl-10-(3-(trifluoromethyl)phenyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+            "product_index": 0,
+            "reason": "Product 1d bears a 10-(3-(trifluoromethyl)phenyl) substituent, mapping uniquely to the corresponding aryl-BF3K."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5-phenyl-10-(3-(trifluoromethyl)phenyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1d",
+          "amount": "333.4 mg",
+          "registry_name": "3,7-Dichloro-5-fluoro-5-phenyl-10-(3-(trifluoromethyl)phenyl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "PhBF3K",
+          "symbol": null,
+          "amount": "4.8 mmol"
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "9.6 mmol, 1.92 mL"
+        },
+        {
+          "name": "N, N-diisopropylethylamine",
+          "symbol": null,
+          "amount": "3.6 mmol, 0.64 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeCN then DCM",
+        "solvent_amount": "10 mL then 40 mL",
+        "temperature": "room temperature",
+        "time": "20 min then 10 min then 3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn_1d"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "Aryl transfer (arylation) to a boron-containing substrate using potassium aryltrifluoroborate (PhBF3K) activated by trimethylsilyl trifluoromethanesulfonate (TMSOTf) to form diazaborinine derivatives",
+      "substrates": [
+        {
+          "name": "potassium thiophen-3-yltrifluoroborate",
+          "symbol": null,
+          "amount": "1.2 mmol",
+          "original_name": "S3-S6",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,7-Dichloro-5-fluoro-5-phenyl-10-(thiophen-3-yl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+            "product_index": 0,
+            "reason": "Product 1e contains a 10-(thiophen-3-yl) fragment, which maps one-to-one to the corresponding thiophen-3-yl BF3K reagent."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5-phenyl-10-(thiophen-3-yl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1e",
+          "amount": "259.9 mg",
+          "registry_name": "3,7-Dichloro-5-fluoro-5-phenyl-10-(thiophen-3-yl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "PhBF3K",
+          "symbol": null,
+          "amount": "4.8 mmol"
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "9.6 mmol, 1.92 mL"
+        },
+        {
+          "name": "N, N-diisopropylethylamine",
+          "symbol": null,
+          "amount": "3.6 mmol, 0.64 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeCN then DCM",
+        "solvent_amount": "10 mL then 40 mL",
+        "temperature": "room temperature",
+        "time": "20 min then 10 min then 3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn_1e"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "Acid-catalyzed condensation of pyrrole and benzaldehyde to give phenyldipyrromethane (S1)",
+      "substrates": [
+        {
+          "name": "pyrrole",
+          "symbol": null,
+          "amount": "60 mmol, 4.16 mL"
+        },
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "20 mmol, 2.0 mL"
+        }
+      ],
+      "products": [
+        {
+          "name": "phenyldipyrromethane",
+          "symbol": "S1",
+          "amount": null
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "aqueous HCl (0.18 M)",
+          "symbol": null,
+          "amount": "100 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "aqueous HCl (0.18 M)",
+        "solvent_amount": "100 mL",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "4 h"
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn_S1"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "Two-step sequence: chlorination of S1 with NCS at -78 °C (then warming) followed by DDQ oxidation to give S2",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "S1",
+          "symbol": "S1",
+          "amount": "20 mmol, 4.45 g",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "dichloro-dipyrromethane",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "S2",
+          "symbol": "S2",
+          "amount": null,
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NCS",
+          "symbol": null,
+          "amount": "40 mmol, 5.34 g",
+          "step": 1
+        },
+        {
+          "name": "DDQ",
+          "symbol": null,
+          "amount": "22 mmol, 4.56 g",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry THF"
+          },
+          {
+            "step": 2,
+            "value": "dry DCM"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "120 mL"
+          },
+          {
+            "step": 2,
+            "value": "250 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "3 h"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "45%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn_S2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Formation of boron-containing diazaborinine via electrophilic activation of aryltrifluoroborate and coupling with S2",
+      "substrates": [
+        {
+          "name": "potassium naphthalen-2-yltrifluoroborate",
+          "symbol": null,
+          "amount": "4.8 mmol",
+          "original_name": "ArBF3K",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,7-Dichloro-5-fluoro-5-(naphthalen-2-yl)-10-phenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+            "product_index": 0,
+            "reason": "Product 1f contains a (naphthalen-2-yl) substituent at the position introduced from ArBF3K, identifying the ArBF3K as the 2-naphthyl trifluoroborate."
+          }
+        },
+        {
+          "name": "S2",
+          "symbol": null,
+          "amount": "1.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5-(naphthalen-2-yl)-10-phenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1f",
+          "amount": "411.3 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "9.6 mmol, 1.92 mL"
+        },
+        {
+          "name": "N, N-diisopropylethylamine",
+          "symbol": null,
+          "amount": "3.6 mmol, 0.64 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeCN (ArBF3K solution, 10 mL) then DCM (S2/DIPEA mixture, 40 mL)",
+        "solvent_amount": "10 mL then 40 mL",
+        "temperature": "room temperature",
+        "time": "20 min then 10 min then 3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Formation of boron-containing diazaborinine via electrophilic activation of aryltrifluoroborate and coupling with S2",
+      "substrates": [
+        {
+          "name": "potassium 4-fluorophenyltrifluoroborate",
+          "symbol": null,
+          "amount": "4.8 mmol",
+          "original_name": "ArBF3K",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,7-Dichloro-5-fluoro-5-(4-fluorophenyl)-10-phenyl-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+            "product_index": 0,
+            "reason": "Product 1g shows a 5-(4-fluorophenyl) substituent, matching an ArBF3K reagent that is 4-fluorophenyltrifluoroborate."
+          }
+        },
+        {
+          "name": "S2",
+          "symbol": null,
+          "amount": "1.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5-(4-fluorophenyl)-10-phenyl-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1g",
+          "amount": "312.3 mg",
+          "registry_name": "3,7-Dichloro-5-fluoro-5-(4-fluorophenyl)-10-phenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "9.6 mmol, 1.92 mL"
+        },
+        {
+          "name": "N, N-diisopropylethylamine",
+          "symbol": null,
+          "amount": "3.6 mmol, 0.64 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeCN (ArBF3K solution, 10 mL) then DCM (S2/DIPEA mixture, 40 mL)",
+        "solvent_amount": "10 mL then 40 mL",
+        "temperature": "room temperature",
+        "time": "20 min then 10 min then 3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        8,
+        9
+      ],
+      "reaction_type": "Formation of boron-containing diazaborinine via electrophilic activation of aryltrifluoroborate and coupling with S2",
+      "substrates": [
+        {
+          "name": "potassium 4-cyanophenyltrifluoroborate",
+          "symbol": null,
+          "amount": "4.8 mmol",
+          "original_name": "ArBF3K",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "4-(3,7-Dichloro-5-fluoro-10-phenyl-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-5-yl)benzonitrile",
+            "product_index": 0,
+            "reason": "Product 1h incorporates the diazaborinine onto a para-benzonitrile ring (4-bromonitrile/4-cyanophenyl motif), indicating ArBF3K is the 4-cyanophenyl trifluoroborate."
+          }
+        },
+        {
+          "name": "S2",
+          "symbol": null,
+          "amount": "1.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(3,7-Dichloro-5-fluoro-10-phenyl-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-5-yl)benzonitrile",
+          "symbol": "1h",
+          "amount": "282.3 mg",
+          "registry_name": "4-(3,7-Dichloro-5-fluoro-10-phenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-5-yl)benzonitrile",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "9.6 mmol, 1.92 mL"
+        },
+        {
+          "name": "N, N-diisopropylethylamine",
+          "symbol": null,
+          "amount": "3.6 mmol, 0.64 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeCN (ArBF3K solution, 10 mL) then DCM (S2/DIPEA mixture, 40 mL)",
+        "solvent_amount": "10 mL then 40 mL",
+        "temperature": "room temperature",
+        "time": "20 min then 10 min then 3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Formation of boron-containing diazaborinine via electrophilic activation of aryltrifluoroborate and coupling with S2",
+      "substrates": [
+        {
+          "name": "potassium thiophen-3-yltrifluoroborate",
+          "symbol": null,
+          "amount": "4.8 mmol",
+          "original_name": "ArBF3K",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,7-Dichloro-5-fluoro-10-phenyl-5-(thiophen-3-yl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+            "product_index": 0,
+            "reason": "ArBF3K is a generic aryltrifluoroborate; product 1i contains a thiophen-3-yl substituent at the position derived from the Ar group, allowing one-to-one assignment to the corresponding potassium thiophen-3-yltrifluoroborate."
+          }
+        },
+        {
+          "name": "S2",
+          "symbol": null,
+          "amount": "1.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-10-phenyl-5-(thiophen-3-yl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1i",
+          "amount": "144.4 mg",
+          "registry_name": "3,7-Dichloro-5-fluoro-10-phenyl-5-(thiophen-3-yl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "9.6 mmol, 1.92 mL"
+        },
+        {
+          "name": "N, N-diisopropylethylamine",
+          "symbol": null,
+          "amount": "3.6 mmol, 0.64 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeCN (ArBF3K solution, 10 mL) then DCM (S2/DIPEA mixture, 40 mL)",
+        "solvent_amount": "10 mL then 40 mL",
+        "temperature": "room temperature",
+        "time": "20 min then 10 min then 3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        9,
+        10
+      ],
+      "reaction_type": "Methylation of 1a with AlMe3 to give 1j",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "1.0 mmol, 395 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "3,7-Dichloro-5-methyl-5,10-diphenyl-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1j",
+          "amount": "312.9 mg",
+          "registry_name": "3,7-Dichloro-5-methyl-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "AlMe3",
+          "symbol": null,
+          "amount": "2.4 mmol, 1 M in hexane"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "room temperature",
+        "time": "30 min",
+        "atmosphere": "Ar",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Methoxylation of 1a using TMSOTf, MeOH and DIPEA",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "1.0 mmol, 395 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "3,7-Dichloro-5-methoxy-5,10-diphenyl-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1k",
+          "amount": "240.2 mg",
+          "registry_name": "3,7-Dichloro-5-methoxy-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "2.0 mmol, 0.4 mL"
+        },
+        {
+          "name": "MeOH",
+          "symbol": null,
+          "amount": "5.0 mmol"
+        },
+        {
+          "name": "N, N-diisopropylethylamine",
+          "symbol": null,
+          "amount": "5.0 mmol, 0.87 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "14 mL then 14 mL",
+        "temperature": "room temperature",
+        "time": "5 min then 30 min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedureC-Entry1",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-toluidine (4-methylaniline)",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product 3a is N-(p-tolyl), indicating the external 'primary amine' was p-toluidine; mapping is one-to-one to the primary amine starting material."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3a",
+          "amount": "44.2 mg",
+          "registry_name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry2",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "aniline",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-5-fluoro-N,5,10-triphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product 3b is N-phenyl, so the 'primary amine' used is aniline; direct one-to-one correspondence."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-N,5,10-triphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3b",
+          "amount": "43.8 mg",
+          "registry_name": "7-Chloro-5-fluoro-N,5,10-triphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry3",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        13,
+        14
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-methoxyaniline (p-anisidine)",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-5-fluoro-N-(4-methoxyphenyl)-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product 3c is N-(4-methoxyphenyl), indicating the primary amine was 4-methoxyaniline; mapping is direct and unambiguous."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-N-(4-methoxyphenyl)-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3c",
+          "amount": "44.3 mg",
+          "registry_name": "7-Chloro-5-fluoro-N-(4-methoxyphenyl)-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry4",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "N4,N4-diphenylbenzene-1,4-diamine",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N1-(7-Chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)-N4,N4-diphenylbenzene-1,4-diamine",
+            "product_index": 0,
+            "reason": "Product 3d names the N-substituent as N4,N4-diphenylbenzene-1,4-diamine, which identifies the primary-amine starting material unambiguously."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "N1-(7-Chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)-N4,N4-diphenylbenzene-1,4-diamine",
+          "symbol": "3d",
+          "amount": "58.7 mg",
+          "registry_name": "N1-(7-Chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)-N4,N4-diphenylbenzene-1,4-diamine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry5",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-(trifluoromethyl)aniline",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(4-(trifluoromethyl)phenyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product 3e is N-(4-(trifluoromethyl)phenyl), indicating the primary amine was 4-(trifluoromethyl)aniline; one-to-one mapping is clear."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(4-(trifluoromethyl)phenyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3e",
+          "amount": "49.3 mg",
+          "registry_name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(4-(trifluoromethyl)phenyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry6",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-bromoaniline",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-(4-Bromophenyl)-7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product 3f is N-(4-bromophenyl), identifying the primary amine as 4-bromoaniline with direct correspondence."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(4-Bromophenyl)-7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3f",
+          "amount": "43.4 mg",
+          "registry_name": "N-(4-Bromophenyl)-7-chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry7",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "ethyl 4-aminobenzoate (ethyl para-aminobenzoate)",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Ethyl 4-((7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)benzoate",
+            "product_index": 0,
+            "reason": "Product 3g is an ethyl 4-((... )amino)benzoate, indicating the external primary amine was ethyl 4-aminobenzoate; mapping is one-to-one."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 4-((7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)benzoate",
+          "symbol": "3g",
+          "amount": "48.7 mg",
+          "registry_name": "Ethyl 4-((7-chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry8",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        16,
+        17
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynylaniline",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-N-(4-ethynylphenyl)-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product N-substituent is N-(4-ethynylphenyl) — maps one-to-one to the starting primary amine 4-ethynylaniline."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-N-(4-ethynylphenyl)-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3h",
+          "amount": "38.5 mg",
+          "registry_name": "7-Chloro-N-(4-ethynylphenyl)-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry9",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-aminobenzyl alcohol",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(4-((7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)phenyl)methanol",
+            "product_index": 0,
+            "reason": "Product is (4-((...)-amino)phenyl)methanol — the para-CH2OH-substituted aniline (4-aminobenzyl alcohol) is the starting primary amine."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(4-((7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)phenyl)methanol",
+          "symbol": "3i",
+          "amount": "34.2 mg",
+          "registry_name": "(4-((7-Chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)phenyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureC-Entry10",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-methoxyaniline",
+          "symbol": null,
+          "amount": "1.0 equiv to 2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-5-fluoro-N-(2-methoxyphenyl)-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product N-(2-methoxyphenyl) indicates the starting primary amine was 2-methoxyaniline (o-anisidine)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-N-(2-methoxyphenyl)-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3j",
+          "amount": "44.8 mg",
+          "registry_name": "7-Chloro-5-fluoro-N-(2-methoxyphenyl)-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "0.5 mL then 0.5 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry11",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        18,
+        19
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-aminobenzonitrile",
+          "symbol": null,
+          "amount": "1.0 equiv to 2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-((7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)benzonitrile",
+            "product_index": 0,
+            "reason": "Product is 2-((...)-amino)benzonitrile — maps directly to the primary amine 2-aminobenzonitrile."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)benzonitrile",
+          "symbol": "3k",
+          "amount": "44.8 mg",
+          "registry_name": "2-((7-Chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)benzonitrile",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "0.5 mL then 0.5 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry12",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3-methylaniline (m-toluidine)",
+          "symbol": null,
+          "amount": "1.0 equiv to 2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(m-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product N-(m-tolyl) indicates the starting primary amine was meta-toluidine (3-methylaniline)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(m-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3l",
+          "amount": "42.8 mg",
+          "registry_name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(m-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "0.5 mL then 0.5 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry13",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3-bromoaniline",
+          "symbol": null,
+          "amount": "1.0 equiv to 2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-(3-Bromophenyl)-7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product N-(3-bromophenyl) maps directly to the starting primary amine 3-bromoaniline."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-Bromophenyl)-7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3m",
+          "amount": "47.2 mg",
+          "registry_name": "N-(3-Bromophenyl)-7-chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "0.5 mL then 0.5 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry14",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2,3-dichloroaniline",
+          "symbol": null,
+          "amount": "1.0 equiv to 2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-N-(2,3-dichlorophenyl)-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product N-(2,3-dichlorophenyl) uniquely identifies the starting primary amine 2,3-dichloroaniline."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-N-(2,3-dichlorophenyl)-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3n",
+          "amount": "49.4 mg",
+          "registry_name": "7-Chloro-N-(2,3-dichlorophenyl)-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "0.5 mL then 0.5 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureC-Entry15",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-bromo-6-aminobenzonitrile",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-Bromo-6-((7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)benzonitrile",
+            "product_index": 0,
+            "reason": "Product is 2-bromo-6-((...)-amino)benzonitrile — corresponds to the primary amine 2-bromo-6-aminobenzonitrile (positions preserved)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Bromo-6-((7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)benzonitrile",
+          "symbol": "3o",
+          "amount": "51.7 mg",
+          "registry_name": "2-Bromo-6-((7-chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)benzonitrile",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry16",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-bromo-5-methoxyaniline",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-(2-Bromo-5-methoxyphenyl)-7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product N-(2-bromo-5-methoxyphenyl) maps one-to-one to starting primary amine 2-bromo-5-methoxyaniline."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(2-Bromo-5-methoxyphenyl)-7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3p",
+          "amount": "50.4 mg",
+          "registry_name": "N-(2-Bromo-5-methoxyphenyl)-7-chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry17",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-aminonaphthalene (2-naphthylamine)",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-5-fluoro-N-(naphthalen-2-yl)-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product N-(naphthalen-2-yl) indicates the starting primary amine was 2-aminonaphthalene (2-naphthylamine)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-N-(naphthalen-2-yl)-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3q",
+          "amount": "40.6 mg",
+          "registry_name": "7-Chloro-5-fluoro-N-(naphthalen-2-yl)-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry18",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-aminopyrene",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(pyren-4-yl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product names the N-substituent as 'pyren-4-yl', indicating the starting primary amine was 4-aminopyrene (one-to-one mapping)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(pyren-4-yl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3r",
+          "amount": "52.9 mg",
+          "registry_name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(pyren-4-yl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry19",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-bromo-6-aminobenzonitrile",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-Bromo-6-((7-chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)benzonitrile",
+            "product_index": 0,
+            "reason": "Product is '2-bromo-6-((... )amino)benzonitrile', directly revealing the starting primary amine as 2-bromo-6-aminobenzonitrile."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Bromo-6-((7-chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)amino)benzonitrile",
+          "symbol": "3o",
+          "amount": "19.8 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "40%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry20",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        24,
+        25
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "5-aminobenzo[b]thiophene",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-(Benzo[b]thiophen-5-yl)-7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product uses the fragment 'Benzo[b]thiophen-5-yl' as the N-substituent, mapping unambiguously to 5-aminobenzo[b]thiophene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(Benzo[b]thiophen-5-yl)-7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3t",
+          "amount": "44.2 mg",
+          "registry_name": "N-(Benzo[b]thiophen-5-yl)-7-chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry21",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "5-aminoindole",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-5-fluoro-N-(1H-indol-5-yl)-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product contains 'N-(1H-indol-5-yl)', indicating the reagents included 1H-indol-5-amine (5-aminoindole) as the primary amine."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-N-(1H-indol-5-yl)-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3u",
+          "amount": "43.2 mg",
+          "registry_name": "7-Chloro-5-fluoro-N-(1H-indol-5-yl)-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "83%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry22",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "9-ethyl-9H-carbazol-3-amine",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)-9-ethyl-9H-carbazol-3-amine",
+            "product_index": 0,
+            "reason": "Product is '...-N-(...)-9-ethyl-9H-carbazol-3-amine', directly indicating the primary amine was 9-ethyl-9H-carbazol-3-amine."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)-9-ethyl-9H-carbazol-3-amine",
+          "symbol": "3v",
+          "amount": "44.0 mg",
+          "registry_name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)-9-ethyl-9H-carbazol-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": "79%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry23",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "6-aminoquinoline",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(quinolin-6-yl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product fragment 'quinolin-6-yl' as N-substituent maps one-to-one to 6-aminoquinoline as the starting amine."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(quinolin-6-yl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3w",
+          "amount": "43.2 mg",
+          "registry_name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(quinolin-6-yl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureC-Entry24",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-amino-4,6-dichloropyrimidine",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-Chloro-N-(4,6-dichloropyrimidin-2-yl)-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product shows 'N-(4,6-dichloropyrimidin-2-yl)', indicating the starting nucleophile was 2-amino-4,6-dichloropyrimidine."
+          }
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "7-Chloro-N-(4,6-dichloropyrimidin-2-yl)-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3x",
+          "amount": "43.4 mg",
+          "registry_name": "7-Chloro-N-(4,6-dichloropyrimidin-2-yl)-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry25",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "acetamide",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)acetamide",
+            "product_index": 0,
+            "reason": "Product named 'N-(...)-acetamide' indicates the N‑component was acetamide (ethanamide) used as the starting nucleophile."
+          }
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)acetamide",
+          "symbol": "3y",
+          "amount": "34.7 mg",
+          "registry_name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)acetamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry26",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "propionamide",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)propionamide",
+            "product_index": 0,
+            "reason": "Product 'N-(...)-propionamide' shows the starting nucleophile was propionamide (propanamide), mapping directly."
+          }
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)propionamide",
+          "symbol": "3z",
+          "amount": "36.7 mg",
+          "registry_name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)propionamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry27",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "benzamide",
+          "symbol": null,
+          "amount": "2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)benzamide",
+            "product_index": 0,
+            "reason": "Product 'N-(...)-benzamide' unambiguously identifies the starting nucleophile as benzamide (the amide used)."
+          }
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)benzamide",
+          "symbol": "3aa",
+          "amount": "39.3 mg",
+          "registry_name": "N-(7-Chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)benzamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry28",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "benzyl carbamate (CbzNH2, NHCO2CH2Ph)",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Benzyl (7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl) carbamate",
+            "product_index": 0,
+            "reason": "Product is a benzyl carbamate on the introduced N (Cbz carbamate), so the supplied 'primary amine' was benzyl carbamate (CbzNH2)."
+          }
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "Benzyl (7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl) carbamate",
+          "symbol": "3ac",
+          "amount": "46.9 mg",
+          "registry_name": "Benzyl (7-chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl) carbamate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3ac_GP_C_p30"
+    },
+    {
+      "id": "GeneralProcedureC-Entry29",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "39.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "dibenzothiophene NH-sulfoximine",
+          "symbol": null,
+          "amount": "1.0 equiv"
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "5-((7-Chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)imino)-5H-5λ4-dibenzo[b,d]thiophene 5-oxide",
+          "symbol": "3ad",
+          "amount": "52.2 mg",
+          "registry_name": "5-((7-Chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)imino)-5H-54-dibenzo[b,d]thiophene 5-oxide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3ad_GP_C_p31"
+    },
+    {
+      "id": "GeneralProcedureC-Entry30",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "Palladium-catalyzed C–N bond formation (amination) of substrate 1a with a primary amine",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "79.0 mg, 0.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-phenylenediamine",
+          "symbol": null,
+          "amount": "10.8 mg, 0.1 mmol"
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "N1,N4-bis(7-chloro-5-fluoro-5,10-diphenyl-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)benzene-1,4-diamine",
+          "symbol": "3ae",
+          "amount": null,
+          "registry_name": "N1,N4-bis(7-chloro-5-fluoro-5,10-diphenyl-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-yl)benzene-1,4-diamine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3ae_GP_C_p31"
+    },
+    {
+      "id": "GeneralProcedureD-Entry1",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "Palladium-catalyzed cross-coupling",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-10-mesityl-5-phenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1b",
+          "amount": "43.7 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-toluidine",
+          "symbol": null,
+          "amount": "10.7 mg, 0.1 mmol"
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-10-mesityl-5-phenyl-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "4a",
+          "amount": "45.7 mg",
+          "registry_name": "7-Chloro-5-fluoro-10-mesityl-5-phenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4a_GP_D_p32"
+    },
+    {
+      "id": "GeneralProcedureD-Entry2",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "Palladium-catalyzed cross-coupling",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-10-(4-chlorophenyl)-5-fluoro-5-phenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1c",
+          "amount": "42.9 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-toluidine",
+          "symbol": null,
+          "amount": "10.7 mg, 0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-10-(4-chlorophenyl)-5-fluoro-5-phenyl-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "4b",
+          "amount": "47.5 mg",
+          "registry_name": "7-Chloro-10-(4-chlorophenyl)-5-fluoro-5-phenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureD-Entry3",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "Palladium-catalyzed cross-coupling",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5-phenyl-10-(3-(trifluoromethyl)phenyl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1d",
+          "amount": "46.3 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-toluidine",
+          "symbol": null,
+          "amount": "10.7 mg, 0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-5-phenyl-10-(3-(trifluoromethyl)phenyl)-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "4c",
+          "amount": "45.4 mg",
+          "registry_name": "7-Chloro-5-fluoro-5-phenyl-N-(p-tolyl)-10-(3-(trifluoromethyl)phenyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureD-Entry4",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        34,
+        35
+      ],
+      "reaction_type": "Palladium-catalyzed cross-coupling",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5-phenyl-10-(thiophen-3-yl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1e",
+          "amount": "40.1 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-toluidine",
+          "symbol": null,
+          "amount": "10.7 mg, 0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-5-phenyl-10-(thiophen-3-yl)-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "4d",
+          "amount": "43.4 mg",
+          "registry_name": "7-Chloro-5-fluoro-5-phenyl-10-(thiophen-3-yl)-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureD-Entry5",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "Palladium-catalyzed cross-coupling",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5-(naphthalen-2-yl)-10-phenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1f",
+          "amount": "44.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-toluidine",
+          "symbol": null,
+          "amount": "10.7 mg, 0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-5-(naphthalen-2-yl)-10-phenyl-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "4e",
+          "amount": "50.5 mg",
+          "registry_name": "7-Chloro-5-fluoro-5-(naphthalen-2-yl)-10-phenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureD-Entry6",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "Palladium-catalyzed cross-coupling",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5-(4-fluorophenyl)-10-phenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1g",
+          "amount": "41.3 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-toluidine",
+          "symbol": null,
+          "amount": "10.7 mg, 0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "f][1,3,2]diazaborinin-3-amine",
+          "symbol": "4f",
+          "amount": "45.0 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "Chunk13-GPD-4f-36"
+    },
+    {
+      "id": "GeneralProcedureD-Entry7",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        36,
+        37
+      ],
+      "reaction_type": "Palladium-catalyzed cross-coupling",
+      "substrates": [
+        {
+          "name": "4-(3-Chloro-5-fluoro-10-phenyl-7-(p-tolylamino)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-5-yl)benzonitrile",
+          "symbol": "4g",
+          "amount": "44.2 mg",
+          "registry_name": "4-(3-Chloro-5-fluoro-10-phenyl-7-(p-tolylamino)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-5-yl)benzonitrile",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "p-toluidine",
+          "symbol": null,
+          "amount": "10.7 mg, 0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(3-Chloro-5-fluoro-10-phenyl-7-(p-tolylamino)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-5-yl)benzonitrile",
+          "symbol": "4g",
+          "amount": "44.2 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "79%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "Chunk13-GPD-4g-36-37"
+    },
+    {
+      "id": "GeneralProcedureD-Entry8",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "Palladium-catalyzed cross-coupling",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-10-phenyl-5-(thiophen-3-yl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1i",
+          "amount": "40.1 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-toluidine",
+          "symbol": null,
+          "amount": "10.7 mg, 0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-10-phenyl-5-(thiophen-3-yl)-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "4h",
+          "amount": "40.6 mg",
+          "registry_name": "7-Chloro-5-fluoro-10-phenyl-5-(thiophen-3-yl)-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "Chunk13-GPD-4h-37"
+    },
+    {
+      "id": "GeneralProcedureD-Entry9",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "Palladium-catalyzed cross-coupling",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-methyl-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1j",
+          "amount": "39.1 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-toluidine",
+          "symbol": null,
+          "amount": "10.7 mg, 0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-methyl-5,10-diphenyl-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "4i",
+          "amount": "42.9 mg",
+          "registry_name": "7-Chloro-5-methyl-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "Chunk13-GPD-4i-38"
+    },
+    {
+      "id": "GeneralProcedureD-Entry10",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "Palladium-catalyzed cross-coupling",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-methoxy-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1k",
+          "amount": "40.7 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-toluidine",
+          "symbol": null,
+          "amount": "10.7 mg, 0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-methoxy-5,10-diphenyl-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "4j",
+          "amount": "39.6 mg",
+          "registry_name": "7-Chloro-5-methoxy-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.004 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "80%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "Chunk13-GPD-4j-38"
+    },
+    {
+      "id": "GeneralProcedureD-Entry11",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "Palladium-catalyzed cross-coupling",
+      "substrates": [
+        {
+          "name": "3,7-Dichloro-5-fluoro-5,10-diphenyl-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine",
+          "symbol": "1a",
+          "amount": "3 mmol, 321 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": "1.194 g, 3 mmol",
+          "resolved_smiles": "Cc1ccc(N)cc1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 1,
+            "image_name": "Catalytic asymmetric C–N cross-coupling towards boron-stereogenic 3-aminoBODIPYs_image_5_1.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3a",
+          "amount": "1.26 g",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "34.0 mg, 0.06 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L9"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "978 mg, 6 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL then 13 mL",
+        "temperature": "60 °C",
+        "time": "12 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureE-Entry1",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        41,
+        42
+      ],
+      "reaction_type": "Pd-catalyzed C–N cross-coupling (Buchwald–Hartwig amination)",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3a",
+          "amount": "46.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-methoxyaniline (p-anisidine)",
+          "symbol": null,
+          "amount": "2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-Fluoro-N3-(4-methoxyphenyl)-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+            "product_index": 0,
+            "reason": "Product bears an N3-(4-methoxyphenyl) substituent; maps one-to-one to the starting primary amine 4-methoxyaniline."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Fluoro-N3-(4-methoxyphenyl)-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "symbol": "5a",
+          "amount": "42.5 mg",
+          "registry_name": "5-Fluoro-N3-(4-methoxyphenyl)-5,10-diphenyl-N7-(p-tolyl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.01 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Xphos"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureE-Entry2",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "Pd-catalyzed C–N cross-coupling (Buchwald–Hartwig amination)",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3a",
+          "amount": "46.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-aminonaphthalene (2-naphthylamine)",
+          "symbol": null,
+          "amount": "2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-Fluoro-N3-(naphthalen-2-yl)-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+            "product_index": 0,
+            "reason": "Product contains N3-(naphthalen-2-yl) substituent, corresponding directly to 2-aminonaphthalene as the primary amine."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Fluoro-N3-(naphthalen-2-yl)-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "symbol": "5b",
+          "amount": "31.5 mg",
+          "registry_name": "5-Fluoro-N3-(naphthalen-2-yl)-5,10-diphenyl-N7-(p-tolyl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.01 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Xphos"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureE-Entry3",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        42,
+        43
+      ],
+      "reaction_type": "Pd-catalyzed C–N cross-coupling (Buchwald–Hartwig amination)",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3a",
+          "amount": "46.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "5-aminobenzo[b]thiophene",
+          "symbol": null,
+          "amount": "2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N3-(Benzo[b]thiophen-5-yl)-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+            "product_index": 0,
+            "reason": "Product shows N3-(Benzo[b]thiophen-5-yl), mapping one-to-one to the primary amine 5-aminobenzo[b]thiophene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "N3-(Benzo[b]thiophen-5-yl)-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "symbol": "5c",
+          "amount": "48.0 mg",
+          "registry_name": "N3-(Benzo[b]thiophen-5-yl)-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.01 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Xphos"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureE-Entry4",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "Pd-catalyzed C–N cross-coupling (Buchwald–Hartwig amination)",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3a",
+          "amount": "46.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-amino-4,6-dimethoxypyrimidine",
+          "symbol": null,
+          "amount": "2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N3-(4,6-Dimethoxypyrimidin-2-yl)-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+            "product_index": 0,
+            "reason": "Product contains N3-(4,6-dimethoxypyrimidin-2-yl) substituent, corresponding to the primary amine 2-amino-4,6-dimethoxypyrimidine."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "N3-(4,6-Dimethoxypyrimidin-2-yl)-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "symbol": "5d",
+          "amount": "41.5 mg",
+          "registry_name": "N3-(4,6-Dimethoxypyrimidin-2-yl)-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.01 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Xphos"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureE-Entry5",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "Pd-catalyzed C–N cross-coupling (Buchwald–Hartwig amination)",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3a",
+          "amount": "46.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "benzylamine",
+          "symbol": null,
+          "amount": "2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N3-Benzyl-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+            "product_index": 0,
+            "reason": "Product shows an N3-Benzyl substituent; the corresponding primary amine is benzylamine."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "N3-Benzyl-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "symbol": "5e",
+          "amount": "42.4 mg",
+          "registry_name": "N3-Benzyl-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.01 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Xphos"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn_5e"
+    },
+    {
+      "id": "GeneralProcedureE-Entry6",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "Pd-catalyzed C–N cross-coupling (Buchwald–Hartwig amination)",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3a",
+          "amount": "46.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "cyclohexylamine",
+          "symbol": null,
+          "amount": "2.0 equiv",
+          "original_name": "primary amine",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N3-Cyclohexyl-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+            "product_index": 0,
+            "reason": "Product contains an N3-Cyclohexyl substituent, which maps directly to cyclohexylamine as the starting primary amine."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "N3-Cyclohexyl-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-4λ4,5λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "symbol": "5f",
+          "amount": "27.5 mg",
+          "registry_name": "N3-Cyclohexyl-5-fluoro-5,10-diphenyl-N7-(p-tolyl)-5H-44,54-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinine-3,7-diamine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.01 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Xphos"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous toluene",
+        "solvent_amount": "1.0 mL",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn_5f"
+    },
+    {
+      "id": "GeneralProcedureF-Entry1",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        45,
+        46
+      ],
+      "reaction_type": "Palladium-catalyzed Suzuki–Miyaura cross-coupling of 3a with arylboronic acids",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3a",
+          "amount": "46.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "aryl boronic acid",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-Fluoro-7-(4-methoxyphenyl)-5,10-diphenyl-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product (5g) contains a 4-methoxyphenyl substituent at the coupled position, which maps one-to-one to the aryl boronic acid substrate in the GP; infers 4-methoxyphenylboronic acid as the starting material."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Fluoro-7-(4-methoxyphenyl)-5,10-diphenyl-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "5g",
+          "amount": "39.2 mg",
+          "registry_name": "5-Fluoro-7-(4-methoxyphenyl)-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.01 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Sphos"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous TBME",
+        "solvent_amount": "1.0 mL",
+        "temperature": "80 °C",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn_5g"
+    },
+    {
+      "id": "GeneralProcedureF-Entry2",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "Palladium-catalyzed Suzuki–Miyaura cross-coupling of 3a with arylboronic acids",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-fluoro-5,10-diphenyl-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "3a",
+          "amount": "46.5 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "pyren-1-ylboronic acid",
+          "symbol": null,
+          "amount": "1.0 equiv",
+          "original_name": "aryl boronic acid",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-Fluoro-5,10-diphenyl-7-(pyren-1-yl)-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+            "product_index": 0,
+            "reason": "Product (5h) displays a pyren-1-yl substituent at the coupling site, directly indicating the aryl boronic acid was the pyren-1-yl boronic acid used as starting material."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Fluoro-5,10-diphenyl-7-(pyren-1-yl)-N-(p-tolyl)-5H-5λ4,6λ4-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "symbol": "5h",
+          "amount": "36.6 mg",
+          "registry_name": "5-Fluoro-5,10-diphenyl-7-(pyren-1-yl)-N-(p-tolyl)-5H-54,64-dipyrrolo[1,2-c:2',1'-f][1,3,2]diazaborinin-3-amine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "2.2 mg, 0.01 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Sphos"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous TBME",
+        "solvent_amount": "1.0 mL",
+        "temperature": "80 °C",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn_5h"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/catalytic_asymmetric_c_n_cross-coupling_towards_0b1bbdfb.json",
+    "input_sha256": "b215bedf4858fcdff4d820a19ef64ec047a6ab6b5bde918e15b81d9537fd7662"
+  }
+}

@@ -1,0 +1,1258 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/intermolecular-buchwald-hartwig-reactions-for-enantioselective-synthesis-of-diverse-atropisomers-rerouting-the-c-n.pdf",
+  "paper_key": "intermolecular-buchwald-hartwig-reactions-for-enantioselective-synthesis-of-diverse-atropisomers-rerouting-the-c-n",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/intermolecular-buchwald-hartwig-reactions-for-enantioselective-synthesis-of-diverse-atropisomers-rerouting-the-c-n.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/intermolecular-buchwald-hartwig-reactions-for-enantioselective-synthesis-of-diverse-atropisomers-rerouting-the-c-n.pdf",
+    "source_mtime_ns": 1784206837000000000,
+    "source_size": 18793283,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "intermolecular-buchwald-hartwig-reactions-for-enantioselective-synthesis-of-diverse-atropisomers-rerouting-the-c-n",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/intermolecular-buchwald-hartwig-reactions-for-enantioselective-synthesis-of-diverse-atropisomers-rerouting-the-c-n.pdf"
+  },
+  "extracted_at": "2026-07-17T07:21:57.357817",
+  "total_reactions": 31,
+  "filtered_reactions": 19,
+  "filter_stats": {
+    "input_reactions": 31,
+    "basic_failed": 12,
+    "target_failed": 0,
+    "retained": 19
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "Suzuki coupling",
+      "substrates": [
+        {
+          "name": "6-bromopyridin-2(1H)-one",
+          "symbol": null,
+          "amount": "10 mmol, 1.0 equiv"
+        },
+        {
+          "name": "boric acid",
+          "symbol": null,
+          "amount": "12 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "6-phenylpyridin-2(1H)-one",
+          "symbol": "40a",
+          "amount": "1.26 g",
+          "registry_name": "6-phenylpyridin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.25 mmol, 2.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "20 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF/H2O = 5/1",
+        "solvent_amount": "24 mL",
+        "temperature": "100 °C",
+        "time": "12 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "Procedure A-Entry1",
+      "_gp_source": "Procedure A",
+      "source_pages": [
+        9,
+        10
+      ],
+      "reaction_type": "Pd-catalyzed asymmetric cross-coupling",
+      "substrates": [
+        {
+          "name": "quinolin-2(1H)-one",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv",
+          "registry_name": "quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "sterically hindered aryl bromide",
+          "symbol": "2",
+          "amount": "0.2 mmol, 2.0 equiv",
+          "registry_name": "1-bromo-2-nitronaphthalene",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "symbol": "3",
+          "amount": "22.4 mg",
+          "registry_name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3-CHCl3",
+          "symbol": null,
+          "amount": "4.2 mg, 0.004 mmol, 4.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L8",
+          "symbol": "L8"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "42.4 mg, 0.2 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MTBE",
+        "solvent_amount": "2.0 mL",
+        "temperature": "90 °C",
+        "time": "36 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "ProcedureA_3"
+    },
+    {
+      "id": "Procedure A-Entry2",
+      "_gp_source": "Procedure A",
+      "source_pages": [
+        9,
+        10
+      ],
+      "reaction_type": "Pd-catalyzed asymmetric cross-coupling",
+      "substrates": [
+        {
+          "name": "quinolin-2(1H)-one",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv",
+          "registry_name": "quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "sterically hindered aryl bromide",
+          "symbol": "2",
+          "amount": "0.2 mmol, 2.0 equiv",
+          "registry_name": "1-bromo-2-nitronaphthalene",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-3-methyl-2-(3-methyl-2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "symbol": "4",
+          "amount": "26.1 mg",
+          "registry_name": "(S)-3-methyl-2-(3-methyl-2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3-CHCl3",
+          "symbol": null,
+          "amount": "4.2 mg, 0.004 mmol, 4.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L8",
+          "symbol": "L8"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "42.4 mg, 0.2 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MTBE",
+        "solvent_amount": "2.0 mL",
+        "temperature": "90 °C",
+        "time": "36 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "ProcedureA_4"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        71
+      ],
+      "reaction_type": "Pd-catalyzed N-arylation (Buchwald–Hartwig)",
+      "substrates": [
+        {
+          "name": "quinolin-2(1H)-one",
+          "symbol": "1",
+          "amount": "145.2 mg, 1.0 mmol, 1.0 equiv",
+          "registry_name": "quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "sterically hindered aryl bromide",
+          "symbol": "2",
+          "amount": "398.1 mg, 2.0 mmol, 2.0 equiv",
+          "registry_name": "1-bromo-2-nitronaphthalene",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "symbol": "3",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3-CHCl3",
+          "symbol": null,
+          "amount": "20.7 mg, 0.02 mmol, 2.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L8",
+          "symbol": "L8"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "424.0 mg, 2.0 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MTBE",
+        "solvent_amount": "20.0 mL",
+        "temperature": "90 °C",
+        "time": "120 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R1"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        72
+      ],
+      "reaction_type": "oxidation (aldehyde to carboxylic acid)",
+      "substrates": [
+        {
+          "name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "symbol": "3",
+          "amount": "263.3 mg, 1.0 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-methylbut-2-ene",
+          "symbol": null,
+          "amount": "911.7 mg, 13.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzoic acid",
+          "symbol": "102",
+          "amount": "212.3 mg",
+          "registry_name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "saturated NaClO2 solution",
+          "symbol": null,
+          "amount": "334.6 mg, 3.7 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "tBuOH",
+        "solvent_amount": "15 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R2"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        72
+      ],
+      "reaction_type": "esterification (carboxylic acid to methyl ester)",
+      "substrates": [
+        {
+          "name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzoic acid",
+          "symbol": "102",
+          "amount": null,
+          "registry_name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-methyl 3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzoate",
+          "symbol": "102'",
+          "amount": null
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "thionyl chloride",
+          "symbol": null,
+          "amount": "2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOH",
+        "solvent_amount": "1.0 mL",
+        "temperature": "0 °C (then 50 °C)",
+        "time": "6 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R3"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        73
+      ],
+      "reaction_type": "reduction (aldehyde to alcohol, NaBH4)",
+      "substrates": [
+        {
+          "name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "symbol": "3",
+          "amount": "26.2 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(2-(hydroxymethyl)-6-methylphenyl)quinolin-2(1H)-one",
+          "symbol": "103",
+          "amount": "25.7 mg",
+          "registry_name": "(S)-1-(2-(hydroxymethyl)-6-methylphenyl)quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": "NaBH4",
+          "amount": "7.6 mg, 0.2 mmol (2.0 equiv)"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOH",
+        "solvent_amount": "2 mL",
+        "temperature": "0 °C",
+        "time": "5 min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R4"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        74
+      ],
+      "reaction_type": "Bestmann–Ohira homologation (aldehyde to alkyne)",
+      "substrates": [
+        {
+          "name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "symbol": "3",
+          "amount": "26.2 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(2-ethynyl-6-methylphenyl)quinolin-2(1H)-one",
+          "symbol": "104",
+          "amount": "24.6 mg",
+          "registry_name": "(S)-1-(2-ethynyl-6-methylphenyl)quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Bestmann reagent",
+          "symbol": null,
+          "amount": "23.1 mg, 0.12 mmol, 1.2 equiv"
+        },
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOH",
+        "solvent_amount": "1 mL",
+        "temperature": "rt",
+        "time": "30 min (initial) then 12 h after base addition",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R5"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        75
+      ],
+      "reaction_type": "Wittig methylenation/olefination",
+      "substrates": [
+        {
+          "name": "Ph3PMeBr",
+          "symbol": null,
+          "amount": "39.3 mg, 0.11 mmol"
+        },
+        {
+          "name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "symbol": "3",
+          "amount": "26.2 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(2-methyl-6-vinylphenyl)quinolin-2(1H)-one",
+          "symbol": "105",
+          "amount": "24.6 mg",
+          "registry_name": "(S)-1-(2-methyl-6-vinylphenyl)quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "nBuLi",
+          "symbol": null,
+          "amount": "2.50 M, 45 μL, 0.11 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2 mL (plus 1 mL for aldehyde solution)",
+        "temperature": "0 °C to rt",
+        "time": "12 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        75,
+        76
+      ],
+      "reaction_type": "Pd-catalyzed annulation/oxidative transformation",
+      "substrates": [
+        {
+          "name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "symbol": "3",
+          "amount": "262.4 mg, 1.0 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "substrate 3"
+        },
+        {
+          "name": "2-amino-4-chlorobenzoic acid",
+          "symbol": null,
+          "amount": "85.8 mg, 0.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-6-hydroxy-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "symbol": "106",
+          "amount": "103.3 mg",
+          "registry_name": "(S)-6-hydroxy-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "44.0 mg, 0.2 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1-fluoro-2,4,6-trimethylpyridinium triflate",
+          "symbol": null,
+          "amount": "433.9 mg, 1.5 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "HOAc",
+        "solvent_amount": "10 mL",
+        "temperature": "90 °C",
+        "time": "24 h",
+        "atmosphere": "air",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        76,
+        77
+      ],
+      "reaction_type": "Addition of PMP-MgBr to aldehyde (nucleophilic addition, Grignard-type)",
+      "substrates": [
+        {
+          "name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzaldehyde",
+          "symbol": "3",
+          "amount": "26.2 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-((S)-2-((R)-hydroxy(4-methoxyphenyl)methyl)-6-methylphenyl)quinolin-2(1H)-one",
+          "symbol": "107",
+          "amount": "25.3 mg",
+          "registry_name": "1-((S)-2-((R)-hydroxy(4-methoxyphenyl)methyl)-6-methylphenyl)quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "PMP-MgBr (1 M in THF)",
+          "symbol": null,
+          "amount": "0.12 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "0 °C",
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "93%",
+        "er": null,
+        "dr": "19:1"
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        77,
+        78
+      ],
+      "reaction_type": "Cu-catalyzed azide–alkyne cycloaddition (click reaction)",
+      "substrates": [
+        {
+          "name": "azide",
+          "symbol": null,
+          "amount": "26.7 mg, 0.10 mmol"
+        },
+        {
+          "name": "(S)-1-(2-ethynyl-6-methylphenyl)quinolin-2(1H)-one",
+          "symbol": "104",
+          "amount": "28.5 mg, 0.11 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-((2S,4S,5S)-5-(hydroxymethyl)-4-(5-((S)-3-methyl-2-(2-oxoquinolin 1(2H)-yl)phenyl)-1H-1,2,3-triazol-1-yl)tetrahydrofuran-2-yl)-5-methylpyrimidine-2,4(1H,3H)-dione",
+          "symbol": "108",
+          "amount": "38.9 mg",
+          "registry_name": "1-((2S,4S,5S)-5-(hydroxymethyl)-4-(5-((S)-3-methyl-2-(2-oxoquinolin 1(2H)-yl)phenyl)-1H-1,2,3-triazol-1-yl)tetrahydrofuran-2-yl)-5-methylpyrimidine-2,4(1H,3H)-dione",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuSO4·5H2O",
+          "symbol": null,
+          "amount": "2.5 mg, 0.01 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaASc",
+          "symbol": null,
+          "amount": "4.0 mg, 0.02 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "H2O:tBuOH",
+        "solvent_amount": "1:1 (v/v)",
+        "temperature": "room temperature",
+        "time": "2 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": "93%"
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "NonGP-Entry14",
+      "source_pages": [
+        79,
+        80
+      ],
+      "reaction_type": "synthesis",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "(S)-1-(2-nitronaphthalen-1-yl)-6-phenylpyridin-2(1H)-one",
+          "symbol": "71",
+          "amount": "171.2 mg, 0.5 mmol",
+          "step": 1,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "ammonium chloride",
+          "symbol": "NH4Cl",
+          "amount": "3.0 mg, 0.05 mmol (10 mol%)",
+          "step": 1
+        },
+        {
+          "name": "1-isothiocyanato-3,5-bis(trifluoromethyl)benzene",
+          "symbol": null,
+          "amount": "149 mg, 0.55 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "amine derived from 71",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(3,5-bis(trifluoromethyl)phenyl)-3-(1-(2-oxo-6-phenylpyridin-1(2H)-yl)naphthalen-2-yl)thiourea",
+          "symbol": "110",
+          "amount": "198.4 mg",
+          "step": 2,
+          "registry_name": "(S)-1-(3,5-bis(trifluoromethyl)phenyl)-3-(1-(2-oxo-6-phenylpyridin-1(2H)-yl)naphthalen-2-yl)thiourea",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "zinc dust",
+          "symbol": null,
+          "amount": "196.1 mg, 3.0 mmol (6.0 equiv)",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "EtOH/H2O/acetic acid (v/v/v = 20:4:1)"
+          },
+          {
+            "step": 2,
+            "value": "dry THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "12.5 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "50 °C"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "zinc added in five portions over 30 min; reaction until completion (monitored by TLC)"
+          },
+          {
+            "step": 2,
+            "value": "24 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "chunk7-rxn2"
+    },
+    {
+      "id": "NonGP-Entry15",
+      "source_pages": [
+        80,
+        81
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(R)-1-(2-nitronaphthalen-1-yl)-6-phenylpyridin-2(1H)-one",
+          "symbol": "72",
+          "amount": "47.1 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "trichlorosilane",
+          "symbol": "HSiCl3",
+          "amount": "40.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-1-(2-(diphenylphosphaneyl)naphthalen-1-yl)quinolin-2(1H)-one",
+          "symbol": "111",
+          "amount": "37.8 mg",
+          "registry_name": "(R)-1-(2-(diphenylphosphaneyl)naphthalen-1-yl)quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "80 °C",
+        "time": "12 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk7-rxn3"
+    },
+    {
+      "id": "NonGP-Entry16",
+      "source_pages": [
+        80,
+        81
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "sulfoximines",
+          "symbol": null,
+          "amount": "0.10 mmol"
+        },
+        {
+          "name": "diazoniums",
+          "symbol": null,
+          "amount": "25 μL, 0.15 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-(S)-butyl-3-methyl-1-phenyl-1l4-benzo[e][1,2]thiazine-4-carboxylate 1-O oxide",
+          "symbol": "112",
+          "amount": "21.3 mg",
+          "registry_name": "Tert-(S)-butyl-3-methyl-1-phenyl-1l4-benzo[e][1,2]thiazine-4-carboxylate 1- O oxide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(S)-3-methyl-2-(2-oxoquinolin-1(2H)-yl)benzoic acid",
+          "symbol": "102",
+          "amount": "4.3 mg, 10 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Cp*IrCl2]2",
+          "symbol": "[Cp*IrCl2]2",
+          "amount": "2.0 mg, 2.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "silver hexafluoroantimonate",
+          "symbol": "AgSbF6",
+          "amount": "3.5 mg, 10 mol%"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,2-dichloroethane (DCE)",
+        "solvent_amount": "1.0 mL",
+        "temperature": "15 °C",
+        "time": "12 h",
+        "atmosphere": "degassed with N2 (three times)",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "69%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk7-rxn4"
+    },
+    {
+      "id": "NonGP-Entry17",
+      "source_pages": [
+        81,
+        82
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "anthracene-9-carbaldehyde",
+          "symbol": null,
+          "amount": "20.6 mg, 0.1 mmol",
+          "step": null
+        },
+        {
+          "name": "arylboronic acids",
+          "symbol": null,
+          "amount": "24.4 mg, 0.2 mmol",
+          "step": null
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-anthracen-9-yl(phenyl)methanol",
+          "symbol": "113",
+          "amount": "19.0 mg",
+          "registry_name": "(R)-anthracen-9-yl(phenyl)methanol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "chiral ligand 111",
+          "symbol": "111",
+          "amount": "1.8 mg, 4.0 mol%",
+          "registry_name": "(R)-1-(2-(diphenylphosphaneyl)naphthalen-1-yl)quinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "[RuCl2(cymene)]2",
+          "symbol": "[RuCl2(cymene)]2",
+          "amount": "1.2 mg, 2.0 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "potassium phosphate",
+          "symbol": "K3PO4",
+          "amount": "42.4 mg, 0.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2.0 mL",
+        "temperature": "room temperature",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "83%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk7-rxn5"
+    },
+    {
+      "id": "NonGP-Entry19",
+      "source_pages": [
+        83
+      ],
+      "reaction_type": "other",
+      "substrates": [
+        {
+          "name": "sulfinyldibenzene",
+          "symbol": null,
+          "amount": "20.2 mg, 0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "(bromoethynyl)triisopropylsilane",
+          "symbol": null,
+          "amount": "26.0 mg, 0.12 mmol, 1.2 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Triisopropyl((2-(methylidyne(l1-oxidaneyl)(phenyl)-l6-sulfaneyl)phenyl)ethynyl)silane",
+          "symbol": "114",
+          "amount": "19.8 mg",
+          "registry_name": "Triisopropyl((2-(methylidyne(l1-oxidaneyl)(phenyl)-l6-\nsulfaneyl)phenyl)ethynyl)silane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-Rh(III)",
+          "symbol": null,
+          "amount": "8.0 mg, 4 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "AgOTf",
+          "symbol": null,
+          "amount": "4.2 mg, 0.016 mmol, 16 mol %"
+        },
+        {
+          "name": "Ag2O",
+          "symbol": null,
+          "amount": "23.2 mg, 0.12 mmol, 1.2 equiv"
+        },
+        {
+          "name": "Additive",
+          "symbol": null,
+          "amount": "0.02 mmol, 20 mol %"
+        },
+        {
+          "name": "4Å MS",
+          "symbol": null,
+          "amount": "50 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "DCE",
+        "solvent_amount": "2.0 mL",
+        "temperature": "30 oC",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry20",
+      "source_pages": [
+        84
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-bromo-3-methylbenzaldehyde",
+          "symbol": "2",
+          "amount": "19.9 mg, 0.2 mmol, 2.0 equiv",
+          "registry_name": "1-bromo-2-nitronaphthalene",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "intermediate product",
+          "symbol": "115",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3-CHCl3",
+          "symbol": null,
+          "amount": "51.8 mg, 0.05 mmol, 1.0 equiv"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L8",
+          "symbol": "L8"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2.0 mL",
+        "temperature": "40 °C for 1 h, then 80 °C for 8 h",
+        "time": "1 h then 8 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": null,
+        "er": null,
+        "dr": "38:62"
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry29",
+      "source_pages": [
+        100
+      ],
+      "reaction_type": "intermolecular Buchwald–Hartwig N-arylation",
+      "substrates": [
+        {
+          "name": "quinolin-2(1H)-one",
+          "symbol": null,
+          "amount": "14.5 mg, 0.1 mmol, 1.0 equiv"
+        },
+        {
+          "name": "2-bromoisophthalaldehyde",
+          "symbol": null,
+          "amount": "0.2 mmol, 2.0 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "products",
+          "symbol": null,
+          "amount": "20.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3-CHCl3",
+          "symbol": null,
+          "amount": "4.2 mg, 0.004 mmol, 4.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "ligand L8"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "42.4 mg, 0.2 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MTBE",
+        "solvent_amount": "2.0 mL",
+        "temperature": "90 °C",
+        "time": "18 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn12-1"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/intermolecular-buchwald-hartwig-reactions-for-en_76949532.json",
+    "input_sha256": "df68fb6f3f42c0200bf128a509f71967e2d7645eae8b874a5cf122855667bb82"
+  }
+}

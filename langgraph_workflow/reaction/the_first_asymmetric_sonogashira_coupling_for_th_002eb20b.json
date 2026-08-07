@@ -1,0 +1,297 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/The first asymmetric Sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes.pdf",
+  "paper_key": "the first asymmetric sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/The first asymmetric Sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/The first asymmetric Sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes.pdf",
+    "source_mtime_ns": 1782048731000000000,
+    "source_size": 3685200,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "the first asymmetric sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/The first asymmetric Sonogashira coupling for the enantioselective generation of planar chirality in paracyclophanes.pdf"
+  },
+  "extracted_at": "2026-07-17T09:28:46.916000",
+  "total_reactions": 18,
+  "filtered_reactions": 4,
+  "filter_stats": {
+    "input_reactions": 18,
+    "basic_failed": 14,
+    "target_failed": 0,
+    "retained": 4
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry1",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        1,
+        2
+      ],
+      "reaction_type": "Appel bromination (conversion of primary/secondary alcohols to alkyl bromides using CBr4 and PPh3)",
+      "substrates": [
+        {
+          "name": "1,4-bis(6-hydroxy-1-hexyl)benzene1",
+          "symbol": null,
+          "amount": "0.765 g, 2.75 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1,4-Bis(6-bromo-1-hexyl)benzene",
+          "symbol": "3b",
+          "amount": "1.05 g",
+          "registry_name": "1,4-Bis(6-bromo-1-hexyl)benzene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "CBr4",
+          "symbol": null,
+          "amount": "2.79 g, 8.24 mmol"
+        },
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "1.92 g, 6.87 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "27 mL",
+        "temperature": "0 °C then room temperature",
+        "time": "5 min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry1",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        2,
+        3
+      ],
+      "reaction_type": "O-alkylation (ether formation) via SN2 alkylation of a hydroquinone with an alkyl bromide",
+      "substrates": [
+        {
+          "name": "2,5-diiodohydroquinone3",
+          "symbol": null,
+          "amount": "362.3 mg, 1.0 mmol"
+        },
+        {
+          "name": "1,4-bis(6-bromo-1-hexyl)benzene 3b",
+          "symbol": "3b",
+          "amount": "404.7 mg, 1.0 mmol",
+          "registry_name": "1,4-Bis(6-bromo-1-hexyl)benzene",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "22,25-Diiodo-1,20-dioxa[7.7]paracyclophane",
+          "symbol": "1b",
+          "amount": "284.1 mg",
+          "registry_name": "22,25-Diiodo-1,20-dioxa[7.7]paracyclophane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "346.3 mg, 2.5 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "30 mL then 50 mL",
+        "temperature": "120 °C",
+        "time": "6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "47%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        4,
+        5
+      ],
+      "reaction_type": "Enantioselective Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "diiodoparacyclophane",
+          "symbol": null,
+          "amount": "0.05 mmol"
+        },
+        {
+          "name": "4-methoxyphenylacetylene",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "22,25-Bis{2-(4-methoxyphenyl)-1-ethynyl}-1,20-dioxa[7.7]paracyclophane",
+          "symbol": "2ba",
+          "amount": "28.3 mg",
+          "registry_name": "22,25-Bis{2-(4-methoxyphenyl)-1-ethynyl}-1,20-dioxa[7.7]paracyclophane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "PdCl2(CH3CN)2",
+          "symbol": null,
+          "amount": "1.3 mg, 0.005 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "TANIAPHOS",
+          "symbol": "TANIAPHOS1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.0 mg, 0.005 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "0.2 mL then 0.8 mL",
+        "temperature": "room temperature",
+        "time": "until completion",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "52%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        4,
+        5
+      ],
+      "reaction_type": "Enantioselective Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "diiodoparacyclophane",
+          "symbol": null,
+          "amount": "0.05 mmol"
+        },
+        {
+          "name": "phenylacetylene",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "22,25-Bis{2-phenyl-1-ethynyl}-1,20-dioxa[7.7]paracyclophane",
+          "symbol": "2bb",
+          "amount": "24.2 mg",
+          "registry_name": "22,25-Bis{2-phenyl-1-ethynyl}-1,20-dioxa[7.7]paracyclophane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "PdCl2(CH3CN)2",
+          "symbol": null,
+          "amount": "1.3 mg, 0.005 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "TANIAPHOS",
+          "symbol": "TANIAPHOS1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "65.2 mg, 0.2 mmol"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.0 mg, 0.005 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "0.2 mL then 0.8 mL",
+        "temperature": "room temperature",
+        "time": "until completion",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": "56%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/the_first_asymmetric_sonogashira_coupling_for_th_002eb20b.json",
+    "input_sha256": "4ec8de9b29d860d6864d8fa638a0e6eb12aa6b26c2b0eaf9c1d6f2b322b526e7"
+  }
+}

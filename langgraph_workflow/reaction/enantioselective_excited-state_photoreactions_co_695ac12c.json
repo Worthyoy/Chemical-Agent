@@ -1,0 +1,4821 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Excited-State Photoreactions Controlled by a.pdf",
+  "paper_key": "enantioselective excited-state photoreactions controlled by a",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Excited-State Photoreactions Controlled by a.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Excited-State Photoreactions Controlled by a.pdf",
+    "source_mtime_ns": 1782048533000000000,
+    "source_size": 15349450,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "enantioselective excited-state photoreactions controlled by a",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Excited-State Photoreactions Controlled by a.pdf"
+  },
+  "extracted_at": "2026-07-17T04:34:36.327376",
+  "total_reactions": 92,
+  "filtered_reactions": 84,
+  "filter_stats": {
+    "input_reactions": 92,
+    "basic_failed": 5,
+    "target_failed": 3,
+    "retained": 84
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "Pd-catalyzed Suzuki–Miyaura cross-coupling of chloropyridines with arylboronic acids",
+      "substrates": [
+        {
+          "name": "2-chloro-5-(trifluoromethyl)pyridine",
+          "symbol": null,
+          "amount": "908 mg, 5.00 mmol, 1.0 equiv."
+        },
+        {
+          "name": "2,4-difluorophenylboronic acid",
+          "symbol": null,
+          "amount": "868 mg, 5.50 mmol, 1.1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2,4-Difluorophenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S1",
+          "amount": "947 mg",
+          "registry_name": "2-(2,4-Difluorophenyl)-5-(trifluoromethyl)pyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "152 mg, 0.132 mmol, 0.026 equiv."
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "2 M aq. Na2CO3",
+          "symbol": null,
+          "amount": "10.0 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "benzene and EtOH",
+        "solvent_amount": "benzene (6.7 mL, 0.75 M with respect to substrate), EtOH (1.25 mL, 4 M with respect to substrate)",
+        "temperature": "80 °C (reflux)",
+        "time": "2 d",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_S1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "Pd-catalyzed Suzuki–Miyaura cross-coupling of chloropyridines with arylboronic acids",
+      "substrates": [
+        {
+          "name": "2-chloro-5-(trifluoromethyl)pyridine",
+          "symbol": null,
+          "amount": "905 mg, 4.99 mmol, 1.0 equiv."
+        },
+        {
+          "name": "2-fluoro-4-(trifluoromethyl)phenylboronic acid",
+          "symbol": null,
+          "amount": "1.146 g, 5.51 mmol, 1.1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-Fluoro-4-(trifluoromethyl)phenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S2",
+          "amount": "1.145 g",
+          "registry_name": "2-(2-Fluoro-4-(trifluoromethyl)phenyl)-5-(trifluoromethyl)pyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "153 mg, 0.132 mmol, 0.026 equiv."
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "2 M aq. Na2CO3",
+          "symbol": null,
+          "amount": "10.0 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "benzene and EtOH",
+        "solvent_amount": "benzene (6.7 mL, 0.75 M with respect to substrate), EtOH (1.25 mL, 4 M with respect to substrate)",
+        "temperature": "80 °C (reflux)",
+        "time": "2 d",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_S2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Pd-catalyzed Suzuki–Miyaura cross-coupling of chloropyridines with arylboronic acids",
+      "substrates": [
+        {
+          "name": "2-chloro-5-(trifluoromethyl)pyridine",
+          "symbol": null,
+          "amount": "907 mg, 5.00 mmol, 1.0 equiv."
+        },
+        {
+          "name": "3,4,5-trifluorobenzeneboronic acid",
+          "symbol": null,
+          "amount": "977 mg, 5.55 mmol, 1.1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(Trifluoromethyl)-2-(3,4,5-trifluorophenyl)pyridine",
+          "symbol": "S3",
+          "amount": "1.165 g",
+          "registry_name": "5-(Trifluoromethyl)-2-(3,4,5-trifluorophenyl)pyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "146 mg, 0.126 mmol, 0.025 equiv."
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "2 M aq. Na2CO3",
+          "symbol": null,
+          "amount": "10.0 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "benzene and EtOH",
+        "solvent_amount": "benzene (6.7 mL, 0.75 M with respect to substrate), EtOH (1.25 mL, 4 M with respect to substrate)",
+        "temperature": "80 °C (reflux)",
+        "time": "2 d",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_S3"
+    },
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Procedure modified from Bolm and coworkers: synthesis of (S)-2-(4-Isopropyl-4,5-dihydrooxazol-2-yl)phenol (i-PrHBO)",
+      "substrates": [
+        {
+          "name": "L-Valinol",
+          "symbol": null,
+          "amount": "1.74 g, 16.9 mmol, 1.5 equiv."
+        },
+        {
+          "name": "2-hydroxybenzonitrile",
+          "symbol": null,
+          "amount": "1.36 g, 11.4 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(4-Isopropyl-4,5-dihydrooxazol-2-yl)phenol",
+          "symbol": "S4",
+          "amount": "2.12 g",
+          "registry_name": "(S)-2-(4-Isopropyl-4,5-dihydrooxazol-2-yl)phenol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "ZnCl2",
+          "symbol": null,
+          "amount": "79.5 mg, 0.583 mmol, 0.05 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "chlorobenzene",
+        "solvent_amount": "34 mL",
+        "temperature": "reflux (150 °C)",
+        "time": "24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "nonGP_S4"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "hydrazine condensation to form pyrazol-5-ol",
+      "substrates": [
+        {
+          "name": "β-ketoester",
+          "symbol": "S91",
+          "amount": "548 mg, 2.84 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(Pyridin-2-yl)-1H-pyrazol-5-ol",
+          "symbol": "S10",
+          "amount": "422 mg",
+          "registry_name": "3-(Pyridin-2-yl)-1H-pyrazol-5-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "H2NNH2•H2O",
+          "symbol": null,
+          "amount": "140 µL, 2.89 mmol, 1.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH",
+        "solvent_amount": "1.4 mL",
+        "temperature": "reflux (95 °C)",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R3"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "hydrazine condensation on dithioketene acetal",
+      "substrates": [
+        {
+          "name": "dithioketene acetal",
+          "symbol": "S112",
+          "amount": "1.014 g, 4.50 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(5-(Methylthio)-1H-pyrazol-3-yl)pyridine",
+          "symbol": "S12",
+          "amount": "663 mg",
+          "registry_name": "2-(5-(Methylthio)-1H-pyrazol-3-yl)pyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "AcOH",
+          "symbol": null,
+          "amount": "280 µL, 4.89 mmol, 1.1 equiv."
+        },
+        {
+          "name": "H2NNH2•H2O",
+          "symbol": null,
+          "amount": "330 µL, 6.80 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "t-BuOH",
+        "solvent_amount": "30 mL",
+        "temperature": "reflux (100 °C)",
+        "time": "2 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R4"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "N-methylation",
+      "substrates": [
+        {
+          "name": "2-(1H-Pyrazol-3-yl)pyridine",
+          "symbol": "S13",
+          "amount": "183 mg, 1.26 mmol, 1.0 equiv.",
+          "registry_name": "2-(1H-Pyrazol-3-yl)pyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1-Methyl-1H-pyrazol-3-yl)pyridine",
+          "symbol": "S14",
+          "amount": "222 mg, 1.39 mmol",
+          "registry_name": "2-(1-Methyl-1H-pyrazol-3-yl)pyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium hydride (60 wt%)",
+          "symbol": "NaH",
+          "amount": "304 mg, 7.60 mmol, 6.0 equiv."
+        },
+        {
+          "name": "methyl iodide",
+          "symbol": "MeI",
+          "amount": "160 µL, 2.57 mmol, 2.0 equiv."
+        },
+        {
+          "name": "methanol",
+          "symbol": "MeOH",
+          "amount": "quench"
+        },
+        {
+          "name": "ethyl acetate",
+          "symbol": "EtOAc",
+          "amount": "extraction solvent"
+        },
+        {
+          "name": "sodium sulfate",
+          "symbol": "Na2SO4",
+          "amount": "drying agent"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "13 mL",
+        "temperature": null,
+        "time": "1 h (base stir) then 16 h (after MeI)",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "100%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1-S14-methylation"
+    },
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3",
+          "symbol": null,
+          "amount": "1.000 g, 3.35 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ir(dF(CF3)ppy)2(i-PrHBO)",
+          "symbol": "S18",
+          "amount": "1.366 g, 1.50 mmol",
+          "registry_name": "Ir(dF(CF3)ppy)2(i-PrHBO)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(2,4-Difluorophenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "(S)-2-(4-Isopropyl-4,5-dihydrooxazol-2-yl)phenol",
+          "symbol": "S4",
+          "amount": "759 mg, 3.70 mmol, 2.5 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "triethylamine",
+          "symbol": "Et3N",
+          "amount": "2.1 mL, 15 mmol, 10.3 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-rxn-1-S18-combined"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3",
+          "symbol": null,
+          "amount": "1.000 g, 3.35 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S),Λ-S18",
+          "symbol": "S18",
+          "amount": "609 mg, 0.67 mmol",
+          "registry_name": "Ir(dF(CF3)ppy)2(i-PrHBO)",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(2,4-Difluorophenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "(S)-2-(4-Isopropyl-4,5-dihydrooxazol-2-yl)phenol",
+          "symbol": "S4",
+          "amount": "759 mg, 3.70 mmol, 2.5 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "triethylamine",
+          "symbol": "Et3N",
+          "amount": "2.1 mL, 15 mmol, 10.3 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "23%",
+        "ee": null,
+        "er": null,
+        "dr": ">98:2"
+      },
+      "_original_id": "GPB-rxn-2-S18-(S)-Lambda"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3",
+          "symbol": null,
+          "amount": "1.000 g, 3.35 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "S15",
+          "symbol": "S15",
+          "amount": "2.184 g, 1.47 mmol"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(2,4-Difluorophenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "130 °C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-rxn-0-S15"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "1.00 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ir(dF(CF3)ppy)2(i-PrHBO)",
+          "symbol": "S18",
+          "amount": "757 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "ppy ligand"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "28%",
+        "ee": null,
+        "er": null,
+        "dr": ">98:2"
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry5",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "748 mg, 2.51 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ir(dF(CF3)ppy)2(i-PrHBT)",
+          "symbol": "S19",
+          "amount": "1.400 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(2,4-Difluorophenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "AgOTf",
+          "symbol": null,
+          "amount": "633 mg, 2.46 mmol, 2.2 equiv."
+        },
+        {
+          "name": "(S)-2-(4-Isopropyl-4,5-dihydrothiazol-2-yl)phenol",
+          "symbol": "S5",
+          "amount": "532 mg, 2.40 mmol, 2.2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 10 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry6",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "748 mg, 2.51 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S),Λ-Ir(dF(CF3)ppy)2(i-PrHBT)",
+          "symbol": "S19",
+          "amount": "696 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(2,4-Difluorophenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "AgOTf",
+          "symbol": null,
+          "amount": "633 mg, 2.46 mmol, 2.2 equiv."
+        },
+        {
+          "name": "(S)-2-(4-Isopropyl-4,5-dihydrothiazol-2-yl)phenol",
+          "symbol": "S5",
+          "amount": "532 mg, 2.40 mmol, 2.2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 10 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": null,
+        "er": null,
+        "dr": ">98:2"
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry7",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "748 mg, 2.51 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S),Δ-Ir(dF(CF3)ppy)2(i-PrHBT)",
+          "symbol": "S19",
+          "amount": "704 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(2,4-Difluorophenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "AgOTf",
+          "symbol": null,
+          "amount": "633 mg, 2.46 mmol, 2.2 equiv."
+        },
+        {
+          "name": "(S)-2-(4-Isopropyl-4,5-dihydrothiazol-2-yl)phenol",
+          "symbol": "S5",
+          "amount": "532 mg, 2.40 mmol, 2.2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 10 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": null,
+        "er": null,
+        "dr": "95:5"
+      },
+      "_original_id": "r4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry8",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "300 mg, 1.00 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ir(2,4-F/CF3(CF3)ppy)2(i-PrHBT)",
+          "symbol": "S20",
+          "amount": "526 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(2-Fluoro-4-(trifluoromethyl)phenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "AgOTf",
+          "symbol": null,
+          "amount": "211 mg, 0.821 mmol, 2.2 equiv."
+        },
+        {
+          "name": "(S)-2-(4-Isopropyl-4,5-dihydrothiazol-2-yl)phenol",
+          "symbol": "S5",
+          "amount": "186 mg, 0.840 mmol, 2.2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "530 µL, 3.81 mmol, 10.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry9",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "300 mg, 1.00 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S),Λ-Ir(2,4-F/CF3(CF3)ppy)2(i-PrHBT)",
+          "symbol": "S20",
+          "amount": "223 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(2-Fluoro-4-(trifluoromethyl)phenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "AgOTf",
+          "symbol": null,
+          "amount": "211 mg, 0.821 mmol, 2.2 equiv."
+        },
+        {
+          "name": "(S)-2-(4-Isopropyl-4,5-dihydrothiazol-2-yl)phenol",
+          "symbol": "S5",
+          "amount": "186 mg, 0.840 mmol, 2.2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "530 µL, 3.81 mmol, 10.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "29%",
+        "ee": null,
+        "er": null,
+        "dr": ">98:2"
+      },
+      "_original_id": "r6"
+    },
+    {
+      "id": "GeneralProcedureB-Entry10",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "300 mg, 1.00 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S),Δ-Ir(2,4-F/CF3(CF3)ppy)2(i-PrHBT)",
+          "symbol": "S20",
+          "amount": "303 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(2-Fluoro-4-(trifluoromethyl)phenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "AgOTf",
+          "symbol": null,
+          "amount": "211 mg, 0.821 mmol, 2.2 equiv."
+        },
+        {
+          "name": "(S)-2-(4-Isopropyl-4,5-dihydrothiazol-2-yl)phenol",
+          "symbol": "S5",
+          "amount": "186 mg, 0.840 mmol, 2.2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "530 µL, 3.81 mmol, 10.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "39%",
+        "ee": null,
+        "er": null,
+        "dr": "98:2"
+      },
+      "_original_id": "r7"
+    },
+    {
+      "id": "GeneralProcedureB-Entry11",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "302 mg, 1.01 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ir(tF(CF3)ppy)2(i-PrHBT)",
+          "symbol": "S21",
+          "amount": "649 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "5-(Trifluoromethyl)-2-(3,4,5-trifluorophenyl)pyridine",
+          "symbol": "S3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "AgOTf",
+          "symbol": null,
+          "amount": "281 mg, 1.09 mmol, 2.2 equiv."
+        },
+        {
+          "name": "(S)-2-(4-Isopropyl-4,5-dihydrothiazol-2-yl)phenol",
+          "symbol": "S5",
+          "amount": "245 mg, 1.11 mmol, 2.2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "700 µL, 5.02 mmol, 10.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r8"
+    },
+    {
+      "id": "GeneralProcedureB-Entry12",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "748 mg, 2.51 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "S15",
+          "symbol": "S15",
+          "amount": "1.631 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(2,4-Difluorophenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "130 °C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r9"
+    },
+    {
+      "id": "GeneralProcedureB-Entry13",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "300 mg, 1.00 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "S16",
+          "symbol": "S16",
+          "amount": "650 mg (641 mg corrected)"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(2-Fluoro-4-(trifluoromethyl)phenyl)-5-(trifluoromethyl)pyridine",
+          "symbol": "S2"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "130 °C",
+        "time": "overnight"
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r10"
+    },
+    {
+      "id": "GeneralProcedureB-Entry14",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "1.00 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S),Λ-S21",
+          "symbol": "(S),Λ-S21",
+          "amount": "288 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "ppy ligand"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "29%",
+        "ee": null,
+        "er": null,
+        "dr": ">98:2"
+      },
+      "_original_id": "GPB_1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry15",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "formation of cyclometalated iridium(III) dimer (complexation of IrCl3 with ppy ligand)",
+      "substrates": [
+        {
+          "name": "IrCl3•xH2O",
+          "symbol": null,
+          "amount": "1.00 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S),Δ-S21",
+          "symbol": "(S),Δ-S21",
+          "amount": "361 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "ppy ligand"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2:1 mixture of 2-methoxyethanol and water",
+        "solvent_amount": "20 mL total, 0.05 M with respect to IrCl3",
+        "temperature": "130 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": null,
+        "er": null,
+        "dr": "98:2"
+      },
+      "_original_id": "GPB_2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry1",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "iridium complex formation (ligand coordination to Ir and counterion exchange)",
+      "substrates": [
+        {
+          "name": "Λ-S19",
+          "symbol": "Λ-S19",
+          "amount": "109 mg, 0.117 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Λ-[Ir(dF(CF3)ppy)2(5’-NHTFApypz)][BArF]",
+          "symbol": "5a",
+          "amount": "150 mg",
+          "registry_name": "Λ-[Ir(dF(CF3)ppy)2(5’-NHTFApypz)][BArF]",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2,2,2-Trifluoro-N-(3-(pyridin-2-yl)-1H-pyrazol-5-yl)acetamide",
+          "symbol": "S6"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NH4PF6",
+          "symbol": null,
+          "amount": "96.1 mg, 0.590 mmol, 5.0 equiv."
+        },
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": null,
+          "amount": "45 µL, 0.588 mmol, 5.0 equiv."
+        },
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "85.2 mg, 0.961 mmol, 1.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "solvent_amount": "8 mL, 0.01 M with respect to Ir",
+        "temperature": "65 °C",
+        "time": "5 h",
+        "atmosphere": "nitrogen",
+        "light_source": "dark",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry2",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "iridium complex formation (ligand coordination to Ir and counterion exchange)",
+      "substrates": [
+        {
+          "name": "Δ-S18",
+          "symbol": "Δ-S18",
+          "amount": "75.0 mg, 0.0822 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Δ-[Ir(dF(CF3)ppy)2(5’-NHAcpypz)][BArF]",
+          "symbol": "5b",
+          "amount": "85.3 mg",
+          "registry_name": "Δ-[Ir(dF(CF3)ppy)2(5’-NHAcpypz)][BArF]",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "N-(3-(Pyridin-2-yl)-1H-pyrazol-5-yl)acetamide",
+          "symbol": "S7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NH4PF6",
+          "symbol": null,
+          "amount": "65.0 mg, 0.399 mmol, 4.9 equiv."
+        },
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": null,
+          "amount": "31 µL, 0.405 mmol, 4.9 equiv."
+        },
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "72.9 mg, 0.0823 mmol, 1.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "solvent_amount": "8 mL, 0.01 M with respect to Ir",
+        "temperature": "65 °C",
+        "time": "5 h",
+        "atmosphere": "nitrogen",
+        "light_source": "dark",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry3",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "iridium complex formation (ligand coordination to Ir and counterion exchange)",
+      "substrates": [
+        {
+          "name": "Λ-S18",
+          "symbol": "Λ-S18",
+          "amount": "74.4 mg, 0.0815 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Λ-[Ir(dF(CF3)ppy)2(5’-NH2pypz)][BArF]",
+          "symbol": "5c",
+          "amount": "92.8 mg",
+          "registry_name": "Λ-[Ir(dF(CF3)ppy)2(5’-NH2pypz)][BArF]",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "3-(Pyridin-2-yl)-1H-pyrazol-5-amine",
+          "symbol": "S8"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NH4PF6",
+          "symbol": null,
+          "amount": "67.7 mg, 0.415 mmol, 5.1 equiv."
+        },
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": null,
+          "amount": "31 µL, 0.405 mmol, 5.0 equiv."
+        },
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "72.2 mg, 0.0815 mmol, 1.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "solvent_amount": "8 mL, 0.01 M with respect to Ir",
+        "temperature": "65 °C",
+        "time": "5 h",
+        "atmosphere": "nitrogen",
+        "light_source": "dark",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry4",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "iridium complex formation (ligand coordination to Ir and counterion exchange)",
+      "substrates": [
+        {
+          "name": "Δ-S18",
+          "symbol": "Δ-S18",
+          "amount": "70.0 mg, 0.0767 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Δ-[Ir(dF(CF3)ppy)2(5’-OHpypz)][BArF]",
+          "symbol": "5d",
+          "amount": "81.8 mg",
+          "registry_name": "Δ-[Ir(dF(CF3)ppy)2(5’-OHpypz)][BArF]",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "3-(Pyridin-2-yl)-1H-pyrazol-5-ol",
+          "symbol": "S10"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NH4PF6",
+          "symbol": null,
+          "amount": "64.9 mg, 0.398 mmol, 5.2 equiv."
+        },
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": null,
+          "amount": "31 µL, 0.405 mmol, 5.3 equiv."
+        },
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "69.7 mg, 0.0786 mmol, 1.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "solvent_amount": "8 mL, 0.01 M with respect to Ir",
+        "temperature": "65 °C",
+        "time": "5 h",
+        "atmosphere": "nitrogen",
+        "light_source": "dark",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry5",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "iridium complex formation (ligand coordination to Ir and counterion exchange)",
+      "substrates": [
+        {
+          "name": "Δ-S18",
+          "symbol": "Δ-S18",
+          "amount": "74.2 mg, 0.0812 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Δ-[Ir(dF(CF3)ppy)2(5-SMepypz)][BArF]",
+          "symbol": "5e",
+          "amount": "105 mg",
+          "registry_name": "Δ-[Ir(dF(CF3)ppy)2(5-SMepypz)][BArF]",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(5-(Methylthio)-1H-pyrazol-3-yl)pyridine",
+          "symbol": "S12"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NH4PF6",
+          "symbol": null,
+          "amount": "67.5 mg, 0.414 mmol, 5.1 equiv."
+        },
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": null,
+          "amount": "31 µL, 0.405 mmol, 5.0 equiv."
+        },
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "73.0 mg, 0.0824 mmol, 1.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "solvent_amount": "8 mL, 0.01 M with respect to Ir",
+        "temperature": "65 °C",
+        "time": "5 h",
+        "atmosphere": "nitrogen",
+        "light_source": "dark",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry6",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "iridium complex formation (ligand coordination to Ir and counterion exchange)",
+      "substrates": [
+        {
+          "name": "Λ-S18",
+          "symbol": "Λ-S18",
+          "amount": "75.8 mg, 0.0830 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Λ-[Ir(dF(CF3)ppy)2(pypz)][BArF]",
+          "symbol": "5f",
+          "amount": "101 mg",
+          "registry_name": "Λ-[Ir(dF(CF3)ppy)2(pypz)][BArF]",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(1H-Pyrazol-3-yl)pyridine",
+          "symbol": "S13"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NH4PF6",
+          "symbol": null,
+          "amount": "68.1 mg, 0.418 mmol, 5.0 equiv."
+        },
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": null,
+          "amount": "31 µL, 0.405 mmol, 4.9 equiv."
+        },
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "72.9 mg, 0.0823 mmol, 1.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "solvent_amount": "8 mL, 0.01 M with respect to Ir",
+        "temperature": "65 °C",
+        "time": "5 h",
+        "atmosphere": "nitrogen",
+        "light_source": "dark",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry8",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "iridium complex formation (ligand coordination to Ir and counterion exchange)",
+      "substrates": [
+        {
+          "name": "S16",
+          "symbol": "S16",
+          "amount": "0.080 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Λ-[Ir(dF(CF3)ppy)2(1’-Mepypz)][BArF]",
+          "symbol": "5g",
+          "amount": "82.1 mg, 0.474 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "pyridyl pyrazole ligand (S6–S14)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NH4PF6",
+          "symbol": null,
+          "amount": "0.40 mmol, 5.0 equiv."
+        },
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": null,
+          "amount": "0.40 mmol, 5.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "solvent_amount": "8 mL, 0.01 M with respect to Ir",
+        "temperature": "65 °C",
+        "time": "5 h",
+        "atmosphere": "nitrogen",
+        "light_source": "dark",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_C_5g_page16"
+    },
+    {
+      "id": "GeneralProcedureC-Entry9",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "iridium complex formation (ligand coordination to Ir and counterion exchange)",
+      "substrates": [
+        {
+          "name": "Λ-S18",
+          "symbol": "Λ-S18",
+          "amount": "75.3 mg, 0.0825 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Λ-[Ir(dF(CF3)ppy)2(pyz)(MeCN)][BArF]",
+          "symbol": "5h",
+          "amount": "52.8 mg, 0.0314 mmol",
+          "registry_name": "Λ-[Ir(dF(CF3)ppy)2(pyz)(MeCN)][BArF]",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "pyrazole"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NH4PF6",
+          "symbol": null,
+          "amount": "70.5 mg, 0.433 mmol, 5.2 equiv."
+        },
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": null,
+          "amount": "31 µL, 0.405 mmol, 4.9 equiv."
+        },
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "72.9 mg, 0.0823 mmol, 1.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "solvent_amount": "8 mL, 0.01 M with respect to Ir",
+        "temperature": "65 °C",
+        "time": "5 h",
+        "atmosphere": "nitrogen",
+        "light_source": "dark",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "38%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_C_5h_page16"
+    },
+    {
+      "id": "GeneralProcedureC-Entry10",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "iridium complex formation (ligand coordination to Ir and counterion exchange)",
+      "substrates": [
+        {
+          "name": "Λ-S20",
+          "symbol": "Λ-S20",
+          "amount": "83.0 mg, 0.0807 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Λ-[Ir(2,4-F/CF3(CF3)ppy)2(pypz)][BArF]",
+          "symbol": "6a",
+          "amount": "117 mg, 0.0644 mmol",
+          "registry_name": "Λ-[Ir(2,4-F/CF3(CF3)ppy)2(pypz)][BArF]",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "2-(1H-Pyrazol-3-yl)pyridine",
+          "symbol": "S13"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NH4PF6",
+          "symbol": null,
+          "amount": "66.8 mg, 0.410 mmol, 5.1 equiv."
+        },
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": null,
+          "amount": "31 µL, 0.40 mmol, 5.0 equiv."
+        },
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "70.9 mg, 0.0800 mmol, 1.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "solvent_amount": "8 mL, 0.01 M with respect to Ir",
+        "temperature": "65 °C",
+        "time": "5 h",
+        "atmosphere": "nitrogen",
+        "light_source": "dark",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_C_6a_page16"
+    },
+    {
+      "id": "GeneralProcedureC-Entry11",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "iridium complex formation (ligand coordination to Ir and counterion exchange)",
+      "substrates": [
+        {
+          "name": "Λ-S21",
+          "symbol": "Λ-S21",
+          "amount": "144 mg, 0.149 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Λ-[Ir(tF(CF3)ppy)2(pypz)][BArF]",
+          "symbol": "6b",
+          "amount": "162 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "pyridyl pyrazole ligand (S13)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NH4PF6",
+          "symbol": null,
+          "amount": "124.7 mg, 0.765 mmol, 5.1 equiv."
+        },
+        {
+          "name": "trifluoroacetic acid",
+          "symbol": null,
+          "amount": "120 µL, 1.56 mmol, 10.5 equiv."
+        },
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "104 mg, 0.117 mmol, 1.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry MeCN",
+        "solvent_amount": "8 mL, 0.01 M with respect to Ir",
+        "temperature": "65 °C",
+        "time": "24 h",
+        "atmosphere": "nitrogen",
+        "light_source": "dark",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1_page17_6b"
+    },
+    {
+      "id": "GeneralProcedureD-Entry1",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "DBU-mediated reaction of isatin with ethyl diazoacetate resulting in ring expansion to give ethyl 3-hydroxyquinolone-4-carboxylate (3-hydroxyquinolone ethyl ester)",
+      "substrates": [
+        {
+          "name": "isatin",
+          "symbol": null,
+          "amount": "1.474 g, 10.0 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ethyl diazoacetate",
+          "symbol": null,
+          "amount": "2.5 mL, 20.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24a",
+          "amount": "1.836 g, 7.87 mmol",
+          "registry_name": "Ethyl 3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "230 μL, 1.54 mmol, 0.15 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH:DMF (5:1)",
+        "solvent_amount": "60 mL total, 0.17 M with respect to substrate",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPD-S24a"
+    },
+    {
+      "id": "GeneralProcedureD-Entry2",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "DBU-mediated reaction of isatin with ethyl diazoacetate resulting in ring expansion to give ethyl 3-hydroxyquinolone-4-carboxylate (3-hydroxyquinolone ethyl ester)",
+      "substrates": [
+        {
+          "name": "5-chloroisatin",
+          "symbol": null,
+          "amount": "1.817 g, 10.0 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ethyl diazoacetate",
+          "symbol": null,
+          "amount": "2.5 mL, 20.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 6-chloro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24b",
+          "amount": "2.106 g, 7.86 mmol",
+          "registry_name": "Ethyl 6-chloro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "230 μL, 1.54 mmol, 0.15 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH:DMF (5:1)",
+        "solvent_amount": "60 mL total, 0.17 M with respect to substrate",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPD-S24b"
+    },
+    {
+      "id": "GeneralProcedureD-Entry3",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "DBU-mediated reaction of isatin with ethyl diazoacetate resulting in ring expansion to give ethyl 3-hydroxyquinolone-4-carboxylate (3-hydroxyquinolone ethyl ester)",
+      "substrates": [
+        {
+          "name": "5-bromoisatin",
+          "symbol": null,
+          "amount": "2.264 g, 10.0 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ethyl diazoacetate",
+          "symbol": null,
+          "amount": "2.5 mL, 20.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 6-bromo-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24c",
+          "amount": "2.786 g, 8.92 mmol",
+          "registry_name": "Ethyl 6-bromo-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "230 μL, 1.54 mmol, 0.15 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH:DMF (5:1)",
+        "solvent_amount": "60 mL total, 0.17 M with respect to substrate",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPD-S24c"
+    },
+    {
+      "id": "GeneralProcedureD-Entry4",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "DBU-mediated reaction of isatin with ethyl diazoacetate resulting in ring expansion to give ethyl 3-hydroxyquinolone-4-carboxylate (3-hydroxyquinolone ethyl ester)",
+      "substrates": [
+        {
+          "name": "6-iodoisatin",
+          "symbol": null,
+          "amount": "2.731 g, 10.0 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ethyl diazoacetate",
+          "symbol": null,
+          "amount": "2.5 mL, 20.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 3-hydroxy-6-iodo-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24d",
+          "amount": "3.361 g, 9.36 mmol",
+          "registry_name": "Ethyl 3-hydroxy-6-iodo-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "230 μL, 1.54 mmol, 0.15 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH:DMF (5:1)",
+        "solvent_amount": "60 mL total, 0.17 M with respect to substrate",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPD-S24d"
+    },
+    {
+      "id": "GeneralProcedureD-Entry5",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "DBU-mediated reaction of isatin with ethyl diazoacetate resulting in ring expansion to give ethyl 3-hydroxyquinolone-4-carboxylate (3-hydroxyquinolone ethyl ester)",
+      "substrates": [
+        {
+          "name": "5-methylisatin",
+          "symbol": null,
+          "amount": "1.615 g, 10.0 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ethyl diazoacetate",
+          "symbol": null,
+          "amount": "2.5 mL, 20.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 3-hydroxy-6-methyl-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24f",
+          "amount": "1.857 g, 7.51 mmol",
+          "registry_name": "Ethyl 3-hydroxy-6-methyl-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "230 μL, 1.54 mmol, 0.15 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH:DMF (5:1)",
+        "solvent_amount": "60 mL total, 0.17 M with respect to substrate",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPD-S24f"
+    },
+    {
+      "id": "GeneralProcedureD-Entry6",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "DBU-mediated reaction of isatin with ethyl diazoacetate resulting in ring expansion to give ethyl 3-hydroxyquinolone-4-carboxylate (3-hydroxyquinolone ethyl ester)",
+      "substrates": [
+        {
+          "name": "5-methoxyisatin",
+          "symbol": null,
+          "amount": "1.771 g, 10.0 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ethyl diazoacetate",
+          "symbol": null,
+          "amount": "2.5 mL, 20.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 3-hydroxy-6-methoxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24g",
+          "amount": "2.113 g",
+          "registry_name": "Ethyl 3-hydroxy-6-methoxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "230 μL, 1.54 mmol, 0.15 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH:DMF (5:1)",
+        "solvent_amount": "60 mL total, 0.17 M with respect to substrate",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureD-Entry7",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "DBU-mediated reaction of isatin with ethyl diazoacetate resulting in ring expansion to give ethyl 3-hydroxyquinolone-4-carboxylate (3-hydroxyquinolone ethyl ester)",
+      "substrates": [
+        {
+          "name": "6-chloroisatin",
+          "symbol": null,
+          "amount": "1.816 g, 10.0 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ethyl diazoacetate",
+          "symbol": null,
+          "amount": "2.5 mL, 20.2 mmol, 2.0 equiv.; additional 1.0 mL, 8.1 mmol, 0.8 equiv. added after 15 h"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 7-chloro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24h",
+          "amount": "2.094 g",
+          "registry_name": "Ethyl 7-chloro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "230 μL, 1.54 mmol, 0.15 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH:DMF (5:1)",
+        "solvent_amount": "60 mL total, 0.17 M with respect to substrate",
+        "temperature": "room temperature",
+        "time": "34 h (15 h then additional 19 h)",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureD-Entry8",
+      " _gp_source": "GeneralProcedureD",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "DBU-mediated reaction of isatin with ethyl diazoacetate resulting in ring expansion to give ethyl 3-hydroxyquinolone-4-carboxylate (3-hydroxyquinolone ethyl ester)",
+      "substrates": [
+        {
+          "name": "7-chloroisatin",
+          "symbol": null,
+          "amount": "1.814 g, 10.0 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ethyl diazoacetate",
+          "symbol": null,
+          "amount": "2.5 mL, 20.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 8-chloro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24i",
+          "amount": "2.202 g",
+          "registry_name": "Ethyl 8-chloro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "230 μL, 1.54 mmol, 0.15 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH:DMF (5:1)",
+        "solvent_amount": "60 mL total, 0.17 M with respect to substrate",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureD-Entry9",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        20,
+        21
+      ],
+      "reaction_type": "DBU-mediated reaction of isatin with ethyl diazoacetate resulting in ring expansion to give ethyl 3-hydroxyquinolone-4-carboxylate (3-hydroxyquinolone ethyl ester)",
+      "substrates": [
+        {
+          "name": "7-fluoroisatin",
+          "symbol": null,
+          "amount": "1.652 g, 10.0 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ethyl diazoacetate",
+          "symbol": null,
+          "amount": "2.5 mL, 20.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 8-fluoro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24j",
+          "amount": "2.045 g",
+          "registry_name": "Ethyl 8-fluoro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "230 μL, 1.54 mmol, 0.15 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH",
+        "solvent_amount": "100 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureE-Entry1",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "base-mediated saponification and thermal decarboxylation of hydroxyquinolone ethyl esters to give 3-hydroxyquinolin-2(1H)-ones",
+      "substrates": [
+        {
+          "name": "Ethyl 3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24a",
+          "amount": "2.334 g, 10.0 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Hydroxyquinolin-2(1H)-one",
+          "symbol": "S25a",
+          "amount": "1.495 g",
+          "registry_name": "3-Hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium hydroxide (NaOH)",
+          "symbol": null,
+          "amount": "804 mg, 20.1 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "H2O",
+        "solvent_amount": "70 mL, 0.1 M with respect to substrate",
+        "temperature": "115 °C (reflux)",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureE-Entry2",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "base-mediated saponification and thermal decarboxylation of hydroxyquinolone ethyl esters to give 3-hydroxyquinolin-2(1H)-ones",
+      "substrates": [
+        {
+          "name": "Ethyl 6-chloro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24b",
+          "amount": "1.876 g, 7.01 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "6-Chloro-3-hydroxyquinolin-2(1H)-one",
+          "symbol": "S25b",
+          "amount": "1.269 g",
+          "registry_name": "6-Chloro-3-hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium hydroxide (NaOH)",
+          "symbol": null,
+          "amount": "560 mg, 14.0 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "H2O",
+        "solvent_amount": "70 mL, 0.1 M with respect to substrate",
+        "temperature": "115 °C (reflux)",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedureE-Entry4",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "base-mediated saponification and thermal decarboxylation of hydroxyquinolone ethyl esters to give 3-hydroxyquinolin-2(1H)-ones",
+      "substrates": [
+        {
+          "name": "Ethyl 3-hydroxy-6-iodo-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24d",
+          "amount": "2.512 g, 6.99 mmol, 1.0 equiv.",
+          "registry_name": "Ethyl 3-hydroxy-6-iodo-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "hydroxyquinolone ethyl ester S24",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-hydroxy-6-iodoquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Reported as the generic 'hydroxyquinolone ethyl ester S24' with symbol S24d; product (S25d) and manuscript symbol_evidence map S24d one-to-one to the ethyl 6‑iodo ester, enabling resolution to the full ester name."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3-hydroxy-6-iodoquinolin-2(1H)-one",
+          "symbol": "S25d",
+          "amount": "1.704 g",
+          "registry_name": "3-Hydroxy-6-iodoquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium hydroxide (NaOH)",
+          "symbol": null,
+          "amount": "561 mg, 14.0 mmol, 1.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "H2O",
+        "solvent_amount": "70 mL, 0.1 M with respect to substrate",
+        "temperature": "115 °C (reflux)",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1_S25d_GP_E"
+    },
+    {
+      "id": "GeneralProcedureE-Entry5",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "base-mediated saponification and thermal decarboxylation of hydroxyquinolone ethyl esters to give 3-hydroxyquinolin-2(1H)-ones",
+      "substrates": [
+        {
+          "name": "Ethyl 3-hydroxy-6-methyl-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24f",
+          "amount": "1.731 g, 7.00 mmol, 1.0 equiv.",
+          "registry_name": "Ethyl 3-hydroxy-6-methyl-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "hydroxyquinolone ethyl ester S24",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-hydroxy-6-methylquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Substrate reported generically as 'hydroxyquinolone ethyl ester S24' (symbol S24f); product identity (S25f) plus symbol_evidence map S24f uniquely to the 6‑methyl ethyl ester."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3-hydroxy-6-methylquinolin-2(1H)-one",
+          "symbol": "S25f",
+          "amount": "914 mg",
+          "registry_name": "3-Hydroxy-6-methylquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium hydroxide (NaOH)",
+          "symbol": null,
+          "amount": "562 mg, 14.1 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "H2O",
+        "solvent_amount": "70 mL, 0.1 M with respect to substrate",
+        "temperature": "115 °C (reflux)",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3_S25f_GP_E"
+    },
+    {
+      "id": "GeneralProcedureE-Entry6",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "base-mediated saponification and thermal decarboxylation of hydroxyquinolone ethyl esters to give 3-hydroxyquinolin-2(1H)-ones",
+      "substrates": [
+        {
+          "name": "Ethyl 3-hydroxy-6-methoxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24g",
+          "amount": "1.844 g, 7.00 mmol, 1.0 equiv.",
+          "registry_name": "Ethyl 3-hydroxy-6-methoxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "hydroxyquinolone ethyl ester S24",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-hydroxy-6-methoxyquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Reported as 'hydroxyquinolone ethyl ester S24' (symbol S24g); product (S25g) and symbol_evidence provide a one-to-one mapping to the 6‑methoxy ethyl ester."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3-hydroxy-6-methoxyquinolin-2(1H)-one",
+          "symbol": "S25g",
+          "amount": "730 mg",
+          "registry_name": "3-Hydroxy-6-methoxyquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium hydroxide (NaOH)",
+          "symbol": null,
+          "amount": "559 mg, 14.0 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "H2O",
+        "solvent_amount": "70 mL, 0.1 M with respect to substrate",
+        "temperature": "115 °C (reflux)",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4_S25g_GP_E"
+    },
+    {
+      "id": "GeneralProcedureE-Entry7",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "base-mediated saponification and thermal decarboxylation of hydroxyquinolone ethyl esters to give 3-hydroxyquinolin-2(1H)-ones",
+      "substrates": [
+        {
+          "name": "Ethyl 7-chloro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "symbol": "S24h",
+          "amount": "1.873 g, 7.00 mmol, 1.0 equiv.",
+          "registry_name": "Ethyl 7-chloro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "hydroxyquinolone ethyl ester S24",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-chloro-3-hydroxyquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Substrate given as 'hydroxyquinolone ethyl ester S24' with symbol S24h; product (S25h) and symbol_evidence uniquely identify S24h as the 7‑chloro ethyl ester."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "7-chloro-3-hydroxyquinolin-2(1H)-one",
+          "symbol": "S25h",
+          "amount": "1.197 g",
+          "registry_name": "7-Chloro-3-hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium hydroxide (NaOH)",
+          "symbol": null,
+          "amount": "560 mg, 14.0 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "H2O",
+        "solvent_amount": "70 mL, 0.1 M with respect to substrate",
+        "temperature": "115 °C (reflux)",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5_S25h_GP_E"
+    },
+    {
+      "id": "GeneralProcedureE-Entry8",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "base-mediated saponification and thermal decarboxylation of hydroxyquinolone ethyl esters to give 3-hydroxyquinolin-2(1H)-ones",
+      "substrates": [
+        {
+          "name": "hydroxyquinolone ethyl ester S24",
+          "symbol": "S24i",
+          "amount": "1.873 g, 7.00 mmol, 1.0 equiv.",
+          "registry_name": "Ethyl 8-chloro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "8-chloro-3-hydroxyquinolin-2(1H)-one",
+          "symbol": "S25i",
+          "amount": "1.059 g",
+          "registry_name": "8-Chloro-3-hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium hydroxide (NaOH)",
+          "symbol": null,
+          "amount": "561 mg, 14.0 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "H2O",
+        "solvent_amount": "70 mL, 0.1 M with respect to substrate",
+        "temperature": "115 °C (reflux)",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_6_S25i_GP_E"
+    },
+    {
+      "id": "GeneralProcedureE-Entry9",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "base-mediated saponification and thermal decarboxylation of hydroxyquinolone ethyl esters to give 3-hydroxyquinolin-2(1H)-ones",
+      "substrates": [
+        {
+          "name": "hydroxyquinolone ethyl ester S24",
+          "symbol": "S24j",
+          "amount": "1.759 g, 7.00 mmol, 1.0 equiv.",
+          "registry_name": "Ethyl 8-fluoro-3-hydroxy-2-oxo-1,2-dihydroquinoline-4-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "8-fluoro-3-hydroxyquinolin-2(1H)-one",
+          "symbol": "S25j",
+          "amount": "1.011 g",
+          "registry_name": "8-Fluoro-3-hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium hydroxide (NaOH)",
+          "symbol": null,
+          "amount": "561 mg, 14.0 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "H2O",
+        "solvent_amount": "70 mL, 0.1 M with respect to substrate",
+        "temperature": "115 °C (reflux)",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_7_S25j_GP_E"
+    },
+    {
+      "id": "GeneralProcedureF-Entry1",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "Alkylation of 3-hydroxyquinolones with alkyl bromides (O-alkylation)",
+      "substrates": [
+        {
+          "name": "3-hydroxyquinolone S25a",
+          "symbol": "S25a",
+          "amount": "1.124 g, 6.97 mmol, 1.0 equiv.",
+          "registry_name": "3-Hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "4-bromo-1-butene",
+          "symbol": null,
+          "amount": "890 µL, 8.8 mmol, 1.25 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(But-3-en-1-yloxy)quinolin-2(1H)-one",
+          "symbol": "3a",
+          "amount": "1.015 g",
+          "registry_name": "3-(But-3-en-1-yloxy)quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "1.7 mL, 11 mmol, 1.5 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "i-PrOH",
+        "solvent_amount": "16 mL, 0.25 M with respect to substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureF-Entry2",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "Alkylation of 3-hydroxyquinolones with alkyl bromides (O-alkylation)",
+      "substrates": [
+        {
+          "name": "3-hydroxyquinolone S25b",
+          "symbol": "S25b",
+          "amount": "781 mg, 3.99 mmol, 1.0 equiv.",
+          "registry_name": "6-Chloro-3-hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "4-bromo-1-butene",
+          "symbol": null,
+          "amount": "510 µL, 5.0 mmol, 1.3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-6-chloroquinolin-2(1H)-one",
+          "symbol": "3b",
+          "amount": "579 mg",
+          "registry_name": "3-(But-3-en-1-yloxy)-6-chloroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "960 µL, 6.4 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "i-PrOH",
+        "solvent_amount": "16 mL, 0.25 M with respect to substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureF-Entry3",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "Alkylation of 3-hydroxyquinolones with alkyl bromides (O-alkylation)",
+      "substrates": [
+        {
+          "name": "crude S25c",
+          "symbol": "S25c",
+          "amount": "1.211 g corrected, 5.04 mmol, 1.0 equiv.",
+          "registry_name": "6-Bromo-3-hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "4-bromo-1-butene",
+          "symbol": null,
+          "amount": "640 µL, 6.3 mmol, 1.3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "6-Bromo-3-(but-3-en-1-yloxy)quinolin-2(1H)-one",
+          "symbol": "3c",
+          "amount": "733 mg",
+          "registry_name": "6-Bromo-3-(but-3-en-1-yloxy)quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "1.2 mL, 8.0 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "i-PrOH",
+        "solvent_amount": "16 mL, 0.25 M with respect to substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureF-Entry4",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "Alkylation of 3-hydroxyquinolones with alkyl bromides (O-alkylation)",
+      "substrates": [
+        {
+          "name": "crude S25d",
+          "symbol": "S25d",
+          "amount": "1.704 g corrected, 5.94 mmol, 1.0 equiv.",
+          "registry_name": "3-Hydroxy-6-iodoquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "4-bromo-1-butene",
+          "symbol": null,
+          "amount": "750 µL, 7.4 mmol, 1.3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-6-iodoquinolin-2(1H)-one",
+          "symbol": "3d",
+          "amount": "733 mg",
+          "registry_name": "3-(But-3-en-1-yloxy)-6-iodoquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "1.45 mL, 9.7 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "i-PrOH",
+        "solvent_amount": "16 mL, 0.25 M with respect to substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "36%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureF-Entry5",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Alkylation of 3-hydroxyquinolones with alkyl bromides (O-alkylation)",
+      "substrates": [
+        {
+          "name": "3-hydroxyquinolone",
+          "symbol": "S25f",
+          "amount": "701 mg, 4.00 mmol, 1.0 equiv.",
+          "registry_name": "3-Hydroxy-6-methylquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "4-bromo-1-butene",
+          "symbol": null,
+          "amount": "510 µL, 5.0 mmol, 1.3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-6-methylquinolin-2(1H)-one",
+          "symbol": "3f",
+          "amount": "457 mg",
+          "registry_name": "3-(But-3-en-1-yloxy)-6-methylquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "960 µL, 6.4 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "i-PrOH",
+        "solvent_amount": "16 mL, 0.25 M with respect to substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPF-3f"
+    },
+    {
+      "id": "GeneralProcedureF-Entry6",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Alkylation of 3-hydroxyquinolones with alkyl bromides (O-alkylation)",
+      "substrates": [
+        {
+          "name": "3-hydroxyquinolone",
+          "symbol": "S25g",
+          "amount": "crude S25g (730 mg, 3.82 mmol, 1.0 equiv.)",
+          "registry_name": "3-Hydroxy-6-methoxyquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "4-bromo-1-butene",
+          "symbol": null,
+          "amount": "490 µL, 4.8 mmol, 1.3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-6-methoxyquinolin-2(1H)-one",
+          "symbol": "3g",
+          "amount": "538 mg",
+          "registry_name": "3-(But-3-en-1-yloxy)-6-methoxyquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "910 µL, 6.1 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "i-PrOH",
+        "solvent_amount": "16 mL, 0.25 M with respect to substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPF-3g"
+    },
+    {
+      "id": "GeneralProcedureF-Entry7",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Alkylation of 3-hydroxyquinolones with alkyl bromides (O-alkylation)",
+      "substrates": [
+        {
+          "name": "3-hydroxyquinolone",
+          "symbol": "S25h",
+          "amount": "784 mg, 4.01 mmol, 1.0 equiv.",
+          "registry_name": "7-Chloro-3-hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "4-bromo-1-butene",
+          "symbol": null,
+          "amount": "510 µL, 5.0 mmol, 1.3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-7-chloroquinolin-2(1H)-one",
+          "symbol": "3h",
+          "amount": "581 mg",
+          "registry_name": "3-(But-3-en-1-yloxy)-7-chloroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "960 µL, 6.4 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "i-PrOH",
+        "solvent_amount": "16 mL, 0.25 M with respect to substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPF-3h"
+    },
+    {
+      "id": "GeneralProcedureF-Entry8",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Alkylation of 3-hydroxyquinolones with alkyl bromides (O-alkylation)",
+      "substrates": [
+        {
+          "name": "3-hydroxyquinolone",
+          "symbol": "S25i",
+          "amount": "783 mg, 4.00 mmol, 1.0 equiv.",
+          "registry_name": "8-Chloro-3-hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "4-bromo-1-butene",
+          "symbol": null,
+          "amount": "510 µL, 5.0 mmol, 1.3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-8-chloroquinolin-2(1H)-one",
+          "symbol": "3i",
+          "amount": "301 mg",
+          "registry_name": "3-(But-3-en-1-yloxy)-8-chloroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "960 µL, 6.4 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "i-PrOH",
+        "solvent_amount": "16 mL, 0.25 M with respect to substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPF-3i"
+    },
+    {
+      "id": "GeneralProcedureF-Entry9",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Alkylation of 3-hydroxyquinolones with alkyl bromides (O-alkylation)",
+      "substrates": [
+        {
+          "name": "3-hydroxyquinolone",
+          "symbol": "S25j",
+          "amount": "714 mg, 3.99 mmol, 1.0 equiv.",
+          "registry_name": "8-Fluoro-3-hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "4-bromo-1-butene",
+          "symbol": null,
+          "amount": "510 µL, 5.0 mmol, 1.3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-8-fluoroquinolin-2(1H)-one",
+          "symbol": "3j",
+          "amount": "404 mg",
+          "registry_name": "3-(But-3-en-1-yloxy)-8-fluoroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "960 µL, 6.4 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "i-PrOH",
+        "solvent_amount": "16 mL, 0.25 M with respect to substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "43%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPF-3j"
+    },
+    {
+      "id": "GeneralProcedureG-Entry1",
+      "_gp_source": "GeneralProcedureG",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "O-alkylation of 3-hydroxyquinolone with alkyl tosylates",
+      "substrates": [
+        {
+          "name": "3-hydroxyquinolone",
+          "symbol": "S25a",
+          "amount": "243 mg, 1.51 mmol, 1.0 equiv.",
+          "registry_name": "3-Hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "alkyl tosylate",
+          "symbol": "S27",
+          "amount": "400 µL, 1.9 mmol, 1.25 equiv.",
+          "registry_name": "3-methylbut-3-en-1-yl 4-methylbenzenesulfonate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-((3-Methylbut-3-en-1-yl)oxy)quinolin-2(1H)-one",
+          "symbol": "3k",
+          "amount": "209 mg",
+          "registry_name": "3-((3-Methylbut-3-en-1-yl)oxy)quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "350 µL, 2.3 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMSO",
+        "solvent_amount": "6 mL, 0.33 M with respect to the substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPG-3k"
+    },
+    {
+      "id": "GeneralProcedureF-Entry10",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Alkylation of 3-hydroxyquinolones with alkyl bromides (O-alkylation)",
+      "substrates": [
+        {
+          "name": "3-hydroxyquinolone",
+          "symbol": "S25a",
+          "amount": "506 mg, 3.14 mmol, 1.0 equiv.",
+          "registry_name": "3-Hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "5-bromo-2-methyl-2-pentene",
+          "symbol": null,
+          "amount": "645 mg, 3.96 mmol, 1.3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-((4-Methylpent-3-en-1-yl)oxy)quinolin-2(1H)-one",
+          "symbol": "3l",
+          "amount": "486 mg",
+          "registry_name": "3-((4-Methylpent-3-en-1-yl)oxy)quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "740 µL, 5.0 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "i-PrOH",
+        "solvent_amount": "16 mL, 0.25 M with respect to substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureG-Entry2",
+      "_gp_source": "GeneralProcedureG",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "O-alkylation of 3-hydroxyquinolone with alkyl tosylates",
+      "substrates": [
+        {
+          "name": "3-hydroxyquinolone",
+          "symbol": "S25a",
+          "amount": "248 mg, 1.54 mmol, 1.0 equiv.",
+          "registry_name": "3-Hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "alkyl tosylate",
+          "symbol": "S28",
+          "amount": "404 µL, 1.87 mmol, 1.25 equiv.",
+          "registry_name": "(E)-hex-3-en-1-yl 4-methylbenzenesulfonate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-3-(Hex-3-en-1-yloxy)quinolin-2(1H)-one",
+          "symbol": "(E)-3m",
+          "amount": "220 mg",
+          "registry_name": "(E)-3-(Hex-3-en-1-yloxy)quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "350 µL, 2.3 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMSO",
+        "solvent_amount": "6 mL, 0.33 M with respect to the substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureG-Entry3",
+      "_gp_source": "GeneralProcedureG",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "O-alkylation of 3-hydroxyquinolone with alkyl tosylates",
+      "substrates": [
+        {
+          "name": "3-hydroxyquinolone",
+          "symbol": "S25a",
+          "amount": "329 mg, 2.04 mmol, 1.0 equiv.",
+          "registry_name": "3-Hydroxyquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "alkyl tosylate",
+          "symbol": "S29",
+          "amount": "538 µL, 2.50 mmol, 1.25 equiv.",
+          "registry_name": "(Z)-hex-3-en-1-yl 4-methylbenzenesulfonate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(Z)-3-(hex-3-en-1-yloxy)quinolin-2(1H)-one",
+          "symbol": "(Z)-3m",
+          "amount": "301 mg",
+          "registry_name": "(Z)-3-(hex-3-en-1-yloxy)quinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "466 µL, 3.12 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMSO",
+        "solvent_amount": "6 mL, 0.33 M with respect to the substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "Methylation (N-methylation) of quinolinone",
+      "substrates": [
+        {
+          "name": "3-(But-3-en-1-yloxy)quinolin-2(1H)-one",
+          "symbol": "3a",
+          "amount": "219 mg, 1.00 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-1-methylquinolin-2(1H)-one",
+          "symbol": "3n",
+          "amount": "164 mg",
+          "registry_name": "3-(But-3-en-1-yloxy)-1-methylquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH (60 wt%)",
+          "symbol": null,
+          "amount": "44 mg, 1.2 mmol, 1.2 equiv."
+        },
+        {
+          "name": "MeI",
+          "symbol": null,
+          "amount": "75 µL, 1.2 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.50 mL",
+        "temperature": null,
+        "time": "2 h then 16 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureF-Entry11",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "Alkylation of 3-hydroxyquinolones with alkyl bromides (O-alkylation)",
+      "substrates": [
+        {
+          "name": "3-hydroxycoumarin",
+          "symbol": null,
+          "amount": "649 mg, 4.00 mmol, 1.0 equiv."
+        },
+        {
+          "name": "4-bromo-1-butene",
+          "symbol": null,
+          "amount": "510 µL, 5.0 mmol, 1.3 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-2H-chromen-2-one",
+          "symbol": "4o",
+          "amount": "635 mg",
+          "registry_name": "3-(But-3-en-1-yloxy)-2H-chromen-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,8-Diazabicyclo[5.4.0]undec-7-ene",
+          "symbol": "DBU",
+          "amount": "960 µL, 6.4 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "i-PrOH",
+        "solvent_amount": "16 mL, 0.25 M with respect to substrate",
+        "temperature": "100 °C",
+        "time": "4 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureI-Entry1",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-(But-3-en-1-yloxy)quinolin-2(1H)-one",
+          "symbol": "3a",
+          "amount": "53.6 mg, 0.249 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aR,4aS,10bR)-1,1a,2,3,6,10b-Hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4a",
+          "amount": "53.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.4 mg, 2.5 μmol, 0.010 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "100%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureI-Entry2",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-6-chloroquinolin-2(1H)-one",
+          "symbol": "3b",
+          "amount": "62.4 mg, 0.250 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aR,4aS,10bR)-9-Chloro-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4b",
+          "amount": "58.3 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.4 mg, 2.5 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureI-Entry3",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "6-Bromo-3-(but-3-en-1-yloxy)quinolin-2(1H)-one",
+          "symbol": "3c",
+          "amount": "73.3 mg, 0.249 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aR,4aS,10bR)-9-Bromo-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4c",
+          "amount": "73.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.5 mg, 2.6 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureI-Entry4",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-6-iodoquinolin-2(1H)-one",
+          "symbol": "3d",
+          "amount": "85.3 mg, 0.250 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "substrate 3"
+        }
+      ],
+      "products": [
+        {
+          "name": "9-Iodo-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4d",
+          "amount": "84.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.6 mg, 2.6 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "100%",
+        "ee": "79%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP1-4d-34"
+    },
+    {
+      "id": "GeneralProcedureI-Entry5",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-6-(trifluoromethyl)quinolin-2(1H)-one",
+          "symbol": "3e",
+          "amount": "70.3 mg, 0.248 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "substrate 3"
+        }
+      ],
+      "products": [
+        {
+          "name": "9-(Trifluoromethyl)-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4e",
+          "amount": "68.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.4 mg, 2.5 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": "84%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP1-4e-34"
+    },
+    {
+      "id": "GeneralProcedureI-Entry6",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-6-methylquinolin-2(1H)-one",
+          "symbol": "3f",
+          "amount": "57.0 mg, 0.249 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "substrate 3"
+        }
+      ],
+      "products": [
+        {
+          "name": "9-Methyl-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4f",
+          "amount": "56.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.4 mg, 2.5 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": "82%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP1-4f-35"
+    },
+    {
+      "id": "GeneralProcedureI-Entry7",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-6-methoxyquinolin-2(1H)-one",
+          "symbol": "3g",
+          "amount": "61.4 mg, 0.250 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "substrate 3"
+        }
+      ],
+      "products": [
+        {
+          "name": "9-Methoxy-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4g",
+          "amount": "60.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.5 mg, 2.6 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": "79%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP1-4g-35"
+    },
+    {
+      "id": "GeneralProcedureI-Entry8",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-7-chloroquinolin-2(1H)-one",
+          "symbol": "3h",
+          "amount": "62.3 mg, 0.250 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "substrate 3"
+        }
+      ],
+      "products": [
+        {
+          "name": "8-Chloro-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4h",
+          "amount": "61.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.4 mg, 2.5 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": "77%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP1-4h-35"
+    },
+    {
+      "id": "GeneralProcedureI-Entry9",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-8-chloroquinolin-2(1H)-one",
+          "symbol": "3i",
+          "amount": "62.4 mg, 0.250 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aR,4aS,10bR)-7-Chloro-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4i",
+          "amount": "60.9 mg, 0.244 mmol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.3 mg, 2.5 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": "20%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedureI-Entry10",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-8-fluoroquinolin-2(1H)-one",
+          "symbol": "3j",
+          "amount": "57.9 mg, 0.248 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aR,4aS,10bR)-7-Fluoro-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4j",
+          "amount": "52.2 mg, 0.224 mmol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.3 mg, 2.5 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "87%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedureI-Entry11",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        36,
+        37
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-((3-Methylbut-3-en-1-yl)oxy)quinolin-2(1H)-one",
+          "symbol": "3k",
+          "amount": "57.2 mg, 0.250 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aR,4aR,10bR)-1a-Methyl-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4k",
+          "amount": "49.0 mg, 0.215 mmol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.4 mg, 2.5 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "68%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GeneralProcedureI-Entry12",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-((4-Methylpent-3-en-1-yl)oxy)quinolin-2(1H)-one",
+          "symbol": "3l",
+          "amount": "59.1 mg, 0.250 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aS,4aS,10bR)-1,1-Dimethyl-1,1a,2,3,6,10b-Hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4l",
+          "amount": "48.7 mg, 0.205 mmol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.2 mg, 2.4 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "69%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedureI-Entry13",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "(E)-3-(Hex-3-en-1-yloxy)quinolin-2(1H)-one",
+          "symbol": "(E)-3m",
+          "amount": "61.8 mg, 0.250 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,1aS,4aS,10bR)-1-Ethyl-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one (trans)",
+          "symbol": "trans-4m",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.7 mg, 2.7 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "80%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "rxn5_trans_exp1"
+    },
+    {
+      "id": "GeneralProcedureI-Entry14",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "(E)-3-(Hex-3-en-1-yloxy)quinolin-2(1H)-one",
+          "symbol": "(E)-3m",
+          "amount": "61.8 mg, 0.250 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,1aS,4aS,10bR)-1-Ethyl-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one (cis)",
+          "symbol": "cis-4m",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.7 mg, 2.7 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "71%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "rxn6_cis_exp1"
+    },
+    {
+      "id": "GeneralProcedureI-Entry15",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "(Z)-3-(hex-3-en-1-yloxy)quinolin-2(1H)-one",
+          "symbol": "(Z)-3m",
+          "amount": "61.2 mg, 0.250 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,1aS,4aS,10bR)-1-Ethyl-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one (trans)",
+          "symbol": "trans-4m",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.2 mg, 2.4 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "85%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "rxn7_trans_exp2"
+    },
+    {
+      "id": "GeneralProcedureI-Entry16",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "(Z)-3-(hex-3-en-1-yloxy)quinolin-2(1H)-one",
+          "symbol": "(Z)-3m",
+          "amount": "61.2 mg, 0.250 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,1aS,4aS,10bR)-1-Ethyl-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one (cis)",
+          "symbol": "cis-4m",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.2 mg, 2.4 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "75%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "rxn8_cis_exp2"
+    },
+    {
+      "id": "GeneralProcedureI-Entry17",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "substrate 3",
+          "symbol": null,
+          "amount": "0.25 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,1aS,4aS,10bR)-1-Ethyl-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "trans-4m",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": null,
+          "amount": "2.5 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "85%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "trans-4m_GP_GeneralProcedureI_page38"
+    },
+    {
+      "id": "GeneralProcedureI-Entry18",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "substrate 3",
+          "symbol": null,
+          "amount": "0.25 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,1aS,4aS,10bR)-1-Ethyl-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "cis-4m",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": null,
+          "amount": "2.5 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "75%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "cis-4m_GP_GeneralProcedureI_page38"
+    },
+    {
+      "id": "GeneralProcedureI-Entry19",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        38,
+        39
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "3-(But-3-en-1-yloxy)-1-methylquinolin-2(1H)-one",
+          "symbol": "3n",
+          "amount": "57.1 mg, 0.249 mmol, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "substrate 3"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aR,4aS,10bR)-6-Methyl-1,1a,2,3,6,10b-hexahydro-5H-furo[2',3':1,4]cyclobuta[1,2-c]quinolin-5-one",
+          "symbol": "4n",
+          "amount": "57.6 mg, 0.251 mmol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.5 mg, 2.6 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "3%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "4n_GP_GeneralProcedureI_pages38-39"
+    },
+    {
+      "id": "GeneralProcedureI-Entry20",
+      "_gp_source": "GeneralProcedureI",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "photochemical [2+2] cycloaddition to form a cyclobutane",
+      "substrates": [
+        {
+          "name": "substrate 3",
+          "symbol": "3o",
+          "amount": "54.3 mg, 0.251 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1aR,4aS,10bR)-1,1a,2,10b-Tetrahydro-3H,5H-furo[2',3':1,4]cyclobuta[1,2-c]chromen-5-one",
+          "symbol": "4o",
+          "amount": "38.5 mg, 0.178 mmol",
+          "registry_name": "3-(But-3-en-1-yloxy)-2H-chromen-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "photocatalyst 6b",
+          "symbol": "Λ-6b",
+          "amount": "4.5 mg, 2.6 µmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry CH2Cl2 and pentane",
+        "solvent_amount": "25 mL and 25 mL",
+        "temperature": "–76 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": "two 16 W blue LED lamps",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "3%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "4o_GP_GeneralProcedureI_page39"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/enantioselective_excited-state_photoreactions_co_695ac12c.json",
+    "input_sha256": "b16cd40f2f837fe08ef499b2b23d6fa7f386359163037b97cb4600f16d37cec7"
+  }
+}

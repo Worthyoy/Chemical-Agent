@@ -1,3 +1,4 @@
+import argparse
 import csv
 import json
 import re
@@ -48,6 +49,17 @@ COMPOUND_LIKE_ROLES = {
 TARGET_ROLES = {"yield", "ee", "er", "dr"}
 UNCERTAIN_TEXT_MARKERS = ("maybe wrong", "please check", "not sure", "uncertain")
 GENERIC_NAMES = {"compound", "substrate", "product", "reagent", "ligand", "catalyst", "additive", "base", "unknown"}
+
+TEXT_SUBSTRATE_NAME_POLICY_RESOLVED = "resolved"
+TEXT_SUBSTRATE_NAME_POLICY_ORIGINAL_IF_AVAILABLE = "original_if_available"
+TEXT_SUBSTRATE_NAME_POLICY_REGISTRY_IF_RESOLVED_ELSE_ORIGINAL = (
+    "registry_if_resolved_else_original"
+)
+TEXT_SUBSTRATE_NAME_POLICIES = {
+    TEXT_SUBSTRATE_NAME_POLICY_RESOLVED,
+    TEXT_SUBSTRATE_NAME_POLICY_ORIGINAL_IF_AVAILABLE,
+    TEXT_SUBSTRATE_NAME_POLICY_REGISTRY_IF_RESOLVED_ELSE_ORIGINAL,
+}
 
 AMOUNT_FIELD_BY_RELATIONSHIP = {
     "USES_SUBSTRATE": "substrate_amount",
@@ -197,6 +209,45 @@ def text_compound_display_name(item: Dict[str, Any]) -> str:
         or clean_text(item.get("resolved_smiles"))
         or strip_amounts(clean_text(item.get("text")))
     )
+
+
+def text_substrate_display_name(
+    item: Dict[str, Any],
+    name_policy: str = TEXT_SUBSTRATE_NAME_POLICY_RESOLVED,
+) -> str:
+    """Return a text-substrate name under an explicit provenance policy."""
+    if name_policy not in TEXT_SUBSTRATE_NAME_POLICIES:
+        raise ValueError(
+            f"Unsupported text substrate name policy: {name_policy!r}; "
+            f"expected one of {sorted(TEXT_SUBSTRATE_NAME_POLICIES)}"
+        )
+    if name_policy == TEXT_SUBSTRATE_NAME_POLICY_ORIGINAL_IF_AVAILABLE:
+        evidence = item.get("resolution_evidence")
+        if (
+            isinstance(evidence, dict)
+            and clean_text(evidence.get("match_type"))
+            == "underspecified_series_label"
+        ):
+            reported_symbol = clean_text(item.get("symbol"))
+            if reported_symbol:
+                return reported_symbol
+        original_name = clean_text(item.get("original_name"))
+        if original_name:
+            return original_name
+    if (
+        name_policy
+        == TEXT_SUBSTRATE_NAME_POLICY_REGISTRY_IF_RESOLVED_ELSE_ORIGINAL
+    ):
+        registry_success = (
+            clean_text(item.get("resolution_source")) == "name_registry"
+            and clean_text(item.get("registry_match_status")).casefold() != "conflict"
+        )
+        if registry_success:
+            return clean_text(item.get("name")) or text_compound_display_name(item)
+        original_name = clean_text(item.get("original_name"))
+        if original_name:
+            return original_name
+    return text_compound_display_name(item)
 
 
 def image_compound_display_name(item: Dict[str, Any]) -> str:
@@ -569,7 +620,15 @@ def extract_reaction_types(reaction: Dict[str, Any]) -> List[str]:
     return [value or "unknown reaction"]
 
 
-def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, str]]:
+def build_text_reaction_triples(
+    text_paths: Iterable[Path],
+    text_substrate_name_policy: str = TEXT_SUBSTRATE_NAME_POLICY_RESOLVED,
+) -> List[Dict[str, str]]:
+    if text_substrate_name_policy not in TEXT_SUBSTRATE_NAME_POLICIES:
+        raise ValueError(
+            f"Unsupported text substrate name policy: {text_substrate_name_policy!r}; "
+            f"expected one of {sorted(TEXT_SUBSTRATE_NAME_POLICIES)}"
+        )
     triples: List[Dict[str, str]] = []
     seen: Set[Tuple[str, ...]] = set()
 
@@ -688,7 +747,14 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
                     values = [values]
                 for item in values:
                     comp = normalize_entity(item)
-                    name = text_compound_display_name(comp) or "unknown"
+                    if field == "substrates":
+                        name = text_substrate_display_name(
+                            comp,
+                            text_substrate_name_policy,
+                        )
+                    else:
+                        name = text_compound_display_name(comp)
+                    name = name or "unknown"
                     add(relationship, name, node_type, role, comp)
                     if field != "substrates":
                         continue
@@ -761,7 +827,15 @@ def build_text_reaction_triples(text_paths: Iterable[Path]) -> List[Dict[str, st
     return triples
 
 
-def extract_text_compounds(paths: Iterable[Path]) -> List[Entity]:
+def extract_text_compounds(
+    paths: Iterable[Path],
+    text_substrate_name_policy: str = TEXT_SUBSTRATE_NAME_POLICY_RESOLVED,
+) -> List[Entity]:
+    if text_substrate_name_policy not in TEXT_SUBSTRATE_NAME_POLICIES:
+        raise ValueError(
+            f"Unsupported text substrate name policy: {text_substrate_name_policy!r}; "
+            f"expected one of {sorted(TEXT_SUBSTRATE_NAME_POLICIES)}"
+        )
     entities: List[Entity] = []
     for path, data in iter_text_reaction_payloads(paths):
         source_paper = paper_name_from_payload(data, path.stem)
@@ -775,7 +849,13 @@ def extract_text_compounds(paths: Iterable[Path]) -> List[Entity]:
                     values = [values]
                 for comp_index, item in enumerate(values, start=1):
                     comp = normalize_entity(item)
-                    name = text_compound_display_name(comp)
+                    if field == "substrates":
+                        name = text_substrate_display_name(
+                            comp,
+                            text_substrate_name_policy,
+                        )
+                    else:
+                        name = text_compound_display_name(comp)
                     if not name:
                         continue
                     entities.append(
@@ -1329,7 +1409,13 @@ def build_cross_modal_kg(
     output_dir: Path | str,
     kg_output_dir: Path | str | None = None,
     alignments_output_dir: Path | str | None = None,
+    text_substrate_name_policy: str = TEXT_SUBSTRATE_NAME_POLICY_RESOLVED,
 ) -> Dict[str, Any]:
+    if text_substrate_name_policy not in TEXT_SUBSTRATE_NAME_POLICIES:
+        raise ValueError(
+            f"Unsupported text substrate name policy: {text_substrate_name_policy!r}; "
+            f"expected one of {sorted(TEXT_SUBSTRATE_NAME_POLICIES)}"
+        )
     text_paths = [Path(path) for path in text_reaction_paths]
     image_paths = [Path(path) for path in chemeagle_raw_iupac_paths]
     output_dir = Path(output_dir)
@@ -1339,9 +1425,15 @@ def build_cross_modal_kg(
     kg_output_dir.mkdir(parents=True, exist_ok=True)
     alignments_output_dir.mkdir(parents=True, exist_ok=True)
 
-    text_triples = build_text_reaction_triples(text_paths)
+    text_triples = build_text_reaction_triples(
+        text_paths,
+        text_substrate_name_policy=text_substrate_name_policy,
+    )
     image_triples = build_image_reaction_triples(image_paths)
-    text_compounds = extract_text_compounds(text_paths)
+    text_compounds = extract_text_compounds(
+        text_paths,
+        text_substrate_name_policy=text_substrate_name_policy,
+    )
     image_compounds = extract_chemeagle_compounds(image_paths)
 
     same_as_alignments = align_compounds(text_compounds, image_compounds)
@@ -1370,6 +1462,7 @@ def build_cross_modal_kg(
             "created_at": datetime.now().isoformat(),
             "text_inputs": [str(path) for path in text_paths],
             "chemeagle_inputs": [str(path) for path in image_paths],
+            "text_substrate_name_policy": text_substrate_name_policy,
             "total_alignments": len(strong_alignments),
             "same_as_alignments": len(same_as_alignments),
             "symbol_resolution_alignments": len(symbol_resolution_alignments),
@@ -1416,6 +1509,7 @@ def build_cross_modal_kg(
         "reaction_alignment_candidates": str(reaction_candidates_path),
         "kg_triples_unified_multimodal": str(unified_kg_path),
         "kg_triples_multimodal": str(unified_kg_path),
+        "text_substrate_name_policy": text_substrate_name_policy,
         "text_compounds": len(text_compounds),
         "image_compounds": len(image_compounds),
         "text_reaction_triples": len(text_triples),
@@ -1427,3 +1521,67 @@ def build_cross_modal_kg(
         "total_kg_triples": len(triples),
         "relationship_counts": counts,
     }
+
+
+def _json_files_in_directory(directory: Path, label: str) -> List[Path]:
+    if not directory.is_dir():
+        raise ValueError(f"{label} directory does not exist: {directory}")
+    return sorted(path for path in directory.glob("*.json") if path.is_file())
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Build a unified KG CSV from text reaction JSON files."
+    )
+    parser.add_argument(
+        "--text-dir",
+        required=True,
+        type=Path,
+        help="Directory containing text reaction JSON files.",
+    )
+    parser.add_argument(
+        "--chemeagle-dir",
+        type=Path,
+        help="Optional directory containing ChemEagle reaction JSON files.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        required=True,
+        type=Path,
+        help="Directory for KG and alignment outputs.",
+    )
+    parser.add_argument(
+        "--text-substrate-name-policy",
+        choices=sorted(TEXT_SUBSTRATE_NAME_POLICIES),
+        default=TEXT_SUBSTRATE_NAME_POLICY_RESOLVED,
+        help=(
+            "Use resolved text-substrate names (default), prefer the "
+            "pre-inference original_name, or use a registry-resolved name "
+            "only when same-paper registry resolution succeeded."
+        ),
+    )
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    text_paths = _json_files_in_directory(args.text_dir, "Text reaction")
+    if not text_paths:
+        raise ValueError(f"No JSON files found in text reaction directory: {args.text_dir}")
+    image_paths = (
+        _json_files_in_directory(args.chemeagle_dir, "ChemEagle")
+        if args.chemeagle_dir
+        else []
+    )
+    result = build_cross_modal_kg(
+        text_reaction_paths=text_paths,
+        chemeagle_raw_iupac_paths=image_paths,
+        output_dir=args.output_dir,
+        text_substrate_name_policy=args.text_substrate_name_policy,
+    )
+    # Keep CLI output printable on Windows consoles using a legacy code page.
+    print(json.dumps(result, ensure_ascii=True, indent=2))
+
+
+if __name__ == "__main__":
+    main()

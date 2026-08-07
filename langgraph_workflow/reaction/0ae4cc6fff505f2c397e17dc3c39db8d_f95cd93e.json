@@ -1,0 +1,37 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0ae4cc6fff505f2c397e17dc3c39db8d.pdf",
+  "paper_key": "0ae4cc6fff505f2c397e17dc3c39db8d",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0ae4cc6fff505f2c397e17dc3c39db8d.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0ae4cc6fff505f2c397e17dc3c39db8d.pdf",
+    "source_mtime_ns": 1782048803000000000,
+    "source_size": 360562,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "two_column",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "0ae4cc6fff505f2c397e17dc3c39db8d",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0ae4cc6fff505f2c397e17dc3c39db8d.pdf"
+  },
+  "extracted_at": "2026-07-18T02:35:23.415649",
+  "total_reactions": 0,
+  "filtered_reactions": 0,
+  "reactions": [],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_suzuki/symbol_resolved/text/0ae4cc6fff505f2c397e17dc3c39db8d_f95cd93e.json",
+    "input_sha256": "f97dab35298de243bc69a6a503709794588efa1b6aff35fe169e22f7f0dc10c7"
+  }
+}

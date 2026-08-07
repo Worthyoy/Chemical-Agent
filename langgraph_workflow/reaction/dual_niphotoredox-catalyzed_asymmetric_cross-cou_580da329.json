@@ -1,0 +1,4673 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Dual Niphotoredox-catalyzed asymmetric cross-coupling to access chiral benzylic boronic esters.pdf",
+  "paper_key": "dual niphotoredox-catalyzed asymmetric cross-coupling to access chiral benzylic boronic esters",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Dual Niphotoredox-catalyzed asymmetric cross-coupling to access chiral benzylic boronic esters.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Dual Niphotoredox-catalyzed asymmetric cross-coupling to access chiral benzylic boronic esters.pdf",
+    "source_mtime_ns": 1782048432000000000,
+    "source_size": 13406015,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "dual niphotoredox-catalyzed asymmetric cross-coupling to access chiral benzylic boronic esters",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Dual Niphotoredox-catalyzed asymmetric cross-coupling to access chiral benzylic boronic esters.pdf"
+  },
+  "extracted_at": "2026-07-17T02:52:57.503644",
+  "total_reactions": 62,
+  "filtered_reactions": 61,
+  "filter_stats": {
+    "input_reactions": 62,
+    "basic_failed": 0,
+    "target_failed": 1,
+    "retained": 61
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3a",
+          "symbol": "3a",
+          "amount": "58.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry1",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        6,
+        7
+      ],
+      "reaction_type": "photoredox and nickel dual-catalyzed cross-coupling of an aryl halide with 2a under blue light",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "1.6 mmol, 435.2 mg, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": "1.0 mmol, 232 mg",
+          "resolved_smiles": "CCCCC(Cl)B1OC(C)(C)C(C)(C)O1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 1,
+            "image_name": "page_3_image_1.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3a",
+          "symbol": "3a",
+          "amount": "208.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.01 mmol, 7.9 mg, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.1 mmol, 30.8 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "2.0 mmol, 504 mg, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "5.0 mmol, 505 mg, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA",
+        "solvent_amount": "v/v = 5/1, 20 mL",
+        "temperature": "room temperature then approximately 20 °C",
+        "time": "30 min then 16 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry2",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "photoredox and nickel dual-catalyzed cross-coupling of an aryl halide with 2a under blue light",
+      "substrates": [
+        {
+          "name": "aryl halide",
+          "symbol": "1y",
+          "amount": "1.6 mmol, 380.8 mg, 1.6 equiv."
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": "1.0 mmol, 232 mg",
+          "resolved_smiles": "CCCCC(Cl)B1OC(C)(C)C(C)(C)O1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 1,
+            "image_name": "page_3_image_1.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3y",
+          "symbol": "3y",
+          "amount": "206.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.01 mmol, 7.9 mg, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.1 mmol, 30.8 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "2.0 mmol, 504 mg, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "5.0 mmol, 505 mg, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA",
+        "solvent_amount": "v/v = 5/1, 20 mL",
+        "temperature": "room temperature then approximately 20 °C",
+        "time": "30 min then 16 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureE-Entry1",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        11,
+        84
+      ],
+      "reaction_type": "hydrogen peroxide-mediated oxidation of 3y to 4a",
+      "substrates": [
+        {
+          "name": "3y",
+          "symbol": "3y",
+          "amount": "0.2 mmol, 61.6 mg"
+        }
+      ],
+      "products": [
+        {
+          "name": "4a",
+          "symbol": "4a",
+          "amount": "37.6 mg",
+          "resolved_smiles": "CCCC[C@@H](O)c1ccc(Cl)cc1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaOH aqueous solution",
+          "symbol": null,
+          "amount": "2N, 1.0 mmol, 0.5 mL, 5 equiv."
+        },
+        {
+          "name": "H2O2",
+          "symbol": null,
+          "amount": "2.0 equiv., 0.4 mL, 30% aqueous solution"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2 mL",
+        "temperature": "≈0 °C then room temperature",
+        "time": "4–6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "KHF2-mediated conversion of 3a to 4b",
+      "substrates": [
+        {
+          "name": "3a",
+          "symbol": "3a",
+          "amount": "68.4 mg"
+        }
+      ],
+      "products": [
+        {
+          "name": "4b",
+          "symbol": "4b",
+          "amount": "38.0 mg",
+          "resolved_smiles": "CCCC[C@@H]([K+])c1ccc(C(F)(F)F)cc1.F[B-](F)F",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KHF2 (aqueous solution)",
+          "symbol": null,
+          "amount": "0.7 mmol, 54.6 mg, 3.5 M"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOH",
+        "solvent_amount": "2 mL",
+        "temperature": "0 °C then room temperature",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        11,
+        12
+      ],
+      "reaction_type": "Pd-catalyzed arylation of 3y with 1l",
+      "substrates": [
+        {
+          "name": "3y",
+          "symbol": "3y",
+          "amount": "0.3 mmol, 92.4 mg, 1.5 equiv."
+        },
+        {
+          "name": "1l",
+          "symbol": "1l",
+          "amount": "0.2 mmol, 43.6 mg"
+        }
+      ],
+      "products": [
+        {
+          "name": "4c",
+          "symbol": "4c",
+          "amount": "41.9 mg",
+          "resolved_smiles": "CCCC[C@H](c1ccc(Cl)cc1)c1cccc(C)c1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "2_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.016 mmol, 18.5 mg, 8 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Ag2O",
+          "symbol": null,
+          "amount": "3.0 mmol, 695.2 mg, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "4 mL",
+        "temperature": "75 °C",
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "88%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "vinylation of 3y using vinylmagnesium bromide followed by iodine/NaOMe workup to give 4d",
+      "substrates": [
+        {
+          "name": "3y",
+          "symbol": "3y",
+          "amount": "61.6 mg, 0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "4d",
+          "symbol": "4d",
+          "amount": "22.0 mg",
+          "resolved_smiles": "C=C[C@H](CCCC)c1ccc(Cl)cc1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "3_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "vinylmagnesium bromide (0.5 M in THF)",
+          "symbol": null,
+          "amount": "0.8 mmol, 1.6 mL, 0.5 M in THF"
+        },
+        {
+          "name": "I2 (in MeOH)",
+          "symbol": "I2",
+          "amount": "0.8 mmol in 2 mL MeOH"
+        },
+        {
+          "name": "NaOMe (in MeOH)",
+          "symbol": "NaOMe",
+          "amount": "1.6 mmol in 2 mL MeOH"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2 mL",
+        "temperature": "room temperature then -78 °C then room temperature",
+        "time": "30 min then 30 min then 2 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        12,
+        13
+      ],
+      "reaction_type": "lithiation of 1-benzofuran, addition of 3a, and NBS bromination to give 4e",
+      "substrates": [
+        {
+          "name": "1-benzofuran",
+          "symbol": null,
+          "amount": "28.3 mg, 0.24 mmol"
+        },
+        {
+          "name": "3a",
+          "symbol": "3a",
+          "amount": "68.4 mg, 0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "4e",
+          "symbol": "4e",
+          "amount": "47.1 mg",
+          "resolved_smiles": "CCCC[C@H](c1ccc(C(F)(F)F)cc1)c1cc2ccccc2o1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "4_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "nBuLi (1.6 M in Hexane)",
+          "symbol": "nBuLi",
+          "amount": "0.15 mL, 0.24 mmol, 1.6 M in Hexane"
+        },
+        {
+          "name": "NBS",
+          "symbol": "NBS",
+          "amount": "45 mg, 0.25 mmol, 0.5 M in THF",
+          "resolved_smiles": "O=C1CC(Br)N1C=O",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "4_1",
+            "field": "conditions",
+            "item_index": 2,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C then room temperature then -78 °C",
+        "time": "1 h then 1 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        14,
+        16
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3a",
+          "symbol": "3a",
+          "amount": "48.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        14,
+        15
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide",
+          "symbol": "1d",
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3d",
+          "symbol": "3d",
+          "amount": "40.1 mg",
+          "resolved_smiles": "*c1cc(F)ccc1[C@@H](CCCC)B1OC(C)(C)C(C)(C)O1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_5_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        14,
+        15
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide",
+          "symbol": "1u",
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3u",
+          "symbol": "3u",
+          "resolved_smiles": "*c1cc(F)ccc1[C@@H](CCCC)B1OC(C)(C)C(C)(C)O1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "products",
+            "item_index": 1,
+            "image_name": "page_5_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "15%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry5",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2d",
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        }
+      ],
+      "products": [
+        {
+          "name": "5a",
+          "symbol": "5a",
+          "amount": "36.8 mg",
+          "resolved_smiles": "CC1(C)OB(C2CCCC2Cc2ccc(C(F)(F)F)cc2)OC1(C)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "a_2",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_2.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": "1.5:1"
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry6",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2e",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5b",
+          "symbol": "5b",
+          "amount": "50.9 mg",
+          "resolved_smiles": "CC1(C)OB(/C=C/CCc2ccc(C(F)(F)F)cc2)OC1(C)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "a_3",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_2.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        18,
+        19
+      ],
+      "reaction_type": "Ni(cod)2-mediated stoichiometry study (coupling, step 1) followed by oxidative workup (step 2) to give 7",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "6",
+          "symbol": "6",
+          "amount": "0.15 mmol, 3.0 equiv.",
+          "step": 1,
+          "resolved_smiles": "C=C(c1ccccc1)c1ccccc1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "b_1",
+            "field": "reactants",
+            "item_index": 0,
+            "image_name": "page_6_image_2.png"
+          }
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": "0.05 mmol",
+          "step": 1,
+          "resolved_smiles": "CCCCC(Cl)B1OC(C)(C)C(C)(C)O1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 1,
+            "image_name": "page_3_image_1.png"
+          }
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "7",
+          "symbol": "7",
+          "amount": "3.1 mg",
+          "step": 2,
+          "resolved_smiles": "CCCCC(CC(c1ccccc1)c1ccccc1)B1OC(C)(C)C(C)(C)O1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "b_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_2.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(cod)2",
+          "amount": "0.05 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1",
+          "step": 1
+        }
+      ],
+      "other_components": [
+        {
+          "name": "2N NaOH aqueous solution",
+          "amount": "1.0 mmol, 0.5 mL, 5 equiv.",
+          "step": 2
+        },
+        {
+          "name": "H2O2",
+          "amount": "2.0 equiv., 0.4 mL, 30% aqueous solution",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "DME/DMA (v/v = 5/1)"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "1 mL"
+          },
+          {
+            "step": 2,
+            "value": "1 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "≈0 °C then room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "6-8 hours"
+          },
+          {
+            "step": 2,
+            "value": "4–6 hours"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "23%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "Ni(cod)2-mediated coupling (stoichiometry study) to give 3a",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.15 mmol, 3.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2a",
+          "symbol": "2a",
+          "amount": "0.05 mmol",
+          "resolved_smiles": "CCCCC(Cl)B1OC(C)(C)C(C)(C)O1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 1,
+            "image_name": "page_3_image_1.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3a",
+          "symbol": "3a",
+          "amount": "2.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ni(cod)2",
+          "amount": "0.05 mmol, 1.0 equiv."
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "17%",
+        "ee": "82%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry7",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3a",
+          "symbol": "3a",
+          "amount": "58.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3a"
+    },
+    {
+      "id": "GeneralProcedureB-Entry8",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3b",
+          "symbol": "3b",
+          "amount": "46.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3b"
+    },
+    {
+      "id": "GeneralProcedureB-Entry9",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3c",
+          "symbol": "3c",
+          "amount": "37.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3c"
+    },
+    {
+      "id": "GeneralProcedureB-Entry10",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3d",
+          "symbol": "3d",
+          "amount": "36.2 mg",
+          "resolved_smiles": "*c1cc(F)ccc1[C@@H](CCCC)B1OC(C)(C)C(C)(C)O1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_5_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3d"
+    },
+    {
+      "id": "GeneralProcedureB-Entry11",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3e",
+          "symbol": "3e",
+          "amount": "17.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "47%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry12",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3f",
+          "symbol": "3f",
+          "amount": "39.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry13",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        30,
+        31
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3g",
+          "symbol": "3g",
+          "amount": "43.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry14",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3h",
+          "symbol": "3h",
+          "amount": "40.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry15",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3i",
+          "symbol": "3i",
+          "amount": "18.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "48%",
+        "ee": "82%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry16",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3j",
+          "symbol": "3j",
+          "amount": "32.3 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": "89%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry17",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3k",
+          "symbol": "3k",
+          "amount": "24.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB_3k_P37"
+    },
+    {
+      "id": "GeneralProcedureB-Entry18",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3l",
+          "symbol": "3l",
+          "amount": "39.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB_3l_P38"
+    },
+    {
+      "id": "GeneralProcedureB-Entry19",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3m",
+          "symbol": "3m",
+          "amount": "50.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB_3m_P40"
+    },
+    {
+      "id": "GeneralProcedureB-Entry20",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3n",
+          "symbol": "3n",
+          "amount": "40.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB_3n_P41"
+    },
+    {
+      "id": "GeneralProcedureB-Entry21",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        42,
+        43
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "3o",
+          "symbol": "3o",
+          "amount": "15.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "40%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry22",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "3p",
+          "symbol": "3p",
+          "amount": "40.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry23",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "3q",
+          "symbol": "3q",
+          "amount": "40.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry24",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3r",
+          "symbol": "3r",
+          "amount": "33.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "89%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-3r-47"
+    },
+    {
+      "id": "GeneralProcedureB-Entry25",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        48,
+        49
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3s",
+          "symbol": "3s",
+          "amount": "32.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": "89%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-3s-48-49"
+    },
+    {
+      "id": "GeneralProcedureB-Entry26",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3t",
+          "symbol": "3t",
+          "amount": "30.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-3t-50"
+    },
+    {
+      "id": "GeneralProcedureB-Entry27",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        52
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3u",
+          "symbol": "3u",
+          "amount": "38.6 mg",
+          "resolved_smiles": "*c1cc(F)ccc1[C@@H](CCCC)B1OC(C)(C)C(C)(C)O1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "products",
+            "item_index": 1,
+            "image_name": "page_5_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3u"
+    },
+    {
+      "id": "GeneralProcedureB-Entry28",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        53
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3v",
+          "symbol": "3v",
+          "amount": "70.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3v"
+    },
+    {
+      "id": "GeneralProcedureB-Entry29",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        55
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3w",
+          "symbol": "3w",
+          "amount": "36.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3w"
+    },
+    {
+      "id": "GeneralProcedureB-Entry30",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        56
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3x",
+          "symbol": "3x",
+          "amount": "43.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3x"
+    },
+    {
+      "id": "GeneralProcedureB-Entry31",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        58
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3y",
+          "symbol": "3y",
+          "amount": "46.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_GP_B_3y"
+    },
+    {
+      "id": "GeneralProcedureB-Entry32",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        59
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3z",
+          "symbol": "3z",
+          "amount": "49.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_GP_B_3z"
+    },
+    {
+      "id": "GeneralProcedureB-Entry33",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        60,
+        61
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3aa",
+          "symbol": "3aa",
+          "amount": "47.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_GP_B_3aa"
+    },
+    {
+      "id": "GeneralProcedureB-Entry34",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        62
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3bb",
+          "symbol": "3bb",
+          "amount": "42.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": "HEH",
+          "amount": "0.4 mmol, 2 equiv.",
+          "resolved_smiles": "CCOOC1=C(C)NC(C)=C(C(=O)OCC)C1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 3,
+            "image_name": "page_3_image_2.png"
+          }
+        },
+        {
+          "name": "TEA",
+          "symbol": "TEA",
+          "amount": "1.0 mmol, 5 equiv.",
+          "resolved_smiles": "CCN(CC)CC",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 4,
+            "image_name": "page_3_image_2.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB_3bb"
+    },
+    {
+      "id": "GeneralProcedureB-Entry35",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        64
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3cc",
+          "symbol": "3cc",
+          "amount": "58.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": "HEH",
+          "amount": "0.4 mmol, 2 equiv.",
+          "resolved_smiles": "CCOOC1=C(C)NC(C)=C(C(=O)OCC)C1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 3,
+            "image_name": "page_3_image_2.png"
+          }
+        },
+        {
+          "name": "TEA",
+          "symbol": "TEA",
+          "amount": "1.0 mmol, 5 equiv.",
+          "resolved_smiles": "CCN(CC)CC",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 4,
+            "image_name": "page_3_image_2.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB_3cc"
+    },
+    {
+      "id": "GeneralProcedureB-Entry36",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        65
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3dd",
+          "symbol": "3dd",
+          "amount": "38.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": "HEH",
+          "amount": "0.4 mmol, 2 equiv.",
+          "resolved_smiles": "CCOOC1=C(C)NC(C)=C(C(=O)OCC)C1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 3,
+            "image_name": "page_3_image_2.png"
+          }
+        },
+        {
+          "name": "TEA",
+          "symbol": "TEA",
+          "amount": "1.0 mmol, 5 equiv.",
+          "resolved_smiles": "CCN(CC)CC",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 4,
+            "image_name": "page_3_image_2.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB_3dd"
+    },
+    {
+      "id": "GeneralProcedureB-Entry37",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        67
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2ee",
+          "symbol": "2ee",
+          "amount": "40.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry38",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        68
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3ff",
+          "symbol": "3ff",
+          "amount": "63.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry39",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        69,
+        70
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3gg",
+          "symbol": "3gg",
+          "amount": "60.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry40",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        71
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3hh",
+          "symbol": "3hh",
+          "amount": "33.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry41",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        73
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3ii",
+          "symbol": "3ii",
+          "amount": "43.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry42",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        74
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3jj",
+          "symbol": "3jj",
+          "amount": "49.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry43",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        76
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3kk",
+          "symbol": "3kk",
+          "amount": "32.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry44",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        77
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3ll",
+          "symbol": "3ll",
+          "amount": "18.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "35%",
+        "ee": "87%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry45",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        79
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3mm",
+          "symbol": "3mm",
+          "amount": "24.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "40%",
+        "ee": "83%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry46",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        80
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "α-Chloro pentanal pinacol boronate ester",
+          "symbol": "1a",
+          "amount": "0.32 mmol, 1.6 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high",
+          "original_name": "aryl halide"
+        },
+        {
+          "name": "α-chloro alkyl boronic ester",
+          "symbol": "2a",
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3nn",
+          "symbol": "3nn",
+          "amount": "47.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry47",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        82
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3oo",
+          "symbol": "3oo",
+          "amount": "41.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "43%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry48",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        83
+      ],
+      "reaction_type": "Photoredox/nickel dual-catalyzed arylation of α-chloro alkyl boronic esters",
+      "substrates": [
+        {
+          "name": "aryl halide 1a",
+          "symbol": null,
+          "amount": "0.32 mmol, 1.6 equiv."
+        },
+        {
+          "name": "α-chloro alkyl boronic ester 2a",
+          "symbol": null,
+          "amount": "0.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3pp",
+          "symbol": "3pp",
+          "amount": "57.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.002 mmol, 1 mol%"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "HEH",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        },
+        {
+          "name": "TEA",
+          "symbol": null,
+          "amount": "1.0 mmol, 5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DME/DMA (v/v = 5/1)",
+        "solvent_amount": "4 mL",
+        "temperature": "room temperature then approximately 20 oC",
+        "time": "30 min then 8-10 h",
+        "atmosphere": "N2",
+        "light_source": "blue light",
+        "wavelength": "450-455 nm"
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": null,
+        "er": null,
+        "dr": "18:1"
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureE-Entry2",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        85
+      ],
+      "reaction_type": "hydrogen peroxide-mediated oxidation of 3y to 4a",
+      "substrates": [
+        {
+          "name": "3y",
+          "symbol": "3y",
+          "amount": "0.2 mmol, 61.6 mg"
+        }
+      ],
+      "products": [
+        {
+          "name": "4b",
+          "symbol": "4b",
+          "amount": "38.0 mg",
+          "resolved_smiles": "CCCC[C@@H]([K+])c1ccc(C(F)(F)F)cc1.F[B-](F)F",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaOH aqueous solution",
+          "symbol": null,
+          "amount": "2N, 1.0 mmol, 0.5 mL, 5 equiv."
+        },
+        {
+          "name": "H2O2",
+          "symbol": null,
+          "amount": "2.0 equiv., 0.4 mL, 30% aqueous solution"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2 mL",
+        "temperature": "≈0 °C then room temperature",
+        "time": "4–6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureE-Entry3",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        85,
+        86
+      ],
+      "reaction_type": "hydrogen peroxide-mediated oxidation of 3y to 4a",
+      "substrates": [
+        {
+          "name": "3y",
+          "symbol": "3y",
+          "amount": "0.2 mmol, 61.6 mg"
+        }
+      ],
+      "products": [
+        {
+          "name": "4c",
+          "symbol": "4c",
+          "amount": "41.9 mg",
+          "resolved_smiles": "CCCC[C@H](c1ccc(Cl)cc1)c1cccc(C)c1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "2_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaOH aqueous solution",
+          "symbol": null,
+          "amount": "2N, 1.0 mmol, 0.5 mL, 5 equiv."
+        },
+        {
+          "name": "H2O2",
+          "symbol": null,
+          "amount": "2.0 equiv., 0.4 mL, 30% aqueous solution"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2 mL",
+        "temperature": "≈0 °C then room temperature",
+        "time": "4–6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "88%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureE-Entry4",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        87
+      ],
+      "reaction_type": "hydrogen peroxide-mediated oxidation of 3y to 4a",
+      "substrates": [
+        {
+          "name": "3y",
+          "symbol": null,
+          "amount": "0.2 mmol, 61.6 mg"
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "4d",
+          "symbol": "4d",
+          "amount": "22.0 mg",
+          "resolved_smiles": "C=C[C@H](CCCC)c1ccc(Cl)cc1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "3_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaOH aqueous solution",
+          "symbol": null,
+          "amount": "2N, 1.0 mmol, 0.5 mL, 5 equiv."
+        },
+        {
+          "name": "H2O2",
+          "symbol": null,
+          "amount": "2.0 equiv., 0.4 mL, 30% aqueous solution"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2 mL",
+        "temperature": "≈0 °C then room temperature",
+        "time": "4–6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureE-Entry5",
+      "_gp_source": "GeneralProcedureE",
+      "source_pages": [
+        89
+      ],
+      "reaction_type": "hydrogen peroxide-mediated oxidation of 3y to 4a",
+      "substrates": [
+        {
+          "name": "3y",
+          "symbol": null,
+          "amount": "0.2 mmol, 61.6 mg"
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "4e",
+          "symbol": "4e",
+          "amount": "47.1 mg",
+          "resolved_smiles": "CCCC[C@H](c1ccc(C(F)(F)F)cc1)c1cc2ccccc2o1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "4_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaOH aqueous solution",
+          "symbol": null,
+          "amount": "2N, 1.0 mmol, 0.5 mL, 5 equiv."
+        },
+        {
+          "name": "H2O2",
+          "symbol": null,
+          "amount": "2.0 equiv., 0.4 mL, 30% aqueous solution"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2 mL",
+        "temperature": "≈0 °C then room temperature",
+        "time": "4–6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/dual_niphotoredox-catalyzed_asymmetric_cross-cou_580da329.json",
+    "input_sha256": "de52aa1d49e7b35fca78f344abce82562418485227b21801fbe27f868a680dd0"
+  }
+}

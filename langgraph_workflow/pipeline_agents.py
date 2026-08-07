@@ -100,6 +100,7 @@ class PipelineConfig:
     chemeagle_iupac_lookup_timeout: float = 15.0
     enable_chemeagle_role_refinement: bool = False
     enable_multimodal_kg: bool = False
+    text_substrate_name_policy: str = "resolved"
     enable_multimodal_structure_enrichment: bool = False
     enable_stage2_audit: bool = True
     input_mode: str = "supporting_information"
@@ -2484,6 +2485,7 @@ class CrossModalKGAgent:
                     output_dir=self.config.filtered_dir,
                     kg_output_dir=self.config.kg_dir,
                     alignments_output_dir=self.config.alignments_dir,
+                    text_substrate_name_policy=self.config.text_substrate_name_policy,
                 )
                 if structure_result:
                     result["structure_enrichment"] = structure_result
@@ -2892,6 +2894,7 @@ class ReportAgent:
                 "chemeagle_iupac_lookup_timeout": self.config.chemeagle_iupac_lookup_timeout,
                 "enable_chemeagle_role_refinement": self.config.enable_chemeagle_role_refinement,
                 "enable_multimodal_kg": self.config.enable_multimodal_kg,
+                "text_substrate_name_policy": self.config.text_substrate_name_policy,
                 "enable_multimodal_structure_enrichment": self.config.enable_multimodal_structure_enrichment,
                 "multimodal_structure_enrichment_effective": (
                     "required_by_multimodal_kg" if self.config.enable_multimodal_kg else "disabled"

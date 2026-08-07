@@ -281,6 +281,20 @@ def parse_args():
         help="Build unified text/ChemEagle reaction KG and cross-modal alignments.",
     )
     parser.add_argument(
+        "--text-substrate-name-policy",
+        choices=(
+            "resolved",
+            "original_if_available",
+            "registry_if_resolved_else_original",
+        ),
+        default="resolved",
+        help=(
+            "Choose resolved substrate names for the KG (default), prefer "
+            "source-reported names/symbols, or use registry-resolved names "
+            "while retaining original names for other resolution sources."
+        ),
+    )
+    parser.add_argument(
         "--enable_multimodal_structure_enrichment",
         action="store_true",
         help="Compatibility flag. Structure enrichment runs automatically whenever --enable_multimodal_kg is enabled.",
@@ -474,6 +488,7 @@ def config_from_args(args) -> PipelineConfig:
         chemeagle_iupac_lookup_timeout=max(0.0, args.chemeagle_iupac_lookup_timeout),
         enable_chemeagle_role_refinement=args.enable_chemeagle_role_refinement,
         enable_multimodal_kg=args.enable_multimodal_kg,
+        text_substrate_name_policy=args.text_substrate_name_policy,
         enable_multimodal_structure_enrichment=args.enable_multimodal_structure_enrichment,
         enable_stage2_audit=not args.skip_stage2_audit,
         input_mode=input_mode,

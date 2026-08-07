@@ -325,3 +325,125 @@ def test_sanitize_preserves_resolved_ligand_identity_and_amount():
             "step": 2,
         }
     ]
+
+
+def test_registry_alignment_resolves_underspecified_substrate_series_label():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    registry_name = "Methyl substituted enamine"
+
+    aligned = extractor.align_names_in_reactions(
+        [
+            {
+                "id": "GeneralProcedureF-Entry11",
+                "substrates": [
+                    {
+                        "name": "3",
+                        "symbol": "3k",
+                        "amount": "0.2 mmol, 1.0 equiv.",
+                    }
+                ],
+            }
+        ],
+        {"3k": registry_name},
+    )
+
+    substrate = aligned[0]["substrates"][0]
+    assert substrate == {
+        "name": registry_name,
+        "symbol": "3k",
+        "amount": "0.2 mmol, 1.0 equiv.",
+        "original_name": "3",
+        "resolution_source": "name_registry",
+        "resolution_method": "same_paper_symbol",
+        "resolution_confidence": "high",
+        "resolution_status": "resolved_from_registry",
+        "resolution_evidence": {
+            "match_type": "underspecified_series_label",
+            "reported_name": "3",
+            "reported_symbol": "3k",
+            "registry_symbol": "3k",
+        },
+    }
+    assert extractor.last_registry_resolution_stats["underspecified_series_labels"] == 1
+    assert extractor._generic_substrate_resolution_candidate(aligned[0]) is None
+
+
+def test_registry_alignment_replaces_prior_product_inference_and_stale_conflict():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    registry_name = "Methyl substituted enamine"
+    aligned = extractor.align_names_in_reactions(
+        [
+            {
+                "id": "GeneralProcedureF-Entry11",
+                "substrates": [
+                    {
+                        "name": registry_name,
+                        "symbol": "3k",
+                        "original_name": "3",
+                        "registry_name": registry_name,
+                        "registry_match_status": "conflict",
+                        "registry_conflict_reason": (
+                            "extracted_name_differs_from_registry_symbol_name"
+                        ),
+                        "identity_status": "generic",
+                        "resolution_status": "resolved_from_product",
+                        "resolution_source": "product_name",
+                        "resolution_method": "product_name_to_substrate_mapping",
+                        "resolution_evidence": {"product_name": "product 4k"},
+                    }
+                ],
+            }
+        ],
+        {"3k": registry_name},
+    )
+
+    substrate = aligned[0]["substrates"][0]
+    assert substrate["name"] == registry_name
+    assert substrate["symbol"] == "3k"
+    assert substrate["original_name"] == "3"
+    assert substrate["resolution_source"] == "name_registry"
+    assert substrate["resolution_status"] == "resolved_from_registry"
+    assert substrate["resolution_evidence"]["match_type"] == (
+        "underspecified_series_label"
+    )
+    assert "registry_name" not in substrate
+    assert "registry_match_status" not in substrate
+    assert "registry_conflict_reason" not in substrate
+    assert "identity_status" not in substrate
+
+
+def test_registry_alignment_accepts_only_missing_letter_suffix():
+    extractor = SIExtractor(api_key="test", enable_stage2_audit=False)
+    reactions = [
+        {
+            "id": "series-safety",
+            "substrates": [
+                {"name": "compound 3", "symbol": "3aa"},
+                {"name": "3", "symbol": "3a"},
+                {"name": "3", "symbol": "30"},
+                {"name": "3j", "symbol": "3k"},
+                {"name": "3", "symbol": "3z"},
+            ],
+        }
+    ]
+    registry = {
+        "3aa": "compound three aa",
+        "3a": "compound three a",
+        "30": "compound thirty",
+        "3k": "compound three k",
+    }
+
+    first = extractor.align_names_in_reactions(reactions, registry)
+    substrates = first[0]["substrates"]
+    assert substrates[0]["name"] == "compound three aa"
+    assert substrates[0]["original_name"] == "compound 3"
+    assert substrates[1]["name"] == "compound three a"
+    assert substrates[1]["original_name"] == "3"
+    assert substrates[2]["name"] == "3"
+    assert substrates[2]["registry_match_status"] == "conflict"
+    assert substrates[3]["name"] == "3j"
+    assert substrates[3]["registry_match_status"] == "conflict"
+    assert substrates[4] == {"name": "3", "symbol": "3z"}
+
+    second = extractor.align_names_in_reactions(first, registry)
+    assert second == first

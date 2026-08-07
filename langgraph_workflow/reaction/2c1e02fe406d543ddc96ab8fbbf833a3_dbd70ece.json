@@ -1,0 +1,864 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2c1e02fe406d543ddc96ab8fbbf833a3.pdf",
+  "paper_key": "2c1e02fe406d543ddc96ab8fbbf833a3",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2c1e02fe406d543ddc96ab8fbbf833a3.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2c1e02fe406d543ddc96ab8fbbf833a3.pdf",
+    "source_mtime_ns": 1782048799000000000,
+    "source_size": 273584,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "two_column",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "2c1e02fe406d543ddc96ab8fbbf833a3",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2c1e02fe406d543ddc96ab8fbbf833a3.pdf"
+  },
+  "extracted_at": "2026-07-18T03:01:38.417038",
+  "total_reactions": 23,
+  "filtered_reactions": 14,
+  "filter_stats": {
+    "input_reactions": 23,
+    "basic_failed": 0,
+    "target_failed": 9,
+    "retained": 14
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "Suzuki-Miyaura coupling and spontaneous cyclization",
+      "substrates": [
+        {
+          "name": "5-iodo-2'-deoxycytidine",
+          "symbol": "4",
+          "amount": null,
+          "registry_name": "5-iodo-2¢-deoxycytidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "N-Boc-indole-2-borate derivatives",
+          "symbol": "2a-f",
+          "amount": null,
+          "registry_name": "indole-2-borate building blocks",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "pyrimidopyrimidoindole nucleoside dCPPI",
+          "symbol": "5a",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "5b",
+          "symbol": "5b",
+          "amount": null
+        },
+        {
+          "name": "5c",
+          "symbol": "5c",
+          "amount": null
+        },
+        {
+          "name": "5d",
+          "symbol": "5d",
+          "amount": null
+        },
+        {
+          "name": "5e",
+          "symbol": "5e",
+          "amount": null
+        },
+        {
+          "name": "5f",
+          "symbol": "5f",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "palladium acetate",
+          "symbol": null,
+          "amount": "0.03 equiv"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "tris(3-sulfonatophenyl)phosphine (TPPTS)"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "water-acetonitrile",
+        "solvent_amount": "2:1 v/v",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "46-84%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "oxidation",
+      "substrates": [
+        {
+          "name": "5c",
+          "symbol": "5c",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "sulfone derivative",
+          "symbol": "6",
+          "amount": null,
+          "registry_name": "Sulfone",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "OXONE",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        3,
+        4
+      ],
+      "reaction_type": "alkylation (quaternization)",
+      "substrates": [
+        {
+          "name": "5f",
+          "symbol": "5f",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "3-trimethylammonium salt derivative",
+          "symbol": "7",
+          "amount": null,
+          "registry_name": "Trimethylammonium",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "methyl iodide",
+          "symbol": null,
+          "amount": "10 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "N,N-dimethylformamide",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "100%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r4"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "cross-coupling and cyclization (analogue of dCPPI synthesis)",
+      "substrates": [
+        {
+          "name": "5-iodo-4-N-methyl-2'-deoxycytidine",
+          "symbol": "9",
+          "amount": null
+        },
+        {
+          "name": "N-Boc-indole-2-borate (presumed)",
+          "symbol": "2a",
+          "amount": null,
+          "registry_name": "N-Boc-indole-2-borate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-methyl derivative",
+          "symbol": "10a",
+          "amount": null,
+          "registry_name": "7-Methyl",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "22%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r5"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "Suzuki-Miyaura coupling (low yield)",
+      "substrates": [
+        {
+          "name": "5-iodo-3-methyl-2'-deoxycytidine",
+          "symbol": "11",
+          "amount": null
+        },
+        {
+          "name": "boronic acid derivative",
+          "symbol": "2a",
+          "amount": null,
+          "registry_name": "N-Boc-indole-2-borate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "8-methyl derivative",
+          "symbol": "12",
+          "amount": null,
+          "registry_name": "8-Methyl",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r6"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "Suzuki-Miyaura coupling",
+      "substrates": [
+        {
+          "name": "trifluoroborate derivative",
+          "symbol": "3a",
+          "amount": null,
+          "registry_name": "N-Boc-indole-2-trifluoroborateDerivatives",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "5-iodo-3-methyl-2'-deoxycytidine",
+          "symbol": "11",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "8-methyl derivative",
+          "symbol": "12",
+          "amount": null,
+          "registry_name": "8-Methyl",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r8"
+    },
+    {
+      "id": "GeneralProcedurefortheSynthesisofN-BocIndoles(1a-f)-Entry1",
+      "source_pages": [
+        6
+      ],
+      "_gp_source": "GeneralProcedurefortheSynthesisofN-BocIndoles(1a-f)",
+      "reaction_type": "Boc protection",
+      "substrates": [
+        {
+          "name": "5-N,N-dimethylaminoindole",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "N-Boc-5-dimethylaminoindole",
+          "symbol": "1f",
+          "amount": null,
+          "registry_name": "N-Boc-5-dimethylaminoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Bocanhydride",
+          "symbol": "Boc2O",
+          "amount": null
+        },
+        {
+          "name": "N,N-dimethylaminopyridine",
+          "symbol": "DMAP",
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "23 mL",
+        "temperature": "room temperature",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1f-boc"
+    },
+    {
+      "id": "GeneralProcedurefortheSynthesisofN-Boc-indole-2-borateDerivatives-Entry2",
+      "source_pages": [
+        8
+      ],
+      "_gp_source": "GeneralProcedurefortheSynthesisofN-Boc-indole-2-borateDerivatives",
+      "reaction_type": "lithiation and borylation (formation of indole-2-borate)",
+      "substrates": [
+        {
+          "name": "N-Boc-5-dimethylaminoindole",
+          "symbol": "1f",
+          "amount": null,
+          "registry_name": "N-Boc-5-dimethylaminoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-Boc-5-dimethylaminoindole-2-borate",
+          "symbol": "2f",
+          "amount": null,
+          "registry_name": "N-Boc-5-dimethylaminoindole-2-borate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triisopropyl borate",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "LDA",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": null,
+        "temperature": "0-5 °C",
+        "time": "2 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-2f-borate"
+    },
+    {
+      "id": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)-Entry2",
+      "source_pages": [
+        8
+      ],
+      "_gp_source": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)",
+      "reaction_type": "Pd-catalyzed formation of pyrimido[...]indole nucleoside (dCPPI)",
+      "substrates": [
+        {
+          "name": "2b",
+          "symbol": "2b",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methoxy-10-(2-deoxy-β-D-ribofuranosyl)pyrimido[4',5':4,5]pyrimido[1,6-a]indole-6,9(7H)-dione",
+          "symbol": "5b",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "palladium acetate",
+          "symbol": "Pd(OAc)2",
+          "amount": "7.6 mg, 0.03 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "TPPTS",
+          "symbol": "TPPTS"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-5b-dCPPI"
+    },
+    {
+      "id": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)-Entry3",
+      "source_pages": [
+        8
+      ],
+      "_gp_source": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)",
+      "reaction_type": "Pd-catalyzed formation of pyrimido[...]indole nucleoside (dCPPI)",
+      "substrates": [
+        {
+          "name": "N-Boc-5-methylthioindole-2-borate",
+          "symbol": "2c",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methylthio-10-(2-deoxy-β-D-ribofuranosyl)pyrimido[4',5':4,5]pyrimido[1,6-a]indole-6,9(7H)-dione",
+          "symbol": "5c",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "palladium acetate",
+          "symbol": "Pd(OAc)2",
+          "amount": "7.6 mg, 0.03 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "TPPTS",
+          "symbol": "TPPTS"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-5c-dCPPI"
+    },
+    {
+      "id": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)-Entry4",
+      "source_pages": [
+        8
+      ],
+      "_gp_source": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)",
+      "reaction_type": "Pd-catalyzed formation of pyrimido[...]indole nucleoside (dCPPI)",
+      "substrates": [
+        {
+          "name": "2d",
+          "symbol": "2d",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Fluoro-10-(2-deoxy-β-D-ribofuranosyl)pyrimido[4',5':4,5]pyrimido[1,6-a]indole-6,9(7H)-dione",
+          "symbol": "5d",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "palladium acetate",
+          "symbol": "Pd(OAc)2",
+          "amount": "7.6 mg, 0.03 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "TPPTS",
+          "symbol": "TPPTS"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-5d-dCPPI"
+    },
+    {
+      "id": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)-Entry5",
+      "source_pages": [
+        8
+      ],
+      "_gp_source": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)",
+      "reaction_type": "Pd-catalyzed formation of pyrimido[...]indole nucleoside (dCPPI)",
+      "substrates": [
+        {
+          "name": "2e",
+          "symbol": "2e",
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Cyano-10-(2-deoxy-β-D-ribofuranosyl)pyrimido[4',5':4,5]pyrimido[1,6-a]indole-6,9(7H)-dione",
+          "symbol": "5e",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "palladium acetate",
+          "symbol": "Pd(OAc)2",
+          "amount": "7.6 mg, 0.03 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "TPPTS",
+          "symbol": "TPPTS"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-5e-dCPPI"
+    },
+    {
+      "id": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)-Entry6",
+      "source_pages": [
+        8
+      ],
+      "_gp_source": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)",
+      "reaction_type": "Pd-catalyzed formation of pyrimido[...]indole nucleoside (dCPPI)",
+      "substrates": [
+        {
+          "name": "N-Boc-5-dimethylaminoindole-2-borate",
+          "symbol": "2f",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-N,N-Dimethylamino-10-(2-deoxy-β-D-ribofuranosyl)pyrimido[4',5':4,5]pyrimido[1,6-a]indole-6,9(7H)-dione",
+          "symbol": "5f",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "palladium acetate",
+          "symbol": "Pd(OAc)2",
+          "amount": "7.6 mg, 0.03 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "TPPTS",
+          "symbol": "TPPTS"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-5f-dCPPI"
+    },
+    {
+      "id": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)-Entry7",
+      "source_pages": [
+        9
+      ],
+      "_gp_source": "GeneralProcedureforthePreparationofPyrimidopyrimidoindole Nucleosides, dCPPI Derivatives (5a-f)",
+      "reaction_type": "Pd-catalyzed coupling to give pyrimido[1,6-a]indole and indole-2-yl nucleoside",
+      "substrates": [
+        {
+          "name": "5-Iodo-4-N-methyl-2'-deoxycytidine",
+          "symbol": "9",
+          "amount": "200 mg, 0.54 mmol"
+        },
+        {
+          "name": "N-Boc-indole-2-borate",
+          "symbol": "2a",
+          "amount": "426 mg, 1.6 mmol",
+          "registry_name": "N-Boc-indole-2-borate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "pyrimido[1,6-a]indole-6,9-dione (nucleoside)",
+          "symbol": "10a",
+          "amount": "45 mg",
+          "registry_name": "7-Methyl",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "5-(Indole-2-yl)-4-N-methyl-2'-deoxycytidine",
+          "symbol": "10b",
+          "amount": "136 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "palladium acetate",
+          "symbol": "Pd(OAc)2",
+          "amount": "3.7 mg, 0.016 mmol"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "TPPTS",
+          "symbol": "TPPTS"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "127 mg, 1.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "22%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-10a-10b-coupling"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_suzuki/symbol_resolved/text/2c1e02fe406d543ddc96ab8fbbf833a3_dbd70ece.json",
+    "input_sha256": "b3f24b6e1d364f9d3f020fb54df4ef6956e03c3ed4c34429abcf0d8fd1740a66"
+  }
+}

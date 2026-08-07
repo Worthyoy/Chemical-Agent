@@ -1,0 +1,4741 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Metallaphotoredox‐Catalyzed Enantioselective Cross‐Electrophile Coupling Using Alcohols as.pdf",
+  "paper_key": "metallaphotoredox‐catalyzed enantioselective cross‐electrophile coupling using alcohols as",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Metallaphotoredox‐Catalyzed Enantioselective Cross‐Electrophile Coupling Using Alcohols as.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Metallaphotoredox‐Catalyzed Enantioselective Cross‐Electrophile Coupling Using Alcohols as.pdf",
+    "source_mtime_ns": 1782048742000000000,
+    "source_size": 21318789,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "metallaphotoredox‐catalyzed enantioselective cross‐electrophile coupling using alcohols as",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Metallaphotoredox‐Catalyzed Enantioselective Cross‐Electrophile Coupling Using Alcohols as.pdf"
+  },
+  "extracted_at": "2026-07-17T07:43:58.668806",
+  "total_reactions": 59,
+  "filtered_reactions": 59,
+  "filter_stats": {
+    "input_reactions": 59,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 59
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "N-hydroxyphthalimide ester of 1-phenylpentanoic acid",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv",
+          "original_name": "NHP ester",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-Phenylpentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 1-phenylpentyl fragment that maps one-to-one to the alkyl group delivered by an NHP ester (decarboxylative coupling)."
+          }
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-Phenylpentyl)benzamide",
+          "symbol": null,
+          "amount": "39.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "N-hydroxyphthalimide ester of 1-(4-methoxyphenyl)pentanoic acid",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv",
+          "original_name": "NHP ester",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Methoxyphenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product shows a 1-(4-methoxyphenyl)pentyl fragment consistent with decarboxylation of the corresponding NHP ester."
+          }
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Methoxyphenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "45.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "N-hydroxyphthalimide ester of 1-(4-phenoxyphenyl)pentanoic acid",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv",
+          "original_name": "NHP ester",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Phenoxyphenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 1-(4-phenoxyphenyl)pentyl fragment that maps directly to the corresponding carboxylic-acid-derived NHP ester."
+          }
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Phenoxyphenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "52.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "89%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "products": [
+        {
+          "name": "tert-Butyl (R)-(4-(1-benzamidopentyl)phenyl)carbamate",
+          "symbol": null,
+          "amount": "53.5 mg"
+        }
+      ],
+      "targets": {
+        "yield": "70%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-P12-01"
+    },
+    {
+      "id": "GeneralProcedureB-Entry5",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "N-hydroxyphthalimide ester of 1-(4-(trimethylsilyl)phenyl)pentanoic acid",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv",
+          "original_name": "NHP ester",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-(Trimethylsilyl)phenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product shows a 1-(4-(trimethylsilyl)phenyl)pentyl fragment consistent with origin from the corresponding NHP ester."
+          }
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-(Trimethylsilyl)phenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "55.7 mg"
+        }
+      ],
+      "targets": {
+        "yield": "82%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-P12-02"
+    },
+    {
+      "id": "GeneralProcedureB-Entry6",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "N-hydroxyphthalimide ester of 1-(4-(trifluoromethyl)phenyl)pentanoic acid",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv",
+          "original_name": "NHP ester",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-(Trifluoromethyl)phenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "The 1-(4-trifluoromethylphenyl)pentyl unit in the product maps directly to the alkyl fragment that would be delivered by the corresponding NHP ester."
+          }
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-(Trifluoromethyl)phenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "59.4 mg"
+        }
+      ],
+      "targets": {
+        "yield": "89%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-P13-01"
+    },
+    {
+      "id": "GeneralProcedureB-Entry7",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "products": [
+        {
+          "name": "Methyl (R)-4-(1-Benzamidopentyl)benzoate",
+          "symbol": null,
+          "amount": "58.5 mg"
+        }
+      ],
+      "targets": {
+        "yield": "90%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-P13-02"
+    },
+    {
+      "id": "GeneralProcedureB-Entry8",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "N-hydroxyphthalimide ester of 1-(4-cyanophenyl)pentanoic acid",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv",
+          "original_name": "NHP ester",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Cyanophenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product shows a 1-(4-cyanophenyl)pentyl fragment; this corresponds directly to the NHP ester of the same carboxylic acid."
+          }
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Cyanophenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "44.8 mg"
+        }
+      ],
+      "targets": {
+        "yield": "77%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-P14-01"
+    },
+    {
+      "id": "GeneralProcedureB-Entry9",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "N-hydroxyphthalimide ester of 1-(3,5-dimethylphenyl)pentanoic acid",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv",
+          "original_name": "NHP ester",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(3,5-Dimethylphenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 1-(3,5-dimethylphenyl)pentyl fragment that maps directly to the corresponding NHP ester precursor."
+          }
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "products": [
+        {
+          "name": "(R)-N-(1-(3,5-Dimethylphenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "52.5 mg"
+        }
+      ],
+      "targets": {
+        "yield": "91%",
+        "ee": "89%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-P14-02"
+    },
+    {
+      "id": "GeneralProcedureB-Entry10",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "N-hydroxyphthalimide ester of 1-(3-bromophenyl)pentanoic acid",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv",
+          "original_name": "NHP ester",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(3-Bromophenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "The product includes a 1-(3-bromophenyl)pentyl unit, which directly corresponds to the alkyl fragment from the NHP ester of that carboxylic acid."
+          }
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "products": [
+        {
+          "name": "(R)-N-(1-(3-Bromophenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "55.8 mg"
+        }
+      ],
+      "targets": {
+        "yield": "81%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-P15-01"
+    },
+    {
+      "id": "GeneralProcedureB-Entry11",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Chlorophenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 4-chlorophenyl unit — this aryl fragment maps one-to-one to the corresponding para-chlorinated aryl bromide (bromide was the coupling handle)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Chlorophenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "51.2 mg"
+        }
+      ],
+      "targets": {
+        "yield": "85%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-P15-02"
+    },
+    {
+      "id": "GeneralProcedureB-Entry12",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "4-bromoacetophenone",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Acetylphenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 4-acetylphenyl fragment — corresponds directly to the para-acetyl aryl bromide (the coupling partner)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Acetylphenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "60.5 mg"
+        }
+      ],
+      "targets": {
+        "yield": "98%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-P16-01"
+    },
+    {
+      "id": "GeneralProcedureB-Entry13",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "4-bromobenzaldehyde",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Formylphenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 4-formylphenyl fragment, mapping to the para-formyl aryl bromide (4-bromobenzaldehyde)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Formylphenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "51.2 mg"
+        }
+      ],
+      "targets": {
+        "yield": "87%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-P16-02"
+    },
+    {
+      "id": "GeneralProcedureB-Entry14",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "1-bromo-3-acetoxybenzene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-3-(1-Benzamidopentyl)phenyl acetate",
+            "product_index": 0,
+            "reason": "Product shows a 3-acetoxyphenyl unit — maps directly to the corresponding 3-acetoxy aryl bromide (bromide was the coupling site)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-3-(1-Benzamidopentyl)phenyl acetate",
+          "symbol": null,
+          "amount": "50.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry15",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "5-bromo-3-oxo-2,3-dihydro-1H-indene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(3-Oxo-2,3-dihydro-1H-inden-5-yl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product bears a 3-oxo-2,3-dihydro-1H-inden-5-yl fragment at the coupling site — corresponds to the bromo-substituted indanone derivative used as the aryl bromide."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(3-Oxo-2,3-dihydro-1H-inden-5-yl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "50.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry16",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "4-bromoacetophenone",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Acetylphenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 4-acetylphenyl fragment mapping to the para-acetyl aryl bromide (the coupling partner)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Acetylphenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "53.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry17",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "1-bromo-3-(2-hydroxyethyl)benzene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(3-(2-Hydroxyethyl)phenyl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 3-(2-hydroxyethyl)phenyl fragment — this maps directly to the corresponding 3-substituted aryl bromide."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(3-(2-Hydroxyethyl)phenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "35.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry18",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "3-bromo-5-acetylpyridine",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(5-Acetylpyridin-3-yl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 5-acetylpyridin-3-yl fragment — this corresponds directly to the 3-bromo-5-acetylpyridine coupling partner."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(5-Acetylpyridin-3-yl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "53.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry19",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "3-bromo-6-(trifluoromethyl)pyridine",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(6-(Trifluoromethyl)pyridin-3-yl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product shows a 6-(trifluoromethyl)pyridin-3-yl unit, directly indicating the corresponding 3-bromo pyridine starting material."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(6-(Trifluoromethyl)pyridin-3-yl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "53.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "GeneralProcedureB-Entry20",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "3-bromo-6-methoxypyridine",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(6-Methoxypyridin-3-yl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 6-methoxypyridin-3-yl fragment — maps one-to-one to the corresponding 3-bromo-6-methoxypyridine starting aryl bromide."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(6-Methoxypyridin-3-yl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "41.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "GeneralProcedureB-Entry21",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "3-bromoquinoline",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(Quinolin-3-yl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a quinolin-3-yl fragment formed by coupling; aryl bromide therefore is the corresponding 3-bromoquinoline (direct one-to-one cross-coupling inference)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(Quinolin-3-yl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "49.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn8"
+    },
+    {
+      "id": "GeneralProcedureB-Entry22",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "7-bromo-3-methylisoquinoline",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(3-Methylisoquinolin-7-yl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 3-methylisoquinolin-7-yl fragment indicating the aryl bromide was the corresponding bromo-isoquinoline at that attachment site."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(3-Methylisoquinolin-7-yl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "50.3 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn9"
+    },
+    {
+      "id": "GeneralProcedureB-Entry23",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-Butyl (R)-4-(5-(1-benzamidopentyl)pyrimidin-2-yl)piperazine-1-carboxylate",
+          "symbol": null,
+          "amount": "67.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn10"
+    },
+    {
+      "id": "GeneralProcedureB-Entry24",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "6-bromobenzo[b]thiophene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(Benzo[b]thiophen-6-yl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a benzo[b]thiophen-6-yl unit — the aryl bromide is the corresponding bromo‑benzo[b]thiophene at that position (direct coupling)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(Benzo[b]thiophen-6-yl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "42.3 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry25",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "5-bromobenzo[b]thiophene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(Benzo[b]thiophen-5-yl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a benzo[b]thiophen-5-yl fragment, implying the aryl bromide was the corresponding 5-bromobenzo[b]thiophene (direct cross-coupling mapping)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(Benzo[b]thiophen-5-yl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "53.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry26",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "5-bromobenzo[d]thiazole",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(Benzo[d]thiazol-5-yl)pentyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a benzo[d]thiazol-5-yl fragment; the aryl bromide corresponds to the bromo derivative at that attachment site (straightforward mapping)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(Benzo[d]thiazol-5-yl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "42.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry27",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(1-(Phenylsulfonyl)-1H-indol-5-yl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "65.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry28",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Chlorophenyl)ethyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 4-chlorophenyl unit introduced by the aryl bromide; the starting aryl bromide is the corresponding bromochlorobenzene (bromide at the coupling site)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Chlorophenyl)ethyl)benzamide",
+          "symbol": null,
+          "amount": "32.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry29",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Chlorophenyl)butyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 4-chlorophenyl fragment — the aryl bromide is the corresponding bromochlorobenzene (bromide at the site of coupling)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Chlorophenyl)butyl)benzamide",
+          "symbol": null,
+          "amount": "47.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-6"
+    },
+    {
+      "id": "GeneralProcedureB-Entry30",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Chlorophenyl)-3-methylbutyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 4-chlorophenyl fragment introduced via cross-coupling; the aryl bromide is the corresponding bromo-chlorobenzene (bromide at coupling position)."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Chlorophenyl)-3-methylbutyl)benzamide",
+          "symbol": null,
+          "amount": "48.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-7"
+    },
+    {
+      "id": "GeneralProcedureB-Entry31",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Chlorophenyl)-2-cyclohexylethyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 4-chlorophenyl fragment (one-to-one source for the aryl bromide); no other aryl source present."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Chlorophenyl)-2-cyclohexylethyl)benzamide",
+          "symbol": null,
+          "amount": "55.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-8"
+    },
+    {
+      "id": "GeneralProcedureB-Entry32",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Chlorophenyl)-2-methylpropyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 4-chlorophenyl unit indicating the aryl fragment originated from a para-chloro aryl bromide."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Chlorophenyl)-2-methylpropyl)benzamide",
+          "symbol": null,
+          "amount": "18.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "32%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-9"
+    },
+    {
+      "id": "GeneralProcedureB-Entry33",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv",
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Chlorophenyl)-2-phenylethyl)benzamide",
+            "product_index": 0,
+            "reason": "Product shows a 4-chlorophenyl substituent consistent with a para-chloro aryl bromide as the aryl coupling partner."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Chlorophenyl)-2-phenylethyl)benzamide",
+          "symbol": null,
+          "amount": "44.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-10"
+    },
+    {
+      "id": "GeneralProcedureB-Entry34",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "amount": "0.20 mmol, 1.0 equiv",
+          "is_generic_class": true
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "amount": "0.30 mmol, 1.5 equiv",
+          "is_generic_class": true,
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Chlorophenyl)-3-phenylpropyl)benzamide",
+            "product_index": 0,
+            "reason": "The product contains a 4-chlorophenyl fragment that maps unambiguously to a para-chloro aryl bromide starting material."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "is_generic_class": false,
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Chlorophenyl)-3-phenylpropyl)benzamide",
+          "symbol": null,
+          "amount": "49.3 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "89%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-27-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry35",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "amount": "0.20 mmol, 1.0 equiv",
+          "is_generic_class": true
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "amount": "0.30 mmol, 1.5 equiv",
+          "is_generic_class": true,
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-((1R,2S)-1-(4-Chlorophenyl)-2-methylbutyl)benzamide",
+            "product_index": 0,
+            "reason": "Product includes a 4-chlorophenyl substituent, indicating the aryl bromide was para-chloro and maps one-to-one."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "is_generic_class": false,
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-((1R,2S)-1-(4-Chlorophenyl)-2-methylbutyl)benzamide",
+          "symbol": null,
+          "amount": "34.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": null,
+        "er": null,
+        "dr": "99:1"
+      },
+      "_original_id": "GPB-27-2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry36",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "amount": "0.20 mmol, 1.0 equiv",
+          "is_generic_class": true
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "amount": "0.30 mmol, 1.5 equiv",
+          "is_generic_class": true,
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Chlorophenyl)but-3-en-1-yl)benzamide",
+            "product_index": 0,
+            "reason": "Product name contains a 4-chlorophenyl motif that corresponds to the aryl bromide partner."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "is_generic_class": false,
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Chlorophenyl)but-3-en-1-yl)benzamide",
+          "symbol": null,
+          "amount": "46.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-28-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry37",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "amount": "0.20 mmol, 1.0 equiv",
+          "is_generic_class": true
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "amount": "0.30 mmol, 1.5 equiv",
+          "is_generic_class": true,
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl (R)-4-benzamido-4-(4-chlorophenyl)butanoate",
+            "product_index": 0,
+            "reason": "The product bears a 4-chlorophenyl substituent, implicating a para-chloro aryl bromide as the coupling partner."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "is_generic_class": false,
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (R)-4-benzamido-4-(4-chlorophenyl)butanoate",
+          "symbol": null,
+          "amount": "36.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "88%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-28-2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry38",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "amount": "0.20 mmol, 1.0 equiv",
+          "is_generic_class": true
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "amount": "0.30 mmol, 1.5 equiv",
+          "is_generic_class": true,
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "tert-Butyl (R)-(5-benzamido-5-(4-chlorophenyl)pentyl)carbamate",
+            "product_index": 0,
+            "reason": "Product includes a 4-chlorophenyl group, mapping unambiguously to a para-chloro aryl bromide starting material."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "is_generic_class": false,
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-Butyl (R)-(5-benzamido-5-(4-chlorophenyl)pentyl)carbamate",
+          "symbol": null,
+          "amount": "56.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-29-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry39",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "amount": "0.20 mmol, 1.0 equiv",
+          "is_generic_class": true
+        },
+        {
+          "name": "1-bromo-4-chlorobenzene",
+          "amount": "0.30 mmol, 1.5 equiv",
+          "is_generic_class": true,
+          "original_name": "Aryl bromide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(R)-N-(1-(4-Chlorophenyl)-3-(methylthio)propyl)benzamide",
+            "product_index": 0,
+            "reason": "Product contains a 4-chlorophenyl fragment indicating the aryl coupling partner was para-chloro aryl bromide."
+          }
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "is_generic_class": false,
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-Chlorophenyl)-3-(methylthio)propyl)benzamide",
+          "symbol": null,
+          "amount": "35.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-29-2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry40",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "amount": "0.20 mmol, 1.0 equiv",
+          "is_generic_class": true
+        },
+        {
+          "name": "Aryl bromide",
+          "amount": "0.30 mmol, 1.5 equiv",
+          "is_generic_class": true
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "is_generic_class": false,
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(2aR,4S,4aS,6R,9S,11S,12S,12aR,12bS)-9-(((2R,3S)-3-Benzamido-2-((4-((R)-1-benzamid-opentyl)benzoyl)oxy)-3-phenylpropanoyl)oxy)-12-(benzoyloxy)-4,11-dihydroxy-4a,8,13,13-tetramethyl-5-oxo-3,4,4a,5,6,9,10,11,12,12a-decahydro-1H-7,11-methanocyclodeca[3,4]ben-zo[1,2-b]oxete-6,12b(2aH)-diyldiacetate",
+          "symbol": null,
+          "amount": "148.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": "99:1"
+      },
+      "_original_id": "GPB-30-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry41",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "amount": "0.20 mmol, 1.0 equiv",
+          "is_generic_class": true
+        },
+        {
+          "name": "Aryl bromide",
+          "amount": "0.30 mmol, 1.5 equiv",
+          "is_generic_class": true
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "is_generic_class": false,
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-((R)-1-Benzamidopentyl)phenyl ((3R,5aS,6R,8aS,9R,10S,12R,12aS)-3,5a,6,9-tetramethyldecahydro-12H-3,12-epoxy[1,2]dioxepino[4,3-i]isochromen-10-yl)succinate",
+          "symbol": null,
+          "amount": "84.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": "97:3"
+      },
+      "_original_id": "GPB-31-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry42",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "((3aS,5aR,8aR,8bS)-2,2,7,7-Tetramethyltetrahydro-3aH-bis([1,3]dioxolo)[4,5-b:4',5'-d]pyran-3a-yl)methyl 4-((R)-1-benzamidopentyl)benzoate",
+          "symbol": null,
+          "amount": "90.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": "96:4"
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry43",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-(1-Phenyl-3-(trifluoromethyl)-1H-pyrazol-5-yl)phenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "83.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry44",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-N-(1-(4-(2-(Quinazolin-4-yloxy)ethyl)phenyl)pentyl)benzamide",
+          "symbol": null,
+          "amount": "59.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry45",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(2S,5R)-2-Isopropyl-5-methylcyclohexyl 4-((R)-1-benzamidopentyl)benzoate",
+          "symbol": null,
+          "amount": "72.3 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": "96:4"
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry46",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3S,8S,9S,10R,13R,14S,17R)-10,13-Dimethyl-17-((R)-6-methylheptan-2-yl)-2,3,4,7,8,9,10,11,12,13,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-3-yl 3-((R)-1-benzamidopentyl)benzoate",
+          "symbol": null,
+          "amount": "66.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": null,
+        "er": null,
+        "dr": "98:2"
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry47",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol (1c)",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "((3aS,5aR,8aR,8bS)-2,2,7,7-Tetramethyltetrahydro-3aH-bis([1,3]dioxolo)[4,5-b:4',5'-d]pyran-3a-yl)methyl 4-((R)-1-benzamido-3-methylbutyl)benzoate",
+          "symbol": null,
+          "amount": "80.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": "98:2"
+      },
+      "_original_id": "reaction-37-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry48",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol (1c)",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "((3aS,5aR,8aR,8bS)-2,2,7,7-Tetramethyltetrahydro-3aH-bis([1,3]dioxolo)[4,5-b:4',5'-d]pyran-3a-yl)methyl 4-((R)-1-benzamido-3-methylbutyl)benzoate",
+          "symbol": null,
+          "amount": "84.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": "98:2"
+      },
+      "_original_id": "reaction-37-2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry49",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol (1c)",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(3,5-Dimethylphenyl)-3-methylbutyl)benzamide",
+          "symbol": null,
+          "amount": "44.3 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-38-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry50",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol (1c)",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(3,5-Dimethylphenyl)-3-methylbutyl)benzamide",
+          "symbol": null,
+          "amount": "44.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-38-2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry51",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol (1c)",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "49",
+          "symbol": "49",
+          "amount": "3.72 g",
+          "resolved_smiles": "*C(CC(C)C)C1=CC=C(C(=O)OC[CH]23OCC4OC(C)(C)OC4C2OC(C)(C)O3)C=C1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_5_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": "98:2"
+      },
+      "_original_id": "reaction-40-49"
+    },
+    {
+      "id": "GeneralProcedureB-Entry52",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "photoredox/Ni dual-catalyzed decarboxylative cross-coupling of an NHP ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "NHP ester",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Aryl bromide",
+          "symbol": null,
+          "amount": "0.30 mmol, 1.5 equiv"
+        },
+        {
+          "name": "1-phenylethnol (1c)",
+          "symbol": "1c",
+          "amount": "36.2 μL, 0.30 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "50",
+          "symbol": "50",
+          "amount": "1.04 g",
+          "resolved_smiles": "CC1=CC(C)=C[CH](C(CC(C)C)NC(=O)c2ccccc2)=C1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_5_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "6.2 mg, 0.020 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "42.4 mg, 0.40 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOAc",
+        "solvent_amount": "4.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "in glovebox (reagents assembled) then sealed and transferred out of glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-40-50"
+    },
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "Schwartz reagent mediated deprotection/reduction to afford amine hydrochloride",
+      "substrates": [
+        {
+          "name": "Schwartz’s reagent",
+          "symbol": null,
+          "amount": "51.6 mg, 0.2 mmol, 2.0 equiv"
+        },
+        {
+          "name": "50",
+          "symbol": "50",
+          "amount": "29.5 mg, 0.1 mmol, 1.0 equiv",
+          "resolved_smiles": "CC1=CC(C)=C[CH](C(CC(C)C)NC(=O)c2ccccc2)=C1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_5_image_1.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(3,5-Dimethylphenyl)-3-methylbutan-1-amine hydrochloride",
+          "symbol": "51",
+          "amount": "14.4 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "1.0 mL (0.1 M)",
+        "temperature": "room temperature",
+        "time": "3 h",
+        "atmosphere": "in glovebox then transferred out of glovebox",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-41-51"
+    },
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "photoredox/nickel-catalyzed enantioselective cross-electrophile coupling (XEC) of an N-hydroxyphthalimide (NHP) ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "N‐Bz‐norleucine‐NHP ester",
+          "symbol": null,
+          "amount": "38.0 mg, 0.10 mmol, 1.0 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "18.1 μL, 0.15 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(3,3,3-Trifluoroprop-1-en-2-yl)benzene",
+          "symbol": null,
+          "amount": "15.0 μL, 0.10 mmol, 1.0 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "53",
+          "symbol": "53",
+          "amount": "20.3 mg",
+          "resolved_smiles": "CCCCC(CC(=C(F)F)c1ccccc1)[N]C(=O)c1ccccc1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "A_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_5_image_2.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "3.1 mg, 0.010 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "dtbbpy"
+        },
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "21.2 mg, 0.20 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous MeOAc",
+        "solvent_amount": "2.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "assembled in glovebox, vial sealed with a septum cap and wrapped with electrical tape, then transferred out of the glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L, 427 nm)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": "0%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "photoredox/nickel-catalyzed enantioselective cross-electrophile coupling (XEC) of an N-hydroxyphthalimide (NHP) ester with an aryl bromide",
+      "substrates": [
+        {
+          "name": "N‐Bz‐norleucine‐NHP ester",
+          "symbol": null,
+          "amount": "38.0 mg, 0.10 mmol, 1.0 equiv"
+        },
+        {
+          "name": "1-phenylethnol",
+          "symbol": "1c",
+          "amount": "18.1 μL, 0.15 mmol, 1.5 equiv",
+          "registry_name": "1‐phenylethnol",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(3,3,3-trifluoroprop-1-en-2-yl)benzene",
+          "symbol": null,
+          "amount": "15.0 μL, 0.10 mmol, 1.0 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "53",
+          "symbol": "53",
+          "amount": "23.0 mg",
+          "resolved_smiles": "CCCCC(CC(=C(F)F)c1ccccc1)[N]C(=O)c1ccccc1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "A_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_5_image_2.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1%"
+        },
+        {
+          "name": "NiBr2·glyme",
+          "symbol": null,
+          "amount": "3.1 mg, 0.010 mmol, 10%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "dtbbpy"
+        },
+        {
+          "name": "chiral ligand L"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "21.2 mg, 0.20 mmol, 2.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous MeOAc",
+        "solvent_amount": "2.0 mL",
+        "temperature": "room temperature then 25 °C",
+        "time": "30 min then 1 min then 12 h",
+        "atmosphere": "assembled in glovebox, vial sealed with a septum cap and wrapped with electrical tape, then transferred out of the glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L, 427 nm)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry1",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "Photoredox-catalyzed C–S bond formation (alkylation of a thiol) using alkyl (pseudo)halides",
+      "substrates": [
+        {
+          "name": "N‐Bz‐Norleucine 2",
+          "symbol": "2",
+          "amount": "38.0 mg, 0.1 mmol"
+        },
+        {
+          "name": "1d",
+          "symbol": null,
+          "amount": "21 µL, 0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-Pentylbenzamide",
+          "symbol": null,
+          "amount": "14.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "dtbbpy"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NaBr",
+          "symbol": null,
+          "amount": "2.1 mg, 0.02 mmol, 20%"
+        },
+        {
+          "name": "NaHCO3",
+          "symbol": null,
+          "amount": "16.8 mg, 0.20 mmol, 2.0 equiv"
+        },
+        {
+          "name": "4-CF3PhSH",
+          "symbol": null,
+          "amount": "2.7 µL, 0.02 mmol, 20%"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous EtOAc",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "48 h",
+        "atmosphere": "set up in a glovebox, vial sealed with septum cap and transferred out of the glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry2",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "Photoredox-catalyzed C–S bond formation (alkylation of a thiol) using alkyl (pseudo)halides",
+      "substrates": [
+        {
+          "name": "(1-chloroethyl) benzene",
+          "symbol": "54",
+          "amount": "14.0 mg, 0.1 mmol"
+        },
+        {
+          "name": "1d",
+          "symbol": null,
+          "amount": "21 µL, 0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethylbenzene",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "dtbbpy"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NaBr",
+          "symbol": null,
+          "amount": "2.1 mg, 0.02 mmol, 20%"
+        },
+        {
+          "name": "NaHCO3",
+          "symbol": null,
+          "amount": "16.8 mg, 0.20 mmol, 2.0 equiv"
+        },
+        {
+          "name": "4-CF3PhSH",
+          "symbol": null,
+          "amount": "2.7 µL, 0.02 mmol, 20%"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous EtOAc",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "48 h",
+        "atmosphere": "set up in a glovebox, vial sealed with septum cap and transferred out of the glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry3",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "Photoredox-catalyzed C–S bond formation (alkylation of a thiol) using alkyl (pseudo)halides",
+      "substrates": [
+        {
+          "name": "alkyl iodide",
+          "symbol": "55",
+          "amount": "31.1 mg, 0.1 mmol"
+        },
+        {
+          "name": "1d",
+          "symbol": null,
+          "amount": "21 µL, 0.15 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-Butyl piperidine-1-carboxylate",
+          "symbol": null,
+          "amount": "18.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "1.1 mg, 0.001 mmol, 1%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "dtbbpy"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NaBr",
+          "symbol": null,
+          "amount": "2.1 mg, 0.02 mmol, 20%"
+        },
+        {
+          "name": "NaHCO3",
+          "symbol": null,
+          "amount": "16.8 mg, 0.20 mmol, 2.0 equiv"
+        },
+        {
+          "name": "4-CF3PhSH",
+          "symbol": null,
+          "amount": "2.7 µL, 0.02 mmol, 20%"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous EtOAc",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "48 h",
+        "atmosphere": "set up in a glovebox, vial sealed with septum cap and transferred out of the glovebox",
+        "light_source": "40 W blue LED lamp (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "Synthesis of Ni(II) aryl bromide oxidative addition complex",
+      "substrates": [
+        {
+          "name": "Ligand L",
+          "symbol": null,
+          "amount": "258 mg, 0.50 mmol, 1.0 equiv"
+        },
+        {
+          "name": "Ni(COD)2",
+          "symbol": null,
+          "amount": "138 mg, 0.50 mmol, 1.0 equiv"
+        },
+        {
+          "name": "4-Bromoacetophenone",
+          "symbol": null,
+          "amount": "110 mg, 0.55 mmol, 1.1 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "oxidative addition complex",
+          "symbol": "56",
+          "amount": "330 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "Pentane",
+        "solvent_amount": "10 ml",
+        "temperature": "20 °C then room temperature",
+        "time": "1.5 hours then 0.5 hours",
+        "atmosphere": "charged in a glovebox",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_6"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/metallaphotoredox_catalyzed_enantioselective_cro_d431c977.json",
+    "input_sha256": "bdc0e55a0a397b87a967b52b38b8e8979799d385fc882b42a4451e643bf7774f"
+  }
+}

@@ -7,7 +7,6 @@ from langgraph_workflow.benchmark_utils import (
     generate_q2_benchmark_package,
 )
 from kg_to_reaction_csv import (
-    COL_CONTEXT_INFERENCE_ERROR,
     COL_INTRINSIC_EXTRACTION_ERROR,
     COL_PROCEDURAL_FIDELITY_ERROR,
     convert_kg_rows,
@@ -147,7 +146,6 @@ def test_reaction_summary_csv_conversion_preserves_dr_string():
     assert summary[0]["dr"] == "93:7"
     assert summary[0][COL_INTRINSIC_EXTRACTION_ERROR] == ""
     assert summary[0][COL_PROCEDURAL_FIDELITY_ERROR] == ""
-    assert summary[0][COL_CONTEXT_INFERENCE_ERROR] == ""
 
 
 def test_dr_does_not_change_benchmark_score():

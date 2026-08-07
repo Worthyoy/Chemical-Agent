@@ -5810,10 +5810,14 @@ Available GP candidates:
             file_stats['registry_resolved_count'] = registry_stats.get("resolved", 0)
             file_stats['registry_verified_count'] = registry_stats.get("verified", 0)
             file_stats['registry_conflict_count'] = registry_stats.get("conflicts", 0)
+            file_stats['registry_underspecified_series_label_count'] = registry_stats.get(
+                "underspecified_series_labels", 0
+            )
         else:
             file_stats['registry_resolved_count'] = 0
             file_stats['registry_verified_count'] = 0
             file_stats['registry_conflict_count'] = 0
+            file_stats['registry_underspecified_series_label_count'] = 0
         merged = self.resolve_generic_substrates_from_products(
             merged,
             log_path=generic_resolution_log_path,
@@ -6060,6 +6064,40 @@ Available GP candidates:
         if re.fullmatch(r"[a-z]?\d+[a-z]?", text):
             return True
         return False
+
+    def _is_underspecified_series_label(self, name: str, symbol: str) -> bool:
+        """Return true when a bare base label omits the symbol's letter suffix.
+
+        This intentionally accepts ``3`` -> ``3k`` but rejects numeric-prefix
+        matches such as ``3`` -> ``30`` and conflicting complete labels such as
+        ``3j`` -> ``3k``. Registry membership is checked by the caller.
+        """
+        name_text = self._normalize_registry_compare_name(name)
+        symbol_text = self._normalize_registry_compare_name(symbol)
+        if not name_text or not symbol_text:
+            return False
+
+        wrapper_pattern = (
+            r"(?:(?:the|a|an)\s+)?"
+            r"(?:(?:compound|substrate|starting material|product|reagent|"
+            r"ligand|catalyst|entry|example|material)\s+)?"
+        )
+        name_match = re.fullmatch(
+            wrapper_pattern
+            + r"(?P<prefix>[a-z]{0,4})-?(?P<number>\d+)(?P<suffix>[a-z]*)",
+            name_text,
+        )
+        symbol_match = re.fullmatch(
+            r"(?P<prefix>[a-z]{0,4})-?(?P<number>\d+)(?P<suffix>[a-z]+)",
+            symbol_text,
+        )
+        if not name_match or not symbol_match:
+            return False
+        return (
+            name_match.group("prefix") == symbol_match.group("prefix")
+            and name_match.group("number") == symbol_match.group("number")
+            and not name_match.group("suffix")
+        )
 
     def _generic_substrate_resolution_review(
         self,
@@ -6435,6 +6473,11 @@ Available GP candidates:
         substrates = []
         for index, substrate in enumerate(reaction.get("substrates") or []):
             if not isinstance(substrate, dict):
+                continue
+            if (
+                str(substrate.get("resolution_source") or "").strip() == "name_registry"
+                or str(substrate.get("resolution_method") or "").strip() == "same_paper_symbol"
+            ):
                 continue
             name = str(substrate.get("name") or "").strip()
             if not name:
@@ -7265,6 +7308,8 @@ Available GP candidates:
             return True
         if symbol and self._generic_label_symbol(name, registry, normalized_registry):
             return True
+        if symbol and self._is_underspecified_series_label(name, symbol):
+            return True
         return False
 
     def _resolve_registry_compound(
@@ -7307,24 +7352,54 @@ Available GP candidates:
             return new_item, "none"
 
         symbol, name = lookup
+        provenance_name = str(new_item.get("original_name") or raw_name).strip()
+        underspecified_series_label = self._is_underspecified_series_label(
+            provenance_name,
+            symbol,
+        )
         product_inferred = (
             str(new_item.get("resolution_source") or "") == "product_name"
             or str(new_item.get("resolution_method") or "") == "gp_product_to_substrate_mapping"
         )
+        already_registry_resolved = (
+            str(new_item.get("resolution_source") or "") == "name_registry"
+            and self._normalize_registry_compare_name(raw_name)
+            == self._normalize_registry_compare_name(name)
+        )
         if (
             product_inferred
+            or already_registry_resolved
             or self._should_registry_overwrite_name(raw_name, symbol, registry, normalized_registry)
             or (allow_generic_name and self._is_generic_substrate_name(raw_name))
         ):
             original_name = str(new_item.get("original_name") or raw_name).strip()
             new_item["name"] = name
-            new_item["symbol"] = raw_symbol or symbol
+            new_item["symbol"] = symbol
             new_item["resolution_source"] = "name_registry"
             new_item["resolution_method"] = "same_paper_symbol"
             new_item["resolution_confidence"] = "high"
-            if allow_generic_name and self._is_generic_substrate_name(original_name):
+            if allow_generic_name and (
+                self._is_generic_substrate_name(original_name)
+                or underspecified_series_label
+            ):
                 new_item["original_name"] = original_name
-            new_item.pop("resolution_evidence", None)
+            for key in (
+                "registry_name",
+                "registry_match_status",
+                "registry_conflict_reason",
+            ):
+                new_item.pop(key, None)
+            if underspecified_series_label:
+                new_item["resolution_status"] = "resolved_from_registry"
+                new_item["resolution_evidence"] = {
+                    "match_type": "underspecified_series_label",
+                    "reported_name": provenance_name,
+                    "reported_symbol": raw_symbol or symbol,
+                    "registry_symbol": symbol,
+                }
+                new_item.pop("identity_status", None)
+            else:
+                new_item.pop("resolution_evidence", None)
             return new_item, "resolved"
 
         new_item["registry_name"] = name
@@ -7340,7 +7415,12 @@ Available GP candidates:
                                  registry: Dict[str, str]) -> List[Dict]:
         """Complete label-only reaction compounds from the name registry."""
         if not registry:
-            self.last_registry_resolution_stats = {"resolved": 0, "verified": 0, "conflicts": 0}
+            self.last_registry_resolution_stats = {
+                "resolved": 0,
+                "verified": 0,
+                "conflicts": 0,
+                "underspecified_series_labels": 0,
+            }
             return reactions
 
         normalized_registry = {
@@ -7349,7 +7429,12 @@ Available GP candidates:
             if str(symbol).strip()
         }
         aligned = []
-        stats = {"resolved": 0, "verified": 0, "conflicts": 0}
+        stats = {
+            "resolved": 0,
+            "verified": 0,
+            "conflicts": 0,
+            "underspecified_series_labels": 0,
+        }
         fields = [
             'substrates', 'products', 'intermediates', 'catalysts', 'ligands',
             'other_components', 'additives', 'reagents',
@@ -7376,6 +7461,17 @@ Available GP candidates:
                         )
                         if status == "resolved":
                             stats["resolved"] += 1
+                            evidence = (
+                                resolved_item.get("resolution_evidence")
+                                if isinstance(resolved_item, dict)
+                                else None
+                            )
+                            if (
+                                isinstance(evidence, dict)
+                                and evidence.get("match_type")
+                                == "underspecified_series_label"
+                            ):
+                                stats["underspecified_series_labels"] += 1
                         elif status == "verified":
                             stats["verified"] += 1
                         elif status == "conflict":
@@ -7400,7 +7496,8 @@ Available GP candidates:
                 "  [Registry] "
                 f"resolved={stats['resolved']}, "
                 f"verified={stats['verified']}, "
-                f"conflicts={stats['conflicts']}"
+                f"conflicts={stats['conflicts']}, "
+                f"underspecified_series_labels={stats['underspecified_series_labels']}"
             )
         return aligned
 
@@ -7633,10 +7730,14 @@ Available GP candidates:
                 file_stats['registry_resolved_count'] = registry_stats.get("resolved", 0)
                 file_stats['registry_verified_count'] = registry_stats.get("verified", 0)
                 file_stats['registry_conflict_count'] = registry_stats.get("conflicts", 0)
+                file_stats['registry_underspecified_series_label_count'] = registry_stats.get(
+                    "underspecified_series_labels", 0
+                )
             else:
                 file_stats['registry_resolved_count'] = 0
                 file_stats['registry_verified_count'] = 0
                 file_stats['registry_conflict_count'] = 0
+                file_stats['registry_underspecified_series_label_count'] = 0
 
             # --- Stage 5b: GP 条件来源标记 ---
             generic_resolution_log_path = (

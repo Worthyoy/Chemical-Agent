@@ -1,0 +1,2348 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1).pdf",
+  "paper_key": "photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1)",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1).pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1).pdf",
+    "source_mtime_ns": 1782048671000000000,
+    "source_size": 3624667,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1)",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/photoredox-enzymatic-catalysis-enabling-redox-neutral-decarboxylative-asymmetric-c-c-coupling-for-asymmetric-synthesis (1).pdf"
+  },
+  "extracted_at": "2026-07-17T08:51:14.171556",
+  "total_reactions": 39,
+  "filtered_reactions": 38,
+  "filter_stats": {
+    "input_reactions": 39,
+    "basic_failed": 0,
+    "target_failed": 1,
+    "retained": 38
+  },
+  "reactions": [
+    {
+      "id": "General Procedure for Product Synthesis-Entry1",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "4-chlorobenzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-(4-chlorophenyl)-2-(phenylamino)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product contains a 4-chlorophenyl substituent at the former aldehyde carbon (Ar-CH(OH)-...), so the starting aldehyde is 4-chlorobenzaldehyde."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(4-chlorophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3aa",
+          "amount": null,
+          "registry_name": "1-(4-chlorophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3aa"
+    },
+    {
+      "id": "General Procedure for Product Synthesis-Entry2",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-phenyl-2-(phenylamino)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product has an unsubstituted phenyl at the former aldehyde carbon (1-phenyl-...), indicating benzaldehyde as the aldehyde."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-phenyl-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ba",
+          "amount": null,
+          "registry_name": "1-phenyl-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3ba"
+    },
+    {
+      "id": "General Procedure for Product Synthesis-Entry3",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        6,
+        7
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "4-methylbenzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(phenylamino)-1-(p-tolyl)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product bears a p-tolyl (4-methylphenyl) unit at the former aldehyde carbon, indicating 4-methylbenzaldehyde as the aldehyde."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(p-tolyl)ethan-1-ol",
+          "symbol": "3ca",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(p-tolyl)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3ca"
+    },
+    {
+      "id": "General Procedure for Product Synthesis-Entry4",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "4-methoxybenzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-(4-methoxyphenyl)-2-(phenylamino)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product contains a 4-methoxyphenyl substituent at the aldehyde-derived carbon, mapping to 4-methoxybenzaldehyde."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(4-methoxyphenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3da",
+          "amount": null,
+          "registry_name": "1-(4-methoxyphenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3da"
+    },
+    {
+      "id": "General Procedure for Product Synthesis-Entry5",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "4-(methylthio)benzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-(4-(methylthio)phenyl)-2-(phenylamino)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product shows a 4-(methylthio)phenyl group at the position derived from the aldehyde, so the aldehyde is 4-(methylthio)benzaldehyde."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(4-(methylthio)phenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ea",
+          "amount": null,
+          "registry_name": "1-(4-(methylthio)phenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3ea"
+    },
+    {
+      "id": "General Procedure for Product Synthesis-Entry6",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "4-bromobenzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-(4-bromophenyl)-2-(phenylamino)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product contains a 4-bromophenyl unit at the aldehyde-derived carbon, indicating 4-bromobenzaldehyde as the starting aldehyde."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(4-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3fa",
+          "amount": null,
+          "registry_name": "1-(4-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3fa"
+    },
+    {
+      "id": "General Procedure for Product Synthesis-Entry7",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "4-(trifluoromethyl)benzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(phenylamino)-1-(4-(trifluoromethyl)phenyl)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product includes a 4-(trifluoromethyl)phenyl substituent at the aldehyde-derived position, mapping to 4-(trifluoromethyl)benzaldehyde."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(4-(trifluoromethyl)phenyl)ethan-1-ol",
+          "symbol": "3ga",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(4-(trifluoromethyl)phenyl)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3ga"
+    },
+    {
+      "id": "General Procedure for Product Synthesis-Entry8",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "3-methylbenzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(phenylamino)-1-(m-tolyl)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product bears an m-tolyl (3-methylphenyl) group at the aldehyde-derived carbon, indicating 3-methylbenzaldehyde as the aldehyde."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(m-tolyl)ethan-1-ol",
+          "symbol": "3ha",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(m-tolyl)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3ha"
+    },
+    {
+      "id": "General Procedure for Product Synthesis-Entry9",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "3-bromobenzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-(3-bromophenyl)-2-(phenylamino)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product contains a 3-bromophenyl substituent at the former aldehyde carbon, mapping to 3-bromobenzaldehyde."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(3-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ia",
+          "amount": null,
+          "registry_name": "1-(3-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3ia"
+    },
+    {
+      "id": "General Procedure for Product Synthesis-Entry10",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "2-methylbenzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(phenylamino)-1-(o-tolyl)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product shows an o-tolyl (2-methylphenyl) unit at the aldehyde-derived carbon, indicating 2-methylbenzaldehyde as the aldehyde."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(o-tolyl)ethan-1-ol",
+          "symbol": "3ja",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(o-tolyl)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3ja"
+    },
+    {
+      "id": "General Procedure for Product Synthesis-Entry11",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "2-fluorobenzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-(2-fluorophenyl)-2-(phenylamino)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product contains a 1-(2-fluorophenyl) fragment that maps one-to-one to the aldehyde aryl group; no other substrate supplies this fragment."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(2-fluorophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ka",
+          "amount": null,
+          "registry_name": "1-(2-fluorophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3ka"
+    },
+    {
+      "id": "General Procedure for Product Synthesis-Entry12",
+      "_gp_source": "General Procedure for Product Synthesis",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "photoredox-catalyzed racemic product synthesis",
+      "substrates": [
+        {
+          "name": "2-hydroxybenzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(1-hydroxy-2-(phenylamino)ethyl)phenol",
+            "product_index": 0,
+            "reason": "Product bears a phenolic ring substituted at the position bearing the side chain (2-phenol); this maps unambiguously to o‑hydroxybenzaldehyde as the aldehyde precursor."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1-hydroxy-2-(phenylamino)ethyl)phenol",
+          "symbol": "3la",
+          "amount": null,
+          "registry_name": "2-(1-hydroxy-2-(phenylamino)ethyl)phenol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_ProductSynthesis_3la"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry1",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Photoredox-catalyzed addition of glycine to aldehydes to afford 2-amino-1-alkanols",
+      "substrates": [
+        {
+          "name": "thiophene-2-carbaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(phenylamino)-1-(thiophen-2-yl)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product contains a 1-(thiophen-2-yl) fragment that corresponds directly to thiophene-2-carbaldehyde as the aldehyde precursor."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(thiophen-2-yl)ethan-1-ol",
+          "symbol": "3ma",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(thiophen-2-yl)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2 (degassed by bubbling for 5 minutes, then sealed)",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3ma_p9"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry2",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Photoredox-catalyzed addition of glycine to aldehydes to afford 2-amino-1-alkanols",
+      "substrates": [
+        {
+          "name": "2-naphthaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-(naphthalen-2-yl)-2-(phenylamino)ethan-1-ol",
+            "product_index": 0,
+            "reason": "Product contains a 1-(naphthalen-2-yl) fragment that maps directly to 2-naphthaldehyde as the aldehyde starting material."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(naphthalen-2-yl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3na",
+          "amount": null,
+          "registry_name": "1-(naphthalen-2-yl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2 (degassed by bubbling for 5 minutes, then sealed)",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3na_p9"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry3",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Photoredox-catalyzed addition of glycine to aldehydes to afford 2-amino-1-alkanols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-((4-fluorophenyl)amino)-1-phenylethan-1-ol",
+            "product_index": 0,
+            "reason": "Product is 1-phenyl substituted at the alcohol-bearing carbon (1-phenylethanol fragment), indicating benzaldehyde as the aldehyde precursor."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((4-fluorophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "3bb",
+          "amount": null,
+          "registry_name": "2-((4-fluorophenyl)amino)-1-phenylethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2 (degassed by bubbling for 5 minutes, then sealed)",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3bb_p9"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry4",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Photoredox-catalyzed addition of glycine to aldehydes to afford 2-amino-1-alkanols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-((4-chlorophenyl)amino)-1-phenylethan-1-ol",
+            "product_index": 0,
+            "reason": "Product contains an unsubstituted phenyl at the alcohol-bearing carbon (1-phenyl), mapping to benzaldehyde as the aldehyde."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((4-chlorophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "3bc",
+          "amount": null,
+          "registry_name": "2-((4-chlorophenyl)amino)-1-phenylethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2 (degassed by bubbling for 5 minutes, then sealed)",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3bc_p9"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry5",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Photoredox-catalyzed addition of glycine to aldehydes to afford 2-amino-1-alkanols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-((4-bromophenyl)amino)-1-phenylethan-1-ol",
+            "product_index": 0,
+            "reason": "Product shows a 1-phenyl substituent at the alcohol carbon consistent with benzaldehyde as the aldehyde precursor."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((4-bromophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "3bd",
+          "amount": null,
+          "registry_name": "2-((4-bromophenyl)amino)-1-phenylethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2 (degassed by bubbling for 5 minutes, then sealed)",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3bd_p9"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry6",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        9,
+        10
+      ],
+      "reaction_type": "Photoredox-catalyzed addition of glycine to aldehydes to afford 2-amino-1-alkanols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 1 equiv",
+          "original_name": "Aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-((3-methoxyphenyl)amino)-1-phenylethan-1-ol",
+            "product_index": 0,
+            "reason": "Product contains an unsubstituted phenyl at the alcohol-bearing carbon (1-phenyl), indicating benzaldehyde as the aldehyde starting material."
+          }
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "1.2 mmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((3-methoxyphenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "3be",
+          "amount": null,
+          "registry_name": "2-((3-methoxyphenyl)amino)-1-phenylethan-1-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir(ppy)2(dtbbpy)PF6",
+          "symbol": null,
+          "amount": "0.004 mmol, 1 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": "12 hours",
+        "atmosphere": "N2 (degassed by bubbling for 5 minutes, then sealed)",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3be_p9-10"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "carbamoylation (oxazolidinone formation)",
+      "substrates": [
+        {
+          "name": "amino alcohol",
+          "symbol": "(S)-3ba",
+          "amount": "8.4 mg, 40 μmol, 1 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "S-3,5-diphenyloxazolidin-2-one",
+          "symbol": "6",
+          "amount": null,
+          "registry_name": "S-3,5-diphenyloxazolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,1'-carbonyldiimidazole",
+          "symbol": null,
+          "amount": "7.1 mg, 44 μmol, 1.1 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "12 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry1",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "4-chlorobenzaldehyde",
+          "symbol": "1a",
+          "amount": "40 μL, 500 mM stock in DMSO, 20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "50 μL, 1200 mM stock in DMSO, 60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(4-chlorophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3aa",
+          "amount": null,
+          "registry_name": "1-(4-chlorophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_32_3aa"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry2",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": "1b",
+          "amount": "40 μL, 500 mM stock in DMSO, 20 μmol, 1 equiv",
+          "registry_name": "benzaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "50 μL, 1200 mM stock in DMSO, 60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-phenyl-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ba",
+          "amount": null,
+          "registry_name": "1-phenyl-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_33_3ba"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry3",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "4-methylbenzaldehyde",
+          "symbol": "1c",
+          "amount": "40 μL, 500 mM stock in DMSO, 20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "50 μL, 1200 mM stock in DMSO, 60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(phenylamino)-1-(p-tolyl)ethan-1-ol",
+          "symbol": "3ca",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(p-tolyl)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_34_3ca"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry4",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "4-methoxybenzaldehyde",
+          "symbol": "1d",
+          "amount": "40 μL, 500 mM stock in DMSO, 20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "50 μL, 1200 mM stock in DMSO, 60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(4-methoxyphenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3da",
+          "amount": null,
+          "registry_name": "1-(4-methoxyphenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_35_3da"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry5",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "4-(methylthio)benzaldehyde",
+          "symbol": "1e",
+          "amount": "40 μL, 500 mM stock in DMSO, 20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "50 μL, 1200 mM stock in DMSO, 60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(4-(methylthio)phenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ea",
+          "amount": null,
+          "registry_name": "1-(4-(methylthio)phenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_36_3ea"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry6",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "4-bromobenzaldehyde",
+          "symbol": "1f",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(4-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "S-3fa",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "50 mg/mL"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_37"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry7",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "4-(trifluoromethyl)benzaldehyde",
+          "symbol": "1g",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(4-(trifluoromethyl)phenyl)ethan-1-ol",
+          "symbol": "S-3ga",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "50 mg/mL"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "46%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_38"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry8",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "3-methylbenzaldehyde",
+          "symbol": "1h",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(m-tolyl)ethan-1-ol",
+          "symbol": "S-3ha",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "50 mg/mL"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "71%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_39"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry9",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "3-bromobenzaldehyde",
+          "symbol": "1i",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(3-bromophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "S-3ia",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "50 mg/mL"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_40"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry10",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "2-methylbenzaldehyde",
+          "symbol": "1j",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(phenylamino)-1-(o-tolyl)ethan-1-ol",
+          "symbol": "S-3ja",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205V",
+          "symbol": null,
+          "amount": "50 mg/mL"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_41"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry11",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "2-fluorobenzaldehyde",
+          "symbol": "1k",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(2-fluorophenyl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3ka",
+          "amount": null,
+          "registry_name": "1-(2-fluorophenyl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205V",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "85%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP2-P42-3ka"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry12",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "2-hydroxybenzaldehyde",
+          "symbol": "1l",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(1-hydroxy-2-(phenylamino)ethyl)phenol",
+          "symbol": "3la",
+          "amount": null,
+          "registry_name": "2-(1-hydroxy-2-(phenylamino)ethyl)phenol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205V",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP2-P43-3la"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry13",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "thiophene-2-carbaldehyde",
+          "symbol": "1m",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(phenylamino)-1-(thiophen-2-yl)ethan-1-ol",
+          "symbol": "3ma",
+          "amount": null,
+          "registry_name": "2-(phenylamino)-1-(thiophen-2-yl)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205V",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP2-P44-3ma"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry14",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        45
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "2-naphthaldehyde",
+          "symbol": "1n",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "N-phenylglycine",
+          "symbol": "2a",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(naphthalen-2-yl)-2-(phenylamino)ethan-1-ol",
+          "symbol": "3na",
+          "amount": null,
+          "registry_name": "1-(naphthalen-2-yl)-2-(phenylamino)ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "88%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP2-P45-3na"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry15",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": "1b",
+          "amount": "20 μmol, 1 equiv",
+          "registry_name": "benzaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(4-fluorophenyl)glycine",
+          "symbol": "2b",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-((4-fluorophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "3bb",
+          "amount": null,
+          "registry_name": "2-((4-fluorophenyl)amino)-1-phenylethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP2-P46-3bb"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry16",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": "1b",
+          "amount": "20 μmol, 1 equiv",
+          "registry_name": "benzaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(4-chlorophenyl)glycine",
+          "symbol": "2c",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-((4-chlorophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "S-3bc",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_page47_S-3bc"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry17",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": "1b",
+          "amount": "20 μmol, 1 equiv",
+          "registry_name": "benzaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(4-bromophenyl)glycine",
+          "symbol": "2d",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-((4-bromophenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "S-3bd",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_page48_S-3bd"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled2-Entry18",
+      "_gp_source": "GeneralProcedureUnlabeled2",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "photoenzymatic deracemization of amino alcohols",
+      "substrates": [
+        {
+          "name": "benzaldehyde",
+          "symbol": "1b",
+          "amount": "20 μmol, 1 equiv",
+          "registry_name": "benzaldehyde",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(3-methoxyphenyl)glycine",
+          "symbol": "2e",
+          "amount": "60 μmol, 3 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-((3-methoxyphenyl)amino)-1-phenylethan-1-ol",
+          "symbol": "S-3be",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "eosin Y",
+          "symbol": null,
+          "amount": "10 μL, 2 mM stock in DMSO, 0.02 μmol, 0.1 mol%"
+        },
+        {
+          "name": "RasADH F205N",
+          "symbol": null,
+          "amount": "2 mL, 50 mg/mL cell-free extract solution in 100 mM KPi buffer pH 7.5"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and 100 mM KPi buffer pH 7.5",
+        "solvent_amount": "40 μL, 50 μL, and 10 μL DMSO stock additions; 2 mL cell-free extract in 100 mM KPi buffer pH 7.5",
+        "temperature": null,
+        "time": "16 hours",
+        "atmosphere": "degassed with N2 bubbling for 5 minutes, then sealed",
+        "light_source": "photoreactor",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_page49_S-3be"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "formation of oxazolidinone",
+      "substrates": [
+        {
+          "name": "(S)-1-phenyl-2-(phenylamino)ethan-1-ol",
+          "symbol": "S-3bb",
+          "amount": "20 μmol, 1 equiv"
+        },
+        {
+          "name": "1,1'-Carbonyldiimidazole",
+          "symbol": "5",
+          "amount": "22 μmol, 1.1 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-3,5-diphenyloxazolidin-2-one",
+          "symbol": "6",
+          "amount": null,
+          "registry_name": "S-3,5-diphenyloxazolidin-2-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,1'-Carbonyldiimidazole",
+          "symbol": "5",
+          "amount": "22 μmol, 1.1 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_page50_6"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/photoredox-enzymatic-catalysis-enabling-redox-ne_7bc60b33.json",
+    "input_sha256": "8a3c4d3ca8cf770e6862b022351be7a4c5babd365ff9c5f5282de4c634b38d77"
+  }
+}

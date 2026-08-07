@@ -1,0 +1,2762 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/sequential-visible-light-photoactivation-and-palladium-catalysis-enabling-enantioselective-4-2-cycloadditions.pdf",
+  "paper_key": "sequential-visible-light-photoactivation-and-palladium-catalysis-enabling-enantioselective-4-2-cycloadditions",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/sequential-visible-light-photoactivation-and-palladium-catalysis-enabling-enantioselective-4-2-cycloadditions.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/sequential-visible-light-photoactivation-and-palladium-catalysis-enabling-enantioselective-4-2-cycloadditions.pdf",
+    "source_mtime_ns": 1782048713000000000,
+    "source_size": 12894955,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "sequential-visible-light-photoactivation-and-palladium-catalysis-enabling-enantioselective-4-2-cycloadditions",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/sequential-visible-light-photoactivation-and-palladium-catalysis-enabling-enantioselective-4-2-cycloadditions.pdf"
+  },
+  "extracted_at": "2026-07-17T09:11:50.839761",
+  "total_reactions": 56,
+  "filtered_reactions": 41,
+  "filter_stats": {
+    "input_reactions": 56,
+    "basic_failed": 15,
+    "target_failed": 0,
+    "retained": 41
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product 4aa shows N‑tosyl, 3‑phenyl and a 4‑vinyl handle that are retained from the vinyl benzoxazinanone starting material; these substituents map one‑to‑one to the precursor."
+          }
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4aa",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": null,
+        "er": "98:2",
+        "dr": "94:6"
+      },
+      "_original_id": "4aa_ProcedureA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product 4aa retains N‑tosyl, 3‑phenyl and the 4‑vinyl fragment that map back to the vinyl benzoxazinanone starting material."
+          }
+        },
+        {
+          "name": "diazo compound 2",
+          "symbol": null,
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4aa",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "93:7"
+      },
+      "_original_id": "4aa_ProcedureB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "6-methoxy-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-6-methoxy-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product 4ba contains a 6‑methoxy substituent plus N‑tosyl, 3‑phenyl and 4‑vinyl motifs that are inherited from the vinyl benzoxazinanone substrate, allowing one‑to‑one assignment."
+          }
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-6-methoxy-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ba",
+          "amount": null,
+          "registry_name": "(3R,4R)-6-methoxy-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": "98:2",
+        "dr": ">95:5"
+      },
+      "_original_id": "4ba_ProcedureA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "6-methoxy-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-6-methoxy-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product 4ba’s 6‑methoxy, N‑tosyl, 3‑phenyl and 4‑vinyl features map back to the vinyl benzoxazinanone precursor used in this entry."
+          }
+        },
+        {
+          "name": "diazo compound 2",
+          "symbol": null,
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-6-methoxy-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ba",
+          "amount": null,
+          "registry_name": "(3R,4R)-6-methoxy-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "97:3",
+        "dr": "94:6"
+      },
+      "_original_id": "4ba_ProcedureB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "6-methyl-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-3,6-dimethyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product 4ca shows a 6‑methyl ring substituent alongside N‑tosyl, 3‑phenyl and the 4‑vinyl fragment, which reasonably map to the vinyl benzoxazinanone starting material."
+          }
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3,6-dimethyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ca",
+          "amount": null,
+          "registry_name": "(3R,4R)-3,6-dimethyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "98:2",
+        "dr": ">95:5"
+      },
+      "_original_id": "4ca_ProcedureA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "6-methyl-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-3,6-dimethyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product 4ca’s 6‑methyl, N‑tosyl, 3‑phenyl and 4‑vinyl groups map back to the vinyl benzoxazinanone precursor, supporting assignment of the substituted benzoxazinanone."
+          }
+        },
+        {
+          "name": "diazo compound 2",
+          "symbol": null,
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3,6-dimethyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ca",
+          "amount": null,
+          "registry_name": "(3R,4R)-3,6-dimethyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "97:3",
+        "dr": "92:8"
+      },
+      "_original_id": "4ca_ProcedureB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "6-bromo-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-6-bromo-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product 4da contains a 6‑bromo substituent plus N‑tosyl, 3‑phenyl and 4‑vinyl elements that are inherited from the vinyl benzoxazinanone starting material, enabling resolution."
+          }
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-6-bromo-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4da",
+          "amount": null,
+          "registry_name": "(3R,4R)-6-bromo-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": "98:2",
+        "dr": "95:5"
+      },
+      "_original_id": "4da_ProcedureA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "6-bromo-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-6-bromo-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product 4da’s 6‑bromo, N‑tosyl, 3‑phenyl and 4‑vinyl substituents trace back to the vinyl benzoxazinanone starting material, supporting a concrete assignment."
+          }
+        },
+        {
+          "name": "diazo compound 2",
+          "symbol": null,
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-6-bromo-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4da",
+          "amount": null,
+          "registry_name": "(3R,4R)-6-bromo-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "97:3",
+        "dr": "93:7"
+      },
+      "_original_id": "4da_ProcedureB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry5",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10,
+        11
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "6-chloro-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-6-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product 4ea shows a 6‑chloro substituent together with N‑tosyl, 3‑phenyl and 4‑vinyl features that map back to the vinyl benzoxazinanone starting material."
+          }
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-6-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ea",
+          "amount": null,
+          "registry_name": "(3R,4R)-6-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": "98:2",
+        "dr": ">95:5"
+      },
+      "_original_id": "4ea_ProcedureA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry5",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        10,
+        11
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "6-chloro-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-6-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product 4ea’s 6‑chloro, N‑tosyl, 3‑phenyl and 4‑vinyl substituents are consistent with and traceable to the vinyl benzoxazinanone starting material used in this entry."
+          }
+        },
+        {
+          "name": "diazo compound 2",
+          "symbol": null,
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-6-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ea",
+          "amount": null,
+          "registry_name": "(3R,4R)-6-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "94:6"
+      },
+      "_original_id": "4ea_ProcedureB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry6",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "7-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-7-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product (4fa) contains 7-chloro, 3-phenyl and N-tosyl substituents that map to the vinyl benzoxazinanone starting material (same aryl seen across A/B variants)."
+          }
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-7-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4fa",
+          "amount": null,
+          "registry_name": "(3R,4R)-7-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": "97:3",
+        "dr": ">95:5"
+      },
+      "_original_id": "4fa_ProcedureA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry6",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "7-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-7-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Same product (4fa) as A-Entry6; aryl and N-tosyl substituents map back to the vinyl benzoxazinanone starting material."
+          }
+        },
+        {
+          "name": "diazo compound 2",
+          "symbol": null,
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-7-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4fa",
+          "amount": null,
+          "registry_name": "(3R,4R)-7-chloro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "95:5",
+        "dr": ">95:5"
+      },
+      "_original_id": "4fa_ProcedureB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry7",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "7-(trifluoromethyl)-3-methyl-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-7-(trifluoromethyl)-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product (4ga) shows a 7-CF3 substituent plus 3-phenyl and N-tosyl that map to the vinyl benzoxazinanone starting material."
+          }
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-7-(trifluoromethyl)-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ga",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-7-(trifluoromethyl)-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": null,
+        "er": "96:4",
+        "dr": ">95:5"
+      },
+      "_original_id": "4ga_ProcedureA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry7",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "7-(trifluoromethyl)-3-methyl-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "original_name": "vinyl benzoxazinanone 1",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-7-(trifluoromethyl)-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Same product (4ga) as A-Entry7; substituents map back to the vinyl benzoxazinanone starting material."
+          }
+        },
+        {
+          "name": "diazo compound 2",
+          "symbol": null,
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-7-(trifluoromethyl)-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ga",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-7-(trifluoromethyl)-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "96:4",
+        "dr": ">95:5"
+      },
+      "_original_id": "4ga_ProcedureB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry8",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "8-fluoro-3-methyl-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified",
+          "original_name": "vinyl benzoxazinanone",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "8-fluoro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product (4ha) contains 8-fluoro, 3-phenyl and N-tosyl substituents that correspond to the vinyl benzoxazinanone starting material."
+          }
+        },
+        {
+          "name": "ketene",
+          "symbol": "3",
+          "amount": "0.4 mmol, 2.0 equiv.",
+          "registry_name": "ketene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "8-fluoro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ha",
+          "amount": null,
+          "registry_name": "(3R,4R)-8-fluoro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": "98:2",
+        "dr": ">95:5"
+      },
+      "_original_id": "Chunk6-4ha-ProcA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry8",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "8-fluoro-3-methyl-3-phenyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified",
+          "original_name": "vinyl benzoxazinanone",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "8-fluoro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Same product (4ha) appears in B-Entry8; aryl and halogen substituents map to the vinyl benzoxazinanone starting material."
+          }
+        },
+        {
+          "name": "diazo compound",
+          "symbol": "2",
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "8-fluoro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ha",
+          "amount": null,
+          "registry_name": "(3R,4R)-8-fluoro-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": null,
+        "er": "97:3",
+        "dr": ">95:5"
+      },
+      "_original_id": "Chunk6-4ha-ProcB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry9",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        12,
+        13
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "3-methyl-3-(p-tolyl)-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified",
+          "original_name": "vinyl benzoxazinanone",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-methyl-3-(p-tolyl)-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product (4ab) contains a p-tolyl substituent at the position derived from the vinyl benzoxazinanone; same product across A/B confirms origin."
+          }
+        },
+        {
+          "name": "ketene",
+          "symbol": "3",
+          "amount": "0.4 mmol, 2.0 equiv.",
+          "registry_name": "ketene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-methyl-3-(p-tolyl)-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ab",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-methyl-3-(p-tolyl)-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": "97:3",
+        "dr": ">95:5"
+      },
+      "_original_id": "Chunk6-4ab-ProcA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry9",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        12,
+        13
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "3-methyl-3-(p-tolyl)-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified",
+          "original_name": "vinyl benzoxazinanone",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-methyl-3-(p-tolyl)-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Same product (4ab) produced under GP B; p-tolyl and N-tosyl substituents map to the vinyl benzoxazinanone starting material."
+          }
+        },
+        {
+          "name": "diazo compound",
+          "symbol": "2",
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-methyl-3-(p-tolyl)-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ab",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-methyl-3-(p-tolyl)-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": "96:4",
+        "dr": ">95:5"
+      },
+      "_original_id": "Chunk6-4ab-ProcB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry10",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "3-(4-fluorophenyl)-3-methyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified",
+          "original_name": "vinyl benzoxazinanone",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(4-fluorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Product (4ac) contains a 4-fluorophenyl substituent that maps to the vinyl benzoxazinanone starting material (consistent across A/B)."
+          }
+        },
+        {
+          "name": "ketene",
+          "symbol": "3",
+          "amount": "0.4 mmol, 2.0 equiv.",
+          "registry_name": "ketene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(4-fluorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ac",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-(4-fluorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "92:8"
+      },
+      "_original_id": "Chunk6-4ac-ProcA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry10",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "3-(4-fluorophenyl)-3-methyl-1-tosyl-4-vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified",
+          "original_name": "vinyl benzoxazinanone",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(4-fluorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+            "product_index": 0,
+            "reason": "Same product (4ac) across GP B; the 4-fluorophenyl and N-tosyl substituents map back to the vinyl benzoxazinanone starting material."
+          }
+        },
+        {
+          "name": "diazo compound",
+          "symbol": "2",
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(4-fluorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ac",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-(4-fluorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "97:3",
+        "dr": "91:9"
+      },
+      "_original_id": "Chunk6-4ac-ProcB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry11",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        13,
+        14
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ketene",
+          "symbol": "3",
+          "amount": "0.4 mmol, 2.0 equiv.",
+          "registry_name": "ketene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(4-chlorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ad",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-(4-chlorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "94:6"
+      },
+      "_original_id": "Chunk6-4ad-ProcA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry11",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        13,
+        14
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "diazo compound",
+          "symbol": "2",
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(4-chlorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ad",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-(4-chlorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "94:6",
+        "dr": "90:10"
+      },
+      "_original_id": "Chunk6-4ad-ProcB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry12",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ketene",
+          "symbol": "3",
+          "amount": "0.4 mmol, 2.0 equiv.",
+          "registry_name": "ketene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(4-bromophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ae",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-(4-bromophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": "95:5",
+        "dr": "94:6"
+      },
+      "_original_id": "Chunk6-4ae-ProcA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry12",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "diazo compound",
+          "symbol": "2",
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(4-bromophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ae",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-(4-bromophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "97:3",
+        "dr": "93:7"
+      },
+      "_original_id": "Chunk6-4ae-ProcB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry13",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ketene",
+          "symbol": "3",
+          "amount": "0.4 mmol, 2.0 equiv.",
+          "registry_name": "ketene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(3-chlorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4af",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-(3-chlorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": null,
+        "er": "97:3",
+        "dr": "95:5"
+      },
+      "_original_id": "Chunk6-4af-ProcA"
+    },
+    {
+      "id": "GeneralProcedureB-Entry13",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone",
+          "symbol": "1",
+          "amount": "0.1 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "diazo compound",
+          "symbol": "2",
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(3-chlorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4af",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-(3-chlorophenyl)-3-methyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "92:8"
+      },
+      "_original_id": "Chunk6-4af-ProcB"
+    },
+    {
+      "id": "GeneralProcedureA-Entry14",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone 1",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-methyl-3-(naphthalen-2-yl)-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ag",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-methyl-3-(naphthalen-2-yl)-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": "98:2",
+        "dr": "87:13"
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry14",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone 1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv."
+        },
+        {
+          "name": "diazo compound 2",
+          "symbol": null,
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-methyl-3-(naphthalen-2-yl)-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ag",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-methyl-3-(naphthalen-2-yl)-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": "95:5",
+        "dr": "90:10"
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry15",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone 1",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-ethyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ah",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-ethyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": null,
+        "er": "94:6",
+        "dr": "91:9"
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry15",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone 1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv."
+        },
+        {
+          "name": "diazo compound 2",
+          "symbol": null,
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-ethyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ah",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-ethyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "94:6",
+        "dr": "88:12"
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry16",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone 1",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-butyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ai",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-butyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "97:3",
+        "dr": "92:8"
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry16",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone 1",
+          "symbol": null,
+          "amount": "0.1 mmol, 1.0 equiv."
+        },
+        {
+          "name": "diazo compound 2",
+          "symbol": null,
+          "amount": "0.2 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-butyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ai",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-butyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.005 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.5 mL total (1.0 mL for catalyst premix, 0.5 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": "6W blue LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": "96:4",
+        "dr": "88:12"
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry17",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone 1",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-isopropyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4aj",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-isopropyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": "98:2",
+        "dr": "90:10"
+      },
+      "_original_id": "reaction_7"
+    },
+    {
+      "id": "GeneralProcedureA-Entry18",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone 1",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-benzyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4ak",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-benzyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": "94:6",
+        "dr": "88:12"
+      },
+      "_original_id": "reaction_8"
+    },
+    {
+      "id": "GeneralProcedureA-Entry19",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone 1",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv."
+        },
+        {
+          "name": "ketene 3",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-3,3-diphenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4al",
+          "amount": null,
+          "registry_name": "(R)-3,3-diphenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": "96:4",
+        "dr": null
+      },
+      "_original_id": "reaction_9"
+    },
+    {
+      "id": "GeneralProcedureB-Entry17",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "Photochemical Pd-catalyzed cyclization of a vinyl benzoxazinanone with a diazo compound to form a quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone",
+          "symbol": "1a",
+          "amount": "3.04 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "diazo compound",
+          "symbol": "2a",
+          "amount": "6.08 mmol, 2.0 equiv.",
+          "registry_name": "α-diazoketone",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "quinolinone product",
+          "symbol": "4aa",
+          "amount": "1.23 g",
+          "registry_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.0152 mmol, 0.5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand L7"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "45 mL total (30 mL for catalyst premix, 15 mL for substrate solution)",
+        "temperature": "room temperature",
+        "time": "1 h",
+        "atmosphere": "argon",
+        "light_source": "sunlight",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": "96:4",
+        "er": null,
+        "dr": "91:9"
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry15",
+      "source_pages": [
+        23,
+        24
+      ],
+      "reaction_type": "Titanium-promoted/Grubbs-catalyzed transformation to give phenanthridinone 6",
+      "substrates": [
+        {
+          "name": "(3R,4R)-3-allyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4am",
+          "amount": "66.3 mg, 0.145 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(6aR, 10aR)-6a-Phenyl-5-tosyl-6a,7,8,10a-tetrahydrophenanthridin-6(5H)-one",
+          "symbol": "6",
+          "amount": "54.3 mg",
+          "registry_name": "(6aR, 10aR)-6a-Phenyl-5-tosyl-6a,7,8,10a-tetrahydrophenanthridin-6(5H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Hoveyda-Grubbs catalyst Ru 627",
+          "symbol": null,
+          "amount": "13 mg, 0.0435 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Ti(Oi-Pr)4",
+          "symbol": null,
+          "amount": "9.08 mg, 0.0145 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "DCE",
+        "solvent_amount": "3.0 mL",
+        "temperature": "40℃",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "95:5",
+        "er": null,
+        "dr": "91:9"
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry16",
+      "source_pages": [
+        24,
+        25
+      ],
+      "reaction_type": "Two-step sequence: DIBAL-H reduction of quinolinone 4aa to intermediate 7 followed by Et3SiH/BF3·Et2O-mediated conversion to tetrahydroquinoline 8",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4aa",
+          "amount": "154.2 mg, 0.37 mmol",
+          "step": 1,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-1,2,3,4-tetrahydroquinolin-2-ol",
+          "symbol": "7",
+          "produced_in_step": 1,
+          "consumed_in_step": 2,
+          "registry_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-1,2,3,4-tetrahydroquinolin-2-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4S)-3-methyl-3-phenyl-1-tosyl-4-vinyl-1,2,3,4-tetrahydroquinoline",
+          "symbol": "8",
+          "amount": "32.2 mg",
+          "step": 2,
+          "registry_name": "(3R,4S)-3-methyl-3-phenyl-1-tosyl-4-vinyl-1,2,3,4-tetrahydroquinoline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DIBAL-H (1.0 M solution in hexane)",
+          "symbol": null,
+          "amount": "2.0 eq, 0.74 mL",
+          "step": 1
+        },
+        {
+          "name": "Et3SiH",
+          "symbol": null,
+          "amount": "48 μL, 0.3 mmol",
+          "step": 2
+        },
+        {
+          "name": "BF3·Et2O",
+          "symbol": null,
+          "amount": "37 μL, 0.3 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "DCM"
+          },
+          {
+            "step": 2,
+            "value": "DCM"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2.0 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78℃"
+          },
+          {
+            "step": 2,
+            "value": "-78℃"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "6 h"
+          },
+          {
+            "step": 2,
+            "value": "until complete conversion (about 10 min)"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "98:2",
+        "er": null,
+        "dr": "94:6"
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry18",
+      "source_pages": [
+        26,
+        27
+      ],
+      "reaction_type": "reduction",
+      "substrates": [
+        {
+          "name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "4aa",
+          "amount": "83.43 mg, 0.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,4R)-3-methyl-3-phenyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "symbol": "10",
+          "amount": "45 mg",
+          "registry_name": "(3R,4R)-3-methyl-3-phenyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Mg",
+          "symbol": null,
+          "amount": "360 mg, 15 mmol, 200-300 mesh"
+        },
+        {
+          "name": "saturated NH4Cl",
+          "symbol": null,
+          "amount": "3 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOH",
+        "solvent_amount": "5 mL",
+        "temperature": "60 ºC",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": ">99:1",
+        "dr": "94:6"
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry20",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone",
+          "symbol": "1a",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ketene",
+          "symbol": "3a",
+          "amount": "0.4 mmol, 2.0 equiv.",
+          "registry_name": "ketene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "quinolinone product",
+          "symbol": "4aa",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N•HCl",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "12%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry21",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "Pd-catalyzed annulation (cycloaddition) of vinyl benzoxazinanone with ketene to give quinolinone",
+      "substrates": [
+        {
+          "name": "vinyl benzoxazinanone",
+          "symbol": "1a",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "registry_name": "vinyl benzoxazinanone",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ketene",
+          "symbol": "5a",
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "quinolinone",
+          "symbol": "4aa",
+          "amount": null,
+          "registry_name": "(3R,4R)-3-methyl-3-phenyl-1-tosyl-4-vinyl-3,4-dihydroquinolin-2(1H)-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd2(dba)3·CHCl3",
+          "symbol": null,
+          "amount": "0.01 mmol, 5 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "chiral P,S ligand",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "triethylamine",
+          "symbol": "Et3N",
+          "amount": "0.40 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature then 0 °C",
+        "time": "30 mins then 10 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "6%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_4aa_p32"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/sequential-visible-light-photoactivation-and-pal_3aeadc09.json",
+    "input_sha256": "6c535474cd8563f244102ab8d63b8d098cdc4f812280dc91735a3a653924cb74"
+  }
+}

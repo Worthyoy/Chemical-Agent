@@ -1,0 +1,5176 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0b2bf2b9f9f0c1ae553bf0ecb5832cb2.pdf",
+  "paper_key": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0b2bf2b9f9f0c1ae553bf0ecb5832cb2.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0b2bf2b9f9f0c1ae553bf0ecb5832cb2.pdf",
+    "source_mtime_ns": 1782048800000000000,
+    "source_size": 377046,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "two_column",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0b2bf2b9f9f0c1ae553bf0ecb5832cb2.pdf"
+  },
+  "extracted_at": "2026-07-18T02:58:20.838810",
+  "total_reactions": 89,
+  "filtered_reactions": 89,
+  "filter_stats": {
+    "input_reactions": 89,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 89
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry1",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "TiCl4-mediated coupling of 1,3-bis(silyl enol ethers) with 3-(silyloxy)-2-en-1-ones to form salicylates",
+      "substrates": [
+        {
+          "name": "3-(silyloxy)-2-en-1-ones 2a–k or 8",
+          "symbol": null,
+          "amount": "1.0equiv"
+        },
+        {
+          "name": "1,3-bis(silyl enol ethers) 1a–c",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 6-Hydroxy-2,3,4-trimethylbenzoate",
+          "symbol": "3a",
+          "amount": "0.395 g",
+          "registry_name": "salicylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "TiCl4",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": null,
+        "temperature": "–78 °C then 20 °C",
+        "time": "30 min then 18 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry2",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "TiCl4-mediated coupling of 1,3-bis(silyl enol ethers) with 3-(silyloxy)-2-en-1-ones to form salicylates",
+      "substrates": [
+        {
+          "name": "3-(silyloxy)-2-en-1-ones 2a–k or 8",
+          "symbol": null,
+          "amount": "1.0equiv"
+        },
+        {
+          "name": "1,3-bis(silyl enol ethers) 1a–c",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-Hydroxy-5-methylbiphenyl-2-carboxylate",
+          "symbol": "3b",
+          "amount": "1.333 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "TiCl4",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": null,
+        "temperature": "–78 °C then 20 °C",
+        "time": "30 min then 18 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry3",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "TiCl4-mediated coupling of 1,3-bis(silyl enol ethers) with 3-(silyloxy)-2-en-1-ones to form salicylates",
+      "substrates": [
+        {
+          "name": "3-(silyloxy)-2-en-1-ones 2a–k or 8",
+          "symbol": null,
+          "amount": "1.0equiv"
+        },
+        {
+          "name": "1,3-bis(silyl enol ethers) 1a–c",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 2-Hydroxy-4,6-dimethylbenzoate",
+          "symbol": "3c",
+          "amount": "0.825 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "TiCl4",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": null,
+        "temperature": "–78 °C then 20 °C",
+        "time": "30 min then 18 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry4",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "TiCl4-mediated coupling of 1,3-bis(silyl enol ethers) with 3-(silyloxy)-2-en-1-ones to form salicylates",
+      "substrates": [
+        {
+          "name": "3-(silyloxy)-2-en-1-ones 2a–k or 8",
+          "symbol": null,
+          "amount": "1.0equiv"
+        },
+        {
+          "name": "1,3-bis(silyl enol ethers) 1a–c",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 2-Hydroxy-4-methyl-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "symbol": "3d",
+          "amount": "0.352 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "TiCl4",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": null,
+        "temperature": "–78 °C then 20 °C",
+        "time": "30 min then 18 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "32%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry5",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "TiCl4-mediated coupling of 1,3-bis(silyl enol ethers) with 3-(silyloxy)-2-en-1-ones to form salicylates",
+      "substrates": [
+        {
+          "name": "3-(silyloxy)-2-en-1-ones 2a–k or 8",
+          "symbol": null,
+          "amount": "1.0equiv"
+        },
+        {
+          "name": "1,3-bis(silyl enol ethers) 1a–c",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-Ethyl-6-hydroxy-2,4-dimethylbenzoate",
+          "symbol": "3e",
+          "amount": "0.186 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "TiCl4",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": null,
+        "temperature": "–78 °C then 20 °C",
+        "time": "30 min then 18 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "45%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry6",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "TiCl4-mediated coupling of 1,3-bis(silyl enol ethers) with 3-(silyloxy)-2-en-1-ones to form salicylates",
+      "substrates": [
+        {
+          "name": "3-(silyloxy)-2-en-1-ones 2a–k or 8",
+          "symbol": null,
+          "amount": "1.0equiv"
+        },
+        {
+          "name": "1,3-bis(silyl enol ethers) 1a–c",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 2,4-Diethyl-6-hydroxybenzoate",
+          "symbol": "3f",
+          "amount": "0.911 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "TiCl4",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": null,
+        "temperature": "–78 °C then 20 °C",
+        "time": "30 min then 18 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "44%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry7",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "TiCl4-mediated coupling of 1,3-bis(silyl enol ethers) with 3-(silyloxy)-2-en-1-ones to form salicylates",
+      "substrates": [
+        {
+          "name": "3-(silyloxy)-2-en-1-ones 2a–k or 8",
+          "symbol": null,
+          "amount": "1.0equiv"
+        },
+        {
+          "name": "1,3-bis(silyl enol ethers) 1a–c",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-Ethyl-2-hydroxy-4,5,6-trimethylbenzoate",
+          "symbol": "3g",
+          "amount": "1.073 g",
+          "registry_name": "salicylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "TiCl4",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": null,
+        "temperature": "–78 °C then 20 °C",
+        "time": "30 min then 18 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_7"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry8",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "TiCl4-mediated coupling of 1,3-bis(silyl enol ethers) with 3-(silyloxy)-2-en-1-ones to form salicylates",
+      "substrates": [
+        {
+          "name": "3-(silyloxy)-2-en-1-ones 2a–k or 8",
+          "symbol": null,
+          "amount": "1.0equiv"
+        },
+        {
+          "name": "1,3-bis(silyl enol ethers) 1a–c",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-Chloro-6-hydroxy-2,4-dimethylbenzoate",
+          "symbol": "3h",
+          "amount": "1.010 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "TiCl4",
+          "symbol": null,
+          "amount": "1.0equiv"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": null,
+        "temperature": "–78 °C then 20 °C",
+        "time": "30 min then 18 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_8"
+    },
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "TiCl4-mediated coupling",
+      "substrates": [
+        {
+          "name": "1,3-bis(silyloxy)buta-1,3-diene",
+          "symbol": "1a",
+          "amount": "0.287 g, 1.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2i",
+          "symbol": "2i",
+          "amount": "0.273 g, 1.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-Hydroxy-2',5-dimethylbiphenyl-2-carboxylate",
+          "symbol": "3i",
+          "amount": "0.120 g",
+          "registry_name": "Methyl 3-Hydroxy-2¢,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TiCl4",
+          "symbol": "TiCl4",
+          "amount": "0.10 mL, 1.1 mmol",
+          "resolved_smiles": "Cl[Ti](Cl)(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_2_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "2 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "43%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "TiCl4-mediated coupling",
+      "substrates": [
+        {
+          "name": "1,3-bis(silyloxy)buta-1,3-diene",
+          "symbol": "1a",
+          "amount": "0.573 g, 2.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2i",
+          "symbol": "2i",
+          "amount": "0.591 g, 2.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4'-Chloro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "symbol": "3j",
+          "amount": "0.242 g",
+          "registry_name": "Methyl 4¢-Chloro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TiCl4",
+          "symbol": "TiCl4",
+          "amount": "0.20 mL, 2.2 mmol",
+          "resolved_smiles": "Cl[Ti](Cl)(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_2_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "4 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "40%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "TiCl4-mediated coupling",
+      "substrates": [
+        {
+          "name": "1c",
+          "symbol": "1c",
+          "amount": "0.758 g, 2.2 mmol"
+        },
+        {
+          "name": "2i",
+          "symbol": "2i",
+          "amount": "0.591 g, 2.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4'-Chloro-4-hexyl-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "symbol": "3k",
+          "amount": "0.273 g",
+          "registry_name": "Methyl 4¢-Chloro-4-hexyl-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TiCl4",
+          "symbol": "TiCl4",
+          "amount": "0.20 mL, 2.2 mmol",
+          "resolved_smiles": "Cl[Ti](Cl)(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_2_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "4 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "TiCl4-mediated coupling",
+      "substrates": [
+        {
+          "name": "1,3-bis(silyloxy)buta-1,3-diene",
+          "symbol": "1a",
+          "amount": "0.537 g, 2.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2j",
+          "symbol": "2j",
+          "amount": "0.591 g, 2.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 2'-Chloro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "symbol": "3l",
+          "amount": "0.226 g",
+          "registry_name": "Methyl 2¢-Chloro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TiCl4",
+          "symbol": "TiCl4",
+          "amount": "0.20 mL, 2.2 mmol",
+          "resolved_smiles": "Cl[Ti](Cl)(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_2_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "4 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r4"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "TiCl4-mediated coupling",
+      "substrates": [
+        {
+          "name": "1d",
+          "symbol": "1d",
+          "amount": "0.603 g, 2.2 mmol"
+        },
+        {
+          "name": "2j",
+          "symbol": "2j",
+          "amount": "0.535 g, 2.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 2'-Chloro-3-hydroxy-4,5-dimethylbiphenyl-2-carboxylate",
+          "symbol": "3m",
+          "amount": "0.190 g",
+          "registry_name": "Methyl 2¢-Chloro-3-hydroxy-4,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TiCl4",
+          "symbol": "TiCl4",
+          "amount": "0.417 g, 2.2 mmol",
+          "resolved_smiles": "Cl[Ti](Cl)(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_2_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "4 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "32%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r5"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "TiCl4-mediated coupling",
+      "substrates": [
+        {
+          "name": "1e",
+          "symbol": "1e",
+          "amount": "0.651 g, 2.2 mmol"
+        },
+        {
+          "name": "2j",
+          "symbol": "2j",
+          "amount": "0.535 g, 2.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 2'-Chloro-4-ethyl-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "symbol": "3n",
+          "amount": "0.224 g",
+          "registry_name": "Ethyl 2¢-Chloro-4-ethyl-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TiCl4",
+          "symbol": "TiCl4",
+          "amount": "0.417 g, 2.2 mmol",
+          "resolved_smiles": "Cl[Ti](Cl)(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_2_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "4 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "35%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r6"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "TiCl4-mediated coupling",
+      "substrates": [
+        {
+          "name": "1,3-bis(silyloxy)buta-1,3-diene",
+          "symbol": "1a",
+          "amount": "0.286 g, 1.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2k",
+          "symbol": "2k",
+          "amount": "0.252 g, 1.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 2'-Fluoro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "symbol": "3o",
+          "amount": "0.127 g",
+          "registry_name": "Methyl 2¢-Fluoro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TiCl4",
+          "symbol": "TiCl4",
+          "amount": "0.120 mL, 1.1 mmol",
+          "resolved_smiles": "Cl[Ti](Cl)(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_2_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "2 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r7"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "TiCl4-mediated coupling",
+      "substrates": [
+        {
+          "name": "1d",
+          "symbol": "1d",
+          "amount": "0.452 g, 1.6 mmol"
+        },
+        {
+          "name": "2k",
+          "symbol": "2k",
+          "amount": "0.412 g, 1.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 2'-Fluoro-3-hydroxy-4,5-dimethylbiphenyl-2-carboxylate",
+          "symbol": "3p",
+          "amount": "0.150 g",
+          "registry_name": "Methyl 2¢-Fluoro-3-hydroxy-4,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TiCl4",
+          "symbol": "TiCl4",
+          "amount": "0.313 g, 1.6 mmol",
+          "resolved_smiles": "Cl[Ti](Cl)(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_2_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "3 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "32%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r8"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "TiCl4-mediated coupling",
+      "substrates": [
+        {
+          "name": "1,3-bis(silyloxy)buta-1,3-diene",
+          "symbol": "1a",
+          "amount": "0.378 g, 1.5 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2l",
+          "symbol": "2l",
+          "amount": "0.429 g, 1.6 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4'-Fluoro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "symbol": "3q",
+          "amount": "0.168 g",
+          "registry_name": "Methyl 4¢-Fluoro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TiCl4",
+          "symbol": "TiCl4",
+          "amount": "0.312 g, 1.6 mmol",
+          "resolved_smiles": "Cl[Ti](Cl)(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_2_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "3 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "44%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r9"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "TiCl4-mediated coupling",
+      "substrates": [
+        {
+          "name": "1e",
+          "symbol": "1e",
+          "amount": "0.378 g, 1.5 mmol"
+        },
+        {
+          "name": "2l",
+          "symbol": "2l",
+          "amount": "0.484 g, 1.6 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 4-Ethyl-4'-fluoro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "symbol": "3r",
+          "amount": "0.224 g",
+          "registry_name": "Ethyl 4-Ethyl-4¢-fluoro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TiCl4",
+          "symbol": "TiCl4",
+          "amount": "0.312 g, 1.6 mmol",
+          "resolved_smiles": "Cl[Ti](Cl)(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_2_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "3 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "44%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r10"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "TiCl4-mediated coupling",
+      "substrates": [
+        {
+          "name": "1,3-bis(silyloxy)buta-1,3-diene",
+          "symbol": "1a",
+          "amount": "2.605 g, 10.0 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "8",
+          "symbol": "8",
+          "amount": "1.302 g, 5.0 mmol",
+          "resolved_smiles": "O=C[CH3]*c1cccc2ccccc12",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_4_1.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-Hydroxy-1-methyl-9,10-dihydrophenanthrene-4-carboxylate",
+          "symbol": "9",
+          "amount": "0.549 g",
+          "registry_name": "dihydrophenanthrene",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TiCl4",
+          "symbol": "TiCl4",
+          "amount": "0.60 mL, 5.0 mmol",
+          "resolved_smiles": "Cl[Ti](Cl)(Cl)Cl",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "conditions",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_2_1.png"
+          }
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "10 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "41%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r11"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Triflation (Tf2O/pyridine)",
+      "substrates": [
+        {
+          "name": "Methyl 2,3,4-trimethyl-6-hydroxybenzoate",
+          "symbol": "3a",
+          "amount": "0.833 g, 4.3 mmol",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "original_name": "salicylate",
+          "resolution_evidence": {
+            "product_name": "Methyl 2,3,4-Trimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+            "product_index": 0,
+            "reason": "Product is the corresponding 6-triflate methyl 2,3,4-trimethyl-6-(trifluoromethylsulfonyloxy)benzoate; triflation converts an OH to OTf, so the starting salicylate is the 6-hydroxy methyl ester with the same 2,3,4-trimethyl substitution pattern."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 2,3,4-Trimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4a",
+          "amount": "1.342 g",
+          "registry_name": "triflate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "pyridine",
+          "symbol": null,
+          "amount": "0.70 mL, 8.6 mmol"
+        },
+        {
+          "name": "Tf2O",
+          "symbol": "Tf2O",
+          "amount": "0.90 mL, 5.1 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "43 mL",
+        "temperature": "-78 °C to 0 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "96%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r12"
+    },
+    {
+      "id": "NonGP-Entry13",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Triflation (Tf2O/pyridine)",
+      "substrates": [
+        {
+          "name": "3b",
+          "symbol": "3b",
+          "amount": "0.700 g, 2.9 mmol",
+          "resolved_smiles": "COc1ccccc1C(=O)c1c(O)cc(OC)c(C)c1C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "2_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "0b2bf2b9f9f0c1ae553bf0ecb5832cb2_image_4_2.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 5-Methyl-3-(trifluoromethylsulfonyloxy)biphenyl-2-carboxylate",
+          "symbol": "4b",
+          "amount": "0.749 g",
+          "registry_name": "Methyl 5-Methyl-3-(trifluoromethylsulfonyloxy)biphenyl-2-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "pyridine",
+          "symbol": null,
+          "amount": "0.50 mL, 5.8 mmol"
+        },
+        {
+          "name": "Tf2O",
+          "symbol": "Tf2O",
+          "amount": "0.60 mL, 3.5 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "29 mL",
+        "temperature": "-78 °C to 0 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r13"
+    },
+    {
+      "id": "NonGP-Entry14",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Triflation (Tf2O/pyridine)",
+      "substrates": [
+        {
+          "name": "3c",
+          "symbol": "3c",
+          "amount": "0.773 g, 4.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 2,4-Dimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4c",
+          "amount": "1.302 g",
+          "registry_name": "Methyl 2,4-Dimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "pyridine",
+          "symbol": null,
+          "amount": "0.70 mL, 8.6 mmol"
+        },
+        {
+          "name": "Tf2O",
+          "symbol": "Tf2O",
+          "amount": "0.90 mL, 5.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "43 mL",
+        "temperature": "-78 °C to 0 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r14"
+    },
+    {
+      "id": "NonGP-Entry15",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Triflation (Tf2O/pyridine)",
+      "substrates": [
+        {
+          "name": "3d",
+          "symbol": "3d",
+          "amount": "0.269 g, 1.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-Methyl-2-(trifluoromethylsulfonyloxy)-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "symbol": "4d",
+          "amount": "0.416 g",
+          "registry_name": "Methyl 4-Methyl-2-(trifluoromethylsulfonyloxy)-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "pyridine",
+          "symbol": null,
+          "amount": "0.20 mL, 2.4 mmol"
+        },
+        {
+          "name": "Tf2O",
+          "symbol": "Tf2O",
+          "amount": "0.20 mL, 1.5 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "12 mL",
+        "temperature": "-78 °C to 0 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r15"
+    },
+    {
+      "id": "NonGP-Entry16",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Triflation (Tf2O/pyridine)",
+      "substrates": [
+        {
+          "name": "3e",
+          "symbol": "3e",
+          "amount": "0.739 g, 3.6 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-Ethyl-2,4-dimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4e",
+          "amount": "1.070 g",
+          "registry_name": "Methyl 3-Ethyl-2,4-dimethyl-6-(trifluoromethylsulfonyl-oxy)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "pyridine",
+          "symbol": null,
+          "amount": "0.60 mL, 7.1 mmol"
+        },
+        {
+          "name": "Tf2O",
+          "symbol": "Tf2O",
+          "amount": "0.70 mL, 4.3 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "36 mL",
+        "temperature": "-78 °C to 0 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r16"
+    },
+    {
+      "id": "NonGP-Entry17",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Triflation (Tf2O/pyridine)",
+      "substrates": [
+        {
+          "name": "3f",
+          "symbol": "3f",
+          "amount": "0.771 g, 3.7 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 2,4-Diethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4f",
+          "amount": "1.119 g",
+          "registry_name": "Methyl 2,4-Diethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "pyridine",
+          "symbol": null,
+          "amount": "0.60 mL, 7.4 mmol"
+        },
+        {
+          "name": "Tf2O",
+          "symbol": "Tf2O",
+          "amount": "0.70 mL, 4.4 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "37 mL",
+        "temperature": "-78 °C to 0 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r17"
+    },
+    {
+      "id": "NonGP-Entry18",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Triflation (Tf2O/pyridine)",
+      "substrates": [
+        {
+          "name": "Methyl 3-Ethyl-4,5,6-trimethyl-2-hydroxybenzoate",
+          "symbol": "3g",
+          "amount": "0.218 g, 1.0 mmol",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "original_name": "salicylate",
+          "resolution_evidence": {
+            "product_name": "Methyl 3-Ethyl-4,5,6-trimethyl-2-(trifluoromethylsulfonyloxy)benzoate",
+            "product_index": 0,
+            "reason": "Product is the corresponding 2-triflate methyl benzoate (OTf at C2); 'salicylate' is a generic phenolic ester and maps one-to-one to the hydroxy precursor whose triflation gives the named product."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-Ethyl-4,5,6-trimethyl-2-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4g",
+          "amount": "0.326 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "pyridine",
+          "symbol": null,
+          "amount": "0.20 mL, 2.0 mmol"
+        },
+        {
+          "name": "Tf2O",
+          "symbol": "Tf2O",
+          "amount": "0.20 mL, 1.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "10 mL",
+        "temperature": "-78 °C to 0 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r18"
+    },
+    {
+      "id": "NonGP-Entry19",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Triflation (Tf2O/pyridine)",
+      "substrates": [
+        {
+          "name": "3h",
+          "symbol": "3h",
+          "amount": "0.279 g, 1.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-Chloro-2,4-dimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4h",
+          "amount": "0.440 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "pyridine",
+          "symbol": null,
+          "amount": "0.20 mL, 2.6 mmol"
+        },
+        {
+          "name": "Tf2O",
+          "symbol": "Tf2O",
+          "amount": "0.30 mL, 1.6 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "13 mL",
+        "temperature": "-78 °C to 0 °C",
+        "time": "4 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r19"
+    },
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        8,
+        9
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.138 g, 0.9 mmol"
+        },
+        {
+          "name": "Methyl 3,4,5-trimethyl-2-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4a",
+          "amount": "0.228 g, 0.7 mmol",
+          "registry_name": "triflate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4a",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 4'-Methoxy-3,4,5-trimethylbiphenyl-2-carboxylate",
+            "product_index": 0,
+            "reason": "Product's benzoate-containing aryl fragment maps directly to the triflate partner; 'triflate 4a' denotes that specific aryl OTf which is the named methyl 3,4,5-trimethyl-2-OTf benzoate."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4'-Methoxy-3,4,5-trimethylbiphenyl-2-carboxylate",
+          "symbol": "6a",
+          "amount": "0.158 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.024 g, 0.02 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.238 g, 1.1 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.8 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r20"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "phenylboronic acid",
+          "symbol": null,
+          "amount": "0.111 g, 0.9 mmol"
+        },
+        {
+          "name": "Methyl 3,4,5-trimethyl-2-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4a",
+          "amount": "0.228 g, 0.7 mmol",
+          "registry_name": "triflate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4a",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 3,4,5-Trimethylbiphenyl-2-carboxylate",
+            "product_index": 0,
+            "reason": "Product structure identifies the aryl triflate fragment (4a) unambiguously as the methyl 3,4,5-trimethyl-2-OTf benzoate used in coupling."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3,4,5-Trimethylbiphenyl-2-carboxylate",
+          "symbol": "6b",
+          "amount": "0.154 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.024 g, 0.02 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.238 g, 1.1 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.8 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r21"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methylphenylboronic acid",
+          "symbol": null,
+          "amount": "0.163 g, 1.2 mmol"
+        },
+        {
+          "name": "Methyl 3,4,5-trimethyl-2-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4a",
+          "amount": "0.300 g, 0.9 mmol",
+          "registry_name": "triflate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4a",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 3,4,4',5-Tetramethylbiphenyl-2-carboxylate",
+            "product_index": 0,
+            "reason": "The product's benzoate-derived aryl portion corresponds one-to-one to triflate 4a; this identifies the specific aryl OTf structure."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3,4,4',5-Tetramethylbiphenyl-2-carboxylate",
+          "symbol": "6c",
+          "amount": "0.215 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.032 g, 0.03 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.312 g, 1.5 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "2.3 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r22"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.053 g, 0.4 mmol"
+        },
+        {
+          "name": "Methyl 5-Methyl-3-(trifluoromethylsulfonyloxy)biphenyl-2-carboxylate",
+          "symbol": "4b",
+          "amount": "0.101 g, 0.27 mmol",
+          "registry_name": "Methyl 5-Methyl-3-(trifluoromethylsulfonyloxy)biphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4b",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 4-Methoxy-5'-methyl-1,1';3',1''-terphenyl-2'-carboxylate",
+            "product_index": 0,
+            "reason": "Label '4b' maps unambiguously to a single pan-paper compound (symbol_evidence) and the product structure is consistent with coupling at the triflate site."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-Methoxy-5'-methyl-1,1';3',1''-terphenyl-2'-carboxylate",
+          "symbol": "6d",
+          "amount": "0.075 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.009 g, 0.01 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.091 g, 0.4 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "0.7 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r23"
+    },
+    {
+      "id": "GeneralProcedureA-Entry5",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "phenylboronic acid",
+          "symbol": null,
+          "amount": "0.041 g, 0.3 mmol"
+        },
+        {
+          "name": "Methyl 5-Methyl-3-(trifluoromethylsulfonyloxy)biphenyl-2-carboxylate",
+          "symbol": "4b",
+          "amount": "0.097 g, 0.26 mmol",
+          "registry_name": "Methyl 5-Methyl-3-(trifluoromethylsulfonyloxy)biphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4b",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 5'-Methyl-1,1';3',1''-terphenyl-2'-carboxylate",
+            "product_index": 0,
+            "reason": "The triflate is labelled '4b' and symbol_evidence provides its full structural name; product outcome is consistent with this aryl triflate."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 5'-Methyl-1,1';3',1''-terphenyl-2'-carboxylate",
+          "symbol": "6e",
+          "amount": "0.062 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.009 g, 0.01 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.089 g, 0.4 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "0.7 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r24"
+    },
+    {
+      "id": "GeneralProcedureA-Entry6",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methylphenylboronic acid",
+          "symbol": null,
+          "amount": "0.048 g, 0.4 mmol"
+        },
+        {
+          "name": "Methyl 5-Methyl-3-(trifluoromethylsulfonyloxy)biphenyl-2-carboxylate",
+          "symbol": "4b",
+          "amount": "0.101 g, 0.27 mmol",
+          "registry_name": "Methyl 5-Methyl-3-(trifluoromethylsulfonyloxy)biphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4b",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 4,5'-Dimethyl-1,1';3',1''-terphenyl-2'-carboxylate",
+            "product_index": 0,
+            "reason": "Triflate labelled '4b' maps to the full compound name in symbol_evidence; product structure matches coupling of that triflate."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4,5'-Dimethyl-1,1';3',1''-terphenyl-2'-carboxylate",
+          "symbol": "6f",
+          "amount": "0.064 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.009 g, 0.01 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.091 g, 0.4 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "0.7 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r25"
+    },
+    {
+      "id": "GeneralProcedureA-Entry7",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.138 g, 0.9 mmol"
+        },
+        {
+          "name": "Methyl 2,4-Dimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4c",
+          "amount": "0.219 g, 0.7 mmol",
+          "registry_name": "Methyl 2,4-Dimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4c",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 4'-Methoxy-3,5-dimethylbiphenyl-2-carboxylate",
+            "product_index": 0,
+            "reason": "Triflate given as '4c' and symbol_evidence provides its exact structural name; product is consistent with aryl–aryl coupling at that triflate."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4'-Methoxy-3,5-dimethylbiphenyl-2-carboxylate",
+          "symbol": "6g",
+          "amount": "0.180 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.024 g, 0.02 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.238 g, 1.1 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.8 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r26"
+    },
+    {
+      "id": "GeneralProcedureA-Entry8",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "phenylboronic acid",
+          "symbol": null,
+          "amount": "0.078 g, 0.6 mmol"
+        },
+        {
+          "name": "Methyl 2,4-Dimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4c",
+          "amount": "0.153 g, 0.5 mmol",
+          "registry_name": "Methyl 2,4-Dimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4c",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 3,5-Dimethylbiphenyl-2-carboxylate",
+            "product_index": 0,
+            "reason": "The triflate is labelled '4c' and the paper's symbol_evidence gives the full substrate identity; product composition matches that fragment."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3,5-Dimethylbiphenyl-2-carboxylate",
+          "symbol": "6h",
+          "amount": "0.107 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.017 g, 0.02 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.166 g, 0.8 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.2 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r27"
+    },
+    {
+      "id": "GeneralProcedureA-Entry9",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methylphenylboronic acid",
+          "symbol": null,
+          "amount": "0.283 g, 2.1 mmol"
+        },
+        {
+          "name": "Methyl 2,4-Dimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "symbol": "4c",
+          "amount": "0.500 g, 1.6 mmol",
+          "registry_name": "Methyl 2,4-Dimethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4c",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 3,4',5-Trimethylbiphenyl-2-carboxylate",
+            "product_index": 0,
+            "reason": "Triflate labelled '4c' is uniquely identified by symbol_evidence; product structure corresponds to coupling at that triflate."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3,4',5-Trimethylbiphenyl-2-carboxylate",
+          "symbol": "6i",
+          "amount": "0.181 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.055 g, 0.05 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.543 g, 2.6 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "4.0 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "44%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r28"
+    },
+    {
+      "id": "GeneralProcedureA-Entry10",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.140 g, 0.9 mmol"
+        },
+        {
+          "name": "Methyl 4-Methyl-2-(trifluoromethylsulfonyloxy)-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "symbol": "4d",
+          "amount": "0.250 g, 0.7 mmol",
+          "registry_name": "Methyl 4-Methyl-2-(trifluoromethylsulfonyloxy)-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4d",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 2-(4-Methoxyphenyl)-4-methyl-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+            "product_index": 0,
+            "reason": "Triflate given as '4d' and symbol_evidence supplies the full structural name; product composition matches expected coupling product from that triflate."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 2-(4-Methoxyphenyl)-4-methyl-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "symbol": "6j",
+          "amount": "0.128 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.024 g, 0.02 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.242 g, 1.1 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.8 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r29"
+    },
+    {
+      "id": "GeneralProcedureA-Entry11",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "phenylboronic acid",
+          "symbol": null,
+          "amount": "0.090 g, 0.7 mmol"
+        },
+        {
+          "name": "Methyl 4-Methyl-2-(trifluoromethylsulfonyloxy)-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "symbol": "4d",
+          "amount": "0.201 g, 0.6 mmol",
+          "registry_name": "Methyl 4-Methyl-2-(trifluoromethylsulfonyloxy)-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4d",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 4-Methyl-2-phenyl-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+            "product_index": 0,
+            "reason": "Label '4d' corresponds uniquely to the named triflate in symbol_evidence; product structure matches coupling at that position."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-Methyl-2-phenyl-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "symbol": "6k",
+          "amount": "0.142 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.020 g, 0.02 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.193 g, 0.9 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.4 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r30"
+    },
+    {
+      "id": "GeneralProcedureA-Entry12",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methylphenylboronic acid",
+          "symbol": null,
+          "amount": "0.101 g, 0.7 mmol"
+        },
+        {
+          "name": "Methyl 4-Methyl-2-(trifluoromethylsulfonyloxy)-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "symbol": "4d",
+          "amount": "0.201 g, 0.57 mmol",
+          "registry_name": "Methyl 4-Methyl-2-(trifluoromethylsulfonyloxy)-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4d",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 4-Methyl-2-(4-tolyl)-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+            "product_index": 0,
+            "reason": "Triflate '4d' is uniquely identified by symbol_evidence; product identity is consistent with that starting triflate fragment."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-Methyl-2-(4-tolyl)-5,6,7,8-tetrahydronaphthalene-1-carboxylate",
+          "symbol": "6l",
+          "amount": "0.139 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.034 g, 0.03 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.193 g, 0.9 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.4 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r31"
+    },
+    {
+      "id": "GeneralProcedureA-Entry13",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.117 g, 0.8 mmol"
+        },
+        {
+          "name": "Methyl 3-Ethyl-2,4-dimethyl-6-(trifluoromethylsulfonyl-oxy)benzoate",
+          "symbol": "4e",
+          "amount": "0.201 g, 0.6 mmol",
+          "registry_name": "Methyl 3-Ethyl-2,4-dimethyl-6-(trifluoromethylsulfonyl-oxy)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "triflate 4e",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 4-Ethyl-4'-methoxy-3,5-dimethylbiphenyl-2-carboxylate",
+            "product_index": 0,
+            "reason": "Label '4e' is mapped in symbol_evidence to a single triflate-containing benzoate; product composition aligns with coupling at that triflate."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-Ethyl-4'-methoxy-3,5-dimethylbiphenyl-2-carboxylate",
+          "symbol": "6m",
+          "amount": "0.125 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.021 g, 0.02 mmol, 3 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.200 g, 0.9 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.5 mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r32"
+    },
+    {
+      "id": "GeneralProcedureA-Entry14",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "phenylboronic acid",
+          "symbol": null,
+          "amount": "0.107g, 0.9mmol"
+        },
+        {
+          "name": "triflate 4",
+          "symbol": "4e",
+          "amount": "0.231g, 0.7mmol",
+          "registry_name": "Methyl 3-Ethyl-2,4-dimethyl-6-(trifluoromethylsulfonyl-oxy)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-Ethyl-3,5-dimethylbiphenyl-2-carboxylate",
+          "symbol": "6n",
+          "amount": "0.084g",
+          "registry_name": "Methyl 4-Ethyl-3,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.031g, 0.03mmol, 4mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.231g, 1.1mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.7mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry15",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methylphenylboronic acid",
+          "symbol": null,
+          "amount": "0.105g, 0.8mmol"
+        },
+        {
+          "name": "triflate 4",
+          "symbol": "4e",
+          "amount": "0.201g, 0.6mmol",
+          "registry_name": "Methyl 3-Ethyl-2,4-dimethyl-6-(trifluoromethylsulfonyl-oxy)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-Ethyl-3,4′,5-trimethylbiphenyl-2-carboxylate",
+          "symbol": "6o",
+          "amount": "0.125g",
+          "registry_name": "Methyl 4-Ethyl-3,4¢,5-trimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.035g, 0.03mmol, 5mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.200g, 0.9mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.5mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry16",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "phenylboronic acid",
+          "symbol": null,
+          "amount": "0.100g, 0.8mmol"
+        },
+        {
+          "name": "triflate 4",
+          "symbol": "4f",
+          "amount": "0.214g, 0.63mmol",
+          "registry_name": "Methyl 2,4-Diethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3,5-Diethylbiphenyl-2-carboxylate",
+          "symbol": "6p",
+          "amount": "0.149g",
+          "registry_name": "Methyl 3,5-Diethylbiphenyl-2-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.022g, 0.02mmol, 3mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.214g, 1.0mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.6mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry17",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methylphenylboronic acid",
+          "symbol": null,
+          "amount": "0.128g, 0.9mmol"
+        },
+        {
+          "name": "triflate 4",
+          "symbol": "4f",
+          "amount": "0.245g, 0.7mmol",
+          "registry_name": "Methyl 2,4-Diethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3,5-Diethyl-4′-methylbiphenyl-2-carboxylate",
+          "symbol": "6q",
+          "amount": "0.154g",
+          "registry_name": "Methyl 3,5-Diethyl-4¢-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.034g, 0.03mmol, 4mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.244g, 1.2mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.8mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry18",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.129g, 0.9mmol"
+        },
+        {
+          "name": "triflate 4",
+          "symbol": "4f",
+          "amount": "0.221g, 0.65mmol",
+          "registry_name": "Methyl 2,4-Diethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3,5-Diethyl-4′-methoxybiphenyl-2-carboxylate",
+          "symbol": "6r",
+          "amount": "0.167g",
+          "registry_name": "Methyl 3,5-Diethyl-4¢-methoxybiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.030g, 0.03mmol, 4mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.221g, 1.0mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.6mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry19",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "3,4,5-trimethoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.146g, 0.7mmol"
+        },
+        {
+          "name": "triflate 4",
+          "symbol": "4f",
+          "amount": "0.180g, 0.53mmol",
+          "registry_name": "Methyl 2,4-Diethyl-6-(trifluoromethylsulfonyloxy)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3,5-Diethyl-3′,4′,5′-trimethoxybiphenyl-2-carboxylate",
+          "symbol": "6s",
+          "amount": "0.113g",
+          "registry_name": "Methyl 3,5-Diethyl-3¢,4¢,5¢-trimethoxybiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.018g, 0.02mmol, 3mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.180g, 0.9mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.3mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry20",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.137g, 0.9mmol"
+        },
+        {
+          "name": "triflate 4",
+          "symbol": "4g",
+          "amount": "0.244g, 0.7mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 6-Ethyl-4′-methoxy-3,4,5-trimethylbiphenyl-2-carboxylate",
+          "symbol": "6t",
+          "amount": "0.096g",
+          "registry_name": "Methyl 6-Ethyl-4¢-methoxy-3,4,5-trimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.032g, 0.03mmol, 4mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.233g, 1.1mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.7mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "44%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-7"
+    },
+    {
+      "id": "GeneralProcedureA-Entry21",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.146g, 1.0mmol"
+        },
+        {
+          "name": "triflate 4",
+          "symbol": "4h",
+          "amount": "0.257g, 0.74mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-Chloro-4′-methoxy-3,5-dimethylbiphenyl-2-carboxylate",
+          "symbol": "6u",
+          "amount": "0.186g",
+          "registry_name": "Methyl 4-Chloro-4¢-methoxy-3,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.025g, 0.02mmol, 3mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.250g, 1.2mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.9mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-8"
+    },
+    {
+      "id": "GeneralProcedureA-Entry22",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-chlorophenylboronic acid",
+          "symbol": null,
+          "amount": "0.158g, 1.0mmol"
+        },
+        {
+          "name": "triflate 4",
+          "symbol": "4h",
+          "amount": "0.270g, 0.8mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4,4′-Dichloro-3,5-dimethylbiphenyl-2-carboxylate",
+          "symbol": "6v",
+          "amount": "0.218g",
+          "registry_name": "Methyl 4,4¢-Dichloro-3,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.027g, 0.02mmol, 3mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.265g, 1.3mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "2.0mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-9"
+    },
+    {
+      "id": "GeneralProcedureA-Entry23",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "4-(trifluoromethyl)phenylboronic acid",
+          "symbol": null,
+          "amount": "0.167g, 0.9mmol"
+        },
+        {
+          "name": "triflate 4",
+          "symbol": "4h",
+          "amount": "0.236g, 0.68mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-Chloro-3,5-dimethyl-4′-(trifluoromethyl)biphenyl-2-carboxylate",
+          "symbol": "6w",
+          "amount": "0.204g",
+          "registry_name": "Methyl 4-Chloro-3,5-dimethyl-4¢-(trifluoromethyl)biphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.023g, 0.02mmol, 3mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.231g, 1.1mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.7mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-10"
+    },
+    {
+      "id": "GeneralProcedureA-Entry24",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling (arylboronic acid with aryl triflate)",
+      "substrates": [
+        {
+          "name": "phenylboronic acid",
+          "symbol": null,
+          "amount": "0.095g, 0.8mmol"
+        },
+        {
+          "name": "triflate 4",
+          "symbol": "4h",
+          "amount": "0.208g, 0.6mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-Chloro-3,5-dimethylbiphenyl-2-carboxylate",
+          "symbol": "6x",
+          "amount": "0.097g",
+          "registry_name": "Methyl 4-Chloro-3,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "0.021g, 0.02mmol, 3mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.204g, 1.0mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "1.5mL",
+        "temperature": "110 °C",
+        "time": "4–20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-11"
+    },
+    {
+      "id": "NonGP-Entry20",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6a",
+          "symbol": "6a",
+          "amount": "0.097g, 0.34mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Methoxy-1,2,3-trimethyl-9H-fluoren-9-one",
+          "symbol": "7a",
+          "amount": "0.073g",
+          "registry_name": "7-Methoxy-1,2,3-trimethyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "4.1mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-12"
+    },
+    {
+      "id": "NonGP-Entry21",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6b",
+          "symbol": "6b",
+          "amount": "0.028g, 0.11mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1,2,3-Trimethyl-9H-fluoren-9-one",
+          "symbol": "7b",
+          "amount": "0.023g",
+          "registry_name": "1,2,3-Trimethyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "1.3mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-13"
+    },
+    {
+      "id": "NonGP-Entry22",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6c",
+          "symbol": "6c",
+          "amount": "0.043g, 0.16mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1,2,3,7-Tetramethyl-9H-fluoren-9-one",
+          "symbol": "7c",
+          "amount": "0.034g",
+          "registry_name": "1,2,3,7-Tetramethyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "1.9mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-14"
+    },
+    {
+      "id": "NonGP-Entry23",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6e",
+          "symbol": "6e",
+          "amount": "0.036g, 0.12mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-1-phenyl-9H-fluoren-9-one",
+          "symbol": "7e",
+          "amount": "0.030g",
+          "registry_name": "3-Methyl-1-phenyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "1.5mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-15"
+    },
+    {
+      "id": "NonGP-Entry24",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6f",
+          "symbol": "6f",
+          "amount": "0.035g, 0.11mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3,7-Dimethyl-1-phenyl-9H-fluoren-9-one",
+          "symbol": "7f",
+          "amount": "0.025g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "1.3mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-16"
+    },
+    {
+      "id": "NonGP-Entry25",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6g",
+          "symbol": "6g",
+          "amount": "0.049g, 0.18mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Methoxy-1,3-dimethyl-9H-fluoren-9-one",
+          "symbol": "7g",
+          "amount": "0.039g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "2.2mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-17"
+    },
+    {
+      "id": "NonGP-Entry26",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6h",
+          "symbol": "6h",
+          "amount": "0.031g, 0.13mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1,3-Dimethyl-9H-fluoren-9-one",
+          "symbol": "7h",
+          "amount": "0.023g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "1.6mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-18"
+    },
+    {
+      "id": "NonGP-Entry27",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6i",
+          "symbol": "6i",
+          "amount": "0.086g, 0.34mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1,3,7-Trimethyl-9H-fluoren-9-one",
+          "symbol": "7i",
+          "amount": "0.069g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "4.1mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-19"
+    },
+    {
+      "id": "NonGP-Entry28",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6j",
+          "symbol": "6j",
+          "amount": "0.102g, 0.33mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "9-Methoxy-5-methyl-1,2,3,4-tetrahydro-11H-benzo[a]fluoren-11-one",
+          "symbol": "7j",
+          "amount": "0.056g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "4.0mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-20"
+    },
+    {
+      "id": "NonGP-Entry29",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6k",
+          "symbol": "6k",
+          "amount": "0.081g, 0.29mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Methyl-1,2,3,4-tetrahydro-11H-benzo[a]fluoren-11-one",
+          "symbol": "7k",
+          "amount": "0.066g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "3.5mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-21"
+    },
+    {
+      "id": "NonGP-Entry30",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6l",
+          "symbol": "6l",
+          "amount": "0.100g, 0.34mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5,9-Dimethyl-1,2,3,4-tetrahydro-11H-benzo[a]fluoren-11-one",
+          "symbol": "7l",
+          "amount": "0.079g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "4.1mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-22"
+    },
+    {
+      "id": "NonGP-Entry31",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "6m",
+          "symbol": "6m",
+          "amount": "0.090g, 0.3mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Ethyl-7-methoxy-1,3-dimethyl-9H-fluoren-9-one",
+          "symbol": "7m",
+          "amount": "0.074g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "3.6mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-23"
+    },
+    {
+      "id": "NonGP-Entry32",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "Methyl 4-Ethyl-3,5-dimethylbiphenyl-2-carboxylate",
+          "symbol": "6n",
+          "amount": "0.070g, 0.26mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Ethyl-1,3-dimethyl-9H-fluoren-9-one",
+          "symbol": "7n",
+          "amount": "0.056g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "3.1mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-24"
+    },
+    {
+      "id": "NonGP-Entry33",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "Methyl 4-Ethyl-3,4¢,5-trimethylbiphenyl-2-carboxylate",
+          "symbol": "6o",
+          "amount": "0.082g, 0.29mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Ethyl-1,3,7-trimethyl-9H-fluoren-9-one",
+          "symbol": "7o",
+          "amount": "0.065g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "3.5mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-25"
+    },
+    {
+      "id": "NonGP-Entry34",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "Methyl 3,5-Diethylbiphenyl-2-carboxylate",
+          "symbol": "6p",
+          "amount": "0.107g, 0.4mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "1,3-Diethyl-9H-fluoren-9-one",
+          "symbol": "7p",
+          "amount": "0.087g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "4.8mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-26"
+    },
+    {
+      "id": "NonGP-Entry35",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "Methyl 3,5-Diethyl-4¢-methylbiphenyl-2-carboxylate",
+          "symbol": "6q",
+          "amount": "0.110g, 0.39mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "1,3-Diethyl-7-methyl-9H-fluoren-9-one",
+          "symbol": "7q",
+          "amount": "0.091g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "4.7mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-27"
+    },
+    {
+      "id": "NonGP-Entry36",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "Methyl 3,5-Diethyl-4¢-methoxybiphenyl-2-carboxylate",
+          "symbol": "6r",
+          "amount": "0.140g, 0.47mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "1,3-Diethyl-7-methoxy-9H-fluoren-9-one",
+          "symbol": "7r",
+          "amount": "0.100g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "5.6mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-28"
+    },
+    {
+      "id": "NonGP-Entry37",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "Methyl 3,5-Diethyl-3¢,4¢,5¢-trimethoxybiphenyl-2-carboxylate",
+          "symbol": "6s",
+          "amount": "0.093g, 0.26mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "6,8-Diethyl-1,2,3-trimethoxy-9H-fluoren-9-one",
+          "symbol": "7s",
+          "amount": "0.077g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "3.1mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-29"
+    },
+    {
+      "id": "NonGP-Entry38",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "Methyl 6-Ethyl-4¢-methoxy-3,4,5-trimethylbiphenyl-2-carboxylate",
+          "symbol": "6t",
+          "amount": "0.084g, 0.27mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-Ethyl-7-methoxy-1,2,3-trimethyl-9H-fluoren-9-one",
+          "symbol": "7t",
+          "amount": "0.070g",
+          "registry_name": "fluorenone",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "3.2mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-30"
+    },
+    {
+      "id": "NonGP-Entry39",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "acid-promoted cyclization (conc. H2SO4)",
+      "substrates": [
+        {
+          "name": "Methyl 4-Chloro-4¢-methoxy-3,5-dimethylbiphenyl-2-carboxylate",
+          "symbol": "6u",
+          "amount": "0.146g, 0.48mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Chloro-7-methoxy-1,3-dimethyl-9H-fluoren-9-one",
+          "symbol": "7u",
+          "amount": "0.118g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concd H2SO4",
+          "symbol": null,
+          "amount": "5.8mL"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-31"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry1",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "6v",
+          "amount": "0.139 g, 0.45 mmol",
+          "registry_name": "Methyl 4,4¢-Dichloro-3,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "2,7-Dichloro-1,3-dimethyl-9H-fluoren-9-one",
+          "symbol": "7v",
+          "amount": "0.111 g",
+          "registry_name": "2,7-Dichloro-1,3-dimethyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "5.4 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry2",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "6w",
+          "amount": "0.075 g, 0.22 mmol",
+          "registry_name": "Methyl 4-Chloro-3,5-dimethyl-4¢-(trifluoromethyl)biphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Chloro-1,3-dimethyl-7-(trifluoromethyl)-9H-fluoren-9-one",
+          "symbol": "7w",
+          "amount": "0.068 g",
+          "registry_name": "2-Chloro-1,3-dimethyl-7-(trifluoromethyl)-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "2.6 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry3",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "6x",
+          "amount": "0.055 g, 0.20 mmol",
+          "registry_name": "Methyl 4-Chloro-3,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Chloro-1,3-dimethyl-9H-fluoren-9-one",
+          "symbol": "7x",
+          "amount": "0.048 g",
+          "registry_name": "2-Chloro-1,3-dimethyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "2.5 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry4",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "3i",
+          "amount": "0.118 g, 0.46 mmol",
+          "registry_name": "Methyl 3-Hydroxy-2¢,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Hydroxy-3,5-dimethyl-9H-fluoren-9-one",
+          "symbol": "7y",
+          "amount": "0.070 mg",
+          "registry_name": "1-Hydroxy-3,5-dimethyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "5.7 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r4"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry5",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "3j",
+          "amount": "0.199 g, 0.72 mmol",
+          "registry_name": "Methyl 4¢-Chloro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "symbol": "7z",
+          "amount": "0.146 g",
+          "registry_name": "7-Chloro-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "8.9 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r5"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry6",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "3k",
+          "amount": "0.249 g, 0.70 mmol",
+          "registry_name": "Methyl 4¢-Chloro-4-hexyl-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-2-hexyl-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "symbol": "7aa",
+          "amount": "0.147 g",
+          "registry_name": "7-Chloro-2-hexyl-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "8.5 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r6"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry7",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        16,
+        17
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "3l",
+          "amount": "0.219 g, 0.80 mmol",
+          "registry_name": "Methyl 2¢-Chloro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Chloro-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "symbol": "7ab",
+          "amount": "0.145 g",
+          "registry_name": "5-Chloro-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "9.7 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r7"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry8",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "3m",
+          "amount": "31 mg, 0.10 mmol",
+          "registry_name": "Methyl 2¢-Chloro-3-hydroxy-4,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Chloro-1-hydroxy-2,3-dimethyl-9H-fluoren-9-one",
+          "symbol": "7ac",
+          "amount": "0.023 g",
+          "registry_name": "5-Chloro-1-hydroxy-2,3-dimethyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "1.5 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r8"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry9",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "3n",
+          "amount": "80 mg, 0.27 mmol",
+          "registry_name": "Ethyl 2¢-Chloro-4-ethyl-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Chloro-2-ethyl-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "symbol": "7ad",
+          "amount": "0.041 g",
+          "registry_name": "5-Chloro-2-ethyl-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "3.0 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r9"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry10",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "3o",
+          "amount": "0.120 g, 0.46 mmol",
+          "registry_name": "Methyl 2¢-Fluoro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Fluoro-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "symbol": "7ae",
+          "amount": "0.079 g",
+          "registry_name": "5-Fluoro-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "5.7 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r10"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry11",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "3p",
+          "amount": "111 mg, 0.40 mmol",
+          "registry_name": "Methyl 2¢-Fluoro-3-hydroxy-4,5-dimethylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Fluoro-1-hydroxy-2,3-dimethyl-9H-fluoren-9-one",
+          "symbol": "7af",
+          "amount": "50 mg",
+          "registry_name": "5-Fluoro-1-hydroxy-2,3-dimethyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "4.8 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r11"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry12",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "3q",
+          "amount": "0.114 g, 0.44 mmol",
+          "registry_name": "Methyl 4¢-Fluoro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Fluoro-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "symbol": "7ag",
+          "amount": "0.067 g",
+          "registry_name": "7-Fluoro-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "2.3 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r12"
+    },
+    {
+      "id": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred-Entry13",
+      "_gp_source": "GeneralProcedure_compound_6_was_dissolved_in_concd_h2so4_and_the_mixture_was_stirred",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "acid-mediated conversion of compound 6 to compound 7",
+      "substrates": [
+        {
+          "name": "Compound 6",
+          "symbol": "3r",
+          "amount": "0.132 g, 0.44 mmol",
+          "registry_name": "Ethyl 4-Ethyl-4¢-fluoro-3-hydroxy-5-methylbiphenyl-2-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Ethyl-7-fluoro-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "symbol": "7ah",
+          "amount": "0.085 g",
+          "registry_name": "2-Ethyl-7-fluoro-1-hydroxy-3-methyl-9H-fluoren-9-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "2.3 mL",
+        "temperature": "20 °C",
+        "time": "1 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r13"
+    },
+    {
+      "id": "NonGP-Entry40",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "acid-mediated conversion",
+      "substrates": [
+        {
+          "name": "dihydrophenanthrene",
+          "symbol": "9",
+          "amount": "0.164 g, 0.60 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Hydroxy-1-methyl-8,9-dihydro-4H-cyclopenta[def]phenanthren-4-one",
+          "symbol": "11",
+          "amount": "0.056 g",
+          "registry_name": "3-Hydroxy-1-methyl-8,9-dihydro-4H-cyclopenta[def]phenanthren-4-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "concd H2SO4",
+        "solvent_amount": "7.5 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "40%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r14"
+    },
+    {
+      "id": "NonGP-Entry41",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "DDQ-mediated dehydrogenation",
+      "substrates": [
+        {
+          "name": "dihydrophenanthrene",
+          "symbol": "9",
+          "amount": "0.140 g, 0.50 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-Hydroxy-1-methylphenanthrene-4-carboxylate",
+          "symbol": "10",
+          "amount": "0.078 g",
+          "registry_name": "Methyl 3-Hydroxy-1-methylphenanthrene-4-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DDQ",
+          "symbol": null,
+          "amount": "0.308 g, 1.0 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "3.6 mL",
+        "temperature": "reflux",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r15"
+    },
+    {
+      "id": "NonGP-Entry42",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "DDQ-mediated dehydrogenation",
+      "substrates": [
+        {
+          "name": "3-Hydroxy-1-methyl-8,9-dihydro-4H-cyclopenta[def]phenanthren-4-one",
+          "symbol": "11",
+          "amount": "0.015 g, 0.06 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Hydroxy-1-methyl-4H-cyclopenta[def]phenanthren-4-one",
+          "symbol": "12",
+          "amount": "0.004 g",
+          "registry_name": "cyclopenta[def]phenanthren-4-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DDQ",
+          "symbol": null,
+          "amount": "0.029 g, 0.13 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "0.5 mL",
+        "temperature": "reflux",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "27%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r16"
+    },
+    {
+      "id": "NonGP-Entry43",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "TiCl4-mediated transformation",
+      "substrates": [
+        {
+          "name": "3-(silyloxy)-2-en-1-ones",
+          "symbol": "15a",
+          "amount": "0.468 g, 2.0 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "1,3-bis(trimethylsilyloxy)buta-1,3-diene",
+          "symbol": "14",
+          "amount": "0.799 g, 2.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-Hydroxy-5-methylbiphenyl-2-yl)(2-methoxyphenyl)methanone",
+          "symbol": "16a",
+          "amount": "0.190 g",
+          "registry_name": "functionalized benzophenones",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "TiCl4",
+          "symbol": null,
+          "amount": "0.238 mL, 2.2 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r17"
+    },
+    {
+      "id": "NonGP-Entry44",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "TiCl4-mediated transformation",
+      "substrates": [
+        {
+          "name": "3-(silyloxy)-2-en-1-ones",
+          "symbol": "15b",
+          "amount": "0.371 g, 2.0 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "1,3-bis(trimethylsilyloxy)buta-1,3-diene",
+          "symbol": "14",
+          "amount": "0.799 g, 2.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(6-Hydroxy-2,3,4-trimethylphenyl)(2-methoxyphenyl)methanone",
+          "symbol": "16b",
+          "amount": "0.205 g",
+          "registry_name": "functionalized benzophenones",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "TiCl4",
+          "symbol": null,
+          "amount": "0.238 mL, 2.2 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "38%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r18"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_suzuki/symbol_resolved/text/0b2bf2b9f9f0c1ae553bf0ecb5832cb2_3e152c22.json",
+    "input_sha256": "b5fd81b8df1123090e10de98cdf05929a1642b5849bd93ba646635d7cbc4a0d8"
+  }
+}

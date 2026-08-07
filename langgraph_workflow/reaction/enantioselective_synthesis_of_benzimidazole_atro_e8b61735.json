@@ -1,0 +1,4696 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis.pdf",
+  "paper_key": "enantioselective synthesis of benzimidazole atropisomers featuring a n‐n axis",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis.pdf",
+    "source_mtime_ns": 1784206812000000000,
+    "source_size": 27413644,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "enantioselective synthesis of benzimidazole atropisomers featuring a n‐n axis",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis.pdf"
+  },
+  "extracted_at": "2026-07-17T04:59:38.602553",
+  "total_reactions": 84,
+  "filtered_reactions": 55,
+  "filter_stats": {
+    "input_reactions": 84,
+    "basic_failed": 29,
+    "target_failed": 0,
+    "retained": 55
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride",
+          "symbol": "Ⅰ",
+          "amount": "5.0 mmol",
+          "registry_name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate",
+          "symbol": "Ⅱ",
+          "amount": "10.0 mmol",
+          "registry_name": "Tert-butyl 1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1a",
+          "amount": "1.10 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride",
+          "symbol": "Ⅰ",
+          "amount": "5.0 mmol",
+          "registry_name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate",
+          "symbol": "Ⅱ",
+          "amount": "10.0 mmol",
+          "registry_name": "Tert-butyl 1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-5-chlorophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1b",
+          "amount": "0.90 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-5-chlorophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride",
+          "symbol": "Ⅰ",
+          "amount": "5.0 mmol",
+          "registry_name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate",
+          "symbol": "Ⅱ",
+          "amount": "10.0 mmol",
+          "registry_name": "Tert-butyl 1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-5-fluorophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1c",
+          "amount": "0.87 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-5-fluorophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride",
+          "symbol": "Ⅰ",
+          "amount": "5.0 mmol",
+          "registry_name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate",
+          "symbol": "Ⅱ",
+          "amount": "10.0 mmol",
+          "registry_name": "Tert-butyl 1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-5-methylphenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1d",
+          "amount": "0.87 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-5-methylphenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry5",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride Ⅰ",
+          "symbol": null,
+          "amount": "5.0 mmol"
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate Ⅱ",
+          "symbol": null,
+          "amount": "10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-5-(trifluoromethyl)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1e",
+          "amount": "0.77 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-5-(trifluoromethyl)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_1e_p7"
+    },
+    {
+      "id": "GeneralProcedureA-Entry6",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        7,
+        8
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride Ⅰ",
+          "symbol": null,
+          "amount": "5.0 mmol"
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate Ⅱ",
+          "symbol": null,
+          "amount": "10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-5-(trifluoromethoxy)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1f",
+          "amount": "0.75 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-5-(trifluoromethyl)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_1f_p7-8"
+    },
+    {
+      "id": "GeneralProcedureA-Entry7",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride Ⅰ",
+          "symbol": null,
+          "amount": "5.0 mmol"
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate Ⅱ",
+          "symbol": null,
+          "amount": "10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-5-(methoxycarbonyl)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1g",
+          "amount": "0.82 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-5-(methoxycarbonyl)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "48%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_1g_p8"
+    },
+    {
+      "id": "GeneralProcedureA-Entry8",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride Ⅰ",
+          "symbol": null,
+          "amount": "5.0 mmol"
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate Ⅱ",
+          "symbol": null,
+          "amount": "10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-4-chlorophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1h",
+          "amount": "0.86 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-4-chlorophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_1h_p9"
+    },
+    {
+      "id": "GeneralProcedureA-Entry9",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride Ⅰ",
+          "symbol": null,
+          "amount": "5.0 mmol"
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate Ⅱ",
+          "symbol": null,
+          "amount": "10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-4-fluorophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1i",
+          "amount": "0.84 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-4-fluorophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_1i_p9"
+    },
+    {
+      "id": "GeneralProcedureA-Entry10",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride Ⅰ",
+          "symbol": null,
+          "amount": "5.0 mmol"
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate Ⅱ",
+          "symbol": null,
+          "amount": "10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-4-methylphenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1j",
+          "amount": "0.91 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-4-methylphenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_1j_p10"
+    },
+    {
+      "id": "GeneralProcedureA-Entry11",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        10,
+        11
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromo-4-tert-butylphenyl)-trifluoroacetimidoyl chloride",
+          "symbol": null,
+          "amount": "5.0 mmol",
+          "original_name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride Ⅰ",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Tert-butyl-2-(1-((2-bromo-4-(Tert-butyl)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+            "product_index": 0,
+            "reason": "Product contains the aryl-imino fragment '2-bromo-4-(tert-butyl)phenyl' that maps one-to-one to the N-aryl portion of the imidoyl chloride starting material, allowing unambiguous assignment of the para substituent."
+          }
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate Ⅱ",
+          "symbol": null,
+          "amount": "10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-4-(Tert-butyl)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1k",
+          "amount": "0.93 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-4-(Tert-butyl)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_1k_p10-11"
+    },
+    {
+      "id": "GeneralProcedureA-Entry12",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromo-4-trifluoromethylphenyl)-trifluoroacetimidoyl chloride",
+          "symbol": null,
+          "amount": "5.0 mmol",
+          "original_name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride Ⅰ",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Tert-butyl-2-(1-((2-bromo-4-(trifluoromethyl)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+            "product_index": 0,
+            "reason": "Product shows the aryl-imino fragment '2-bromo-4-(trifluoromethyl)phenyl', which corresponds directly to the N-aryl substituent of the imidoyl chloride starting material."
+          }
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate Ⅱ",
+          "symbol": null,
+          "amount": "10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-4-(trifluoromethyl)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1l",
+          "amount": "0.88 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-4-(trifluoromethyl)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_1l_p11"
+    },
+    {
+      "id": "GeneralProcedureA-Entry13",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromo-4-trifluoromethoxyphenyl)-trifluoroacetimidoyl chloride",
+          "symbol": null,
+          "amount": "5.0 mmol",
+          "original_name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride Ⅰ",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Tert-butyl-2-(1-((2-bromo-4-(trifluoromethoxy)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+            "product_index": 0,
+            "reason": "Product contains '2-bromo-4-(trifluoromethoxy)phenyl' imino fragment derived from the imidoyl chloride; this maps unambiguously to the para-substituted aryl starting material."
+          }
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate Ⅱ",
+          "symbol": null,
+          "amount": "10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-4-(trifluoromethoxy)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1m",
+          "amount": "0.85 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-4-(trifluoromethoxy)phenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_1m_p11"
+    },
+    {
+      "id": "GeneralProcedureA-Entry14",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "Nucleophilic substitution/condensation of an imidoyl chloride with a hydrazine carbamate",
+      "substrates": [
+        {
+          "name": "N-(2-bromo-4-nitrophenyl)-trifluoroacetimidoyl chloride",
+          "symbol": null,
+          "amount": "5.0 mmol",
+          "original_name": "N-(2-bromophenyl)-trifluoroacetimidoyl chloride Ⅰ",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Tert-butyl-2-(1-((2-bromo-4-nitrophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+            "product_index": 0,
+            "reason": "Product shows the aryl-imino fragment '2-bromo-4-nitrophenyl' which can be traced back to the N-aryl substituent of the imidoyl chloride, uniquely specifying the para-nitro derivative."
+          }
+        },
+        {
+          "name": "Tert-butyl 1-methylhydrazine-1-carboxylate Ⅱ",
+          "symbol": null,
+          "amount": "10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tert-butyl-2-(1-((2-bromo-4-nitrophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "symbol": "1n",
+          "amount": "0.81 g",
+          "registry_name": "Tert-butyl-2-(1-((2-bromo-4-nitrophenyl)imino)-2,2,2-trifluoroethyl)-1-methylhydrazine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "30 ml",
+        "temperature": "120 ℃",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-2,2,2-trifluoro-N-(1H-indol-1-yl) acetimidamide",
+          "symbol": "3a",
+          "amount": "0.32 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromo-5-methylphenyl)-2,2,2-trifluoro-N-(1H-indol-1-yl) acetimidamide",
+          "symbol": "3b",
+          "amount": "0.32 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromo-5-methoxyphenyl)-2,2,2-trifluoro-N-(1H-indol-1-yl)acetimidamide",
+          "symbol": "3c",
+          "amount": "0.33 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromo-5-fluorophenyl)-2,2,2-trifluoro-N-(1H-indol-1-yl)acetimidamide",
+          "symbol": "3d",
+          "amount": "0.35 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry5",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl-3-((1-((1H-indol-1-yl)amino)-2,2,2-trifluoroethylidene)amino)-4-bromobenzoate",
+          "symbol": "3e",
+          "amount": "0.27 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "GeneralProcedureB-Entry6",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromo-4-fluorophenyl)-2,2,2-trifluoro-N-(1H-indol-1-yl)acetimidamide",
+          "symbol": "3f",
+          "amount": "0.36 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "GeneralProcedureB-Entry7",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromo-4-(trifluoromethyl)phenyl)-2,2,2-trifluoro-N-(1H-indol-1-yl)acetimidamide",
+          "symbol": "3g",
+          "amount": "0.39 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn8"
+    },
+    {
+      "id": "GeneralProcedureB-Entry8",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromo-4-(trifluoromethoxy)phenyl)-2,2,2-trifluoro-N-(1H-indol-1-yl)acetimidamide",
+          "symbol": "3h",
+          "amount": "0.31 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_3h_GeneralProcedureB"
+    },
+    {
+      "id": "GeneralProcedureB-Entry9",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromo-4-methylphenyl)-2,2,2-trifluoro-N-(1H-indol-1-yl)acetimidamide",
+          "symbol": "3i",
+          "amount": "0.35 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_3i_GeneralProcedureB"
+    },
+    {
+      "id": "GeneralProcedureB-Entry10",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromo-4-(Tert-butyl)phenyl)-2,2,2-trifluoro-N-(1H-indol-1-yl)acetimidamide",
+          "symbol": "3j",
+          "amount": "0.37 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_3j_GeneralProcedureB"
+    },
+    {
+      "id": "GeneralProcedureB-Entry11",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-2,2,2-trifluoro-N-(6-methyl-1H-indol-1-yl)acetimidamide",
+          "symbol": "3k",
+          "amount": "0.37 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_3k_GeneralProcedureB"
+    },
+    {
+      "id": "GeneralProcedureB-Entry12",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-2,2,2-trifluoro-N-(6-methoxy-1H-indol-1-yl)acetimidamide",
+          "symbol": "3l",
+          "amount": "0.37 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_3l_GeneralProcedureB"
+    },
+    {
+      "id": "GeneralProcedureB-Entry13",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-N-(6-chloro-1H-indol-1-yl)-2,2,2-trifluoroacetimidamide",
+          "symbol": "3m",
+          "amount": "0.39 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_3m_GeneralProcedureB"
+    },
+    {
+      "id": "GeneralProcedureB-Entry14",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-2,2,2-trifluoro-N-(5-methyl-1H-indol-1-yl)acetimidamide",
+          "symbol": "3n",
+          "amount": "0.39 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_3n_GeneralProcedureB"
+    },
+    {
+      "id": "GeneralProcedureB-Entry15",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "3o",
+          "symbol": "3o",
+          "amount": "0.41 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GPB_3o_p43"
+    },
+    {
+      "id": "GeneralProcedureB-Entry16",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-2,2,2-trifluoro-N-(5-fluoro-1H-indol-1-yl)acetimidamide",
+          "symbol": "3p",
+          "amount": "0.37 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GPB_3p_p43"
+    },
+    {
+      "id": "GeneralProcedureB-Entry17",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-N-(5-chloro-1H-indol-1-yl)-2,2,2-trifluoroacetimidamide",
+          "symbol": "3q",
+          "amount": "0.37 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GPB_3q_p44"
+    },
+    {
+      "id": "GeneralProcedureB-Entry18",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        44,
+        45
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-2,2,2-trifluoro-N-(4-methyl-1H-indol-1-yl)acetimidamide",
+          "symbol": "3r",
+          "amount": "0.39 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GPB_3r_p44-45"
+    },
+    {
+      "id": "GeneralProcedureB-Entry19",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        45
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-N-(4-chloro-1H-indol-1-yl)-2,2,2-trifluoroacetimidamide",
+          "symbol": "3s",
+          "amount": "0.38 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GPB_3s_p45"
+    },
+    {
+      "id": "GeneralProcedureB-Entry20",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-2,2,2-trifluoro-N-(3-methyl-1H-indol-1-yl)acetimidamide",
+          "symbol": "3t",
+          "amount": "0.39 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GPB_3t_p46"
+    },
+    {
+      "id": "GeneralProcedureB-Entry21",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        46,
+        47
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-2,2,2-trifluoro-N-(1H-pyrrolo[2,3-b]pyridin-1-yl)acetimidamide",
+          "symbol": "3u",
+          "amount": "0.26 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GPB_3u_p46-47"
+    },
+    {
+      "id": "GeneralProcedureB-Entry22",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-N-(1H-indol-1-yl)acetimidamide",
+          "symbol": "3w",
+          "amount": "0.30 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GPB_3w_p47"
+    },
+    {
+      "id": "GeneralProcedureB-Entry23",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "3x",
+          "symbol": "3x",
+          "amount": "0.37 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry24",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-2-chloro-2,2-difluoro-N-(6-methyl-1H-indol-1-yl)acetimida mide",
+          "symbol": "3y",
+          "amount": "0.39 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry25",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-2,2,3,3,3-pentafluoro-N-(6-methyl-1H-indol-1-yl)propanimi damide",
+          "symbol": "3z",
+          "amount": "0.34 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry26",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        49,
+        50
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-2,2,3,3,3-pentafluoro-N-(4-fluoro-1H-indol-1-yl)propanimid amide",
+          "symbol": "3aa",
+          "amount": "0.32 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry27",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "enolate formation followed by alkylation (base-mediated deprotonation and subsequent alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "III",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "I",
+          "symbol": null,
+          "amount": "2.0 mmol",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "enolate of III",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N'-(2-bromophenyl)-N-(4-chloro-1H-indol-1-yl)-2,2,3,3,3-pentafluoropropanimid amide",
+          "symbol": "3ab",
+          "amount": "0.34 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS",
+          "symbol": null,
+          "amount": "2.0 mL, 2.0 mmol, 1.0 mol/L in hexane",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "4 mL"
+          },
+          {
+            "step": 2,
+            "value": "2 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then ambient temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "5 min then 0.5 h"
+          },
+          {
+            "step": 2,
+            "value": "12 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          },
+          {
+            "step": 2,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "ProcedureC-Entry1",
+      "_gp_source": "ProcedureC",
+      "source_pages": [
+        93,
+        94
+      ],
+      "reaction_type": "Pd-catalyzed C–N bond formation (Procedure C)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "resolved_smiles": "*N(N/C(=N\\c1ccccc1Br)C(F)(F)F)C(=O)OC(C)(C)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 0,
+            "image_name": "Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis_image_3_2.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-Tert-butyl methyl(2-(trifluoromethyl)-1H-benzo[d]imidazol-1-yl)carbamate",
+          "symbol": "2a",
+          "amount": "25 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(R)-SEGPHOS",
+          "symbol": "L4"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 ℃",
+        "time": "18 hours",
+        "atmosphere": "anhydrous and oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2a"
+    },
+    {
+      "id": "ProcedureC-Entry2",
+      "_gp_source": "ProcedureC",
+      "source_pages": [
+        94
+      ],
+      "reaction_type": "Pd-catalyzed C–N bond formation (Procedure C)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "resolved_smiles": "*N(N/C(=N\\c1ccccc1Br)C(F)(F)F)C(=O)OC(C)(C)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 0,
+            "image_name": "Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis_image_3_2.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-Tert-butyl(5-chloro-2-(trifluoromethyl)-1H-benzo[d]imidazol-1-yl)(methyl)carbamate",
+          "symbol": "2b",
+          "amount": "29 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(R)-SEGPHOS",
+          "symbol": "L4"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 ℃",
+        "time": "18 hours",
+        "atmosphere": "anhydrous and oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2b"
+    },
+    {
+      "id": "ProcedureC-Entry3",
+      "_gp_source": "ProcedureC",
+      "source_pages": [
+        95
+      ],
+      "reaction_type": "Pd-catalyzed C–N bond formation (Procedure C)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "resolved_smiles": "*N(N/C(=N\\c1ccccc1Br)C(F)(F)F)C(=O)OC(C)(C)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 0,
+            "image_name": "Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis_image_3_2.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-Tert-butyl(5-fluoro-2-(trifluoromethyl)-1H-benzo[d]imidazol-1-yl)(methyl)carbamate",
+          "symbol": "2c",
+          "amount": "27 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(R)-SEGPHOS",
+          "symbol": "L4"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 ℃",
+        "time": "18 hours",
+        "atmosphere": "anhydrous and oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2c"
+    },
+    {
+      "id": "ProcedureC-Entry4",
+      "_gp_source": "ProcedureC",
+      "source_pages": [
+        95,
+        96
+      ],
+      "reaction_type": "Pd-catalyzed C–N bond formation (Procedure C)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "resolved_smiles": "*N(N/C(=N\\c1ccccc1Br)C(F)(F)F)C(=O)OC(C)(C)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 0,
+            "image_name": "Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis_image_3_2.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-Tert-butylmethyl(5-methyl-2-(trifluoromethyl)-1H-benzo[d]imidazol-1-yl)carbamate",
+          "symbol": "2d",
+          "amount": "28 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(R)-SEGPHOS",
+          "symbol": "L4"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 ℃",
+        "time": "18 hours",
+        "atmosphere": "anhydrous and oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2d"
+    },
+    {
+      "id": "ProcedureC-Entry5",
+      "_gp_source": "ProcedureC",
+      "source_pages": [
+        96
+      ],
+      "reaction_type": "Pd-catalyzed C–N bond formation (Procedure C)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "resolved_smiles": "*N(N/C(=N\\c1ccccc1Br)C(F)(F)F)C(=O)OC(C)(C)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 0,
+            "image_name": "Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis_image_3_2.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-Tert-butyl(2,5-bis(trifluoromethyl)-1H-benzo[d]imidazol-1-yl)(methyl)carbamate",
+          "symbol": "2e",
+          "amount": "26 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(R)-SEGPHOS",
+          "symbol": "L4"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 ℃",
+        "time": "18 hours",
+        "atmosphere": "anhydrous and oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2e"
+    },
+    {
+      "id": "ProcedureC-Entry6",
+      "_gp_source": "ProcedureC",
+      "source_pages": [
+        97
+      ],
+      "reaction_type": "Pd-catalyzed C–N bond formation (Procedure C)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "resolved_smiles": "*N(N/C(=N\\c1ccccc1Br)C(F)(F)F)C(=O)OC(C)(C)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 0,
+            "image_name": "Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis_image_3_2.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-Tert-butylmethyl(5-(trifluoromethoxy)-2-(trifluoromethyl)-1H-benzo[d]imidazol-1-yl)carbamate",
+          "symbol": "2f",
+          "amount": "27 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(R)-SEGPHOS",
+          "symbol": "L4"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 ℃",
+        "time": "18 hours",
+        "atmosphere": "anhydrous and oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2f"
+    },
+    {
+      "id": "ProcedureC-Entry7",
+      "_gp_source": "ProcedureC",
+      "source_pages": [
+        97
+      ],
+      "reaction_type": "Pd-catalyzed C–N bond formation (Procedure C)",
+      "substrates": [
+        {
+          "name": "1",
+          "symbol": "1",
+          "amount": "0.2 mmol, 1.0 equiv.",
+          "resolved_smiles": "*N(N/C(=N\\c1ccccc1Br)C(F)(F)F)C(=O)OC(C)(C)C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "reactants",
+            "item_index": 0,
+            "image_name": "Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis_image_3_2.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-Methyl 1-((Tert-butoxycarbonyl)(methyl)amino)-2-(trifluoromethyl)-1H-benzo[d]imidazole-5-carboxylate",
+          "symbol": "2g",
+          "amount": "25 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(R)-SEGPHOS",
+          "symbol": "L4"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 ℃",
+        "time": "18 hours",
+        "atmosphere": "anhydrous and oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2g"
+    },
+    {
+      "id": "ProcedureD-Entry1",
+      "_gp_source": "ProcedureD",
+      "source_pages": [
+        135,
+        136
+      ],
+      "reaction_type": "Pd-catalyzed C-N coupling",
+      "substrates": [
+        {
+          "name": "3",
+          "symbol": "3",
+          "amount": "0.2 mmol (1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-1-(1H-indol-1-yl)-2-(trifluoromethyl)-1H-benzo[d]imidazole",
+          "symbol": "4a",
+          "amount": "31 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-Xyl-BINAP",
+          "symbol": "L3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1.0 mL (pre-activation) + 1.0 mL (reaction)",
+        "temperature": "60 °C (20 min pre-stir), then 30 °C (18 h)",
+        "time": "20 min pre-stir; 18 h reaction",
+        "atmosphere": "anhydrous, oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4a"
+    },
+    {
+      "id": "ProcedureD-Entry2",
+      "_gp_source": "ProcedureD",
+      "source_pages": [
+        135,
+        136,
+        137
+      ],
+      "reaction_type": "Pd-catalyzed C-N coupling",
+      "substrates": [
+        {
+          "name": "3",
+          "symbol": "3",
+          "amount": "0.2 mmol (1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-1-(1H-indol-1-yl)-5-methyl-2-(trifluoromethyl)-1H-benzo[d]imidazole",
+          "symbol": "4b",
+          "amount": "33 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-Xyl-BINAP",
+          "symbol": "L3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1.0 mL (pre-activation) + 1.0 mL (reaction)",
+        "temperature": "60 °C (20 min pre-stir), then 30 °C (18 h)",
+        "time": "20 min pre-stir; 18 h reaction",
+        "atmosphere": "anhydrous, oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4b"
+    },
+    {
+      "id": "ProcedureD-Entry3",
+      "_gp_source": "ProcedureD",
+      "source_pages": [
+        135,
+        136,
+        137,
+        138
+      ],
+      "reaction_type": "Pd-catalyzed C-N coupling",
+      "substrates": [
+        {
+          "name": "3",
+          "symbol": "3",
+          "amount": "0.2 mmol (1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-1-(1H-indol-1-yl)-5-methoxy-2-(trifluoromethyl)-1H-benzo[d]imidazole",
+          "symbol": "4c",
+          "amount": "32 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-Xyl-BINAP",
+          "symbol": "L3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1.0 mL (pre-activation) + 1.0 mL (reaction)",
+        "temperature": "60 °C (20 min pre-stir), then 30 °C (18 h)",
+        "time": "20 min pre-stir; 18 h reaction",
+        "atmosphere": "anhydrous, oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4c"
+    },
+    {
+      "id": "ProcedureD-Entry4",
+      "_gp_source": "ProcedureD",
+      "source_pages": [
+        135,
+        136,
+        138,
+        139
+      ],
+      "reaction_type": "Pd-catalyzed C-N coupling",
+      "substrates": [
+        {
+          "name": "3",
+          "symbol": "3",
+          "amount": "0.2 mmol (1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-5-fluoro-1-(1H-indol-1-yl)-2-(trifluoromethyl)-1H-benzo[d]imidazole",
+          "symbol": "4d",
+          "amount": "32 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-Xyl-BINAP",
+          "symbol": "L3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1.0 mL (pre-activation) + 1.0 mL (reaction)",
+        "temperature": "60 °C (20 min pre-stir), then 30 °C (18 h)",
+        "time": "20 min pre-stir; 18 h reaction",
+        "atmosphere": "anhydrous, oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4d"
+    },
+    {
+      "id": "ProcedureD-Entry5",
+      "_gp_source": "ProcedureD",
+      "source_pages": [
+        135,
+        136,
+        139
+      ],
+      "reaction_type": "Pd-catalyzed C-N coupling",
+      "substrates": [
+        {
+          "name": "3",
+          "symbol": "3",
+          "amount": "0.2 mmol (1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-Methyl-1-(1H-indol-1-yl)-2-(trifluoromethyl)-1H-benzo[d]imidazole-5-carboxylate",
+          "symbol": "4e",
+          "amount": "27 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "5.0 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-Xyl-BINAP",
+          "symbol": "L3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1.0 mL (pre-activation) + 1.0 mL (reaction)",
+        "temperature": "60 °C (20 min pre-stir), then 30 °C (18 h)",
+        "time": "20 min pre-stir; 18 h reaction",
+        "atmosphere": "anhydrous, oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4e"
+    },
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        217
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "4a",
+          "symbol": "4a",
+          "amount": "30.12 mg, 0.1 mmol",
+          "resolved_smiles": "FC(F)(F)c1nc2ccccc2n1-n1ccc2ccccc21",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis_image_5_1.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "acid product",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "N-bromosuccinimide",
+          "symbol": "NBS",
+          "amount": "0.4 mmol (4.0 equiv)"
+        }
+      ],
+      "conditions": {
+        "solvent": "N,N-Dimethylformamide",
+        "solvent_amount": "1.0 mL",
+        "temperature": "25 °C",
+        "time": "2 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        220,
+        221
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "4t",
+          "symbol": "4t",
+          "amount": "31.53 mg, 0.1 mmol",
+          "resolved_smiles": "Cc1cn(-n2c(C(F)(F)F)nc3ccccc32)c2ccccc12",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "2_1",
+            "field": "reactants",
+            "item_index": 0,
+            "image_name": "Enantioselective Synthesis of Benzimidazole Atropisomers Featuring a N‐N Axis_image_5_1.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(2-(dicyclohexylphosphaneyl)-3-methyl-1H-indol-1-yl)-2-(trifluoromethyl)-1H-benzo[d]imidazole",
+          "symbol": "6",
+          "amount": null
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "iPr2NLi",
+          "symbol": "iPr2NLi",
+          "amount": "0.1 mL, 0.2 mmol (2.0 equiv), 2.0 M in THF"
+        },
+        {
+          "name": "dicyclohexylchlorophosphine",
+          "symbol": null,
+          "amount": "0.2 mmol (2.0 equiv)"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "-78 °C",
+        "time": "2 h, then 2 h",
+        "atmosphere": "anhydrous, oxygen-free",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/enantioselective_synthesis_of_benzimidazole_atro_e8b61735.json",
+    "input_sha256": "587ef80d6b43ee83ba9ee55d0ef5bca0ecd41d73dde6c83ec97e6e269f5e2094"
+  }
+}

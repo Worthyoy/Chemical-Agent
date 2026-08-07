@@ -1,0 +1,4223 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Copper‐Catalyzed Enantioselective Sonogashira Type Coupling of Alkynes with  ‐Bromoamides.pdf",
+  "paper_key": "copper‐catalyzed enantioselective sonogashira type coupling of alkynes with ‐bromoamides",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Copper‐Catalyzed Enantioselective Sonogashira Type Coupling of Alkynes with  ‐Bromoamides.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Copper‐Catalyzed Enantioselective Sonogashira Type Coupling of Alkynes with  ‐Bromoamides.pdf",
+    "source_mtime_ns": 1782048434000000000,
+    "source_size": 13913511,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "copper‐catalyzed enantioselective sonogashira type coupling of alkynes with ‐bromoamides",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Copper‐Catalyzed Enantioselective Sonogashira Type Coupling of Alkynes with  ‐Bromoamides.pdf"
+  },
+  "extracted_at": "2026-07-17T02:33:58.352489",
+  "total_reactions": 68,
+  "filtered_reactions": 66,
+  "filter_stats": {
+    "input_reactions": 68,
+    "basic_failed": 1,
+    "target_failed": 1,
+    "retained": 66
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "N-benzylaniline",
+          "symbol": null,
+          "amount": "1.83 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-benzyl-2-bromo-N-phenylpropanamide",
+          "symbol": "b1",
+          "amount": "2.48 g",
+          "registry_name": "N-benzyl-2-bromo-N-phenylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "1.06 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "1.54 g",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "43%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "4-fluoroaniline",
+          "symbol": null,
+          "amount": "1.11 g, 10.0 mmol"
+        },
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "1.06 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-benzyl-2-bromo-N-(4-fluorophenyl)propanamide",
+          "symbol": "b3",
+          "amount": "1.34 g",
+          "registry_name": "N-benzyl-2-bromo-N-(4-fluorophenyl)propanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "40%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        7,
+        8
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "dibenzylamine",
+          "symbol": null,
+          "amount": "0.98 g, 5.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "0.86 g, 5.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "N, N-dibenzyl-2-bromopropanamide",
+          "symbol": "b4",
+          "amount": "1.24 g",
+          "registry_name": "N, N-dibenzyl-2-bromopropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "3-phenylpropan-1-amine",
+          "symbol": null,
+          "amount": "0.68 g, 5.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "0.86 g, 5.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-N-(3-phenylpropyl)propanamide",
+          "symbol": "b5",
+          "amount": "0.95 g",
+          "registry_name": "2-bromo-N-(3-phenylpropyl)propanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        8,
+        9
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "4-fluorobenzaldehyde",
+          "symbol": null,
+          "amount": "1.24 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-N-(4-fluorobenzyl)-N-mesitylpropanamide",
+          "symbol": "b6",
+          "amount": "1.13 g",
+          "registry_name": "2-bromo-N-(4-fluorobenzyl)-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-6"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "4-bromobenzaldehyde",
+          "symbol": null,
+          "amount": "1.85 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-N-(4-bromobenzyl)-N-mesitylpropanamide",
+          "symbol": "b7",
+          "amount": "1.02 g",
+          "registry_name": "2-bromo-N-(4-bromobenzyl)-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "27%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-7"
+    },
+    {
+      "id": "Method A-Entry1",
+      "_gp_source": "Method A",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "4-(tert-butyl)benzaldehyde",
+          "symbol": null,
+          "amount": "1.62 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-N-(4-(tert-butyl)benzyl)-N-mesitylpropanamide",
+          "symbol": "b9",
+          "amount": "1.0 g",
+          "registry_name": "2-bromo-N-(4-(tert-butyl)benzyl)-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "24%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-2"
+    },
+    {
+      "id": "Method A-Entry2",
+      "_gp_source": "Method A",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "2-methylbenzaldehyde",
+          "symbol": null,
+          "amount": "1.20 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-N-mesityl-N-(2-methylbenzyl)propanamide",
+          "symbol": "b10",
+          "amount": "0.82 g",
+          "registry_name": "2-bromo-N-mesityl-N-(2-methylbenzyl)propanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "22%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-3"
+    },
+    {
+      "id": "Method A-Entry3",
+      "_gp_source": "Method A",
+      "source_pages": [
+        11,
+        12
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "3,5-dimethylbenzaldehyde",
+          "symbol": null,
+          "amount": "1.34 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-N-(3,5-dimethylbenzyl)-N-mesitylpropanamide",
+          "symbol": "b11",
+          "amount": "1.12 g",
+          "registry_name": "2-bromo-N-(3,5-dimethylbenzyl)-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-4"
+    },
+    {
+      "id": "Method A-Entry4",
+      "_gp_source": "Method A",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "cyclohexanecarbaldehyde",
+          "symbol": null,
+          "amount": "1.12 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-N-(cyclohexylmethyl)-N-mesitylpropanamide",
+          "symbol": "b12",
+          "amount": "1.28 g",
+          "registry_name": "2-bromo-N-(cyclohexylmethyl)-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "32%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-5"
+    },
+    {
+      "id": "Method A-Entry5",
+      "_gp_source": "Method A",
+      "source_pages": [
+        12,
+        13
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "2-phenylacetaldehyde",
+          "symbol": null,
+          "amount": "1.34 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-N-mesityl-N-phenethylpropanamide",
+          "symbol": "b13",
+          "amount": "1.30 g",
+          "registry_name": "2-bromo-N-mesityl-N-phenethylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "35%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-6"
+    },
+    {
+      "id": "Method A-Entry6",
+      "_gp_source": "Method A",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "thiophene-3-carbaldehyde",
+          "symbol": null,
+          "amount": "1.12 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-N-mesityl-N-(thiophen-3-ylmethyl)propanamide",
+          "symbol": "b14",
+          "amount": "1.17 g",
+          "registry_name": "2-bromo-N-mesityl-N-(thiophen-3-ylmethyl)propanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "32%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-7"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "2-naphthaldehyde",
+          "symbol": null,
+          "amount": "1.56 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-N-mesityl-N-(naphthalen-2-ylmethyl)propanamide",
+          "symbol": "b15",
+          "amount": "1.23 g",
+          "registry_name": "2-bromo-N-mesityl-N-(naphthalen-2-ylmethyl)propanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "b15_synthesis"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "1.06 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromobutanoyl chloride",
+          "symbol": null,
+          "amount": "1.85 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylbutanamide",
+          "symbol": "b16",
+          "amount": "1.02 g",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylbutanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "27%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "b16_synthesis"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "1.06 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromohexanoyl chloride",
+          "symbol": null,
+          "amount": "2.13 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylhexanamide",
+          "symbol": "b17",
+          "amount": "1.20 g",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylhexanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "b17_synthesis"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry1",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "N-benzyl-2-bromo-N-phenylpropanamide",
+          "symbol": "b1",
+          "amount": "63.6 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-phenylpropanamide",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-2-methyl-N,4-diphenylbut-3-ynamide",
+          "symbol": "c1",
+          "amount": "49.5 mg",
+          "registry_name": "(S)-N-benzyl-2-methyl-N,4-diphenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry2",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "N-benzyl-2-bromo-N-phenylpropanamide",
+          "symbol": "b1",
+          "amount": "63.6 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-phenylpropanamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "α-bromoamide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(S)-N-benzyl-2-methyl-N-phenylhept-3-ynamide",
+            "product_index": 0,
+            "reason": "Reported generically as 'α-bromoamide' but symbol 'b1' maps in-paper to N-benzyl-2-bromo-N-phenylpropanamide; product and symbol are consistent."
+          }
+        },
+        {
+          "name": "pent-1-yne",
+          "symbol": null,
+          "amount": "27.2 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-2-methyl-N-phenylhept-3-ynamide",
+          "symbol": "Sc1",
+          "amount": "45.8 mg, 0.15 mmol",
+          "registry_name": "(S)-N-benzyl-2-methyl-N-phenylhept-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 oC (reported as 25 oC for this entry; template: -10 °C or room temperature)",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "85%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedure_and_characterizations_of_products_Sc1"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry3",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "symbol": "c2",
+          "amount": "61.0 mg, 0.16 mmol",
+          "registry_name": "(S)-N-benzyl-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedure_and_characterizations_of_products_c2"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry4",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        22,
+        23
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "N-benzyl-2-bromo-N-(4-fluorophenyl)propanamide",
+          "symbol": "b3",
+          "amount": "67.2 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-(4-fluorophenyl)propanamide",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-N-(4-fluorophenyl)-2-methyl-4-phenylbut-3-ynamide",
+          "symbol": "c3",
+          "amount": "54.3 mg, 0.15 mmol",
+          "registry_name": "(S)-N-benzyl-N-(4-fluorophenyl)-2-methyl-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "83%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedure_and_characterizations_of_products_c3"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry5",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "N,N-dibenzyl-2-bromopropanamide",
+          "symbol": "b4",
+          "amount": "66.4 mg, 0.2 mmol",
+          "registry_name": "N, N-dibenzyl-2-bromopropanamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N, N-dibenzyl-2-methyl-4-phenylbut-3-ynamide",
+          "symbol": "c4",
+          "amount": "46.0 mg, 0.13 mmol",
+          "registry_name": "(S)-N, N-dibenzyl-2-methyl-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "41%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedure_and_characterizations_of_products_c4"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry6",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "4-ethynyl-N,N-dimethylaniline",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-4-(4-(dimethylamino)phenyl)-N-mesityl-2-methylbut-3-ynamide",
+          "symbol": "c5",
+          "amount": "56.8 mg, 0.13 mmol",
+          "registry_name": "(S)-N-benzyl-4-(4-(dimethylamino)phenyl)-N-mesityl-2-methylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedure_and_characterizations_of_products_c5"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry7",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "benzene",
+          "symbol": null,
+          "amount": "52.8 mg, 0.4 mmol"
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-N-mesityl-4-(4-methoxyphenyl)-2-methylbut-3-ynamide",
+          "symbol": "c6",
+          "amount": "49.3 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_c6"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry8",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "1-ethynyl-4-methyl-benzene",
+          "symbol": null,
+          "amount": "46.4 mg, 0.4 mmol"
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-N-mesityl-2-methyl-4-(p-tolyl)but-3-ynamide",
+          "symbol": "c7",
+          "amount": "52.1 mg",
+          "registry_name": "(S)-N-benzyl-N-mesityl-2-methyl-4-(p-tolyl)but-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_c7"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry9",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "1-(tert-butyl)-4-ethynylbenzene",
+          "symbol": null,
+          "amount": "63.2 mg, 0.4 mmol"
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-4-(4-(tert-butyl)phenyl)-N-mesityl-2-methylbut-3-ynamide",
+          "symbol": "c8",
+          "amount": "56.8 mg",
+          "registry_name": "(S)-N-benzyl-4-(4-(tert-butyl)phenyl)-N-mesityl-2-methylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_c8"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry10",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "1-ethynyl-4-fluorobenzene",
+          "symbol": null,
+          "amount": "48.0 mg, 0.4 mmol"
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-4-(4-fluorophenyl)-N-mesityl-2-methylbut-3-ynamide",
+          "symbol": "c9",
+          "amount": "59.8 mg",
+          "registry_name": "(S)-N-benzyl-4-(4-fluorophenyl)-N-mesityl-2-methylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_c9"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry11",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "1-chloro-4-ethynylbenzene",
+          "symbol": null,
+          "amount": "54.4 mg, 0.4 mmol"
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-4-(4-chlorophenyl)-N-mesityl-2-methylbut-3-ynamide",
+          "symbol": "c10",
+          "amount": "58.1 mg",
+          "registry_name": "(S)-N-benzyl-4-(4-chlorophenyl)-N-mesityl-2-methylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_c10"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry12",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "1-chloro-4-ethynylbenzene",
+          "symbol": null,
+          "amount": "54.4 mg, 0.4 mmol"
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-4-(3-chlorophenyl)-N-mesityl-2-methylbut-3-ynamide",
+          "symbol": "c11",
+          "amount": "60.0 mg",
+          "registry_name": "(S)-N-benzyl-4-(3-chlorophenyl)-N-mesityl-2-methylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_c11"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry13",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "1-bromo-4-ethynylbenzene",
+          "symbol": null,
+          "amount": "72.4 mg, 0.4 mmol"
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "c12",
+          "symbol": "c12",
+          "amount": "69.0 mg, 0.15 mmol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry14",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        29,
+        30
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "64.0 mg, 0.4 mmol"
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (S)-4-(4-(benzyl(mesityl)amino)-3-methyl-4-oxobut-1-yn-1-yl)benzoate",
+          "symbol": "c13",
+          "amount": "61.5 mg, 0.14 mmol",
+          "registry_name": "Methyl (S)-4-(4-(benzyl(mesityl)amino)-3-methyl-4-oxobut-1-yn-1-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry15",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "methyl pent-1-yne",
+          "symbol": null,
+          "amount": "27.2 mg, 0.4 mmol"
+        },
+        {
+          "name": "2-bromo-N-mesityl-N-(4-methoxybenzyl)propanamide",
+          "symbol": "b8",
+          "amount": "78.1 mg, 0.2 mmol",
+          "registry_name": "3-bromo-N-mesityl-N-(4-methoxybenzyl)propanamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-mesityl-N-(4-methoxybenzyl)-2-methylhept-3-ynamide",
+          "symbol": "c14",
+          "amount": "54.3 mg, 0.14 mmol",
+          "registry_name": "(S)-N-mesityl-N-(4-methoxybenzyl)-2-methylhept-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry16",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "methyl 3,3-dimethylbut-1-yne",
+          "symbol": null,
+          "amount": "27.2 mg, 0.4 mmol"
+        },
+        {
+          "name": "2-bromo-N-mesityl-N-(4-methoxybenzyl)propanamide",
+          "symbol": "b8",
+          "amount": "78.2 mg, 0.2 mmol",
+          "registry_name": "3-bromo-N-mesityl-N-(4-methoxybenzyl)propanamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-mesityl-N-(4-methoxybenzyl)-2,5,5-trimethylhex-3-ynamide",
+          "symbol": "c15",
+          "amount": "58.6 mg, 0.15 mmol",
+          "registry_name": "(S)-N-mesityl-N-(4-methoxybenzyl)-2,5,5-trimethylhex-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry17",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        31,
+        32
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "ethynylcyclohexane",
+          "symbol": null,
+          "amount": "43.2 mg, 0.4 mmol"
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-4-cyclohexyl-N-mesityl-2-methylbut-3-ynamide",
+          "symbol": "c16",
+          "amount": "57.3 mg, 0.15 mmol",
+          "registry_name": "(S)-N-benzyl-4-cyclohexyl-N-mesityl-2-methylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry18",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "ethynylcyclopropane",
+          "symbol": null,
+          "amount": "26.4 mg, 0.4 mmol"
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-4-cyclopropyl-N-mesityl-2-methylbut-3-ynamide",
+          "symbol": "c17",
+          "amount": "48.3 mg, 0.14 mmol",
+          "registry_name": "(S)-N-benzyl-4-cyclopropyl-N-mesityl-2-methylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry19",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynyltrimethylsilane",
+          "symbol": null,
+          "amount": "39.3 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-N-mesityl-2-methyl-4-(trimethylsilyl)but-3-ynamide",
+          "symbol": "c18",
+          "amount": "49.0 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry20",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynyltriisopropylsilane",
+          "symbol": null,
+          "amount": "72.8 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-N-mesityl-2-methyl-4-(triisopropylsilyl)but-3-ynamide",
+          "symbol": "c19",
+          "amount": "61.7 mg",
+          "registry_name": "(S)-N-benzyl-N-mesityl-2-methyl-4-(triisopropylsilyl)but-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "87%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry21",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "72.0 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "3-ethynylestrone",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-N-mesityl-2-methyl-4-((8R,9S,13S,14S)-13-methyl-17-oxo-7,8,9,11,12,13,14,15,16,17-decahydro-6H-cyclopenta[a]phenanthren-3-yl)but-3-ynamide",
+          "symbol": "c20",
+          "amount": "78.0 mg",
+          "registry_name": "(S)-N-benzyl-N-mesityl-2-methyl-4-((8R,9S,13S,14S)-13-methyl-17-oxo-7,8,9,11,12,13,14,15,16,17-decahydro-6H-cyclopenta[a]phenanthren-3-yl)but-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry22",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        34,
+        35
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "2-bromo-N-(4-fluorobenzyl)-N-mesitylpropanamide",
+          "symbol": "b6",
+          "amount": "75.6 mg, 0.2 mmol",
+          "registry_name": "2-bromo-N-(4-fluorobenzyl)-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(4-fluorobenzyl)-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "symbol": "c21",
+          "amount": "55.9 mg",
+          "registry_name": "(S) -N-(4-fluorobenzyl)-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry23",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        35,
+        36
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "2-bromo-N-(4-bromobenzyl)-N-mesitylpropanamide",
+          "symbol": "b7",
+          "amount": "87.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-N-(4-bromobenzyl)-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(4-bromobenzyl)-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "symbol": "c22",
+          "amount": "67.2 mg",
+          "registry_name": "(S)-N-(4-bromobenzyl)-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry24",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "2-bromo-N-mesityl-N-(4-methoxybenzyl)propanamide",
+          "symbol": "b8",
+          "amount": "78.0 mg, 0.2 mmol",
+          "registry_name": "3-bromo-N-mesityl-N-(4-methoxybenzyl)propanamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-mesityl-N-(4-methoxybenzyl)-2-methyl-4-phenylbut-3-ynamide",
+          "symbol": "c23",
+          "amount": "67.4 mg",
+          "registry_name": "(S)-N-mesityl-N-(4-methoxybenzyl)-2-methyl-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry25",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        },
+        {
+          "name": "2-bromo-N-(4-(tert-butyl)benzyl)-N-mesitylpropanamide",
+          "symbol": "b9",
+          "amount": "83.2 mg, 0.2 mmol",
+          "registry_name": "2-bromo-N-(4-(tert-butyl)benzyl)-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(4-(tert-butyl)benzyl)-N-mesityl-2-methyl-4-phenylbut-3-ynamidee",
+          "symbol": "c24",
+          "amount": "59.4 mg",
+          "registry_name": "(S)-N-(4-(tert-butyl)benzyl)-N-mesityl-2-methyl-4-phenylbut-3-ynamidee",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c24"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry26",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        37,
+        38
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        },
+        {
+          "name": "2-bromo-N-mesityl-N-(2-methylbenzyl)propanamide",
+          "symbol": "b10",
+          "amount": "79.0 mg, 0.2 mmol, 1.0 equiv.",
+          "registry_name": "2-bromo-N-mesityl-N-(2-methylbenzyl)propanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-mesityl-2-methyl-N-(2-methylbenzyl)-4-phenylbut-3-ynamide",
+          "symbol": "c25",
+          "amount": "63.2 mg",
+          "registry_name": "(S)-N-mesityl-2-methyl-N-(2-methylbenzyl)-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "59%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c25"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry27",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        },
+        {
+          "name": "2-bromo-N-(3,5-dimethylbenzyl)-N-mesitylpropanamide",
+          "symbol": "b11",
+          "amount": "77.6 mg, 0.2 mmol",
+          "registry_name": "2-bromo-N-(3,5-dimethylbenzyl)-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(3,5-dimethylbenzyl)-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "symbol": "c26",
+          "amount": "57.3 mg",
+          "registry_name": "(S)-N-(3,5-dimethylbenzyl)-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c26"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry28",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        },
+        {
+          "name": "2-bromo-N-(cyclohexylmethyl)-N-mesitylpropanamide",
+          "symbol": "b12",
+          "amount": "73.2 mg, 0.2 mmol",
+          "registry_name": "2-bromo-N-(cyclohexylmethyl)-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(cyclohexylmethyl)-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "symbol": "c27",
+          "amount": "60.4 mg",
+          "registry_name": "(S)-N-(cyclohexylmethyl)-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c27"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry29",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        },
+        {
+          "name": "2-bromo-N-mesityl-N-phenethylpropanamide",
+          "symbol": "b13",
+          "amount": "74.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-N-mesityl-N-phenethylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-mesityl-2-methyl-N-phenethyl-4-phenylbut-3-ynamide",
+          "symbol": "c28",
+          "amount": "61.6 mg",
+          "registry_name": "(S)-N-mesityl-2-methyl-N-phenethyl-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c28"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry30",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        },
+        {
+          "name": "2-bromo-N-mesityl-N-(thiophen-3-ylmethyl)propanamide",
+          "symbol": "b14",
+          "amount": "73.2 mg, 0.2 mmol",
+          "registry_name": "2-bromo-N-mesityl-N-(thiophen-3-ylmethyl)propanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-mesityl-2-methyl-4-phenyl-N-(thiophen-2-ylmethyl)but-3-ynamidee",
+          "symbol": "c29",
+          "amount": "50.3 mg",
+          "registry_name": "(S)-N-mesityl-2-methyl-4-phenyl-N-(thiophen-2-ylmethyl)but-3-ynamidee",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 oC",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c29"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry31",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "2-bromo-N-mesityl-N-(naphthalen-1-ylmethyl)propanamide",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv.",
+          "original_name": "α-bromoamide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(S)-N-mesityl-2-methyl-N-(naphthalen-1-ylmethyl)-4-phenylbut-3-ynamide",
+            "product_index": 0,
+            "reason": "Product shows N-mesityl and N-(naphthalen-1-ylmethyl) substitution and the 2-methyl/propanamide scaffold, directly mapping to a 2-bromo N-mesityl N-(naphthalen-1-ylmethyl)propanamide α-bromoamide starting material."
+          }
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv.",
+          "original_name": "terminal alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(S)-N-mesityl-2-methyl-N-(naphthalen-1-ylmethyl)-4-phenylbut-3-ynamide",
+            "product_index": 0,
+            "reason": "Product contains a 4-phenylbut-3-ynamide fragment (phenyl-substituted alkyne), uniquely indicating phenylacetylene (ethynylbenzene) as the terminal alkyne."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-mesityl-2-methyl-N-(naphthalen-1-ylmethyl)-4-phenylbut-3-ynamide",
+          "symbol": "c30",
+          "amount": "64.7 mg, 0.15 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry32",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylbutanamide",
+          "symbol": "b16",
+          "amount": "74.8 mg, 0.2 mmol",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylbutanamide",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-2-ethyl-N-mesityl-4-phenylbut-3-ynamide",
+          "symbol": "c31",
+          "amount": "59.3 mg, 0.15 mmol",
+          "registry_name": "(S)-N-benzyl-2-ethyl-N-mesityl-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry33",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "40.8 mg, 0.4 mmol, 2.0 equiv."
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylhexanamide",
+          "symbol": "b17",
+          "amount": "80.4 mg, 0.2 mmol, 1.0 equiv.",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylhexanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-benzyl-N-mesityl-2-(phenylethynyl)hexanamide",
+          "symbol": "c32",
+          "amount": "60.9 mg",
+          "registry_name": "(S)-N-benzyl-N-mesityl-2-(phenylethynyl)hexanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "preparation of (phenylethynyl) polymeric alkynylcopper reagent",
+      "substrates": [
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "1.9 g, 10 mmol"
+        },
+        {
+          "name": "phenylacetylene",
+          "symbol": null,
+          "amount": "10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "polymeric alkynylcopper reagent",
+          "symbol": "A1",
+          "amount": "1.3 g",
+          "registry_name": "(phenylethynyl) copper reagent",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "potassium carbonate",
+          "symbol": null,
+          "amount": "1.5 g, 1.1 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "15 mL (CuI suspension) and 5 mL (alkyne solution)",
+        "temperature": "rt",
+        "time": "2 hours",
+        "atmosphere": "Ar",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "NonGP-Entry13",
+      "source_pages": [
+        45
+      ],
+      "reaction_type": "synthesis of 2-bromo-N-cinnamyl-N-mesitylpropanamide",
+      "substrates": [
+        {
+          "name": "2,4,6-trimethylaniline",
+          "symbol": null,
+          "amount": "1.35 g, 10.0 mmol"
+        },
+        {
+          "name": "cinnamaldehyde",
+          "symbol": null,
+          "amount": "1.32 g, 10.0 mmol"
+        },
+        {
+          "name": "2-bromopropanoyl chloride",
+          "symbol": null,
+          "amount": "1.71 g, 10.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-N-cinnamyl-N-mesitylpropanamide",
+          "symbol": "b18",
+          "amount": "1.30 g",
+          "registry_name": "2-bromo-N-cinnamyl-N-mesitylpropanamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry34",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "2-bromo-N-cinnamyl-N-mesitylpropanamide",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv.",
+          "original_name": "α-bromoamide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(S)-N-cinnamyl-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+            "product_index": 0,
+            "reason": "Product retains N-cinnamyl and N-mesityl substituents and a 2-methyl (2-bromo) propanamide-derived backbone matching b18."
+          }
+        },
+        {
+          "name": "terminal alkyne",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-cinnamyl-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "symbol": "c33",
+          "amount": "57 mg",
+          "registry_name": "(S)-N-cinnamyl-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry35",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "α-bromoamide",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "terminal alkyne",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3S,4R)-4-((S)-1,3-diphenylprop-2-yn-1-yl)-1-mesityl-3-methylpyrrolidin-2-one",
+          "symbol": "d1",
+          "amount": "12 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "15%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry36",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "α-bromoamide",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "terminal alkyne",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3S,4R)-4-((S)-1,3-diphenylprop-2-yn-1-yl)-1-mesityl-3-methylpyrrolidin-2-one",
+          "symbol": "d1",
+          "amount": null,
+          "registry_name": "(3S,4R)-4-((S)-1,3-diphenylprop-2-yn-1-yl)-1-mesityl-3-methylpyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "9%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry37",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "0.10 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv.",
+          "original_name": "α-bromoamide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl (S)-4-(4-(benzyl(mesityl)amino)-3-methyl-4-oxobut-1-yn-1-yl)benzoate",
+            "product_index": 0,
+            "reason": "Product (c13) contains a benzyl(mesityl)amino motif consistent with an N-benzyl-N-mesityl 2-bromopropanamide precursor (b2)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (S)-4-(4-(benzyl(mesityl)amino)-3-methyl-4-oxobut-1-yn-1-yl)benzoate",
+          "symbol": "c13",
+          "amount": "27.1 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.01 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S,S)-L7",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.20 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "1.0 mL",
+        "temperature": "-10 °C",
+        "time": "24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "41%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry38",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "0.10 mmol, 1.0 equiv."
+        },
+        {
+          "name": "α-bromoamide",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "29.7 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.01 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S,S)-L7",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.20 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "1.0 mL",
+        "temperature": "-10 °C",
+        "time": "24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "2%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry39",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "0.10 mmol, 1.0 equiv."
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv.",
+          "original_name": "α-bromoamide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl (S)-4-(4-(benzyl(mesityl)amino)-3-methyl-4-oxobut-1-yn-1-yl)benzoate",
+            "product_index": 0,
+            "reason": "Product (c13) shows benzyl(mesityl)amino fragment mapping to an N-benzyl-N-mesityl α-bromoamide precursor (b2)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (S)-4-(4-(benzyl(mesityl)amino)-3-methyl-4-oxobut-1-yn-1-yl)benzoate",
+          "symbol": "c13",
+          "amount": "31.7 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.01 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(R,R)-L7",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.20 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "1.0 mL",
+        "temperature": "-10 °C",
+        "time": "24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "48%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry40",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "0.10 mmol, 1.0 equiv."
+        },
+        {
+          "name": "α-bromoamide",
+          "symbol": null,
+          "amount": "0.15 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "27.0 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.01 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(R,R)-L7",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.20 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "1.0 mL",
+        "temperature": "-10 °C",
+        "time": "24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": "3%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry41",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        49,
+        50
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "0.10 mmol, 2.0 equiv."
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": null,
+          "amount": "0.10 mmol, 1.0 equiv.",
+          "original_name": "α-bromoamide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl (S)-4-(4-(benzyl(mesityl)amino)-3-methyl-4-oxobut-1-yn-1-yl)benzoate",
+            "product_index": 0,
+            "reason": "Product (c13) contains benzyl(mesityl)amino motif consistent with b2 as the α-bromoamide precursor."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (S)-4-(4-(benzyl(mesityl)amino)-3-methyl-4-oxobut-1-yn-1-yl)benzoate",
+          "symbol": "c13",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.01 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.20 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "1.0 mL",
+        "temperature": "-10 °C",
+        "time": "6 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry42",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        49,
+        50
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "0.10 mmol, 2.0 equiv."
+        },
+        {
+          "name": "α-bromoamide",
+          "symbol": null,
+          "amount": "0.10 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.01 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.20 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "1.0 mL",
+        "temperature": "-10 °C",
+        "time": "6 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "8%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry43",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "0.10 mmol, 2.0 equiv."
+        },
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": "27.0 mg, 0.075 mmol, 1.0 equiv.",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "α-bromoamide",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl (S)-4-(4-(benzyl(mesityl)amino)-3-methyl-4-oxobut-1-yn-1-yl)benzoate",
+            "product_index": 0,
+            "reason": "Substrate listed as generic 'α-bromoamide' but has symbol b2; symbol_evidence maps b2 to a specific α-bromoamide matching product fragments."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (S)-4-(4-(benzyl(mesityl)amino)-3-methyl-4-oxobut-1-yn-1-yl)benzoate",
+          "symbol": "c13",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.01 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.20 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "1.0 mL",
+        "temperature": "-10 °C",
+        "time": "6 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn8"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry44",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "0.10 mmol, 2.0 equiv."
+        },
+        {
+          "name": "α-bromoamide",
+          "symbol": "b2",
+          "amount": "27.0 mg, 0.075 mmol, 1.0 equiv.",
+          "registry_name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-benzyl-2-bromo-N-mesitylpropanamide",
+          "symbol": "b2",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.01 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.20 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "1.0 mL",
+        "temperature": "-10 °C",
+        "time": "6 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "20%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn9"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry45",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "α-bromoamide",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "terminal alkyne",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3S,4R)-4-((S)-1,3-diphenylprop-2-yn-1-yl)-1-mesityl-3-methylpyrrolidin-2-one",
+          "symbol": "d1",
+          "amount": null,
+          "registry_name": "(3S,4R)-4-((S)-1,3-diphenylprop-2-yn-1-yl)-1-mesityl-3-methylpyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h"
+      },
+      "targets": {
+        "yield": null,
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn10"
+    },
+    {
+      "id": "NonGP-Entry14",
+      "source_pages": [
+        51,
+        52
+      ],
+      "reaction_type": "desilylation",
+      "substrates": [
+        {
+          "name": "(S)-N-benzyl-N-mesityl-2-methyl-4-(trimethylsilyl)but-3-ynamide",
+          "symbol": "c18",
+          "amount": "37.7 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "e1",
+          "symbol": "e1",
+          "amount": "15.3 mg",
+          "resolved_smiles": "C#C[C@H](C)C(=O)N(Cc1ccccc1)c1c(C)cc(C)cc1C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_4_image_2.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.01 mmol, 0.10 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DIPEA",
+          "symbol": null,
+          "amount": "0.2 mmol, 2 equiv."
+        },
+        {
+          "name": "hexafluorosilicic acid (34% in aqueous solution)",
+          "symbol": null,
+          "amount": "0.01 mmol, 0.01 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r14-1"
+    },
+    {
+      "id": "NonGP-Entry15",
+      "source_pages": [
+        52
+      ],
+      "reaction_type": "isomerization",
+      "substrates": [
+        {
+          "name": "(S)-N-benzyl-N-mesityl-2-methyl-4-phenylbut-3-ynamide",
+          "symbol": "c2",
+          "amount": "38.1 mg, 0.1 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "f1",
+          "symbol": "f1",
+          "amount": "29.3 mg",
+          "resolved_smiles": "*C1(c2ccccc2)C2=C(C)C(=O)N(Cc3ccccc3)C234C(C)=CC12C3=C24C",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_4_image_2.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "riazabicyclodecene",
+          "symbol": "TBD",
+          "amount": "2.8 mg, 0.02 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "48 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "0%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r14-2"
+    },
+    {
+      "id": "GeneralProcedure_and_characterizations_of_products-Entry46",
+      "_gp_source": "GeneralProcedure_and_characterizations_of_products",
+      "source_pages": [
+        53
+      ],
+      "reaction_type": "enantioselective copper-catalyzed alkynylation of α-bromoamides",
+      "substrates": [
+        {
+          "name": "α-bromoamide",
+          "symbol": null,
+          "amount": "0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "terminal alkyne",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(4-(tert-butyl)benzyl)-N-mesityl-2-methyl-4-phenylbut-3-ynamidee",
+          "symbol": "c24",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-10 °C or room temperature",
+        "time": "30 min then 24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/copper_catalyzed_enantioselective_sonogashira_ty_e4f2ab13.json",
+    "input_sha256": "83069bfe8a3bca22ed9ab7284649d0b82e996d98b4b9b614d65c862e27a80f5f"
+  }
+}

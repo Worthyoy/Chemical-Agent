@@ -1,0 +1,3962 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective [2+2] Photocycloaddition via Iminium Ions Catalysis by a Sensitizing.pdf",
+  "paper_key": "enantioselective [2+2] photocycloaddition via iminium ions catalysis by a sensitizing",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective [2+2] Photocycloaddition via Iminium Ions Catalysis by a Sensitizing.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective [2+2] Photocycloaddition via Iminium Ions Catalysis by a Sensitizing.pdf",
+    "source_mtime_ns": 1782048562000000000,
+    "source_size": 10436690,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "enantioselective [2+2] photocycloaddition via iminium ions catalysis by a sensitizing",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective [2+2] Photocycloaddition via Iminium Ions Catalysis by a Sensitizing.pdf"
+  },
+  "extracted_at": "2026-07-17T03:57:05.023013",
+  "total_reactions": 72,
+  "filtered_reactions": 71,
+  "filter_stats": {
+    "input_reactions": 72,
+    "basic_failed": 0,
+    "target_failed": 1,
+    "retained": 71
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "formation of N,O-acetal",
+      "substrates": [
+        {
+          "name": "2-amino-2-methylpropan-1-ol",
+          "symbol": null,
+          "amount": "722 µL, 675 mg, 7.57 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(E)-cinnamaldehyde",
+          "symbol": null,
+          "amount": "952 µL, 1.00 g, 7.57 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-4,4-Dimethyl-2-styryloxazolidine and 2-methyl-2-{[(1’E,2’E)-3’-phenylallylidene]-amino}propan-1-ol",
+          "symbol": "4",
+          "amount": "1.05 g",
+          "registry_name": "2-methyl-2-{[(1’E,2’E)-3’-phenylallylidene]-amino}propan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieve",
+          "symbol": null,
+          "amount": "4.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "76 mL (100 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": "85:15"
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "imine formation",
+      "substrates": [
+        {
+          "name": "1-amino-2-methylpropan-2-ol",
+          "symbol": null,
+          "amount": "705 µL, 675 mg, 7.57 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(E)-cinnamaldehyde",
+          "symbol": null,
+          "amount": "952 µL, 1.00 g, 7.57 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Methyl-1-{[(1’E,2’E)-3’-phenylallylidene]amino}propan-2-ol",
+          "symbol": "S1",
+          "amount": "872 mg",
+          "registry_name": "2-Methyl-1-{[(1’E,2’E)-3’-phenylallylidene]amino}propan-2-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieve",
+          "symbol": null,
+          "amount": "4.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "76 mL (100 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": "100:0"
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "formation of N,O-acetal (modified literature procedure)",
+      "substrates": [
+        {
+          "name": "2-amino-2,2-diphenylethan-1-ol",
+          "symbol": null,
+          "amount": "300 mg, 1.41 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(E)-cinnamaldehyde",
+          "symbol": null,
+          "amount": "266 µL, 279 g, 2.11 mmol, 1.50 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-4,4-Diphenyl-2-styryloxazolidine and 2,2-diphenyl-2-{[(1’E,2’E)-3’-phenylallylidene]-amino}ethan-1-ol",
+          "symbol": "S2",
+          "amount": "273 mg",
+          "registry_name": "(E)-4,4-Diphenyl-2-styryloxazolidine and 2,2-diphenyl-2-{[(1’E,2’E)-3’-phenyl-allylidene]amino}ethan-1-ol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Na2SO4",
+          "symbol": null,
+          "amount": "400 mg, 2.82 mmol, 2.00 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "3.0 mL (450 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": "30:70"
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "imine formation",
+      "substrates": [
+        {
+          "name": "(1-aminocyclobutyl)methanol",
+          "symbol": null,
+          "amount": "308 mg, 3.05 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(E)-cinnamaldehyde",
+          "symbol": null,
+          "amount": "424 µL, 403 mg, 3.05 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-{(1’E,2’E)-3’-Phenylallylidene}amino)cyclobutyl)methanol",
+          "symbol": "S3",
+          "amount": "220 mg",
+          "registry_name": "(1-{(1’E,2’E)-3’-Phenylallylidene]amino}cyclobutyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieve",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "15 mL (200 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": null,
+        "er": null,
+        "dr": "100:0"
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "formation of N,O-acetal",
+      "substrates": [
+        {
+          "name": "(1-aminocyclopentyl)methanol",
+          "symbol": null,
+          "amount": "582 mg, 5.05 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(E)-cinnamaldehyde",
+          "symbol": null,
+          "amount": "636 µL, 668 mg, 5.05 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.4]nonane and (1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclopentyl)methanol",
+          "symbol": "S4",
+          "amount": "464 mg",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.4]nonane and (1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclopentyl)methanol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieve",
+          "symbol": null,
+          "amount": "3.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "25 mL (150 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "40%",
+        "ee": null,
+        "er": null,
+        "dr": "69:31"
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "GeneralProcedure1-Entry1",
+      "_gp_source": "GeneralProcedure1",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "Formation of N,O-acetal (condensation of an aldehyde with an aminoalcohol)",
+      "substrates": [
+        {
+          "name": "(E)-cinnamaldehyde",
+          "symbol": null,
+          "amount": "500 mg, 3.78 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(1-aminocyclohexyl)methanol",
+          "symbol": null,
+          "amount": "513 mg, 3.97 mmol, 1.05 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane",
+          "symbol": "7a",
+          "amount": "695 mg",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane and {1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "19 mL (200 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-7a"
+    },
+    {
+      "id": "GeneralProcedure1-Entry2",
+      "_gp_source": "GeneralProcedure1",
+      "source_pages": [
+        15,
+        16
+      ],
+      "reaction_type": "Formation of N,O-acetal (condensation of an aldehyde with an aminoalcohol)",
+      "substrates": [
+        {
+          "name": "(E)-4-methylcinnamaldehyde",
+          "symbol": null,
+          "amount": "300 mg, 2.05 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(1-aminocyclohexyl)methanol",
+          "symbol": null,
+          "amount": "265 mg, 2.05 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-2-(4’-Methylstyryl)-3-oxa-1-azaspiro[4.5]decan",
+          "symbol": "7b",
+          "amount": "143 mg",
+          "registry_name": "(E)-2-(4’-Methylstyryl)-3-oxa-1-azaspiro[4.5]decan and (1-{[(1’E,2’E)-3’-(p-tolyl)-allylidene]amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "10 mL (200 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "27%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-7b"
+    },
+    {
+      "id": "GeneralProcedure1-Entry3",
+      "_gp_source": "GeneralProcedure1",
+      "source_pages": [
+        16,
+        17
+      ],
+      "reaction_type": "Formation of N,O-acetal (condensation of an aldehyde with an aminoalcohol)",
+      "substrates": [
+        {
+          "name": "(E)-4-chlorocinnamaldehyde",
+          "symbol": null,
+          "amount": "200 mg, 1.20 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(1-aminocyclohexyl)methanol",
+          "symbol": null,
+          "amount": "155 mg, 1.20 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-2-(4’-Chlorostyryl)-3-oxa-1-azaspiro[4.5]decan",
+          "symbol": "7c",
+          "amount": "64.5 mg",
+          "registry_name": "(E)-2-(4’-Chlorostyryl)-3-oxa-1-azaspiro[4.5]decan and (1-{[(1’E,2’E)-3’-(4’’-chloro-phenyl)allylidene]amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "8 mL (150 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "19%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-7c"
+    },
+    {
+      "id": "GeneralProcedure1-Entry4",
+      "_gp_source": "GeneralProcedure1",
+      "source_pages": [
+        17,
+        18
+      ],
+      "reaction_type": "Formation of N,O-acetal (condensation of an aldehyde with an aminoalcohol)",
+      "substrates": [
+        {
+          "name": "(E)-4-bromocinnamaldehyde",
+          "symbol": null,
+          "amount": "422 mg, 2.00 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(1-aminocyclohexyl)methanol",
+          "symbol": null,
+          "amount": "258 mg, 2.00 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-2-(4’-Bromostyryl)-3-oxa-1-azaspiro[4.5]decan",
+          "symbol": "7d",
+          "amount": "135 mg",
+          "registry_name": "(E)-2-(4’-Bromostyryl)-3-oxa-1-azaspiro[4.5]decan and (1-{[(1’E,2’E)-3’-(4’’-bromo-phenyl)allylidene]amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "13 mL (150 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "21%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-7d"
+    },
+    {
+      "id": "GeneralProcedure1-Entry5",
+      "_gp_source": "GeneralProcedure1",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "Formation of N,O-acetal (condensation of an aldehyde with an aminoalcohol)",
+      "substrates": [
+        {
+          "name": "(E)-4-bromocinnamaldehyde",
+          "symbol": null,
+          "amount": "324 mg, 2.00 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(1-aminocyclohexyl)methanol",
+          "symbol": null,
+          "amount": "258 mg, 2.00 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-2-(4’-Methoxystyryl)-3-oxa-1-azaspiro[4.5]decane",
+          "symbol": "7e",
+          "amount": "347 mg",
+          "registry_name": "(E)-2-(4’-Methoxystyryl)-3-oxa-1-azaspiro[4.5]decane and (1-([(1’E,2’E)-3’-(4’’-methoxyphenyl)allylidene]amino)cyclohexyl}methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieves",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "13 mL (150 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-7e"
+    },
+    {
+      "id": "GeneralProcedure1-Entry6",
+      "_gp_source": "GeneralProcedure1",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "Formation of N,O-acetal (condensation of an aldehyde with an aminoalcohol)",
+      "substrates": [
+        {
+          "name": "(E)-4-(4’,4’,5’,5’-tetramethyl-1’,3’,2’-dioxaborolan-2’-yl)cinnamaldehyde",
+          "symbol": null,
+          "amount": "516 mg, 2.00 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(1-aminocyclohexyl)methanol",
+          "symbol": null,
+          "amount": "258 mg, 2.00 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-2-[4’-(4’’,4’’,5’’,5’’-Tetramethyl-1’’,3’’,2’’-dioxaborolan-2’’-yl)styryl]-3-oxa-1-azaspiro[4.5]decane and (1-{[(1’E,2’E)-3’-[4’’-(4’’’,4’’’,5’’’,5’’’-tetramethyl-1’’’,3’’’,2’’’-dioxaborolan-2’’’-yl)phenyl]allylidene]amino}cyclohexyl)methanol",
+          "symbol": "7f",
+          "amount": "597 mg",
+          "registry_name": "(E)-2-[4’-(4’’,4’’,5’’,5’’-Tetramethyl-1’’,3’’,2’’-dioxaborolan-2’’-yl)styryl]-3-oxa-1-azaspiro[4.5]decane and (1-{[(1’E,2’E)-3’-[4’’-(4’’’,4’’’,5’’’,5’’’-tetramethyl-1’’’,3’’’,2’’’-dioxaborolan-2’’’-yl)phenyl]allylidene]amino}cyclohexyl)methanol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieve",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "13 mL (c = 150 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedure1-Entry8",
+      "_gp_source": "GeneralProcedure1",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "Formation of N,O-acetal (condensation of an aldehyde with an aminoalcohol)",
+      "substrates": [
+        {
+          "name": "(E)-2-chlorocinnamaldehyde",
+          "symbol": null,
+          "amount": "250 mg, 1.50 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(1-aminocyclohexyl)methanol",
+          "symbol": null,
+          "amount": "203 mg, 1.58 mmol, 1.05 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-2-(2’-Chlorostyryl)-3-oxa-1-azaspiro[4.5]decan and (1-{[(1’E,2’E)-3’-(2’’-chlorophenyl)allylidene]amino}cyclohexyl)methanol",
+          "symbol": "7h",
+          "amount": "300 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieve",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "10 mL (c = 150 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedure1-Entry9",
+      "_gp_source": "GeneralProcedure1",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "Formation of N,O-acetal (condensation of an aldehyde with an aminoalcohol)",
+      "substrates": [
+        {
+          "name": "(E)-3-methylcinnamaldehyde",
+          "symbol": null,
+          "amount": "292 mg, 2.00 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(1-aminocyclohexyl)methanol",
+          "symbol": null,
+          "amount": "258 mg, 2.00 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-2-(3’-Methylstyryl)-3-oxa-1-azaspiro[4.5]decan and (1-{[(1’E,2’E)-3’-(m-tolyl)allylidene]amino}cyclohexyl)methanol",
+          "symbol": "7i",
+          "amount": "332 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieve",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "13 mL (c = 150 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedure1-Entry10",
+      "_gp_source": "GeneralProcedure1",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "Formation of N,O-acetal (condensation of an aldehyde with an aminoalcohol)",
+      "substrates": [
+        {
+          "name": "(E)-3-chlorocinnamaldehyde",
+          "symbol": null,
+          "amount": "250 mg, 1.50 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(1-aminocyclohexyl)methanol",
+          "symbol": null,
+          "amount": "213 mg, 1.65 mmol, 1.10 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-2-(3’-Chlorostyryl)-3-oxa-1-azaspiro[4.5]decan and (1-{[(1’E,2’E)-3’-(3’’-chlorophenyl)allylidene]amino}cyclohexyl)methanol",
+          "symbol": "7j",
+          "amount": "237 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieve",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry dichloromethane",
+        "solvent_amount": "10 mL (c = 150 mM)",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Imine formation (condensation)",
+      "substrates": [
+        {
+          "name": "1-methoxy-2-methylpropan-2-amine",
+          "symbol": null,
+          "amount": "1.00 g, 10.0 mmol, 1.25 equiv."
+        },
+        {
+          "name": "(E)-4-bromocinnamaldehyde",
+          "symbol": null,
+          "amount": "1.69 g, 8.00 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1E,2E)-3-(4’-Bromophenyl)-N-(1’’-methoxy-2’’-methylpropan-2’’-yl)prop-2-en-1-imine",
+          "symbol": "S5",
+          "amount": "2.16 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Na2SO4",
+          "symbol": null,
+          "amount": "2.27 g, 16.0 mmol, 2.00 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "8 mL (1.0 M)",
+        "temperature": "reflux",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction1"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Formation of iminium tetrafluoroborate salt",
+      "substrates": [
+        {
+          "name": "imine",
+          "symbol": "S6",
+          "amount": "1.00 g, 3.38 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "N-{(1’E,2’E)-3’-(4’’-Bromophenyl)allylidene}-1-methoxy-2-methylpropan-2-aminium tetrafluoroborate",
+          "symbol": "9",
+          "amount": "1.21 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "tetrafluoroboric acid diethyl ether complex",
+          "symbol": null,
+          "amount": "574 µL, 683 mg, 4.22 mmol, 1.25 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry ethyl ether",
+        "solvent_amount": "7 mL",
+        "temperature": "0 °C",
+        "time": "30 min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction2"
+    },
+    {
+      "id": "GeneralProcedure4-Entry1",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        28,
+        29
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane",
+          "symbol": "7a",
+          "amount": "12.2 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane and {1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "N,O-acetal",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-Methyl-2-phenyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+            "product_index": 0,
+            "reason": "Substrate is given generically as 'N,O-acetal' with symbol 7a; symbol_evidence maps 7a to the specific N,O-acetal name (first fragment before 'and')."
+          }
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "114 µL, 82.2 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2-phenyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5a",
+          "amount": "8.70 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "5 mL",
+        "temperature": "‒50 °C",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "95%",
+        "er": null,
+        "dr": "95/5"
+      },
+      "_original_id": "reaction3"
+    },
+    {
+      "id": "GeneralProcedure4-Entry2",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        29,
+        30
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "(E)-2-(4’-Methylstyryl)-3-oxa-1-azaspiro[4.5]decan",
+          "symbol": "7b",
+          "amount": "12.9 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-(4’-Methylstyryl)-3-oxa-1-azaspiro[4.5]decan and (1-{[(1’E,2’E)-3’-(p-tolyl)-allylidene]amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "N,O-acetal",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-Methyl-2-(4’’-methylphenyl)-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+            "product_index": 0,
+            "reason": "Symbol 7b corresponds to a specific N,O-acetal in symbol_evidence (first named fragment); resolves the generic 'N,O-acetal' to that concrete name."
+          }
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "114 µL, 82.2 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2-(4’’-methylphenyl)-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5b",
+          "amount": "10.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "5 mL",
+        "temperature": "‒50 °C",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "89%",
+        "er": null,
+        "dr": "95/5"
+      },
+      "_original_id": "reaction4"
+    },
+    {
+      "id": "GeneralProcedure4-Entry3",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "(E)-2-(4’-Chlorostyryl)-3-oxa-1-azaspiro[4.5]decan",
+          "symbol": "7c",
+          "amount": "13.9 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-(4’-Chlorostyryl)-3-oxa-1-azaspiro[4.5]decan and (1-{[(1’E,2’E)-3’-(4’’-chloro-phenyl)allylidene]amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "N,O-acetal",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(4’’-Chlorphenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+            "product_index": 0,
+            "reason": "Symbol 7c in the paper maps to the specific N,O-acetal name (first fragment); allows one-to-one resolution of the generic substrate."
+          }
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "114 µL, 82.2 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(4’’-Chlorphenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5c",
+          "amount": "11.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "5 mL",
+        "temperature": "‒50 °C",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": "93%",
+        "er": null,
+        "dr": "93/7"
+      },
+      "_original_id": "reaction5"
+    },
+    {
+      "id": "GeneralProcedure4-Entry4",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "(E)-2-(4’-Bromostyryl)-3-oxa-1-azaspiro[4.5]decan",
+          "symbol": "7d",
+          "amount": "16.1 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-(4’-Bromostyryl)-3-oxa-1-azaspiro[4.5]decan and (1-{[(1’E,2’E)-3’-(4’’-bromo-phenyl)allylidene]amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "N,O-acetal",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(4’’-Bromophenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+            "product_index": 0,
+            "reason": "Product 5d contains a 4-bromophenyl fragment that maps one-to-one to the styryl substituent of the N,O-acetal; symbol 7d in the paper corresponds to the named 4-bromostyryl 3-oxa-1-azaspiro[4.5]decane."
+          }
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "114 µL, 82.2 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(4’’-Bromophenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5d",
+          "amount": "12.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "5 mL",
+        "temperature": "‒50 °C",
+        "time": "9 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "84%",
+        "er": null,
+        "dr": "93/7"
+      },
+      "_original_id": "reaction6"
+    },
+    {
+      "id": "GeneralProcedure4-Entry5",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "(E)-2-(4’-Methoxystyryl)-3-oxa-1-azaspiro[4.5]decane",
+          "symbol": "7e",
+          "amount": "13.7 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-(4’-Methoxystyryl)-3-oxa-1-azaspiro[4.5]decane and (1-([(1’E,2’E)-3’-(4’’-methoxyphenyl)allylidene]amino)cyclohexyl}methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "N,O-acetal",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(4’’-Methoxyphenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+            "product_index": 0,
+            "reason": "Product 5e shows a 4-methoxyphenyl fragment derived from the N,O-acetal; paper symbol 7e maps to the corresponding 4-methoxystyryl 3-oxa-1-azaspiro[4.5]decane."
+          }
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "114 µL, 82.2 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(4’’-Methoxyphenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5e",
+          "amount": "10.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "87%",
+        "er": null,
+        "dr": "95/5"
+      },
+      "_original_id": "R1"
+    },
+    {
+      "id": "GeneralProcedure5-Entry1",
+      "_gp_source": "GeneralProcedure5",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "reduction of aldehyde to alcohol with sodium borohydride",
+      "substrates": [
+        {
+          "name": "2-(4’’-Methoxyphenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5e",
+          "amount": "9.00 mg, 36.8 µmol, 1.00 equiv.",
+          "original_name": "aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "[2-(4’’-Methoxyphenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutyl]methanol",
+            "product_index": 0,
+            "reason": "Reduction product S6 is the corresponding primary alcohol of the aldehyde substrate (symbol 5e); the aldehyde identity is the direct precursor of the observed alcohol."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "[2-(4’’-Methoxyphenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutyl]methanol",
+          "symbol": "S6",
+          "amount": "8.60 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": null,
+          "amount": "1.39 mg, 36.8 µmol, 1.00 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "184 µL",
+        "temperature": null,
+        "time": "30 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "87%",
+        "er": null,
+        "dr": "95/5"
+      },
+      "_original_id": "R2"
+    },
+    {
+      "id": "GeneralProcedure4-Entry6",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "(E)-2-[4’-(4’,4’,5’,5’-Tetramethyl-1’,3’,2’-dioxaborolan-2’-yl)styryl]-3-oxa-1-azaspiro[4.5]decane",
+          "symbol": "7f",
+          "amount": "18.5 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-[4’-(4’’,4’’,5’’,5’’-Tetramethyl-1’’,3’’,2’’-dioxaborolan-2’’-yl)styryl]-3-oxa-1-azaspiro[4.5]decane and (1-{[(1’E,2’E)-3’-[4’’-(4’’’,4’’’,5’’’,5’’’-tetramethyl-1’’’,3’’’,2’’’-dioxaborolan-2’’’-yl)phenyl]allylidene]amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "N,O-acetal",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-Methyl-3-(prop-1’-en-2’-yl)-2-[4’’-(4’’’,4’’’,5,’’’5’’’-tetramethyl-1’’’,3’’’,2’’’-dioxaborolan-2’’’-yl)phenyl]cyclobutane-1-carbaldehyde",
+            "product_index": 0,
+            "reason": "Product 5f contains the boronate-substituted phenyl fragment that maps directly to the styryl-bearing N,O-acetal (symbol 7f) named in the paper."
+          }
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "114 µL, 82.2 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-3-(prop-1’-en-2’-yl)-2-[4’’-(4’’’,4’’’,5,’’’5’’’-tetramethyl-1’’’,3’’’,2’’’-dioxaborolan-2’’’-yl)phenyl]cyclobutane-1-carbaldehyde",
+          "symbol": "5f",
+          "amount": "9.20 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": "93%",
+        "er": null,
+        "dr": "88/12"
+      },
+      "_original_id": "R3"
+    },
+    {
+      "id": "GeneralProcedure5-Entry2",
+      "_gp_source": "GeneralProcedure5",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "reduction of aldehyde to alcohol with sodium borohydride",
+      "substrates": [
+        {
+          "name": "3-Methyl-3-(prop-1’-en-2’-yl)-2-[4’’-(4’’’,4’’’,5’’’,5’’’-tetramethyl-1’’’,3’’’,2’’’-dioxaborolan-2’’’-yl)phenyl]cyclobutane-1-carbaldehyde",
+          "symbol": "5f",
+          "amount": "8.00 mg, 23.5 µmol, 1.00 equiv.",
+          "original_name": "aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "{3-Methyl-3-(prop-1’-en-2’-yl)-2-[4’’-(4’’’,4’’’,5’’’,5’’’-tetramethyl-1’’’,3’’’,2’’’-dioxaborolan-2’’’-yl)phenyl]cyclobutyl}methanol",
+            "product_index": 0,
+            "reason": "Reduction product S7 is the alcohol derived from the corresponding aldehyde (symbol 5f); mapping back to the aldehyde is one-to-one and preserves the boronate-substituted aryl fragment."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "{3-Methyl-3-(prop-1’-en-2’-yl)-2-[4’’-(4’’’,4’’’,5’’’,5’’’-tetramethyl-1’’’,3’’’,2’’’-dioxaborolan-2’’’-yl)phenyl]cyclobutyl}methanol",
+          "symbol": "S7",
+          "amount": "5.00 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": null,
+          "amount": "889 µg, 23.5 µmol, 1.00 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "118 µL",
+        "temperature": null,
+        "time": "30 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": "93%",
+        "er": null,
+        "dr": "88/12"
+      },
+      "_original_id": "R4"
+    },
+    {
+      "id": "GeneralProcedure4-Entry7",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "_gp_source": "GeneralProcedure4",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "aldehyde",
+          "symbol": "5g",
+          "amount": "6.40 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": "83%",
+        "er": null,
+        "dr": "97/3"
+      },
+      "_original_id": "GP4-5g"
+    },
+    {
+      "id": "GeneralProcedure5-Entry3",
+      "source_pages": [
+        39,
+        40
+      ],
+      "reaction_type": "reduction of aldehyde to alcohol with sodium borohydride",
+      "_gp_source": "GeneralProcedure5",
+      "substrates": [
+        {
+          "name": "3-Methyl-2-(2’’-methylphenyl)-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5g",
+          "amount": "6.40 mg, 28.0 µmol, 1.00 equiv.",
+          "original_name": "aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "[3-Methyl-2-(2’’-methylphenyl)-3-(prop-1’-en-2’-yl)cyclobutyl]methanol",
+            "product_index": 0,
+            "reason": "Product S8 is the alcohol reduction product of the aldehyde (symbol 5g); the aldehyde identity is the direct precursor and is unambiguously recovered from the alcohol name."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "[3-Methyl-2-(2’’-methylphenyl)-3-(prop-1’-en-2’-yl)cyclobutyl]methanol",
+          "symbol": "S8",
+          "amount": "6.30 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": null,
+          "amount": "1.06 mg, 28.0 µmol, 1.00 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "140 µL",
+        "temperature": null,
+        "time": "30 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": "83%",
+        "er": null,
+        "dr": "97/3"
+      },
+      "_original_id": "GP5-5g-S8"
+    },
+    {
+      "id": "GeneralProcedure3-Entry1",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "Racemic [2+2] photocycloaddition of N,O-acetals with alkenes",
+      "_gp_source": "GeneralProcedure3",
+      "substrates": [
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "675 µL, 493 mg, 6.00 mmol, 20.0 equiv."
+        },
+        {
+          "name": "N,O-acetal",
+          "symbol": "7h",
+          "amount": "83.3 mg, 300 µmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2’’-Chlorophenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "rac-5h",
+          "amount": "38.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ru(bpy)3(PF6)2",
+          "symbol": null,
+          "amount": "6.45 mg, 7.50 µmol, 2.5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "bpy"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "(PhO)2PONHTf",
+          "symbol": null,
+          "amount": "22.9 mg, 60.0 µmol, 0.20 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "7.5 mL",
+        "temperature": "room temperature",
+        "time": "18 hours",
+        "atmosphere": "degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP3-7h-rac-5h"
+    },
+    {
+      "id": "GeneralProcedure4-Entry8",
+      "source_pages": [
+        40,
+        41
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "_gp_source": "GeneralProcedure4",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7h",
+          "amount": "13.9 mg, 50.0 µmol, 1.00 equiv."
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "114 µL, 82.2 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2’’-Chlorophenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5h",
+          "amount": "6.66 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "‒50 °C then warmed to room temperature",
+        "time": "15 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": "88%",
+        "er": null,
+        "dr": "92/8"
+      },
+      "_original_id": "GP4-7h-5h"
+    },
+    {
+      "id": "GeneralProcedure5-Entry4",
+      "source_pages": [
+        41,
+        42
+      ],
+      "reaction_type": "reduction of aldehyde to alcohol with sodium borohydride",
+      "_gp_source": "GeneralProcedure5",
+      "substrates": [
+        {
+          "name": "2-(2’’-Chlorophenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5h",
+          "amount": "6.00 mg, 24.1 µmol, 1.00 equiv.",
+          "original_name": "aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(2’’-Chlorophenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutyl)methanol",
+            "product_index": 0,
+            "reason": "Product S9 is the alcohol reduction product of the aldehyde (symbol 5h); the aldehyde identity is the direct, unambiguous precursor of the observed alcohol."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2’’-Chlorophenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutyl)methanol",
+          "symbol": "S9",
+          "amount": "5.20 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": null,
+          "amount": "913 µg, 24.1 μmol, 1.00 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "121 μL",
+        "temperature": null,
+        "time": "30 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "88%",
+        "er": null,
+        "dr": "92/8"
+      },
+      "_original_id": "GP5-5h-S9"
+    },
+    {
+      "id": "GeneralProcedure4-Entry9",
+      "source_pages": [
+        42,
+        43
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "_gp_source": "GeneralProcedure4",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7i",
+          "amount": "12.9 mg, 50.0 µmol, 1.00 equiv."
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "114 µL, 82.2 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2-(3’’-methylphenyl)-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5i",
+          "amount": "11.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "‒50 °C then warmed to room temperature",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "96%",
+        "ee": "92%",
+        "er": null,
+        "dr": "96/4"
+      },
+      "_original_id": "GP4-7i-5i"
+    },
+    {
+      "id": "GeneralProcedure3-Entry2",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "Racemic [2+2] photocycloaddition of N,O-acetals with alkenes",
+      "_gp_source": "GeneralProcedure3",
+      "substrates": [
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "675 µL, 493 mg, 6.00 mmol, 20.0 equiv."
+        },
+        {
+          "name": "N,O-acetal",
+          "symbol": "7j",
+          "amount": "83.3 mg, 300 µmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(3’’-Chlorophenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "rac-5j",
+          "amount": "33.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ru(bpy)3(PF6)2",
+          "symbol": null,
+          "amount": "6.45 mg, 7.50 µmol, 2.5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "bpy"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "(PhO)2PONHTf",
+          "symbol": null,
+          "amount": "22.9 mg, 60.0 µmol, 0.20 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "7.5 mL",
+        "temperature": "room temperature",
+        "time": "18 hours",
+        "atmosphere": "degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "44%",
+        "ee": null,
+        "er": null,
+        "dr": "92/8"
+      },
+      "_original_id": "GP3-7j-rac-5j"
+    },
+    {
+      "id": "GeneralProcedure4-Entry10",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "_gp_source": "GeneralProcedure4",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7j",
+          "amount": "13.9 mg, 50.0 µmol, 1.00 equiv."
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "114 µL, 82.2 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(3’’-Chlorophenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5j",
+          "amount": "11.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "‒50 °C then warmed to room temperature",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "94%",
+        "er": null,
+        "dr": "87/13"
+      },
+      "_original_id": "GP4-7j-5j"
+    },
+    {
+      "id": "GeneralProcedure5-Entry5",
+      "_gp_source": "GeneralProcedure5",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "reduction of aldehyde to alcohol with sodium borohydride",
+      "substrates": [
+        {
+          "name": "aldehyde",
+          "symbol": "5j",
+          "amount": "10.0 mg, 36.9 µmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(3’’-Chlorophenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutyl)methanol",
+          "symbol": "S10",
+          "amount": "8.50 mg, 31.2 μmol"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": null,
+          "amount": "1.40 mg, 36.9 µmol, 1.00 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "185 μL",
+        "temperature": null,
+        "time": "30 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "94%",
+        "er": null,
+        "dr": "87:13"
+      },
+      "_original_id": "R1"
+    },
+    {
+      "id": "GeneralProcedure4-Entry11",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        45
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7a",
+          "amount": "12.2 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane and {1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "(3-methylbut-3-en-1-ynyl)-trimethylsilane",
+          "symbol": null,
+          "amount": "178 µL, 138 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2-phenyl-3-[(trimethylsilyl)ethynyl]cyclobutane-1-carbaldehyde",
+          "symbol": "8a",
+          "amount": "12.0 mg, 44.4 µmol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "‒50 °C",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "92%",
+        "er": null,
+        "dr": "66:34"
+      },
+      "_original_id": "R2"
+    },
+    {
+      "id": "GeneralProcedure5-Entry6",
+      "_gp_source": "GeneralProcedure5",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "reduction of aldehyde to alcohol with sodium borohydride",
+      "substrates": [
+        {
+          "name": "aldehyde",
+          "symbol": "8a",
+          "amount": "11.0 mg, 40.7 µmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "{3-Methyl-2-phenyl-3-[(trimethylsilyl)ethynyl]cyclobutyl}methanol",
+          "symbol": "S11",
+          "amount": "7.50 mg, 27.5 µmol"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": null,
+          "amount": "1.54 mg, 40.7 µmol, 1.00 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "203 µL",
+        "temperature": null,
+        "time": "30 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "92%",
+        "er": null,
+        "dr": "66:34"
+      },
+      "_original_id": "R3"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "Racemic [2+2]-photocycloaddition",
+      "substrates": [
+        {
+          "name": "(E)-1-(3-phenylallylidene)pyrrolidin-1-ium trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "67.1 mg, 200 µmol, 1.00 equiv."
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "458 μL, 417 mg, 4.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2,3-Diphenylcyclobutane-1-carbaldehyde",
+          "symbol": "rac-8b",
+          "amount": "10.6 mg, 44.9 µmol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ru(bpy)3(PF6)2",
+          "symbol": null,
+          "amount": "4.30 mg, 5.00 µmol, 2.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "acetonitrile",
+        "solvent_amount": "4.0 mL",
+        "temperature": null,
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "22%",
+        "ee": null,
+        "er": null,
+        "dr": "70:30"
+      },
+      "_original_id": "R4"
+    },
+    {
+      "id": "GeneralProcedure4-Entry12",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        47,
+        48
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7a",
+          "amount": "12.2 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane and {1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "115 µL, 104 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2,3-Diphenylcyclobutane-1-carbaldehyde",
+          "symbol": "8b",
+          "amount": "11.2 mg, 47.4 µmol"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "‒50 °C",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "98%",
+        "er": null,
+        "dr": "69:31"
+      },
+      "_original_id": "R5"
+    },
+    {
+      "id": "GeneralProcedure5-Entry7",
+      "_gp_source": "GeneralProcedure5",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "reduction of aldehyde to alcohol with sodium borohydride",
+      "substrates": [
+        {
+          "name": "aldehyde",
+          "symbol": "8b",
+          "amount": "11.2 mg, 47.4 μmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(2,3-Diphenylcyclobutyl)methanol",
+          "symbol": "S12",
+          "amount": "9.60 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": null,
+          "amount": "1.79 mg, 47.4 μmol, 1.00 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "237 μL",
+        "temperature": null,
+        "time": "30 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "98%",
+        "er": null,
+        "dr": "69/31"
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure4-Entry13",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        50,
+        51
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7a",
+          "amount": "12.2 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane and {1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "alkene",
+          "symbol": "α-metylstyrene",
+          "amount": "130 µL, 118 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2,3-diphenylcyclobutane-1-carbaldehyde",
+          "symbol": "8c",
+          "amount": "10.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry, degassed dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "95%",
+        "er": null,
+        "dr": "95/5"
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedure5-Entry8",
+      "_gp_source": "GeneralProcedure5",
+      "source_pages": [
+        51,
+        52
+      ],
+      "reaction_type": "reduction of aldehyde to alcohol with sodium borohydride",
+      "substrates": [
+        {
+          "name": "3-Methyl-2,3-diphenylcyclobutane-1-carbaldehyde",
+          "symbol": "8c",
+          "amount": "9.00 mg, 36.0 µmol, 1.00 equiv.",
+          "original_name": "aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3-Methyl-2,3-diphenylcyclobutyl)methanol",
+            "product_index": 0,
+            "reason": "Reduction product is the corresponding primary alcohol (R-CH2OH); mapping back yields the parent cyclobutane-1-carbaldehyde with the same ring substituents."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-Methyl-2,3-diphenylcyclobutyl)methanol",
+          "symbol": "S13",
+          "amount": "9.07 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": null,
+          "amount": "1.36 mg, 36.0 µmol, 1.00 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "180 µL",
+        "temperature": null,
+        "time": "30 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "95%",
+        "er": null,
+        "dr": "95/5"
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedure4-Entry14",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        52,
+        53
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7a",
+          "amount": "12.2 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane and {1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "alkene",
+          "symbol": "1,3-butadiene",
+          "amount": "33.3 µL, 54.1 mg, 1.00 mmol, 20.0 equiv., 15 wt.% in hexane"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Phenyl-3-vinylcyclobutane-1-carbaldehyde",
+          "symbol": "8d",
+          "amount": "6.20 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry, degassed dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "98%",
+        "er": null,
+        "dr": "75/25"
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedure4-Entry15",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        54
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7a",
+          "amount": "12.2 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane and {1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "2-methyl-1,3-butadiene",
+          "symbol": null,
+          "amount": "100 µL, 68.1 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2-phenyl-3-vinylcyclobutane-1-carbaldehyde",
+          "symbol": "8e",
+          "amount": "7.40 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "98%",
+        "er": null,
+        "dr": "85/15"
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedure4-Entry16",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        55
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7a",
+          "amount": "12.2 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane and {1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "2-methyl-1-hexen-3-yne",
+          "symbol": null,
+          "amount": "124 µL, 94.2 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(But-1’-yn-1’-yl)-3-methyl-2-phenylcyclobutane-1-carbaldehyde",
+          "symbol": "8f",
+          "amount": "9.30 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "91%",
+        "er": null,
+        "dr": "58/42"
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedure5-Entry9",
+      "_gp_source": "GeneralProcedure5",
+      "source_pages": [
+        56
+      ],
+      "reaction_type": "reduction of aldehyde to alcohol with sodium borohydride",
+      "substrates": [
+        {
+          "name": "3-(But-1'-yn-1'-yl)-3-methyl-2-phenylcyclobutane-1-carbaldehyde",
+          "symbol": "8f",
+          "amount": "9.30 mg, 41.1 µmol, 1.00 equiv.",
+          "original_name": "aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "[3-(But-1’-yn-1’-yl)-3-methyl-2-phenylcyclobutyl]methanol",
+            "product_index": 0,
+            "reason": "Product is the corresponding primary alcohol after NaBH4 reduction (R-CH2OH); the aldehyde identity maps directly to the same cyclobutane scaffold with CHO at the 1-position."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "[3-(But-1’-yn-1’-yl)-3-methyl-2-phenylcyclobutyl]methanol",
+          "symbol": "S14",
+          "amount": "8.60 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": null,
+          "amount": "1.60 mg, 41.1 µmol, 1.00 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "205 µL",
+        "temperature": null,
+        "time": "30 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "91%",
+        "er": null,
+        "dr": "58/42"
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        58
+      ],
+      "reaction_type": "Racemic [2+2]-photocycloaddition",
+      "substrates": [
+        {
+          "name": "(E)-1-(3-phenylallylidene)pyrrolidin-1-ium trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "67.1 mg, 200 µmol, 1.00 equiv."
+        },
+        {
+          "name": "but-1-en-2-ylbenzene",
+          "symbol": null,
+          "amount": "529 mg, 4.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Ethyl-2,3-diphenylcyclobutane-1-carbaldehyde",
+          "symbol": "rac-8g",
+          "amount": "18.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ru(bpy)3(PF6)2",
+          "symbol": null,
+          "amount": "4.30 mg, 5.00 µmol, 2.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "acetonitrile",
+        "solvent_amount": "4.0 mL",
+        "temperature": null,
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "35%",
+        "ee": null,
+        "er": null,
+        "dr": "67/33"
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedure4-Entry17",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        58
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7a",
+          "amount": "12.2 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane and {1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "but-1-en-2-ylbenzene",
+          "symbol": null,
+          "amount": "132 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Ethyl-2,3-diphenylcyclobutane-1-carbaldehyde",
+          "symbol": "8g",
+          "amount": "11.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": "15 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "93%",
+        "er": null,
+        "dr": "89/11"
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "GeneralProcedure5-Entry10",
+      "_gp_source": "GeneralProcedure5",
+      "source_pages": [
+        59
+      ],
+      "reaction_type": "reduction of aldehyde to alcohol with sodium borohydride",
+      "substrates": [
+        {
+          "name": "3-Ethyl-2,3-diphenylcyclobutane-1-carbaldehyde",
+          "symbol": "8g",
+          "amount": "7.90 mg, 29.9 μmol, 1.00 equiv.",
+          "original_name": "aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3-Ethyl-2,3-diphenylcyclobutyl)methanol",
+            "product_index": 0,
+            "reason": "Product is the reduced primary alcohol; back-conversion identifies the parent cyclobutane-1-carbaldehyde with preserved substituents."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-Ethyl-2,3-diphenylcyclobutyl)methanol",
+          "symbol": "S15",
+          "amount": "6.70 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": null,
+          "amount": "1.13 mg, 29.9 μmol, 1.00 eq"
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "149 μL",
+        "temperature": null,
+        "time": "30 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "93%",
+        "er": null,
+        "dr": "89/11"
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "GeneralProcedure4-Entry18",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        61
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7a",
+          "amount": "12.2 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane and {1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "114 µL, 82.2 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(Cyclopent-1’-en-1’-yl)-3-methyl-2-phenylcyclobutane-1-carbaldehyde",
+          "symbol": "8h",
+          "amount": "11.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "−50 °C",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "97%",
+        "er": null,
+        "dr": "93:7"
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedure5-Entry11",
+      "_gp_source": "GeneralProcedure5",
+      "source_pages": [
+        62
+      ],
+      "reaction_type": "reduction of aldehyde to alcohol with sodium borohydride",
+      "substrates": [
+        {
+          "name": "3-(Cyclopent-1'-en-1'-yl)-3-methyl-2-phenylcyclobutane-1-carbaldehyde",
+          "symbol": "8h",
+          "amount": "12.0 mg, 49.9 µmol, 1.00 equiv.",
+          "original_name": "aldehyde",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "[3-(Cyclopent-1’-en-1’-yl)-3-methyl-2-phenylcyclobutyl]methanol",
+            "product_index": 0,
+            "reason": "NaBH4 reduction converts the aldehyde to the observed primary alcohol; the aldehyde identity is the corresponding cyclobutane-1-carbaldehyde with preserved substituents."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "[3-(Cyclopent-1’-en-1’-yl)-3-methyl-2-phenylcyclobutyl]methanol",
+          "symbol": "S16",
+          "amount": "9.80 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium borohydride",
+          "symbol": null,
+          "amount": "1.89 mg, 49.9 µmol, 1.00 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "250 µL",
+        "temperature": null,
+        "time": "30 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "97%",
+        "er": null,
+        "dr": "93:7"
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedure2-Entry1",
+      "_gp_source": "GeneralProcedure2",
+      "source_pages": [
+        63
+      ],
+      "reaction_type": "Racemic [2+2]-photocycloaddition of achiral iminium ions",
+      "substrates": [
+        {
+          "name": "(E)-1-(3-phenylallylidene)pyrrolidin-1-ium trifluoromethanesulfonate",
+          "symbol": null,
+          "amount": "67.1 mg, 200 µmol, 1.00 equiv."
+        },
+        {
+          "name": "(E)-penta-1,3-diene",
+          "symbol": null,
+          "amount": "399 µL, 272 mg, 4.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Phenyl-3-[(E)-prop-1’-en-1’-yl]cyclobutane-1-carbaldehyde",
+          "symbol": "rac-8i",
+          "amount": "10.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ru(bpy)3(PF6)2",
+          "symbol": null,
+          "amount": "4.30 mg, 5.00 µmol, 2.5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "bpy"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dry, degassed acetonitrile",
+        "solvent_amount": "4.0 mL",
+        "temperature": null,
+        "time": "4 hours",
+        "atmosphere": "degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "26%",
+        "ee": null,
+        "er": null,
+        "dr": "57:43"
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GeneralProcedure4-Entry19",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        63
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": "7a",
+          "amount": "12.2 mg, 50.0 µmol, 1.00 equiv.",
+          "registry_name": "(E)-2-Styryl-3-oxa-1-azaspiro[4.5]decane and {1-{[(1’E,2’E)-3’-phenylallylidene]-amino}cyclohexyl)methanol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "(E)-penta-1,3-diene",
+          "symbol": null,
+          "amount": "99.7 µL, 68.1 mg, 1.00 mmol, 20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Phenyl-3-[(E)-prop-1’-en-1’-yl]cyclobutane-1-carbaldehyde",
+          "symbol": "8i",
+          "amount": "8.80 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": "6f",
+          "amount": "4.60 mg, 5.00 µmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "5 mL",
+        "temperature": "−50 °C",
+        "time": "4 hours",
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "98%",
+        "er": null,
+        "dr": "75:25"
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        65
+      ],
+      "reaction_type": "imine formation (condensation of amine with aldehyde)",
+      "substrates": [
+        {
+          "name": "2-amino-2-methylpropan-1-ol",
+          "symbol": null,
+          "amount": "191 µL, 178 mg, 2.00 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(E)-4-methylcinnamaldehyde",
+          "symbol": null,
+          "amount": "292 mg, 2.00 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-{[(1’E,2’E)-3’-(4’’-Methylphenyl)allylidene]amino}-2-methylpropan-1-ol",
+          "symbol": "S17",
+          "amount": "133 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieve",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "13 mL, 150 mM",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "31%",
+        "ee": null,
+        "er": null,
+        "dr": "85:15"
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        65
+      ],
+      "reaction_type": "imine formation (condensation of amine with aldehyde)",
+      "substrates": [
+        {
+          "name": "2-amino-2-methylpropan-1-ol",
+          "symbol": null,
+          "amount": "143 µL, 134 mg, 1.50 mmol, 1.00 equiv."
+        },
+        {
+          "name": "(E)-4-methoxycinnamaldehyde",
+          "symbol": null,
+          "amount": "243 mg, 1.50 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-{[(1’E,2’E)-3’-(4’’-Methoxyphenyl)allylidene]amino}-2-methylpropan-1-ol",
+          "symbol": "S18",
+          "amount": "183 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4 Å molecular sieve",
+          "symbol": null,
+          "amount": "2.0 g"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "10 mL, 150 mM",
+        "temperature": "room temperature",
+        "time": "24 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": "85:15"
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        66
+      ],
+      "reaction_type": "Imine formation (condensation of aldehyde with amine)",
+      "substrates": [
+        {
+          "name": "1-methoxy-2-methylpropan-2-amine",
+          "symbol": null,
+          "amount": "1.03 g, 10.0 mmol, 1.25 equiv."
+        },
+        {
+          "name": "(E)-cinnamaldehyde",
+          "symbol": null,
+          "amount": "1.01 mL, 1.06 g, 8.00 mmol, 1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1E,2E)-N-(1’-Methoxy-2’-methylpropan-2’-yl)-3-phenylprop-2-en-1-imine",
+          "symbol": "S19",
+          "amount": "1.73 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Na2SO4",
+          "symbol": null,
+          "amount": "2.27 g, 16.0 mmol, 2.00 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "8.0 mL",
+        "temperature": "reflux",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "100%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure4-Entry20",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        91
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2-phenyl-3-(prop-1’-en-2’-yl)cyclobutane-1-carbaldehyde",
+          "symbol": "5a",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP4-5a-p91"
+    },
+    {
+      "id": "GeneralProcedure4-Entry21",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        95
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "[2-(4’’-Methoxyphenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutyl]methanol",
+          "symbol": "S6",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": null,
+        "dr": "90/10"
+      },
+      "_original_id": "GP4-S6-racemic-p95"
+    },
+    {
+      "id": "GeneralProcedure4-Entry22",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        95
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "[2-(4’’-Methoxyphenyl)-3-methyl-3-(prop-1’-en-2’-yl)cyclobutyl]methanol",
+          "symbol": "S6",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": "87%",
+        "er": null,
+        "dr": "95/5"
+      },
+      "_original_id": "GP4-S6-enriched-p95"
+    },
+    {
+      "id": "GeneralProcedure4-Entry23",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        96
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-3-(prop-1’-en-2’-yl)-2-[4’’-(4’’’,4’’’,5’’’,5’’’-tetramethyl-1’’’,3’’’,2’’’-dioxaborolan-2’’’-yl)phenyl]cyclobutyl}methanol",
+          "symbol": "S7",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": null,
+        "dr": "85/15"
+      },
+      "_original_id": "GP4-S7-racemic-p96"
+    },
+    {
+      "id": "GeneralProcedure4-Entry24",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        96
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-3-(prop-1’-en-2’-yl)-2-[4’’-(4’’’,4’’’,5’’’,5’’’-tetramethyl-1’’’,3’’’,2’’’-dioxaborolan-2’’’-yl)phenyl]cyclobutyl}methanol",
+          "symbol": "S7",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": "93%",
+        "er": null,
+        "dr": "88/12"
+      },
+      "_original_id": "GP4-S7-enriched-p96"
+    },
+    {
+      "id": "GeneralProcedure3-Entry3",
+      "_gp_source": "GeneralProcedure3",
+      "source_pages": [
+        101
+      ],
+      "reaction_type": "Racemic [2+2] photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "Alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        },
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "{3-Methyl-2-phenyl-3-[(trimethylsilyl)ethynyl]cyclobutyl}methanol",
+          "symbol": "S11",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ru(bpy)3(PF6)2",
+          "symbol": null,
+          "amount": "2.5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "bpy"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "(PhO)2PONHTf",
+          "symbol": null,
+          "amount": "20 mol%"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 40 mM",
+        "temperature": null,
+        "time": "4 h",
+        "atmosphere": "degassed",
+        "light_source": "irradiation",
+        "wavelength": "458 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": null,
+        "dr": "74/26"
+      },
+      "_original_id": "GP3-S11-racemic-101"
+    },
+    {
+      "id": "GeneralProcedure4-Entry25",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        101
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "{3-Methyl-2-phenyl-3-[(trimethylsilyl)ethynyl]cyclobutyl}methanol",
+          "symbol": "S11",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": "92%",
+        "er": null,
+        "dr": "66/34"
+      },
+      "_original_id": "GP4-S11-enantio-101"
+    },
+    {
+      "id": "GeneralProcedure3-Entry4",
+      "_gp_source": "GeneralProcedure3",
+      "source_pages": [
+        103
+      ],
+      "reaction_type": "Racemic [2+2] photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "Alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        },
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2,3-diphenylcyclobutyl)methanol",
+          "symbol": "S13",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ru(bpy)3(PF6)2",
+          "symbol": null,
+          "amount": "2.5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "bpy"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "(PhO)2PONHTf",
+          "symbol": null,
+          "amount": "20 mol%"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 40 mM",
+        "temperature": null,
+        "time": "4 h",
+        "atmosphere": "degassed",
+        "light_source": "irradiation",
+        "wavelength": "458 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": null,
+        "dr": "73/27"
+      },
+      "_original_id": "GP3-S13-racemic-103"
+    },
+    {
+      "id": "GeneralProcedure4-Entry26",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        103
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2,3-diphenylcyclobutyl)methanol",
+          "symbol": "S13",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": "95%",
+        "er": null,
+        "dr": "95/5"
+      },
+      "_original_id": "GP4-S13-enantio-103"
+    },
+    {
+      "id": "GeneralProcedure3-Entry5",
+      "_gp_source": "GeneralProcedure3",
+      "source_pages": [
+        104
+      ],
+      "reaction_type": "Racemic [2+2] photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "Alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        },
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Phenyl-3-vinylcyclobutane-1-carbaldehyde",
+          "symbol": "8d",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ru(bpy)3(PF6)2",
+          "symbol": null,
+          "amount": "2.5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "bpy"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "(PhO)2PONHTf",
+          "symbol": null,
+          "amount": "20 mol%"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 40 mM",
+        "temperature": null,
+        "time": "4 h",
+        "atmosphere": "degassed",
+        "light_source": "irradiation",
+        "wavelength": "458 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": null,
+        "dr": "61/39"
+      },
+      "_original_id": "GP3-8d-racemic-104"
+    },
+    {
+      "id": "GeneralProcedure4-Entry27",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        104
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Phenyl-3-vinylcyclobutane-1-carbaldehyde",
+          "symbol": "8d",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": "98%",
+        "er": null,
+        "dr": "75/25"
+      },
+      "_original_id": "GP4-8d-enantio-104"
+    },
+    {
+      "id": "GeneralProcedure3-Entry6",
+      "_gp_source": "GeneralProcedure3",
+      "source_pages": [
+        105
+      ],
+      "reaction_type": "Racemic [2+2] photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "Alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        },
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2-phenyl-3-vinylcyclobutane-1-carbaldehyde",
+          "symbol": "8e",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ru(bpy)3(PF6)2",
+          "symbol": null,
+          "amount": "2.5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "bpy"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "(PhO)2PONHTf",
+          "symbol": null,
+          "amount": "20 mol%"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 40 mM",
+        "temperature": null,
+        "time": "4 h",
+        "atmosphere": "degassed",
+        "light_source": "irradiation",
+        "wavelength": "458 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": null,
+        "dr": "24/76"
+      },
+      "_original_id": "GP3-8e-racemic-105"
+    },
+    {
+      "id": "GeneralProcedure4-Entry28",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        105
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2-phenyl-3-vinylcyclobutane-1-carbaldehyde",
+          "symbol": "8e",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": "98%",
+        "er": null,
+        "dr": "85/15"
+      },
+      "_original_id": "GP4-8e-enantio-105"
+    },
+    {
+      "id": "GeneralProcedure3-Entry7",
+      "_gp_source": "GeneralProcedure3",
+      "source_pages": [
+        106
+      ],
+      "reaction_type": "Racemic [2+2] photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "Alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        },
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "[3-(But-1’-yn-1’-yl)-3-methyl-2-phenylcyclobutyl]methanol",
+          "symbol": "S14",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ru(bpy)3(PF6)2",
+          "symbol": null,
+          "amount": "2.5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "bpy"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "(PhO)2PONHTf",
+          "symbol": null,
+          "amount": "20 mol%"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 40 mM",
+        "temperature": null,
+        "time": "4 h",
+        "atmosphere": "degassed",
+        "light_source": "irradiation",
+        "wavelength": "458 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": null,
+        "dr": "80/20"
+      },
+      "_original_id": "GP3-S14-racemic-106"
+    },
+    {
+      "id": "GeneralProcedure4-Entry29",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        106
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "[3-(But-1’-yn-1’-yl)-3-methyl-2-phenylcyclobutyl]methanol",
+          "symbol": "S14",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": "91%",
+        "er": null,
+        "dr": "58/42"
+      },
+      "_original_id": "GP4-S14-enantio-106"
+    },
+    {
+      "id": "GeneralProcedure3-Entry8",
+      "_gp_source": "GeneralProcedure3",
+      "source_pages": [
+        109
+      ],
+      "reaction_type": "Racemic [2+2] photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "Alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        },
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Phenyl-3-[(E)-prop-1’-en-1’-yl]cyclobutane-1-carbaldehyde",
+          "symbol": "8i",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ru(bpy)3(PF6)2",
+          "symbol": null,
+          "amount": "2.5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "bpy"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "(PhO)2PONHTf",
+          "symbol": null,
+          "amount": "20 mol%"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 40 mM",
+        "temperature": null,
+        "time": "4 h",
+        "atmosphere": "degassed",
+        "light_source": "irradiation",
+        "wavelength": "458 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": null,
+        "dr": "57:43"
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedure4-Entry30",
+      "_gp_source": "GeneralProcedure4",
+      "source_pages": [
+        109
+      ],
+      "reaction_type": "Enantioselective [2+2]-photocycloaddition of N,O-acetals with alkenes",
+      "substrates": [
+        {
+          "name": "N,O-acetal",
+          "symbol": null,
+          "amount": "1.00 equiv."
+        },
+        {
+          "name": "alkene",
+          "symbol": null,
+          "amount": "20.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Phenyl-3-[(E)-prop-1’-en-1’-yl]cyclobutane-1-carbaldehyde",
+          "symbol": "8i",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "catalyst 6f",
+          "symbol": null,
+          "amount": "10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "c = 10 mM",
+        "temperature": "−50 °C then warmed to room temperature",
+        "time": null,
+        "atmosphere": "dry, degassed",
+        "light_source": "irradiation",
+        "wavelength": "459 nm"
+      },
+      "targets": {
+        "yield": null,
+        "ee": "98%",
+        "er": null,
+        "dr": "75:25"
+      },
+      "_original_id": "reaction-2"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/enantioselective_2_2_photocycloaddition_via_imin_6b9ba544.json",
+    "input_sha256": "12e2decb39fe7f22f10324ad347a529045f80ea413bf045b32a1c834174223c2"
+  }
+}

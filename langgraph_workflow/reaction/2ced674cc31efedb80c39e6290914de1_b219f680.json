@@ -1,0 +1,447 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2ced674cc31efedb80c39e6290914de1.pdf",
+  "paper_key": "2ced674cc31efedb80c39e6290914de1",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2ced674cc31efedb80c39e6290914de1.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2ced674cc31efedb80c39e6290914de1.pdf",
+    "source_mtime_ns": 1782048803000000000,
+    "source_size": 209111,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "two_column",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "2ced674cc31efedb80c39e6290914de1",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2ced674cc31efedb80c39e6290914de1.pdf"
+  },
+  "extracted_at": "2026-07-18T03:16:22.618150",
+  "total_reactions": 8,
+  "filtered_reactions": 8,
+  "filter_stats": {
+    "input_reactions": 8,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 8
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        2,
+        5
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "PdCl2(MeCN)2",
+          "symbol": null,
+          "amount": "0.33 g, 1.25 mmol"
+        },
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-amine",
+          "symbol": "1",
+          "amount": "0.87 g, 5.00 mmol",
+          "registry_name": "5-(p-tolyl)isoxazole-3-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "trans-Dichlorobis[5-(p-tolyl)isoxazol-kN-3-amine]palladium(II)",
+          "symbol": "7",
+          "amount": null,
+          "registry_name": "trans-dichlorobis[5-(p-tolyl)isoxazol-kN-3-amine]palladium(II)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "MeCN",
+        "solvent_amount": "20 mL",
+        "temperature": null,
+        "time": "10 minutes",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "5-iodosalicylic acid",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "2,4-difluorophenylboronic acid",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "2',4'-difluoro-4-hydroxybiphenyl-3-carboxylic acid (diflunisal)",
+          "symbol": "11",
+          "amount": null,
+          "registry_name": "2¢,4¢-difluoro-4-hydroxybiphenyl-3-carboxylic acid (diflunisal)",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "trans-Dichlorobis[5-(p-tolyl)isoxazol-kN-3-amine]palladium(II)",
+          "symbol": "7",
+          "amount": "0.01 mol%",
+          "registry_name": "trans-dichlorobis[5-(p-tolyl)isoxazol-kN-3-amine]palladium(II)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "room temperature",
+        "time": "10 minutes",
+        "atmosphere": "air",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbaldehyde oxime",
+          "symbol": "2",
+          "amount": "10.11 g, 50 mmol",
+          "registry_name": "5-(p-tolyl)isoxazole-3-carbaldehyde oxime",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonitrile",
+          "symbol": "3",
+          "amount": "9.03 g",
+          "registry_name": "5-(p-tolyl)isoxazole-3-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "acetic anhydride",
+          "symbol": null,
+          "amount": "7.66 g, 75 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "pyridine",
+        "solvent_amount": "20 mL",
+        "temperature": "90–95 °C",
+        "time": "7 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonitrile",
+          "symbol": "3",
+          "amount": "2.00 g, 10.86 mmol",
+          "registry_name": "5-(p-tolyl)isoxazole-3-carbonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carboxylic acid",
+          "symbol": "4",
+          "amount": "1.94 g",
+          "registry_name": "5-(p-tolyl)isoxazole-3-carboxylic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH",
+          "symbol": null,
+          "amount": "1.3 g, 23.17 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH",
+        "solvent_amount": "20 mL",
+        "temperature": "reflux",
+        "time": "reflux until no ammonia was present",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carboxylic acid",
+          "symbol": "4",
+          "amount": "3.00 g, 14.76 mmol",
+          "registry_name": "5-(p-tolyl)isoxazole-3-carboxylic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl chloride",
+          "symbol": null,
+          "amount": "3.17 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "thionyl chloride",
+          "symbol": "SOCl2",
+          "amount": "2.11 g, 17.74 mmol"
+        },
+        {
+          "name": "DMF",
+          "symbol": null,
+          "amount": "2 drops"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "reflux",
+        "time": "4 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl chloride",
+          "symbol": null,
+          "amount": "4.38 g, 19.76 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl azide",
+          "symbol": "5",
+          "amount": "4.37 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium azide",
+          "symbol": "NaN3",
+          "amount": "1.67 g, 25.69 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone",
+        "solvent_amount": "50 mL",
+        "temperature": "10 °C",
+        "time": "stirred at 10 °C for 30 min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "97%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-carbonyl azide",
+          "symbol": "5",
+          "amount": "8.38 g, 36.72 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Phenyl [5-(p-Tolyl)isoxazol-3-yl]carbamate",
+          "symbol": "6",
+          "amount": "9.73 g",
+          "registry_name": "phenyl [5-(p-tolyl)isoxazol-3-yl]carbamate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "phenol",
+          "symbol": null,
+          "amount": "4.16 g, 44.20 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "benzene",
+        "solvent_amount": "50 mL",
+        "temperature": "reflux",
+        "time": "4 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "Phenyl [5-(p-Tolyl)isoxazol-3-yl]carbamate",
+          "symbol": "6",
+          "amount": "3.97 g, 13.49 mmol",
+          "registry_name": "phenyl [5-(p-tolyl)isoxazol-3-yl]carbamate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(p-Tolyl)isoxazole-3-amine",
+          "symbol": "1",
+          "amount": "2.1 g",
+          "registry_name": "5-(p-tolyl)isoxazole-3-amine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH",
+          "symbol": null,
+          "amount": "2 g, 35.7 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH",
+        "solvent_amount": "40 mL",
+        "temperature": "85 °C",
+        "time": "7 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn8"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_suzuki/symbol_resolved/text/2ced674cc31efedb80c39e6290914de1_b219f680.json",
+    "input_sha256": "e25d4ed2c76e591be6fcec43d5cd910d4d597cc693fea675b871e0465f45ed58"
+  }
+}

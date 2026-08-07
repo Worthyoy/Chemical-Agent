@@ -1,0 +1,574 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Decarboxylative Acylation of  ‐Hydroxy Acids with Carboxylic Acids via.pdf",
+  "paper_key": "enantioselective decarboxylative acylation of ‐hydroxy acids with carboxylic acids via",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Decarboxylative Acylation of  ‐Hydroxy Acids with Carboxylic Acids via.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Decarboxylative Acylation of  ‐Hydroxy Acids with Carboxylic Acids via.pdf",
+    "source_mtime_ns": 1782048559000000000,
+    "source_size": 20693648,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "enantioselective decarboxylative acylation of ‐hydroxy acids with carboxylic acids via",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Enantioselective Decarboxylative Acylation of  ‐Hydroxy Acids with Carboxylic Acids via.pdf"
+  },
+  "extracted_at": "2026-07-17T04:02:41.818193",
+  "total_reactions": 78,
+  "filtered_reactions": 9,
+  "filter_stats": {
+    "input_reactions": 78,
+    "basic_failed": 69,
+    "target_failed": 0,
+    "retained": 9
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "TEMPO trapping experiment",
+      "substrates": [
+        {
+          "name": "RAE 1",
+          "symbol": "RAE 1",
+          "amount": "0.2 mmol, 73.0 mg"
+        },
+        {
+          "name": "acid 2",
+          "symbol": "acid 2",
+          "amount": "0.4 mmol, 60.0 mg"
+        }
+      ],
+      "products": [
+        {
+          "name": "TEMPO-acyl adduct",
+          "symbol": "67",
+          "amount": "77.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.004 mmol, 3.2 mg"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 6.2 mg"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L11",
+          "symbol": "L11"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Hantzsch ester",
+          "symbol": null,
+          "amount": "0.3 mmol, 76.0 mg"
+        },
+        {
+          "name": "dimethyl dicarbonate",
+          "symbol": "DMDC",
+          "amount": "0.44 mmol, 47.0 μL",
+          "registry_name": "Dimethyl dicarbonate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous DME",
+        "solvent_amount": "1.0 mL + 1.0 mL",
+        "temperature": "15 °C",
+        "time": "12 hours",
+        "atmosphere": "argon",
+        "light_source": "40 W blue LED (Kessil PR160L)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "TEMPO trapping experiment in the absence of nickel catalyst",
+      "substrates": [
+        {
+          "name": "RAE",
+          "symbol": "1",
+          "amount": "0.2 mmol, 73.0 mg"
+        },
+        {
+          "name": "acid",
+          "symbol": "2",
+          "amount": "0.4 mmol, 60.0 mg"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-((2,2,6,6-tetramethylpiperidin-1-yl)oxy)heptyl benzoate",
+          "symbol": "66",
+          "amount": "15.1 mg",
+          "registry_name": "1-((2,2,6,6-tetramethylpiperidin-1-yl)oxy)heptyl benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.004 mmol, 3.2 mg"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dimethyl dicarbonate",
+          "symbol": "DMDC",
+          "amount": "0.44 mmol, 47.0 μL",
+          "registry_name": "Dimethyl dicarbonate",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "Hantzsch ester",
+          "symbol": null,
+          "amount": "0.3 mmol, 76.0 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous DME",
+        "solvent_amount": "2 mL",
+        "temperature": "15°C",
+        "time": "12 hours",
+        "atmosphere": "argon",
+        "light_source": "40 W blue LED lamp (Kessil PR160L, 427 nm)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "20%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "radical clock experiment",
+      "substrates": [
+        {
+          "name": "cyclopropyl RAE",
+          "symbol": "68",
+          "amount": "0.2 mmol, 73.0 mg"
+        },
+        {
+          "name": "acid",
+          "symbol": "2",
+          "amount": "0.4 mmol, 60.0 mg"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-oxo-7-phenylhept-1-en-1-yl benzoate",
+          "symbol": "69",
+          "amount": "13.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.004 mmol, 3.2 mg"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.02 mmol, 6.2 mg"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L11",
+          "symbol": "L11"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Hantzsch ester",
+          "symbol": null,
+          "amount": "0.3 mmol, 76.0 mg"
+        },
+        {
+          "name": "dimethyl dicarbonate",
+          "symbol": "DMDC",
+          "amount": "0.44 mmol, 47.0 μL",
+          "registry_name": "Dimethyl dicarbonate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous DME",
+        "solvent_amount": "1.0 mL + 1.0 mL",
+        "temperature": "room temperature (30 min), then 15 °C (during irradiation)",
+        "time": "12 h",
+        "atmosphere": "argon",
+        "light_source": "40 W blue LED lamp (Kessil PR160L, 427 nm)",
+        "wavelength": "427 nm"
+      },
+      "targets": {
+        "yield": "21%",
+        "ee": null,
+        "er": null,
+        "dr": "2.6:1"
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        78
+      ],
+      "reaction_type": "continuous flow photochemical synthesis",
+      "substrates": [
+        {
+          "name": "lactic acid derived redox active esters",
+          "symbol": null,
+          "amount": "2 mmol, 678.0 mg"
+        },
+        {
+          "name": "3-phenylpropionic acid",
+          "symbol": null,
+          "amount": "4 mmol, 600.0 mg"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-3-oxo-1-phenyldecan-4-yl benzoate",
+          "symbol": "6",
+          "amount": "453.0 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "4CzIPN",
+          "symbol": null,
+          "amount": "0.04 mmol, 32.0 mg"
+        },
+        {
+          "name": "NiBr2·DME",
+          "symbol": null,
+          "amount": "0.2 mmol, 62.0 mg"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L11",
+          "symbol": "L11"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Hantzsch ester",
+          "symbol": null,
+          "amount": "3 mmol, 760.0 mg"
+        },
+        {
+          "name": "Dimethyl dicarbonate",
+          "symbol": "DMDC",
+          "amount": "4.4 mmol, 0.47 mL",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous DME",
+        "solvent_amount": "20 mL",
+        "temperature": "room temperature",
+        "time": "6 hours",
+        "atmosphere": "argon",
+        "light_source": "40 W blue LED lamp",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R1"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        79
+      ],
+      "reaction_type": "deprotection (O-Bz removal)",
+      "substrates": [
+        {
+          "name": "α-oxygenated ketones",
+          "symbol": null,
+          "amount": "0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-6-oxohexadec-1-en-5-yl benzoate",
+          "symbol": null,
+          "amount": "55.3 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "6 mg, 0.06 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "2 mL",
+        "temperature": "0 °C",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-79-1"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        79,
+        80
+      ],
+      "reaction_type": "deprotection (O-Bz removal)",
+      "substrates": [
+        {
+          "name": "α-oxygenated ketones",
+          "symbol": null,
+          "amount": "0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-5-hydroxyhexadec-1-en-6-one",
+          "symbol": "67",
+          "amount": "47.9 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "6 mg, 0.06 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "2 mL",
+        "temperature": "0 °C",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-79-80-1"
+    },
+    {
+      "id": "NonGP-Entry13",
+      "source_pages": [
+        79,
+        81
+      ],
+      "reaction_type": "deprotection (O-Bz removal)",
+      "substrates": [
+        {
+          "name": "α-oxygenated ketones",
+          "symbol": null,
+          "amount": "0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-5-methyl-3-oxo-1-phenylhexan-2-yl benzoate",
+          "symbol": null,
+          "amount": "47.9 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "6 mg, 0.06 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "2 mL",
+        "temperature": "0 °C",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-79-81-1"
+    },
+    {
+      "id": "NonGP-Entry14",
+      "source_pages": [
+        79,
+        82
+      ],
+      "reaction_type": "deprotection (O-Bz removal)",
+      "substrates": [
+        {
+          "name": "α-oxygenated ketones",
+          "symbol": null,
+          "amount": "0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-5-methyl-3-oxo-1-phenylhexan-2-yl benzoate",
+          "symbol": null,
+          "amount": "47.9 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "(S, R)-L14"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "6 mg, 0.06 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "2 mL",
+        "temperature": "0 °C",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "88%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-79-82-1"
+    },
+    {
+      "id": "NonGP-Entry15",
+      "source_pages": [
+        79,
+        83
+      ],
+      "reaction_type": "deprotection (O-Bz removal)",
+      "substrates": [
+        {
+          "name": "α-oxygenated ketones",
+          "symbol": null,
+          "amount": "0.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-1-(4-methoxyphenyl)-1-oxopropan-2-yl 4-methoxybenzoate",
+          "symbol": null,
+          "amount": "47.9 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "6 mg, 0.06 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "methanol",
+        "solvent_amount": "2 mL",
+        "temperature": "0 °C",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-79-83-1"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/enantioselective_decarboxylative_acylation_of_hy_7cb20e4b.json",
+    "input_sha256": "1ed89220e1640efc25035b3cc07bac83c3605e26d5b96fd52b593b9414aa3ff3"
+  }
+}

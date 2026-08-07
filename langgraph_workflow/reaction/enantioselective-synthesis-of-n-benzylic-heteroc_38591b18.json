@@ -1,0 +1,4504 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-synthesis-of-n-benzylic-heterocycles-a-nickel-and-photoredox-dual-catalysis-approach.pdf",
+  "paper_key": "enantioselective-synthesis-of-n-benzylic-heterocycles-a-nickel-and-photoredox-dual-catalysis-approach",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-synthesis-of-n-benzylic-heterocycles-a-nickel-and-photoredox-dual-catalysis-approach.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-synthesis-of-n-benzylic-heterocycles-a-nickel-and-photoredox-dual-catalysis-approach.pdf",
+    "source_mtime_ns": 1782048602000000000,
+    "source_size": 10397844,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "enantioselective-synthesis-of-n-benzylic-heterocycles-a-nickel-and-photoredox-dual-catalysis-approach",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-synthesis-of-n-benzylic-heterocycles-a-nickel-and-photoredox-dual-catalysis-approach.pdf"
+  },
+  "extracted_at": "2026-07-17T07:04:10.790874",
+  "total_reactions": 69,
+  "filtered_reactions": 69,
+  "filter_stats": {
+    "input_reactions": 69,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 69
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(S)-tert-leucine",
+          "symbol": null,
+          "amount": "5.25 g, 40 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-tert-Leucinol",
+          "symbol": null,
+          "amount": "3.6 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "THF",
+          "symbol": null,
+          "amount": "105 mL"
+        },
+        {
+          "name": "NaBH4",
+          "symbol": null,
+          "amount": "3.78 g, 100 mmol, 2.5 equiv."
+        },
+        {
+          "name": "I2",
+          "symbol": null,
+          "amount": "10.15 g, 40 mmol, 1 equiv. (in THF, 28 mL)"
+        },
+        {
+          "name": "20% aqueous KOH",
+          "symbol": null,
+          "amount": "80 mL, 40 mmol, 1 equiv."
+        },
+        {
+          "name": "CH2Cl2",
+          "symbol": null,
+          "amount": "for extraction"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "105 mL",
+        "temperature": "reflux",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6_1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-cyano-3-methylpyridine",
+          "symbol": null,
+          "amount": "709 mg, 6 mmol"
+        },
+        {
+          "name": "(S)-tert-leucinol",
+          "symbol": null,
+          "amount": "703 mg, 6 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2",
+          "amount": "648 mg",
+          "registry_name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "zinc triflate",
+          "symbol": null,
+          "amount": "436 mg, 1.2 mmol, 20 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "toluene",
+          "symbol": null,
+          "amount": "20 mL"
+        },
+        {
+          "name": "EtOAc",
+          "symbol": null,
+          "amount": "for workup"
+        },
+        {
+          "name": "sat. aqueous NaHCO3",
+          "symbol": null,
+          "amount": "for wash"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "20 mL",
+        "temperature": "reflux",
+        "time": "64 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6_2"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-cyano-4-methylpyridine",
+          "symbol": null,
+          "amount": "354 mg, 3 mmol"
+        },
+        {
+          "name": "(S)-tert-leucinol",
+          "symbol": null,
+          "amount": "352 mg, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(4-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L3",
+          "amount": "457 mg",
+          "registry_name": "(S)-4-(tert-Butyl)-2-(4-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "zinc triflate",
+          "symbol": null,
+          "amount": "218 mg, 0.6 mmol, 20 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "toluene",
+          "symbol": null,
+          "amount": "10 mL"
+        },
+        {
+          "name": "EtOAc",
+          "symbol": null,
+          "amount": "for workup"
+        },
+        {
+          "name": "sat. aqueous NaHCO3",
+          "symbol": null,
+          "amount": "for wash"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "10 mL",
+        "temperature": "reflux",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6_3"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "synthesis",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "2-cyano-6-methylpyridine",
+          "symbol": null,
+          "amount": "354 mg, 3 mmol",
+          "step": 1
+        },
+        {
+          "name": "(S)-tert-leucinol",
+          "symbol": null,
+          "amount": "387 mg, 3.3 mmol, 1.1 equiv.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "methyl carboximidate",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(6-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L4",
+          "amount": "181 mg",
+          "step": 2,
+          "registry_name": "(S)-4-(tert-Butyl)-2-(6-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "p-toluenesulfonic acid monohydrate",
+          "symbol": null,
+          "amount": "57 mg, 0.3 mmol, 10 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium methoxide",
+          "symbol": null,
+          "amount": "32 mg, 0.6 mmol, 20 mol%",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "MeOH"
+          },
+          {
+            "step": 2,
+            "value": "toluene"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL"
+          },
+          {
+            "step": 2,
+            "value": "6 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 2,
+            "value": "80 °C"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "15 h"
+          },
+          {
+            "step": 2,
+            "value": "1 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "28%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn6_4"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "literature procedure",
+      "substrates": [
+        {
+          "name": "2-cyano-5-(trifluoromethyl)pyridine",
+          "symbol": null,
+          "amount": "516 mg, 3 mmol"
+        },
+        {
+          "name": "(S)-tert-leucinol",
+          "symbol": null,
+          "amount": "352 mg, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(5-(trifluoromethyl)pyridine-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L5",
+          "amount": "584 mg",
+          "registry_name": "(S)-4-(tert-Butyl)-2-(5-(trifluoromethyl)pyridine-2-yl)-4,5-dihydrooxazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "zinc triflate",
+          "symbol": null,
+          "amount": "218 mg, 0.6 mmol, 20 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "EtOAc (workup)",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "sat. aqueous NaHCO3 (wash)",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "MgSO4 (drying agent)",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "10 mL",
+        "temperature": "90 °C (vacuum, 1 h activation); reflux (during reaction)",
+        "time": "1 h (activation); 24 h (reflux)",
+        "atmosphere": "vacuum (activation)",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "literature procedure",
+      "substrates": [
+        {
+          "name": "2-cyano-3-hydroxypyridine",
+          "symbol": null,
+          "amount": "360 mg, 3 mmol"
+        },
+        {
+          "name": "(S)-tert-leucinol",
+          "symbol": null,
+          "amount": "352 mg, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(4-(tert-Butyl)-4,5-dihydrooxazol-2-yl)pyridine-3-ol",
+          "symbol": "L7",
+          "amount": "515 mg",
+          "registry_name": "(S)-2-(4-(tert-Butyl)-4,5-dihydrooxazol-2-yl)pyridine-3-ol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "zinc triflate",
+          "symbol": null,
+          "amount": "218 mg, 0.6 mmol, 20 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "EtOAc (workup)",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "sat. aqueous NaHCO3 (wash)",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "MgSO4 (drying agent)",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "10 mL",
+        "temperature": "90 °C (vacuum, 1 h activation); reflux (during reaction)",
+        "time": "1 h (activation); 24 h (reflux)",
+        "atmosphere": "vacuum (activation)",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "literature procedure",
+      "substrates": [
+        {
+          "name": "pyrimidine-2-carbonitrile",
+          "symbol": null,
+          "amount": "315 mg, 3 mmol"
+        },
+        {
+          "name": "(S)-tert-leucinol",
+          "symbol": null,
+          "amount": "352 mg, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(pyrimidin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L8",
+          "amount": "190 mg",
+          "registry_name": "(S)-4-(tert-Butyl)-2-(pyrimidin-2-yl)-4,5-dihydrooxazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "zinc triflate",
+          "symbol": null,
+          "amount": "218 mg, 0.6 mmol, 20 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "EtOAc (workup)",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "sat. aqueous NaHCO3 (wash)",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "MgSO4 (drying agent)",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "10 mL",
+        "temperature": "90 °C (vacuum, 1 h activation); reflux (during reaction)",
+        "time": "1 h (activation); 24 h (reflux)",
+        "atmosphere": "vacuum (activation)",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "31%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "literature procedure",
+      "substrates": [
+        {
+          "name": "isoquinoline-1-carbonitrile",
+          "symbol": null,
+          "amount": "462 mg, 3 mmol"
+        },
+        {
+          "name": "(S)-tert-leucinol",
+          "symbol": null,
+          "amount": "352 mg, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(isoquinol-1-yl)-4,5-dihydrooxazole",
+          "symbol": "L10",
+          "amount": "492 mg",
+          "registry_name": "(S)-4-(tert-Butyl)-2-(isoquinol-1-yl)-4,5-dihydrooxazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "zinc triflate",
+          "symbol": null,
+          "amount": "218 mg, 0.6 mmol, 20 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "EtOAc (workup)",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "sat. aqueous NaHCO3 (wash)",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "MgSO4 (drying agent)",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "10 mL",
+        "temperature": "90 °C (vacuum, 1 h activation); reflux (during reaction)",
+        "time": "1 h (activation); 24 h (reflux)",
+        "atmosphere": "vacuum (activation)",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r4"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "literature procedure",
+      "substrates": [
+        {
+          "name": "2-cyanopyridine",
+          "symbol": null,
+          "amount": "312 mg, 3 mmol"
+        },
+        {
+          "name": "(S)-phenylglycinol",
+          "symbol": null,
+          "amount": "412 mg, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-Phenyl-2-(pyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L11",
+          "amount": "61.7 mg",
+          "registry_name": "(S)-4-Phenyl-2-(pyridin-2-yl)-4,5-dihydrooxazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "zinc triflate",
+          "symbol": null,
+          "amount": "218 mg, 0.6 mmol, 20 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "10 mL",
+        "temperature": "preheated to 90 °C (1 h, under vacuum), then reflux",
+        "time": "preheat 1 h; reaction 24 h",
+        "atmosphere": "vacuum (preheat); not specified for reaction",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "9%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R1"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "literature procedure",
+      "substrates": [
+        {
+          "name": "2-cyanopyridine",
+          "symbol": null,
+          "amount": "312 mg, 3 mmol"
+        },
+        {
+          "name": "(1R,2S)-2-amino-1,2-diphenylethan-1-ol",
+          "symbol": null,
+          "amount": "640 mg, 3 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(4S,5R)-4,5-Diphenyl-2-(pyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L12",
+          "amount": "427 mg",
+          "registry_name": "(4S,5R)-4,5-Diphenyl-2-(pyridin-2-yl)-4,5-dihydrooxazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "zinc triflate",
+          "symbol": null,
+          "amount": "218 mg, 0.6 mmol, 20 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "10 mL",
+        "temperature": "preheated to 90 °C (1 h, under vacuum), then reflux",
+        "time": "preheat 1 h; reaction 24 h",
+        "atmosphere": "vacuum (preheat); not specified for reaction",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "47%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R2"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "literature procedure",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "2-cyanopyridine",
+          "symbol": null,
+          "amount": "312 mg, 3 mmol",
+          "step": 1
+        },
+        {
+          "name": "(1S,2R)-cis-1-Amino-2-indanol",
+          "symbol": null,
+          "amount": "492 mg, 3.3 mmol, 1.1 equiv.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "methyl carboximidate",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,8aR)-2-(Pyridin-2-yl)-3a,8a-dihydro-8H-indeno[1,2-d]oxazole",
+          "symbol": "L13",
+          "amount": "347 mg",
+          "step": 2,
+          "registry_name": "(3aS,8aR)-2-(Pyridin-2-yl)-3a,8a-dihydro-8H-indeno[1,2-d]oxazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "sodium methoxide",
+          "symbol": null,
+          "amount": "16 mg, 0.3 mmol, 10 mol%",
+          "step": 1
+        },
+        {
+          "name": "p-toluenesulfonic acid monohydrate",
+          "symbol": null,
+          "amount": "57 mg, 0.3 mmol, 10 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "MeOH"
+          },
+          {
+            "step": 2,
+            "value": "toluene"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL"
+          },
+          {
+            "step": 2,
+            "value": "6 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "80 °C"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "15 h"
+          },
+          {
+            "step": 2,
+            "value": "1 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          },
+          {
+            "step": 2,
+            "value": "N2 (flask flushed) / not specifically stated"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "R3"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "literature procedure",
+      "substrates": [
+        {
+          "name": "methylmagnesium bromide (1.4 M solution in toluene:THF 75:25)",
+          "symbol": null,
+          "amount": "43 mL, 60 mmol, 6 equiv."
+        },
+        {
+          "name": "(S)-phenylglycine methyl ester hydrochloride",
+          "symbol": null,
+          "amount": "2.0 g, 10 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-Amino-2-methyl-1-phenylpropan-2-ol",
+          "symbol": null,
+          "amount": "850 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "diethyl ether",
+        "solvent_amount": "30 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R4"
+    },
+    {
+      "id": "NonGP-Entry13",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-cyanopyridine",
+          "symbol": null,
+          "amount": "104 mg, 1 mmol"
+        },
+        {
+          "name": "(S)-1-amino-2-methyl-1-phenylpropan-2-ol",
+          "symbol": null,
+          "amount": "165 mg, 1 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-5,5-Dimethyl-4-phenyl-2-(pyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L14",
+          "amount": "427 mg",
+          "registry_name": "(S)-5,5-Dimethyl-4-phenyl-2-(pyridin-2-yl)-4,5-dihydrooxazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "zinc triflate",
+          "symbol": null,
+          "amount": "36 mg, 0.1 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sat. aqueous NaHCO3",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "4 mL",
+        "temperature": "reflux",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "47%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "L14_synthesis_p25"
+    },
+    {
+      "id": "NonGP-Entry14",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "bis((3aS,8aR)-3a,8a-dihydro-8H-indeno[1,2-d]oxazol-2-yl)methane",
+          "symbol": "corresponding bis-oxazoline",
+          "amount": "250 mg, 0.76 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((3aS,8aR)-3a,8a-Dihydro-8H-indeno[1,2-d]oxazol-2-yl)-2-((3aS,8aR)-3,3a,8,8a-tetrahydro-2H-indeno[1,2-d]oxazol-2-ylidene)acetonitrile",
+          "symbol": "L16",
+          "amount": "184 mg",
+          "registry_name": "2-((3aS,8aR)-3a,8a-Dihydro-8H-indeno[1,2-d]oxazol-2-yl)-2-((3aS,8aR)-3,3a,8,8a-tetrahydro-\n2H-indeno[1,2-d]oxazol-2-ylidene)acetonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "n-BuLi (2.5 M solution in hexanes)",
+          "symbol": null,
+          "amount": "363 μL, 0.91 mmol, 1.2 equiv."
+        },
+        {
+          "name": "TMEDA",
+          "symbol": null,
+          "amount": "136 μL, 0.91 mmol, 1.2 equiv."
+        },
+        {
+          "name": "p-Toluenesulfonyl cyanide",
+          "symbol": null,
+          "amount": "164 mg, 0.91 mmol, 1.2 equiv."
+        },
+        {
+          "name": "saturated aqueous NH4Cl (quench)",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "5 mL",
+        "temperature": "-78 °C (1 h), 0 °C (30 min), then -78 °C, then warmed to room temperature",
+        "time": "1 h at -78 °C, 30 min at 0 °C, 15 h at room temperature",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "L16_synthesis_p25"
+    },
+    {
+      "id": "NonGP-Entry15",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "bis((S)-4-(tert-butyl)-4,5-dihydrooxazol-2-yl)methane",
+          "symbol": "corresponding bis-oxazoline",
+          "amount": "201 mg, 0.76 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((S)-4-(tert-Butyl)-4,5-dihydrooxazol-2-yl)-2-((S)-4-(tert-butyl)oxazolidin-2-ylidene)acetonitrile",
+          "symbol": "L17",
+          "amount": "181 mg",
+          "registry_name": "2-((S)-4-(tert-Butyl)-4,5-dihydrooxazol-2-yl)-2-((S)-4-(tert-butyl)oxazolidin-2-ylidene)acetonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "n-BuLi (2.5 M solution in hexanes)",
+          "symbol": null,
+          "amount": "363 μL, 0.91 mmol, 1.2 equiv."
+        },
+        {
+          "name": "TMEDA",
+          "symbol": null,
+          "amount": "136 μL, 0.91 mmol, 1.2 equiv."
+        },
+        {
+          "name": "p-Toluenesulfonyl cyanide",
+          "symbol": null,
+          "amount": "164 mg, 0.91 mmol, 1.2 equiv."
+        },
+        {
+          "name": "saturated aqueous NH4Cl (quench)",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "5 mL",
+        "temperature": "-78 °C (1 h), 0 °C (30 min), then -78 °C, then warmed to room temperature",
+        "time": "1 h at -78 °C, 30 min at 0 °C, 15 h at room temperature",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "L17_synthesis_p26"
+    },
+    {
+      "id": "NonGP-Entry16",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "malononitrile",
+          "symbol": null,
+          "amount": "198 mg, 3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Diethyl malonimidate dihydrochloride",
+          "symbol": "L18-1",
+          "amount": "397 mg",
+          "registry_name": "Diethyl malonimidate dihydrochloride",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "ethanol",
+          "symbol": null,
+          "amount": "363 μL, 6.15 mmol, 2.05 equiv."
+        },
+        {
+          "name": "hydrogen chloride (4 M in dioxane)",
+          "symbol": null,
+          "amount": "37.5 mL (150 mmol, 50 equiv.)"
+        }
+      ],
+      "conditions": {
+        "solvent": "dioxane and ethanol",
+        "solvent_amount": "2 mL dioxane; 363 μL ethanol",
+        "temperature": "room temperature",
+        "time": "3 days",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "L18-1_synthesis_p26"
+    },
+    {
+      "id": "NonGP-Entry17",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "reported procedure",
+      "substrates": [
+        {
+          "name": "diethyl malonimidate dihydrochloride",
+          "symbol": "L18-1",
+          "amount": "231 mg, 1 mmol",
+          "registry_name": "Diethyl malonimidate dihydrochloride",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(S)-1-amino-2-methyl-1-phenylpropan-2-ol",
+          "symbol": null,
+          "amount": "330 mg, 2 mmol, 2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Bis((S)-5,5-dimethyl-4-phenyl-4,5-dihydrooxazol-2-yl)methane",
+          "symbol": "L18-2",
+          "amount": "245 mg",
+          "registry_name": "Bis((S)-5,5-dimethyl-4-phenyl-4,5-dihydrooxazol-2-yl)methane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "6 mL",
+        "temperature": "vigorous reflux",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1"
+    },
+    {
+      "id": "NonGP-Entry18",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "reported procedure",
+      "substrates": [
+        {
+          "name": "2-((S)-5,5-dimethyl-4-phenyl-4,5-dihydrooxazol-2-yl)methane",
+          "symbol": "L18-2",
+          "amount": "243 mg, 0.67 mmol",
+          "registry_name": "Bis((S)-5,5-dimethyl-4-phenyl-4,5-dihydrooxazol-2-yl)methane",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((S)-5,5-Dimethyl-4-phenyl-4,5-dihydrooxazol-2-yl)-2-((S)-5,5-dimethyl-4-phenyloxazolidin-2-ylidene)acetonitrile",
+          "symbol": "L18",
+          "amount": "198 mg",
+          "registry_name": "2-((S)-5,5-Dimethyl-4-phenyl-4,5-dihydrooxazol-2-yl)-2-((S)-5,5-dimethyl-4-phenyloxazolidin-2-ylidene)acetonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "n-BuLi (2.5 M solution in hexanes)",
+          "symbol": null,
+          "amount": "322 μL, 0.8 mmol, 1.2 equiv."
+        },
+        {
+          "name": "TMEDA",
+          "symbol": null,
+          "amount": "121 μL, 0.8 mmol, 1.2 equiv."
+        },
+        {
+          "name": "p-Toluenesulfonyl cyanide",
+          "symbol": null,
+          "amount": "146 mg, 0.8 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "5 mL",
+        "temperature": "-78 °C (then 0 °C, then -78 °C; warmed to room temperature)",
+        "time": "stirred 1 h at -78 °C, 30 min at 0 °C, then 15 h at room temperature",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-2"
+    },
+    {
+      "id": "NonGP-Entry19",
+      "source_pages": [
+        27,
+        28
+      ],
+      "reaction_type": "reported procedure",
+      "substrates": [
+        {
+          "name": "carbazole",
+          "symbol": null,
+          "amount": "1.67 g, 10 mmol, 5 equiv."
+        },
+        {
+          "name": "tetrafluoroisophthalonitrile",
+          "symbol": null,
+          "amount": "400 mg, 2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "1.15 g",
+          "registry_name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH (60% dispersion in mineral oil)",
+          "symbol": null,
+          "amount": "600 mg, 15 mmol, 7.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "40 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-3"
+    },
+    {
+      "id": "NonGP-Entry20",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "L-alanine",
+          "symbol": null,
+          "amount": "4.45 g, 50 mmol"
+        },
+        {
+          "name": "2,5-dimethoxytetrahydrofuran",
+          "symbol": null,
+          "amount": "6.5 mL, 50 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(1H-Pyrrol-1-yl)propanoic acid",
+          "symbol": "1a",
+          "amount": "6.96 g",
+          "registry_name": "(S)-2-(1H-Pyrrol-1-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaOAc",
+          "symbol": null,
+          "amount": "4.1 g, 50 mmol"
+        },
+        {
+          "name": "degassed water",
+          "symbol": null,
+          "amount": "22.5 mL"
+        },
+        {
+          "name": "acetic acid",
+          "symbol": null,
+          "amount": "7.5 mL"
+        },
+        {
+          "name": "1,2-dichloroethane",
+          "symbol": null,
+          "amount": "30 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "degassed water, acetic acid, 1,2-dichloroethane",
+        "solvent_amount": "22.5 mL, 7.5 mL, 30 mL",
+        "temperature": "90 °C",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry21",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1H-pyrrole",
+          "symbol": null,
+          "amount": "1.64 g, 15 mmol"
+        },
+        {
+          "name": "2-bromopropionic acid",
+          "symbol": null,
+          "amount": "1.42 mL, 15.75 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-Acetyl-1H-pyrrol-1-yl)propanoic acid",
+          "symbol": "1b",
+          "amount": "1.01 g",
+          "registry_name": "2-(2-Acetyl-1H-pyrrol-1-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH (60% in mineral oil)",
+          "symbol": null,
+          "amount": "1.5 g, 37.5 mmol, 2.5 equiv."
+        },
+        {
+          "name": "DMF",
+          "symbol": null,
+          "amount": "20 mL"
+        },
+        {
+          "name": "10% aqueous HCl",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "20 mL",
+        "temperature": "0 °C (ice bath) then room temperature",
+        "time": "30 min (ice bath), then 15 h at room temperature",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "NonGP-Entry22",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "methyl 1H-pyrrole-2-carboxylate",
+          "symbol": null,
+          "amount": "1.77 g, 15 mmol"
+        },
+        {
+          "name": "2-bromopropionic acid",
+          "symbol": null,
+          "amount": "1.42 mL, 15.75 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-(Methoxycarbonyl)-1H-pyrrol-1-yl)propanoic acid",
+          "symbol": "1c",
+          "amount": "875 mg",
+          "registry_name": "2-(2-(Methoxycarbonyl)-1H-pyrrol-1-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH (60% in mineral oil)",
+          "symbol": null,
+          "amount": "1.5 g, 37.5 mmol, 2.5 equiv."
+        },
+        {
+          "name": "DMF",
+          "symbol": null,
+          "amount": "20 mL"
+        },
+        {
+          "name": "10% aqueous HCl",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "20 mL",
+        "temperature": "0 °C (ice bath) then room temperature",
+        "time": "30 min (ice bath), then 2 days at room temperature",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "NonGP-Entry23",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "N,N-dimethyl-1H-pyrrole-2-carboxamide",
+          "symbol": null,
+          "amount": "500 mg, 3.62 mmol"
+        },
+        {
+          "name": "2-bromopropionic acid",
+          "symbol": null,
+          "amount": "0.34 mL, 3.8 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-(Dimethylcarbamoyl)-1H-pyrrol-1-yl)propanoic acid",
+          "symbol": "1d",
+          "amount": "418 mg",
+          "registry_name": "2-(2-(Dimethylcarbamoyl)-1H-pyrrol-1-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH (60% in mineral oil)",
+          "symbol": null,
+          "amount": "360 mg, 9.05 mmol, 2.5 equiv."
+        },
+        {
+          "name": "DMF",
+          "symbol": null,
+          "amount": "5 mL"
+        },
+        {
+          "name": "10% HCl",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "5 mL",
+        "temperature": "0 °C (ice bath) then room temperature",
+        "time": "30 min (ice bath), then 15 h at room temperature",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "NonGP-Entry24",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "esterification",
+      "substrates": [
+        {
+          "name": "2-bromopropionic acid",
+          "symbol": null,
+          "amount": "4.5 mL, 50 mmol"
+        },
+        {
+          "name": "benzyl alcohol",
+          "symbol": null,
+          "amount": "6.2 mL, 60 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl 2-bromopropionate",
+          "symbol": null,
+          "amount": "12.15 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "366 mg, 3 mmol, 6 mol%"
+        }
+      ],
+      "conditions": {
+        "solvent": "diethyl ether",
+        "solvent_amount": "30 mL",
+        "temperature": "room temperature",
+        "time": "5 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry25",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "Suzuki coupling",
+      "substrates": [
+        {
+          "name": "(N-Boc-1H-pyrrol-2-yl)boronic acid",
+          "symbol": null,
+          "amount": "1.9 g, 9 mmol"
+        },
+        {
+          "name": "2-bromopyridine",
+          "symbol": null,
+          "amount": "1.4 g, 9 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(N-Boc-1H-Pyrrol-2-yl)pyridine",
+          "symbol": "1e-1",
+          "amount": "1.54 g",
+          "registry_name": "2-(N-Boc-1H-Pyrrol-2-yl)pyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "1.0 g, 0.9 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "aqueous K2CO3",
+          "symbol": null,
+          "amount": "23 mL, 1.2 M, 27 mmol, 2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "75 mL",
+        "temperature": "100 °C",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "NonGP-Entry26",
+      "source_pages": [
+        31,
+        32
+      ],
+      "reaction_type": "acid deprotection (Boc removal)",
+      "substrates": [
+        {
+          "name": "2-(N-Boc-1H-Pyrrol-2-yl)pyridine",
+          "symbol": "1e-1",
+          "amount": "1.5 g, 6.12 mmol",
+          "registry_name": "2-(N-Boc-1H-Pyrrol-2-yl)pyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1H-Pyrrol-2-yl)pyridine",
+          "symbol": "1e-2",
+          "amount": "882 mg",
+          "registry_name": "2-(1H-Pyrrol-2-yl)pyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "aqueous HCl",
+          "symbol": null,
+          "amount": "33 mL, 3 M, 98 mmol, 16 equiv."
+        },
+        {
+          "name": "aqueous Na2CO3 (basification, workup)",
+          "symbol": null,
+          "amount": "to pH 12"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "30 mL",
+        "temperature": "ice bath during addition, then room temperature",
+        "time": "15 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "NonGP-Entry27",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "N-alkylation (deprotonation followed by SN2)",
+      "substrates": [
+        {
+          "name": "2-(1H-Pyrrol-2-yl)pyridine",
+          "symbol": "1e-2",
+          "amount": "432 mg, 3 mmol",
+          "registry_name": "2-(1H-Pyrrol-2-yl)pyridine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "Benzyl 2-bromopropionate",
+          "symbol": null,
+          "amount": "766 mg, 3.15 mmol, 1.05 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl 2-(2-(pyridin-2-yl)-1H-pyrrol-1-yl)propanoate",
+          "symbol": "1e-3",
+          "amount": "919 mg",
+          "registry_name": "Benzyl 2-(2-(pyridin-2-yl)-1H-pyrrol-1-yl)propanoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH (60% in mineral oil)",
+          "symbol": null,
+          "amount": "300 mg, 7.5 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "5 mL",
+        "temperature": "0 °C (ice bath) then room temperature",
+        "time": "30 min (in ice bath) then 5 h at room temperature",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "32%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "NonGP-Entry28",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "hydrogenation (hydrogenolysis of benzyl ester)",
+      "substrates": [
+        {
+          "name": "Benzyl 2-(2-(pyridin-2-yl)-1H-pyrrol-1-yl)propanoate",
+          "symbol": "1e-3",
+          "amount": "266.5 mg, 0.87 mmol",
+          "registry_name": "Benzyl 2-(2-(pyridin-2-yl)-1H-pyrrol-1-yl)propanoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-(Pyridin-2-yl)-1H-pyrrol-1-yl)propanoic acid",
+          "symbol": "1e",
+          "amount": "125 mg",
+          "registry_name": "2-(2-(Pyridin-2-yl)-1H-pyrrol-1-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd/C (5% Pd)",
+          "symbol": null,
+          "amount": "92 mg, 5% weight of Pd, 0.044 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "H2 (balloon)",
+          "symbol": null,
+          "amount": "sparged for 10 min, then stirred under H2"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOH",
+        "solvent_amount": "5 mL",
+        "temperature": "room temperature",
+        "time": "4 h",
+        "atmosphere": "H2 (balloon)",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "NonGP-Entry29",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "N-alkylation",
+      "substrates": [
+        {
+          "name": "ethyl 1H-imidazole-5-carboxylate",
+          "symbol": null,
+          "amount": "708 mg, 5.05 mmol"
+        },
+        {
+          "name": "benzyl 2-bromopropionate",
+          "symbol": null,
+          "amount": "910 mg, 5.05 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 1-(1-(benzyloxy)-1-oxopropan-2-yl)-1H-imidazole-5-carboxylate",
+          "symbol": "1f-1",
+          "amount": "375 mg",
+          "registry_name": "Ethyl 1-(1-(benzyloxy)-1-oxopropan-2-yl)-1H-imidazole-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "2.0 g, 6.06 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "20 mL",
+        "temperature": "room temperature",
+        "time": "2 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "25%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry30",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "N-alkylation",
+      "substrates": [
+        {
+          "name": "ethyl 1H-imidazole-5-carboxylate",
+          "symbol": null,
+          "amount": "708 mg, 5.05 mmol"
+        },
+        {
+          "name": "benzyl 2-bromopropionate",
+          "symbol": null,
+          "amount": "910 mg, 5.05 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 1-(1-(benzyloxy)-1-oxopropan-2-yl)-1H-imidazole-5-carboxylate",
+          "symbol": "iso-1f-1",
+          "amount": "780 mg",
+          "registry_name": "ethyl 1-(1-(benzyloxy)-1-oxopropan-2-yl)-1H-imidazole-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "2.0 g, 6.06 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "20 mL",
+        "temperature": "room temperature",
+        "time": "2 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry31",
+      "source_pages": [
+        33,
+        34
+      ],
+      "reaction_type": "hydrogenation (hydrogenolysis of benzyl ether)",
+      "substrates": [
+        {
+          "name": "Ethyl 1-(1-(benzyloxy)-1-oxopropan-2-yl)-1H-imidazole-5-carboxylate",
+          "symbol": "1f-1",
+          "amount": "357 mg, 1.18 mmol",
+          "registry_name": "Ethyl 1-(1-(benzyloxy)-1-oxopropan-2-yl)-1H-imidazole-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(5-(Ethoxycarbonyl)-1H-imidazol-1-yl)propanoic acid",
+          "symbol": "1f",
+          "amount": "230 mg",
+          "registry_name": "2-(5-(Ethoxycarbonyl)-1H-imidazol-1-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd/C (5% w/w Pd)",
+          "symbol": null,
+          "amount": "130 mg (5% weight of Pd, 0.059 mmol, 5 mol%)"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "H2",
+          "symbol": null,
+          "amount": "sparged from balloon (needle for 10 min), then reaction under H2"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH",
+        "solvent_amount": "20 mL",
+        "temperature": "room temperature",
+        "time": "2 h",
+        "atmosphere": "H2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry32",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "formation of pyrazole (reported procedure)",
+      "substrates": [
+        {
+          "name": "but-3-yn-2-one",
+          "symbol": null,
+          "amount": "0.70 mL, 9 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(1H-Pyrazol-3-yl)ethan-1-one",
+          "symbol": "1g-1",
+          "amount": "979 mg",
+          "registry_name": "1-(1H-Pyrazol-3-yl)ethan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "trimethylsilyldiazomethane (2 M in hexane)",
+          "symbol": null,
+          "amount": "4.5 mL, 2 M in hexane, 9 mmol, 1 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "7.5 mL",
+        "temperature": "ice bath then room temperature",
+        "time": "3 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "NonGP-Entry33",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "N-alkylation",
+      "substrates": [
+        {
+          "name": "1-(1H-Pyrazol-3-yl)ethan-1-one",
+          "symbol": "1g-1",
+          "amount": "945 mg, 8.6 mmol",
+          "registry_name": "1-(1H-Pyrazol-3-yl)ethan-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "benzyl 2-bromopropionate",
+          "symbol": null,
+          "amount": "2.50 g, 10.3 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl 2-(3-acetyl-1H-pyrazol-1-yl)propanoate",
+          "symbol": "1g-2",
+          "amount": "1.93 g",
+          "registry_name": "Benzyl 2-(3-acetyl-1H-pyrazol-1-yl)propanoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "1.42 g, 10.3 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "acetonitrile",
+        "solvent_amount": "65 mL (substrate solution) + 15 mL (electrophile solution)",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "NonGP-Entry34",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "hydrogenation",
+      "substrates": [
+        {
+          "name": "Benzyl 2-(3-acetyl-1H-pyrazol-1-yl)propanoate",
+          "symbol": "1g-2",
+          "amount": "912 mg, 3.35 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(3-Acetyl-1H-pyrazol-1-yl)propanoic acid",
+          "symbol": "1g",
+          "amount": "600 mg",
+          "registry_name": "2-(3-Acetyl-1H-pyrazol-1-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd/C",
+          "symbol": null,
+          "amount": "356 mg, 5% weight of Pd, 0.168 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "H2",
+          "symbol": null,
+          "amount": "sparged for 10 min (balloon)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOAc",
+        "solvent_amount": "20 mL",
+        "temperature": null,
+        "time": "2 h",
+        "atmosphere": "H2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry35",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "N-alkylation",
+      "substrates": [
+        {
+          "name": "indole",
+          "symbol": null,
+          "amount": "3.51 g, 30 mmol"
+        },
+        {
+          "name": "2-bromopropionic acid",
+          "symbol": null,
+          "amount": "2.8 mL, 31.5 mmol, 1.05 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1H-Indol-1-yl)propanoic acid",
+          "symbol": "1h",
+          "amount": "3.05 g",
+          "registry_name": "2-(1H-Indol-1-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "3.0 g, 60% in mineral oil, 75 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "40 mL",
+        "temperature": "0 °C (initially) then room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry36",
+      "source_pages": [
+        35,
+        36
+      ],
+      "reaction_type": "N-alkylation",
+      "substrates": [
+        {
+          "name": "1H-pyrrolo[2,3-b]pyridine",
+          "symbol": null,
+          "amount": "1.77 g, 15 mmol"
+        },
+        {
+          "name": "2-bromopropionic acid",
+          "symbol": null,
+          "amount": "1.42 mL, 15.75 mmol, 1.05 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1H-Pyrrolo[2,3-b]pyridin-1-yl)propanoic acid",
+          "symbol": "1i",
+          "amount": "889 mg",
+          "registry_name": "2-(1H-Pyrrolo[2,3-b]pyridin-1-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.5 g, 60% in mineral oil, 37.5 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "20 mL",
+        "temperature": "0 °C (initially) then room temperature",
+        "time": "5 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "31%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry37",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "N-alkylation",
+      "substrates": [
+        {
+          "name": "theophylline",
+          "symbol": null,
+          "amount": "910 mg, 5.05 mmol"
+        },
+        {
+          "name": "benzyl 2-bromopropionate",
+          "symbol": null,
+          "amount": "910 mg, 5.05 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Benzyl 2-(1,3-dimethyl-2,6-dioxo-1,2,3,6-tetrahydro-7H-purin-7-yl)propanoate",
+          "symbol": "1j-1",
+          "amount": "1.73 g",
+          "registry_name": "Benzyl 2-(1,3-dimethyl-2,6-dioxo-1,2,3,6-tetrahydro-7H-purin-7-yl)propanoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "2.0 g, 6.06 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "20 mL",
+        "temperature": "room temperature",
+        "time": "2 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "NonGP-Entry38",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "hydrogenation",
+      "substrates": [
+        {
+          "name": "Benzyl 2-(1,3-dimethyl-2,6-dioxo-1,2,3,6-tetrahydro-7H-purin-7-yl)propanoate",
+          "symbol": "1j-1",
+          "amount": "856 mg, 2.5 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1,3-Dimethyl-2,6-dioxo-1,2,3,6-tetrahydro-7H-purin-7-yl)propanoic acid",
+          "symbol": "1j",
+          "amount": "574 mg",
+          "registry_name": "2-(1,3-Dimethyl-2,6-dioxo-1,2,3,6-tetrahydro-7H-purin-7-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd/C",
+          "symbol": null,
+          "amount": "266 mg, 5% weight of Pd, 0.125 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "H2",
+          "symbol": null,
+          "amount": "sparged for 10 min (balloon)"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOH",
+        "solvent_amount": "10 mL",
+        "temperature": null,
+        "time": "2 h",
+        "atmosphere": "H2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "NonGP-Entry39",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "carbazole",
+          "symbol": null,
+          "amount": "5.02 g, 30 mmol"
+        },
+        {
+          "name": "2-bromopropionic acid",
+          "symbol": null,
+          "amount": "2.8 mL, 31.5 mmol, 1.05 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(9H-Carbazol-9-yl)propanoic acid",
+          "symbol": "1k",
+          "amount": "7.18 g",
+          "registry_name": "2-(9H-Carbazol-9-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH (60% in mineral oil)",
+          "symbol": null,
+          "amount": "3.0 g, 75 mmol, 2.5 equiv."
+        },
+        {
+          "name": "10% aqueous HCl",
+          "symbol": null,
+          "amount": "to acidify to pH < 1"
+        },
+        {
+          "name": "MgSO4",
+          "symbol": null,
+          "amount": "drying agent"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "40 mL",
+        "temperature": "ice bath during NaH addition then room temperature",
+        "time": "30 min (ice) then 15 h (rt)",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1k-37"
+    },
+    {
+      "id": "NonGP-Entry40",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "phthalic anhydride",
+          "symbol": null,
+          "amount": "1.48 g, 10 mmol"
+        },
+        {
+          "name": "(±)-alanine",
+          "symbol": null,
+          "amount": "0.9 g, 10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1,3-Dioxoisoindolin-2-yl)propanoic acid",
+          "symbol": "1l",
+          "amount": "560 mg",
+          "registry_name": "2-(1,3-Dioxoisoindolin-2-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "AcOH",
+        "solvent_amount": "22 mL",
+        "temperature": "reflux",
+        "time": "2 h",
+        "atmosphere": "air",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "26%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1l-37"
+    },
+    {
+      "id": "NonGP-Entry41",
+      "source_pages": [
+        37,
+        38
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(±)-norleucine",
+          "symbol": null,
+          "amount": "4.59 g, 35 mmol"
+        },
+        {
+          "name": "2,5-dimethoxytetrahydrofuran",
+          "symbol": null,
+          "amount": "4.5 mL, 35 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1H-Pyrrol-1-yl)hexanoic acid",
+          "symbol": "1n",
+          "amount": "4.21 g",
+          "registry_name": "2-(1H-Pyrrol-1-yl)hexanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaOAc",
+          "symbol": null,
+          "amount": "2.87 g, 35 mmol, 1 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "degassed water / acetic acid / 1,2-dichloroethane",
+        "solvent_amount": "15 mL (degassed water), 5 mL (AcOH), 21 mL (1,2-dichloroethane)",
+        "temperature": "90 °C",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1n-37-38"
+    },
+    {
+      "id": "NonGP-Entry42",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(±)-phenylalanine",
+          "symbol": null,
+          "amount": "5.78 g, 35 mmol"
+        },
+        {
+          "name": "2,5-dimethoxytetrahydrofuran",
+          "symbol": null,
+          "amount": "4.5 mL, 35 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Phenyl-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": "1o",
+          "amount": "2.85 g",
+          "registry_name": "3-Phenyl-2-(1H-pyrrol-1-yl)propanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "water / acetic acid / 1,2-dichloroethane",
+        "solvent_amount": "35 mL (water), 18 mL (AcOH), 55 mL (1,2-dichloroethane)",
+        "temperature": "80 °C",
+        "time": "45 min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "38%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1o-38"
+    },
+    {
+      "id": "NonGP-Entry43",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(±)-valine",
+          "symbol": null,
+          "amount": "2.93 g, 25 mmol"
+        },
+        {
+          "name": "2,5-dimethoxytetrahydrofuran",
+          "symbol": null,
+          "amount": "3.25 mL, 25 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Methyl-2-(1H-pyrrol-1-yl)butanoic acids",
+          "symbol": "1p",
+          "amount": "4.18 g",
+          "registry_name": "3-Methyl-2-(1H-pyrrol-1-yl)butanoic acids",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "acetic acid",
+        "solvent_amount": "50 mL",
+        "temperature": "80 °C",
+        "time": "30 min",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "48%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1p-38"
+    },
+    {
+      "id": "NonGP-Entry44",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "literature procedure",
+      "substrates": [
+        {
+          "name": "(±)-glutamic acid δ-methyl ester",
+          "symbol": null,
+          "amount": "1.61 g, 10 mmol"
+        },
+        {
+          "name": "2,5-dimethoxytetrahydrofuran",
+          "symbol": null,
+          "amount": "1.4 mL, 11 mmol, 1.1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Methoxy-5-oxo-2-(1H-pyrrol-1-yl)pentanoic acid",
+          "symbol": "1q",
+          "amount": "822 mg",
+          "registry_name": "5-Methoxy-5-oxo-2-(1H-pyrrol-1-yl)pentanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "acetic acid",
+          "symbol": null,
+          "amount": "57 μL, 1 mmol, 10 mol%"
+        }
+      ],
+      "conditions": {
+        "solvent": "water and 1,2-dichloroethane",
+        "solvent_amount": "15 mL and 15 mL",
+        "temperature": "reflux",
+        "time": "1 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "39%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry45",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "1H-pyrrolo[2,3-b]pyridine",
+          "symbol": null,
+          "amount": "1.77 g, 15 mmol"
+        },
+        {
+          "name": "2-bromohexanoic acid",
+          "symbol": null,
+          "amount": "2.24 mL, 15.8 mmol, 1.05 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1H-Pyrrolo[2,3-b]pyridin-1-yl)hexanoic acid",
+          "symbol": "1r",
+          "amount": "2.35 g",
+          "registry_name": "2-(1H-Pyrrolo[2,3-b]pyridin-1-yl)hexanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH (60% in mineral oil)",
+          "symbol": null,
+          "amount": "1.50 g, 37.5 mmol, 2.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "20 mL",
+        "temperature": "ice bath during NaH addition, then room temperature",
+        "time": "15 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "(S)-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "41.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(1H-Pyrrol-1-yl)ethyl)benzonitrile",
+          "symbol": "2a",
+          "amount": "31.4 mg",
+          "registry_name": "(S)-4-(1-(1H-Pyrrol-1-yl)ethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": "77:23",
+        "dr": null
+      },
+      "_original_id": "R1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        40,
+        41
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "182.0 mg, 1 mmol"
+        },
+        {
+          "name": "(S)-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "158.6 mg, 1.14 mmol, 1.14 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(1H-Pyrrol-1-yl)ethyl)benzonitrile",
+          "symbol": "2a",
+          "amount": "175.3 mg",
+          "registry_name": "(S)-4-(1-(1H-Pyrrol-1-yl)ethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "30.9 mg, 0.1 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "31.6 mg, 0.04 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "371.4 mg, 1.14 mmol, 1.14 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "25 mL",
+        "temperature": "room temperature",
+        "time": "20 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": "77:23",
+        "dr": null
+      },
+      "_original_id": "R2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "2-(2-acetyl-1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "54.4 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(2-Acetyl-1H-pyrrol-1-yl)ethyl)benzonitrile",
+          "symbol": "2b",
+          "amount": "23.8 mg",
+          "registry_name": "(S)-4-(1-(2-Acetyl-1H-pyrrol-1-yl)ethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "12.6 mg, 0.016 mmol, 8 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "64 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": null,
+        "er": "92:8",
+        "dr": null
+      },
+      "_original_id": "R3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "2-(2-(methoxycarbonyl)-1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "59.2 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (S)-1-(1-(4-cyanophenyl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "2c",
+          "amount": "34.1 mg",
+          "registry_name": "Methyl (S)-1-(1-(4-cyanophenyl)ethyl)-1H-pyrrole-2-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "40 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": "72:28",
+        "dr": null
+      },
+      "_original_id": "R4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry5",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "2-(2-(pyridine-2-yl)-1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "47.6 mg, 0.22 mmol, 1.1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(2-(Pyridin-2-yl)-1H-pyrrol-1-yl)ethyl)benzonitrile",
+          "symbol": "2e",
+          "amount": "12.3 mg",
+          "registry_name": "(S)-4-(1-(2-(Pyridin-2-yl)-1H-pyrrol-1-yl)ethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "64 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "22%",
+        "ee": null,
+        "er": "85:15",
+        "dr": null
+      },
+      "_original_id": "rxn-2e"
+    },
+    {
+      "id": "GeneralProcedureA-Entry6",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "2-(3-acetyl-1H-pyrazol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "54.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(3-Acetyl-1H-pyrazol-1-yl)ethyl)benzonitrile",
+          "symbol": "2g",
+          "amount": "27.4 mg",
+          "registry_name": "(S)-4-(1-(3-Acetyl-1H-pyrazol-1-yl)ethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "64 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": "68:32",
+        "dr": null
+      },
+      "_original_id": "rxn-2g"
+    },
+    {
+      "id": "GeneralProcedureA-Entry7",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "2-(1H-indol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "56.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(1H-Indol-1-yl)ethyl)benzonitrile",
+          "symbol": "2h",
+          "amount": "37.7 mg",
+          "registry_name": "(S)-4-(1-(1H-Indol-1-yl)ethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": "71:29",
+        "dr": null
+      },
+      "_original_id": "rxn-2h"
+    },
+    {
+      "id": "GeneralProcedureA-Entry8",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "2-(1H-pyrrolo[2,3-b]pyridin-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "57.1 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(1H-Pyrrolo[2,3-b]pyridin-1-yl)ethyl)benzonitrile",
+          "symbol": "2i",
+          "amount": "32.2 mg",
+          "registry_name": "(S)-4-(1-(1H-Pyrrolo[2,3-b]pyridin-1-yl)ethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "40 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": "83:17",
+        "dr": null
+      },
+      "_original_id": "rxn-2i"
+    },
+    {
+      "id": "GeneralProcedureA-Entry9",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "2-(1,3-dimethyl-2,6-dioxo-1,2,3,6-tetrahydro-7H-purin-7-yl)propanoic acid",
+          "symbol": null,
+          "amount": "75.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(1,3-Dimethyl-2,6-dioxo-1,2,3,6-tetrahydro-7H-purin-7-yl)ethyl)benzonitrile",
+          "symbol": "2j",
+          "amount": "16.7 mg",
+          "registry_name": "(S)-4-(1-(1,3-Dimethyl-2,6-dioxo-1,2,3,6-tetrahydro-7H-purin-7-yl)ethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "64 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "27%",
+        "ee": null,
+        "er": "77:23",
+        "dr": null
+      },
+      "_original_id": "reaction-2j"
+    },
+    {
+      "id": "GeneralProcedureA-Entry10",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "2-(9H-carbazol-9-yl)propanoic acid",
+          "symbol": null,
+          "amount": "71.8 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(9H-Carbazol-9-yl)ethyl)benzonitrile",
+          "symbol": "2k",
+          "amount": "40.4 mg",
+          "registry_name": "(S)-4-(1-(9H-Carbazol-9-yl)ethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": "57:43",
+        "dr": null
+      },
+      "_original_id": "reaction-2k"
+    },
+    {
+      "id": "GeneralProcedureA-Entry11",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        44,
+        45
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "2-(1H-pyrrol-1-yl)hexanoic acid",
+          "symbol": null,
+          "amount": "54.4 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(1H-Pyrrol-1-yl)pentyl)benzonitrile",
+          "symbol": "2n",
+          "amount": "47.6 mg",
+          "registry_name": "(S)-4-(1-(1H-Pyrrol-1-yl)pentyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": "77:23",
+        "dr": null
+      },
+      "_original_id": "reaction-2n"
+    },
+    {
+      "id": "GeneralProcedureA-Entry12",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        45
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "3-phenyl-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "64.6 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(2-Phenyl-1-(1H-pyrrol-1-yl)ethyl)benzonitrile",
+          "symbol": "2o",
+          "amount": "47.5 mg",
+          "registry_name": "(S)-4-(2-Phenyl-1-(1H-pyrrol-1-yl)ethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": "71:29",
+        "dr": null
+      },
+      "_original_id": "reaction-2o"
+    },
+    {
+      "id": "GeneralProcedureA-Entry13",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        45
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "3-methyl-2-(1H-pyrrol-1-yl)butanoic acid",
+          "symbol": null,
+          "amount": "50.2 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(2-Methyl-1-(1H-pyrrol-1-yl)propyl)benzonitrile",
+          "symbol": "2p",
+          "amount": "28.1 mg",
+          "registry_name": "(S)-4-(2-Methyl-1-(1H-pyrrol-1-yl)propyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": null,
+        "er": "55:45",
+        "dr": null
+      },
+      "_original_id": "reaction-2p"
+    },
+    {
+      "id": "GeneralProcedureA-Entry14",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "(S)-5-methoxy-5-oxo-2-(1H-pyrrol-1-yl)pentanoic acid",
+          "symbol": null,
+          "amount": "63.4 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (S)-4-(4-cyanophenyl)-4-(1H-pyrrol-1-yl)butanoate",
+          "symbol": "2q",
+          "amount": "46.4 mg",
+          "registry_name": "Methyl (S)-4-(4-cyanophenyl)-4-(1H-pyrrol-1-yl)butanoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "40 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": null,
+        "er": "79:21",
+        "dr": null
+      },
+      "_original_id": "2q"
+    },
+    {
+      "id": "GeneralProcedureA-Entry15",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "2-(1H-pyrrolo[2,3-b]pyridin-1-yl)hexanoic acid",
+          "symbol": null,
+          "amount": "69.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(1H-Pyrrolo[2,3-b]pyridin-1-yl)pentyl)benzonitrile",
+          "symbol": "2r",
+          "amount": "35.6 mg",
+          "registry_name": "(S)-4-(1-(1H-Pyrrolo[2,3-b]pyridin-1-yl)pentyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "64 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": null,
+        "er": "82:18",
+        "dr": null
+      },
+      "_original_id": "2r"
+    },
+    {
+      "id": "GeneralProcedureA-Entry16",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        46,
+        47
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4’-bromoacetophenone",
+          "symbol": null,
+          "amount": "39.8 mg, 0.2 mmol"
+        },
+        {
+          "name": "(S)-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "41.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(4-(1-(1H-Pyrrol-1-yl)ethyl)phenyl)ethan-1-one",
+          "symbol": "2s",
+          "amount": "37.5 mg",
+          "registry_name": "(S)-1-(4-(1-(1H-Pyrrol-1-yl)ethyl)phenyl)ethan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": "78:22",
+        "dr": null
+      },
+      "_original_id": "2s"
+    },
+    {
+      "id": "GeneralProcedureA-Entry17",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4-bromobenzaldehyde",
+          "symbol": null,
+          "amount": "37.0 mg, 0.2 mmol"
+        },
+        {
+          "name": "(S)-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "41.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-(1-(1H-Pyrrol-1-yl)ethyl)benzaldehyde",
+          "symbol": "2t",
+          "amount": "32.4 mg",
+          "registry_name": "(S)-4-(1-(1H-Pyrrol-1-yl)ethyl)benzaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": "79:21",
+        "dr": null
+      },
+      "_original_id": "2t"
+    },
+    {
+      "id": "GeneralProcedureA-Entry18",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "2-(4-bromophenyl)benzo[d]thiazole",
+          "symbol": null,
+          "amount": "58.0 mg, 0.2 mmol"
+        },
+        {
+          "name": "(S)-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "41.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(4-(1-(1H-Pyrrol-1-yl)ethyl)phenyl)benzo[d]thiazole",
+          "symbol": "2u",
+          "amount": "50.1 mg",
+          "registry_name": "(S)-2-(4-(1-(1H-Pyrrol-1-yl)ethyl)phenyl)benzo[d]thiazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": "77:23",
+        "dr": null
+      },
+      "_original_id": "2u"
+    },
+    {
+      "id": "GeneralProcedureA-Entry19",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "2-(4-bromophenyl)-1,3,4-oxadiazole",
+          "symbol": null,
+          "amount": "45.0 mg, 0.2 mmol"
+        },
+        {
+          "name": "(S)-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "41.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(4-(1-(1H-Pyrrol-1-yl)ethyl)phenyl)-1,3,4-oxadiazole",
+          "symbol": "2v",
+          "amount": "35.8 mg",
+          "registry_name": "(S)-2-(4-(1-(1H-Pyrrol-1-yl)ethyl)phenyl)-1,3,4-oxadiazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": "76:24",
+        "dr": null
+      },
+      "_original_id": "reaction-2v-48"
+    },
+    {
+      "id": "GeneralProcedureA-Entry20",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "2-bromobenzonitrile",
+          "symbol": null,
+          "amount": "36.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "(S)-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "41.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(1-(1H-Pyrrol-1-yl)ethyl)benzonitrile",
+          "symbol": "2w",
+          "amount": "9.0 mg",
+          "registry_name": "(S)-2-(1-(1H-Pyrrol-1-yl)ethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "23%",
+        "ee": null,
+        "er": "78:22",
+        "dr": null
+      },
+      "_original_id": "reaction-2w-48"
+    },
+    {
+      "id": "GeneralProcedureA-Entry21",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "1-bromo-3,5-bis(trifluoromethyl)benzene",
+          "symbol": null,
+          "amount": "35 μL, 0.2 mmol"
+        },
+        {
+          "name": "(S)-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "41.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(1-(3,5-Bis(trifluoromethyl)phenyl)ethyl)-1H-pyrrole",
+          "symbol": "2x",
+          "amount": "40.8 mg",
+          "registry_name": "(S)-1-(1-(3,5-Bis(trifluoromethyl)phenyl)ethyl)-1H-pyrrole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": null,
+        "er": "64:36",
+        "dr": null
+      },
+      "_original_id": "reaction-2x-48"
+    },
+    {
+      "id": "GeneralProcedureA-Entry22",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "2-bromopyridine",
+          "symbol": null,
+          "amount": "19 μL, 0.2 mmol"
+        },
+        {
+          "name": "(S)-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "41.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(1-(1H-Pyrrol-1-yl)ethyl)pyridine",
+          "symbol": "2y",
+          "amount": "16.2 mg",
+          "registry_name": "2-(1-(1H-Pyrrol-1-yl)ethyl)pyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "15 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "47%",
+        "ee": null,
+        "er": "59:41",
+        "dr": null
+      },
+      "_original_id": "reaction-2y-49"
+    },
+    {
+      "id": "GeneralProcedureA-Entry23",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "bromobenzene",
+          "symbol": null,
+          "amount": "21 μL, 0.2 mmol"
+        },
+        {
+          "name": "(S)-2-(1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "41.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(1-Phenylethyl)-1H-pyrrole",
+          "symbol": "2z",
+          "amount": "3.3 mg",
+          "registry_name": "(S)-1-(1-Phenylethyl)-1H-pyrrole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "64 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "10%",
+        "ee": null,
+        "er": "70:30",
+        "dr": null
+      },
+      "_original_id": "reaction-2z-49"
+    },
+    {
+      "id": "GeneralProcedureA-Entry24",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "photoredox nickel-catalyzed decarboxylative arylation (decarboxylative cross-coupling of carboxylic acids with aryl bromides)",
+      "substrates": [
+        {
+          "name": "4’-bromoacetophenone",
+          "symbol": null,
+          "amount": "39.8 mg, 0.2 mmol"
+        },
+        {
+          "name": "(S)-2-(2-acetyl1H-pyrrol-1-yl)propanoic acid",
+          "symbol": null,
+          "amount": "54.4 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-1-(4-(1-(2-Acetyl-1H-pyrrol-1-yl)ethyl)phenyl)ethan-1-one",
+          "symbol": "2ab",
+          "amount": "17.6 mg",
+          "registry_name": "(S)-1-(4-(1-(2-Acetyl-1H-pyrrol-1-yl)ethyl)phenyl)ethan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "NiBr2 DME",
+          "symbol": null,
+          "amount": "6.2 mg, 0.02 mmol, 10 mol%"
+        },
+        {
+          "name": "2,4,5,6-Tetra(carbazol-9-yl)isophthalonitrile",
+          "symbol": "4CzIPN",
+          "amount": "6.3 mg, 0.008 mmol, 4 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S)-4-(tert-Butyl)-2-(3-methylpyridin-2-yl)-4,5-dihydrooxazole",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "97.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry acetone",
+        "solvent_amount": "2 mL then 3 mL",
+        "temperature": "room temperature",
+        "time": "64 h",
+        "atmosphere": "N2 (three cycles of freeze–pump–thaw then refilled with N2)",
+        "light_source": "blue light irradiation",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": null,
+        "er": "94:6",
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/enantioselective-synthesis-of-n-benzylic-heteroc_38591b18.json",
+    "input_sha256": "5c8a5d3e7b33a781a9af524037721f374ffae3b09cc92c8f1a67b8009563a915"
+  }
+}

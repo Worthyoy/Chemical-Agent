@@ -1,0 +1,2125 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0a17d3f031913d76399c25c4e6f35214.pdf",
+  "paper_key": "0a17d3f031913d76399c25c4e6f35214",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0a17d3f031913d76399c25c4e6f35214.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0a17d3f031913d76399c25c4e6f35214.pdf",
+    "source_mtime_ns": 1782048793000000000,
+    "source_size": 635133,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "two_column",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "0a17d3f031913d76399c25c4e6f35214",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0a17d3f031913d76399c25c4e6f35214.pdf"
+  },
+  "extracted_at": "2026-07-18T02:29:51.717564",
+  "total_reactions": 38,
+  "filtered_reactions": 38,
+  "filter_stats": {
+    "input_reactions": 38,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 38
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedure_synthesis_of_2_alkylidene_1-Entry1",
+      "_gp_source": "GeneralProcedure_synthesis_of_2_alkylidene_1",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "hydrazone formation (condensation of hydrazine 4 with an aldehyde)",
+      "substrates": [
+        {
+          "name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": "0.316 g, 1.0 mmol",
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "respective aldehyde",
+          "symbol": null,
+          "amount": "1.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-alkylidene-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8a–e",
+          "amount": null,
+          "registry_name": "2-alkylidene-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazines",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "acetonitrile",
+        "solvent_amount": "15 mL",
+        "temperature": "room temperature",
+        "time": "40–50 min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69–81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedure_involves_the_addition_of_1_2_equivalent_dib_at_room_temperature-Entry1",
+      "_gp_source": "GeneralProcedure_involves_the_addition_of_1_2_equivalent_dib_at_room_temperature",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "DIB-mediated oxidative cyclization of a hydrazone (condensation of hydrazine 4 with an aldehyde followed by oxidative cyclization to give tricyclic pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidines)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "hydrazine 4",
+          "symbol": "4",
+          "amount": null,
+          "step": 1,
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "respective aldehyde",
+          "symbol": null,
+          "amount": null,
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "compound 8",
+          "symbol": "8",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(7-alkyl-4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9a–e",
+          "amount": null,
+          "step": 2,
+          "registry_name": "5-(7-alkyl-4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidines",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DIB",
+          "symbol": null,
+          "amount": "1.2 equivalents",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dichloromethane"
+          },
+          {
+            "step": 2,
+            "value": "dichloromethane"
+          }
+        ],
+        "solvent_amount": [],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 2,
+            "value": "20–30 min (from isolated 8) or 50–55 min (one-pot from 4 + aldehyde)"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "64–79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedure_involves_the_addition_of_1_2_equivalent_dib_at_room_temperature-Entry2",
+      "_gp_source": "GeneralProcedure_involves_the_addition_of_1_2_equivalent_dib_at_room_temperature",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "DIB-mediated oxidative cyclization of a hydrazone (one-pot from hydrazine 4 and aldehyde followed by oxidative cyclization to give tricyclic pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidines)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "hydrazine 4",
+          "symbol": "4",
+          "amount": null,
+          "step": 1,
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "respective aldehyde",
+          "symbol": null,
+          "amount": null,
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "compound 8",
+          "symbol": "8",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(7-alkyl-4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9a–e",
+          "amount": null,
+          "step": 2,
+          "registry_name": "5-(7-alkyl-4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidines",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DIB",
+          "symbol": null,
+          "amount": "1.2 equivalents",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dichloromethane"
+          },
+          {
+            "step": 2,
+            "value": "dichloromethane"
+          }
+        ],
+        "solvent_amount": [],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 2,
+            "value": "20–30 min (from isolated 8) or 50–55 min (one-pot from 4 + aldehyde)"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "69–81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "cyclo-condensation of hydrazine 4 with triethyl orthoesters to give tricyclic pyrazolo-triazolo-pyrimidines",
+      "substrates": [
+        {
+          "name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": null,
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "various triethyl orthoesters",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(7-alkyl-4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9f–i",
+          "amount": null,
+          "registry_name": "5-(7-alkyl-4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidinederivatives",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "ethanol",
+        "solvent_amount": null,
+        "temperature": "reflux",
+        "time": "3–4 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69–78%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "condensation of 4-amino-1-methyl-3-propyl-1H-pyrazole-5-carboxamide (1) with 4-chlorobenzaldehyde in the presence of iodine to give pyrazolopyrimidinone 2",
+      "substrates": [
+        {
+          "name": "4-amino-1-methyl-3-propyl-1H-pyrazole-5-carboxamide",
+          "symbol": "1",
+          "amount": "0.182 g, 1.0 mmol",
+          "registry_name": "4-amino-1-methyl-3-propyl-1H-pyrazole-5-carboxamide",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "4-chlorobenzaldehyde",
+          "symbol": null,
+          "amount": "0.140 g, 1.0 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7(6H)-one",
+          "symbol": "2",
+          "amount": "0.248 g",
+          "registry_name": "pyrazolopyrimidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "iodine",
+          "symbol": null,
+          "amount": "0.304 g, 1.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "acetonitrile",
+        "solvent_amount": "15 mL",
+        "temperature": "room temperature then reflux",
+        "time": "2.5 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "chlorination of pyrazolopyrimidinone 2 with phosphorus oxychloride to give 7-chloro derivative 3",
+      "substrates": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7(6H)-one",
+          "symbol": "2",
+          "amount": "0.302 g, 1.0 mmol",
+          "registry_name": "pyrazolopyrimidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Chloro-5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "symbol": "3",
+          "amount": "0.253 g",
+          "registry_name": "7-chloro-5-(4-chloro phenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "phosphorus oxychloride",
+        "solvent_amount": "10 mL",
+        "temperature": "reflux",
+        "time": "4 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        4,
+        5
+      ],
+      "reaction_type": "SNAr displacement of 7-chloro pyrazolopyrimidine 3 with hydrazine hydrate to give hydrazine derivative 4",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "symbol": "3",
+          "amount": "0.321 g, 1.0 mmol",
+          "registry_name": "7-chloro-5-(4-chloro phenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": "0.240 g",
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "hydrazine hydrate",
+          "symbol": null,
+          "amount": "0.075 mL, 1.5 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "ethanol",
+        "solvent_amount": "15 mL",
+        "temperature": "reflux",
+        "time": "1.5 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling of 7-chloro pyrazolopyrimidine 3 with phenylboronic acid to give arylated product 5a",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "symbol": "3",
+          "amount": "0.321 g, 1.0 mmol",
+          "registry_name": "7-chloro-5-(4-chloro phenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "phenylboronic acid",
+          "symbol": null,
+          "amount": "0.146 g, 1.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-7-phenyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "symbol": "5a",
+          "amount": "0.257 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "tetrakis(triphenylphosphine)palladium",
+          "symbol": "Pd(Ph3P)4",
+          "amount": "0.058 g, 0.05 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "anhydrous K2CO3",
+          "symbol": null,
+          "amount": "0.276 g, 2.0 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "20 mL",
+        "temperature": "80 °C",
+        "time": "5–6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn8"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling of 7-chloro pyrazolopyrimidine 3 with 2-methoxyphenylboronic acid to give arylated product 5b",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "symbol": "3",
+          "amount": "0.321 g, 1.0 mmol",
+          "registry_name": "7-chloro-5-(4-chloro phenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "2-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.182 g, 1.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-7-(2-methoxyphenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "symbol": "5b",
+          "amount": "0.286 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "tetrakis(triphenylphosphine)palladium",
+          "symbol": "Pd(Ph3P)4",
+          "amount": "0.058 g, 0.05 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "anhydrous K2CO3",
+          "symbol": null,
+          "amount": "0.276 g, 2.0 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "20 mL",
+        "temperature": "80 °C",
+        "time": "5–6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn9"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling of 7-chloro pyrazolopyrimidine 3 with 4-methylphenylboronic acid to give arylated product 5c",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "symbol": "3",
+          "amount": "0.321 g, 1.0 mmol",
+          "registry_name": "7-chloro-5-(4-chloro phenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "4-methylphenylboronic acid",
+          "symbol": null,
+          "amount": "0.163 g, 1.2 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-3-propyl-7-p-tolyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "symbol": "5c",
+          "amount": "0.241 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "tetrakis(triphenylphosphine)palladium",
+          "symbol": "Pd(Ph3P)4",
+          "amount": "0.058 g, 0.05 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "anhydrous K2CO3",
+          "symbol": null,
+          "amount": "0.276 g, 2.0 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,4-dioxane",
+        "solvent_amount": "20 mL",
+        "temperature": "80 °C",
+        "time": "5–6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn10"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "nucleophilic substitution of 7-chloro pyrazolopyrimidine 3 with glycine to give aminoacid-linked pyrazolopyrimidine 6a",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "symbol": "3",
+          "amount": "0.321 g, 1.0 mmol",
+          "registry_name": "7-chloro-5-(4-chloro phenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "glycine",
+          "symbol": null,
+          "amount": "0.083 g, 1.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)amino)acetic acid",
+          "symbol": "6a",
+          "amount": "0.283 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "anhydrous K2CO3",
+          "symbol": null,
+          "amount": "0.27 g, 2.0 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "dimethyl formamide",
+        "solvent_amount": null,
+        "temperature": "room temperature",
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn11"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "nucleophilic substitution of 7-chloro pyrazolopyrimidine 3 with alanine to give aminoacid-linked pyrazolopyrimidine 6b",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "symbol": "3",
+          "amount": "0.321 g, 1.0 mmol",
+          "registry_name": "7-chloro-5-(4-chloro phenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "alanine",
+          "symbol": null,
+          "amount": "0.098 g, 1.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)amino)propanoic acid",
+          "symbol": "6b",
+          "amount": "0.302 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "anhydrous K2CO3",
+          "symbol": null,
+          "amount": "0.27 g, 2.0 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "dimethyl formamide",
+        "solvent_amount": null,
+        "temperature": "room temperature",
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn12"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "nucleophilic substitution of 7-chloro pyrazolopyrimidine 3 with valine to give aminoacid-linked pyrazolopyrimidine 6c",
+      "substrates": [
+        {
+          "name": "7-Chloro-5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "symbol": "3",
+          "amount": "0.321 g, 1.0 mmol",
+          "registry_name": "7-chloro-5-(4-chloro phenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "valine",
+          "symbol": null,
+          "amount": "0.129 g, 1.1 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)amino)-3-methylbutanoic acid",
+          "symbol": "6c",
+          "amount": "0.293 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "anhydrous K2CO3",
+          "symbol": null,
+          "amount": "0.27 g, 2.0 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "dimethyl formamide",
+        "solvent_amount": null,
+        "temperature": "room temperature",
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn13"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "cyclization of open-chain aminoacid-linked pyrazolopyrimidines 6a–d with SOCl2 to give imidazo-fused pyrazolopyrimidines 7a–d",
+      "substrates": [
+        {
+          "name": "open chain aminoacid-linked pyrazolopyrimidines",
+          "symbol": "6a–d",
+          "amount": null,
+          "registry_name": "2-((5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)amino) acids",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(8-alkyl-4-chlorophenyl)-1-methyl-3-propyl-1H-imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one",
+          "symbol": "7a–d",
+          "amount": null,
+          "registry_name": "5-(8-alkyl-4-chlorophenyl)-1-methyl-3-propyl-1H-imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "SOCl2",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "50–55 °C",
+        "time": "2–3 h"
+      },
+      "targets": {
+        "yield": "69–76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn14"
+    },
+    {
+      "id": "GeneralProcedure_synthesis_of_2-Entry1",
+      "_gp_source": "GeneralProcedure_synthesis_of_2",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Nucleophilic aromatic substitution (amination) of a 7-chloro-pyrazolo[4,3-d]pyrimidine with an amino acid to give 7-aminated amino acid derivatives",
+      "substrates": [
+        {
+          "name": "7-chloro-5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidine3",
+          "symbol": null,
+          "amount": "0.321g,1.0 mmole"
+        },
+        {
+          "name": "phenylalanine",
+          "symbol": null,
+          "amount": "0.182g,1.1mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)amino)-3-phenylpropanoic acid",
+          "symbol": "6d",
+          "amount": "0.346g",
+          "registry_name": "2-((5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)amino)-3-phenylpropanoic acid",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "anhydrous K2CO3",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r1"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Conversion of 6a to imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one via thionyl chloride",
+      "substrates": [
+        {
+          "name": "6a",
+          "symbol": "6a",
+          "amount": "1.0mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one",
+          "symbol": "7a",
+          "amount": "0.242g",
+          "registry_name": "5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "thionyl chloride",
+          "symbol": null,
+          "amount": "10mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "thionyl chloride",
+        "solvent_amount": "10mL",
+        "temperature": "50–55°C",
+        "time": "2–3h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r2"
+    },
+    {
+      "id": "NonGP-Entry13",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Conversion of 6b to imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one via thionyl chloride",
+      "substrates": [
+        {
+          "name": "6b",
+          "symbol": "6b",
+          "amount": "1.0mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1,8-dimethyl-3-propyl-1H-imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one",
+          "symbol": "7b",
+          "amount": "0.245g",
+          "registry_name": "5-(4-Chlorophenyl)-1,8-dimethyl-3-propyl-1H-imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "thionyl chloride",
+          "symbol": null,
+          "amount": "10mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "thionyl chloride",
+        "solvent_amount": "10mL",
+        "temperature": "50–55°C",
+        "time": "2–3h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r3"
+    },
+    {
+      "id": "NonGP-Entry14",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Conversion of 6c to imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one via thionyl chloride",
+      "substrates": [
+        {
+          "name": "6c",
+          "symbol": "6c",
+          "amount": "1.0mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-8-isopropyl-1-methyl-3-propyl-1H-imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one",
+          "symbol": "7c",
+          "amount": "0.288g",
+          "registry_name": "5-(4-Chlorophenyl)-8-isopropyl-1-methyl-3-propyl-1H-imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "thionyl chloride",
+          "symbol": null,
+          "amount": "10mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "thionyl chloride",
+        "solvent_amount": "10mL",
+        "temperature": "50–55°C",
+        "time": "2–3h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r4"
+    },
+    {
+      "id": "NonGP-Entry15",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Conversion of 6d to imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one via thionyl chloride",
+      "substrates": [
+        {
+          "name": "2-((5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)amino)-3-phenylpropanoic acid",
+          "symbol": "6d",
+          "amount": "1.0mmole",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-8-benzyl-1-methyl-3-propyl-1H-imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one",
+          "symbol": "7d",
+          "amount": "0.328g",
+          "registry_name": "5-(4-Chlorophenyl)-8-benzyl-1-methyl-3-propyl-1H-imidazo[1,2-c]pyrazolo[3,4-e]pyrimidin-7(8H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "thionyl chloride",
+          "symbol": null,
+          "amount": "10mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "thionyl chloride",
+        "solvent_amount": "10mL",
+        "temperature": "50–55°C",
+        "time": "2–3h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r5"
+    },
+    {
+      "id": "NonGP-Entry16",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Condensation of 1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine (4) with an aldehyde to give 2-alkylidene-1-(...)-hydrazines",
+      "substrates": [
+        {
+          "name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": "0.316g, 1.0mmole",
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "isobutyraldehyde",
+          "symbol": null,
+          "amount": "0.092mL,1.0mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-alkylidene-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8a",
+          "amount": "0.288g",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "acetonitrile",
+        "solvent_amount": "15mL",
+        "temperature": "room temperature",
+        "time": "40–50min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r6"
+    },
+    {
+      "id": "NonGP-Entry17",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Condensation of 1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine (4) with 4-chlorobenzaldehyde to give a hydrazone",
+      "substrates": [
+        {
+          "name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": "0.316g, 1.0mmole",
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "4-chlorobenzaldehyde",
+          "symbol": null,
+          "amount": "0.141g, 1.0mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(4-Chlorobenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8b",
+          "amount": "0.302g",
+          "registry_name": "2-(4-Chlorobenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "acetonitrile",
+        "solvent_amount": "15mL",
+        "temperature": "room temperature",
+        "time": "40–50min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r7"
+    },
+    {
+      "id": "NonGP-Entry18",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "Condensation of 1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine (4) with 4-bromobenzaldehyde to give a hydrazone",
+      "substrates": [
+        {
+          "name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": "0.316g, 1.0mmole",
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "4-bromobenzaldehyde",
+          "symbol": null,
+          "amount": "0.184g, 1.0mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(4-Bromobenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8c",
+          "amount": "0.358g",
+          "registry_name": "2-(4-Bromobenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "acetonitrile",
+        "solvent_amount": "15mL",
+        "temperature": "room temperature",
+        "time": "40–50min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r8"
+    },
+    {
+      "id": "NonGP-Entry19",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "Condensation of 1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine (4) with 4-methoxybenzaldehyde to give a hydrazone",
+      "substrates": [
+        {
+          "name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": "0.316g, 1.0mmole",
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "4-methoxybenzaldehyde",
+          "symbol": null,
+          "amount": "0.137g,1.0mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(4-Methoxybenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8d",
+          "amount": "0.334g",
+          "registry_name": "2-(4-Methoxybenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "acetonitrile",
+        "solvent_amount": "15mL",
+        "temperature": "room temperature",
+        "time": "40–50min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r9"
+    },
+    {
+      "id": "NonGP-Entry20",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "Condensation of 1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine (4) with 3,4-dimethoxybenzaldehyde to give a hydrazone",
+      "substrates": [
+        {
+          "name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": "0.316g, 1.0mmole",
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "3,4-dimethoxybenzaldehyde",
+          "symbol": null,
+          "amount": "0.167g, 1.0mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(3,4-Dimethoxybenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8e",
+          "amount": "0.376g",
+          "registry_name": "2-(3,4-Dimethoxybenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "acetonitrile",
+        "solvent_amount": "15mL",
+        "temperature": "room temperature",
+        "time": "40–50min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r10"
+    },
+    {
+      "id": "NonGP-Entry21",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "Oxidative cyclization of hydrazone 8a with diacetoxyiodobenzene (DIB) in dichloromethane (Method ii)",
+      "substrates": [
+        {
+          "name": "2-(1-methylethylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8a",
+          "amount": "1.0mmole",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "original_name": "2-alkylidene-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "resolution_evidence": {
+            "product_name": "5-(4-Chlorophenyl)-1-methyl-7-(1-methylethyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+            "product_index": 0,
+            "reason": "Product 9a has a 7-(1-methylethyl) substituent derived one-to-one from the hydrazone alkylidene; maps to isopropylidene."
+          }
+        },
+        {
+          "name": "diacetoxyiodobenzene",
+          "symbol": "DIB",
+          "amount": "0.385g,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-7-(1-methylethyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9a",
+          "amount": "0.250g",
+          "registry_name": "5-(4-Chlorophenyl)-1-methyl-7-(1-methylethyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "20mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "20mL",
+        "temperature": "room temperature",
+        "time": "20–30min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r11"
+    },
+    {
+      "id": "NonGP-Entry22",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "Oxidative cyclization of hydrazone 8a with diacetoxyiodobenzene (DIB) in dichloromethane (Method iii)",
+      "substrates": [
+        {
+          "name": "2-(1-methylethylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8a",
+          "amount": "1.0mmole",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "original_name": "2-alkylidene-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "resolution_evidence": {
+            "product_name": "5-(4-Chlorophenyl)-1-methyl-7-(1-methylethyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+            "product_index": 0,
+            "reason": "Product 9a shows the isopropyl-derived substituent at C7, allowing assignment of the alkylidene as isopropylidene."
+          }
+        },
+        {
+          "name": "diacetoxyiodobenzene",
+          "symbol": "DIB",
+          "amount": "0.385g,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-7-(1-methylethyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9a",
+          "amount": "0.264g",
+          "registry_name": "5-(4-Chlorophenyl)-1-methyl-7-(1-methylethyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "20mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "20mL",
+        "temperature": "room temperature",
+        "time": "50–55min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r12"
+    },
+    {
+      "id": "NonGP-Entry23",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "Oxidative cyclization of hydrazone 8b with diacetoxyiodobenzene (DIB) in dichloromethane (Method ii)",
+      "substrates": [
+        {
+          "name": "2-(4-Chlorobenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8b",
+          "amount": "1.0mmole",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "diacetoxyiodobenzene",
+          "symbol": "DIB",
+          "amount": "0.385g,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-7-(4-chlorophenyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9b",
+          "amount": "0.345g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "20mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "20mL",
+        "temperature": "room temperature",
+        "time": "20–30min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r13"
+    },
+    {
+      "id": "NonGP-Entry24",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "Oxidative cyclization of hydrazone 8b with diacetoxyiodobenzene (DIB) in dichloromethane (Method iii)",
+      "substrates": [
+        {
+          "name": "2-(4-Chlorobenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8b",
+          "amount": "1.0mmole",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "diacetoxyiodobenzene",
+          "symbol": "DIB",
+          "amount": "0.385g,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-7-(4-chlorophenyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9b",
+          "amount": "0.353g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "20mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "20mL",
+        "temperature": "room temperature",
+        "time": "50–55min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r14"
+    },
+    {
+      "id": "NonGP-Entry25",
+      "source_pages": [
+        7,
+        8
+      ],
+      "reaction_type": "Oxidative cyclization of hydrazone 8c with diacetoxyiodobenzene (DIB) in dichloromethane (Method ii)",
+      "substrates": [
+        {
+          "name": "2-(4-Bromobenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8c",
+          "amount": "1.0mmole",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "diacetoxyiodobenzene",
+          "symbol": "DIB",
+          "amount": "0.385g,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-7-(4-bromophenyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9c",
+          "amount": "0.341g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "20mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "20mL",
+        "temperature": "room temperature",
+        "time": "20–30min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r15"
+    },
+    {
+      "id": "NonGP-Entry26",
+      "source_pages": [
+        7,
+        8
+      ],
+      "reaction_type": "Oxidative cyclization of hydrazone 8c with diacetoxyiodobenzene (DIB) in dichloromethane (Method iii)",
+      "substrates": [
+        {
+          "name": "2-(4-Bromobenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8c",
+          "amount": "1.0mmole",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "diacetoxyiodobenzene",
+          "symbol": "DIB",
+          "amount": "0.385g,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-7-(4-bromophenyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9c",
+          "amount": "0.355g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "20mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "20mL",
+        "temperature": "room temperature",
+        "time": "50–55min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r16"
+    },
+    {
+      "id": "NonGP-Entry27",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Oxidative cyclization of hydrazone 8d with diacetoxyiodobenzene (DIB) in dichloromethane (Method ii)",
+      "substrates": [
+        {
+          "name": "2-(4-Methoxybenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8d",
+          "amount": "1.0mmole",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "diacetoxyiodobenzene",
+          "symbol": "DIB",
+          "amount": "0.385g,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-7-(4-methoxyphenyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9d",
+          "amount": "0.277g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "20mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "20mL",
+        "temperature": "room temperature",
+        "time": "20–30min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r17"
+    },
+    {
+      "id": "NonGP-Entry28",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Oxidative cyclization of hydrazone 8d with diacetoxyiodobenzene (DIB) in dichloromethane (Method iii)",
+      "substrates": [
+        {
+          "name": "2-(4-Methoxybenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8d",
+          "amount": "1.0mmole",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "diacetoxyiodobenzene",
+          "symbol": "DIB",
+          "amount": "0.385g,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-7-(4-methoxyphenyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9d",
+          "amount": "0.298g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "20mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "20mL",
+        "temperature": "room temperature",
+        "time": "50–55min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r18"
+    },
+    {
+      "id": "NonGP-Entry29",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Oxidative cyclization of hydrazone 8e with diacetoxyiodobenzene (DIB) in dichloromethane (Method ii)",
+      "substrates": [
+        {
+          "name": "2-(3,4-Dimethoxybenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8e",
+          "amount": "1.0mmole",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "diacetoxyiodobenzene",
+          "symbol": "DIB",
+          "amount": "0.385g,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-7-(3,4-dimethoxyphenyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9e",
+          "amount": "0.332g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "20mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "20mL",
+        "temperature": "room temperature",
+        "time": "20–30min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r19"
+    },
+    {
+      "id": "NonGP-Entry30",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Oxidative cyclization of hydrazone 8e with diacetoxyiodobenzene (DIB) in dichloromethane (Method iii)",
+      "substrates": [
+        {
+          "name": "2-(3,4-Dimethoxybenzylidene)-1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "8e",
+          "amount": "1.0mmole",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "diacetoxyiodobenzene",
+          "symbol": "DIB",
+          "amount": "0.385g,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-7-(3,4-dimethoxyphenyl)-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9e",
+          "amount": "0.328g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dichloromethane",
+          "symbol": null,
+          "amount": "20mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "20mL",
+        "temperature": "room temperature",
+        "time": "50–55min",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r20"
+    },
+    {
+      "id": "NonGP-Entry31",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Cyclization of hydrazine 4 with triethyl orthoformate in ethanol under reflux to give 5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine (9f)",
+      "substrates": [
+        {
+          "name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": "0.317g,1.0mmole",
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "triethyl orthoformate",
+          "symbol": null,
+          "amount": "0.20mL,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9f",
+          "amount": "0.231g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "ethanol",
+        "solvent_amount": "20mL",
+        "temperature": "reflux",
+        "time": "3–4h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r21"
+    },
+    {
+      "id": "NonGP-Entry32",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Cyclization of hydrazine 4 with triethyl orthoacetate in ethanol under reflux to give 5-(4-Chlorophenyl)-1,7-dimethyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine (9g)",
+      "substrates": [
+        {
+          "name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": "0.317g,1.0mmole",
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "triethyl orthoacetate",
+          "symbol": null,
+          "amount": "0.22mL,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-1,7-dimethyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9g",
+          "amount": "0.258g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "ethanol",
+        "solvent_amount": "20mL",
+        "temperature": "reflux",
+        "time": "3–4h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r22"
+    },
+    {
+      "id": "NonGP-Entry33",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Cyclization of hydrazine 4 with triethyl orthopropionate in ethanol under reflux to give 5-(4-Chlorophenyl)-7-ethyl-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine (9h)",
+      "substrates": [
+        {
+          "name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": "0.317g,1.0mmole",
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "triethyl orthopropionate",
+          "symbol": null,
+          "amount": "0.25mL,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-7-ethyl-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9h",
+          "amount": "0.244g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "ethanol",
+        "solvent_amount": "20mL",
+        "temperature": "reflux",
+        "time": "3–4h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r23"
+    },
+    {
+      "id": "NonGP-Entry34",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "Cyclization of hydrazine 4 with triethyl orthobenzoate in ethanol under reflux to give 5-(4-Chlorophenyl)-7-phenyl-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine (9i)",
+      "substrates": [
+        {
+          "name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "symbol": "4",
+          "amount": "0.317g,1.0mmole",
+          "registry_name": "1-(5-(4-chlorophenyl)-1-methyl-3-propyl-1H-pyrazolo[4,3-d]pyrimidin-7-yl)hydrazine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "triethyl orthobenzoate",
+          "symbol": null,
+          "amount": "0.27mL,1.2mmole"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Chlorophenyl)-7-phenyl-1-methyl-3-propyl-1H-pyrazolo[3,4-e][1,2,4]triazolo[4,3-c]pyrimidine",
+          "symbol": "9i",
+          "amount": "0.314g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "ethanol",
+        "solvent_amount": "20mL",
+        "temperature": "reflux",
+        "time": "3–4h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk2_r24"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_suzuki/symbol_resolved/text/0a17d3f031913d76399c25c4e6f35214_c69b18f2.json",
+    "input_sha256": "4af694d74fcd3d031babe44e505ce8a122994e0773fc37f36fd085d400b785cc"
+  }
+}

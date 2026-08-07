@@ -1,0 +1,1434 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2c60c7fe3c9a7691b544d6f54ad9576d.pdf",
+  "paper_key": "2c60c7fe3c9a7691b544d6f54ad9576d",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2c60c7fe3c9a7691b544d6f54ad9576d.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2c60c7fe3c9a7691b544d6f54ad9576d.pdf",
+    "source_mtime_ns": 1782048798000000000,
+    "source_size": 157578,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "two_column",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "2c60c7fe3c9a7691b544d6f54ad9576d",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/2c60c7fe3c9a7691b544d6f54ad9576d.pdf"
+  },
+  "extracted_at": "2026-07-18T03:12:46.924327",
+  "total_reactions": 28,
+  "filtered_reactions": 25,
+  "filter_stats": {
+    "input_reactions": 28,
+    "basic_failed": 0,
+    "target_failed": 3,
+    "retained": 25
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "synthesis of ethyl 5-methyl-2-propyl-3H-imidazole-4-carboxylate",
+      "substrates": [
+        {
+          "name": "ethyl butaneimidate hydrochloride",
+          "symbol": null,
+          "amount": "24.0 g, 0.16 mol"
+        },
+        {
+          "name": "ethyl 2-amino-3-oxobutanoate hydrochloride",
+          "symbol": null,
+          "amount": "11.6 g, 0.06 mol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 5-Methyl-2-propyl-3H-imidazole-4-carboxylate",
+          "symbol": "20",
+          "amount": "7.65 g",
+          "registry_name": "imidazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triethylamine",
+          "symbol": null,
+          "amount": "32 mL, 0.23 mol"
+        }
+      ],
+      "conditions": {
+        "solvent": "absolute EtOH",
+        "solvent_amount": "200 mL + 100 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "aminolysis (ester to amide)",
+      "substrates": [
+        {
+          "name": "Ethyl 5-Methyl-2-propyl-3H-imidazole-4-carboxylate",
+          "symbol": "20",
+          "amount": "1.49 g, 7.59 mmol",
+          "registry_name": "imidazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "ethyl ester",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-Methyl-2-propyl-3H-imidazole-4-carboxamide",
+            "product_index": 0,
+            "reason": "Generic 'ethyl ester' maps one-to-one to the observed aminolysis product (carboxamide); the corresponding ethyl ester is the direct precursor (remove NH2→H)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Methyl-2-propyl-3H-imidazole-4-carboxamide",
+          "symbol": "29",
+          "amount": "671 mg",
+          "registry_name": "imidazolecarboxamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concentrated ammonium hydroxide",
+          "symbol": null,
+          "amount": "20 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "concentrated ammonium hydroxide",
+        "solvent_amount": "20 mL",
+        "temperature": "130 °C",
+        "time": "24 h",
+        "atmosphere": "sealed tube",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl-Entry1",
+      "_gp_source": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "N-amination of imidazoles",
+      "substrates": [
+        {
+          "name": "Ethyl 5-methyl-3H-imidazole-4-carboxylate",
+          "symbol": "11",
+          "amount": "5.39 g, 34.96 mmol",
+          "registry_name": "imidazole",
+          "registry_match_status": "verified",
+          "original_name": "imidazole",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Ethyl 3-Amino-5-methyl-3H-imidazole-4-carboxylate",
+            "product_index": 0,
+            "reason": "Product is the N‑aminated imidazole; removing the introduced amino group gives the specific starting imidazole (preserves ethyl carboxylate and 5‑Me)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 3-Amino-5-methyl-3H-imidazole-4-carboxylate",
+          "symbol": "12",
+          "amount": "4.23 g",
+          "registry_name": "ethyl3-amino-3H-imidazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Lithium hexamethyldisilazane",
+          "symbol": null,
+          "amount": "1.10 mL of a 1 M solution in THF, 1.1 mmol"
+        },
+        {
+          "name": "O-(diphenylphosphinyl)hydroxylamine",
+          "symbol": null,
+          "amount": "280 mg, 1.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous DMF",
+        "solvent_amount": "10 mL",
+        "temperature": "-10 °C then 0 °C then room temperature",
+        "time": "10 min then 4-6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl-Entry2",
+      "_gp_source": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "N-amination of imidazoles",
+      "substrates": [
+        {
+          "name": "Ethyl 5-methyl-1H-imidazole-4-carboxylate",
+          "symbol": "11",
+          "amount": "5.39 g, 34.96 mmol",
+          "registry_name": "imidazole",
+          "registry_match_status": "verified",
+          "original_name": "imidazole",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Ethyl 1-Amino-5-methyl-1H-imidazole-4-carboxylate",
+            "product_index": 0,
+            "reason": "Product is the N‑aminated imidazole at N1; removing the introduced amino substituent yields the concrete imidazole starting material with the ethyl 4‑carboxylate and 5‑Me substituents."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 1-Amino-5-methyl-1H-imidazole-4-carboxylate",
+          "symbol": "12a",
+          "amount": "1.29 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Lithium hexamethyldisilazane",
+          "symbol": null,
+          "amount": "1.10 mL of a 1 M solution in THF, 1.1 mmol"
+        },
+        {
+          "name": "O-(diphenylphosphinyl)hydroxylamine",
+          "symbol": null,
+          "amount": "280 mg, 1.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous DMF",
+        "solvent_amount": "10 mL",
+        "temperature": "-10 °C then 0 °C then room temperature",
+        "time": "10 min then 4-6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "22%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl-Entry3",
+      "_gp_source": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "N-amination of imidazoles",
+      "substrates": [
+        {
+          "name": "Methyl 3H-imidazole-4-carboxylate",
+          "symbol": "15",
+          "amount": "1.0 g, 7.93 mmol",
+          "original_name": "imidazole",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 3-Amino-3H-imidazole-4-carboxylate",
+            "product_index": 0,
+            "reason": "Product is the N‑aminated methyl carboxylate imidazole; removing the introduced amino group recovers the specific methyl imidazole-4-carboxylate starting material."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 3-Amino-3H-imidazole-4-carboxylate",
+          "symbol": "16",
+          "amount": "0.72 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Lithium hexamethyldisilazane",
+          "symbol": null,
+          "amount": "1.10 mL of a 1 M solution in THF, 1.1 mmol"
+        },
+        {
+          "name": "O-(diphenylphosphinyl)hydroxylamine",
+          "symbol": null,
+          "amount": "280 mg, 1.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous DMF",
+        "solvent_amount": "10 mL",
+        "temperature": "-10 °C then 0 °C then room temperature",
+        "time": "10 min then 4-6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl-Entry4",
+      "_gp_source": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "N-amination of imidazoles",
+      "substrates": [
+        {
+          "name": "imidazole",
+          "symbol": "17",
+          "amount": "200 mg, 1.469 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Amino-5-cyano-3H-imidazole-4-carboxamide",
+          "symbol": "18",
+          "amount": "145 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Lithium hexamethyldisilazane",
+          "symbol": null,
+          "amount": "1.10 mL of a 1 M solution in THF, 1.1 mmol"
+        },
+        {
+          "name": "O-(diphenylphosphinyl)hydroxylamine",
+          "symbol": null,
+          "amount": "280 mg, 1.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous DMF",
+        "solvent_amount": "10 mL",
+        "temperature": "-10 °C then 0 °C then room temperature",
+        "time": "10 min then 4-6 h (reaction filtered after 6 h in this case)",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl-Entry5",
+      "_gp_source": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "N-amination of imidazoles",
+      "substrates": [
+        {
+          "name": "Ethyl 5-methyl-2-propyl-3H-imidazole-4-carboxylate",
+          "symbol": "20",
+          "amount": "2.0 g, 10.19 mmol",
+          "registry_name": "imidazole",
+          "registry_match_status": "verified",
+          "original_name": "imidazole",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Ethyl 3-Amino-5-methyl-2-propyl-3H-imidazole-4-carboxylate",
+            "product_index": 0,
+            "reason": "Product is the N‑aminated analogue of this ethyl ester (contains 5‑Me and 2‑propyl); removing the introduced amino group gives the specific imidazole ester starting material (matches earlier ester identity)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Ethyl 3-Amino-5-methyl-2-propyl-3H-imidazole-4-carboxylate",
+          "symbol": "21",
+          "amount": "1.63 g",
+          "registry_name": "aminoimidazole carboxylic ester",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Lithium hexamethyldisilazane",
+          "symbol": null,
+          "amount": "1.10 mL of a 1 M solution in THF, 1.1 mmol"
+        },
+        {
+          "name": "O-(diphenylphosphinyl)hydroxylamine",
+          "symbol": null,
+          "amount": "280 mg, 1.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous DMF",
+        "solvent_amount": "10 mL",
+        "temperature": "-10 °C then 0 °C then room temperature",
+        "time": "10 min then 4-6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "GeneralProcedure_preparation_of_imidazo_5_1_f_1_2_4_triazin_4_3h-Entry1",
+      "_gp_source": "GeneralProcedure_preparation_of_imidazo_5_1_f_1_2_4_triazin_4_3h",
+      "source_pages": [
+        2
+      ],
+      "reaction_type": "cyclocondensation (ring-closure) to form imidazo[5,1-f][1,2,4]triazin-4(3H)-ones",
+      "substrates": [
+        {
+          "name": "Ethyl 3-Amino-5-methyl-3H-imidazole-4-carboxylate",
+          "symbol": "12",
+          "amount": null,
+          "registry_name": "ethyl3-amino-3H-imidazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "aminoimidazole",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "imidazotriazinone",
+            "product_index": 0,
+            "reason": "Substrate is labelled with symbol 12 which corresponds to the previously formed ethyl 3‑amino‑5‑methyl imidazole ester; the label and preceding N‑amination product uniquely identify this starting material."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "imidazotriazinone",
+          "symbol": "13",
+          "amount": null,
+          "registry_name": "imidazotriazinone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "formamide",
+          "symbol": null,
+          "amount": "1-2 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "formamide",
+        "solvent_amount": "1-2 mL",
+        "atmosphere": "sealed tube",
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "180 °C",
+        "time": "2-8 h"
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn8"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "cyclization to 2-substituted imidazotriazinone",
+      "substrates": [
+        {
+          "name": "Ethyl 3-Amino-5-methyl-3H-imidazole-4-carboxylate",
+          "symbol": "12",
+          "amount": null,
+          "registry_name": "ethyl3-amino-3H-imidazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "N-aminoimidazole",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2,5-dimethyl-imidazotriazinone",
+            "product_index": 0,
+            "reason": "Substrate bears symbol 12 (same as the N‑amination product); the 5‑Me substituent is preserved into the imidazotriazinone product, allowing one‑to‑one assignment to the previously formed aminoimidazole."
+          }
+        },
+        {
+          "name": "acetonitrile",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "2,5-dimethyl-imidazotriazinone",
+          "symbol": "24",
+          "amount": null,
+          "registry_name": "2,5-dimethyl-imidazotriazinone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn9"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "cyclization to 2-substituted imidazotriazinone",
+      "substrates": [
+        {
+          "name": "Ethyl 3-Amino-5-methyl-3H-imidazole-4-carboxylate",
+          "symbol": "12",
+          "amount": null,
+          "registry_name": "ethyl3-amino-3H-imidazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "N-aminoimidazole",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-amino-5-methyl-imidazotriazinone",
+            "product_index": 0,
+            "reason": "Substrate is given with symbol 12 (the earlier N‑amination product); the 5‑Me is carried into the imidazotriazinone product, so the symbol+product context uniquely identify this aminoimidazole starting material."
+          }
+        },
+        {
+          "name": "cyanamide",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "2-amino-5-methyl-imidazotriazinone",
+          "symbol": "25",
+          "amount": null,
+          "registry_name": "2-amino-5-methyl-imidazotriazinone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "28%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn10"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "aminolysis (ester to amide)",
+      "substrates": [
+        {
+          "name": "aminoimidazole carboxylic ester",
+          "symbol": "21",
+          "amount": null,
+          "registry_name": "aminoimidazole carboxylic ester",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "aminoimidazole carboxamide",
+          "symbol": "30",
+          "amount": null,
+          "registry_name": "aminoimidazole carboxamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concentrated ammonium hydroxide",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "concentrated ammonium hydroxide",
+        "solvent_amount": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "20%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn11"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "acylation (amide formation)",
+      "substrates": [
+        {
+          "name": "N-aminoimidazole",
+          "symbol": "30",
+          "amount": null,
+          "registry_name": "aminoimidazole carboxamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(2-ethoxy-benzoylamino)-imidazole",
+          "symbol": "31",
+          "amount": null,
+          "registry_name": "3-(2-ethoxy-benzoylamino)-imidazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "2-ethoxybenzoyl chloride",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn12"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "cyclization to imidazotriazinone",
+      "substrates": [
+        {
+          "name": "3-(2-ethoxy-benzoylamino)-imidazole",
+          "symbol": "31",
+          "amount": null,
+          "registry_name": "3-(2-ethoxy-benzoylamino)-imidazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "imidazotriazinone",
+          "symbol": "10",
+          "amount": null,
+          "registry_name": "vardenafil intermediate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "potassium tert-butoxide",
+          "symbol": null,
+          "amount": "10 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "t-butanol",
+        "solvent_amount": null,
+        "atmosphere": "sealed tube",
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "160 °C",
+        "time": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn13"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Suzuki coupling (C-C coupling)",
+      "substrates": [
+        {
+          "name": "7-bromo-imidazotriazinone",
+          "symbol": "32",
+          "amount": null,
+          "registry_name": "7-bromo-imidazotriazinone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-phenyl-imidazotriazinone",
+          "symbol": "33",
+          "amount": null,
+          "registry_name": "5-Methyl-7-phenyl-3H-imidazo[5,1-f][1,2,4]triazin-4-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null,
+        "temperature": null,
+        "time": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn14"
+    },
+    {
+      "id": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl-Entry6",
+      "_gp_source": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "N-amination of imidazoles",
+      "substrates": [
+        {
+          "name": "5-methyl-2-propyl-1H-imidazole-4-carboxamide",
+          "symbol": "29",
+          "amount": "583 mg, 3.48 mmol",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "original_name": "imidazolecarboxamide",
+          "resolution_evidence": {
+            "product_name": "3-Amino-5-methyl-2-propyl-3H-imidazole-4-carboxamide",
+            "product_index": 0,
+            "reason": "Product is the N-amino derivative (3-amino-5-methyl-2-propyl-3H-imidazole-4-carboxamide); removing the introduced N–H–NH2 substituent yields the parent imidazole-4-carboxamide with the same 5-methyl and 2-propyl substituents, giving a one-to-one inference of the starting imidazolecarboxamide."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3-Amino-5-methyl-2-propyl-3H-imidazole-4-carboxamide",
+          "symbol": "30",
+          "amount": "259 mg",
+          "registry_name": "aminoimidazole carboxamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Lithium hexamethyldisilazane",
+          "symbol": null,
+          "amount": "1.10 mL of a 1 M solution in THF, 1.1 mmol"
+        },
+        {
+          "name": "O-(diphenylphosphinyl)hydroxylamine",
+          "symbol": null,
+          "amount": "280 mg, 1.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous DMF",
+        "solvent_amount": "10 mL",
+        "temperature": "-10 °C then 0 °C then room temperature",
+        "time": "10 min then 4-6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "41%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl-Entry7",
+      "_gp_source": "GeneralProcedure_n_amination_of_imidazoles_lithiumhexamethyldisilazane_1_10mlofa1msolutionin_thf_1_1mmol_wasslowl",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "N-amination of imidazoles",
+      "substrates": [
+        {
+          "name": "5-methyl-2-propyl-1H-imidazole-4-carboxamide",
+          "symbol": "29",
+          "amount": "583 mg, 3.48 mmol",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "original_name": "imidazolecarboxamide",
+          "resolution_evidence": {
+            "product_name": "1-Amino-5-methyl-2-propyl-1H-imidazole-4-carboxamide",
+            "product_index": 0,
+            "reason": "Product is an N-amino isomer (1-amino-5-methyl-2-propyl-1H-imidazole-4-carboxamide); removing the amination gives the same parent imidazole-4-carboxamide with 5-methyl and 2-propyl substituents, so the starting imidazolecarboxamide can be uniquely inferred."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Amino-5-methyl-2-propyl-1H-imidazole-4-carboxamide",
+          "symbol": "30a",
+          "amount": "350 mg",
+          "registry_name": "1-Amino-5-methyl-2-propyl-1H-imidazole-4-carboxamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Lithium hexamethyldisilazane",
+          "symbol": null,
+          "amount": "1.10 mL of a 1 M solution in THF, 1.1 mmol"
+        },
+        {
+          "name": "O-(diphenylphosphinyl)hydroxylamine",
+          "symbol": null,
+          "amount": "280 mg, 1.2 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous DMF",
+        "solvent_amount": "10 mL",
+        "temperature": "-10 °C then 0 °C then room temperature",
+        "time": "10 min then 4-6 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Preparation of Imidazo[5,1-f][1,2,4]triazin-4(3H)-ones (formamide cyclization)",
+      "substrates": [
+        {
+          "name": "amino-imidazole",
+          "symbol": "12",
+          "amount": "2.50 g, 14.77 mmol",
+          "registry_name": "ethyl3-amino-3H-imidazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Methyl-3H-imidazo[5,1-f][1,2,4]triazin-4-one",
+          "symbol": "13",
+          "amount": "1.96 g",
+          "registry_name": "imidazotriazinone",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "formamide",
+        "solvent_amount": "1-2 mL",
+        "temperature": "180 °C",
+        "time": "2-8 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Preparation of Imidazo[5,1-f][1,2,4]triazin-4(3H)-ones (formamide cyclization)",
+      "substrates": [
+        {
+          "name": "amino-imidazole",
+          "symbol": "16",
+          "amount": "110 mg, 0.779 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "3H-Imidazo[5,1-f][1,2,4]triazin-4-one",
+          "symbol": "1",
+          "amount": "55 mg",
+          "registry_name": "imidazo[5,1-f][1,2,4]triazinone scaffold",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "formamide",
+        "solvent_amount": "1-2 mL",
+        "temperature": "180 °C",
+        "time": "2-8 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Preparation of Imidazo[5,1-f][1,2,4]triazin-4(3H)-ones (formamide cyclization)",
+      "substrates": [
+        {
+          "name": "amino-imidazole",
+          "symbol": "18",
+          "amount": "96 mg, 0.653 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Cyano-3H-imidazo[5,1-f][1,2,4]triazin-4-one",
+          "symbol": "19",
+          "amount": "87 mg",
+          "registry_name": "5-Cyano-3H-imidazo[5,1-f][1,2,4]triazin-4-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "formamide",
+        "solvent_amount": "1-2 mL",
+        "temperature": "180 °C",
+        "time": "2-8 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Preparation of Imidazo[5,1-f][1,2,4]triazin-4(3H)-ones (formamide cyclization)",
+      "substrates": [
+        {
+          "name": "amino-imidazole",
+          "symbol": "21",
+          "amount": "100 mg, 0.509 mmol",
+          "registry_name": "aminoimidazole carboxylic ester",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Methyl-2-propyl-3H-imidazo[5,1-f][1,2,4]triazin-4-one",
+          "symbol": "22",
+          "amount": "67 mg",
+          "registry_name": "5-Methyl-2-propyl-3H-imidazo[5,1-f][1,2,4]triazin-4-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "formamide",
+        "solvent_amount": "1-2 mL",
+        "temperature": "180 °C",
+        "time": "2-8 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "NonGP-Entry13",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Chlorination (POCl3) of imidazotriazinone",
+      "substrates": [
+        {
+          "name": "imidazotriazinone",
+          "symbol": "13",
+          "amount": "500 mg, 3.33 mmol",
+          "registry_name": "imidazotriazinone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-Chloro-5-methyl-imidazo[5,1-f][1,2,4]triazine",
+          "symbol": "14",
+          "amount": "309 mg",
+          "registry_name": "synthon",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "phosphoryl chloride",
+          "symbol": null,
+          "amount": "10 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "phosphoryl chloride",
+        "solvent_amount": "10 mL",
+        "temperature": "reflux",
+        "time": "5 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "45%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "NonGP-Entry14",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Acid treatment then base hydrolysis to give triazinone",
+      "substrates": [
+        {
+          "name": "amino-imidazole",
+          "symbol": "12",
+          "amount": "200 mg, 1.18 mmol",
+          "registry_name": "ethyl3-amino-3H-imidazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "2,5-Dimethyl-3H-imidazo[5,1-f][1,2,4]triazin-4-one",
+          "symbol": "24",
+          "amount": "172 mg",
+          "registry_name": "2,5-dimethyl-imidazotriazinone",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "dry hydrogen chloride (gas)",
+          "symbol": null,
+          "amount": "passed into solution, 30 min"
+        },
+        {
+          "name": "absolute ethanol",
+          "symbol": null,
+          "amount": "20 mL"
+        },
+        {
+          "name": "5% aqueous sodium hydroxide",
+          "symbol": null,
+          "amount": "5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "acetonitrile (initial), then ethanol",
+        "solvent_amount": "10 mL (acetonitrile); 20 mL (ethanol)",
+        "temperature": "room temperature (HCl), then reflux (ethanol step)",
+        "time": "30 min (HCl pass), 18 h (first stir), 6 h (reflux)",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn8"
+    },
+    {
+      "id": "NonGP-Entry15",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Cyclization from amino-imidazole with cyanamide to triazinone",
+      "substrates": [
+        {
+          "name": "amino-imidazole",
+          "symbol": "12",
+          "amount": "145 mg, 0.857 mmol",
+          "registry_name": "ethyl3-amino-3H-imidazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "cyanamide",
+          "symbol": null,
+          "amount": "42 mg, 1.028 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Amino-5-methyl-3H-imidazo[5,1-f][1,2,4]triazin-4-one",
+          "symbol": "25",
+          "amount": "40 mg",
+          "registry_name": "2-amino-5-methyl-imidazotriazinone",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "concentrated hydrochloric acid",
+          "symbol": null,
+          "amount": "0.5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "dioxane",
+        "solvent_amount": "8 mL",
+        "temperature": "reflux (then 100 °C hydrolysis step)",
+        "time": "24 h (reflux), 3 h (100 °C)",
+        "atmosphere": "nitrogen (reflux)",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "28%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn9"
+    },
+    {
+      "id": "NonGP-Entry18",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "Intramolecular cyclization (potassium tert-butoxide, sealed tube) converting carboxamide to triazinone",
+      "substrates": [
+        {
+          "name": "carboxamide",
+          "symbol": "31",
+          "amount": "70 mg, 0.213 mmol",
+          "registry_name": "3-(2-ethoxy-benzoylamino)-imidazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "symbol": null,
+          "amount": "239 mg, 2.13 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-Ethoxy-phenyl)-5-methyl-2-propyl-3H-imidazo[5,1-f][1,2,4]triazin-4-one",
+          "symbol": "10",
+          "amount": "48 mg",
+          "registry_name": "vardenafil intermediate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "anhydrous tert-butyl alcohol",
+          "symbol": null,
+          "amount": "5 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous tert-butyl alcohol",
+        "solvent_amount": "5 mL",
+        "temperature": "160 °C",
+        "time": "30 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn12"
+    },
+    {
+      "id": "NonGP-Entry19",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "Electrophilic bromination of imidazotriazinone",
+      "substrates": [
+        {
+          "name": "imidazotriazinone",
+          "symbol": "13",
+          "amount": "250 mg, 1.66 mmol",
+          "registry_name": "imidazotriazinone",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "bromine",
+          "symbol": null,
+          "amount": "530 mg, 3.32 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-Bromo-5-methyl-3H-imidazo[5,1-f][1,2,4]triazin-4-one",
+          "symbol": "32",
+          "amount": "203 mg",
+          "registry_name": "7-bromo-imidazotriazinone",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DMF",
+          "symbol": null,
+          "amount": "20 mL"
+        },
+        {
+          "name": "saturated Na2CO3 solution",
+          "symbol": null,
+          "amount": "1 mL (workup)"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "20 mL",
+        "temperature": "0 °C",
+        "time": "until completion (monitored by TLC)",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn13"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_suzuki/symbol_resolved/text/2c60c7fe3c9a7691b544d6f54ad9576d_da9174f8.json",
+    "input_sha256": "e96c8971dfb4f1f4a8023fb77c8ad62cd5340b034bce79e22ad5522aaa80ebff"
+  }
+}

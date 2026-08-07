@@ -1,0 +1,5442 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Ligand Effects in Regio- and Enantioselective Cobalt-Catalyzed Intramolecular [4+2]- and [2+2]-Cycloaddition Reactions of Unactivated 1,3-Diene-8-ynes and 1,3-Diene-8-enes.pdf",
+  "paper_key": "ligand effects in regio- and enantioselective cobalt-catalyzed intramolecular [4+2]- and [2+2]-cycloaddition reactions of unactivated 1,3-diene-8-ynes and 1,3-diene-8-enes",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Ligand Effects in Regio- and Enantioselective Cobalt-Catalyzed Intramolecular [4+2]- and [2+2]-Cycloaddition Reactions of Unactivated 1,3-Diene-8-ynes and 1,3-Diene-8-enes.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Ligand Effects in Regio- and Enantioselective Cobalt-Catalyzed Intramolecular [4+2]- and [2+2]-Cycloaddition Reactions of Unactivated 1,3-Diene-8-ynes and 1,3-Diene-8-enes.pdf",
+    "source_mtime_ns": 1782048709000000000,
+    "source_size": 24613549,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "ligand effects in regio- and enantioselective cobalt-catalyzed intramolecular [4+2]- and [2+2]-cycloaddition reactions of unactivated 1,3-diene-8-ynes and 1,3-diene-8-enes",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Ligand Effects in Regio- and Enantioselective Cobalt-Catalyzed Intramolecular [4+2]- and [2+2]-Cycloaddition Reactions of Unactivated 1,3-Diene-8-ynes and 1,3-Diene-8-enes.pdf"
+  },
+  "extracted_at": "2026-07-17T07:40:11.339905",
+  "total_reactions": 59,
+  "filtered_reactions": 59,
+  "filter_stats": {
+    "input_reactions": 59,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 59
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry1",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "4-methyl-N-(prop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": null,
+          "amount": "12 mmol, 1.2 eq.",
+          "step": 1,
+          "original_name": "tosylamine protected terminal alkyne/alkene",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+            "product_index": 0,
+            "reason": "Product contains an N-(3-phenylprop-2-yn-1-yl) fragment consistent with Sonogashira coupling of a tosyl-protected propargyl (prop-2-yn-1-yl) substrate."
+          }
+        },
+        {
+          "name": "sorbic alcohol",
+          "symbol": null,
+          "amount": "981 mg, 10 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "iodobenzene",
+          "symbol": null,
+          "amount": "2.448 g, 12 mmol, 1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes (N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(prop-2-yn-1-yl)benzenesulfonamide)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1a",
+          "amount": "2.45 g",
+          "step": 2,
+          "registry_name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "280.7 mg, 4 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "152.4 mg, 8 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "3.5 mL, 18 mmol, 1.8 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "50 mL",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "Anhydrous THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "100 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "16 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn_gp_sm_1_1a"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry2",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "4-methyl-N-(prop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": null,
+          "amount": "12 mmol, 1.2 eq.",
+          "step": 1,
+          "original_name": "tosylamine protected terminal alkyne/alkene",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-N-(3-(4-methoxyphenyl)prop-2-yn-1-yl)-4-methylbenzenesulfonamide",
+            "product_index": 0,
+            "reason": "Product bears an N-(3-(4-methoxyphenyl)prop-2-yn-1-yl) moiety produced by arylation of a prop-2-yn-1-yl tosylamide starting material."
+          }
+        },
+        {
+          "name": "sorbic alcohol",
+          "symbol": null,
+          "amount": "981 mg, 10 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "1-iodo-4-methoxybenzene",
+          "symbol": null,
+          "amount": "561 mg, 2.4 mmol, 1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes (N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(prop-2-yn-1-yl)benzenesulfonamide)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-N-(3-(4-methoxyphenyl)prop-2-yn-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "1b",
+          "amount": "206 mg",
+          "step": 2,
+          "registry_name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-N-(3-(4-methoxyphenyl)prop-2-yn-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "56 mg, 4 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "30.5 mg, 8 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "3.5 mL, 18 mmol, 1.8 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "10 mL",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "Anhydrous THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "100 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "16 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "26%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn_gp_sm_1_1b"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry3",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "4-methyl-N-(prop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": null,
+          "amount": "12 mmol, 1.2 eq.",
+          "step": 1,
+          "original_name": "tosylamine protected terminal alkyne/alkene",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "N-(3-(3,5-bis(trifluoromethyl)phenyl)prop-2-yn-1-yl)-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+            "product_index": 0,
+            "reason": "Product contains N-(3-(3,5-bis(trifluoromethyl)phenyl)prop-2-yn-1-yl), indicating the starting tosyl-propargyl amide (prop-2-yn-1-yl) was used."
+          }
+        },
+        {
+          "name": "sorbic alcohol",
+          "symbol": null,
+          "amount": "981 mg, 10 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "1-iodo-3,5-bis(trifluoromethyl)benzene",
+          "symbol": null,
+          "amount": "816 mg, 2.4 mmol, 1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes (N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(prop-2-yn-1-yl)benzenesulfonamide)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(3-(3,5-bis(trifluoromethyl)phenyl)prop-2-yn-1-yl)-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "1c",
+          "amount": "460 mg",
+          "step": 2,
+          "registry_name": "N-(3-(3,5-bis(trifluoromethyl)phenyl)prop-2-yn-1-yl)-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "56 mg, 4 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "30.5 mg, 8 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "3.5 mL, 18 mmol, 1.8 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "10 mL",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "Anhydrous THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "100 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "16 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "47%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn_gp_sm_1_1c"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry4",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "4-methyl-N-((2Z,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": null,
+          "amount": "0.31 g, 1.0 mmol, 1.0 eq.",
+          "step": 1
+        },
+        {
+          "name": "pent-2-yn-1-ol",
+          "symbol": null,
+          "amount": "0.11 mL, 1.1 mmol, 1.1 eq.",
+          "step": 1
+        },
+        {
+          "name": "aryl iodide",
+          "symbol": null,
+          "amount": "1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "4-methyl-N-(pent-2-yn-1-yl)-N-((2Z,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "1i",
+          "amount": "0.29 g, 0.76 mmol, 76%",
+          "step": 2,
+          "registry_name": "4-methyl-N-(pent-2-yn-1-yl)-N-((2Z,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "2 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "4 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "0.36 g, 1.4 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "0.27 mL, 1.4 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "36 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn-1i"
+    },
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "Alkoxide alkylation (ether formation) via NaH deprotonation followed by SN2 with 1-bromopent-2-yne",
+      "substrates": [
+        {
+          "name": "sorbic alcohol",
+          "symbol": null,
+          "amount": "864 mg, 8.8 mmol, 1.47 eq."
+        },
+        {
+          "name": "1-bromopent-2-yne",
+          "symbol": null,
+          "amount": "876 mg, 6 mmol, 1.0 eq."
+        }
+      ],
+      "products": [
+        {
+          "name": "(2E,4E)-1-(pent-2-yn-1-yloxy)hexa-2,4-diene",
+          "symbol": "1j",
+          "amount": "800 mg",
+          "step": null,
+          "registry_name": "(2E,4E)-1-(pent-2-yn-1-yloxy)hexa-2,4-diene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "8.8 mmol, 1.1 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "10 mL",
+        "temperature": "room temperature",
+        "time": "stirred overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1j"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Two-step sequence: (1) NaH-promoted O-alkylation (propargylation) of sorbic alcohol; (2) deprotonation of terminal alkyne with n-BuLi followed by methylation with MeI",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "sorbic alcohol",
+          "symbol": null,
+          "amount": "1.09 g, 11.06 mmol, 1.0 eq.",
+          "step": 1
+        },
+        {
+          "name": "propargyl bromide (80 wt% in toluene)",
+          "symbol": null,
+          "amount": "1.64 g, 11.06 mmol, 1.0 eq.",
+          "step": 1
+        },
+        {
+          "name": "terminal alkyne",
+          "symbol": null,
+          "amount": "500 mg, 3.67 mmol, 1.0 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "propargylated product",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(2E,4E)-1-(but-2-yn-1-yloxy)hexa-2,4-diene",
+          "symbol": "1k",
+          "amount": "380 mg",
+          "step": 2,
+          "registry_name": "(2E,4E)-1-(but-2-yn-1-yloxy)hexa-2,4-diene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "398 mg, 16.6 mmol, 1.5 eq.",
+          "step": 1
+        },
+        {
+          "name": "n-BuLi (2.5 M in hexanes)",
+          "symbol": null,
+          "amount": "1.8 mL, 4.41 mmol, 1.2 eq.",
+          "step": 2
+        },
+        {
+          "name": "methyl iodide",
+          "symbol": "MeI",
+          "amount": "782 mg, 5.51 mmol, 1.5 eq.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "30 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "-78 °C then room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "18 h"
+          },
+          {
+            "step": 2,
+            "value": "30 min then 30 min"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn-1k"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry5",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "(Z)-4-methyl-N-(penta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": null,
+          "amount": "1.0 g, 4.2 mmol, 1.0 eq.",
+          "step": 1
+        },
+        {
+          "name": "hex-2-yn-1-ol",
+          "symbol": null,
+          "amount": "0.51 mL, 4.5 mmol, 1.1 eq.",
+          "step": 1
+        },
+        {
+          "name": "aryl iodide",
+          "symbol": null,
+          "amount": "1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(Z)-N-(hex-2-yn-1-yl)-4-methyl-N-(penta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "1l",
+          "amount": "1.1 g, 3.4 mmol, 80%",
+          "step": 2,
+          "registry_name": "(Z)-N-(hex-2-yn-1-yl)-4-methyl-N-(penta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "2 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "4 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "1.5 g, 5.9 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "1.2 mL, 5.9 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "40 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "36 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn-1l"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry6",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "4-methyl-N-(prop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": null,
+          "amount": "0.31 g, 1.5 mmol, 1.0 eq.",
+          "step": 1
+        },
+        {
+          "name": "(2E,4E)-5-phenylpenta-2,4-dien-1-ol",
+          "symbol": null,
+          "amount": "0.26 g, 1.6 mmol, 1.1 eq.",
+          "step": 1
+        },
+        {
+          "name": "aryl iodide",
+          "symbol": null,
+          "amount": "1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)-N-(prop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1m",
+          "amount": "0.31 g, 0.89 mmol, 60%",
+          "step": 2,
+          "registry_name": "4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)-N-(prop-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "2 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "4 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "0.55 g, 2.1 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "0.43 mL, 2.1 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "36 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn-1m"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry7",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "4-methyl-N-(3-(trimethylsilyl)prop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": null,
+          "amount": "0.56 g, 2.0 mmol, 1.0 eq.",
+          "step": 1
+        },
+        {
+          "name": "(2E,4E)-hexa-2,4-dien-1-ol",
+          "symbol": null,
+          "amount": "0.25 mL, 2.2 mmol, 1.1 eq.",
+          "step": 1
+        },
+        {
+          "name": "aryl iodide",
+          "symbol": null,
+          "amount": "1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(3-(trimethylsilyl)prop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1n",
+          "amount": "0.65 g, 1.8 mmol, 70%",
+          "step": 2,
+          "registry_name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(3-(trimethylsilyl)prop-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "2 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "4 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "0.73 g, 2.8 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "0.55 mL, 2.8 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "36 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn-1n"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "NaH-promoted O-alkylation (propargylation) of sorbic alcohol",
+      "substrates": [
+        {
+          "name": "sorbic alcohol",
+          "symbol": null,
+          "amount": "1.09 g, 11.06 mmol, 1.0 eq."
+        },
+        {
+          "name": "propargyl bromide (80 wt% in toluene)",
+          "symbol": null,
+          "amount": "1.64 g, 11.06 mmol, 1.0 eq."
+        }
+      ],
+      "products": [
+        {
+          "name": "propargylated product",
+          "symbol": null,
+          "amount": "686 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "398 mg, 16.6 mmol, 1.5 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "30 mL",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "0 °C then room temperature",
+        "time": "18 h"
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1k-step1"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry8",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "4-methyl-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": null,
+          "amount": "0.57 g, 2.0 mmol, 1.0 eq.",
+          "step": 1
+        },
+        {
+          "name": "(E)-4-methylpenta-2,4-dien-1-ol",
+          "symbol": null,
+          "amount": "0.25 mL, 2.2 mmol, 1.1 eq.",
+          "step": 1
+        },
+        {
+          "name": "aryl iodide",
+          "symbol": null,
+          "amount": "1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-4-methyl-N-(4-methylpenta-2,4-dien-1-yl)-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1o",
+          "amount": "0.48 g, 1.3 mmol",
+          "step": 1,
+          "registry_name": "(E)-4-methyl-N-(4-methylpenta-2,4-dien-1-yl)-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "2 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "4 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "0.73 g, 2.8 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "0.55 mL, 2.8 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "Anhydrous THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "36 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry9",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "tosylamine protected terminal alkyne/alkene",
+          "symbol": null,
+          "amount": "12 mmol, 1.2 eq.",
+          "step": 1
+        },
+        {
+          "name": "sorbic alcohol",
+          "symbol": null,
+          "amount": "981 mg, 10 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "aryl iodide",
+          "symbol": null,
+          "amount": "1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Dimethyl 2-(3-(4-bromophenyl)prop-2-yn-1-yl)-2-((2E,4E)-hexa-2,4-dien-1-yl)malonate",
+          "symbol": "1p",
+          "amount": "0.98 g",
+          "step": 1,
+          "registry_name": "Dimethyl 2-(3-(4-bromophenyl)prop-2-yn-1-yl)-2-((2E,4E)-hexa-2,4-dien-1-yl)malonate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Mn(OAc)2·4H2O",
+          "symbol": null,
+          "amount": "2.0 mmol, 20 mol%",
+          "step": 1
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "11 mg, 56 µmol, 1.4 mol%",
+          "step": 2
+        },
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "10 mg, 8.0 µmol, 0.2 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "3.5 mL, 18 mmol, 1.8 eq.",
+          "step": 1
+        },
+        {
+          "name": "N-bromosuccinimide",
+          "symbol": null,
+          "amount": "11 mmol, 1.1 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "Anhydrous THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "100 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "16 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "48%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry10",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "N-allyl-4-methylbenzenesulfonamide",
+          "symbol": null,
+          "amount": "1.266 g, 6.0 mmol, 1.2 eq.",
+          "step": 1
+        },
+        {
+          "name": "(2E,4E)-hexa-2,4-dien-1-ol",
+          "symbol": null,
+          "amount": "490.7 mg, 5 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "aryl iodide",
+          "symbol": null,
+          "amount": "1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-allyl-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3a",
+          "amount": "0.93 g, 3.2 mmol",
+          "step": 1,
+          "registry_name": "N-allyl-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "2 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "4 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "3.934 g, 15 mmol, 3 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "1.77 mL, 9 mmol, 1.8 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "Anhydrous THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "50 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "16 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry11",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "N-allyl-4-methylbenzenesulfonamide",
+          "symbol": null,
+          "amount": "0.42 g, 2.0 mmol, 1.0 eq.",
+          "step": 1
+        },
+        {
+          "name": "(2E,4E)-5-phenylpenta-2,4-dien-1-ol",
+          "symbol": null,
+          "amount": "0.35 g, 2.2 mmol, 1.1 eq.",
+          "step": 1
+        },
+        {
+          "name": "aryl iodide",
+          "symbol": null,
+          "amount": "1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-allyl-4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "3b",
+          "amount": "0.51 g",
+          "step": 1,
+          "registry_name": "N-allyl-4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "2 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "4 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "0.73 g, 2.8 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "0.55 mL, 2.8 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "Anhydrous THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "36 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing-Entry1",
+      "_gp_source": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "Stepwise: electrophilic bromination of cinnamic acid to give a vinyl bromide (Step 1) followed by a Cu/Pd-catalyzed cross-coupling of an alkynyl amine with the vinyl bromide to form 1,3-diene-enes (terminal aryl containing)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "4-methyl-N-((2Z,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": null,
+          "amount": "0.62 g, 2.0 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "4-Methyl-N-(prop-2-yn-1-yl",
+          "symbol": null,
+          "amount": "0.84 g, 4.0 mmol, 1.0 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "vinyl bromide",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-allyl-4-methyl-N-((2Z,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "3b",
+          "amount": "0.19 g, 0.53 mmol",
+          "step": 1,
+          "registry_name": "N-allyl-4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Mn(OAc)2·4H2O",
+          "symbol": null,
+          "amount": "2.0 mmol, 20 mol%",
+          "step": 1
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "11 mg, 56 µmol, 1.4 mol%",
+          "step": 2
+        },
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "10 mg, 8.0 µmol, 0.2 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "0.73 g, 2.8 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "550 μL, 2.8 mmol, 1.4 eq.",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "diethylamine and THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "15 mL"
+          },
+          {
+            "step": 2,
+            "value": "3 mL and 8 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 2,
+            "value": "overnight"
+          },
+          {
+            "step": 1,
+            "value": "36 h"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "27%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "Alkylation (allylation) of sorbic alcohol with allyl bromide using NaH",
+      "substrates": [
+        {
+          "name": "sorbic alcohol",
+          "symbol": null,
+          "amount": "5.0 g, 50.9 mmol, 1.0 eq."
+        },
+        {
+          "name": "allyl bromide",
+          "symbol": null,
+          "amount": "6.16 g, 50.9 mmol, 1.0 eq."
+        }
+      ],
+      "products": [
+        {
+          "name": "(2E,4E)-1-(allyloxy)hexa-2,4-diene",
+          "symbol": "3c",
+          "amount": "4.2 g",
+          "registry_name": "(2E,4E)-1-(allyloxy)hexa-2,4-diene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sodium hydride (NaH)",
+          "symbol": null,
+          "amount": "1.34 g, 56 mmol, 1.1 eq."
+        },
+        {
+          "name": "HMPA",
+          "symbol": null,
+          "amount": "12.7 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "50 mL (1 mL/mmol)",
+        "temperature": "reflux (warmed to reflux 2 h, then after addition heated to reflux 2 h)",
+        "time": "reflux 2 h; then addition and reflux 2 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "Two-step sequence: conversion of hexa-2,4-dien-1-ol to alkyl bromide (mesylation then bromide formation) followed by alkylation of dimethyl allyl malonate (malonate alkylation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "hexa-2,4-dien-1-ol",
+          "symbol": null,
+          "amount": "1.08 g, 11.0 mmol",
+          "step": 1
+        },
+        {
+          "name": "dimethyl allyl malonate",
+          "symbol": null,
+          "amount": "1.61 mL, 10 mmol, 1.0 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "hexa-2,4-dien-1-yl bromide",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Diethyl 2-allyl-2-((2E,4E)-hexa-2,4-dien-1-yl)malonate",
+          "symbol": "3d",
+          "amount": "1.6 g",
+          "step": 2,
+          "registry_name": "Diethyl 2-allyl-2-((2E,4E)-hexa-2,4-dien-1-yl)malonate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "n-BuLi (2.5 M in Et2O)",
+          "symbol": null,
+          "amount": "4.60 mL, 11.5 mmol",
+          "step": 1
+        },
+        {
+          "name": "methanesulfonyl chloride",
+          "symbol": null,
+          "amount": "0.89 mL, 11.5 mmol",
+          "step": 1
+        },
+        {
+          "name": "lithium bromide (LiBr)",
+          "symbol": null,
+          "amount": "4.34 g in 10 mL THF, 50 mmol",
+          "step": 1
+        },
+        {
+          "name": "sodium hydride (NaH, 60% in mineral oil)",
+          "symbol": null,
+          "amount": "0.44 g, 11 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "20 mL"
+          },
+          {
+            "step": 2,
+            "value": "15 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "dry ice/acetone bath then warmed to room temperature"
+          },
+          {
+            "step": 2,
+            "value": "dry ice/acetone bath then warmed to room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry12",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "tosylamine protected terminal alkyne/alkene",
+          "symbol": null,
+          "amount": "12 mmol, 1.2 eq.",
+          "step": 1
+        },
+        {
+          "name": "sorbic alcohol",
+          "symbol": null,
+          "amount": "981 mg, 10 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "aryl iodide",
+          "symbol": null,
+          "amount": "1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-allyl-N-((2E,4E)-deca-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3e",
+          "amount": "185 mg",
+          "step": 2,
+          "registry_name": "N-allyl-N-((2E,4E)-deca-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "2 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "4 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "3.5 mL, 18 mmol, 1.8 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "Anhydrous THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "100 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "16 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "27%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing-Entry2",
+      "_gp_source": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "Stepwise: electrophilic bromination of cinnamic acid to give a vinyl bromide (Step 1) followed by a Cu/Pd-catalyzed cross-coupling of an alkynyl amine with the vinyl bromide to form 1,3-diene-enes (terminal aryl containing)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "cinnamic acid",
+          "symbol": null,
+          "amount": "10 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "4-methyl-N-((2Z,4E)-5-(p-tolyl)penta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": null,
+          "amount": "0.65 g, 2.0 mmol, 1.0 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "vinyl bromide",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-allyl-4-methyl-N-((2Z,4E)-5-(p-tolyl)penta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "3f",
+          "amount": "0.27 g",
+          "step": 2,
+          "registry_name": "N-allyl-4-methyl-N-((2Z,4E)-5-(p-tolyl)penta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Mn(OAc)2·4H2O",
+          "symbol": null,
+          "amount": "2.0 mmol, 20 mol%",
+          "step": 1
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "11 mg, 56 µmol, 1.4 mol%",
+          "step": 2
+        },
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "10 mg, 8.0 µmol, 0.2 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "N-bromosuccinimide",
+          "symbol": null,
+          "amount": "11 mmol, 1.1 eq.",
+          "step": 1
+        },
+        {
+          "name": "allyl alcohol",
+          "symbol": null,
+          "amount": "150 µL, 2.2 mmol, 1.1 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "550 µL, 2.8 mmol, 1.4 eq.",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "H2O and acetonitrile"
+          },
+          {
+            "step": 2,
+            "value": "diethylamine and THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "20 mL and 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "15 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 2,
+            "value": "36 h"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing-Entry3",
+      "_gp_source": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "Stepwise: electrophilic bromination of cinnamic acid to give a vinyl bromide (Step 1) followed by a Cu/Pd-catalyzed cross-coupling of an alkynyl amine with the vinyl bromide to form 1,3-diene-enes (terminal aryl containing)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "cinnamic acid",
+          "symbol": null,
+          "amount": "10 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "4-Methyl-N-(prop-2-yn-1-yl",
+          "symbol": null,
+          "amount": "0.84 g, 4.0 mmol, 1.0 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "vinyl bromide",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "1,3-diene-ene",
+          "symbol": "3g",
+          "amount": "0.43 g",
+          "step": 2,
+          "registry_name": "N-allyl-N-((2Z,4E)-5-(benzo[d][1,3]dioxol-5-yl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Mn(OAc)2·4H2O",
+          "symbol": null,
+          "amount": "2.0 mmol, 20 mol%",
+          "step": 1
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "11 mg, 56 µmol, 1.4 mol%",
+          "step": 2
+        },
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "10 mg, 8.0 µmol, 0.2 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "N-bromosuccinimide",
+          "symbol": null,
+          "amount": "11 mmol, 1.1 eq.",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "H2O and acetonitrile"
+          },
+          {
+            "step": 2,
+            "value": "diethylamine and THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "20 mL and 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "3 mL and 8 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GP_SM_2_3g"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing-Entry4",
+      "_gp_source": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "Stepwise: electrophilic bromination of cinnamic acid to give a vinyl bromide (Step 1) followed by a Cu/Pd-catalyzed cross-coupling of an alkynyl amine with the vinyl bromide to form 1,3-diene-enes (terminal aryl containing)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "cinnamic acid",
+          "symbol": null,
+          "amount": "10 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "4-Methyl-N-(prop-2-yn-1-yl",
+          "symbol": null,
+          "amount": "0.84 g, 4.0 mmol, 1.0 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "vinyl bromide",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-allyl-N-((2Z,4E)-5-(4-methoxyphenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3h",
+          "amount": "0.50 g",
+          "step": 2,
+          "registry_name": "N-allyl-N-((2Z,4E)-5-(4-methoxyphenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Mn(OAc)2·4H2O",
+          "symbol": null,
+          "amount": "2.0 mmol, 20 mol%",
+          "step": 1
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "11 mg, 56 µmol, 1.4 mol%",
+          "step": 2
+        },
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "10 mg, 8.0 µmol, 0.2 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "N-bromosuccinimide",
+          "symbol": null,
+          "amount": "11 mmol, 1.1 eq.",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "H2O and acetonitrile"
+          },
+          {
+            "step": 2,
+            "value": "diethylamine and THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "20 mL and 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "3 mL and 8 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GP_SM_2_3h"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing-Entry5",
+      "_gp_source": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing",
+      "source_pages": [
+        17,
+        18
+      ],
+      "reaction_type": "Stepwise: electrophilic bromination of cinnamic acid to give a vinyl bromide (Step 1) followed by a Cu/Pd-catalyzed cross-coupling of an alkynyl amine with the vinyl bromide to form 1,3-diene-enes (terminal aryl containing)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "cinnamic acid",
+          "symbol": null,
+          "amount": "10 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "4-Methyl-N-(prop-2-yn-1-yl",
+          "symbol": null,
+          "amount": "0.84 g, 4.0 mmol, 1.0 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "vinyl bromide",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-allyl-N-((2Z,4E)-5-(4-fluorophenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3i",
+          "amount": "0.18 g",
+          "step": 2,
+          "registry_name": "N-allyl-N-((2Z,4E)-5-(4-fluorophenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Mn(OAc)2·4H2O",
+          "symbol": null,
+          "amount": "2.0 mmol, 20 mol%",
+          "step": 1
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "11 mg, 56 µmol, 1.4 mol%",
+          "step": 2
+        },
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "10 mg, 8.0 µmol, 0.2 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "N-bromosuccinimide",
+          "symbol": null,
+          "amount": "11 mmol, 1.1 eq.",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "H2O and acetonitrile"
+          },
+          {
+            "step": 2,
+            "value": "diethylamine and THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "20 mL and 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "3 mL and 8 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "24%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GP_SM_2_3i"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing-Entry6",
+      "_gp_source": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "Stepwise: electrophilic bromination of cinnamic acid to give a vinyl bromide (Step 1) followed by a Cu/Pd-catalyzed cross-coupling of an alkynyl amine with the vinyl bromide to form 1,3-diene-enes (terminal aryl containing)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "cinnamic acid",
+          "symbol": null,
+          "amount": "10 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "4-Methyl-N-(prop-2-yn-1-yl",
+          "symbol": null,
+          "amount": "0.84 g, 4.0 mmol, 1.0 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "vinyl bromide",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-allyl-N-((2Z,4E)-5-(4-chlorophenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3j",
+          "amount": "0.14 g",
+          "step": 2,
+          "registry_name": "N-allyl-N-((2Z,4E)-5-(4-chlorophenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Mn(OAc)2·4H2O",
+          "symbol": null,
+          "amount": "2.0 mmol, 20 mol%",
+          "step": 1
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "11 mg, 56 µmol, 1.4 mol%",
+          "step": 2
+        },
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "10 mg, 8.0 µmol, 0.2 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "N-bromosuccinimide",
+          "symbol": null,
+          "amount": "11 mmol, 1.1 eq.",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "H2O and acetonitrile"
+          },
+          {
+            "step": 2,
+            "value": "diethylamine and THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "20 mL and 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "3 mL and 8 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "18%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GP_SM_2_3j"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing-Entry7",
+      "_gp_source": "GeneralProcedure_gp_sm_2_syntheses_of_1_3_diene_enes_terminal_aryl_containing",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "Stepwise: electrophilic bromination of cinnamic acid to give a vinyl bromide (Step 1) followed by a Cu/Pd-catalyzed cross-coupling of an alkynyl amine with the vinyl bromide to form 1,3-diene-enes (terminal aryl containing)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "cinnamic acid",
+          "symbol": null,
+          "amount": "10 mmol, 1 eq.",
+          "step": 1
+        },
+        {
+          "name": "4-Methyl-N-(prop-2-yn-1-yl",
+          "symbol": null,
+          "amount": "0.84 g, 4.0 mmol, 1.0 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "vinyl bromide",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(but-3-en-1-yl)-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3k",
+          "amount": "825 mg",
+          "step": 2,
+          "registry_name": "N-(but-3-en-1-yl)-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Mn(OAc)2·4H2O",
+          "symbol": null,
+          "amount": "2.0 mmol, 20 mol%",
+          "step": 1
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "11 mg, 56 µmol, 1.4 mol%",
+          "step": 2
+        },
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "10 mg, 8.0 µmol, 0.2 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "N-bromosuccinimide",
+          "symbol": null,
+          "amount": "11 mmol, 1.1 eq.",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "H2O and acetonitrile"
+          },
+          {
+            "step": 2,
+            "value": "diethylamine and THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "20 mL and 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "3 mL and 8 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GP_SM_2_3k"
+    },
+    {
+      "id": "GeneralProcedure_gp_sm_1_step_i-Entry13",
+      "_gp_source": "GeneralProcedure_gp_sm_1_step_i",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "Mitsunobu etherification to generate 1,3-diene-ynes/1,3-diene-enes, followed by Pd/Cu-catalyzed Sonogashira-type cross-coupling with aryl iodides",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "N-allyl-4-methylbenzenesulfonamide",
+          "symbol": null,
+          "amount": "0.844 g, 4.0 mmol, 1.0 eq.",
+          "step": 1
+        },
+        {
+          "name": "(E)-4-methylpenta-2,4-dien-1-ol",
+          "symbol": null,
+          "amount": "0.50 mL, 4.4 mmol, 1.1 eq.",
+          "step": 1
+        },
+        {
+          "name": "aryl iodide",
+          "symbol": null,
+          "amount": "1.2 eq.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "1,3-diene-ynes/1,3-diene-enes",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-N-allyl-4-methyl-N-(4-methylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "3l",
+          "amount": "0.60 g",
+          "step": 1,
+          "registry_name": "(E)-N-allyl-4-methyl-N-(4-methylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "bis-triphenylphosphine palladium(II) chloride",
+          "symbol": null,
+          "amount": "2 mol%",
+          "step": 2
+        },
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "4 mol%",
+          "step": 2
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine",
+          "step": 2
+        }
+      ],
+      "other_components": [
+        {
+          "name": "PPh3",
+          "symbol": null,
+          "amount": "1.46 g, 5.6 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "Diisopropyl azodicarboxylate (DIAD)",
+          "symbol": null,
+          "amount": "1.1 mL, 5.6 mmol, 1.4 eq.",
+          "step": 1
+        },
+        {
+          "name": "degassed triethylamine",
+          "symbol": null,
+          "amount": "3 eq.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "distilled THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "20 mL"
+          },
+          {
+            "step": 2,
+            "value": "0.5 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "24 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (evacuated and purged)"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        24,
+        25
+      ],
+      "reaction_type": "intramolecular Diels-Alder reaction of 1,3-diene-ene 3a",
+      "substrates": [
+        {
+          "name": "1,3-diene-ene",
+          "symbol": "3a",
+          "amount": null,
+          "registry_name": "N-allyl-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,5R,7aR)-5-methyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "symbol": "4a",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "LCoBr2",
+          "symbol": null,
+          "amount": "5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L1",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "Zn",
+          "symbol": null,
+          "amount": "1 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "96:4",
+        "dr": null
+      },
+      "_original_id": "rxn-3a-L1"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        24,
+        25
+      ],
+      "reaction_type": "intramolecular Diels-Alder reaction of 1,3-diene-ene 3a",
+      "substrates": [
+        {
+          "name": "1,3-diene-ene",
+          "symbol": "3a",
+          "amount": null,
+          "registry_name": "N-allyl-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,5R,7aR)-5-methyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "symbol": "4a",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "LCoBr2",
+          "symbol": null,
+          "amount": "5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L4",
+          "symbol": "L4"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "Zn",
+          "symbol": null,
+          "amount": "1 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "97:3",
+        "dr": null
+      },
+      "_original_id": "rxn-3a-L4"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        24,
+        25
+      ],
+      "reaction_type": "intramolecular Diels-Alder reaction of 1,3-diene-ene 3a",
+      "substrates": [
+        {
+          "name": "1,3-diene-ene",
+          "symbol": "3a",
+          "amount": null,
+          "registry_name": "N-allyl-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,5R,7aR)-5-methyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "symbol": "4a",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "LCoBr2",
+          "symbol": null,
+          "amount": "5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L3",
+          "symbol": "L3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "Zn",
+          "symbol": null,
+          "amount": "1 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "83:17",
+        "dr": null
+      },
+      "_original_id": "rxn-3a-L3"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        24,
+        25
+      ],
+      "reaction_type": "intramolecular Diels-Alder reaction of 1,3-diene-ene 3a",
+      "substrates": [
+        {
+          "name": "1,3-diene-ene",
+          "symbol": "3a",
+          "amount": null,
+          "registry_name": "N-allyl-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,5R,7aR)-5-methyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "symbol": "4a",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "LCoBr2",
+          "symbol": null,
+          "amount": "5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5",
+          "symbol": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "Zn",
+          "symbol": null,
+          "amount": "1 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "95:5",
+        "dr": null
+      },
+      "_original_id": "rxn-3a-L5"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        24,
+        25
+      ],
+      "reaction_type": "intramolecular Diels-Alder reaction of 1,3-diene-ene 3a",
+      "substrates": [
+        {
+          "name": "1,3-diene-ene",
+          "symbol": "3a",
+          "amount": null,
+          "registry_name": "N-allyl-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,5R,7aR)-5-methyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "symbol": "4a",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "LCoBr2",
+          "symbol": null,
+          "amount": "5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L8",
+          "symbol": "L8"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "Zn",
+          "symbol": null,
+          "amount": "1 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "98:2",
+        "dr": null
+      },
+      "_original_id": "rxn-3a-L8"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        24,
+        25
+      ],
+      "reaction_type": "intramolecular Diels-Alder reaction of 1,3-diene-ene 3a",
+      "substrates": [
+        {
+          "name": "N-allyl-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3a",
+          "amount": null,
+          "registry_name": "N-allyl-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name",
+          "original_name": "1,3-diene-ene",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(3aS,5R,7aR)-5-methyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+            "product_index": 0,
+            "reason": "Textual substrate '1,3-diene-ene' is a generic class but the paper symbol 3a is mapped in same-paper symbol_evidence to a full starting-material name; one-to-one symbol mapping allows resolution."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,5R,7aR)-5-methyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "symbol": "4a",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "LCoBr2",
+          "symbol": null,
+          "amount": "5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "(S,S)-PhBPECoBr2",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "10 mol%"
+        },
+        {
+          "name": "Zn",
+          "symbol": null,
+          "amount": "1 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "1 mL",
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": null,
+        "er": "99:1",
+        "dr": null
+      },
+      "_original_id": "rxn-3a-L7"
+    },
+    {
+      "id": "GP1-Entry1",
+      "_gp_source": "GP1",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1a",
+          "amount": "73 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-6-methyl-7-phenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2a",
+          "amount": "72.2 mg",
+          "registry_name": "(3aR,6S)-6-methyl-7-phenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L10CoBr2",
+          "symbol": null,
+          "amount": "8.5 mg, 10 µmol, 0.05 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "18 mg, 20 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.20 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "16 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": null,
+        "er": "96:4",
+        "dr": null
+      },
+      "_original_id": "GP1_2a"
+    },
+    {
+      "id": "GP1-Entry2",
+      "_gp_source": "GP1",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-N-(3-(4-methoxyphenyl)prop-2-yn-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "1b",
+          "amount": "39.5 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-N-(3-(4-methoxyphenyl)prop-2-yn-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-7-(4-methoxyphenyl)-6-methyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2b",
+          "amount": "35.5 mg",
+          "registry_name": "(3aR,6S)-7-(4-methoxyphenyl)-6-methyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L10CoBr2",
+          "symbol": null,
+          "amount": "4.2 mg, 5 µmol, 0.05 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "9 mg, 10 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "6.4 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "16 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": "98:2",
+        "dr": null
+      },
+      "_original_id": "GP1_2b"
+    },
+    {
+      "id": "GP1-Entry3",
+      "_gp_source": "GP1",
+      "source_pages": [
+        31,
+        32
+      ],
+      "reaction_type": "intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "N-(3-(3,5-bis(trifluoromethyl)phenyl)prop-2-yn-1-yl)-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "1c",
+          "amount": "50.1 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "N-(3-(3,5-bis(trifluoromethyl)phenyl)prop-2-yn-1-yl)-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-7-(3,5-bis(trifluoromethyl)phenyl)-6-methyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2c",
+          "amount": "45.8 mg",
+          "registry_name": "(3aR,6S)-7-(3,5-bis(trifluoromethyl)phenyl)-6-methyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L10CoBr2",
+          "symbol": null,
+          "amount": "4.2 mg, 5 µmol, 0.05 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "9 mg, 10 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "6.4 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "16 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": "96:4",
+        "dr": null
+      },
+      "_original_id": "GP1_2c"
+    },
+    {
+      "id": "GP1-Entry4",
+      "_gp_source": "GP1",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "N-(3-(4-chlorophenyl)prop-2-yn-1-yl)-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "1d",
+          "amount": "79.8 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "N-(3-(4-chlorophenyl)prop-2-yn-1-yl)-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-7-(4-chlorophenyl)-6-methyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2d",
+          "amount": "78 mg",
+          "registry_name": "(3aR,6S)-7-(4-chlorophenyl)-6-methyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L10CoBr2",
+          "symbol": null,
+          "amount": "8.5 mg, 10 µmol, 0.05 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "18 mg, 20 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.20 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "16 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": null,
+        "er": "92:8",
+        "dr": null
+      },
+      "_original_id": "GP1_2d"
+    },
+    {
+      "id": "GP1-Entry5",
+      "_gp_source": "GP1",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(3-(thiophen-3-yl)prop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1e",
+          "amount": "74.2 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(3-(thiophen-3-yl)prop-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-6-methyl-7-(thiophen-3-yl)-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2e",
+          "amount": "56 mg",
+          "registry_name": "(3aR,6S)-6-methyl-7-(thiophen-3-yl)-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L10CoBr2",
+          "symbol": null,
+          "amount": "8.5 mg, 10 µmol, 0.05 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "18 mg, 20 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.20 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "120 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP1_2e"
+    },
+    {
+      "id": "GP1-Entry6",
+      "_gp_source": "GP1",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "Cobalt-catalyzed intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "N-((2E,4E)-deca-2,4-dien-1-yl)-4-methyl-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1f",
+          "amount": "42.1 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "N-((2E,4E)-deca-2,4-dien-1-yl)-4-methyl-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-6-pentyl-7-phenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2f",
+          "amount": "37.2 mg",
+          "registry_name": "(3aR,6S)-6-pentyl-7-phenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L9CoBr2",
+          "symbol": null,
+          "amount": "4.2 mg, 5 µmol, 0.05 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "9 mg, 10 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "6.4 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "16 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": "95:5",
+        "dr": null
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "GP1-Entry7",
+      "_gp_source": "GP1",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "Cobalt-catalyzed intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1g",
+          "amount": "85 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-6,7-diphenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2g",
+          "amount": "56 mg",
+          "registry_name": "(3aR,6S)-6,7-diphenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L9CoBr2",
+          "symbol": null,
+          "amount": "8.4 mg, 10 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "18 mg, 20 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.20 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": "94:6",
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "GP1-Entry8",
+      "_gp_source": "GP1",
+      "source_pages": [
+        35,
+        36
+      ],
+      "reaction_type": "Cobalt-catalyzed intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(pent-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1h",
+          "amount": "32 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(pent-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-7-ethyl-6-methyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2h",
+          "amount": "26 mg",
+          "registry_name": "(3aR,6S)-7-ethyl-6-methyl-2-tosyl-2,3,3a,6-tetrahydro-1H- isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L9CoBr2",
+          "symbol": null,
+          "amount": "4.2 mg, 5.0 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "9.0 mg, 10 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "6.5 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": "98.5:1.5",
+        "dr": null
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "GP1-Entry9",
+      "_gp_source": "GP1",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "Cobalt-catalyzed intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "4-methyl-N-(pent-2-yn-1-yl)-N-((2Z,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "1i",
+          "amount": "38 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "4-methyl-N-(pent-2-yn-1-yl)-N-((2Z,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-7-ethyl-6-phenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2i",
+          "amount": "33 mg",
+          "registry_name": "(3aR,6S)-7-ethyl-6-phenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L9CoBr2",
+          "symbol": null,
+          "amount": "4.2 mg, 5.0 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "9.0 mg, 10 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "6.5 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r4"
+    },
+    {
+      "id": "GP1-Entry10",
+      "_gp_source": "GP1",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "(2E,4E)-1-(pent-2-yn-1-yloxy)hexa-2,4-diene",
+          "symbol": "1j",
+          "amount": "32.8 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "(2E,4E)-1-(pent-2-yn-1-yloxy)hexa-2,4-diene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-7-ethyl-6-methyl-1,3,3a,6-tetrahydroisobenzofuran",
+          "symbol": "2j",
+          "amount": "28 mg",
+          "registry_name": "(3aR,6S)-7-ethyl-6-methyl-1,3,3a,6-tetrahydroisobenzofuran",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L9CoBr2",
+          "symbol": null,
+          "amount": "8.4 mg, 10 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "18 mg, 20 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.20 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "16 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": "90:10",
+        "dr": null
+      },
+      "_original_id": "chunk17_2j"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        37,
+        38
+      ],
+      "reaction_type": "cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "(2E,4E)-1-(but-2-yn-1-yloxy)hexa-2,4-diene",
+          "symbol": "1k",
+          "amount": "20 mg, 0.133 mmol, 1.0 eq.",
+          "registry_name": "(2E,4E)-1-(but-2-yn-1-yloxy)hexa-2,4-diene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,6R)-6,7-dimethyl-1,3,3a,6-tetrahydroisobenzofuran",
+          "symbol": "2k",
+          "amount": null,
+          "registry_name": "(3aS,6R)-6,7-dimethyl-1,3,3a,6-tetrahydroisobenzofuran",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "ent-L9CoBr2",
+          "symbol": null,
+          "amount": "11.2 mg, 0.0133 mmol, 10 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "activated Zn",
+          "symbol": null,
+          "amount": "8.7 mg, 0.133 mmol, 1.0 eq."
+        },
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "17.7 mg, 0.020 mmol, 0.15 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1 mL then 0.9 mL",
+        "temperature": "rt",
+        "time": "15 min pre-stir then 1 h",
+        "atmosphere": "nitrogen (glovebox)",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": "93.5:6.5",
+        "dr": null
+      },
+      "_original_id": "chunk17_2k"
+    },
+    {
+      "id": "GP1-Entry11",
+      "_gp_source": "GP1",
+      "source_pages": [
+        38,
+        39
+      ],
+      "reaction_type": "cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "(Z)-N-(hex-2-yn-1-yl)-4-methyl-N-(penta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "1l",
+          "amount": "73 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "(Z)-N-(hex-2-yn-1-yl)-4-methyl-N-(penta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-7-propyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2l",
+          "amount": "56 mg",
+          "registry_name": "(R)-7-propyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L9CoBr2",
+          "symbol": null,
+          "amount": "8.5 mg, 10 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "18 mg, 20 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.20 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": null,
+        "er": "97:3",
+        "dr": null
+      },
+      "_original_id": "chunk17_2l"
+    },
+    {
+      "id": "GP1-Entry12",
+      "_gp_source": "GP1",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)-N-(prop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1m",
+          "amount": "70 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)-N-(prop-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-6-phenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2m",
+          "amount": "37 mg",
+          "registry_name": "(3aR,6S)-6-phenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L3CoBr2",
+          "symbol": null,
+          "amount": "6.3 mg, 10 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "18 mg, 20 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.20 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": "69:31",
+        "dr": null
+      },
+      "_original_id": "chunk17_2m"
+    },
+    {
+      "id": "GP1-Entry13",
+      "_gp_source": "GP1",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "Cobalt-catalyzed intramolecular [4+2]/[2+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(3-(trimethylsilyl)prop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1n",
+          "amount": "36.1 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methyl-N-(3-(trimethylsilyl)prop-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,6S)-6-methyl-2-tosyl-7-(trimethylsilyl)-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2n",
+          "amount": "30.7 mg",
+          "registry_name": "(3aR,6S)-6-methyl-2-tosyl-7-(trimethylsilyl)-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L4CoBr2",
+          "symbol": null,
+          "amount": "5.9 mg, 5.0 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "9.0 mg, 10 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "6.5 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": "67:33",
+        "dr": null
+      },
+      "_original_id": "rxn-2n"
+    },
+    {
+      "id": "GP1-Entry14",
+      "_gp_source": "GP1",
+      "source_pages": [
+        40,
+        41
+      ],
+      "reaction_type": "Cobalt-catalyzed intramolecular [4+2]/[2+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "(E)-4-methyl-N-(4-methylpenta-2,4-dien-1-yl)-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "symbol": "1o",
+          "amount": "73 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "(E)-4-methyl-N-(4-methylpenta-2,4-dien-1-yl)-N-(3-phenylprop-2-yn-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-5-methyl-7-phenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "symbol": "2o",
+          "amount": "73 mg",
+          "registry_name": "(R)-5-methyl-7-phenyl-2-tosyl-2,3,3a,6-tetrahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L5CoBr2",
+          "symbol": null,
+          "amount": "6.4 mg, 10 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "18 mg, 20 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.20 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": "71:29",
+        "dr": null
+      },
+      "_original_id": "rxn-2o"
+    },
+    {
+      "id": "GP1-Entry15",
+      "_gp_source": "GP1",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "Cobalt-catalyzed intramolecular [4+2]/[2+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "dimethyl 2-(3-(4-bromophenyl)prop-2-yn-1-yl)-2-((2E,4E)-hexa-2,4-dien-1-yl)malonate",
+          "symbol": "1p",
+          "amount": "40.4 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "Dimethyl 2-(3-(4-bromophenyl)prop-2-yn-1-yl)-2-((2E,4E)-hexa-2,4-dien-1-yl)malonate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "Dimethyl (3aR,6S)-7-(4-bromophenyl)-6-methyl-1,3,3a,6-tetrahydro-2H-indene-2,2-dicarboxylate",
+          "symbol": "2p",
+          "amount": "37 mg",
+          "registry_name": "Dimethyl (3aR,6S)-7-(4-bromophenyl)-6-methyl-1,3,3a,6-tetrahydro-2H-indene-2,2-dicarboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L9CoBr2",
+          "symbol": null,
+          "amount": "4.2 mg, 5.0 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "9.0 mg, 10 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "6.5 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "16 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": "76:24",
+        "dr": null
+      },
+      "_original_id": "rxn-2p"
+    },
+    {
+      "id": "GP2-Entry1",
+      "_gp_source": "GP2",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "N-allyl-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3a",
+          "amount": "29.1 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "N-allyl-N-((2E,4E)-hexa-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,5R,7aR)-5-methyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "symbol": "4a",
+          "amount": "19.8 mg",
+          "registry_name": "(3aS,5R,7aR)-5-methyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L7CoBr2",
+          "symbol": null,
+          "amount": "7.2 mg, 10.0 µmol, 0.10 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "13.3 mg, 15 µmol, 0.15 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": ">99:1",
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GP2-Entry2",
+      "_gp_source": "GP2",
+      "source_pages": [
+        43,
+        44
+      ],
+      "reaction_type": "intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "N-allyl-4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "3b",
+          "amount": "35 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "N-allyl-4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,5R,7aR)-5-phenyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "symbol": "4b",
+          "amount": "26 mg",
+          "registry_name": "(3aS,5R,7aR)-5-phenyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L1CoBr2",
+          "symbol": null,
+          "amount": "3.1 mg, 5.0 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "9.0 mg, 10 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "6.5 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": "99:1",
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GP2-Entry3",
+      "_gp_source": "GP2",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "intramolecular [4+2]-cycloaddition",
+      "substrates": [
+        {
+          "name": "(2E,4E)-1-(allyloxy)hexa-2,4-diene",
+          "symbol": "3c",
+          "amount": "27.6 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "(2E,4E)-1-(allyloxy)hexa-2,4-diene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,5R,7aR)-5-methyl-1,3,3a,4,5,7a-hexahydroisobenzofuran",
+          "symbol": "4c",
+          "amount": "19 mg",
+          "registry_name": "(3aS,5R,7aR)-5-methyl-1,3,3a,4,5,7a-hexahydroisobenzofuran",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L7CoBr2",
+          "symbol": null,
+          "amount": "7.2 mg, 10.0 µmol, 0.05 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "13.3 mg, 7.5 µmol, 0.075 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "NonGP-Entry13",
+      "source_pages": [
+        45
+      ],
+      "reaction_type": "cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "Diethyl 2-allyl-2-((2E,4E)-hexa-2,4-dien-1-yl)malonate",
+          "symbol": "3d",
+          "amount": "28.0 mg, 0.10 mmol, 1.0 eq.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "Diethyl (3aR,5R,7aS)-5-methyl-1,3,3a,4,5,7a-hexahydro-2H-indene-2,2-dicarboxylate",
+          "symbol": "4d",
+          "amount": "18 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": "97.5:2.5",
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GP2-Entry4",
+      "_gp_source": "GP2",
+      "source_pages": [
+        45,
+        46
+      ],
+      "reaction_type": "cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "N-allyl-N-((2E,4E)-deca-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3e",
+          "amount": "34.7 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "N-allyl-N-((2E,4E)-deca-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,5R,7aR)-5-pentyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "symbol": "4e",
+          "amount": "26.8 mg",
+          "registry_name": "(3aS,5R,7aR)-5-pentyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L7CoBr2",
+          "symbol": null,
+          "amount": "7.2 mg, 10.0 µmol, 0.10 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "13.3 mg, 15 µmol, 0.15 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": null,
+        "er": "99:1",
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GP2-Entry5",
+      "_gp_source": "GP2",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "(E)-N-allyl-4-methyl-N-(4-methylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "3l",
+          "amount": "29.1 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "(E)-N-allyl-4-methyl-N-(4-methylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aS,7aR)-6-methyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "symbol": "4f",
+          "amount": "20.0 mg",
+          "registry_name": "(3aS,7aR)-6-methyl-2-tosyl-2,3,3a,4,5,7a-hexahydro-1H-isoindole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L15CoBr2",
+          "symbol": null,
+          "amount": "5 mg, 10.0 µmol, 0.10 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "13.3 mg, 15 µmol, 0.15 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": "97:3",
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GP2-Entry6",
+      "_gp_source": "GP2",
+      "source_pages": [
+        46,
+        47
+      ],
+      "reaction_type": "cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "N-allyl-4-methyl-N-((2Z,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "3b",
+          "amount": "71 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "N-allyl-4-methyl-N-((2E,4E)-5-phenylpenta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,5R,6S)-6-((E)-styryl)-3-tosyl-3-azabicyclo[3.2.0]heptane",
+          "symbol": "5b",
+          "amount": "50 mg",
+          "registry_name": "(1S,5R,6S)-6-((E)-styryl)-3-tosyl-3-azabicyclo[3.2.0]heptane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L3CoBr2",
+          "symbol": null,
+          "amount": "6.3 mg, 10 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "18 mg, 20 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.20 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": "94:6",
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GP2-Entry7",
+      "_gp_source": "GP2",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "N-allyl-4-methyl-N-((2Z,4E)-5-(p-tolyl)penta-2,4-dien-1-yl)benzenesulfonamide",
+          "symbol": "3f",
+          "amount": "37 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "N-allyl-4-methyl-N-((2Z,4E)-5-(p-tolyl)penta-2,4-dien-1-yl)benzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,5R,6S)-6-((E)-4-methylstyryl)-3-tosyl-3-azabicyclo[3.2.0]heptane",
+          "symbol": "5c",
+          "amount": "25 mg",
+          "registry_name": "(1S,5R,6S)-6-((E)-4-methylstyryl)-3-tosyl-3-azabicyclo[3.2.0]heptane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L3CoBr2",
+          "symbol": null,
+          "amount": "3.1 mg, 5.0 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "9.0 mg, 10 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "6.5 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "GP2-Entry8",
+      "_gp_source": "GP2",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "Cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "N-allyl-N-((2Z,4E)-5-(benzo[d][1,3]dioxol-5-yl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3g",
+          "amount": "77 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "N-allyl-N-((2Z,4E)-5-(benzo[d][1,3]dioxol-5-yl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,5R,6S)-6-((E)-2-(benzo[d][1,3]dioxol-5-yl)vinyl)-3-tosyl-3-azabicyclo[3.2.0]heptane",
+          "symbol": "5d",
+          "amount": "71 mg",
+          "registry_name": "(1S,5R,6S)-6-((E)-2-(benzo[d][1,3]dioxol-5-yl)vinyl)-3-tosyl-3-azabicyclo[3.2.0]heptane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L3CoBr2",
+          "symbol": null,
+          "amount": "6.3 mg, 10 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "18 mg, 20 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.20 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": "90:10",
+        "dr": null
+      },
+      "_original_id": "GP2-5d"
+    },
+    {
+      "id": "GP2-Entry9",
+      "_gp_source": "GP2",
+      "source_pages": [
+        49,
+        50
+      ],
+      "reaction_type": "Cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "N-allyl-N-((2Z,4E)-5-(4-methoxyphenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3h",
+          "amount": "35 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "N-allyl-N-((2Z,4E)-5-(4-methoxyphenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,5R,6S)-6-((E)-4-methoxystyryl)-3-tosyl-3-azabicyclo[3.2.0]heptane",
+          "symbol": "5e",
+          "amount": "29 mg",
+          "registry_name": "(1S,5R,6S)-6-((E)-4-methoxystyryl)-3-tosyl-3-azabicyclo[3.2.0]heptane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L3CoBr2",
+          "symbol": null,
+          "amount": "3.1 mg, 5.0 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "9.0 mg, 10 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "6.5 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": "94:6",
+        "dr": null
+      },
+      "_original_id": "GP2-5e"
+    },
+    {
+      "id": "GP2-Entry10",
+      "_gp_source": "GP2",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "Cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "N-allyl-N-((2Z,4E)-5-(4-fluorophenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3i",
+          "amount": "38 mg, 0.10 mmol, 1.0 eq.",
+          "registry_name": "N-allyl-N-((2Z,4E)-5-(4-fluorophenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,5R,6S)-6-((E)-4-fluorostyryl)-3-tosyl-3-azabicyclo[3.2.0]heptane",
+          "symbol": "5f",
+          "amount": "22 mg",
+          "registry_name": "(1S,5R,6S)-6-((E)-4-fluorostyryl)-3-tosyl-3-azabicyclo[3.2.0]heptane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L3CoBr2",
+          "symbol": null,
+          "amount": "3.1 mg, 5.0 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "9.0 mg, 10 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "6.5 mg, 0.10 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": "91:9",
+        "dr": null
+      },
+      "_original_id": "GP2-5f"
+    },
+    {
+      "id": "NonGP-Entry14",
+      "source_pages": [
+        51
+      ],
+      "reaction_type": "cobalt-catalyzed intramolecular cycloaddition",
+      "substrates": [
+        {
+          "name": "N-allyl-N-((2Z,4E)-5-(4-chlorophenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "symbol": "3j",
+          "amount": "77 mg, 0.20 mmol, 1.0 eq.",
+          "registry_name": "N-allyl-N-((2Z,4E)-5-(4-chlorophenyl)penta-2,4-dien-1-yl)-4-methylbenzenesulfonamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1S,5R,6S)-6-((E)-4-chlorostyryl)-3-tosyl-3-azabicyclo[3.2.0]heptane",
+          "symbol": "5g",
+          "amount": "75 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "L3CoBr2",
+          "symbol": null,
+          "amount": "6.3 mg, 10 µmol, 0.050 eq."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBArF",
+          "symbol": null,
+          "amount": "18 mg, 20 µmol, 0.10 eq."
+        },
+        {
+          "name": "zinc",
+          "symbol": null,
+          "amount": "13 mg, 0.20 mmol, 1.0 eq."
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "2.0 mL",
+        "temperature": null,
+        "time": "12 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "96%",
+        "ee": null,
+        "er": "88:12",
+        "dr": null
+      },
+      "_original_id": "r1"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/ligand_effects_in_regio-_and_enantioselective_co_d1980fc8.json",
+    "input_sha256": "2b4af343c96ca27fece2b7438ea97a9d4a108c189ed038a4ca3c28045116ebe7"
+  }
+}

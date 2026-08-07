@@ -1,0 +1,1875 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/00a762751c523d932d81bcaafda3231b.pdf",
+  "paper_key": "00a762751c523d932d81bcaafda3231b",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/00a762751c523d932d81bcaafda3231b.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/00a762751c523d932d81bcaafda3231b.pdf",
+    "source_mtime_ns": 1782048781000000000,
+    "source_size": 1567418,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "two_column",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "00a762751c523d932d81bcaafda3231b",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/00a762751c523d932d81bcaafda3231b.pdf"
+  },
+  "extracted_at": "2026-07-18T02:29:21.751649",
+  "total_reactions": 31,
+  "filtered_reactions": 26,
+  "filter_stats": {
+    "input_reactions": 31,
+    "basic_failed": 0,
+    "target_failed": 5,
+    "retained": 26
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry1",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-fluorophenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-(4-Fluorophenyl)-1-phenylpentan-1-one",
+            "product_index": 0,
+            "reason": "Product bears a single 4-fluorophenyl group appended via the newly formed C(sp2)–C(sp3) bond, directly identifying the arylboronic acid as 4‑fluorophenylboronic acid."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Fluorophenyl)-1-phenylpentan-1-one",
+          "symbol": "3a",
+          "amount": "48.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry2",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-fluorophenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "6-(4-Fluorophenyl)-1-phenylhexan-1-one",
+            "product_index": 0,
+            "reason": "Product contains a 4-fluorophenyl substituent installed by the arylboronic acid; maps one-to-one to 4‑fluorophenylboronic acid."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "6-(4-Fluorophenyl)-1-phenylhexan-1-one",
+          "symbol": "3b",
+          "amount": "19.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry3",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-fluorophenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "7-(4-Fluorophenyl)-1-phenylheptan-1-one",
+            "product_index": 0,
+            "reason": "The product shows a 4‑fluorophenyl group at the coupling site; this maps to 4‑fluorophenylboronic acid as the aryl reagent."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "7-(4-Fluorophenyl)-1-phenylheptan-1-one",
+          "symbol": "3c",
+          "amount": "37.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry4",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-fluorophenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-(4-Fluorophenyl)-1-phenylhexan-1-one",
+            "product_index": 0,
+            "reason": "A 4‑fluorophenyl substituent is present at the cross-coupling site in the product, indicating 4‑fluorophenylboronic acid was used."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Fluorophenyl)-1-phenylhexan-1-one",
+          "symbol": "3d",
+          "amount": "46.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry5",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-fluorophenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(3-(4-Fluorophenyl)cyclopentyl)-1-phenylethan-1-one",
+            "product_index": 0,
+            "reason": "Product contains a 3-(4‑fluorophenyl) cyclopentyl fragment installed by the arylboronic acid, identifying it as 4‑fluorophenylboronic acid."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(3-(4-Fluorophenyl)cyclopentyl)-1-phenylethan-1-one",
+          "symbol": "3e",
+          "amount": "51.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": "1:1"
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry6",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-fluorophenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-Cyclohexyl-4-fluorobenzene",
+            "product_index": 0,
+            "reason": "Product is 1‑cyclohexyl‑4‑fluorobenzene: the 4‑fluorophenyl unit is the aryl fragment introduced by the boronic acid, i.e., 4‑fluorophenylboronic acid."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Cyclohexyl-4-fluorobenzene",
+          "symbol": "3f",
+          "amount": "33.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry7",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-fluorophenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "4-(4-Fluorophenyl)tetrahydro-2H-pyran",
+            "product_index": 0,
+            "reason": "The product contains a 4‑fluorophenyl substituent at the coupling site, mapping directly to 4‑fluorophenylboronic acid."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(4-Fluorophenyl)tetrahydro-2H-pyran",
+          "symbol": "3g",
+          "amount": "34.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "96%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_7"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry8",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-fluorophenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-(4-Fluorophenyl)tetrahydrofuran",
+            "product_index": 0,
+            "reason": "A 4‑fluorophenyl group is installed in the product at the coupling position, indicating the arylboronic acid was 4‑fluorophenylboronic acid."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(4-Fluorophenyl)tetrahydrofuran",
+          "symbol": "3h'",
+          "amount": "11.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "35%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_8"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry9",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "arylboronic acid 2",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1,5-Diphenylpentan-1-one",
+          "symbol": "3i",
+          "amount": "38.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_9"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry10",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "2-naphthylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-(Naphthalen-2-yl)-1-phenylpentan-1-one",
+            "product_index": 0,
+            "reason": "Product contains a naphthalen-2-yl unit at the coupling site, which maps directly to 2‑naphthylboronic acid as the aryl reagent."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(Naphthalen-2-yl)-1-phenylpentan-1-one",
+          "symbol": "3j",
+          "amount": "32.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_10"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry11",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-methylphenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-Phenyl-5-(p-tolyl)pentan-1-one",
+            "product_index": 0,
+            "reason": "Product contains a p-tolyl (4-methylphenyl) aryl fragment that maps one-to-one to the arylboronic acid starting material."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Phenyl-5-(p-tolyl)pentan-1-one",
+          "symbol": "3k",
+          "amount": "38.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_11"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry12",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-(4-Methoxyphenyl)-1-phenylpentan-1-one",
+            "product_index": 0,
+            "reason": "Product contains a 4-methoxyphenyl aryl fragment that corresponds to the supplied arylboronic acid."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Methoxyphenyl)-1-phenylpentan-1-one",
+          "symbol": "3l",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_12"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry13",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-phenoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-(4-Phenoxyphenyl)-1-phenylpentan-1-one",
+            "product_index": 0,
+            "reason": "Product shows a 4-phenoxyphenyl fragment consistent with the arylboronic acid identity."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Phenoxyphenyl)-1-phenylpentan-1-one",
+          "symbol": "3m",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_13"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry14",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-(methylthio)phenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-(4-(Methylthio)phenyl)-1-phenylpentan-1-one",
+            "product_index": 0,
+            "reason": "Product includes a 4-(methylthio)phenyl ring which maps directly to the arylboronic acid."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-(Methylthio)phenyl)-1-phenylpentan-1-one",
+          "symbol": "3n",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_14"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry15",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-bromophenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-(4-Bromophenyl)-1-phenylpentan-1-one",
+            "product_index": 0,
+            "reason": "Product contains a para-bromophenyl substituent that corresponds to the arylboronic acid used."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Bromophenyl)-1-phenylpentan-1-one",
+          "symbol": "3o",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_15"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry16",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "methyl 4-(boronic acid)benzoate",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Methyl 4-(5-oxo-5-phenylpentyl)benzoate",
+            "product_index": 0,
+            "reason": "Product is a methyl 4-substituted benzoate; the para-substituted aryl fragment maps to a methyl 4-borono/boronic-acid benzoate starting material."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-(5-oxo-5-phenylpentyl)benzoate",
+          "symbol": "3p",
+          "amount": "46.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_16"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry17",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "4-(trifluoromethyl)phenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-Phenyl-5-(4-(trifluoromethyl)phenyl)pentan-1-one",
+            "product_index": 0,
+            "reason": "Product contains a para-trifluoromethylphenyl group that maps directly to the arylboronic acid."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Phenyl-5-(4-(trifluoromethyl)phenyl)pentan-1-one",
+          "symbol": "3q",
+          "amount": "57.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_17"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry18",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "arylboronic acid 2",
+          "symbol": "2u",
+          "amount": "0.2 mmol, 1.0 equiv",
+          "registry_name": "[1,1′-biphenyl]-4-ylboronicacid",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": "1k",
+          "amount": "0.3 mmol, 1.5 equiv",
+          "registry_name": "((2-Cyclopropyl-1,1-diphenylethyl)peroxy)trimethylsilane",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(but-3-en-1-yl)-1,1′-biphenyl",
+          "symbol": "4b",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "41%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_18"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry19",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "arylboronic acid 2",
+          "symbol": "2v",
+          "amount": "0.2 mmol, 1.0 equiv",
+          "registry_name": "estrone-derived 3-deoxyestrone-3-boronic acid",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": "1a",
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(8R,9S,13S,14S)-13-Methyl-3-(5-oxo-5-phenylpentyl)-6,7,8,9,11,12,13,14,15,16-decahydro-17H-cyclopenta[a]-phenanthren-17-one",
+          "symbol": "4d",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_19"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry20",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "arylboronic acid 2",
+          "symbol": "2a",
+          "amount": "0.7 g, 5.0 mmol"
+        },
+        {
+          "name": "alkylsilyl peroxide 1",
+          "symbol": "1a",
+          "amount": "1.25 g, 7.5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(4-Fluorophenyl)-1-phenylpentan-1-one",
+          "symbol": "3a",
+          "amount": "1.17 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "room temperature",
+        "time": "6 h"
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_20"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry23",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "3-nitrophenylboronic acid",
+          "symbol": "2",
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-(3-Nitrophenyl)-1-phenylpentan-1-one",
+            "product_index": 0,
+            "reason": "Product bears a 3-nitrophenyl substituent that maps directly to the arylboronic acid starting material."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide",
+          "symbol": "1",
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(3-Nitrophenyl)-1-phenylpentan-1-one",
+          "symbol": "3t",
+          "amount": "30.0 mg",
+          "registry_name": "5-(3-Nitrophenyl)-1-phenylpentan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75.39%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry24",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "2-methylphenylboronic acid (o-tolylboronic acid)",
+          "symbol": "2",
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "1-Phenyl-5-(o-tolyl)pentan-1-one",
+            "product_index": 0,
+            "reason": "Product shows an o-tolyl (2-methylphenyl) substituent that corresponds to the arylboronic acid used."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide",
+          "symbol": "1",
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Phenyl-5-(o-tolyl)pentan-1-one",
+          "symbol": "3u",
+          "amount": "45.9 mg",
+          "registry_name": "1-Phenyl-5-(o-tolyl)pentan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r4"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry25",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "2-methoxyphenylboronic acid",
+          "symbol": "2",
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-(2-Methoxyphenyl)-1-phenylpentan-1-one",
+            "product_index": 0,
+            "reason": "Product contains a 2-methoxyphenyl group that maps directly to the arylboronic acid coupling partner."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide",
+          "symbol": "1",
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(2-Methoxyphenyl)-1-phenylpentan-1-one",
+          "symbol": "3v",
+          "amount": "22.0 mg",
+          "registry_name": "5-(2-Methoxyphenyl)-1-phenylpentan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "41%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r5"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry26",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "2-fluorophenylboronic acid",
+          "symbol": "2",
+          "amount": "0.2 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "5-(2-Fluorophenyl)-1-phenylpentan-1-one",
+            "product_index": 0,
+            "reason": "Product shows a 2-fluorophenyl substituent corresponding to the arylboronic acid used in coupling."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide",
+          "symbol": "1",
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-(2-Fluorophenyl)-1-phenylpentan-1-one",
+          "symbol": "3w",
+          "amount": "48.7 mg",
+          "registry_name": "5-(2-Fluorophenyl)-1-phenylpentan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r6"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry30",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "arylboronic acid",
+          "symbol": "2",
+          "amount": "0.2 mmol, 1.0 equiv"
+        },
+        {
+          "name": "alkylsilyl peroxide",
+          "symbol": "1",
+          "amount": "0.3 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(but-3-en-1-yl)-1,1'-biphenyl",
+          "symbol": "4b",
+          "amount": "17.0 mg",
+          "registry_name": "4-(but-3-en-1-yl)-1,1′-biphenyl",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "1.9 mg, 0.01 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "27.6 mg, 0.2 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "41%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r10"
+    },
+    {
+      "id": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1-Entry31",
+      "_gp_source": "GeneralProcedure_cu_catalyzed_c_sp3_c_sp2_cross_coupling_of_alkylsilyl_peroxides_1",
+      "source_pages": [
+        6,
+        7
+      ],
+      "reaction_type": "Copper-catalyzed C(sp3)-C(sp2) cross-coupling of alkylsilyl peroxides with arylboronic acids",
+      "substrates": [
+        {
+          "name": "phenylboronic acid",
+          "symbol": "2t",
+          "amount": "1.0 mmol, 1.0 equiv",
+          "original_name": "arylboronic acid",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(8R,9S,13S,14S)-13-Methyl-3-(5-oxo-5-phenylpentyl)-6,7,8,9,11,12,13,14,15,16-decahydro-17H-cyclopenta[a]phenanthren-17-one",
+            "product_index": 0,
+            "reason": "Product contains a single phenyl (Ar = phenyl) at the newly formed C(sp3)–C(sp2) site; with only one arylboronic acid present this maps one-to-one to phenylboronic acid."
+          }
+        },
+        {
+          "name": "alkylsilyl peroxide",
+          "symbol": "1a",
+          "amount": "1.5 mmol, 1.5 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "(8R,9S,13S,14S)-13-Methyl-3-(5-oxo-5-phenylpentyl)-6,7,8,9,11,12,13,14,15,16-decahydro-17H-cyclopenta[a]phenanthren-17-one",
+          "symbol": "4d",
+          "amount": "342 mg",
+          "registry_name": "(8R,9S,13S,14S)-13-Methyl-3-(5-oxo-5-phenylpentyl)-6,7,8,9,11,12,13,14,15,16-decahydro-17H-cyclopenta[a]-phenanthren-17-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "9.5 mg, 0.05 mmol, 5 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "2,2'-bipyridine (L1)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "138 mg, 1.0 mmol, 1.0 equiv"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous THF",
+        "solvent_amount": "5.0 mL",
+        "temperature": "room temperature",
+        "time": "6 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r11"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_suzuki/symbol_resolved/text/00a762751c523d932d81bcaafda3231b_1a0833a4.json",
+    "input_sha256": "ce2e61fee93b236754f4e74f76704048f59dfa95ac89e0292716ab3036eef788"
+  }
+}

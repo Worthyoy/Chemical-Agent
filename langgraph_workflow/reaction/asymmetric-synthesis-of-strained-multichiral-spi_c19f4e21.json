@@ -1,0 +1,5227 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/asymmetric-synthesis-of-strained-multichiral-spirocyclobutanes-through-cage-confined-cross-2-2-photocycloaddition.pdf",
+  "paper_key": "asymmetric-synthesis-of-strained-multichiral-spirocyclobutanes-through-cage-confined-cross-2-2-photocycloaddition",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/asymmetric-synthesis-of-strained-multichiral-spirocyclobutanes-through-cage-confined-cross-2-2-photocycloaddition.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/asymmetric-synthesis-of-strained-multichiral-spirocyclobutanes-through-cage-confined-cross-2-2-photocycloaddition.pdf",
+    "source_mtime_ns": 1782048359000000000,
+    "source_size": 25648029,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "asymmetric-synthesis-of-strained-multichiral-spirocyclobutanes-through-cage-confined-cross-2-2-photocycloaddition",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/asymmetric-synthesis-of-strained-multichiral-spirocyclobutanes-through-cage-confined-cross-2-2-photocycloaddition.pdf"
+  },
+  "extracted_at": "2026-07-17T00:57:49.463211",
+  "total_reactions": 85,
+  "filtered_reactions": 75,
+  "filter_stats": {
+    "input_reactions": 85,
+    "basic_failed": 9,
+    "target_failed": 1,
+    "retained": 75
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "Suzuki–Miyaura cross-coupling",
+      "substrates": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-bromophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "22",
+          "amount": "0.1 mmol, 45.8 mg, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-methoxyphenylboronic acid",
+          "symbol": null,
+          "amount": "0.2 mmol, 30.4 mg, 2.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4'-methoxy-[1,1'-biphenyl]-4-yl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "55",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": null,
+          "amount": "4.6 mg, 4.0 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "0.4 mmol, 42.4 mg, 4.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene; MeOH:H2O (4:1)",
+        "solvent_amount": "1.5 mL; 0.5 mL",
+        "temperature": "80 ℃",
+        "time": "18 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "modified literature procedure",
+      "substrates": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-bromophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "22",
+          "amount": "0.1 mmol, 45.8 mg, 1.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "aniline",
+          "symbol": null,
+          "amount": "0.4 mmol, 37.2 mg, 4.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(5S,6R,7R)-6-(4-bromophenyl)-7-methyl-N-phenyl-7-(4-(phenylcarbamoyl)phenyl)-2-oxaspiro[3.3]heptane-5-carboxamide",
+          "symbol": "56",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS (1.0 M in THF)",
+          "symbol": null,
+          "amount": "0.6 mmol, 6.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "1.5 mL",
+        "temperature": "room temperature",
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        14,
+        15
+      ],
+      "reaction_type": "two-step sequence (hydrolysis then carbamate formation/amidation)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "methyl 4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "symbol": "39",
+          "amount": "67.6 mg, 0.2 mmol, 1 equiv.",
+          "step": 1,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "57",
+          "symbol": "57",
+          "produced_in_step": 1,
+          "consumed_in_step": 2,
+          "resolved_smiles": "C[C@@]1(c2ccc(C(=O)O)cc2)C2(COC2)[C@H](c2ccccc2)[C@]12Cc1ccccc1C2=O",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "2_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_5_image_1.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoyl)-D-phenylalaninate",
+          "symbol": "58",
+          "amount": null,
+          "step": 2,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiOH·H2O",
+          "symbol": null,
+          "amount": "16.8 mg, 0.4 mmol, 2.0 equiv.",
+          "step": 1
+        },
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "0.6 mmol, 3 equiv.",
+          "step": 2
+        },
+        {
+          "name": "isobutyl chlorocarbonate",
+          "symbol": null,
+          "amount": "0.24 mmol, 1.2 equiv.",
+          "step": 2
+        },
+        {
+          "name": "methyl L-phenylalaninate hydrochloride",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF/MeOH (2:1, v/v)"
+          },
+          {
+            "step": 2,
+            "value": "dry DCM"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "3.0 mL"
+          },
+          {
+            "step": 2,
+            "value": "2.0 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "80 ℃"
+          },
+          {
+            "step": 2,
+            "value": "0 ℃ (0.5 h), then 35 ℃"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "14 h"
+          },
+          {
+            "step": 2,
+            "value": "0.5 h (0 ℃) then 48 h (35 ℃)"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "44%",
+        "ee": "99%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        14,
+        15
+      ],
+      "reaction_type": "two-step sequence (hydrolysis then EDCI-mediated esterification)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "methyl 4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "symbol": "39",
+          "amount": "67.6 mg, 0.2 mmol, 1 equiv.",
+          "step": 1,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "57",
+          "symbol": "57",
+          "produced_in_step": 1,
+          "consumed_in_step": 2,
+          "resolved_smiles": "C[C@@]1(c2ccc(C(=O)O)cc2)C2(COC2)[C@H](c2ccccc2)[C@]12Cc1ccccc1C2=O",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "2_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_5_image_1.png"
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(3S,8S,9S,10R,13R,14S,17R)-10,13-dimethyl-17-((R)-6-methylheptan-2-yl)-2,3,4,7,8,9,10,11,12,13,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-3-yl 4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "symbol": "59",
+          "amount": null,
+          "step": 2,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiOH·H2O",
+          "symbol": null,
+          "amount": "16.8 mg, 0.4 mmol, 2.0 equiv.",
+          "step": 1
+        },
+        {
+          "name": "cholesterol",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv.",
+          "step": 2
+        },
+        {
+          "name": "EDCI",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv.",
+          "step": 2
+        },
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "0.04 mmol, 20 mol%",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF/MeOH (2:1, v/v)"
+          },
+          {
+            "step": 2,
+            "value": "dry DCM"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "3.0 mL"
+          },
+          {
+            "step": 2,
+            "value": "2.0 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "80 ℃"
+          },
+          {
+            "step": 2,
+            "value": "r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "14 h"
+          },
+          {
+            "step": 2,
+            "value": "24 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": "99%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        15,
+        16
+      ],
+      "reaction_type": "alkylation (enolate methylation)",
+      "substrates": [
+        {
+          "name": "(1R,1'R,3'R,4'R)-3'-(4-methoxyphenyl)-4'-phenyldispiro[cyclopentane-1,2'-cyclobutane-1',2''-indene]-1'',2(3''H)-dione",
+          "symbol": "53",
+          "amount": "0.2 mmol, 1 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,1'R,3R,3'R,4'R)-3'-(4-methoxyphenyl)-3-methyl-4'-phenyldispiro[cyclopentane-1,2'-cyclobutane-1',2''-indene]-1'',2(3''H)-dione",
+          "symbol": "60",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiHMDS (1.0 M in THF)",
+          "symbol": null,
+          "amount": "0.4 mmol, 2.0 equiv."
+        },
+        {
+          "name": "MeI",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "dry THF",
+        "solvent_amount": "2.0 mL",
+        "temperature": "-78 ℃",
+        "time": "1 h then 1 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "94%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "GeneralProcedure_1c-10c-Entry1",
+      "_gp_source": "GeneralProcedure_1c-10c",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "base-promoted aldol (Claisen–Schmidt) condensation",
+      "substrates": [
+        {
+          "name": "(1R,1'R,3'R,4'R)-3'-(4-methoxyphenyl)-4'-phenyldispiro[cyclopentane-1,2'-cyclobutane-1',2''-indene]-1'',2(3''H)-dione",
+          "symbol": "53",
+          "amount": "0.2 mmol, 1 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "benzaldehyde",
+          "symbol": null,
+          "amount": "0.4 mmol, 2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,1'R,3'R,4'R)-3-((E)-benzylidene)-3'-(4-methoxyphenyl)-4'-phenyldispiro[cyclopentane-1,2'-cyclobutane-1',2''-indene]-1'',2(3''H)-dione",
+          "symbol": "61",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaOH aqueous",
+          "symbol": null,
+          "amount": "0.4 mL, 1 M, 2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH",
+        "solvent_amount": "4.0 mL",
+        "temperature": "r.t.",
+        "time": "2 hours",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "94%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_1b-12b-15b-Entry1",
+      "_gp_source": "GeneralProcedure_1b-12b-15b",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "two-step formation of a phosphonium salt followed by a Wittig olefination (benzyl bromide → phosphonium bromide intermediate → alkene product from cyclic ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "benzyl bromide",
+          "amount": "1.0 equiv.",
+          "step": 1,
+          "original_name": "benzyl bromide S2 or S2’",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(1-phenylethylidene)oxetane",
+            "product_index": 0,
+            "reason": "GP lists 'benzyl bromide S2 or S2’' (a range). Product is 3-(1-phenylethylidene)oxetane showing an unsubstituted phenyl-derived benzylidene fragment — maps one-to-one to unsubstituted benzyl bromide."
+          }
+        },
+        {
+          "name": "cyclic ketone S4",
+          "amount": "1.5 equiv.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium bromide S3 or S3’",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(1-phenylethylidene)oxetane",
+          "symbol": "8b",
+          "amount": null,
+          "step": 2,
+          "registry_name": "3-(1-phenylethylidene)oxetane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triphenylphosphine",
+          "amount": "1.2 equiv.",
+          "step": 1
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CHCl3"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          },
+          {
+            "step": 2,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "reflux"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature (for S3) or 0 °C then 50 °C (for S3’)"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight (for S2) or 36 h (for S2’)"
+          },
+          {
+            "step": 2,
+            "value": "1 h then 5 h (for S3) or 1 h then 12 h (for S3’)"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_8b"
+    },
+    {
+      "id": "GeneralProcedure_1b-12b-15b-Entry2",
+      "_gp_source": "GeneralProcedure_1b-12b-15b",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "two-step formation of a phosphonium salt followed by a Wittig olefination (benzyl bromide → phosphonium bromide intermediate → alkene product from cyclic ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "1-(4-(trifluoromethyl)phenyl)ethyl bromide",
+          "amount": "1.0 equiv.",
+          "step": 1,
+          "original_name": "benzyl bromide S2 or S2’",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(1-(4-(trifluoromethyl)phenyl)ethylidene)oxetane",
+            "product_index": 0,
+            "reason": "Product contains the 1-(4-(trifluoromethyl)phenyl)ethylidene fragment that maps one-to-one to the benzylic bromide starting material."
+          }
+        },
+        {
+          "name": "oxetan-3-one",
+          "amount": "1.5 equiv.",
+          "step": 2,
+          "original_name": "cyclic ketone S4",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(1-(4-(trifluoromethyl)phenyl)ethylidene)oxetane",
+            "product_index": 0,
+            "reason": "Product is an oxetane with an exocyclic ethylidene at C3 (oxetan-3-ylidene), uniquely indicating oxetan-3-one as the ketone precursor."
+          }
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium bromide S3 or S3’",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(1-(4-(trifluoromethyl)phenyl)ethylidene)oxetane",
+          "symbol": "9b",
+          "amount": null,
+          "step": 2,
+          "registry_name": "3-(1-(4-(trifluoromethyl)phenyl)ethylidene)oxetane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triphenylphosphine",
+          "amount": "1.2 equiv.",
+          "step": 1
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CHCl3"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          },
+          {
+            "step": 2,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "reflux"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature (for S3) or 0 °C then 50 °C (for S3’)"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight (for S2) or 36 h (for S2’)"
+          },
+          {
+            "step": 2,
+            "value": "1 h then 5 h (for S3) or 1 h then 12 h (for S3’)"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "17%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_9b"
+    },
+    {
+      "id": "GeneralProcedure_1b-12b-15b-Entry3",
+      "_gp_source": "GeneralProcedure_1b-12b-15b",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "two-step formation of a phosphonium salt followed by a Wittig olefination (benzyl bromide → phosphonium bromide intermediate → alkene product from cyclic ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "1-(4-fluorophenyl)ethyl bromide",
+          "amount": "1.0 equiv.",
+          "step": 1,
+          "original_name": "benzyl bromide S2 or S2’",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(1-(4-fluorophenyl)ethylidene)oxetane",
+            "product_index": 0,
+            "reason": "Product contains the 1-(4-fluorophenyl)ethylidene fragment, which corresponds to the 1-(4-fluorophenyl)ethyl bromide starting material."
+          }
+        },
+        {
+          "name": "oxetan-3-one",
+          "amount": "1.5 equiv.",
+          "step": 2,
+          "original_name": "cyclic ketone S4",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(1-(4-fluorophenyl)ethylidene)oxetane",
+            "product_index": 0,
+            "reason": "The product is an oxetane-derived exocyclic alkene (oxetan-3-ylidene), mapping uniquely to oxetan-3-one as the ketone substrate."
+          }
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium bromide S3 or S3’",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(1-(4-fluorophenyl)ethylidene)oxetane",
+          "symbol": "10b",
+          "amount": null,
+          "step": 2,
+          "registry_name": "3-(1-(4-fluorophenyl)ethylidene)oxetane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triphenylphosphine",
+          "amount": "1.2 equiv.",
+          "step": 1
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CHCl3"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          },
+          {
+            "step": 2,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "reflux"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature (for S3) or 0 °C then 50 °C (for S3’)"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight (for S2) or 36 h (for S2’)"
+          },
+          {
+            "step": 2,
+            "value": "1 h then 5 h (for S3) or 1 h then 12 h (for S3’)"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "42%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_10b"
+    },
+    {
+      "id": "GeneralProcedure_1b-12b-15b-Entry4",
+      "_gp_source": "GeneralProcedure_1b-12b-15b",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "two-step formation of a phosphonium salt followed by a Wittig olefination (benzyl bromide → phosphonium bromide intermediate → alkene product from cyclic ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "1-(4-methoxyphenyl)ethyl bromide",
+          "amount": "1.0 equiv.",
+          "step": 1,
+          "original_name": "benzyl bromide S2 or S2’",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(1-(4-methoxyphenyl)ethylidene)oxetane",
+            "product_index": 0,
+            "reason": "The product shows a 1-(4-methoxyphenyl)ethylidene fragment, directly indicating the corresponding 1-(4-methoxyphenyl)ethyl bromide precursor."
+          }
+        },
+        {
+          "name": "oxetan-3-one",
+          "amount": "1.5 equiv.",
+          "step": 2,
+          "original_name": "cyclic ketone S4",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(1-(4-methoxyphenyl)ethylidene)oxetane",
+            "product_index": 0,
+            "reason": "Exocyclic oxetane alkene in the product indicates oxetan-3-one was the ketone starting material."
+          }
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium bromide S3 or S3’",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(1-(4-methoxyphenyl)ethylidene)oxetane",
+          "symbol": "11b",
+          "amount": null,
+          "step": 2,
+          "registry_name": "3-(1-(4-methoxyphenyl)ethylidene)oxetane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triphenylphosphine",
+          "amount": "1.2 equiv.",
+          "step": 1
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CHCl3"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          },
+          {
+            "step": 2,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "reflux"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature (for S3) or 0 °C then 50 °C (for S3’)"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight (for S2) or 36 h (for S2’)"
+          },
+          {
+            "step": 2,
+            "value": "1 h then 5 h (for S3) or 1 h then 12 h (for S3’)"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "13%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_11b"
+    },
+    {
+      "id": "GeneralProcedure_1b-12b-15b-Entry5",
+      "_gp_source": "GeneralProcedure_1b-12b-15b",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "two-step formation of a phosphonium salt followed by a Wittig olefination (benzyl bromide → phosphonium bromide intermediate → alkene product from cyclic ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "1-(4-acetoxyphenyl)ethyl bromide",
+          "amount": "1.0 equiv.",
+          "step": 1,
+          "original_name": "benzyl bromide S2 or S2’",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "4-(1-(oxetan-3-ylidene)ethyl)phenyl acetate",
+            "product_index": 0,
+            "reason": "Product bears a 4-(1-(oxetan-3-ylidene)ethyl)phenyl acetate substituent; the para‑acetoxy aryl ethylidene maps to the corresponding 1-(4-acetoxyphenyl)ethyl bromide."
+          }
+        },
+        {
+          "name": "oxetan-3-one",
+          "amount": "1.5 equiv.",
+          "step": 2,
+          "original_name": "cyclic ketone S4",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "4-(1-(oxetan-3-ylidene)ethyl)phenyl acetate",
+            "product_index": 0,
+            "reason": "The oxetan-3-ylidene motif in the product indicates the ketone was oxetan-3-one."
+          }
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium bromide S3 or S3’",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(1-(oxetan-3-ylidene)ethyl)phenyl acetate",
+          "symbol": "12b",
+          "amount": null,
+          "step": 2,
+          "registry_name": "4-(1-(oxetan-3-ylidene)ethyl)phenyl acetate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triphenylphosphine",
+          "amount": "1.2 equiv.",
+          "step": 1
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CHCl3"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          },
+          {
+            "step": 2,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "reflux"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature (for S3) or 0 °C then 50 °C (for S3’)"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight (for S2) or 36 h (for S2’)"
+          },
+          {
+            "step": 2,
+            "value": "1 h then 5 h (for S3) or 1 h then 12 h (for S3’)"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_12b"
+    },
+    {
+      "id": "GeneralProcedure_synthesis_of_13b_and_14b-Entry1",
+      "_gp_source": "GeneralProcedure_synthesis_of_13b_and_14b",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "Wittig (ylide formation from phosphonium salt followed by reaction with a ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "(1-cyclobutyl)ethyltriphenylphosphonium bromide",
+          "amount": "1.0 equiv.",
+          "step": 1,
+          "original_name": "phosphonium bromide S5",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "4-(1-cyclobutylideneethyl)benzonitrile",
+            "product_index": 0,
+            "reason": "Product contains the 1-cyclobutylideneethyl fragment arising from the phosphonium ylide; this maps to the corresponding (1-cyclobutyl)ethyltriphenylphosphonium bromide starting salt (S5)."
+          }
+        },
+        {
+          "name": "4-acetylbenzonitrile",
+          "amount": "1.5 equiv.",
+          "step": 2,
+          "symbol": "S6",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "original_name": "ketone",
+          "resolution_evidence": {
+            "product_name": "4-(1-cyclobutylideneethyl)benzonitrile",
+            "product_index": 0,
+            "reason": "Product is 4-(1-cyclobutylideneethyl)benzonitrile; the benzonitrile aryl with an ethylidene indicates the ketone was 4-acetylbenzonitrile (p-acetylbenzonitrile)."
+          }
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium ylide (from S5)",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(1-cyclobutylideneethyl)benzonitrile",
+          "symbol": "13b",
+          "amount": null,
+          "step": 2,
+          "registry_name": "4-(1-cyclobutylideneethyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF (added twice)",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "anhydrous THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then 70 °C"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "12 h then 4 h"
+          },
+          {
+            "step": 2,
+            "value": "5 h"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_13b"
+    },
+    {
+      "id": "GeneralProcedure_synthesis_of_13b_and_14b-Entry2",
+      "_gp_source": "GeneralProcedure_synthesis_of_13b_and_14b",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "Wittig (ylide formation from phosphonium salt followed by reaction with a ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "(1-cyclobutyl)ethyltriphenylphosphonium bromide",
+          "amount": "1.0 equiv.",
+          "step": 1,
+          "original_name": "phosphonium bromide S5",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "methyl 4-(1-cyclobutylideneethyl)benzoate",
+            "product_index": 0,
+            "reason": "Product contains the 1-cyclobutylideneethyl fragment that originates from the phosphonium ylide (S5); maps to the (1-cyclobutyl)ethyltriphenylphosphonium bromide salt."
+          }
+        },
+        {
+          "name": "methyl 4-acetylbenzoate",
+          "amount": "1.5 equiv.",
+          "step": 2,
+          "symbol": "S6",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "original_name": "ketone",
+          "resolution_evidence": {
+            "product_name": "methyl 4-(1-cyclobutylideneethyl)benzoate",
+            "product_index": 0,
+            "reason": "Product methyl 4-(1-cyclobutylideneethyl)benzoate indicates the ketone was methyl 4-acetylbenzoate (p-acetylbenzoate methyl ester)."
+          }
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium ylide (from S5)",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-(1-cyclobutylideneethyl)benzoate",
+          "symbol": "14b",
+          "amount": null,
+          "step": 2,
+          "registry_name": "methyl 4-(1-cyclobutylideneethyl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF (added twice)",
+          "step": 1
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "anhydrous THF"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C then 70 °C"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "12 h then 4 h"
+          },
+          {
+            "step": 2,
+            "value": "5 h"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "42%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_14b"
+    },
+    {
+      "id": "GeneralProcedure_1b-12b-15b-Entry6",
+      "_gp_source": "GeneralProcedure_1b-12b-15b",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "two-step formation of a phosphonium salt followed by a Wittig olefination (benzyl bromide → phosphonium bromide intermediate → alkene product from cyclic ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "1-(4-(methoxycarbonyl)phenyl)ethyl bromide",
+          "amount": "1.0 equiv.",
+          "step": 1,
+          "original_name": "benzyl bromide S2 or S2’",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "tert-butyl 3-(1-(4-(methoxycarbonyl)phenyl)ethylidene)azetidine-1-carboxylate",
+            "product_index": 0,
+            "reason": "Product carries a 1-(4-(methoxycarbonyl)phenyl)ethylidene fragment, which corresponds to the matching 1-(4-(methoxycarbonyl)phenyl)ethyl bromide precursor."
+          }
+        },
+        {
+          "name": "1-(tert-butoxycarbonyl)azetidin-3-one",
+          "amount": "1.5 equiv.",
+          "step": 2,
+          "original_name": "cyclic ketone S4",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "tert-butyl 3-(1-(4-(methoxycarbonyl)phenyl)ethylidene)azetidine-1-carboxylate",
+            "product_index": 0,
+            "reason": "Product is a Boc‑protected azetidine bearing an exocyclic ethylidene at C3, matching N‑Boc‑azetidin‑3‑one (1-(tert‑butoxycarbonyl)azetidin‑3‑one) as the ketone substrate."
+          }
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium bromide S3 or S3’",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-butyl 3-(1-(4-(methoxycarbonyl)phenyl)ethylidene)azetidine-1-carboxylate",
+          "symbol": "15b",
+          "amount": null,
+          "step": 2,
+          "registry_name": "tert-butyl 3-(1-(4-(methoxycarbonyl)phenyl)ethylidene)azetidine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triphenylphosphine",
+          "amount": "1.2 equiv.",
+          "step": 1
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CHCl3"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          },
+          {
+            "step": 2,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "reflux"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature (for S3) or 0 °C then 50 °C (for S3’)"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight (for S2) or 36 h (for S2’)"
+          },
+          {
+            "step": 2,
+            "value": "1 h then 5 h (for S3) or 1 h then 12 h (for S3’)"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "16%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_15b"
+    },
+    {
+      "id": "GeneralProcedure_1b-12b-15b-Entry7",
+      "_gp_source": "GeneralProcedure_1b-12b-15b",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "two-step formation of a phosphonium salt followed by a Wittig olefination (benzyl bromide → phosphonium bromide intermediate → alkene product from cyclic ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "4-bromobenzyl bromide",
+          "amount": "1.0 equiv.",
+          "step": 1,
+          "original_name": "benzyl bromide S2 or S2’",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(4-bromobenzylidene)tetrahydrofuran",
+            "product_index": 0,
+            "reason": "Product is a 4-bromobenzylidene derivative, indicating the benzylic starting halide was p-bromobenzyl bromide."
+          }
+        },
+        {
+          "name": "tetrahydrofuran-3-one",
+          "amount": "1.5 equiv.",
+          "step": 2,
+          "original_name": "cyclic ketone S4",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(4-bromobenzylidene)tetrahydrofuran",
+            "product_index": 0,
+            "reason": "Product is a tetrahydrofuran bearing an exocyclic benzylidene at C3, mapping uniquely to tetrahydrofuran-3-one as the ketone precursor."
+          }
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium bromide S3 or S3’",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(4-bromobenzylidene)tetrahydrofuran",
+          "symbol": "16b",
+          "amount": null,
+          "step": 2,
+          "registry_name": "3-(4-bromobenzylidene)tetrahydrofuran",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triphenylphosphine",
+          "amount": "1.2 equiv.",
+          "step": 1
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CHCl3"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          },
+          {
+            "step": 2,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "reflux"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature (for S3) or 0 °C then 50 °C (for S3’)"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight (for S2) or 36 h (for S2’)"
+          },
+          {
+            "step": 2,
+            "value": "1 h then 5 h (for S3) or 1 h then 12 h (for S3’)"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "20%",
+        "ee": null,
+        "er": null,
+        "dr": "1:1"
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_16b"
+    },
+    {
+      "id": "GeneralProcedure_1b-12b-15b-Entry8",
+      "_gp_source": "GeneralProcedure_1b-12b-15b",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "two-step formation of a phosphonium salt followed by a Wittig olefination (benzyl bromide → phosphonium bromide intermediate → alkene product from cyclic ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "4-bromobenzyl bromide",
+          "amount": "1.0 equiv.",
+          "step": 1,
+          "original_name": "benzyl bromide S2 or S2’",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(4-bromobenzylidene)tetrahydrofuran",
+            "product_index": 0,
+            "reason": "Product contains a 4-bromobenzylidene fragment, indicating the benzylic bromide was p-bromobenzyl bromide."
+          }
+        },
+        {
+          "name": "tetrahydrofuran-3-one",
+          "amount": "1.5 equiv.",
+          "step": 2,
+          "original_name": "cyclic ketone S4",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3-(4-bromobenzylidene)tetrahydrofuran",
+            "product_index": 0,
+            "reason": "The tetrahydrofuran-derived exocyclic benzylidene in the product indicates tetrahydrofuran-3-one as the ketone starting material."
+          }
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium bromide S3 or S3’",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(4-bromobenzylidene)tetrahydrofuran",
+          "symbol": "17b",
+          "amount": null,
+          "step": 2,
+          "registry_name": "3-(4-bromobenzylidene)tetrahydrofuran",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triphenylphosphine",
+          "amount": "1.2 equiv.",
+          "step": 1
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CHCl3"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          },
+          {
+            "step": 2,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "reflux"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature (for S3) or 0 °C then 50 °C (for S3’)"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight (for S2) or 36 h (for S2’)"
+          },
+          {
+            "step": 2,
+            "value": "1 h then 5 h (for S3) or 1 h then 12 h (for S3’)"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "18%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_17b"
+    },
+    {
+      "id": "GeneralProcedure_1b-12b-15b-Entry9",
+      "_gp_source": "GeneralProcedure_1b-12b-15b",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "two-step formation of a phosphonium salt followed by a Wittig olefination (benzyl bromide → phosphonium bromide intermediate → alkene product from cyclic ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "benzyl bromide S2 or S2’",
+          "amount": "1.0 equiv.",
+          "step": 1
+        },
+        {
+          "name": "cyclic ketone S4",
+          "amount": "1.5 equiv.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium bromide S3 or S3’",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-3-(2-oxo-2-phenylethylidene)-1-phenylindolin-2-one",
+          "symbol": "12c",
+          "amount": null,
+          "step": 2,
+          "registry_name": "(E)-3-(2-oxo-2-phenylethylidene)-1-phenylindolin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triphenylphosphine",
+          "amount": "1.2 equiv.",
+          "step": 1
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CHCl3"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          },
+          {
+            "step": 2,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "reflux"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature (for S3) or 0 °C then 50 °C (for S3’)"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight (for S2) or 36 h (for S2’)"
+          },
+          {
+            "step": 2,
+            "value": "1 h then 5 h (for S3) or 1 h then 12 h (for S3’)"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_12c"
+    },
+    {
+      "id": "GeneralProcedure_1b-12b-15b-Entry10",
+      "_gp_source": "GeneralProcedure_1b-12b-15b",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "two-step formation of a phosphonium salt followed by a Wittig olefination (benzyl bromide → phosphonium bromide intermediate → alkene product from cyclic ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "4-(bromomethyl)benzonitrile",
+          "amount": "1.0 equiv.",
+          "step": 1,
+          "original_name": "benzyl bromide S2 or S2’",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(E)-4-((2-oxocyclopentylidene)methyl)benzonitrile",
+            "product_index": 0,
+            "reason": "Product is a benzylidene benzonitrile: the para-cyano aryl group and benzylic linkage map one-to-one to a p-cyanobenzyl bromide (4-(bromomethyl)benzonitrile) used to form the phosphonium ylide."
+          }
+        },
+        {
+          "name": "cyclopentanone",
+          "amount": "1.5 equiv.",
+          "step": 2,
+          "original_name": "cyclic ketone S4",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(E)-4-((2-oxocyclopentylidene)methyl)benzonitrile",
+            "product_index": 0,
+            "reason": "Product contains a 2-oxocyclopentylidene fragment that maps directly to cyclopentanone (the cyclic ketone S4) used in the Wittig olefination."
+          }
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium bromide S3 or S3’",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-4-((2-oxocyclopentylidene)methyl)benzonitrile",
+          "symbol": "15c",
+          "amount": null,
+          "step": 2,
+          "registry_name": "(E)-4-((2-oxocyclopentylidene)methyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triphenylphosphine",
+          "amount": "1.2 equiv.",
+          "step": 1
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CHCl3"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          },
+          {
+            "step": 2,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "reflux"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature (for S3) or 0 °C then 50 °C (for S3’)"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight (for S2) or 36 h (for S2’)"
+          },
+          {
+            "step": 2,
+            "value": "1 h then 5 h (for S3) or 1 h then 12 h (for S3’)"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_15c"
+    },
+    {
+      "id": "GeneralProcedure_1b-12b-15b-Entry11",
+      "_gp_source": "GeneralProcedure_1b-12b-15b",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "two-step formation of a phosphonium salt followed by a Wittig olefination (benzyl bromide → phosphonium bromide intermediate → alkene product from cyclic ketone)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "benzyl bromide S2 or S2’",
+          "amount": "1.0 equiv.",
+          "step": 1
+        },
+        {
+          "name": "cyclic ketone S4",
+          "amount": "1.5 equiv.",
+          "step": 2
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "phosphonium bromide S3 or S3’",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(p-tolyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "1",
+          "amount": null,
+          "step": 2,
+          "registry_name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(p-tolyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "triphenylphosphine",
+          "amount": "1.2 equiv.",
+          "step": 1
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "amount": "1.2 equiv., 1 M in THF",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "atmosphere": [
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CHCl3"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.1 M"
+          },
+          {
+            "step": 2,
+            "value": "0.1 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "reflux"
+          },
+          {
+            "step": 2,
+            "value": "0 °C then room temperature (for S3) or 0 °C then 50 °C (for S3’)"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "overnight (for S2) or 36 h (for S2’)"
+          },
+          {
+            "step": 2,
+            "value": "1 h then 5 h (for S3) or 1 h then 12 h (for S3’)"
+          }
+        ],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "85%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry4",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        45
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(4-isopropylphenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "2",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(4-isopropylphenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "97%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry5",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        45,
+        46
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-7-(4-(tert-butyl)phenyl)-6-(4-cyanophenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "3",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-7-(4-(tert-butyl)phenyl)-6-(4-cyanophenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "72 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": "99%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry6",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(4-(trifluoromethoxy)phenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "4",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(4-(trifluoromethoxy)phenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": "0 ℃",
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": "85%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry7",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        46,
+        47
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(4-iodophenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "5",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(4-iodophenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "83%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry8",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(4-methoxyphenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "6",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(4-methoxyphenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": "80%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry9",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "7",
+          "amount": null,
+          "registry_name": "ethyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": "95%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry10",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl (5S,6R,7R)-7-(4-bromophenyl)-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "8",
+          "registry_name": "ethyl (5S,6R,7R)-7-(4-bromophenyl)-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "91%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GeneralProcedure_1-38_8"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry11",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl (5S,6R,7R)-7-(4-iodophenyl)-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "9",
+          "registry_name": "ethyl (5S,6R,7R)-7-(4-iodophenyl)-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "94%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GeneralProcedure_1-38_9"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry12",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "10",
+          "registry_name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GeneralProcedure_1-38_10"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry13",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        49,
+        50
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(6-methoxynaphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "11",
+          "registry_name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(6-methoxynaphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "89%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GeneralProcedure_1-38_11"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry14",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-methyl-7-phenyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "12",
+          "registry_name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-methyl-7-phenyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "87%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GeneralProcedure_1-38_12"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry15",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-methyl-7-(4-(trifluoromethyl)phenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "13",
+          "registry_name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-methyl-7-(4-(trifluoromethyl)phenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "98%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GeneralProcedure_1-38_13"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry16",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        51
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(4-fluorophenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "14",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(4-fluorophenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_14"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry17",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        51,
+        52
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(4-methoxyphenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "15",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-6-(4-cyanophenyl)-7-(4-methoxyphenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "96%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_15"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry18",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        52
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl (5S,6R,7R)-7-methyl-6-(naphthalen-2-yl)-7-phenyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "16",
+          "amount": null,
+          "registry_name": "ethyl (5S,6R,7R)-7-methyl-6-(naphthalen-2-yl)-7-phenyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_16"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry19",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        52,
+        53
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl (5S,6R,7R)-7-(4-fluorophenyl)-7-methyl-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "17",
+          "amount": null,
+          "registry_name": "ethyl (5S,6R,7R)-7-(4-fluorophenyl)-7-methyl-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "99%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_17"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry20",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        53
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl (5S,6R,7R)-7-(4-methoxyphenyl)-7-methyl-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "18",
+          "amount": null,
+          "registry_name": "ethyl (5S,6R,7R)-7-(4-methoxyphenyl)-7-methyl-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": "99%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_18"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry21",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        54
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "19",
+          "amount": null,
+          "registry_name": "ethyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "98%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_19"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry22",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        54
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-fluorophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "20",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-6-(4-fluorophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": "94%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_20"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry23",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        55
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-chlorophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "21",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-6-(4-chlorophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "95%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry24",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        55
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-bromophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "22",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-6-(4-bromophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "96%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry25",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        56
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4-iodophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "23",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-6-(4-iodophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "94%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry26",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        56
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-6-(4-(trifluoromethyl)phenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "24",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-6-(4-(trifluoromethyl)phenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "91%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry27",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        57
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(4-methoxyphenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "25",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(4-methoxyphenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "93%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry28",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        57,
+        58
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-6-(p-tolyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "26",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-6-(p-tolyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "93%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry30",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        58
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(3,4-dimethylphenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "28",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-6-(3,4-dimethylphenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": "86%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_8"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry31",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        59
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(benzo[d][1,3]dioxol-5-yl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "29",
+          "registry_name": "methyl (5S,6R,7R)-6-(benzo[d][1,3]dioxol-5-yl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "85%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "rxn-29"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry32",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        59
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-6-(3-(trifluoromethyl)phenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "30",
+          "registry_name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-6-(3-(trifluoromethyl)phenyl)-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "92%",
+        "er": null,
+        "dr": "6.6:1"
+      },
+      "_original_id": "rxn-30"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry33",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        59,
+        60
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(3-methoxyphenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "31",
+          "registry_name": "methyl (5S,6R,7R)-7-(4-(methoxycarbonyl)phenyl)-6-(3-methoxyphenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "85%",
+        "er": null,
+        "dr": "6.7:1"
+      },
+      "_original_id": "rxn-31"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry34",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        60
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "methyl (5S,6S,7R)-6-(2-bromophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "32",
+          "registry_name": "methyl (5S,6S,7R)-6-(2-bromophenyl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "98%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "rxn-32"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry35",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        61
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "methyl 4-((5R,6R,7S)-7-(4-fluorobenzoyl)-5-methyl-6-phenyl-2-oxaspiro[3.3]heptan-5-yl)benzoate",
+          "symbol": "33",
+          "registry_name": "methyl 4-((5R,6R,7S)-7-(4-fluorobenzoyl)-5-methyl-6-phenyl-2-oxaspiro[3.3]heptan-5-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "85% (major); >99% (minor)",
+        "er": null,
+        "dr": "2.8:1"
+      },
+      "_original_id": "rxn-33"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry36",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        62
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "4-((5R,6R,7S)-7-benzoyl-5-methyl-5-phenyl-2-oxaspiro[3.3]heptan-6-yl)benzonitrile",
+          "symbol": "34",
+          "amount": null,
+          "registry_name": "4-((5R,6R,7S)-7-benzoyl-5-methyl-5-phenyl-2-oxaspiro[3.3]heptan-6-yl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "88%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GP1_34"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry37",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        62
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((5R,6R,7S)-7-acetyl-5-methyl-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptan-5-yl)benzoate",
+          "symbol": "35",
+          "amount": null,
+          "registry_name": "methyl 4-((5R,6R,7S)-7-acetyl-5-methyl-6-(naphthalen-2-yl)-2-oxaspiro[3.3]heptan-5-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "88%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GP1_35"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry38",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        63
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl (1S,2R,3S)-3-(4-cyanophenyl)-3-methyl-2-(naphthalen-2-yl)spiro[3.3]heptane-1-carboxylate",
+          "symbol": "36",
+          "amount": null,
+          "registry_name": "ethyl (1S,2R,3S)-3-(4-cyanophenyl)-3-methyl-2-(naphthalen-2-yl)spiro[3.3]heptane-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "84%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GP1_36"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry39",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        63
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl (1S,2R,3S)-3-(4-(methoxycarbonyl)phenyl)-3-methyl-2-(naphthalen-2-yl)spiro[3.3]heptane-1-carboxylate",
+          "symbol": "37",
+          "amount": null,
+          "registry_name": "ethyl (1S,2R,3S)-3-(4-(methoxycarbonyl)phenyl)-3-methyl-2-(naphthalen-2-yl)spiro[3.3]heptane-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GP1_37"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry40",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        64
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (1S,2R,3S)-2-(4-cyanophenyl)-3-(4-(methoxycarbonyl)phenyl)-3-methylspiro[3.3]heptane-1-carboxylate",
+          "symbol": "38",
+          "amount": null,
+          "registry_name": "methyl (1S,2R,3S)-2-(4-cyanophenyl)-3-(4-(methoxycarbonyl)phenyl)-3-methylspiro[3.3]heptane-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "82%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GP1_38"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry41",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        64
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "symbol": "39",
+          "amount": null,
+          "registry_name": "methyl 4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "48 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GP1_39"
+    },
+    {
+      "id": "GeneralProcedure_1-38-Entry42",
+      "_gp_source": "GeneralProcedure_1-38",
+      "source_pages": [
+        65
+      ],
+      "reaction_type": "visible-light-promoted photocatalytic coupling (photocatalytic cross-coupling) of two organic substrates",
+      "substrates": [
+        {
+          "name": "1a-19a",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "1b-14b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-(p-tolyl)-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "symbol": "40",
+          "amount": null,
+          "registry_name": "methyl 4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-(p-tolyl)-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2 (degassed for 10 min)",
+        "light_source": "5 W × 4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "96%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "GP1_40"
+    },
+    {
+      "id": "GeneralProcedure_39-49-Entry1",
+      "_gp_source": "GeneralProcedure_39-49",
+      "source_pages": [
+        66
+      ],
+      "reaction_type": "visible-light photocatalyzed coupling of 12b or 15b with 1c-10c in DMSO/H2O",
+      "substrates": [
+        {
+          "name": "1c-10c",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "12b or 15b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((2R,2'S,4'R)-2'-(4-fluorophenyl)-4'-methyl-1-oxo-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-4'-yl)benzoate",
+          "symbol": "41",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO/H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "60 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "98%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_41"
+    },
+    {
+      "id": "GeneralProcedure_39-49-Entry2",
+      "_gp_source": "GeneralProcedure_39-49",
+      "source_pages": [
+        66
+      ],
+      "reaction_type": "visible-light photocatalyzed coupling of 12b or 15b with 1c-10c in DMSO/H2O",
+      "substrates": [
+        {
+          "name": "1c-10c",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "12b or 15b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((2R,2'S,4'R)-2'-(4-chlorophenyl)-4'-methyl-1-oxo-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-4'-yl)benzoate",
+          "symbol": "42",
+          "amount": null,
+          "registry_name": "methyl 4-((2R,2'S,4'R)-2'-(4-chlorophenyl)-4'-methyl-1-oxo-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-4'-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO/H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_42"
+    },
+    {
+      "id": "GeneralProcedure_39-49-Entry3",
+      "_gp_source": "GeneralProcedure_39-49",
+      "source_pages": [
+        67
+      ],
+      "reaction_type": "visible-light photocatalyzed coupling of 12b or 15b with 1c-10c in DMSO/H2O",
+      "substrates": [
+        {
+          "name": "1c-10c",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "12b or 15b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((2R,2'-(4-bromophenyl)-4'-methyl-1-oxo-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-4'-yl)benzoate",
+          "symbol": "43",
+          "amount": null,
+          "registry_name": "methyl 4-((2R,2'S,4'R)-2'-(4-bromophenyl)-4'-methyl-1-oxo-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-4'-yl)benzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO/H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "60 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": "86%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_43"
+    },
+    {
+      "id": "GeneralProcedure_39-49-Entry4",
+      "_gp_source": "GeneralProcedure_39-49",
+      "source_pages": [
+        67,
+        68
+      ],
+      "reaction_type": "visible-light photocatalyzed coupling of 12b or 15b with 1c-10c in DMSO/H2O",
+      "substrates": [
+        {
+          "name": "1c-10c",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "12b or 15b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((2R,2'R,4'S)-2',5-dimethyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "symbol": "44",
+          "amount": null,
+          "registry_name": "methyl 4-((2R,2'R,4'S)-2',5-dimethyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO/H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "99%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_44"
+    },
+    {
+      "id": "GeneralProcedure_39-49-Entry5",
+      "_gp_source": "GeneralProcedure_39-49",
+      "source_pages": [
+        68
+      ],
+      "reaction_type": "visible-light photocatalyzed coupling of 12b or 15b with 1c-10c in DMSO/H2O",
+      "substrates": [
+        {
+          "name": "1c-10c",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "12b or 15b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((2R,2'R,4'S)-5-fluoro-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "symbol": "45",
+          "amount": null,
+          "registry_name": "methyl 4-((2R,2'R,4'S)-5-fluoro-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO/H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "99%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_45"
+    },
+    {
+      "id": "GeneralProcedure_39-49-Entry6",
+      "_gp_source": "GeneralProcedure_39-49",
+      "source_pages": [
+        69
+      ],
+      "reaction_type": "visible-light photocatalyzed coupling of 12b or 15b with 1c-10c in DMSO/H2O",
+      "substrates": [
+        {
+          "name": "1c-10c",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "12b or 15b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((2R,2'R,4'S)-5-chloro-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "symbol": "46",
+          "amount": null,
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO/H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "72 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": "99%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_46_p69"
+    },
+    {
+      "id": "GeneralProcedure_39-49-Entry7",
+      "_gp_source": "GeneralProcedure_39-49",
+      "source_pages": [
+        69
+      ],
+      "reaction_type": "visible-light photocatalyzed coupling of 12b or 15b with 1c-10c in DMSO/H2O",
+      "substrates": [
+        {
+          "name": "1c-10c",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "12b or 15b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((2R,2'R,4'S)-5-bromo-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "symbol": "47",
+          "amount": null,
+          "registry_name": "methyl 4-((2R,2'R,4'S)-5-bromo-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO/H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "72 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": "98%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_47_p69"
+    },
+    {
+      "id": "GeneralProcedure_39-49-Entry8",
+      "_gp_source": "GeneralProcedure_39-49",
+      "source_pages": [
+        70
+      ],
+      "reaction_type": "visible-light photocatalyzed coupling of 12b or 15b with 1c-10c in DMSO/H2O",
+      "substrates": [
+        {
+          "name": "1c-10c",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "12b or 15b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-butyl (2'R,3'R,4'S)-2'-(4-(methoxycarbonyl)phenyl)-2'-methyl-1''-oxo-4'-phenyl-1'',3''-dihydrodispiro[azetidine-3,1'-cyclobutane-3',2''-indene]-1-carboxylate",
+          "symbol": "48",
+          "amount": null,
+          "registry_name": "tert-butyl (2'R,3'R,4'S)-2'-(4-(methoxycarbonyl)phenyl)-2'-methyl-1''-oxo-4'-phenyl-1'',3''-dihydrodispiro[azetidine-3,1'-cyclobutane-3',2''-indene]-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO/H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "120 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "47%",
+        "ee": "95%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_48_p70"
+    },
+    {
+      "id": "GeneralProcedure_39-49-Entry9",
+      "_gp_source": "GeneralProcedure_39-49",
+      "source_pages": [
+        70,
+        71
+      ],
+      "reaction_type": "visible-light photocatalyzed coupling of 12b or 15b with 1c-10c in DMSO/H2O",
+      "substrates": [
+        {
+          "name": "1c-10c",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "12b or 15b",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((2S,2'R,4'S)-2'-methyl-3-oxo-4'-phenyl-3H-dispiro[benzofuran-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "symbol": "49",
+          "amount": null,
+          "registry_name": "methyl 4-((2S,2'R,4'S)-2'-methyl-3-oxo-4'-phenyl-3H-dispiro[benzofuran-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO/H2O",
+        "solvent_amount": "0.6 mL DMSO, 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "90%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_49_p70"
+    },
+    {
+      "id": "GeneralProcedure_50-51-Entry1",
+      "_gp_source": "GeneralProcedure_50-51",
+      "source_pages": [
+        71
+      ],
+      "reaction_type": "visible-light photocatalytic cross-coupling in aqueous DMSO",
+      "substrates": [
+        {
+          "name": "11c or 12c",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "4-(1-(oxetan-3-ylidene)ethyl)phenyl acetate",
+          "symbol": "12b",
+          "amount": "0.10 mmol, 1 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "ethyl (2'R,3R,4'R)-2'-(4-(methoxycarbonyl)phenyl)-2'-methyl-2-oxo-1-phenyldispiro[indoline-3,1'-cyclobutane-3',3''-oxetane]-4'-carboxylate",
+          "symbol": "50",
+          "amount": null,
+          "registry_name": "ethyl (2'R,3R,4'R)-2'-(4-(methoxycarbonyl)phenyl)-2'-methyl-2-oxo-1-phenyldispiro[indoline-3,1'-cyclobutane-3',3''-oxetane]-4'-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL and 2.4 mL",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "98%",
+        "er": null,
+        "dr": "6.1:1"
+      },
+      "_original_id": "reaction_50_p71"
+    },
+    {
+      "id": "GeneralProcedure_50-51-Entry2",
+      "_gp_source": "GeneralProcedure_50-51",
+      "source_pages": [
+        71
+      ],
+      "reaction_type": "visible-light photocatalytic cross-coupling in aqueous DMSO",
+      "substrates": [
+        {
+          "name": "11c or 12c",
+          "symbol": null,
+          "amount": "0.20 mmol, 2 equiv."
+        },
+        {
+          "name": "4-(1-(oxetan-3-ylidene)ethyl)phenyl acetate",
+          "symbol": "12b",
+          "amount": "0.10 mmol, 1 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 4-((2'R,3R,4'R)-2'-benzoyl-4'-methyl-2-oxo-1-phenyldispiro[indoline-3,1'-cyclobutane-3',3''-oxetan]-4'-yl)benzoate",
+          "symbol": "51",
+          "amount": null,
+          "registry_name": "methyl 4-((2'R,3R,4'R)-2'-benzoyl-4'-methyl-2-oxo-1-phenyldispiro[indoline-3,1'-cyclobutane-3',3''-oxetan]-4'-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL and 2.4 mL",
+        "temperature": null,
+        "time": "36 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "99%",
+        "er": null,
+        "dr": "6.1:1"
+      },
+      "_original_id": "reaction_51_p71"
+    },
+    {
+      "id": "GeneralProcedure_52-54-Entry1",
+      "_gp_source": "GeneralProcedure_52-54",
+      "source_pages": [
+        72
+      ],
+      "reaction_type": "visible-light-mediated photocatalytic coupling",
+      "substrates": [
+        {
+          "name": "(E)-2-benzylidene-2,3-dihydro-1H-inden-1-one",
+          "symbol": "1c",
+          "amount": "0.20 mmol, 2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "13c-15c",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,1'R,3'R,4'R)-3'-(4-methoxyphenyl)-4'-phenyldispiro[cyclobutane-1,2'-cyclobutane-1',2''-indene]-1'',2(3''H)-dione",
+          "symbol": "52",
+          "amount": null,
+          "registry_name": "(1R,1'R,3'R,4'R)-3'-(4-methoxyphenyl)-4'-phenyldispiro[cyclobutane-1,2'-cyclobutane-1',2''-indene]-1'',2(3''H)-dione",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO and 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "96%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_52"
+    },
+    {
+      "id": "GeneralProcedure_52-54-Entry2",
+      "_gp_source": "GeneralProcedure_52-54",
+      "source_pages": [
+        72
+      ],
+      "reaction_type": "visible-light-mediated photocatalytic coupling",
+      "substrates": [
+        {
+          "name": "(E)-2-benzylidene-2,3-dihydro-1H-inden-1-one",
+          "symbol": "1c",
+          "amount": "0.20 mmol, 2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "13c-15c",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,1'R,3'R,4'R)-3'-(4-methoxyphenyl)-4'-phenyldispiro[cyclopentane-1,2'-cyclobutane-1',2''-indene]-1'',2(3''H)-dione",
+          "symbol": "53",
+          "amount": null,
+          "registry_name": "(1R,1'R,3'R,4'R)-3'-(4-methoxyphenyl)-4'-phenyldispiro[cyclopentane-1,2'-cyclobutane-1',2''-indene]-1'',2(3''H)-dione",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO and 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": "94%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_53"
+    },
+    {
+      "id": "GeneralProcedure_52-54-Entry3",
+      "_gp_source": "GeneralProcedure_52-54",
+      "source_pages": [
+        73
+      ],
+      "reaction_type": "visible-light-mediated photocatalytic coupling",
+      "substrates": [
+        {
+          "name": "(E)-2-benzylidene-2,3-dihydro-1H-inden-1-one",
+          "symbol": "1c",
+          "amount": "0.20 mmol, 2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "13c-15c",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "4-((1R,2'R,3'R,4'R)-1'',2-dioxo-3'-phenyl-1'',3''-dihydrodispiro[cyclopentane-1,1'-cyclobutane-2',2''-inden]-4'-yl)benzonitrile",
+          "symbol": "54",
+          "amount": null,
+          "registry_name": "4-((1R,2'R,3'R,4'R)-1'',2-dioxo-3'-phenyl-1'',3''-dihydrodispiro[cyclopentane-1,1'-cyclobutane-2',2''-inden]-4'-yl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO and 2.4 mL H2O",
+        "temperature": null,
+        "time": "24 h",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "87%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_54"
+    },
+    {
+      "id": "GeneralProcedure_52-54-Entry4",
+      "_gp_source": "GeneralProcedure_52-54",
+      "source_pages": [
+        74
+      ],
+      "reaction_type": "visible-light-mediated photocatalytic coupling",
+      "substrates": [
+        {
+          "name": "(E)-2-benzylidene-2,3-dihydro-1H-inden-1-one",
+          "symbol": "1c",
+          "amount": "0.20 mmol, 2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "13c-15c",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (5S,6R,7R)-6-(4'-methoxy-[1,1'-biphenyl]-4-yl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "symbol": "55",
+          "amount": null,
+          "registry_name": "methyl (5S,6R,7R)-6-(4'-methoxy-[1,1'-biphenyl]-4-yl)-7-(4-(methoxycarbonyl)phenyl)-7-methyl-2-oxaspiro[3.3]heptane-5-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO and 2.4 mL H2O",
+        "temperature": null,
+        "time": "10 min",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "92%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_55"
+    },
+    {
+      "id": "GeneralProcedure_52-54-Entry5",
+      "_gp_source": "GeneralProcedure_52-54",
+      "source_pages": [
+        74
+      ],
+      "reaction_type": "visible-light-mediated photocatalytic coupling",
+      "substrates": [
+        {
+          "name": "(E)-2-benzylidene-2,3-dihydro-1H-inden-1-one",
+          "symbol": "1c",
+          "amount": "0.20 mmol, 2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "13c-15c",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(5S,6R,7R)-6-(4-bromophenyl)-7-methyl-N-phenyl-7-(4-(phenylcarbamoyl)phenyl)-2-oxaspiro[3.3]heptane-5-carboxamide",
+          "symbol": "56",
+          "amount": null,
+          "registry_name": "(5S,6R,7R)-6-(4-bromophenyl)-7-methyl-N-phenyl-7-(4-(phenylcarbamoyl)phenyl)-2-oxaspiro[3.3]heptane-5-carboxamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO and 2.4 mL H2O",
+        "temperature": null,
+        "time": "10 min",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": "96%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_56"
+    },
+    {
+      "id": "GeneralProcedure_52-54-Entry6",
+      "_gp_source": "GeneralProcedure_52-54",
+      "source_pages": [
+        75
+      ],
+      "reaction_type": "visible-light-mediated photocatalytic coupling",
+      "substrates": [
+        {
+          "name": "(E)-2-benzylidene-2,3-dihydro-1H-inden-1-one",
+          "symbol": "1c",
+          "amount": "0.20 mmol, 2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "13c-15c",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoyl)-D-phenylalaninate",
+          "symbol": "58",
+          "amount": null,
+          "registry_name": "methyl (4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoyl)-D-phenylalaninate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO and 2.4 mL H2O",
+        "temperature": null,
+        "time": "10 min",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "44%",
+        "ee": "99%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_58"
+    },
+    {
+      "id": "GeneralProcedure_52-54-Entry7",
+      "_gp_source": "GeneralProcedure_52-54",
+      "source_pages": [
+        75
+      ],
+      "reaction_type": "visible-light-mediated photocatalytic coupling",
+      "substrates": [
+        {
+          "name": "(E)-2-benzylidene-2,3-dihydro-1H-inden-1-one",
+          "symbol": "1c",
+          "amount": "0.20 mmol, 2 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "13c-15c",
+          "symbol": null,
+          "amount": "0.10 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3S,8S,9S,10R,13R,14S,17R)-10,13-dimethyl-17-((R)-6-methylheptan-2-yl)-2,3,4,7,8,9,10,11,12,13,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-3-yl 4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "symbol": "59",
+          "amount": null,
+          "registry_name": "(3S,8S,9S,10R,13R,14S,17R)-10,13-dimethyl-17-((R)-6-methylheptan-2-yl)-2,3,4,7,8,9,10,11,12,13,14,15,16,17-tetradecahydro-1H-cyclopenta[a]phenanthren-3-yl 4-((2R,2'R,4'S)-2'-methyl-1-oxo-4'-phenyl-1,3-dihydrodispiro[indene-2,1'-cyclobutane-3',3''-oxetan]-2'-yl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Δ-MOC-16",
+          "symbol": null,
+          "amount": "0.5 mol%"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMSO and H2O",
+        "solvent_amount": "0.6 mL DMSO and 2.4 mL H2O",
+        "temperature": null,
+        "time": "10 min",
+        "atmosphere": "N2",
+        "light_source": "5 W×4 white LEDs",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": "99%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "reaction_59"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/asymmetric-synthesis-of-strained-multichiral-spi_c19f4e21.json",
+    "input_sha256": "64bcec7b3dcf6697c8031d1f57412e9ec01ec027b798351d8715f7b98d5f5898"
+  }
+}

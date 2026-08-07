@@ -1,0 +1,2733 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytically Four‐Fold Asymmetric Sonogashira Coupling for Enantioselective.pdf",
+  "paper_key": "catalytically four‐fold asymmetric sonogashira coupling for enantioselective",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytically Four‐Fold Asymmetric Sonogashira Coupling for Enantioselective.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytically Four‐Fold Asymmetric Sonogashira Coupling for Enantioselective.pdf",
+    "source_mtime_ns": 1782048412000000000,
+    "source_size": 14380201,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "catalytically four‐fold asymmetric sonogashira coupling for enantioselective",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytically Four‐Fold Asymmetric Sonogashira Coupling for Enantioselective.pdf"
+  },
+  "extracted_at": "2026-07-17T01:23:24.133931",
+  "total_reactions": 34,
+  "filtered_reactions": 34,
+  "filter_stats": {
+    "input_reactions": 34,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 34
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry1",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "phenylacetylene",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains 'tetrakis(phenylethynyl)' substituents — one-to-one mapping to phenylacetylene as the terminal alkyne starting material."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3a",
+          "amount": "20.3 mg",
+          "registry_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3a"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry2",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynyltoluene (p-tolylacetylene)",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product described as 'tetrakis(p-tolylethynyl)' — maps directly to para-tolyl terminal alkyne (4-ethynyltoluene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3b",
+          "amount": "20.0 mg",
+          "registry_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3b"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry3",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3-ethynyltoluene (m-tolylacetylene)",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(m-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product named 'tetrakis(m-tolylethynyl)' indicates the alkyne was meta-tolylacetylene (3-ethynyltoluene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(m-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3c",
+          "amount": "20.3 mg",
+          "registry_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(m-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3c"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry4",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-ethynyltoluene (o-tolylacetylene)",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(o-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product 'tetrakis(o-tolylethynyl)' points to ortho-tolyl terminal alkyne (2-ethynyltoluene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(o-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3d",
+          "amount": "19.2 mg",
+          "registry_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(o-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3d"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry5",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "trimethylsilylacetylene (ethynyltrimethylsilane)",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(trimethylsilane)",
+            "product_index": 0,
+            "reason": "Product terminus 'tetrakis(... )tetrakis(trimethylsilane)' indicates TMS‑protected acetylene (trimethylsilylacetylene) was the alkyne."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(trimethylsilane)",
+          "symbol": "3e",
+          "amount": "25.3 mg",
+          "registry_name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(trimethylsilane)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand",
+          "symbol": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": "Et2NH",
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3e"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry6",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynylbiphenyl (4-ethynyl-1,1'-biphenyl)",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,52,55-tetrakis([1,1'-biphenyl]-4-ylethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains 'tetrakis([1,1'-biphenyl]-4-ylethynyl)' — maps to 4-ethynylbiphenyl as the alkyne."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,52,55-tetrakis([1,1'-biphenyl]-4-ylethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3f",
+          "amount": "22.9 mg",
+          "registry_name": "12,15,52,55-tetrakis([1,1'-biphenyl]-4-ylethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand",
+          "symbol": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": "Et2NH",
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3f"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry7",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynyl-N,N-dimethylaniline",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(N,N-dimethylaniline)",
+            "product_index": 0,
+            "reason": "Product is '4,4',4'',4'''-...tetrakis(ethyne-2,1-diyl))tetrakis(N,N-dimethylaniline)', indicating para‑ethynyl N,N‑dimethylaniline was the alkyne."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(N,N-dimethylaniline)",
+          "symbol": "3g",
+          "amount": "15.4 mg",
+          "registry_name": "4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(N,N-dimethylaniline)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand",
+          "symbol": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": "Et2NH",
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3g"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry8",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynyl-tert-butylbenzene (4-(tert-butyl)phenylacetylene)",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,52,55-tetrakis((4-(tert-butyl)phenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product described as 'tetrakis((4-(tert-butyl)phenyl)ethynyl)' — corresponds to the 4‑tert‑butylphenyl terminal alkyne."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,52,55-tetrakis((4-(tert-butyl)phenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3h",
+          "amount": "23.9 mg",
+          "registry_name": "12,15,52,55-tetrakis((4-(tert-butyl)phenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand",
+          "symbol": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": "Et2NH",
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3h"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry9",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynylanisole (4-ethoxyphenylacetylene)",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis((4-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product 'tetrakis((4-methoxyphenyl)ethynyl)' unambiguously indicates 4‑methoxyphenylacetylene (4-ethynylanisole) as the alkyne."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis((4-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3i",
+          "amount": "20.7 mg",
+          "registry_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis((4-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand",
+          "symbol": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": "Et2NH",
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureUnlabeled1_3i"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry10",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3-ethynylanisole (3-methoxyphenylacetylene)",
+          "symbol": null,
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis((3-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product 'tetrakis((3-methoxyphenyl)ethynyl)' maps directly to the meta‑methoxy phenyl terminal alkyne (3-ethynylanisole)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis((3-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3g",
+          "amount": "25.2 mg",
+          "registry_name": "4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(N,N-dimethylaniline)",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_GP_Unlabeled1_3g"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry11",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-methoxyphenylacetylene",
+          "symbol": null,
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis((2-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains tetrakis((2-methoxyphenyl)ethynyl) fragment — maps one-to-one to 2-methoxyphenylacetylene as the alkyne coupling partner."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis((2-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3k",
+          "amount": "20.6 mg",
+          "registry_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis((2-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_GP_Unlabeled1_3k"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry12",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3,5-dimethoxyphenylacetylene",
+          "symbol": null,
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,52,55-tetrakis((3,5-dimethoxyphenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product shows tetrakis((3,5-dimethoxyphenyl)ethynyl) — directly corresponds to 3,5-dimethoxyphenylacetylene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,52,55-tetrakis((3,5-dimethoxyphenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3l",
+          "amount": "22.3 mg",
+          "registry_name": "12,15,52,55-tetrakis((3,5-dimethoxyphenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_GP_Unlabeled1_3l"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry13",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-fluorophenylacetylene",
+          "symbol": null,
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,52,55-tetrakis((4-fluorophenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains tetrakis((4-fluorophenyl)ethynyl) indicating the alkyne was 4-fluorophenylacetylene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,52,55-tetrakis((4-fluorophenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3m",
+          "amount": "21.3 mg",
+          "registry_name": "12,15,52,55-tetrakis((4-fluorophenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_GP_Unlabeled1_3m"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry14",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-chlorophenylacetylene",
+          "symbol": null,
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,52,55-tetrakis((4-chlorophenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product shows tetrakis((4-chlorophenyl)ethynyl) — corresponds directly to 4-chlorophenylacetylene as the alkyne."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,52,55-tetrakis((4-chlorophenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3n",
+          "amount": "22 mg",
+          "registry_name": "12,15,52,55-tetrakis((4-chlorophenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_GP_Unlabeled1_3n"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry15",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3-chlorophenylacetylene",
+          "symbol": null,
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,52,55-tetrakis((3-chlorophenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9 (1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains tetrakis((3-chlorophenyl)ethynyl), mapping one-to-one to 3-chlorophenylacetylene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,52,55-tetrakis((3-chlorophenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9 (1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3o",
+          "amount": "23.5 mg",
+          "registry_name": "12,15,52,55-tetrakis((3-chlorophenyl)ethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9 (1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP1_3o_p31"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry16",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-(trifluoromethyl)phenylacetylene",
+          "symbol": null,
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis((4-(trifluoromethyl)phenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product shows tetrakis((4-(trifluoromethyl)phenyl)ethynyl) — identifies the alkyne as 4-(trifluoromethyl)phenylacetylene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis((4-(trifluoromethyl)phenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3p",
+          "amount": "29.5 mg",
+          "registry_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis((4-(trifluoromethyl)phenyl)ethynyl) -1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "92%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP1_3p_p32"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry17",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynylbenzonitrile",
+          "symbol": null,
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrabenzonitrile",
+            "product_index": 0,
+            "reason": "Product is a tetrakis(...tetrabenzonitrile) built from (ethyne-2,1-diyl)benzonitrile fragments — maps to 4-ethynylbenzonitrile."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrabenzonitrile",
+          "symbol": "3q",
+          "amount": "26.4 mg",
+          "registry_name": "4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphan e-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrabenzonitrile",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP1_3q_p33"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry18",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynylbenzaldehyde",
+          "symbol": null,
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrabenzaldehyde",
+            "product_index": 0,
+            "reason": "Product contains tetrakis(...tetrabenzaldehyde) fragments from (ethyne-2,1-diyl)benzaldehyde — corresponds to 4-ethynylbenzaldehyde."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrabenzaldehyde",
+          "symbol": "3r",
+          "amount": "26 mg",
+          "registry_name": "4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphan e-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrabenzaldehyde",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP1_3r_p34"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry19",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "tetramethy 4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrabenzoate",
+            "product_index": 0,
+            "reason": "Product described as tetrabenzoate (tetramethyl ... tetrabenzoate) indicates the alkyne was methyl 4-ethynylbenzoate (para‑ethynyl benzoate ester)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "tetramethy 4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrabenzoate",
+          "symbol": "3s",
+          "amount": "27.8 mg",
+          "registry_name": "tetramethy 4,4',4'',4'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyc lodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrabenzoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP1_3s_p35"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry20",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne 2",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "tetramethyl 3,3',3'',3'''-(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl)) (2E,2'E,2''E,2'''E)-tetraacrylate",
+          "symbol": "3t",
+          "amount": "28.6 mg",
+          "registry_name": "tetramethyl 3,3',3'',3'''-(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl)) (2E,2'E,2''E,2'''E)-tetraacrylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_3t_p36"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry21",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-(diphenylphosphine oxide)phenylacetylene",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphine oxide)",
+            "product_index": 0,
+            "reason": "Product shows ethynyl-linked benzene-4,1-diyl bearing diphenylphosphine oxide; maps one-to-one to a terminal alkyne 4-(diphenylphosphine oxide)phenylacetylene used as alkyne 2."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphine oxide)",
+          "symbol": "3u",
+          "amount": "44.9 mg",
+          "registry_name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphine oxide)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_3u_p37"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry22",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3-ethynyltetrahydrothiophene",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,3',3''-((32,35,72,75,92,95-hexamethoxy-56-((tetrahydrothiophen-3-yl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,53-triyl)tris(ethyne-2,1-diyl))trithiophene",
+            "product_index": 0,
+            "reason": "Product contains a (tetrahydrothiophen-3-yl)ethynyl fragment; this maps directly to a terminal alkyne bearing the ethynyl at tetrahydrothiophene C-3."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3,3',3''-((32,35,72,75,92,95-hexamethoxy-56-((tetrahydrothiophen-3-yl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,53-triyl)tris(ethyne-2,1-diyl))trithiophene",
+          "symbol": "3v",
+          "amount": "25.0 mg",
+          "registry_name": "3,3',3''-((32,35,72,75,92,95-hexamethoxy-56-((tetrahydrothiophen-3-yl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,53-triyl)tris(ethyne-2,1-diyl))trithiophene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "96%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_3v_p38"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry23",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-ethynylthiophene",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2,2',2'',2'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrathiophene",
+            "product_index": 0,
+            "reason": "Product is described as tetrakis(ethyne-2,1-diyl) attached to thiophene at the 2-position; this corresponds one-to-one to starting alkyne 2-ethynylthiophene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "2,2',2'',2'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrathiophene",
+          "symbol": "3w",
+          "amount": "24.7 mg",
+          "registry_name": "2,2',2'',2'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrathiophene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_3w_p39"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry24",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3-ethynylpyridine",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,3',3'',3'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrapyridine",
+            "product_index": 0,
+            "reason": "Product nomenclature uses '3,3',3''...' annotation for the pyridine fragments and ethyne linkers, indicating the alkyne was pyridine substituted at C‑3 (3-ethynylpyridine)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3,3',3'',3'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrapyridine",
+          "symbol": "3x",
+          "amount": "21.5 mg",
+          "registry_name": "3,3',3'',3'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrapyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_3x_p40"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry25",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "6-ethynylquinoline",
+          "symbol": "2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "6,6',6'',6'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetraquinoline",
+            "product_index": 0,
+            "reason": "Product shows ethynyl substitution at the 6-position of quinoline (6,6',6'',6'''-...), mapping directly to starting alkyne 6-ethynylquinoline."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "6,6',6'',6'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetraquinoline",
+          "symbol": "3y",
+          "amount": "21.2 mg",
+          "registry_name": "6,6',6'',6'''-((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetraquinoline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry26",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "1-ethynylnaphthalene",
+          "symbol": "2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(naphthalen-1-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product includes 'naphthalen-1-ylethynyl' substituents, which map one-to-one to the terminal alkyne 1-ethynylnaphthalene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(naphthalen-1-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3z",
+          "amount": "27.5 mg",
+          "registry_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(naphthalen-1-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry27",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-ethynylnaphthalene",
+          "symbol": "2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(naphthalen-2-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains 'naphthalen-2-ylethynyl' fragments, directly indicating the starting alkyne was 2-ethynylnaphthalene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(naphthalen-2-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3aa",
+          "amount": "28.9 mg",
+          "registry_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(naphthalen-2-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "96%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry28",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-ethynylanthracene",
+          "symbol": "2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,52,55-tetrakis(anthracen-2-ylethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product lists 'anthracen-2-ylethynyl' substituents, which map unambiguously to the terminal alkyne 2-ethynylanthracene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,52,55-tetrakis(anthracen-2-ylethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3ab",
+          "amount": "35 mg",
+          "registry_name": "12,15,52,55-tetrakis(anthracen-2-ylethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry29",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        45
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "cyclohexylacetylene",
+          "symbol": "2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,52,55-tetrakis(cyclohexylethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains 'cyclohexylethynyl' substituents indicating the terminal alkyne was cyclohexylacetylene (ethynylcyclohexane)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,52,55-tetrakis(cyclohexylethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3ac",
+          "amount": "13.7 mg",
+          "registry_name": "12,15,52,55-tetrakis(cyclohexylethynyl)-32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry30",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "30 mg, 0.025 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "triisopropylsilylacetylene",
+          "symbol": "alkyne 2",
+          "amount": "0.39 mmol, 16.0 equiv.",
+          "original_name": "alkyne 2",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(triisopropylsilane)",
+            "product_index": 0,
+            "reason": "Product name includes tetrakis(triisopropylsilane) appended to ethynyl linkers (TIPS groups), mapping directly to starting alkyne triisopropylsilylacetylene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(triisopropylsilane)",
+          "symbol": "3ad",
+          "amount": "25.2 mg",
+          "registry_name": "(32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(triisopropylsilane)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-Ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "96%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk12-page46-r1"
+    },
+    {
+      "id": "GeneralProcedureUnlabeled1-Entry31",
+      "_gp_source": "GeneralProcedureUnlabeled1",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "Pd-catalyzed Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "1.0 g, 0.82 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "methyl (E)-3-(4-ethynylphenyl)acrylate",
+          "symbol": "2t",
+          "amount": "2.4 g, 13.1 mmol, 16.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "tetramethyl 3,3',3'',3'''-(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl)) (2E,2'E,2''E,2'''E)-tetraacrylate",
+          "symbol": "3t",
+          "amount": "0.87 g",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "185.45 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "23.4 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "P-ligand",
+          "symbol": "P-ligand"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et2NH",
+          "symbol": null,
+          "amount": "944.3 mg, 13.1 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "33.3 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk13_rxn1"
+    },
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "derivatization",
+      "substrates": [
+        {
+          "name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphine oxide)",
+          "symbol": "3u",
+          "amount": "30 mg, 0.016 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphane)",
+          "symbol": "4",
+          "amount": "18.9 mg",
+          "registry_name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphane)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "HSiCl3",
+          "symbol": null,
+          "amount": "59 equiv"
+        },
+        {
+          "name": "1M NaOH",
+          "symbol": null,
+          "amount": "1M"
+        },
+        {
+          "name": "1M HCl",
+          "symbol": null,
+          "amount": "1M"
+        },
+        {
+          "name": "saturated NaHCO3",
+          "symbol": null,
+          "amount": "saturated"
+        },
+        {
+          "name": "anhydrous Na2SO4",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": null,
+        "temperature": "100 °C",
+        "time": "12 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "derivatization",
+      "substrates": [
+        {
+          "name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphane)",
+          "symbol": "4",
+          "amount": "50 mg, 0.0283 mmol",
+          "registry_name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphane)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphane)-AuCl",
+          "symbol": "5",
+          "amount": "50 mg",
+          "registry_name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphane)-AuCl",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "(tht)AuCl",
+          "symbol": null,
+          "amount": "0.113 mmol, 4 equiv."
+        },
+        {
+          "name": "dichloromethane/n-hexane (recrystallization)",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "0.3 mL",
+        "temperature": "0 °C to room temperature",
+        "time": "12 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "derivatization",
+      "substrates": [
+        {
+          "name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphane)-AuCl",
+          "symbol": "5",
+          "amount": "50 mg, 0.0185 mmol",
+          "registry_name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphane)-AuCl",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphane)-Au-Carbazole",
+          "symbol": "6",
+          "amount": "59.7 mg",
+          "registry_name": "(((32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayl)tetrakis(ethyne-2,1-diyl))tetrakis(benzene-4,1-diyl))tetrakis(diphenylphosphane)-Au-Carbazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "carbazole potassium salt",
+          "symbol": null,
+          "amount": "0.1480 mmol, 8 equiv"
+        },
+        {
+          "name": "dichloromethane/MeOH (recrystallization)",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "conditions": {
+        "solvent": "dichloromethane",
+        "solvent_amount": "1 mL",
+        "temperature": "room temperature",
+        "time": "12 h",
+        "atmosphere": "nitrogen",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r3"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/catalytically_four_fold_asymmetric_sonogashira_c_d8ae4dd3.json",
+    "input_sha256": "08953fe1777424ce445e4fdfc8cd911bb09648e8debb464151d9ed0fde2d6296"
+  }
+}

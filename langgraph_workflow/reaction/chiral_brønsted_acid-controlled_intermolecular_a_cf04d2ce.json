@@ -1,0 +1,5876 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Chiral Brønsted Acid-Controlled Intermolecular Asymmetric [2+2] Photocycloadditions.pdf",
+  "paper_key": "chiral brønsted acid-controlled intermolecular asymmetric [2+2] photocycloadditions",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Chiral Brønsted Acid-Controlled Intermolecular Asymmetric [2+2] Photocycloadditions.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Chiral Brønsted Acid-Controlled Intermolecular Asymmetric [2+2] Photocycloadditions.pdf",
+    "source_mtime_ns": 1782048431000000000,
+    "source_size": 11822708,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "chiral brønsted acid-controlled intermolecular asymmetric [2+2] photocycloadditions",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Chiral Brønsted Acid-Controlled Intermolecular Asymmetric [2+2] Photocycloadditions.pdf"
+  },
+  "extracted_at": "2026-07-17T01:48:53.972137",
+  "total_reactions": 100,
+  "filtered_reactions": 99,
+  "filter_stats": {
+    "input_reactions": 100,
+    "basic_failed": 0,
+    "target_failed": 1,
+    "retained": 99
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(R)-BINOL",
+          "symbol": null,
+          "amount": "8.59 g (30.0 mmol, 1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-(+)-2,2’-Bis(methoxymethoxy)-1,1’-binaphthalene",
+          "symbol": null,
+          "amount": "9.06 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "60% NaH in mineral oil",
+          "symbol": null,
+          "amount": "3.00 g (75.0 mmol, 2.5 equiv.)"
+        },
+        {
+          "name": "chloromethyl methyl ether (MOMCl)",
+          "symbol": "MOMCl",
+          "amount": "5.70 mL (75.0 mmol, 2.5 equiv.)"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry THF",
+        "solvent_amount": "200 mL then 550 mL",
+        "temperature": "0 °C to room temperature",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(±)-BINOL",
+          "symbol": null,
+          "amount": "2.86 g (10.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(±)-2,2’-Bis(methoxymethoxy)-1,1’-binaphthalene",
+          "symbol": null,
+          "amount": "2.84 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.00 g (25.0 mmol)"
+        },
+        {
+          "name": "chloromethyl methyl ether (MOMCl)",
+          "symbol": "MOMCl",
+          "amount": "1.95 mL (25.0 mmol)"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "100 mL then 25 mL (as reported)",
+        "temperature": "0 °C to room temperature",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(R)-(+)-2,2’-bis(methoxymethoxy)-1,1’-binaphthalene",
+          "symbol": null,
+          "amount": "3.74 g (10.0 mmol, 1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-(+)-3,3’-Dibromo-2,2’-bis(methoxymethoxy)-1,1’-binaphthalene",
+          "symbol": null,
+          "amount": "2.80 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "n-BuLi (2.0 M in hexanes)",
+          "symbol": "n-BuLi",
+          "amount": "12.5 mL (25.0 mmol, 2.5 equiv.)"
+        },
+        {
+          "name": "Br2",
+          "symbol": "Br2",
+          "amount": "1.28 mL (25.0 mmol, 2.5 equiv.)"
+        }
+      ],
+      "conditions": {
+        "solvent": "dry THF",
+        "solvent_amount": "50 mL",
+        "temperature": "-78 °C then warmed to 0 °C then room temperature",
+        "time": "warmed to rt and stirred overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        3
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(±)-2,2’-bis(methoxymethoxy)-1,1’-binaphthalene",
+          "symbol": null,
+          "amount": "2.81 g (7.5 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(±)-3,3’-Dibromo-2,2’-bis(methoxymethoxy)-1,1’-binaphthalene",
+          "symbol": null,
+          "amount": "2.08 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "n-BuLi (~2.0 M in hexanes)",
+          "symbol": "n-BuLi",
+          "amount": "9.2 mL (18.25 mmol)"
+        },
+        {
+          "name": "Br2",
+          "symbol": "Br2",
+          "amount": "0.93 mL (18.25 mmol)"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "50 mL",
+        "temperature": "-78 °C to room temperature",
+        "time": "warmed to rt and stirred overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "synthesis",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "(R)-(+)-3,3’-dibromo-2,2’-bis(methoxymethoxy)-1,1’-binaphthalene",
+          "symbol": null,
+          "amount": "2.80 g (5.35 mmol, 1.0 equiv.)",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "MOM-protected cross-coupling product",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-(+)-3,3’-Di-(4-trifluoromethyl)phenyl-[1,1’-binaphthalene]-2,2’-diol",
+          "symbol": null,
+          "amount": "2.67 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": "Pd(PPh3)4",
+          "amount": "340 mg (0.27 mmol, 0.05 equiv.)",
+          "step": 1
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4-trifluoromethylphenylboronic acid",
+          "symbol": null,
+          "amount": "3.56 g (18.73 mmol, 3.5 equiv.)",
+          "step": 1
+        },
+        {
+          "name": "2 M aq. Na2CO3",
+          "symbol": null,
+          "amount": "15 mL",
+          "step": 1
+        },
+        {
+          "name": "conc. HCl",
+          "symbol": "HCl",
+          "amount": "0.8 mL",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "1,2-dimethoxyethane (DME)"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "30 mL"
+          },
+          {
+            "step": 2,
+            "value": "30 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "95 °C"
+          },
+          {
+            "step": 2,
+            "value": "65 °C"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "16 h"
+          },
+          {
+            "step": 2,
+            "value": "3 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        4
+      ],
+      "reaction_type": "synthesis",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "(±)-3,3’-Dibromo-2,2’-bis(methoxymethoxy)-1,1’-binaphthalene",
+          "symbol": null,
+          "amount": "2.08 g (4.0 mmol)",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "MOM-protected cross-coupling product",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(±)-3,3’-Di-(4-trifluoromethyl)phenyl-[1,1’-binaphthalene]-2,2’-diol",
+          "symbol": null,
+          "amount": "1.44 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(PPh3)4",
+          "symbol": "Pd(PPh3)4",
+          "amount": "260 mg",
+          "step": 1
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "4-trifluoromethylphenylboronic acid",
+          "symbol": null,
+          "amount": "2.65 g (13.9 mmol)",
+          "step": 1
+        },
+        {
+          "name": "2 M aq. Na2CO3",
+          "symbol": null,
+          "amount": "15 mL",
+          "step": 1
+        },
+        {
+          "name": "conc. HCl",
+          "symbol": "HCl",
+          "amount": "0.6 mL",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "1,2-dimethoxyethane (DME)"
+          },
+          {
+            "step": 2,
+            "value": "THF"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "30 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "95 °C"
+          },
+          {
+            "step": 2,
+            "value": "65 °C"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "16 h"
+          },
+          {
+            "step": 2,
+            "value": "3 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        4,
+        5
+      ],
+      "reaction_type": "synthesis",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "(R)-(+)-3,3’-di-(4-trifluoromethyl)phenyl-[1,1’-binaphthalene]-2,2’-diol",
+          "symbol": null,
+          "amount": "2.48 g (4.3 mmol, 1.0 equiv.)",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "organic phosphoryl chloride",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate ((R)-AC-3)",
+          "symbol": "(R)-AC-3",
+          "amount": "1.64 g",
+          "step": 2,
+          "registry_name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "POCl3",
+          "symbol": "POCl3",
+          "amount": "0.84 mL (9.0 mmol, 2.1 equiv.)",
+          "step": 1
+        },
+        {
+          "name": "Et3N",
+          "symbol": "Et3N",
+          "amount": "1.90 mL (13.5 mmol, 3.1 equiv.)",
+          "step": 1
+        },
+        {
+          "name": "trifluoromethanesulfonamide",
+          "symbol": null,
+          "amount": "634 mg (4.25 mmol, 1.0 equiv.)",
+          "step": 2
+        },
+        {
+          "name": "DMAP",
+          "symbol": "DMAP",
+          "amount": "1.04 g (8.50 mmol, 2.0 equiv.)",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CH2Cl2"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "25 mL"
+          },
+          {
+            "step": 2,
+            "value": "50 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 °C to room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "16 h"
+          },
+          {
+            "step": 2,
+            "value": "24 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          },
+          {
+            "step": 2,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "synthesis",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "+)-3,3’-Di-(4-trifluoromethyl)phenyl-[1,1’-binaphthalene]-2,2’-diol",
+          "symbol": null,
+          "amount": "1.43 g (2.5 mmol)",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "organic phosphoryl chloride",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate ((±)-AC-3)",
+          "symbol": "(±)-AC-3",
+          "amount": "0.87 g",
+          "step": 2,
+          "registry_name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "POCl3",
+          "symbol": "POCl3",
+          "amount": "0.47 mL (5.0 mmol)",
+          "step": 1
+        },
+        {
+          "name": "Et3N",
+          "symbol": "Et3N",
+          "amount": "1.03 mL (7.5 mmol)",
+          "step": 1
+        },
+        {
+          "name": "trifluoromethanesulfonamide",
+          "symbol": null,
+          "amount": "335 mg (2.25 mmol)",
+          "step": 2
+        },
+        {
+          "name": "DMAP",
+          "symbol": "DMAP",
+          "amount": "550 mg (4.50 mmol)",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CH2Cl2"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "as reported"
+          },
+          {
+            "step": 2,
+            "value": "25 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "as reported"
+          },
+          {
+            "step": 2,
+            "value": "as reported"
+          }
+        ],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn8"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "1-methylimidazole",
+          "symbol": null,
+          "amount": "0.84 mL (10.5 mmol, 1.05 equiv.)"
+        },
+        {
+          "name": "4-acetylmorpholine",
+          "symbol": null,
+          "amount": "1.15 mL (10.0 mmol, 1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "700 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "n-BuLi (1.91 M in hexanes)",
+          "symbol": null,
+          "amount": "5.5 mL (10.5 mmol, 1.05 equiv.)"
+        },
+        {
+          "name": "glacial acetic acid",
+          "symbol": null,
+          "amount": "2 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "25 mL",
+        "temperature": "-78 °C to 0 °C, then returned to -78 °C, warmed to rt",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "cinnamoyl chloride",
+          "symbol": null,
+          "amount": "8.64 g (52.0 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "N,O-dimethylhydroxylamine hydrochloride",
+          "symbol": null,
+          "amount": "5.34 g (54.7 mmol, 1.05 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-Methoxy-N-methylcinnamide",
+          "symbol": null,
+          "amount": "8.14 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "pyridine",
+          "symbol": null,
+          "amount": "9.20 mL (reported as 2.2 equiv.)"
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "150 mL",
+        "temperature": "0 °C to rt",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "NonGP-Entry12",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "N-methylimidazole",
+          "symbol": null,
+          "amount": "0.71 mL (8.93 mmol, 1.05 equiv.)"
+        },
+        {
+          "name": "N-methoxy-N-methylcinnamide",
+          "symbol": null,
+          "amount": "1.62 g (8.50 mmol, 1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-Cinnamoyl-1-methyl-1H-imidazole",
+          "symbol": "1",
+          "amount": "1.32 g",
+          "registry_name": "2-Cinnamoyl-1-methyl-1H-imidazole",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "n-BuLi (2.50 M in hexanes)",
+          "symbol": null,
+          "amount": "3.6 mL (8.93 mmol, 1.05 equiv.)"
+        },
+        {
+          "name": "glacial acetic acid",
+          "symbol": null,
+          "amount": "2 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "30 mL",
+        "temperature": "-78 °C to 0 °C, then rt",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives-Entry1",
+      "_gp_source": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "372.7 mg (3.0 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "4-methoxybenzaldehyde",
+          "symbol": null,
+          "amount": "0.26 mL (3.0 mmol, 1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-3-(4-Methoxyphenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "382 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and H2O",
+        "solvent_amount": "6 mL EtOH, 3 mL H2O",
+        "temperature": null,
+        "time": "12–16 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r4"
+    },
+    {
+      "id": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives-Entry2",
+      "_gp_source": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "499.6 mg (4.0 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "2-methoxybenzaldehyde",
+          "symbol": null,
+          "amount": "0.41 mL (4.4 mmol, 1.1 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-3-(2-Methoxyphenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "877 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH",
+        "solvent_amount": "8 mL EtOH",
+        "temperature": null,
+        "time": "overnight",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r5"
+    },
+    {
+      "id": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives-Entry3",
+      "_gp_source": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "416.0 mg (3.3 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "methyl 4-formylbenzoate",
+          "symbol": null,
+          "amount": "594 mg (3.6 mmol, 1.1 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-[(1E)-3-(1-methyl-1H-imidazol-2-yl)-3-oxoprop-1-en-1-yl]benzoate",
+          "symbol": "4a",
+          "amount": "428 mg",
+          "registry_name": "Methyl 4-[(1E)-3-(1-methyl-1H-imidazol-2-yl)-3-oxoprop-1-en-1-yl]benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "MeOH and H2O",
+        "solvent_amount": "6 mL MeOH, 3 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "48%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r6"
+    },
+    {
+      "id": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives-Entry4",
+      "_gp_source": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "328.0 mg (3.0 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "4-trifluoromethylbenzaldehyde",
+          "symbol": null,
+          "amount": "0.45 mL (3.3 mmol, 1.1 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-1-(1-Methyl-1H-imidazol-2-yl)-3-(4-trifluoromethylphenyl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "442 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and H2O",
+        "solvent_amount": "12 mL EtOH, 6 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r7"
+    },
+    {
+      "id": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives-Entry5",
+      "_gp_source": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "418.0 mg (3.4 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "4-formylbenzonitrile",
+          "symbol": null,
+          "amount": "476.0 mg (3.6 mmol, 1.1 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-4-(3-(1-Methyl-1H-imidazol-2-yl)-3-oxoprop-1-en-1-yl)benzonitrile",
+          "symbol": "6a",
+          "amount": "552.0 mg",
+          "registry_name": "(E)-4-(3-(1-Methyl-1H-imidazol-2-yl)-3-oxoprop-1-en-1-yl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and H2O",
+        "solvent_amount": "4 mL EtOH, 2 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r8"
+    },
+    {
+      "id": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives-Entry6",
+      "_gp_source": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "258.0 mg (2.1 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "2-fluorobenzaldehyde",
+          "symbol": null,
+          "amount": "0.23 mL (2.2 mmol, 1.1 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-3-(2-Fluorophenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": "7a",
+          "amount": "270 mg",
+          "registry_name": "(E)-3-(2-Fluorophenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and H2O",
+        "solvent_amount": "8 mL EtOH, 4 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r9"
+    },
+    {
+      "id": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives-Entry7",
+      "_gp_source": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "248.2 mg (2.0 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "4-chlorobenzaldehyde",
+          "symbol": null,
+          "amount": "315.0 mg (2.2 mmol, 1.1 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-3-(4-Chlorophenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "340.1 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and H2O",
+        "solvent_amount": "8 mL EtOH, 4 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r10"
+    },
+    {
+      "id": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives-Entry8",
+      "_gp_source": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "248.0 mg (2.0 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "p-tolualdehyde",
+          "symbol": null,
+          "amount": "0.26 mL (2.2 mmol, 1.1 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-1-(1-Methyl-1H-imidazol-2-yl)-3-(p-tolyl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "323.3 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and H2O",
+        "solvent_amount": "8 mL EtOH, 4 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r11"
+    },
+    {
+      "id": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives-Entry9",
+      "_gp_source": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "370 mg (3.0 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "2-napthaldehyde",
+          "symbol": null,
+          "amount": "0.52 mg (3.3 mmol, 1.1 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-1-(1-Methyl-1H-imidazol-2-yl)-3-(naphthalen-2-yl)prop-2-en-1-one",
+          "symbol": "10a",
+          "amount": "610 mg",
+          "registry_name": "(E)-1-(1-Methyl-1H-imidazol-2-yl)-3-(naphthalen-2-yl)prop-2-en-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and H2O",
+        "solvent_amount": "6 mL EtOH, 3 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r12"
+    },
+    {
+      "id": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives-Entry10",
+      "_gp_source": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "250.0 mg (2.0 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "2-thiophenecarboxaldehyde",
+          "symbol": null,
+          "amount": "0.21 mL (2.2 mmol, 1.1 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-1-(1-Methyl-1H-imidazol-2-yl)-3-(thiophen-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "331.0 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and H2O",
+        "solvent_amount": "8 mL EtOH, 4 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r13"
+    },
+    {
+      "id": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives-Entry11",
+      "_gp_source": "GeneralMethodForThePreparationOfSubstitutedCinnamoylMethylimidazoleDerivatives",
+      "source_pages": [
+        8,
+        9
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "248.7 mg (2.0 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "3-nitrobenzaldehyde",
+          "symbol": null,
+          "amount": "331.4 mg (2.2 mmol, 1.1 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-1-(1-Methyl-1H-imidazol-2-yl)-3-(3-nitrophenyl)prop-2-en-1-one",
+          "symbol": "12a",
+          "amount": "420.3 mg",
+          "registry_name": "(E)-1-(1-Methyl-1H-imidazol-2-yl)-3-(3-nitrophenyl)prop-2-en-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and H2O",
+        "solvent_amount": "8 mL EtOH, 4 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r14"
+    },
+    {
+      "id": "NonGP-Entry13",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "247.5 mg (2.0 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "2-iodobenzaldehyde",
+          "symbol": null,
+          "amount": "515.0 mL (2.2 mmol, 1.1 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-3-(2-Iodophenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "508 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and H2O",
+        "solvent_amount": "8 mL EtOH, 4 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r15"
+    },
+    {
+      "id": "NonGP-Entry14",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-acetyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "250.0 mg (2.0 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "5-methoxypiperonal",
+          "symbol": null,
+          "amount": "360 mg (2.0 mmol, 1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(E)-3-(7-Methoxy-2H-1,3-benzodioxol-5-yl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": "36a",
+          "amount": "480 mg",
+          "registry_name": "(E)-3-(7-Methoxy-2H-1,3-benzodioxol-5-yl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "KOH (catalytic)",
+          "symbol": null,
+          "amount": "~25 mg (½ pellet)"
+        }
+      ],
+      "conditions": {
+        "solvent": "EtOH and H2O",
+        "solvent_amount": "9 mL EtOH, 1 mL H2O",
+        "temperature": null,
+        "time": null,
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r16"
+    },
+    {
+      "id": "NonGP-Entry15",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(4-vinylphenyl)methanol",
+          "symbol": null,
+          "amount": "1.07 g (8.0 mmol, 1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(Acetoxymethyl)-4-vinylbenzene",
+          "symbol": null,
+          "amount": "1.35 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "pyridine",
+          "symbol": null,
+          "amount": "0.5 mL"
+        },
+        {
+          "name": "acetic anhydride",
+          "symbol": null,
+          "amount": "0.5 mL"
+        },
+        {
+          "name": "4-dimethylaminopyridine (DMAP)",
+          "symbol": null,
+          "amount": "98 mg (0.8 mmol, 0.1 equiv.)"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": "room temperature",
+        "time": "20 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "96%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r17"
+    },
+    {
+      "id": "NonGP-Entry16",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "sodium azide",
+          "symbol": null,
+          "amount": "0.65 g (10.0 mmol, 2 equiv.)"
+        },
+        {
+          "name": "4-vinylbenzyl chloride",
+          "symbol": null,
+          "amount": "0.76 g (5.0 mmol, 1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-(Azidomethyl)-4-vinylbenzene",
+          "symbol": null,
+          "amount": "0.75 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "50 mL",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r18"
+    },
+    {
+      "id": "NonGP-Entry17",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "synthesis",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "1-azidomethyl-4-vinyl-benzene",
+          "symbol": null,
+          "amount": "0.78 g (4.9 mmol, 1.0 equiv.)",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "crude amine",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-Butyl 4-vinylbenzylcarbamate",
+          "symbol": null,
+          "amount": "0.74 g",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "BocHN (reagent for Staudinger-type reduction/amidation)",
+          "symbol": null,
+          "amount": "2.52 g (9.8 mmol, 2.0 equiv.)",
+          "step": 1
+        },
+        {
+          "name": "triphenylphosphine",
+          "symbol": null,
+          "amount": null,
+          "step": 1
+        },
+        {
+          "name": "di-tert-butyl dicarbonate",
+          "symbol": null,
+          "amount": "1.55 g (7.3 mmol, 1.5 equiv.)",
+          "step": 2
+        },
+        {
+          "name": "NEt3",
+          "symbol": null,
+          "amount": "0.82 mL (5.9 mmol, 1.2 equiv.)",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF:H2O (10:1) then CH2Cl2/MeOH for second step"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "11 mL (first step), 100 mL CH2Cl2 for second step"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "24 h (first step), overnight (second step)"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2 (second step)"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r19"
+    },
+    {
+      "id": "NonGP-Entry18",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "methyltriphenylphosphonium bromide",
+          "symbol": null,
+          "amount": "4.15 g (11.5 mmol, 1.4 equiv.)"
+        },
+        {
+          "name": "potassium tert-butoxide",
+          "symbol": null,
+          "amount": "1.38 g (12.3 mmol, 1.5 equiv.)"
+        },
+        {
+          "name": "1-benzofuran-5-carbaldehyde",
+          "symbol": null,
+          "amount": "1.20 g (8.2 mmol, 1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Vinyl-1-benzofuran",
+          "symbol": null,
+          "amount": "0.89 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "8–9 mL (as reported)",
+        "temperature": "room temperature",
+        "time": "14 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r20"
+    },
+    {
+      "id": "NonGP-Entry19",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "potassium vinyltrifluoroborate",
+          "symbol": null,
+          "amount": "0.96 g (6.5 mmol, 1.1 equiv.)"
+        },
+        {
+          "name": "5-bromo-1-tosyl-1H-indole",
+          "symbol": null,
+          "amount": "2.27 g (6.5 mmol, 1.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "1-Toluenesulfonyl-5-vinyl-1H-indole",
+          "symbol": null,
+          "amount": "1.17 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "PdCl2",
+          "symbol": null,
+          "amount": "23 mg (0.13 mmol, 0.02 equiv.)"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "triphenylphosphine"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "triphenylphosphine (additional)",
+          "symbol": null,
+          "amount": "103 mg (0.39 mmol, 0.06 equiv.)"
+        },
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "6.3 g (19.5 mmol, 3.0 equiv.)"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF/H2O (9:1)",
+        "solvent_amount": "13 mL",
+        "temperature": "85 °C",
+        "time": "22 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r21"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry1",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-3-(4-methoxyphenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "95.7 mg (0.39 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.44 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(4-Methoxyphenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "2",
+          "amount": "84.8 mg",
+          "registry_name": "2-(4-Methoxyphenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.3 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": "94%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry2",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-3-(2-methoxyphenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "95.8 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.44 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-Methoxyphenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "3",
+          "amount": "68.2 mg",
+          "registry_name": "2-(2-Methoxyphenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.1 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": "93%",
+        "er": null,
+        "dr": "7:1"
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry3",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "methyl 4-[(1E)-3-(1-methyl-1H-imidazol-2-yl)-3-oxoprop-1-en-1-yl]benzoate",
+          "symbol": null,
+          "amount": "108.2 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.46 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-(2-(1-methyl-1H-imidazole-2-carbonyl)-4-phenylcyclobutyl)benzoate",
+          "symbol": "4",
+          "amount": "90.0 mg",
+          "registry_name": "Methyl 4-(2-(1-methyl-1H-imidazole-2-carbonyl)-4-phenylcyclobutyl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.8 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "91%",
+        "er": null,
+        "dr": "2:1"
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry4",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-1-(1-methyl-1H-imidazol-2-yl)-3-(4-trifluoromethylphenyl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "113.5 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.46 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(3-phenyl-2-(4-(trifluoromethyl)phenyl)cyclobutyl)methanone",
+          "symbol": "5",
+          "amount": "91.5 mg",
+          "registry_name": "(1-Methyl-1H-imidazol-2-yl)(3-phenyl-2-(4-(trifluoromethyl)phenyl)cyclobutyl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "62.6 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": "80%",
+        "er": null,
+        "dr": "2:1"
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry5",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-4-(3-(1-methyl-1H-imidazol-2-yl)-3-oxoprop-1-en-1-yl)benzonitrile",
+          "symbol": null,
+          "amount": "95.2 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.45 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(2-(1-Methyl-1H-imidazole-2-carbonyl)-4-phenylcyclobutyl)benzonitrile",
+          "symbol": "6",
+          "amount": "86.0 mg",
+          "registry_name": "4-(2-(1-Methyl-1H-imidazole-2-carbonyl)-4-phenylcyclobutyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "60.5 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "24 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "85%",
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry6",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-3-(2-fluorophenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "92.1 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.44 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-Fluorophenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "7",
+          "amount": "80.7 mg",
+          "registry_name": "2-(2-Fluorophenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "60.3 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "95%",
+        "er": null,
+        "dr": "10:1"
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry7",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-3-(4-chlorophenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "99.0 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.44 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(4-Chlorophenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "8",
+          "amount": "103.2 mg",
+          "registry_name": "2-(4-Chlorophenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.0 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "96%",
+        "er": null,
+        "dr": "6:1"
+      },
+      "_original_id": "reaction_7"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry8",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-1-(1-methyl-1H-imidazol-2-yl)-3-(p-tolyl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "89.3 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.45 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(3-phenyl-2-(p-tolyl)cyclobutyl)methanone",
+          "symbol": "9",
+          "amount": "74.8 mg",
+          "registry_name": "(1-Methyl-1H-imidazol-2-yl)(3-phenyl-2-(p-tolyl)cyclobutyl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "60.4 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": "98%",
+        "er": null,
+        "dr": "4:1"
+      },
+      "_original_id": "reaction_8"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry9",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-1-(1-methyl-1H-imidazol-2-yl)-3-(naphthalen-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "105.5 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.44 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(2-(naphthalen-2-yl)-3-phenylcyclobutyl)methanone",
+          "symbol": "10",
+          "amount": "63.6 mg",
+          "registry_name": "(1-Methyl-1H-imidazol-2-yl)(2-(naphthalen-2-yl)-3-phenylcyclobutyl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.3 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "43%",
+        "ee": "95%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "reaction_9"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry10",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        14,
+        15
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-1-(1-methyl-1H-imidazol-2-yl)-3-(thiophen-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "87.4 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.45 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(3-phenyl-2-(thiophen-2-yl)cyclobutyl)methanone",
+          "symbol": "11",
+          "amount": "63.2 mg",
+          "registry_name": "(1-Methyl-1H-imidazol-2-yl)(3-phenyl-2-(thiophen-2-yl)cyclobutyl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "59.9 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": "89%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "reaction_10"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry11",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-1-(1-methyl-1H-imidazol-2-yl)-3-(3-nitrophenyl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "102.8 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.45 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(2-(3-nitrophenyl)-3-phenylcyclobutyl)methanone",
+          "symbol": "12",
+          "amount": "108.7 mg",
+          "registry_name": "(1-Methyl-1H-imidazol-2-yl)(2-(3-nitrophenyl)-3-phenylcyclobutyl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.0 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "24 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "98%",
+        "er": null,
+        "dr": "6:1"
+      },
+      "_original_id": "reaction_11"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry12",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-3-(2-iodophenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "135.6 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.45 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-Iodophenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "13",
+          "amount": "72.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "60.5 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "41%",
+        "ee": "97%",
+        "er": null,
+        "dr": "10:1"
+      },
+      "_original_id": "reaction_12"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry13",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "84.6 mg (0.40 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.46 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(2,3-Diphenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "14",
+          "amount": "98.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.6 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "95%",
+        "er": null,
+        "dr": "7:1"
+      },
+      "_original_id": "reaction_13"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry14",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "85.1 mg (0.40 mmol)"
+        },
+        {
+          "name": "2-chlorostyrene",
+          "symbol": null,
+          "amount": "0.51 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(2-Chlorophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "15",
+          "amount": "109.0 mg",
+          "registry_name": "(3-(2-Chlorophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "62.4 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "94%",
+        "er": null,
+        "dr": "10:1"
+      },
+      "_original_id": "reaction_15"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry15",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "83.0 mg (0.39 mmol)"
+        },
+        {
+          "name": "3-chlorostyrene",
+          "symbol": null,
+          "amount": "0.52 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(3-Chlorophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "16",
+          "amount": "102.2 mg",
+          "registry_name": "(3-(3-Chlorophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "62.1 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "95%",
+        "er": null,
+        "dr": "4:1"
+      },
+      "_original_id": "reaction_16"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry16",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "85.5 mg (0.40 mmol)"
+        },
+        {
+          "name": "4-chlorostyrene",
+          "symbol": null,
+          "amount": "0.48 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-Chlorophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "17",
+          "amount": "109.5 mg",
+          "registry_name": "(3-(4-Chlorophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "63.0 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "96%",
+        "er": null,
+        "dr": "8:1"
+      },
+      "_original_id": "reaction_17"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry17",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "84.9 mg (0.40 mmol)"
+        },
+        {
+          "name": "4-bromostyrene",
+          "symbol": null,
+          "amount": "0.52 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-Bromophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "18",
+          "amount": "118.5 mg",
+          "registry_name": "(3-(4-Bromophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.4 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "92%",
+        "er": null,
+        "dr": "6:1"
+      },
+      "_original_id": "reaction_18"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry18",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "84.3 mg (0.40 mmol)"
+        },
+        {
+          "name": "4-(trifluoromethyl)styrene",
+          "symbol": null,
+          "amount": "0.59 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(2-phenyl-3-(4-(trifluoromethyl)phenyl)cyclobutyl)methanone",
+          "symbol": "19",
+          "amount": "126.6 mg",
+          "registry_name": "(1-Methyl-1H-imidazol-2-yl)(2-phenyl-3-(4-(trifluoromethyl)phenyl)cyclobutyl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "63.0 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "96%",
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "reaction_19"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry19",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "85.2 mg (0.40 mmol)"
+        },
+        {
+          "name": "4-tert-butoxystyrene",
+          "symbol": null,
+          "amount": "0.75 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-tert-Butoxyphenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "20",
+          "amount": null,
+          "registry_name": "(3-(4-tert-Butoxyphenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "63.3 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": null,
+        "ee": "83%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_20"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry20",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "84.9 mg (0.40 mmol)"
+        },
+        {
+          "name": "4-acetoxystyrene",
+          "symbol": null,
+          "amount": "0.61 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-Acetoxyphenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "21",
+          "amount": "84.4 mg",
+          "registry_name": "(3-(4-Acetoxyphenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "62.7 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": "97%",
+        "er": null,
+        "dr": "13:1"
+      },
+      "_original_id": "reaction_21"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry21",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "81.8 mg (0.39 mmol)"
+        },
+        {
+          "name": "O-(tert-butyl)dimethylsilyl(4-vinylphenyl)methanol",
+          "symbol": null,
+          "amount": "1.00 g (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(4-(((tert-Butyldimethylsilyl)oxy)methyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "22",
+          "amount": "144.3 mg",
+          "registry_name": "(3-(4-(((tert-Butyldimethylsilyl)oxy)methyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "60.9 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "95%",
+        "er": null,
+        "dr": "10:2:1"
+      },
+      "_original_id": "reaction_22"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry22",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "83.9 mg (0.40 mmol)"
+        },
+        {
+          "name": "4-acetoxymethylstyrene",
+          "symbol": null,
+          "amount": "0.71 g (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-(Acetoxymethyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "23",
+          "amount": "110.0 mg",
+          "registry_name": "(3-(4-(Acetoxymethyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.4 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "97%",
+        "er": null,
+        "dr": "10:2:1"
+      },
+      "_original_id": "reaction_23"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry23",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "82.7 mg (0.39 mmol)"
+        },
+        {
+          "name": "1-(azidomethyl)-4-vinylbenzene",
+          "symbol": null,
+          "amount": "0.64 g (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-(Azidomethyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "24",
+          "amount": "114.6 mg",
+          "registry_name": "(3-(4-(Azidomethyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.2 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "94%",
+        "er": null,
+        "dr": "10:2:1"
+      },
+      "_original_id": "reaction_24"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry24",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "83.5 mg (0.39 mmol)"
+        },
+        {
+          "name": "tert-butyl 4-vinylbenzylcarbamate",
+          "symbol": null,
+          "amount": "0.93 g (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-Butyl(4-(3-(1-methyl-1H-imidazole-2-carbonyl)-2-phenylcyclobutyl)benzyl) carbamate",
+          "symbol": "25",
+          "amount": "118.4 mg",
+          "registry_name": "tert-Butyl(4-(3-(1-methyl-1H-imidazole-2-carbonyl)-2-phenylcyclobutyl)benzyl) carbamate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.7 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "95%",
+        "er": null,
+        "dr": "10:2.5:1"
+      },
+      "_original_id": "reaction_25"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry25",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "85.2 mg (0.41 mmol)"
+        },
+        {
+          "name": "phenyl vinyl sulfide",
+          "symbol": null,
+          "amount": "0.53 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(2-phenyl-3-(phenylthio)cyclobutyl)methanone",
+          "symbol": "26",
+          "amount": "79.9 mg",
+          "registry_name": "(1-Methyl-1H-imidazol-2-yl)(2-phenyl-3-(phenylthio)cyclobutyl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "121.8 mg (0.16 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": "78%",
+        "er": null,
+        "dr": "1.2:1"
+      },
+      "_original_id": "reaction_26"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry26",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "82.1 mg (0.39 mmol)"
+        },
+        {
+          "name": "2-vinylnapthalene",
+          "symbol": null,
+          "amount": "0.61 g (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(3-(naphthalen-2-yl)-2-phenylcyclobutyl)methanone",
+          "symbol": "27",
+          "amount": "120.0 mg",
+          "registry_name": "(1-Methyl-1H-imidazol-2-yl)(3-(naphthalen-2-yl)-2-phenylcyclobutyl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "60.3 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "90%",
+        "er": null,
+        "dr": "5:1.5:1"
+      },
+      "_original_id": "reaction_27"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry27",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "84.9 mg (0.40 mmol)"
+        },
+        {
+          "name": "5-vinyl-1-benzofuran",
+          "symbol": null,
+          "amount": "570.0 mg (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(Benzofuran-5-yl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "28",
+          "amount": "121.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.5 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "94%",
+        "er": null,
+        "dr": "4:1"
+      },
+      "_original_id": "reaction_28"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry28",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "84.9 mg (0.40 mmol)"
+        },
+        {
+          "name": "1-toluenesulfonyl-5-vinyl-1H-indole",
+          "symbol": null,
+          "amount": "1.17 g (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(2-phenyl-3-(1-tosyl-1H-indol-5-yl)cyclobutyl)methanone",
+          "symbol": "29",
+          "amount": "165.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.3 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": "99%",
+        "er": null,
+        "dr": "4:1"
+      },
+      "_original_id": "reaction_29"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry29",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "86.1 mg (0.41 mmol)"
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "0.45 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(3-methyl-2-phenyl-3-(prop-1-en-2-yl)cyclobutyl)methanone",
+          "symbol": "30",
+          "amount": "58.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "61.0 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": "63%",
+        "er": null,
+        "dr": "10:1"
+      },
+      "_original_id": "reaction_30"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry30",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "85.1 mg (0.40 mmol)"
+        },
+        {
+          "name": "1,3-butadiene (15% in toluene)",
+          "symbol": null,
+          "amount": "2.2 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-Ethenyl-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "31",
+          "amount": "78.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "63.2 mg (0.08 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "6 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "87%",
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "reaction_31"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry31",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "85.1 mg (0.40 mmol)"
+        },
+        {
+          "name": "methylenecyclopentane",
+          "symbol": null,
+          "amount": "0.46 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(1-phenylspiro[3.4]octan-2-yl)methanone",
+          "symbol": "34",
+          "amount": "49.0 mg (0.17 mmol)"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "121.8 mg (0.16 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "42%",
+        "ee": "85%",
+        "er": null,
+        "dr": "6:1"
+      },
+      "_original_id": "34"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry32",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "85.0 mg (0.40 mmol)"
+        },
+        {
+          "name": "methylenecyclobutane",
+          "symbol": null,
+          "amount": "0.37 mL (4.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(1-phenylspiro[3.3]heptan-2-yl)methanone",
+          "symbol": "35",
+          "amount": "65.2 mg (0.23 mmol)"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "121.0 mg (0.16 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "8 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": "88%",
+        "er": null,
+        "dr": ">20:1"
+      },
+      "_original_id": "35"
+    },
+    {
+      "id": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions-Entry33",
+      "_gp_source": "GeneralProcedure_isolation_scale_asymmetric_2_2_cycloadditions",
+      "source_pages": [
+        21,
+        22
+      ],
+      "reaction_type": "asymmetric intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-3-(7-methoxybenzo[d][1,3]dioxol-5-yl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "144.5 mg (0.50 mmol)"
+        },
+        {
+          "name": "4-bromo-2,5-methoxystyrene",
+          "symbol": null,
+          "amount": "582.1 mg (2.4 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-Bromo-2,5-dimethoxyphenyl)-2-(7-methoxy-2H-1,3-benzodioxol-5-yl)cyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "36",
+          "amount": "173.0 mg (0.33 mmol)"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(R)-AC-3",
+          "amount": "74.0 mg (0.10 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "10 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "93%",
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "36"
+    },
+    {
+      "id": "NonGP-Entry20",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-3-(4-methoxyphenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "24.2 mg (0.10 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.11 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(4-Methoxyphenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "(±)-2",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.7 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "(±)-2"
+    },
+    {
+      "id": "NonGP-Entry21",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-3-(2-methoxyphenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "23.3 mg (0.10 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.11 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-Methoxyphenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "(±)-3",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.6 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": "6:1"
+      },
+      "_original_id": "(±)-3"
+    },
+    {
+      "id": "NonGP-Entry22",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.6 mg (0.10 mmol)"
+        },
+        {
+          "name": "phenyl vinyl sulfide",
+          "symbol": null,
+          "amount": "0.13 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl 4-(2-(1-methyl-1H-imidazole-2-carbonyl)-4-phenylcyclobutyl)benzoate",
+          "symbol": "(±)-4",
+          "amount": "7.9 mg (0.03 mmol)"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "30.1 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "29%",
+        "ee": null,
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "(±)-4"
+    },
+    {
+      "id": "NonGP-Entry23",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-1-(1-methyl-1H-imidazol-2-yl)-3-(4-trifluoromethylphenyl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "28.0 mg (0.10 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.12 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(3-phenyl-2-(4-(trifluoromethyl)phenyl)cyclobutyl)methanone",
+          "symbol": "(±)-5",
+          "amount": "23.5 mg (0.07 mmol)"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "BINOL-phosphoramide catalyst (±)-NMe AC-3",
+          "symbol": null,
+          "amount": "15.9 mg (0.02 mmol)"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": "2:1"
+      },
+      "_original_id": "(±)-5"
+    },
+    {
+      "id": "NonGP-Entry24",
+      "source_pages": [
+        23,
+        24
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-4-(3-(1-methyl-1H-imidazol-2-yl)-3-oxoprop-1-en-1-yl)benzonitrile",
+          "symbol": null,
+          "amount": "24.1 mg (0.10 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.11 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(2-(1-Methyl-1H-imidazole-2-carbonyl)-4-phenylcyclobutyl)benzonitrile",
+          "symbol": "(±)-6",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.3 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "(±)-6"
+    },
+    {
+      "id": "NonGP-Entry25",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-3-(2-fluorophenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "23.8 mg (0.10 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.11 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-Fluorophenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "(±)-7",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.8 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": "10:1"
+      },
+      "_original_id": "(±)-7"
+    },
+    {
+      "id": "NonGP-Entry26",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-3-(4-chlorophenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "24.1 mg (0.10 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.11 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(4-Chlorophenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "(±)-8",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.3 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": null,
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "(±)-8"
+    },
+    {
+      "id": "NonGP-Entry27",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-1-(1-methyl-1H-imidazol-2-yl)-3-(p-tolyl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "22.6 mg (0.10 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.11 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(3-phenyl-2-(p-tolyl)cyclobutyl)methanone",
+          "symbol": "(±)-9",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "14.9 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "(±)-9"
+    },
+    {
+      "id": "NonGP-Entry28",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-1-(1-methyl-1H-imidazol-2-yl)-3-(naphthalen-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "26.6 mg (0.10 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.11 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(2-(naphthalen-2-yl)-3-phenylcyclobutyl)methanone",
+          "symbol": "(±)-10",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.0 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": null,
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "(±)-10"
+    },
+    {
+      "id": "NonGP-Entry29",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-1-(1-methyl-1H-imidazol-2-yl)-3-(thiophen-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "21.2 mg (0.10 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.11 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(3-phenyl-2-(thiophen-2-yl)cyclobutyl)methanone",
+          "symbol": "(±)-11",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.0 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "(±)-11"
+    },
+    {
+      "id": "NonGP-Entry30",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-1-(1-methyl-1H-imidazol-2-yl)-3-(3-nitrophenyl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "26.2 mg (0.10 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.11 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(2-(3-nitrophenyl)-3-phenylcyclobutyl)methanone",
+          "symbol": "(±)-12",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.8 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "33%",
+        "ee": null,
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "(±)-12"
+    },
+    {
+      "id": "NonGP-Entry31",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "(E)-3-(2-iodophenyl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "33.5 mg (0.10 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.11 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-Iodophenyl)-3-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "(±)-13",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.0 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": null,
+        "er": null,
+        "dr": "10:1"
+      },
+      "_original_id": "(±)-13"
+    },
+    {
+      "id": "NonGP-Entry32",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "22.4 mg (0.11 mmol)"
+        },
+        {
+          "name": "styrene",
+          "symbol": null,
+          "amount": "0.12 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(2,3-Diphenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "(±)-14",
+          "amount": "23.5 mg (0.07 mmol)"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "BINOL-phosphoramide catalyst (±)-AC-3",
+          "symbol": null,
+          "amount": "16.4 mg (0.02 mmol)"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": "7:1"
+      },
+      "_original_id": "(±)-14"
+    },
+    {
+      "id": "NonGP-Entry33",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "22.2 mg (0.10 mmol)"
+        },
+        {
+          "name": "2-chlorostyrene",
+          "symbol": null,
+          "amount": "0.13 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(2-Chlorophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "(±)-15",
+          "amount": "19.7 mg (0.06 mmol)"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "16.5 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": null,
+        "er": null,
+        "dr": "10:1"
+      },
+      "_original_id": "(±)-15"
+    },
+    {
+      "id": "NonGP-Entry34",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.3 mg (0.10 mmol)"
+        },
+        {
+          "name": "3-chlorostyrene",
+          "symbol": null,
+          "amount": "0.13 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(3-Chlorophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "(±)-16",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.6 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": null,
+        "er": null,
+        "dr": "4:1"
+      },
+      "_original_id": "(±)-16"
+    },
+    {
+      "id": "NonGP-Entry35",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.2 mg (0.10 mmol)"
+        },
+        {
+          "name": "4-chlorostyrene",
+          "symbol": null,
+          "amount": "0.12 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-Chlorophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "(±)-17",
+          "amount": "26.7 mg (0.08 mmol)"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.3 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": "6:1"
+      },
+      "_original_id": "(±)-17"
+    },
+    {
+      "id": "NonGP-Entry36",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "racemic intermolecular [2+2] cycloaddition (photochemical)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.2 mg (0.10 mmol)"
+        },
+        {
+          "name": "4-bromostyrene",
+          "symbol": null,
+          "amount": "0.13 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-Bromophenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "(±)-18",
+          "amount": "3.4 mg (0.01 mmol)"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.4 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "−78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed (freeze-pump-thaw technique, 3 x 5 min), sealed with glass stopper",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "9%",
+        "ee": null,
+        "er": null,
+        "dr": "6:1"
+      },
+      "_original_id": "(±)-18"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry1",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.7 mg (0.10 mmol, 1.0 equiv.)"
+        },
+        {
+          "name": "4-(trifluoromethyl)styrene",
+          "symbol": null,
+          "amount": "0.15 mL (1.0 mmol, 10.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(2-phenyl-3-(4-(trifluoromethyl)phenyl)cyclobutyl)methanone",
+          "symbol": "19",
+          "amount": "33.6 mg",
+          "registry_name": "(1-Methyl-1H-imidazol-2-yl)(2-phenyl-3-(4-(trifluoromethyl)phenyl)cyclobutyl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "16.1 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": null,
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry2",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "22.2 mg (0.10 mmol)"
+        },
+        {
+          "name": "4-tert-Butoxystyrene",
+          "symbol": null,
+          "amount": "0.19 mL (1.0 mmol, 10.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-tert-Butoxyphenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "20",
+          "amount": "28.0 mg",
+          "registry_name": "(3-(4-tert-Butoxyphenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "16.0 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": null,
+        "er": null,
+        "dr": "4:1"
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry3",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.1 mg (0.10 mmol)"
+        },
+        {
+          "name": "4-acetoxystyrene",
+          "symbol": null,
+          "amount": "0.15 mL (1.0 mmol, 10.0 equiv.)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-Acetoxyphenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "21",
+          "amount": "22.6 mg",
+          "registry_name": "(3-(4-Acetoxyphenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "16.0 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": null,
+        "er": null,
+        "dr": "8:1"
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry4",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "20.6 mg (0.10 mmol)"
+        },
+        {
+          "name": "tert-butyldimethyl(4-vinylbenzyloxy)silane",
+          "symbol": null,
+          "amount": "247.9 mg (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "3-(4-(((tert-Butyldimethylsilyl)oxy)methyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "22",
+          "amount": "40.0 mg",
+          "registry_name": "(3-(4-(((tert-Butyldimethylsilyl)oxy)methyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.4 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry5",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.3 mg (0.10 mmol)"
+        },
+        {
+          "name": "1-(acetoxymethyl)-4-vinylbenzene",
+          "symbol": null,
+          "amount": "180.0 mg (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-(Acetoxymethyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "23",
+          "amount": null,
+          "registry_name": "(3-(4-(Acetoxymethyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "16.0 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry6",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "20.5 mg (0.10 mmol)"
+        },
+        {
+          "name": "1-(azidomethyl)-4-vinylbenzene",
+          "symbol": null,
+          "amount": "158.0 mg (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-(Azidomethyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "24",
+          "amount": null,
+          "registry_name": "(3-(4-(Azidomethyl)phenyl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.3 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry7",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.4 mg (0.10 mmol)"
+        },
+        {
+          "name": "tert-butyl 4-vinylbenzylcarbamate",
+          "symbol": null,
+          "amount": "233 mg (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-Butyl(4-(-3-(1-methyl-1H-imidazole-2-carbonyl)-2-phenylcyclobutyl)benzyl)carbamate",
+          "symbol": "25",
+          "amount": "27.4 mg",
+          "registry_name": "tert-Butyl(4-(3-(1-methyl-1H-imidazole-2-carbonyl)-2-phenylcyclobutyl)benzyl) carbamate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.0 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": null,
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "reaction_7"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry8",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.6 mg (0.10 mmol)"
+        },
+        {
+          "name": "phenyl vinyl sulfide",
+          "symbol": null,
+          "amount": "0.13 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(2-phenyl-3-(phenylthio)cyclobutyl)methanone",
+          "symbol": "26",
+          "amount": "7.9 mg",
+          "registry_name": "(1-Methyl-1H-imidazol-2-yl)(2-phenyl-3-(phenylthio)cyclobutyl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "30.1 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "29%",
+        "ee": null,
+        "er": null,
+        "dr": "1.3:1"
+      },
+      "_original_id": "reaction_8"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry9",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "22.0 mg (0.10 mmol)"
+        },
+        {
+          "name": "2-vinylnaphthalene",
+          "symbol": null,
+          "amount": "150.4 mg (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(3-(naphthalen-2-yl)-2-phenylcyclobutyl)methanone",
+          "symbol": "27",
+          "amount": "33.1 mg",
+          "registry_name": "(1-Methyl-1H-imidazol-2-yl)(3-(naphthalen-2-yl)-2-phenylcyclobutyl)methanone",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.0 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": "2:1"
+      },
+      "_original_id": "reaction_9"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry10",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "20.7 mg (0.10 mmol)"
+        },
+        {
+          "name": "5-vinyl-1-benzofuran",
+          "symbol": null,
+          "amount": "142.0 mg (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(Benzofuran-5-yl)-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "28",
+          "amount": "30.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.4 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": null,
+        "er": null,
+        "dr": "4:1"
+      },
+      "_original_id": "reaction_10"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry11",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.4 mg (0.10 mmol)"
+        },
+        {
+          "name": "1-toluenesulfonyl-5-vinyl-1H-indole",
+          "symbol": null,
+          "amount": "295.1 mg (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)((1S,2S,3S)-2-phenyl-3-(1-tosyl-1H-indol-5-yl)cyclobutyl)methanone",
+          "symbol": "29",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.6 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": null,
+        "er": null,
+        "dr": "4:1"
+      },
+      "_original_id": "reaction_11"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry12",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "22.0 mg (0.10 mmol)"
+        },
+        {
+          "name": "2,3-dimethylbutadiene",
+          "symbol": null,
+          "amount": "0.11 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(3-methyl-2-phenyl-3-(prop-1-en-2-yl)cyclobutyl)methanone",
+          "symbol": "30",
+          "amount": "17.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.8 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": null,
+        "er": null,
+        "dr": "10:1"
+      },
+      "_original_id": "reaction_12"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry13",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.1 mg (0.10 mmol)"
+        },
+        {
+          "name": "1,3-butadiene (15% in toluene)",
+          "symbol": null,
+          "amount": "0.55 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-Ethenyl-2-phenylcyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "30",
+          "amount": "17.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "15.8 mg (0.02 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": "3:1"
+      },
+      "_original_id": "reaction_13"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry14",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.6 mg (0.10 mmol)"
+        },
+        {
+          "name": "methylenecyclopentane",
+          "symbol": null,
+          "amount": "0.08 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(1-phenylspiro[3.4]octan-2-yl)methanone",
+          "symbol": "34",
+          "amount": "14.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "30.7 mg (0.04 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "47%",
+        "ee": null,
+        "er": null,
+        "dr": "6:1"
+      },
+      "_original_id": "reaction_14"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry15",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "22.4 mg (0.11 mmol)"
+        },
+        {
+          "name": "methylenecyclobutane",
+          "symbol": null,
+          "amount": "0.10 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1-Methyl-1H-imidazol-2-yl)(1-phenylspiro[3.3]heptan-2-yl)methanone",
+          "symbol": "35",
+          "amount": "11.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "34.0 mg (0.04 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_15"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry16",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "(E)-3-(7-methoxybenzo[d][1,3]dioxol-5-yl)-1-(1-methyl-1H-imidazol-2-yl)prop-2-en-1-one",
+          "symbol": null,
+          "amount": "142.8 mg (0.50 mmol)"
+        },
+        {
+          "name": "4-bromo-2,5-methoxystyrene",
+          "symbol": null,
+          "amount": "244.1 mg (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3-(4-Bromo-2,5-dimethoxyphenyl)-2-(7-methoxy-2H-1,3-benzodioxol-5-yl)cyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": "36",
+          "amount": "137.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-4-Trifluoromethylphenyl-BINOL ((trifluoromethyl)sulfonyl)phosphoramidate",
+          "symbol": "(±)-AC-3",
+          "amount": "78.0 mg (0.10 mmol)",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "10 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "52%",
+        "ee": null,
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "reaction_16"
+    },
+    {
+      "id": "NonGP-Entry37",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "Cleavage reaction of complex cycloadduct (methylation followed by methanolysis)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "major diastereomer of cycloadduct 36",
+          "symbol": "36",
+          "amount": "100.5 mg (0.19 mmol, 1.0 equiv.)",
+          "step": 1
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "Methyl 3-(4-bromo-2,5-dimethoxyphenyl)-2-(7-methoxy-2H-1,3-benzodioxol-5-yl)cyclobutane-1-carboxylate",
+          "symbol": "37",
+          "amount": "63.4 mg",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "MeOTf",
+          "symbol": null,
+          "amount": "30 µL (0.25 mmol, 1.3 equiv.)",
+          "step": 1
+        },
+        {
+          "name": "MeOH",
+          "symbol": null,
+          "amount": "0.32 mL (8.0 mmol, 40.0 equiv.)",
+          "step": 2
+        },
+        {
+          "name": "1,4-diazabicyclo[2.2.2]octane (DABCO)",
+          "symbol": null,
+          "amount": "4.5 mg (0.04 mmol, 0.2 equiv.)",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CH2Cl2"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "1.5 mL"
+          },
+          {
+            "step": 2,
+            "value": "1.5 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "room temperature"
+          },
+          {
+            "step": 2,
+            "value": "room temperature"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "3 h"
+          },
+          {
+            "step": 2,
+            "value": "3 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_17"
+    },
+    {
+      "id": "NonGP-Entry38",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "Cleavage reaction of cycloadduct to give racemic methyl ester (following above procedure)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "(3-(4-bromo-2,5-dimethoxyphenyl)-2-(7-methoxy-2H-1,3-benzodioxol-5-yl)cyclobutyl)(1-methyl-1H-imidazol-2-yl)methanone",
+          "symbol": null,
+          "amount": "86.2 mg (0.16 mmol, 1.0 equiv.)",
+          "step": 1
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "Methyl 3-(4-bromo-2,5-dimethoxyphenyl)-2-(7-methoxy-2H-1,3-benzodioxol-5-yl)cyclobutane-1-carboxylate",
+          "symbol": "37",
+          "amount": "12.0 mg",
+          "step": 2
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "MeOTf",
+          "symbol": null,
+          "amount": "25 µL (0.20 mmol, 1.3 equiv.)",
+          "step": 1
+        },
+        {
+          "name": "MeOH",
+          "symbol": null,
+          "amount": "0.25 mL (6.0 mmol, 40.0 equiv.)",
+          "step": 2
+        },
+        {
+          "name": "1,4-diazabicyclo[2.2.2]octane (DABCO)",
+          "symbol": null,
+          "amount": "3.5 mg (0.3 mmol, 0.2 equiv.)",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "CH2Cl2"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "1 mL"
+          },
+          {
+            "step": 2,
+            "value": "1 mL"
+          }
+        ],
+        "temperature": [],
+        "time": [],
+        "atmosphere": [],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "15%",
+        "ee": null,
+        "er": null,
+        "dr": "5:1"
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_18"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry17",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "21.9 mg (0.10 mmol)"
+        },
+        {
+          "name": "cis-deuterostyrene",
+          "symbol": null,
+          "amount": "0.12 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "three diastereomers",
+          "symbol": null,
+          "amount": "20.1 mg (0.06 mmol)"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-A1",
+          "symbol": null,
+          "amount": "16.5 mg (0.02 mmol)"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": null,
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedure_racemic_2_2_cycloadditions-Entry18",
+      "_gp_source": "GeneralProcedure_racemic_2_2_cycloadditions",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "Intermolecular photochemical [2+2] cycloaddition of a 1-methylimidazoyl enone with styrene (racemic)",
+      "substrates": [
+        {
+          "name": "2-cinnamoyl-1-methylimidazole",
+          "symbol": null,
+          "amount": "22.1 mg (0.10 mmol)"
+        },
+        {
+          "name": "trans-deuterostyrene",
+          "symbol": null,
+          "amount": "0.12 mL (1.0 mmol)"
+        }
+      ],
+      "products": [
+        {
+          "name": "three diastereomers",
+          "symbol": null,
+          "amount": "20.4 mg (0.06 mmol)"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(±)-A1",
+          "symbol": null,
+          "amount": "16.2 mg (0.02 mmol)"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "toluene",
+        "solvent_amount": "2 mL",
+        "temperature": "-78 °C",
+        "time": "14 h",
+        "atmosphere": "degassed via freeze-pump-thaw (3 x 5 min)",
+        "light_source": "Kessil Lamp (H150)",
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": null,
+        "er": null,
+        "dr": "5:1"
+      },
+      "_original_id": "reaction_2"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/chiral_brønsted_acid-controlled_intermolecular_a_cf04d2ce.json",
+    "input_sha256": "4be5b8565e20134186ead1d760ddcb01797949c6c17b0b267a73c89afc5937d3"
+  }
+}

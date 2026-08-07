@@ -1,0 +1,4648 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic Enantioselective Synthesis of Planar Chiral Pillar 5 arenes via Asymmetric.pdf",
+  "paper_key": "catalytic enantioselective synthesis of planar chiral pillar 5 arenes via asymmetric",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic Enantioselective Synthesis of Planar Chiral Pillar 5 arenes via Asymmetric.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic Enantioselective Synthesis of Planar Chiral Pillar 5 arenes via Asymmetric.pdf",
+    "source_mtime_ns": 1782048364000000000,
+    "source_size": 22698616,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "catalytic enantioselective synthesis of planar chiral pillar 5 arenes via asymmetric",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/Catalytic Enantioselective Synthesis of Planar Chiral Pillar 5 arenes via Asymmetric.pdf"
+  },
+  "extracted_at": "2026-07-17T01:15:40.195930",
+  "total_reactions": 62,
+  "filtered_reactions": 62,
+  "filter_stats": {
+    "input_reactions": 62,
+    "basic_failed": 0,
+    "target_failed": 0,
+    "retained": 62
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        7,
+        8
+      ],
+      "reaction_type": "Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "986.0 mg, 1.0 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "102.0 mg, 1.0 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-15-(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3b’",
+          "amount": "141.0 mg",
+          "registry_name": "32,35,52,55,72,75,92,95-octamethoxy-15-(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "56.7 mg, 10 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "19.0 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "808 mg, 8.0 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "33.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "15%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3b_prime"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        8,
+        9
+      ],
+      "reaction_type": "Sonogashira coupling",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "986.0 mg, 1.0 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "1-ethynyl-3,5-dimethoxybenzene",
+          "symbol": null,
+          "amount": "162.0 mg, 1.0 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3k’",
+          "amount": "200.0 mg",
+          "registry_name": "15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "56.7 mg, 10 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "19.0 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "PPh3"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "808.0 mg, 8.0 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "33.0 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "20%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3k_prime"
+    },
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "anthracen-9-ylacetylene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis(anthracen-9-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)pentabenzenacyclodecaphane",
+          "symbol": "3a",
+          "amount": "26.0 mg",
+          "registry_name": "12,15-bis(anthracen-9-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4) pentabenzenacyclodecaphane",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "85%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "anthracen-9-ylacetylene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "15-(anthracen-9-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yl trifluoromethanesulfonate",
+            "product_index": 0,
+            "reason": "Product explicitly contains an anthracen‑9‑ylethynyl substituent, mapping one-to-one to the external alkyne starting material."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "15-(anthracen-9-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yl trifluoromethanesulfonate",
+          "symbol": "3a’",
+          "amount": "2.5 mg",
+          "registry_name": "15-(anthracen-9-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yl trifluoromethanesulfonate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "8%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        20
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "phenylacetylene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3b",
+          "amount": "24.5 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "p-tolylacetylene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3c",
+          "amount": "19.0 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry5",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "anthracen-9-ylacetylene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis(anthracen-9-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)pentabenzenacyclodecaphane",
+          "symbol": "3a",
+          "amount": null,
+          "registry_name": "12,15-bis(anthracen-9-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4) pentabenzenacyclodecaphane",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null,
+        "temperature": "60 °C",
+        "time": "48 h"
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry6",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane12,15-diyhyne-2,1-diyl))bis(4,1-phenylene))bis(trimethylsilane)",
+          "symbol": "3d",
+          "amount": "18.5 mg",
+          "registry_name": "(((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane12,15-diyhyne-2,1-diyl))bis(4,1-phenylene))bis(trimethylsilane)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3d_p20"
+    },
+    {
+      "id": "GeneralProcedureA-Entry7",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4‑ethynyl‑1,1'-biphenyl (4‑ethynylbiphenyl)",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15-bis([1,1'-biphenyl]-4-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains a [1,1'-biphenyl]-4-ylethynyl substituent, mapping directly to the external alkyne 4‑ethynylbiphenyl."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis([1,1'-biphenyl]-4-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3e",
+          "amount": "10.5 mg",
+          "registry_name": "12,15-bis([1,1'-biphenyl]-4-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3e_p21_DMF"
+    },
+    {
+      "id": "GeneralProcedureA-Entry8",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4‑ethynyl‑1,1'-biphenyl (4‑ethynylbiphenyl)",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15-bis([1,1'-biphenyl]-4-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product name shows [1,1'-biphenyl]-4-ylethynyl installed, indicating the external alkyne was 4‑ethynylbiphenyl."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis([1,1'-biphenyl]-4-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3e",
+          "amount": "17.0 mg",
+          "registry_name": "12,15-bis([1,1'-biphenyl]-4-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3e_p21_THF"
+    },
+    {
+      "id": "GeneralProcedureA-Entry9",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynyl-1-methoxybenzene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((4-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains two (4-methoxyphenyl)ethynyl fragments → alkyne was p-methoxyphenylacetylene (4-ethynyl-1-methoxybenzene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((4-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3f",
+          "amount": "21.5 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((4-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3f_p22"
+    },
+    {
+      "id": "GeneralProcedureA-Entry10",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynyl-N,N-dimethylaniline",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))bis(N,N-dimethylaniline)",
+            "product_index": 0,
+            "reason": "Product shows bis(N,N-dimethylaniline) linked via ethynyl units at para positions → alkyne = 4-ethynyl-N,N-dimethylaniline."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))bis(N,N-dimethylaniline)",
+          "symbol": "3g",
+          "amount": "20.5 mg",
+          "registry_name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))bis(N,N-dimethylaniline)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3g_p23"
+    },
+    {
+      "id": "GeneralProcedureA-Entry11",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "9,9'-(((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclane-12,15-diyl)bis(ethyne-2,1-diyl))bis(4,1-phenylene))bis(9H-carbazole)",
+          "symbol": "3h",
+          "amount": "28.0 mg",
+          "registry_name": "9,9'-(((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))bis(4,1-phenylene))bis(9H-carbazole)",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3h_p24"
+    },
+    {
+      "id": "GeneralProcedureA-Entry12",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3-ethynyl-1-methylbenzene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(m-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains bis(m-tolylethynyl) fragments → alkyne = m-tolylacetylene (3-ethynyl-1-methylbenzene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(m-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3i",
+          "amount": "17.0 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(m-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_27_3i"
+    },
+    {
+      "id": "GeneralProcedureA-Entry13",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3-ethynyl-1-methoxybenzene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((3-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains bis((3-methoxyphenyl)ethynyl) substituents → alkyne = 3-methoxyphenylacetylene (3-ethynyl-1-methoxybenzene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((3-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3j",
+          "amount": "17.0 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((3-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_28_3j"
+    },
+    {
+      "id": "GeneralProcedureA-Entry14",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "1-ethynyl-3,5-dimethoxybenzene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15-bis((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product shows bis((3,5-dimethoxyphenyl)ethynyl) groups → alkyne = 3,5-dimethoxyphenylacetylene (1-ethynyl-3,5-dimethoxybenzene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3k",
+          "amount": "23.5 mg",
+          "registry_name": "12,15-bis((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_29_3k"
+    },
+    {
+      "id": "GeneralProcedureA-Entry15",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-ethynyl-1-methylbenzene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(o-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains bis(o-tolylethynyl) substituents → alkyne = o-tolylacetylene (2-ethynyl-1-methylbenzene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(o-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3l",
+          "amount": "20.0 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(o-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_30_3l"
+    },
+    {
+      "id": "GeneralProcedureA-Entry16",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-ethynyl-1-methoxybenzene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((2-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains bis((2-methoxyphenyl)ethynyl) groups → alkyne = o-methoxyphenylacetylene (2-ethynyl-1-methoxybenzene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((2-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3m",
+          "amount": "19.0 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((2-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_31_3m"
+    },
+    {
+      "id": "GeneralProcedureA-Entry17",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynyl-1-fluorobenzene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15-bis((4-fluorophenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product shows bis((4-fluorophenyl)ethynyl) substituents → alkyne = 4-fluorophenylacetylene (4-ethynyl-1-fluorobenzene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis((4-fluorophenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3n",
+          "amount": "25.0 mg",
+          "registry_name": "12,15-bis((4-fluorophenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9 (1,4)-pe ntabenzenacyclodecaphane",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "91%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_3n"
+    },
+    {
+      "id": "GeneralProcedureA-Entry18",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynyl-1-chlorobenzene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15-bis((4-chlorophenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains bis((4-chlorophenyl)ethynyl) fragments → alkyne = 4-chlorophenylacetylene (4-ethynyl-1-chlorobenzene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis((4-chlorophenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3o",
+          "amount": "25.5 mg",
+          "registry_name": "12,15-bis((4-chlorophenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)- pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "88%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_3o"
+    },
+    {
+      "id": "GeneralProcedureA-Entry19",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3-chlorophenylacetylene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15-bis((3-chlorophenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains two ((3-chlorophenyl)ethynyl) units — maps one-to-one to the terminal alkyne 3-chlorophenylacetylene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis((3-chlorophenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3p",
+          "amount": "20.0 mg",
+          "registry_name": "12,15-bis((3-chlorophenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)- pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_3p"
+    },
+    {
+      "id": "GeneralProcedureA-Entry20",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-(trifluoromethyl)phenylacetylene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((4(trifluoromethyl)phenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product shows ((4-(trifluoromethyl)phenyl)ethynyl) substituents — corresponds to the terminal alkyne 4-(trifluoromethyl)phenylacetylene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((4(trifluoromethyl)phenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3q",
+          "amount": "24.5 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((4(trifluoromethyl)phenyl)ethynyl) 1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_3q"
+    },
+    {
+      "id": "GeneralProcedureA-Entry21",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynylbenzaldehyde",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+            "product_index": 0,
+            "reason": "Product named as bis(ethyne-2,1-diyl)dibenzaldehyde with 4,4' substitution — maps to para-ethynyl benzaldehyde (4-ethynylbenzaldehyde) as the alkyne."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+          "symbol": "3r",
+          "amount": "20.5 mg",
+          "registry_name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane 12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_3r"
+    },
+    {
+      "id": "GeneralProcedureA-Entry22",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "4-ethynylbenzonitrile",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzonitrile",
+            "product_index": 0,
+            "reason": "Product contains bis(ethyne-2,1-diyl)dibenzonitrile with 4,4' substitution — identifies the alkyne as 4-ethynylbenzonitrile."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzonitrile",
+          "symbol": "3s",
+          "amount": "18.0 mg",
+          "registry_name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_3s"
+    },
+    {
+      "id": "GeneralProcedureA-Entry23",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "Dimethyl 4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzoate",
+            "product_index": 0,
+            "reason": "Product is dimethyl ...dibenzoate linked by ethynyl groups at the 4-positions — indicates the starting alkyne was methyl 4-ethynylbenzoate."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "Dimethyl 4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzoate",
+          "symbol": "3t",
+          "amount": "20.0 mg",
+          "registry_name": "Dimethyl 4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_3t"
+    },
+    {
+      "id": "GeneralProcedureA-Entry24",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        39
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3-ethynylbenzaldehyde",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+            "product_index": 0,
+            "reason": "Product named as 3,3'-bis(ethynyl)dibenzaldehyde fragment — corresponds to the terminal alkyne 3-ethynylbenzaldehyde."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+          "symbol": "3u",
+          "amount": "21 mg",
+          "registry_name": "3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_3u"
+    },
+    {
+      "id": "GeneralProcedureA-Entry25",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "methyl 3-ethynylbenzoate",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "dimethyl 3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzoate",
+            "product_index": 0,
+            "reason": "Product is dimethyl 3,3'-bis(ethynyl)dibenzoate — maps to methyl 3-ethynylbenzoate as the used terminal alkyne."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "dimethyl 3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzoate",
+          "symbol": "3v",
+          "amount": "24 mg",
+          "registry_name": "dimethyl 3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_3v"
+    },
+    {
+      "id": "GeneralProcedureA-Entry26",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-ethynylbenzaldehyde",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2,2'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+            "product_index": 0,
+            "reason": "Product shows 2,2'-bis(ethynyl)dibenzaldehyde motif — indicates the terminal alkyne was o-ethynylbenzaldehyde (2-ethynylbenzaldehyde)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "2,2'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+          "symbol": "3w",
+          "amount": "22 mg",
+          "registry_name": "2,2'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GP_A_3w"
+    },
+    {
+      "id": "GeneralProcedureA-Entry27",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "1-ethynylnaphthalene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(naphthalen-1-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains bis(naphthalen-1-ylethynyl) substituents — maps directly to the terminal alkyne 1-ethynylnaphthalene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(naphthalen-1-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3x",
+          "amount": "21.5 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(naphthalen-1-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_42_3x"
+    },
+    {
+      "id": "GeneralProcedureA-Entry28",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-ethynylnaphthalene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(naphthalen-2-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product shows bis(naphthalen-2-ylethynyl) groups — identifies the alkyne as 2-ethynylnaphthalene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(naphthalen-2-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3y",
+          "amount": "20.5 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(naphthalen-2-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_43_3y"
+    },
+    {
+      "id": "GeneralProcedureA-Entry29",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2,2'-diethynylbithiophene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2,2'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dithiophene",
+            "product_index": 0,
+            "reason": "Product is named as a dithiophene bearing two ethynyl-linked macrocycle fragments (2,2'-(...bis(ethyne-2,1-diyl))dithiophene), indicating the starting alkyne was the corresponding 2,2'-diethynyl bithiophene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "2,2'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dithiophene",
+          "symbol": "3z",
+          "amount": "10.0 mg",
+          "registry_name": "2,2'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dithiophene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_44_3z"
+    },
+    {
+      "id": "GeneralProcedureA-Entry30",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        45
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3,3'-diethynylbithiophene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dithiophene",
+            "product_index": 0,
+            "reason": "Product is 3,3'-((...diyl)bis(ethyne-2,1-diyl))dithiophene, showing an intact diethynyl-bithiophene fragment from the alkyne starting material."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dithiophene",
+          "symbol": "3aa",
+          "amount": "19.0 mg",
+          "registry_name": "3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dithiophene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_45_3aa"
+    },
+    {
+      "id": "GeneralProcedureA-Entry31",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "3,3'-diethynyl-2,2'-bipyridine",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dipyridine",
+            "product_index": 0,
+            "reason": "Product named as a dipyridine bearing two ethynyl-linked macrocycle fragments (3,3'-((...bis(ethyne-2,1-diyl))dipyridine)), so the alkyne was the corresponding diethynyl bipyridine."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dipyridine",
+          "symbol": "3ab",
+          "amount": "25.5 mg",
+          "registry_name": "3,3'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))dipyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_46_3ab"
+    },
+    {
+      "id": "GeneralProcedureA-Entry32",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "1-ethynyl-anthracene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15-bis(anthracen-1-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product is '12,15-bis(anthracen-1-ylethynyl)-...' showing the alkyne fragment is anthracen-1-ylethynyl (i.e., 1-ethynyl-anthracene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis(anthracen-1-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3ac",
+          "amount": "24.5 mg",
+          "registry_name": "12,15-bis(anthracen-1-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureA_3ac_p47"
+    },
+    {
+      "id": "GeneralProcedureA-Entry33",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-ethynyl-anthracene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15-bis(anthracen-2-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product contains '12,15-bis(anthracen-2-ylethynyl)-...' indicating the alkyne was anthracen-2-ylethynyl (2-ethynyl-anthracene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis(anthracen-2-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3ad",
+          "amount": "23.5 mg",
+          "registry_name": "12,15-bis(anthracen-2-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GeneralProcedureA_3ad_p48"
+    },
+    {
+      "id": "GeneralProcedureA-Entry34",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        53
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "cyclohexylacetylene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15-bis(cyclohexylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product described as '12,15-bis(cyclohexylethynyl)-...' which corresponds to coupling of cyclohexylacetylene (cyclohexyl-ethynyl) as the alkyne."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis(cyclohexylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3ae",
+          "amount": "20.5 mg",
+          "registry_name": "12,15-bis(cyclohexylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry35",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        54
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "triisopropylsilylacetylene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))bis(triisopropylsilane)",
+            "product_index": 0,
+            "reason": "Product is the macrocycle bearing '...bis(triisopropylsilane)' on ethynyl linkers, indicating the alkyne was triisopropylsilylacetylene (TIPS-acetylene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))bis(triisopropylsilane)",
+          "symbol": "3af",
+          "amount": "27.5 mg",
+          "registry_name": "((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))bis(triisopropylsilane)",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "87%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry36",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        55
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "1-hexyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15-di(hex-1-yn-1-yl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product name '12,15-di(hex-1-yn-1-yl)-...' shows the ethynyl substituent is hex-1-yn-1-yl, corresponding to 1-hexyne."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-di(hex-1-yn-1-yl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3ag",
+          "amount": "24.0 mg",
+          "registry_name": "12,15-di(hex-1-yn-1-yl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "95%",
+        "ee": "0%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry37",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        56
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "phenylacetylene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,52,55,72,75-octaethoxy-92,95-bis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product '...bis(phenylethynyl)-...' indicates the alkyne was phenylacetylene (ethynylbenzene)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octaethoxy-92,95-bis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3b-Et",
+          "amount": "23 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octaethoxy-92,95-bis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60-100 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        57
+      ],
+      "reaction_type": "Sonogashira cross-coupling (Pd/Cu-catalyzed alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-15-(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3b’",
+          "amount": "28.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "phenylacetylene",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv.",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+            "product_index": 0,
+            "reason": "Product is '...bis(phenylethynyl)-...' showing the alkyne fragment is phenylethynyl; thus the alkyne starting material was phenylacetylene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3b",
+          "amount": "27.0 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        58
+      ],
+      "reaction_type": "Sonogashira cross-coupling (Pd/Cu-catalyzed alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-15-(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3b’",
+          "amount": "28.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92-((4-methoxyphenyl)ethynyl)-95-(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "4a",
+          "amount": "19.0 mg",
+          "registry_name": "12,15,32,35,52,55,72,75-octamethoxy-92-((4-methoxyphenyl)ethynyl)-95-(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        59
+      ],
+      "reaction_type": "Sonogashira cross-coupling (Pd/Cu-catalyzed alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-15-(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3b’",
+          "amount": "28.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "N,N-dimethyl-4-((32,35,52,55,72,75,92,95-octamethoxy-15-(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yl)ethynyl)aniline",
+          "symbol": "4b",
+          "amount": "25.0 mg",
+          "registry_name": "N,N-dimethyl-4-((32,35,52,55,72,75,92,95-octamethoxy-15-(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yl)ethynyl)aniline",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        60
+      ],
+      "reaction_type": "Sonogashira cross-coupling (Pd/Cu-catalyzed alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-15-(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3b’",
+          "amount": "28.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "4-((32,35,52,55,72,75,92,95-octamethoxy-15-(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yl)ethynyl)benzaldehyde",
+          "symbol": "4c",
+          "amount": "16.5 mg",
+          "registry_name": "4-((32,35,52,55,72,75,92,95-octamethoxy-15-(phenylethynyl)-1,3,5,7,9(1,4)-pentabenze nacyclodecaphane-12-yl)ethynyl)benzaldehyde",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry5",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        61
+      ],
+      "reaction_type": "Sonogashira cross-coupling (Pd/Cu-catalyzed alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-15-(p-tolylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3b’",
+          "amount": "28.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-((32,35,52,55,72,75,92,95-octamethoxy-15-(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yl)ethynyl)pyridine",
+          "symbol": "4d",
+          "amount": "20 mg",
+          "registry_name": "3-((32,35,52,55,72,75,92,95-octamethoxy-15-(phenylethynyl)-1,3,5,7,9(1,4)-pentabenze nacyclodecaphane-12-yl)ethynyl)pyridine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction-5"
+    },
+    {
+      "id": "GeneralProcedureC-Entry1",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        62
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira-type alkynylation (Pd/Cu-catalyzed cross-coupling with terminal alkyne)",
+      "substrates": [
+        {
+          "name": "15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3k’",
+          "amount": "30.0 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "12-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-15-((4-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "5a",
+          "amount": "16.0 mg",
+          "registry_name": "12-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-15-((4-methoxyphenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk15-1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry2",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        64
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira-type alkynylation (Pd/Cu-catalyzed cross-coupling with terminal alkyne)",
+      "substrates": [
+        {
+          "name": "15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3k’",
+          "amount": "30.0 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "12-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-15-((4-(trifluoromethyl)phenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "5b",
+          "amount": "22.0 mg",
+          "registry_name": "12-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-15-((4-(trifluoromethyl)phenyl)ethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk15-2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry3",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        65
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira-type alkynylation (Pd/Cu-catalyzed cross-coupling with terminal alkyne)",
+      "substrates": [
+        {
+          "name": "15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3k’",
+          "amount": "30.0 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "12-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-15-(naphthalen-2-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "5c",
+          "amount": "20.0 mg",
+          "registry_name": "12-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-15-(naphthalen-2-ylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk15-3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry4",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        66
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira-type alkynylation (Pd/Cu-catalyzed cross-coupling with terminal alkyne)",
+      "substrates": [
+        {
+          "name": "15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3k’",
+          "amount": "30.0 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "12-(anthracen-2-ylethynyl)-15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "5d",
+          "amount": "18.5 mg",
+          "registry_name": "12-(anthracen-2-ylethynyl)-15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk15-4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry5",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        67
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira-type alkynylation (Pd/Cu-catalyzed cross-coupling with terminal alkyne)",
+      "substrates": [
+        {
+          "name": "15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3k’",
+          "amount": "30.0 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-((15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yl)ethynyl)thiophene",
+          "symbol": "5e",
+          "amount": "18.5 mg",
+          "registry_name": "3-((15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yl)ethynyl)thiophene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk16-r1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry6",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        68
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira-type alkynylation (Pd/Cu-catalyzed cross-coupling with terminal alkyne)",
+      "substrates": [
+        {
+          "name": "15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3k’",
+          "amount": "30.0 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "alkyne",
+          "symbol": null,
+          "amount": "0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-((15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yl)ethynyl)pyridine",
+          "symbol": "5f",
+          "amount": "25.5 mg",
+          "registry_name": "3-((15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12-yl)ethynyl)pyridine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "24.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk16-r2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry7",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        69
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira-type alkynylation (Pd/Cu-catalyzed cross-coupling with terminal alkyne)",
+      "substrates": [
+        {
+          "name": "4,4'-diethynyl-1,1'-biphenyl",
+          "symbol": null,
+          "amount": "6.1 mg, 0.03 mmol"
+        },
+        {
+          "name": "15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3k’",
+          "amount": "60.0 mg, 0.06 mmol, 2.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "5g",
+          "symbol": "5g",
+          "amount": "33.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "12.0 mg, 0.12 mmol, 4.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk16-r3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry8",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        70
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira-type alkynylation (Pd/Cu-catalyzed cross-coupling with terminal alkyne)",
+      "substrates": [
+        {
+          "name": "4,4''-diethynyl-5'-(4-ethynylphenyl)-1,1':3',1''-terphenyl",
+          "symbol": null,
+          "amount": "11.3 mg, 0.03 mmol"
+        },
+        {
+          "name": "15-((3,5-dimethoxyphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)pentabenzenacyclodecaphane-12-yltrifluoromethanesulfonate",
+          "symbol": "3k’",
+          "amount": "90.0 mg, 0.09 mmol, 3.0 equiv.",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "5h",
+          "symbol": "5h",
+          "amount": "30.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.1mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.6 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "18.0 mg, 0.18 mmol, 6.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk16-r4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry38",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        71
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "0.98 g, 1.0 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2b",
+          "symbol": "2b",
+          "amount": "0.82 g, 8.0 mmol, 8.0 equiv."
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3b",
+          "amount": "0.78 g",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "170.0 mg, 30 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "19.0 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "808.0 mg, 8.0 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "33.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R1"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        72
+      ],
+      "reaction_type": "reduction",
+      "substrates": [
+        {
+          "name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane 12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+          "symbol": "3r",
+          "amount": "28.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "(((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane 12,15-diyl)bis(ethyne-2,1-diyl))bis(4,1-phenylene))dimethanol",
+          "symbol": "6",
+          "amount": "29.0 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaBH4",
+          "symbol": null,
+          "amount": "22.0 mg, 0.6 mmol, 20.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF/MeOH = 3/1",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C then rt",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        73
+      ],
+      "reaction_type": "chemical synthesis",
+      "substrates": [
+        {
+          "name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane 12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+          "symbol": "3r",
+          "amount": "28.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,52,55,72,75-octamethoxy-92,95-bis((4-vinylphenyl)ethynyl)-1,3,5,7,9(1,4)pentabenzenacyclodecaphane",
+          "symbol": "7",
+          "amount": "25.0 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "PPh3MeBr",
+          "symbol": null,
+          "amount": "43.0 mg, 0.12 mmol, 4.0 equiv."
+        },
+        {
+          "name": "KOtBu",
+          "symbol": null,
+          "amount": "13.0 mg, 0.12 mmol, 4.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "1.5 mL, 0.5 mL (for 3r solution)",
+        "temperature": "0 °C (30 min), then warmed to rt",
+        "time": "30 min then stirred overnight",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        74
+      ],
+      "reaction_type": "chemical synthesis",
+      "substrates": [
+        {
+          "name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane 12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+          "symbol": "3r",
+          "amount": "28.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15-bis((4-ethynylphenyl)ethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "8",
+          "amount": "30.0 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Ohira-Bestmann reagent",
+          "symbol": null,
+          "amount": "46.0 mg, 0.24 mmol, 8.0 equiv."
+        },
+        {
+          "name": "K2CO3",
+          "symbol": null,
+          "amount": "33.0 mg, 0.24 mmol, 8.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF/MeOH",
+        "solvent_amount": "2.0 mL",
+        "temperature": "rt",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "99%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-2"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        75
+      ],
+      "reaction_type": "chemical synthesis",
+      "substrates": [
+        {
+          "name": "4,4'-((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane 12,15-diyl)bis(ethyne-2,1-diyl))dibenzaldehyde",
+          "symbol": "3r",
+          "amount": "28.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2-(4-bromophenyl)acetonitrile",
+          "symbol": null,
+          "amount": "18.0 mg, 0.09 mmol, 3.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(2Z,2'Z)-3,3'-(((32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzena cyclodecaphane-12,15-diyl)bis(ethyne-2,1-diyl))bis(4,1-phenylene))bis(2-(4-bromophenyl)acrylonitrile)",
+          "symbol": "9",
+          "amount": "26.0 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaOMe",
+          "symbol": null,
+          "amount": "6.5 mg, 0.12 mmol, 4.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF/MeOH",
+        "solvent_amount": "2.0 mL",
+        "temperature": "rt",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-3"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        76
+      ],
+      "reaction_type": "chemical synthesis",
+      "substrates": [
+        {
+          "name": "12,15-bis(anthracen-2-ylethynyl)-32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3ad",
+          "amount": "55.0 mg, 0.05 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "3ad-R1",
+          "symbol": "3ad-R1",
+          "amount": "23.5 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "sebacoyl dichloride",
+          "symbol": null,
+          "amount": "36.0 mg, 0.15 mmol, 3.0 equiv."
+        },
+        {
+          "name": "pentafluorophenol",
+          "symbol": null,
+          "amount": "55.0 mg, 0.3 mmol, 6.0 equiv."
+        },
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "30.0 mg, 0.3 mmol, 6.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CHCl3",
+        "solvent_amount": "0.5 mL, 0.1 mL (added with pentafluorophenol/Et3N mixture)",
+        "temperature": "0 °C",
+        "time": "2 h then stirred at 0 °C overnight",
+        "atmosphere": "inert atmosphere",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "29%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-4"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        77
+      ],
+      "reaction_type": "chemical synthesis",
+      "substrates": [
+        {
+          "name": "3ad-R1",
+          "symbol": "3ad-R1",
+          "amount": "53.0 mg, 0.03 mmol"
+        },
+        {
+          "name": "anthracen-9-ylmethanamine",
+          "symbol": null,
+          "amount": "27.0 mg, 0.12 mmol, 4.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3ad-R2",
+          "symbol": "3ad-R2",
+          "amount": "45.0 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2.0 mL",
+        "temperature": "50 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "89%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-5"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        78
+      ],
+      "reaction_type": "amination",
+      "substrates": [
+        {
+          "name": "3ad-R1",
+          "symbol": "3ad-R1",
+          "amount": "42.0 mg, 0.026 mmol"
+        },
+        {
+          "name": "pyren-1-ylmethanamine",
+          "symbol": null,
+          "amount": "37.0 mg, 0.156 mmol, 4.0 equiv"
+        }
+      ],
+      "products": [
+        {
+          "name": "3ad-R3",
+          "symbol": "3ad-R3",
+          "amount": "40.0 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2.0 mL",
+        "temperature": "50 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "90%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry39",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        79
+      ],
+      "reaction_type": "Pd/Cu-catalyzed Sonogashira coupling (alkynylation)",
+      "substrates": [
+        {
+          "name": "32,35,72,75,92,95-hexamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15,52,55-tetrayltetrakis(trifluoromethanesulfonate)",
+          "symbol": "1a-2",
+          "amount": "30.0 mg, 0.024 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "2b",
+          "symbol": "2b",
+          "amount": "40.0 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "symbol": "3b-2",
+          "amount": "10.0 mg",
+          "registry_name": "12,15,32,35,72,75-hexamethoxy-52,55,92,95-tetrakis(phenylethynyl)-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "5.6 mg, 40 mol%"
+        },
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.7 mg, 15 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Et3N",
+          "symbol": null,
+          "amount": "40 mg, 0.39 mmol, 16.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "1.0 mL",
+        "temperature": "60 °C",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "40%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        81
+      ],
+      "reaction_type": "Asymmetric Suzuki coupling",
+      "substrates": [
+        {
+          "name": "32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diylbis(trifluoromethanesulfonate)",
+          "symbol": "1a",
+          "amount": "29.5 mg, 0.03 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "14",
+          "symbol": "14",
+          "amount": "25.2 mg, 0.12 mmol, 4.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "5,5''-(32,35,52,55,72,75,92,95-octamethoxy-1,3,5,7,9(1,4)-pentabenzenacyclodecaphane-12,15-diyl)di-2,2'-bithiophene",
+          "symbol": "15",
+          "amount": "30.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(dba)2",
+          "symbol": null,
+          "amount": "1.7 mg, 10 mol%"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L7",
+          "symbol": "L7"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Na2CO3",
+          "symbol": null,
+          "amount": "13 mg, 0.12 mmol, 4.0 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "THF/H2O",
+        "solvent_amount": "1.0 mL, 0.25 mL",
+        "temperature": "60 oC",
+        "time": "48 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "98%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R1"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/catalytic_enantioselective_synthesis_of_planar_c_e0fbb858.json",
+    "input_sha256": "1116a4080fb6904f12b7c5bebc55e9e4b82af153471d45aed3f5e9f7d22bba88"
+  }
+}

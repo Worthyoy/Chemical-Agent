@@ -1,0 +1,1887 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/predictive-multivariate-linear-regression-analysis-guides-successful-catalytic-enantioselective-minisci-reactions-of.pdf",
+  "paper_key": "predictive-multivariate-linear-regression-analysis-guides-successful-catalytic-enantioselective-minisci-reactions-of",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/predictive-multivariate-linear-regression-analysis-guides-successful-catalytic-enantioselective-minisci-reactions-of.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/predictive-multivariate-linear-regression-analysis-guides-successful-catalytic-enantioselective-minisci-reactions-of.pdf",
+    "source_mtime_ns": 1782048672000000000,
+    "source_size": 8165568,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "predictive-multivariate-linear-regression-analysis-guides-successful-catalytic-enantioselective-minisci-reactions-of",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/predictive-multivariate-linear-regression-analysis-guides-successful-catalytic-enantioselective-minisci-reactions-of.pdf"
+  },
+  "extracted_at": "2026-07-17T08:58:45.937978",
+  "total_reactions": 37,
+  "filtered_reactions": 34,
+  "filter_stats": {
+    "input_reactions": 37,
+    "basic_failed": 3,
+    "target_failed": 0,
+    "retained": 34
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "synthesis",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "3,3'-diiodo-2,2'-bis(methoxymethoxy)-1,1'-binaphthalene",
+          "symbol": null,
+          "amount": "500 mg, 0.80 mmol, 1 equiv.",
+          "step": 1
+        },
+        {
+          "name": "(2,6-dimethylphenyl)boronic acid",
+          "symbol": null,
+          "amount": "480 mg, 0.32 mmol, 4 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [],
+      "products": [
+        {
+          "name": "(R)-3,3'-bis(2,6-dimethylphenyl)-1,1'-binaphthol",
+          "symbol": "19",
+          "amount": "331 mg, 0.67 mmol",
+          "step": 2,
+          "registry_name": "(R)‐3,3'‐bis(2,6‐dimethylphenyl)‐1,1'‐binaphthol",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "tetrakis(triphenylphosphine)palladium",
+          "symbol": null,
+          "amount": "185 mg, 0.16 mmol, 0.2 equiv.",
+          "step": 1
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "barium hydroxide",
+          "symbol": null,
+          "amount": "548, 3.20 mmol, 4 equiv.",
+          "step": 1
+        },
+        {
+          "name": "concentrated HCl",
+          "symbol": null,
+          "amount": "2 mL",
+          "step": 2
+        },
+        {
+          "name": "saturated Na2CO3 solution",
+          "symbol": null,
+          "amount": null,
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "5:1 mixture of 1,2-dimethoxyethane/H2O (12 mL)"
+          },
+          {
+            "step": 2,
+            "value": "dioxane (10 mL)"
+          }
+        ],
+        "solvent_amount": [],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "95 °C"
+          },
+          {
+            "step": 2,
+            "value": "80 °C"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "96 h"
+          },
+          {
+            "step": 2,
+            "value": "4 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "argon"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(R)-3,3'-bis(2,6-dimethylphenyl)-1,1'-binaphthol",
+          "symbol": null,
+          "amount": "275 mg, 0.57 mmol, 1 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-3,3'-bis(2,6-dimethylphenyl)-1,1'-binaphthyl phosphate",
+          "symbol": "20",
+          "amount": "252 mg",
+          "registry_name": "(R)‐3,3’‐bis(2,6‐dimethylphenyl)‐1,1’‐binaphthyl phosphate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "POCl3",
+          "symbol": null,
+          "amount": "135 μl, 1.47 mmol, 2.6 equiv."
+        },
+        {
+          "name": "MgSO4",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "1 M HCl",
+          "symbol": null,
+          "amount": "(3 x 25 mL) wash; additional 20 mL wash"
+        }
+      ],
+      "conditions": {
+        "solvent": "pyridine",
+        "solvent_amount": "1.5 ml",
+        "temperature": "90 °C",
+        "time": "14 h",
+        "atmosphere": "Argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "acetyl-L-leucine",
+          "symbol": null,
+          "amount": "4.16 g, 24 mmol, 1.2 equiv."
+        },
+        {
+          "name": "N-hydroxyphthalimide",
+          "symbol": null,
+          "amount": "3.26 g, 20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylleucinate",
+          "symbol": "21",
+          "amount": "3.1 g",
+          "registry_name": "1,3‐dioxoisoindolin‐2‐yl acetylleucinate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "122 mg, 1.0 mmol, 0.05 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "N,N'-dicyclohexylcarbodiimide (DCC)",
+          "symbol": null,
+          "amount": "4.54 g, 22 mmol, 1.1 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "0.1 M",
+        "temperature": "RT",
+        "time": "30 min (stir) + 1 h (after addition) = 1.5 h total",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "48%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        8,
+        9
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "(S)-2-acetamido-4-(tert-butoxy)-4-oxobutanoic acid",
+          "symbol": null,
+          "amount": "961 mg, 4.16 mmol, 1.04 equiv."
+        },
+        {
+          "name": "N-hydroxyphthalimide",
+          "symbol": null,
+          "amount": "653 mg, 4 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "4-(tert-butyl) 1-(1,3-dioxoisoindolin-2-yl) acetylaspartate",
+          "symbol": null,
+          "amount": "598 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "N,N'-dicyclohexylcarbodiimide (DCC)",
+          "symbol": null,
+          "amount": "842 mg, 4.08 mmol, 1.02 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "CH2Cl2",
+        "solvent_amount": "0.1 M",
+        "temperature": "RT",
+        "time": "5 min (initial) then 30 min addition then 30 min stirring (≈65 min total)",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "40%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "synthesis",
+      "substrates": [
+        {
+          "name": "2-methyl-5-bromopyrimidine",
+          "symbol": null,
+          "amount": "346 mg, 2 mmol, 1 equiv."
+        },
+        {
+          "name": "phenylboronic acid",
+          "symbol": null,
+          "amount": "366 mg, 3 mmol, 1.5 equiv.",
+          "original_name": "arylboronic acid",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "2-methyl-5-phenylpyrimidine",
+            "product_index": 0,
+            "reason": "Product is 2-methyl-5-phenylpyrimidine; the only aryl fragment consistent with an 'arylboronic acid' precursor that yields a phenyl substituent is phenylboronic acid (Suzuki coupling implied)."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "2-methyl-5-phenylpyrimidine",
+          "symbol": "22",
+          "amount": "320 mg",
+          "registry_name": "2‐methyl‐5‐phenylpyrimidine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Pd(OAc)2",
+          "symbol": null,
+          "amount": "2.3 mg, 0.1 mmol, 0.05 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "K3PO4",
+          "symbol": null,
+          "amount": "2.3 g, 1 mmol, 2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "ethylene glycol",
+        "solvent_amount": "16 mL",
+        "temperature": "80 °C",
+        "time": "14 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "94%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methylquinoline",
+          "symbol": null,
+          "amount": "35.8 mg, 0.25 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(3-methyl-1-(4-methylquinolin-2-yl)butyl)acetamide",
+          "symbol": "H",
+          "amount": "57.5 mg, 0.213 mmol",
+          "registry_name": "(S)‐N‐(3‐methyl‐1‐(4‐methylquinolin‐2‐yl)butyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbpy)PF6",
+          "symbol": null,
+          "amount": "reported loading"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylleucinate",
+          "symbol": null,
+          "amount": "87.5 mg, 0.275 mmol"
+        },
+        {
+          "name": "(R)-TCYP (chiral phosphoric acid)",
+          "symbol": null,
+          "amount": "reported loading"
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "85%",
+        "ee": "73%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        15,
+        16
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "methyl 5-methylnicotinate",
+          "symbol": null,
+          "amount": "37.8 mg, 0.20 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (S)-6-(1-acetamido-2-methylpropyl)-5-methylnicotinate",
+          "symbol": "I",
+          "amount": "52.2 mg, 0.198 mmol",
+          "registry_name": "methyl (S)‐6‐(1‐acetamido‐2‐methylpropyl)‐5‐methylnicotinate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbpy)PF6",
+          "symbol": null,
+          "amount": "2.7 mg, 0.0025 mmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylvalinate",
+          "symbol": null,
+          "amount": "114.1 mg, 0.22 mmol"
+        },
+        {
+          "name": "(R)-TCYP",
+          "symbol": null,
+          "amount": "12.4 mg, 0.0125 mmol, 0.05 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "81%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "methyl 4-methylnicotinate",
+          "symbol": null,
+          "amount": "37.8 mg, 0.25 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (S)-6-(1-acetamido-2-methylpropyl)-4-methylnicotinate",
+          "symbol": "L",
+          "amount": "54.2 mg, 0.205 mmol",
+          "registry_name": "methyl (S)‐6‐(1‐acetamido‐2‐methylpropyl)‐4‐methylnicotinate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbpy)PF6",
+          "symbol": null,
+          "amount": "2.7 mg, 0.0025 mmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylvalininate",
+          "symbol": null,
+          "amount": "114.1 mg, 0.375 mmol"
+        },
+        {
+          "name": "(R)-TCYP",
+          "symbol": null,
+          "amount": "12.4 mg, 0.0125 mmol, 0.05 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": "85%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "methyl 3-phenylpyridine",
+          "symbol": null,
+          "amount": "38.8 mg, 0.25 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(2-methyl-1-(5-phenylpyridin-2-yl)propyl)acetamide",
+          "symbol": "M",
+          "amount": "32.9 mg, 0.113 mmol",
+          "registry_name": "(S)‐N‐(2‐methyl‐1‐(5‐phenylpyridin‐2‐yl)propyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbpy)PF6",
+          "symbol": null,
+          "amount": "2.7 mg, 0.0025 mmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylvalinate",
+          "symbol": null,
+          "amount": "114.1 mg, 0.375 mmol"
+        },
+        {
+          "name": "(R)-TCYP",
+          "symbol": null,
+          "amount": "12.4 mg, 0.0125 mmol, 0.05 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "49%",
+        "ee": "67%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry5",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        17,
+        18
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "nicotinonitrile",
+          "symbol": null,
+          "amount": "26.0 mg, 0.25 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "N-(1-(5-cyanopyridin-2-yl)-2-methylpropyl)acetamide",
+          "symbol": "N",
+          "amount": "37.5 mg, 0.173 mmol",
+          "registry_name": "N‐(1‐(5‐cyanopyridin‐2‐yl)‐2‐methylpropyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbpy)PF6",
+          "symbol": null,
+          "amount": "2.7 mg, 0.0025 mmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylvalinate",
+          "symbol": null,
+          "amount": "114.1 mg, 0.375 mmol"
+        },
+        {
+          "name": "(R)-TCYP",
+          "symbol": null,
+          "amount": "12.4 mg, 0.0125 mmol, 0.05 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "61%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry6",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "8-methylquinoline",
+          "symbol": null,
+          "amount": "18.8 mg, 0.25 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(8-methylquinolin-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "Q",
+          "amount": "63.9 mg, 0.21 mmol",
+          "registry_name": "(S)‐N‐(1‐(8‐methylquinolin‐2‐yl)‐2‐phenylethyl)acetamide",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbpy)PF6",
+          "symbol": null,
+          "amount": "2.7 mg, 0.0025 mmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "96.9 mg, 0.275 mmol, 1.1 equiv."
+        },
+        {
+          "name": "(R)-TRIP",
+          "symbol": null,
+          "amount": "9.4 mg, 0.0125 mmol, 0.05 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "76%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r6"
+    },
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        19
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "methyl methylisonicotinate",
+          "symbol": null,
+          "amount": "41.4 mg, 0.30 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylvalininate",
+          "symbol": null,
+          "amount": "60.9 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (S)-2-(1-acetamido-2-methylpropyl)isonicotinate",
+          "symbol": "2a",
+          "amount": "21.0 mg, 0.084 mmol",
+          "registry_name": "methyl (S)‐2‐(1‐acetamido‐2‐methylpropyl)isonicotinate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(dtbpy)PF6",
+          "symbol": null,
+          "amount": "2.2 mg, 0.002 mmol, 0.01 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "(R)-TCYP",
+          "symbol": null,
+          "amount": "9.9 mg, 0.010 mmol, 0.05 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "42%",
+        "ee": "39%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r7"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "pyrimidine",
+          "symbol": null,
+          "amount": "24.0 mg, 0.3 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "70.5 mg, 0.20 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(2-phenyl-1-(pyrimidin-4-yl)ethyl)acetamide",
+          "symbol": "1",
+          "amount": "21.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TCYP",
+          "symbol": null,
+          "amount": "9.9 mg, 0.01 mmol, 0.05 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "44%",
+        "ee": "88%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "pyrimidine",
+          "symbol": null,
+          "amount": "24.0 mg, 0.3 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "70.5 mg, 0.20 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(2-phenyl-1-(pyrimidin-4-yl)ethyl)acetamide",
+          "symbol": "1",
+          "amount": "29.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": null,
+          "amount": "7.5 mg, 0.01 mmol, 0.05 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "78%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "5-bromopyrimidine",
+          "symbol": null,
+          "amount": "47.4 mg, 0.30 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "70.5 mg, 0.20 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(5-bromopyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "2",
+          "amount": "39.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TCYP",
+          "symbol": null,
+          "amount": "9.9 mg, 0.01 mmol, 0.05 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": "83%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry7",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "4-methylpyrimidine",
+          "symbol": null,
+          "amount": "18.8 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "84.6 mg, 0.24 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(6-methylpyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "3",
+          "amount": "27.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TCYP",
+          "symbol": null,
+          "amount": "9.9 mg, 0.01 mmol, 0.05 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "85%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry5",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "2-methylpyrimidine",
+          "symbol": null,
+          "amount": "28.2 mg, 0.30 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "70.5 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(2-methylpyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "4",
+          "amount": "23.0 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "45%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry8",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        23,
+        24
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "2-methylpyrimidine",
+          "symbol": null,
+          "amount": "18.8 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "211.4 mg, 0.60 mmol, 3.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "N,N'-((1S,1'S)-(2-methylpyrimidine-4,6-diyl)bis(2-phenylethane-1,1-diyl))diacetamide",
+          "symbol": "5",
+          "amount": "69.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "TRIP",
+          "symbol": null,
+          "amount": "15.1 mg, 0.02 mmol, 0.01 equiv. (10 mol% reported)"
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": ">99%",
+        "er": null,
+        "dr": "20:1"
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry9",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "2,4-dimethylpyrimidine",
+          "symbol": "18",
+          "amount": "21.6 mg, 0.20 mmol, 1.0 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "84.6 mg, 0.24 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(2,6-dimethylpyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "6",
+          "amount": "19.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TCYP",
+          "symbol": null,
+          "amount": "9.9 mg, 0.01 mmol, 0.05 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "36%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "GeneralProcedureA-Entry10",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        25,
+        26
+      ],
+      "reaction_type": null,
+      "substrates": [
+        {
+          "name": "2-methyl-4-phenylpyrimidine",
+          "symbol": null,
+          "amount": "34.0 mg, 0.2 mmol, 1.0 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "84.6 mg, 0.24 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(2-methyl-6-phenylpyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "8",
+          "amount": "60.3 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry6",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": null,
+      "substrates": [
+        {
+          "name": "2-methyl-5-phenylpyrimidine",
+          "symbol": null,
+          "amount": "51.1 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(2-methyl-5-phenylpyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "9",
+          "amount": "36.0 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry7",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        26,
+        27
+      ],
+      "reaction_type": null,
+      "substrates": [
+        {
+          "name": "2-bromo-5-methylpyrimidine",
+          "symbol": null,
+          "amount": "51.9 mg, 0.3 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "70.5 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(5-bromo-2-methylpyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "10",
+          "amount": "43.4 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry1",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        27,
+        28
+      ],
+      "reaction_type": null,
+      "substrates": [
+        {
+          "name": "2-phenylpyrimidine",
+          "symbol": null,
+          "amount": "46.9 mg, 0.3 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "84.6 mg, 0.24 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(2-phenyl-1-(2-phenylpyrimidin-4-yl)ethyl)acetamide",
+          "symbol": "11",
+          "amount": "20.8 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "33%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry2",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": null,
+      "substrates": [
+        {
+          "name": "2-methoxy-5-bromopyrimidine",
+          "symbol": null,
+          "amount": "56.7 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(5-bromo-2-methoxypyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "12",
+          "amount": "30.8 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "44%",
+        "ee": ">99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "GeneralProcedureC-Entry3",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": null,
+      "substrates": [
+        {
+          "name": "2-methoxy-5-chloropyrimidine",
+          "symbol": null,
+          "amount": "43.5 mg, 0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(1-(5-chloro-2-methoxypyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "13",
+          "amount": "20.2 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "33%",
+        "ee": "99%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "GeneralProcedureB-Entry8",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": null,
+      "substrates": [
+        {
+          "name": "pyrimidine",
+          "symbol": null,
+          "amount": "24.0 mg, 0.3 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl 2-acetamido-4-phenylbutanoate",
+          "symbol": null,
+          "amount": "73.3 mg, 0.20 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-N-(3-phenyl-1-(pyrimidin-4-yl)propyl)acetamide",
+          "symbol": "14",
+          "amount": "24.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": null,
+          "amount": "7.5 mg, 0.01 mmol, 0.05 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "48%",
+        "ee": "65%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "GeneralProcedureB-Entry9",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "pyrimidine",
+          "symbol": null,
+          "amount": "24.0 mg, 0.3 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylleucinate",
+          "symbol": null,
+          "amount": "63.7 mg, 0.20 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "S-N-(2-methyl-1-(pyrimidin-4-yl)propyl)acetamide",
+          "symbol": "16",
+          "amount": "9.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TRIP",
+          "symbol": null,
+          "amount": "7.5 mg, 0.01 mmol, 0.05 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "23%",
+        "ee": "28%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry10",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        30,
+        31
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "pyrimidine",
+          "symbol": null,
+          "amount": "24.0 mg, 0.3 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylvalinate",
+          "symbol": null,
+          "amount": "60.8 mg, 0.20 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "S-N-(2-methyl-1-(pyrimidin-4-yl)propyl)acetamide",
+          "symbol": "16",
+          "amount": "15.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "(R)-TCYP",
+          "symbol": null,
+          "amount": "9.9 mg, 0.01 mmol, 0.05 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "41%",
+        "ee": "69%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry11",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "2,3,5-trimethyl-pyrazine",
+          "symbol": null,
+          "amount": "24.4, 0.2 mmol, 1.0 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "84.6 mg, 0.24 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "S-N-(2-phenyl-1-(3,5,6-trimethylpyrazin-2-yl)ethyl)acetamide",
+          "symbol": "17",
+          "amount": "34.8 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": "90%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry11",
+      " _gp_source": "GeneralProcedureB",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        31,
+        32
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "2,5-dimethylpyrazine",
+          "symbol": null,
+          "amount": "32.4 mg, 0.3 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "70.5 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "S-N-(1-(3,6-dimethylpyrazin-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "18",
+          "amount": "23.4 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "40%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry12",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "quinazoline",
+          "symbol": null,
+          "amount": "26.0 mg, 0.2 mmol"
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "84.6 mg, 0.24 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "S-N-(2-phenyl-1-(quinazolin-4-yl)ethyl)acetamide",
+          "symbol": "19",
+          "amount": "5.9 mg",
+          "registry_name": "(R)‐3,3'‐bis(2,6‐dimethylphenyl)‐1,1'‐binaphthol",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "10%",
+        "ee": "56%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry12",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "2-aminopyrimidine",
+          "symbol": null,
+          "amount": "28.5, 0.3 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "70.5 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "S-N-(1-(2-aminopyrimidin-4-yl)-2-phenylethyl)acetamide",
+          "symbol": "20",
+          "amount": "17.8 mg",
+          "registry_name": "(R)‐3,3’‐bis(2,6‐dimethylphenyl)‐1,1’‐binaphthyl phosphate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "35%",
+        "ee": "81%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn6"
+    },
+    {
+      "id": "GeneralProcedureB-Entry13",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        33,
+        34
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "tert-butyl pyrimidin-2-ylcarbamate",
+          "symbol": null,
+          "amount": "58.6 mg, 0.3 mmol, 1.5 equiv."
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "70.5 mg, 0.20 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-butyl (S)-(4-(1-acetamido-2-phenylethyl)pyrimidin-2-yl)carbamate",
+          "symbol": "21",
+          "amount": "38.5 mg",
+          "registry_name": "1,3‐dioxoisoindolin‐2‐yl acetylleucinate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": "55%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn7"
+    },
+    {
+      "id": "GeneralProcedureA-Entry13",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "catalytic enantioselective Minisci reaction",
+      "substrates": [
+        {
+          "name": "benzothiazole",
+          "symbol": null,
+          "amount": "27.0 mg, 0.2 mmol"
+        },
+        {
+          "name": "1,3-dioxoisoindolin-2-yl acetylphenylalaninate",
+          "symbol": null,
+          "amount": "84.6 mg, 0.24 mmol, 1.2 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "S-N-(1-(benzo[d]thiazol-2-yl)-2-phenylethyl)acetamide",
+          "symbol": "22",
+          "amount": "11.2 mg",
+          "registry_name": "2‐methyl‐5‐phenylpyrimidine",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "19%",
+        "ee": "27%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn8"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/predictive-multivariate-linear-regression-analys_3acbd0cb.json",
+    "input_sha256": "ea375e51f3ca51a2aec2516c685ebdb94cdda42d72dbdae24b22fd7de929bbc3"
+  }
+}

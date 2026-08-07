@@ -1,0 +1,5970 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/tetrasubstituted-carbon-stereocenters-via-copper-catalyzed-asymmetric-sonogashira-coupling-reactions-with-cyclic-gem.pdf",
+  "paper_key": "tetrasubstituted-carbon-stereocenters-via-copper-catalyzed-asymmetric-sonogashira-coupling-reactions-with-cyclic-gem",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/tetrasubstituted-carbon-stereocenters-via-copper-catalyzed-asymmetric-sonogashira-coupling-reactions-with-cyclic-gem.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/tetrasubstituted-carbon-stereocenters-via-copper-catalyzed-asymmetric-sonogashira-coupling-reactions-with-cyclic-gem.pdf",
+    "source_mtime_ns": 1782048762000000000,
+    "source_size": 20765252,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "tetrasubstituted-carbon-stereocenters-via-copper-catalyzed-asymmetric-sonogashira-coupling-reactions-with-cyclic-gem",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/tetrasubstituted-carbon-stereocenters-via-copper-catalyzed-asymmetric-sonogashira-coupling-reactions-with-cyclic-gem.pdf"
+  },
+  "extracted_at": "2026-07-17T09:29:13.052601",
+  "total_reactions": 78,
+  "filtered_reactions": 75,
+  "filter_stats": {
+    "input_reactions": 78,
+    "basic_failed": 2,
+    "target_failed": 1,
+    "retained": 75
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        4,
+        5
+      ],
+      "reaction_type": "esterification (DCC/DMAP)",
+      "substrates": [
+        {
+          "name": "1-Adamantanol",
+          "symbol": null,
+          "amount": "396 mg, 2.6 mmol, 1.3 equiv."
+        },
+        {
+          "name": "4-ethynylbenzoic acid",
+          "symbol": null,
+          "amount": "292 mg, 2.0 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,5R)-adamantan-1-yl 4-ethynylbenzoate",
+          "symbol": "a22",
+          "amount": "413 mg",
+          "registry_name": "(3R,5R)-adamantan-1-yl 4-ethynylbenzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "49 mg, 0.4 mmol, 0.2 equiv."
+        },
+        {
+          "name": "DCC",
+          "symbol": null,
+          "amount": "495 mg, 2.4 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "15 mL",
+        "temperature": "0 °C (addition), 25 °C (stirred)",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB_a22"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        4,
+        5
+      ],
+      "reaction_type": "esterification (DCC/DMAP)",
+      "substrates": [
+        {
+          "name": "(-)-Borneol",
+          "symbol": "S2",
+          "amount": "601 mg, 3.9 mmol, 1.3 equiv.",
+          "registry_name": "(-)-Borneol",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "4-ethynylbenzoic acid",
+          "symbol": null,
+          "amount": "438 mg, 3.0 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,2R,4S)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-yl 4-ethynylbenzoate",
+          "symbol": "a23",
+          "amount": "690 mg",
+          "registry_name": "(1R,2R,4S)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-yl 4-ethynylbenzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "73 mg, 0.6 mmol, 0.2 equiv."
+        },
+        {
+          "name": "DCC",
+          "symbol": null,
+          "amount": "742 mg, 3.6 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "15 mL",
+        "temperature": "0 °C (addition), 25 °C (stirred)",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB_a23"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        4,
+        5,
+        6
+      ],
+      "reaction_type": "esterification (DCC/DMAP)",
+      "substrates": [
+        {
+          "name": "L-Menthol",
+          "symbol": "S3",
+          "amount": "609 mg, 3.9 mmol, 1.3 equiv.",
+          "registry_name": "L-Menthol",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "4-ethynylbenzoic acid",
+          "symbol": null,
+          "amount": "438 mg, 3.0 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,2S,5R)-2-isopropyl-5-methylcyclohexyl 4-ethynylbenzoate",
+          "symbol": "a24",
+          "amount": "630 mg",
+          "registry_name": "(1R,2S,5R)-2-isopropyl-5-methylcyclohexyl 4-ethynylbenzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "73 mg, 0.6 mmol, 0.2 equiv."
+        },
+        {
+          "name": "DCC",
+          "symbol": null,
+          "amount": "742 mg, 3.6 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "15 mL",
+        "temperature": "0 °C (addition), 25 °C (stirred)",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB_a24"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        4,
+        6
+      ],
+      "reaction_type": "esterification (DCC/DMAP)",
+      "substrates": [
+        {
+          "name": "Diacetone-D-glucose",
+          "symbol": "S4",
+          "amount": "678 mg, 2.6 mmol, 1.3 equiv.",
+          "registry_name": "Diacetone-D-glucose",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "4-ethynylbenzoic acid",
+          "symbol": null,
+          "amount": "292 mg, 2.0 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,5R,6S,6aR)-5-((R)-2,2-dimethyl-1,3-dioxolan-4-yl)-2,2-dimethyltetrahydrofuro[2,3-d][1,3]dioxol-6-yl 4-ethynylbenzoate",
+          "symbol": "a25",
+          "amount": "592 mg",
+          "registry_name": "(3aR,5R,6S,6aR)-5-((R)-2,2-dimethyl-1,3-dioxolan-4-yl)-2,2-dimethyltetrahydrofuro[2,3-d][1,3]dioxol-6-yl 4-ethynylbenzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "49 mg, 0.4 mmol, 0.2 equiv."
+        },
+        {
+          "name": "DCC",
+          "symbol": null,
+          "amount": "495 mg, 2.4 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "DCM",
+        "solvent_amount": "15 mL",
+        "temperature": "0 °C (addition), 25 °C (stirred)",
+        "time": "overnight",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB_a25"
+    },
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        7
+      ],
+      "reaction_type": "esterification (DCC/DMAP coupling)",
+      "substrates": [
+        {
+          "name": "Fenofibric acid",
+          "symbol": null,
+          "amount": "765 mg, 2.4 mmol"
+        },
+        {
+          "name": "3-ethynylphenol",
+          "symbol": null,
+          "amount": "236 mg, 2.0 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "3-ethynylphenyl 2-(4-(4-chlorobenzoyl)phenoxy)-2-methylpropanoate",
+          "symbol": "a26",
+          "amount": "720 mg",
+          "registry_name": "3-ethynylphenyl 2-(4-(4-chlorobenzoyl)phenoxy)-2-methylpropanoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "DMAP",
+          "symbol": null,
+          "amount": "49 mg, 0.4 mmol, 0.2 equiv."
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "DCC",
+          "symbol": null,
+          "amount": "495 mg, 2.4 mmol, 1.2 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry1",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        8
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "2,3-dihydro-1H-inden-1-one",
+          "symbol": null,
+          "amount": "1.32 g, 10.0 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "0.80 g",
+          "step": 2,
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "35%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "R2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry2",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "6-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": null,
+          "amount": "1.46 g, 10.0 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-2-fluoro-6-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b2",
+          "amount": "0.43 g",
+          "step": 2,
+          "registry_name": "2-bromo-2-fluoro-6-methyl-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "18%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "R3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry3",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        9
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "5-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": null,
+          "amount": "1.46 g, 10.0 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-2-fluoro-5-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b3",
+          "amount": "0.78 g",
+          "step": 2,
+          "registry_name": "2-bromo-2-fluoro-5-methyl-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "32%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "R4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry4",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "2-fluoro-4-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": null,
+          "amount": "0.85 g, 5.2 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-2-fluoro-4-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b4",
+          "amount": "0.80 g",
+          "step": 2,
+          "registry_name": "2-bromo-2-fluoro-4-methyl-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "R5"
+    },
+    {
+      "id": "GeneralProcedureC-Entry5",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        10
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "5-(tert-butyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": null,
+          "amount": "1.0 g, 5.3 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-5-(tert-butyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b5",
+          "amount": "0.71 g",
+          "step": 2,
+          "registry_name": "2-bromo-5-(tert-butyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "R6"
+    },
+    {
+      "id": "GeneralProcedureC-Entry6",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "6-methoxy-2,3-dihydro-1H-inden-1-one",
+          "symbol": null,
+          "amount": "1.6 g, 10.0 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-2-fluoro-6-methoxy-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b6",
+          "amount": "0.88 g",
+          "step": 2,
+          "registry_name": "2-bromo-2-fluoro-6-methoxy-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "34%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureC-Entry7",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        11
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "5-chloro-2,3-dihydro-1H-inden-1-one",
+          "symbol": null,
+          "amount": "1.7 g, 10.0 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-5-chloro-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b7",
+          "amount": "0.78 g",
+          "step": 2,
+          "registry_name": "2-bromo-5-chloro-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "30%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureC-Entry8",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "5-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": null,
+          "amount": "1.50 g, 10.0 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-2,5-difluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b8",
+          "amount": "0.53 g",
+          "step": 2,
+          "registry_name": "2-bromo-2,5-difluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "21%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureC-Entry9",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        12
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "5,6-dimethoxy-2,3-dihydro-1H-inden-1-one",
+          "symbol": null,
+          "amount": "0.96 g, 5 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-2-fluoro-5,6-dimethoxy-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b9",
+          "amount": "0.38 g",
+          "step": 2,
+          "registry_name": "2-bromo-2-fluoro-5,6-dimethoxy-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "26%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureC-Entry10",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "2-fluoro-7-methoxy-3,4-dihydronaphthalen-1(2H)-one",
+          "symbol": null,
+          "amount": "0.97 g, 5.0 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-2-fluoro-7-methoxy-3,4-dihydronaphthalen-1(2H)-one",
+          "symbol": "b10",
+          "amount": "0.86 g",
+          "step": 2,
+          "registry_name": "2-bromo-2-fluoro-7-methoxy-3,4-dihydronaphthalen-1(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureC-Entry11",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "6,7,8,9-tetrahydro-5H-benzo[7]annulen-5-one",
+          "symbol": null,
+          "amount": "1.0 g, 6.2 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "6-bromo-6-fluoro-6,7,8,9-tetrahydro-5H-benzo[7]annulen-5-one",
+          "symbol": "b11",
+          "amount": "0.55 g",
+          "step": 2,
+          "registry_name": "6-bromo-6-fluoro-6,7,8,9-tetrahydro-5H-benzo[7]annulen-5-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "35%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedureC-Entry12",
+      "_gp_source": "GeneralProcedureC",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "α‑fluorination of ketones via LDA enolate formation and electrophilic fluorination (NFSI), followed by α‑bromination of the resulting α‑fluoroketone using TMSOTf/Et3N activation and NBS",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "1-phenylbutan-1-one",
+          "symbol": null,
+          "amount": "1.48 g, 10.0 mmol, 1.0 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-fluoroketone",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-2-fluoro-1-phenylbutan-1-one",
+          "symbol": "b12",
+          "amount": "1.05 g",
+          "step": 2,
+          "registry_name": "2-bromo-2-fluoro-1-phenylbutan-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "lithium diisopropylamide (LDA) solution",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "N-fluorobenzenesulfonimide (NFSI)",
+          "symbol": null,
+          "amount": "3.78 g, 12 mmol, 1.20 equiv",
+          "step": 1
+        },
+        {
+          "name": "triethylamine (Et3N)",
+          "symbol": null,
+          "amount": "1.5 mL, 11 mmol, 1.10 equiv",
+          "step": 2
+        },
+        {
+          "name": "trimethylsilyl trifluoromethanesulfonate (TMSOTf)",
+          "symbol": null,
+          "amount": "1.8 mL, 10 mmol, 1.0 equiv",
+          "step": 2
+        },
+        {
+          "name": "N-bromosuccinimide (NBS)",
+          "symbol": null,
+          "amount": "2.31 g, 13 mmol, 1.30 equiv",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "10 mL then 20 mL"
+          },
+          {
+            "step": 2,
+            "value": "20 mL then 20 mL"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "-78 °C then r.t."
+          },
+          {
+            "step": 2,
+            "value": "0 °C then r.t."
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1.5 h then 5 min then 6–12 h"
+          },
+          {
+            "step": 2,
+            "value": "2.5 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "43%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "reaction_7"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "bromination (literature procedure)",
+      "substrates": [
+        {
+          "name": "2-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": null,
+          "amount": "1.0 g, 6.8 mmol, 1.0 equiv."
+        },
+        {
+          "name": "Br2",
+          "symbol": null,
+          "amount": "0.37 mL, 1.15 g, 7.14 mmol, 1.05 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "2-bromo-2-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": "d1",
+          "amount": "1.07 g",
+          "registry_name": "2-bromo-2-methyl-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": null,
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "R3"
+    },
+    {
+      "id": "GeneralProcedureD-Entry1",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "Enolate α-alkylation of lactams or lactones followed by α-bromination (enolate formation, alkylation, then electrophilic bromination)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "1-phenylpyrrolidin-2-one",
+          "symbol": null,
+          "amount": "3.2 g, 20.0 mmol, 1.0 equiv.",
+          "step": 1
+        },
+        {
+          "name": "iodomethane",
+          "symbol": null,
+          "amount": "1.5 mL, 3.4 g, 24.0 mmol, 1.2 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-alkylated lactam or lactone",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "3-bromo-3-methyl-1-phenylpyrrolidin-2-one",
+          "symbol": "d2",
+          "amount": "3.10 g",
+          "step": 2,
+          "registry_name": "3-bromo-3-methyl-1-phenylpyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Lithium diisopropylamide solution (LDA)",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "Lithium diisopropylamide solution (LDA)",
+          "symbol": null,
+          "amount": "2 M, 1.2 equiv",
+          "step": 2
+        },
+        {
+          "name": "TMSCl",
+          "symbol": null,
+          "amount": "1.2 equiv.",
+          "step": 2
+        },
+        {
+          "name": "NBS",
+          "symbol": null,
+          "amount": "1.2 equiv.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF then CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "THF (10 mL); alkyl iodide in THF (5 mL)"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2 (40 mL); THF (volume for initial enolate formation not specified)"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "−78 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "−78 °C then room temperature then 0 °C"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1 h then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "2 h then 1 h then 2 h then 2 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "R4"
+    },
+    {
+      "id": "GeneralProcedureD-Entry2",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "Enolate α-alkylation of lactams or lactones followed by α-bromination (enolate formation, alkylation, then electrophilic bromination)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "1-benzylpyrrolidin-2-one",
+          "symbol": null,
+          "amount": "1.75 g, 10.0 mmol, 1.0 equiv.",
+          "step": 1
+        },
+        {
+          "name": "iodomethane",
+          "symbol": null,
+          "amount": "0.74 mL, 1.7 g, 12.0 mmol, 1.2 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-alkylated lactam or lactone",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "1-benzyl-3-bromo-3-methylpyrrolidin-2-one",
+          "symbol": "d3",
+          "amount": "1.02 g",
+          "step": 2,
+          "registry_name": "1-benzyl-3-bromo-3-methylpyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Lithium diisopropylamide solution (LDA)",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "Lithium diisopropylamide solution (LDA)",
+          "symbol": null,
+          "amount": "2 M, 1.2 equiv",
+          "step": 2
+        },
+        {
+          "name": "TMSCl",
+          "symbol": null,
+          "amount": "1.2 equiv.",
+          "step": 2
+        },
+        {
+          "name": "NBS",
+          "symbol": null,
+          "amount": "1.2 equiv.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF then CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "THF (10 mL); alkyl iodide in THF (5 mL)"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2 (40 mL); THF (volume for initial enolate formation not specified)"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "−78 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "−78 °C then room temperature then 0 °C"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1 h then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "2 h then 1 h then 2 h then 2 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "38%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "R5"
+    },
+    {
+      "id": "GeneralProcedureD-Entry3",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "Enolate α-alkylation of lactams or lactones followed by α-bromination (enolate formation, alkylation, then electrophilic bromination)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "tert-butyl 2-oxopyrrolidine-1-carboxylate",
+          "symbol": null,
+          "amount": "1.85 g, 10.0 mmol, 1.0 equiv.",
+          "step": 1
+        },
+        {
+          "name": "iodomethane",
+          "symbol": null,
+          "amount": "0.74 mL, 1.7 g, 12.0 mmol, 1.2 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-alkylated lactam or lactone",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-butyl 3-bromo-3-methyl-2-oxopyrrolidine-1-carboxylate",
+          "symbol": "d4",
+          "amount": "0.81 g",
+          "step": 2,
+          "registry_name": "tert-butyl 3-bromo-3-methyl-2-oxopyrrolidine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Lithium diisopropylamide solution (LDA)",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "Lithium diisopropylamide solution (LDA)",
+          "symbol": null,
+          "amount": "2 M, 1.2 equiv",
+          "step": 2
+        },
+        {
+          "name": "TMSCl",
+          "symbol": null,
+          "amount": "1.2 equiv.",
+          "step": 2
+        },
+        {
+          "name": "NBS",
+          "symbol": null,
+          "amount": "1.2 equiv.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF then CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "THF (10 mL); alkyl iodide in THF (5 mL)"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2 (40 mL); THF (volume for initial enolate formation not specified)"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "−78 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "−78 °C then room temperature then 0 °C"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1 h then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "2 h then 1 h then 2 h then 2 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "29%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GPD_d4_page18"
+    },
+    {
+      "id": "GeneralProcedureD-Entry4",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        18
+      ],
+      "reaction_type": "Enolate α-alkylation of lactams or lactones followed by α-bromination (enolate formation, alkylation, then electrophilic bromination)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "3-methyldihydrofuran-2(3H)-one",
+          "symbol": null,
+          "amount": "1.0 g, 10.0 mmol, 1.0 equiv.",
+          "step": 1
+        },
+        {
+          "name": "alkyl iodide",
+          "symbol": null,
+          "amount": "1.2 equiv.",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "α-alkylated lactam or lactone",
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "3-bromo-3-methyldihydrofuran-2(3H)-one",
+          "symbol": "d5",
+          "amount": "1.36 g",
+          "step": 2,
+          "registry_name": "3-bromo-3-methyldihydrofuran-2(3H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "Lithium diisopropylamide solution (LDA)",
+          "symbol": null,
+          "amount": "2 M, 6 mL, 12 mmol, 1.2 equiv",
+          "step": 1
+        },
+        {
+          "name": "Lithium diisopropylamide solution (LDA)",
+          "symbol": null,
+          "amount": "2 M, 1.2 equiv",
+          "step": 2
+        },
+        {
+          "name": "TMSCl",
+          "symbol": null,
+          "amount": "1.2 equiv.",
+          "step": 2
+        },
+        {
+          "name": "NBS",
+          "symbol": null,
+          "amount": "1.2 equiv.",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "THF"
+          },
+          {
+            "step": 2,
+            "value": "THF then CH2Cl2"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "THF (10 mL); alkyl iodide in THF (5 mL)"
+          },
+          {
+            "step": 2,
+            "value": "CH2Cl2 (40 mL); THF (volume for initial enolate formation not specified)"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "−78 °C then room temperature"
+          },
+          {
+            "step": 2,
+            "value": "−78 °C then room temperature then 0 °C"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "1 h then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "2 h then 1 h then 2 h then 2 h"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "nitrogen"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "GPD_d5_page18"
+    },
+    {
+      "id": "GeneralProcedureF-Entry1",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c1",
+          "amount": "34 mg, 0.14 mmol",
+          "registry_name": "(S)-2-fluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureF-Entry2",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        23,
+        24
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-ethynyl-4-methoxybenzene",
+          "symbol": null,
+          "amount": "39.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-2-((4-methoxyphenyl)ethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c2",
+          "amount": "35 mg, 0.13 mmol",
+          "registry_name": "(S)-2-fluoro-2-((4-methoxyphenyl)ethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureF-Entry3",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        23,
+        24
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-ethynyl-4-methylbenzene",
+          "symbol": null,
+          "amount": "34.8 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-2-(p-tolylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c3",
+          "amount": "40.0 mg, 0.15 mmol",
+          "registry_name": "(S)-2-fluoro-2-(p-tolylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureF-Entry4",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-ethynyl-3-methylbenzene",
+          "symbol": null,
+          "amount": "34.9 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-2-(m-tolylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c4",
+          "amount": "40 mg, 0.14 mmol",
+          "registry_name": "(S)-2-fluoro-2-(m-tolylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureF-Entry5",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-(tert-butyl)-4-ethynylbenzene",
+          "symbol": null,
+          "amount": "47.4 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-((4-(tert-butyl)phenyl)ethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c5",
+          "amount": "41 mg, 0.13 mmol",
+          "registry_name": "(S)-2-((4-(tert-butyl)phenyl)ethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureF-Entry6",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-ethynyl-4-fluorobenzene",
+          "symbol": null,
+          "amount": "36.0 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-fluoro-2-((4-fluorophenyl)ethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c6",
+          "amount": "40.0 mg",
+          "registry_name": "(S)-2-fluoro-2-((4-fluorophenyl)ethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c6_GP_F"
+    },
+    {
+      "id": "GeneralProcedureF-Entry7",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-ethynyl-3-fluorobenzene",
+          "symbol": null,
+          "amount": "36.0 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-fluoro-2-((3-fluorophenyl)ethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c7",
+          "amount": "40 mg",
+          "registry_name": "(S)-2-fluoro-2-((3-fluorophenyl)ethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c7_GP_F"
+    },
+    {
+      "id": "GeneralProcedureF-Entry8",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        27,
+        28
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-ethynyl-2-fluorobenzene",
+          "symbol": null,
+          "amount": "36.0 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-fluoro-2-((2-fluorophenyl)ethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c8",
+          "amount": "32 mg",
+          "registry_name": "(S)-2-fluoro-2-((2-fluorophenyl)ethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "57%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c8_GP_F"
+    },
+    {
+      "id": "GeneralProcedureF-Entry9",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-chloro-4-ethynylbenzene",
+          "symbol": null,
+          "amount": "41.0 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-((4-chlorophenyl)ethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c9",
+          "amount": "40.0 mg",
+          "registry_name": "(S)-2-((4-chlorophenyl)ethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c9_GP_F"
+    },
+    {
+      "id": "GeneralProcedureF-Entry10",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-chloro-3-ethynylbenzene",
+          "symbol": null,
+          "amount": "41.0 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-((3-chlorophenyl)ethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c10",
+          "amount": "40 mg",
+          "registry_name": "(S)-2-((3-chlorophenyl)ethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPF-c10"
+    },
+    {
+      "id": "GeneralProcedureF-Entry11",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        29,
+        30
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-bromo-4-ethynylbenzene",
+          "symbol": null,
+          "amount": "54.3 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-((4-bromophenyl)ethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c11",
+          "amount": "51 mg",
+          "registry_name": "(S)-2-((4-bromophenyl)ethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPF-c11"
+    },
+    {
+      "id": "GeneralProcedureF-Entry12",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "4-ethynyl-1,1'-biphenyl",
+          "symbol": null,
+          "amount": "53.5 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-([1,1'-biphenyl]-4-ylethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c12",
+          "amount": "38 mg",
+          "registry_name": "(S)-2-([1,1'-biphenyl]-4-ylethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPF-c12"
+    },
+    {
+      "id": "GeneralProcedureF-Entry13",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "48.0 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (S)-4-((2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzoate",
+          "symbol": "c13",
+          "amount": "46 mg",
+          "registry_name": "Methyl (S)-4-((2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "75%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPF-c13"
+    },
+    {
+      "id": "GeneralProcedureF-Entry14",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "4-ethynylbenzonitrile",
+          "symbol": null,
+          "amount": "38.1 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-4-((2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzonitrile",
+          "symbol": "c14",
+          "amount": "36 mg",
+          "registry_name": "(S)-4-((2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPF-c14"
+    },
+    {
+      "id": "GeneralProcedureF-Entry15",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-ethynylnaphthalene",
+          "symbol": null,
+          "amount": "45.7 mg, 0.3 mmol"
+        },
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-2-(naphthalen-2-ylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c15",
+          "amount": "43 mg",
+          "registry_name": "(S)-2-fluoro-2-(naphthalen-2-ylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c15"
+    },
+    {
+      "id": "GeneralProcedureF-Entry16",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        33
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "5-ethynylbenzo[d][1,3]dioxole",
+          "symbol": null,
+          "amount": "43.8 mg, 0.3 mmol"
+        },
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(benzo[d][1,3]dioxol-5-ylethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c16",
+          "amount": "30 mg",
+          "registry_name": "(S)-2-(benzo[d][1,3]dioxol-5-ylethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": "88%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c16"
+    },
+    {
+      "id": "GeneralProcedureF-Entry17",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        33,
+        34
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "3-ethynylthiophene",
+          "symbol": null,
+          "amount": "32.4 mg, 0.3 mmol"
+        },
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-2-(thiophen-3-ylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c17",
+          "amount": "31 mg",
+          "registry_name": "(S)-2-fluoro-2-(thiophen-3-ylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c17"
+    },
+    {
+      "id": "GeneralProcedureF-Entry18",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-ethynylthiophene",
+          "symbol": null,
+          "amount": "32.4 mg, 0.3 mmol"
+        },
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-2-(thiophen-2-ylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c18",
+          "amount": "35 mg",
+          "registry_name": "(S)-2-fluoro-2-(thiophen-2-ylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "85%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_c18"
+    },
+    {
+      "id": "GeneralProcedureF-Entry19",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "3-ethynylpyridine",
+          "symbol": null,
+          "amount": "30.9 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-2-(pyridin-3-ylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c19",
+          "amount": "30 mg, 0.12 mmol",
+          "registry_name": "(S)-2-fluoro-2-(pyridin-3-ylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureF-Entry20",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        35,
+        36
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "1-ethynylcyclohex-1-ene",
+          "symbol": null,
+          "amount": "31.9 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(cyclohex-1-en-1-ylethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c20",
+          "amount": "27 mg, 0.11 mmol",
+          "registry_name": "(S)-2-(cyclohex-1-en-1-ylethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureF-Entry21",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylcyclopropane",
+          "symbol": null,
+          "amount": "19.8 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-(cyclopropylethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c21",
+          "amount": "27 mg, 0.13 mmol",
+          "registry_name": "(S)-2-(cyclopropylethynyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureF-Entry22",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(3R,5R)-adamantan-1-yl-4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "39.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3R,5R)-adamantan-1-yl 4-(((S)-2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzoate",
+          "symbol": "c22",
+          "amount": "58 mg, 0.13 mmol",
+          "registry_name": "(3R,5R)-adamantan-1-yl 4-(((S)-2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureF-Entry23",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        37,
+        38
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(1R,2R,4S)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-yl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "84.7 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,2R,4S)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-yl 4-(((S)-2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzoate",
+          "symbol": "c23",
+          "amount": "61 mg, 0.14 mmol",
+          "registry_name": "(1R,2R,4S)-1,7,7-trimethylbicyclo[2.2.1]heptan-2-yl 4-(((S)-2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureF-Entry24",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(1R,2S,5R)-2-isopropyl-5-methylcyclohexyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "85.3 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(1R,2S,5R)-2-isopropyl-5-methylcyclohexyl 4-(((S)-2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzoate",
+          "symbol": "c24",
+          "amount": "61 mg, 0.14 mmol",
+          "registry_name": "(1R,2S,5R)-2-isopropyl-5-methylcyclohexyl 4-(((S)-2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "GeneralProcedureF-Entry25",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        39,
+        40
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b1",
+          "amount": "45.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "(3aR,5R,6S,6aR)-5-((R)-2,2-dimethyl-1,3-dioxolan-4-yl)-2,2-dimethyltetrahydrofuro[2,3-d][1,3]dioxol-6-yl-4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "116.5 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(3aR,5R,6S,6aR)-5-((R)-2,2-dimethyl-1,3-dioxolan-4-yl)-2,2-dimethyltetrahydrofuro[2,3-d][1,3]dioxol-6-yl 4-(((S)-2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzoate",
+          "symbol": "c25",
+          "amount": "63 mg",
+          "registry_name": "(3aR,5R,6S,6aR)-5-((R)-2,2-dimethyl-1,3-dioxolan-4-yl)-2,2-dimethyltetrahydrofuro[2,3-d][1,3]dioxol-6-yl 4-(((S)-2-fluoro-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "RXN13-1"
+    },
+    {
+      "id": "GeneralProcedureF-Entry26",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        40
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-6-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b2",
+          "amount": "48.6 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-6-methyl-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-6-methyl-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c26",
+          "amount": "36 mg",
+          "registry_name": "(S)-2-fluoro-6-methyl-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "RXN13-2"
+    },
+    {
+      "id": "GeneralProcedureF-Entry27",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-5-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b3",
+          "amount": "48.6 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-5-methyl-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-5-methyl-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c27",
+          "amount": "41 mg",
+          "registry_name": "(S)-2-fluoro-5-methyl-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "RXN13-3"
+    },
+    {
+      "id": "GeneralProcedureF-Entry28",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        41
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-4-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b4",
+          "amount": "48.6 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-4-methyl-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-4-methyl-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c28",
+          "amount": "35 mg",
+          "registry_name": "(S)-2-fluoro-4-methyl-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "RXN13-4"
+    },
+    {
+      "id": "GeneralProcedureF-Entry29",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-5-(tert-butyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b5",
+          "amount": "57.0 mg, 0.2 mmol",
+          "registry_name": "2-bromo-5-(tert-butyl)-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-5-(tert-butyl)-2-fluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c29",
+          "amount": "47 mg",
+          "registry_name": "(S)-5-(tert-butyl)-2-fluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureF-Entry30",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        42,
+        43
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-6-methoxy-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b6",
+          "amount": "51.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-6-methoxy-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-6-methoxy-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c30",
+          "amount": "38 mg",
+          "registry_name": "(S)-2-fluoro-6-methoxy-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureF-Entry31",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-5-chloro-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b7",
+          "amount": "52.7 mg, 0.2 mmol",
+          "registry_name": "2-bromo-5-chloro-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-5-chloro-2-fluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c31",
+          "amount": "36 mg",
+          "registry_name": "(S)-5-chloro-2-fluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureF-Entry32",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2,5-difluoro-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b7",
+          "amount": "49.4 mg, 0.2 mmol",
+          "registry_name": "2-bromo-5-chloro-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2,5-difluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c32",
+          "amount": "43 mg",
+          "registry_name": "(S)-2,5-difluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "80%",
+        "ee": "89%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureF-Entry33",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        44
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "2-bromo-2-fluoro-5,6-dimethoxy-2,3-dihydro-1H-inden-1-one",
+          "symbol": "b9",
+          "amount": "57.8 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-5,6-dimethoxy-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-5,6-dimethoxy-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c33",
+          "amount": "45 mg",
+          "registry_name": "(S)-2-fluoro-5,6-dimethoxy-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureF-Entry34",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        45
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        },
+        {
+          "name": "2-bromo-2-fluoro-7-methoxy-3,4-dihydronaphthalen-1(2H)-one",
+          "symbol": "b10",
+          "amount": "54.6 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-7-methoxy-3,4-dihydronaphthalen-1(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-7-methoxy-2-(phenylethynyl)-3,4-dihydronaphthalen-1(2H)-one",
+          "symbol": "c34",
+          "amount": "35 mg, 0.12 mmol",
+          "registry_name": "(S)-2-fluoro-7-methoxy-2-(phenylethynyl)-3,4-dihydronaphthalen-1(2H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "86%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "GeneralProcedureF-Entry35",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        46
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        },
+        {
+          "name": "6-bromo-6-fluoro-6,7,8,9-tetrahydro-5H-benzo[7]annulen-5-one",
+          "symbol": "b11",
+          "amount": "51.4 mg, 0.2 mmol",
+          "registry_name": "6-bromo-6-fluoro-6,7,8,9-tetrahydro-5H-benzo[7]annulen-5-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-6-fluoro-6-(phenylethynyl)-6,7,8,9-tetrahydro-5H-benzo[7]annulen-5-one",
+          "symbol": "c35",
+          "amount": "38 mg, 0.13 mmol",
+          "registry_name": "(S)-6-fluoro-6-(phenylethynyl)-6,7,8,9-tetrahydro-5H-benzo[7]annulen-5-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "GeneralProcedureF-Entry36",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        46,
+        47
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "methyl 4-ethynylbenzoate",
+          "symbol": null,
+          "amount": "48.2 mg, 0.3 mmol"
+        },
+        {
+          "name": "3-bromo-3-fluoro-1-phenylpyrrolidin-2-one",
+          "symbol": "b13",
+          "amount": "51.6 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-fluoro-1-phenylbutan-1-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (S)-4-((3-fluoro-2-oxo-1-phenylpyrrolidin-3-yl)ethynyl)benzoate",
+          "symbol": "c36",
+          "amount": "35.8 mg, 0.11 mmol",
+          "registry_name": "Methyl (S)-4-((3-fluoro-2-oxo-1-phenylpyrrolidin-3-yl)ethynyl)benzoate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24–72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "53%",
+        "ee": "89%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "GeneralProcedureG-Entry1",
+      "_gp_source": "GeneralProcedureG",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "Enantioselective copper-catalyzed alkynylation of α-bromo-α-fluoroketones",
+      "substrates": [
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "30.6 mg, 0.3 mmol"
+        },
+        {
+          "name": "2-bromo-2-fluoro-1-phenylbutan-1-one",
+          "symbol": "b11",
+          "amount": "51.4 mg, 0.2 mmol",
+          "registry_name": "6-bromo-6-fluoro-6,7,8,9-tetrahydro-5H-benzo[7]annulen-5-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-ethyl-2-fluoro-1,4-diphenylbut-3-yn-1-one",
+          "symbol": "c37",
+          "amount": "24 mg, 0.09 mmol",
+          "registry_name": "(S)-2-ethyl-2-fluoro-1,4-diphenylbut-3-yn-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "room temperature",
+        "time": "24 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "45%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r4"
+    },
+    {
+      "id": "GeneralProcedureH-Entry1",
+      "_gp_source": "GeneralProcedureH",
+      "source_pages": [
+        48,
+        49
+      ],
+      "reaction_type": "Copper-catalyzed enantioselective alkynylation of cyclic tertiary electrophiles with terminal alkynes",
+      "substrates": [
+        {
+          "name": "4-ethynyl-benzonitrile",
+          "symbol": null,
+          "amount": "38.1 mg, 0.3 mmol"
+        },
+        {
+          "name": "2-bromo-2-methyl-2,3-dihydro-1H-inden-1-one",
+          "symbol": "d1",
+          "amount": "45.0 mg, 0.2 mmol",
+          "registry_name": "2-bromo-2-methyl-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4-((2-methyl-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzonitrile",
+          "symbol": "e1",
+          "amount": "33.3 mg",
+          "registry_name": "(R)-4-((2-methyl-1-oxo-2,3-dihydro-1H-inden-2-yl)ethynyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24-72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "61%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk16-e1"
+    },
+    {
+      "id": "GeneralProcedureH-Entry2",
+      "_gp_source": "GeneralProcedureH",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "Copper-catalyzed enantioselective alkynylation of cyclic tertiary electrophiles with terminal alkynes",
+      "substrates": [
+        {
+          "name": "1-ethynyl-4-methoxy-benzene",
+          "symbol": null,
+          "amount": "39.6 mg, 0.3 mmol"
+        },
+        {
+          "name": "3-bromo-3-methyl-1-phenylpyrrolidin-2-one",
+          "symbol": "d2",
+          "amount": "50.8 mg, 0.2 mmol",
+          "registry_name": "3-bromo-3-methyl-1-phenylpyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-3-((4-methoxyphenyl)ethynyl)-3-methyl-1-phenylpyrrolidin-2-one",
+          "symbol": "e2",
+          "amount": "38.5 mg",
+          "registry_name": "(R)-3-((4-methoxyphenyl)ethynyl)-3-methyl-1-phenylpyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24-72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "88%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk16-e2"
+    },
+    {
+      "id": "GeneralProcedureH-Entry3",
+      "_gp_source": "GeneralProcedureH",
+      "source_pages": [
+        49,
+        50
+      ],
+      "reaction_type": "Copper-catalyzed enantioselective alkynylation of cyclic tertiary electrophiles with terminal alkynes",
+      "substrates": [
+        {
+          "name": "4-ethynyl-benzonitrile",
+          "symbol": null,
+          "amount": "39.6 mg, 0.3 mmol"
+        },
+        {
+          "name": "3-bromo-3-methyl-1-phenylpyrrolidin-2-one",
+          "symbol": "d2",
+          "amount": "50.8 mg, 0.2 mmol",
+          "registry_name": "3-bromo-3-methyl-1-phenylpyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4-((3-methyl-2-oxo-1-phenylpyrrolidin-3-yl)ethynyl)benzonitrile",
+          "symbol": "e3",
+          "amount": "43.0 mg",
+          "registry_name": "(R)-4-((3-methyl-2-oxo-1-phenylpyrrolidin-3-yl)ethynyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24-72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "72%",
+        "ee": "84%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk16-e3"
+    },
+    {
+      "id": "GeneralProcedureH-Entry4",
+      "_gp_source": "GeneralProcedureH",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "Copper-catalyzed enantioselective alkynylation of cyclic tertiary electrophiles with terminal alkynes",
+      "substrates": [
+        {
+          "name": "ethynyltrimethylsilane",
+          "symbol": null,
+          "amount": "29.5 mg, 0.3 mmol"
+        },
+        {
+          "name": "3-bromo-3-methyl-1-phenylpyrrolidin-2-one",
+          "symbol": "d2",
+          "amount": "50.8 mg, 0.2 mmol",
+          "registry_name": "3-bromo-3-methyl-1-phenylpyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-3-methyl-1-phenyl-3-((trimethylsilyl)ethynyl)pyrrolidin-2-one",
+          "symbol": "e4",
+          "amount": "22.2 mg",
+          "registry_name": "(R)-3-methyl-1-phenyl-3-((trimethylsilyl)ethynyl)pyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24-72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "41%",
+        "ee": "85%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk16-e4"
+    },
+    {
+      "id": "GeneralProcedureH-Entry5",
+      "_gp_source": "GeneralProcedureH",
+      "source_pages": [
+        50
+      ],
+      "reaction_type": "Copper-catalyzed enantioselective alkynylation of cyclic tertiary electrophiles with terminal alkynes",
+      "substrates": [
+        {
+          "name": "1-ethynyl-4-methoxybenzene",
+          "symbol": null,
+          "amount": "39.6 mg, 0.3 mmol"
+        },
+        {
+          "name": "1-benzyl-3-bromo-3-methylpyrrolidin-2-one",
+          "symbol": "d3",
+          "amount": "53.6 mg, 0.2 mmol",
+          "registry_name": "1-benzyl-3-bromo-3-methylpyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-1-benzyl-3-((4-methoxyphenyl)ethynyl)-3-methylpyrrolidin-2-one",
+          "symbol": "e5",
+          "amount": "34.2 mg",
+          "registry_name": "(R)-1-benzyl-3-((4-methoxyphenyl)ethynyl)-3-methylpyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24-72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "54%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "chunk16-e5"
+    },
+    {
+      "id": "GeneralProcedureH-Entry6",
+      "_gp_source": "GeneralProcedureH",
+      "source_pages": [
+        51
+      ],
+      "reaction_type": "Copper-catalyzed enantioselective alkynylation of cyclic tertiary electrophiles with terminal alkynes",
+      "substrates": [
+        {
+          "name": "4-ethynyl-benzonitrile",
+          "symbol": null,
+          "amount": "38.1 mg, 0.3 mmol"
+        },
+        {
+          "name": "tert-butyl 3-bromo-3-methyl-2-oxopyrrolidine-1-carboxylate",
+          "symbol": "d4",
+          "amount": "55.6 mg, 0.2 mmol",
+          "registry_name": "tert-butyl 3-bromo-3-methyl-2-oxopyrrolidine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-butyl (R)-3-((4-cyanophenyl)ethynyl)-3-methyl-2-oxopyrrolidine-1-carboxylate",
+          "symbol": "e6",
+          "amount": "46.0 mg, 0.15 mmol",
+          "registry_name": "tert-butyl (R)-3-((4-cyanophenyl)ethynyl)-3-methyl-2-oxopyrrolidine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24-72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "89%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "GeneralProcedureH-Entry7",
+      "_gp_source": "GeneralProcedureH",
+      "source_pages": [
+        51,
+        52
+      ],
+      "reaction_type": "Copper-catalyzed enantioselective alkynylation of cyclic tertiary electrophiles with terminal alkynes",
+      "substrates": [
+        {
+          "name": "4-ethynyl-benzonitrile",
+          "symbol": null,
+          "amount": "38.1 mg, 0.3 mmol"
+        },
+        {
+          "name": "3-bromo-3-methyldihydrofuran-2(3H)-one",
+          "symbol": "d5",
+          "amount": "35.8 mg, 0.2 mmol",
+          "registry_name": "3-bromo-3-methyldihydrofuran-2(3H)-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-4-((3-methyl-2-oxotetrahydrofuran-3-yl)ethynyl)benzonitrile",
+          "symbol": "e7",
+          "amount": "33.0 mg, 0.17 mmol",
+          "registry_name": "(R)-4-((3-methyl-2-oxotetrahydrofuran-3-yl)ethynyl)benzonitrile",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24-72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": "63%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureH-Entry8",
+      "_gp_source": "GeneralProcedureH",
+      "source_pages": [
+        52,
+        53
+      ],
+      "reaction_type": "Copper-catalyzed enantioselective alkynylation of cyclic tertiary electrophiles with terminal alkynes",
+      "substrates": [
+        {
+          "name": "3-ethynylphenyl 2-(4-(4-chlorobenzoyl)phenoxy)-2-methylpropanoate",
+          "symbol": null,
+          "amount": "125.7 mg, 0.3 mmol"
+        },
+        {
+          "name": "3-bromo-3-methyl-1-phenylpyrrolidin-2-one",
+          "symbol": "d2",
+          "amount": "50.8 mg, 0.2 mmol",
+          "registry_name": "3-bromo-3-methyl-1-phenylpyrrolidin-2-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-3-((3-methyl-2-oxo-1-phenylpyrrolidin-3-yl)ethynyl)phenyl-2-(4-(4-chlorobenzoyl)phenoxy)-2-methylpropanoate",
+          "symbol": "e8",
+          "amount": "67.0 mg, 0.11 mmol",
+          "registry_name": "(R)-3-((3-methyl-2-oxo-1-phenylpyrrolidin-3-yl)ethynyl)phenyl-2-(4-(4-chlorobenzoyl) phenoxy)-2-methylpropanoate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "acetone",
+        "solvent_amount": "2.0 mL",
+        "temperature": "0 °C",
+        "time": "24-72 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": "89%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        54
+      ],
+      "reaction_type": "nucleophilic addition",
+      "substrates": [
+        {
+          "name": "(S)-2-fluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c1",
+          "amount": "37.5 mg, 0.15 mmol",
+          "registry_name": "(S)-2-fluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "allylmagnesium chloride",
+          "symbol": null,
+          "amount": "2.0 M in THF; 0.18 mL, 0.18 mmol (1.2 equiv)"
+        }
+      ],
+      "products": [
+        {
+          "name": "f1",
+          "symbol": "f1",
+          "amount": "32 mg",
+          "resolved_smiles": "C=CC[C@@]1(O)c2ccccc2C[C@]1(F)C#Cc1ccccc1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "0_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "saturated NH4Cl (quench)",
+          "symbol": null,
+          "amount": "2 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2.0 mL",
+        "temperature": "−78 °C (10 min), then r.t. (2 h)",
+        "time": "10 min at −78 °C, then 2 h at r.t.",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        55
+      ],
+      "reaction_type": "selective reduction",
+      "substrates": [
+        {
+          "name": "(S)-2-fluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c1",
+          "amount": "50 mg, 0.2 mmol",
+          "registry_name": "(S)-2-fluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "g1",
+          "symbol": "g1",
+          "amount": "33 mg",
+          "resolved_smiles": "O[C@@H]1c2ccccc2C[C@]1(F)C#Cc1ccccc1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "1_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "K-Selectride (1.0 N solution in THF)",
+          "symbol": null,
+          "amount": "0.3 mL, 0.3 mmol"
+        },
+        {
+          "name": "1 N HCl (quench)",
+          "symbol": null,
+          "amount": "reported"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "4 mL",
+        "temperature": "-78 °C (10 h), then warmed to rt",
+        "time": "10 h at −78 °C, then warm to rt",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "66%",
+        "ee": "86%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "NonGP-Entry8",
+      "source_pages": [
+        55,
+        56
+      ],
+      "reaction_type": "desilylation (TMS removal)",
+      "substrates": [
+        {
+          "name": "(R)-4-((3-methyl-2-oxo-1-phenylpyrrolidin-3-yl)ethynyl)benzonitrile",
+          "symbol": "e3",
+          "amount": "54 mg, 0.2 mmol",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "products": [
+        {
+          "name": "h1",
+          "symbol": "h1",
+          "amount": "34 mg",
+          "resolved_smiles": "C#C[C@@]1(C)CCN(c2ccccc2)C1=O",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "2_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "TBAF (1.0 M solution in THF)",
+          "symbol": null,
+          "amount": "0.4 mL, 0.4 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "5 mL",
+        "temperature": "room temperature",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "86%",
+        "ee": "85%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        56
+      ],
+      "reaction_type": "ring-opening of lactams (basic hydrolysis)",
+      "substrates": [
+        {
+          "name": "tert-butyl (R)-3-((4-cyanophenyl)ethynyl)-3-methyl-2-oxopyrrolidine-1-carboxylate",
+          "symbol": "e6",
+          "amount": "0.1 mmol, 1.0 equiv",
+          "registry_name": "tert-butyl (R)-3-((4-cyanophenyl)ethynyl)-3-methyl-2-oxopyrrolidine-1-carboxylate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "i1",
+          "symbol": "i1",
+          "amount": "23.2 mg",
+          "resolved_smiles": "CO(CN)O#CC1=C[CH3]=N(C(=O)OC(C)(C)C)C=C1",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "3_1",
+            "field": "products",
+            "item_index": 0,
+            "image_name": "page_6_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "LiOH (1 M)",
+          "symbol": null,
+          "amount": "1.0 mL, 1.0 mmol (10.0 equiv)"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "2.0 mL",
+        "temperature": "room temperature",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "NonGP-Entry10",
+      "source_pages": [
+        59
+      ],
+      "reaction_type": "Preparation of (p-tolylethynyl)copper reagent",
+      "substrates": [
+        {
+          "name": "copper iodide",
+          "symbol": null,
+          "amount": "571 mg, 3 mmol"
+        },
+        {
+          "name": "p-tolylacetylene (4-ethynyltoluene)",
+          "symbol": null,
+          "amount": "3.0 mmol",
+          "original_name": "alkyne",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "(p-tolylethynyl)copper reagent",
+            "product_index": 0,
+            "reason": "Product is polymeric (p-tolylethynyl)copper reagent (A1), which maps one-to-one to the supplied alkyne being p-tolylacetylene."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "(p-tolylethynyl)copper reagent",
+          "symbol": "A1",
+          "amount": "443 mg",
+          "registry_name": "polymeric (p-tolylethynyl)copper reagent",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "potassium carbonate",
+          "symbol": null,
+          "amount": "1.5 g, 1.1 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMF",
+        "solvent_amount": "10 mL (plus 5 mL for alkyne solution)",
+        "temperature": "rt",
+        "time": "4 hours",
+        "atmosphere": "Ar",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "83%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_9.2.1_A1"
+    },
+    {
+      "id": "GeneralProcedureF-Entry37",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        60
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "α-bromo-α-fluoroketone",
+          "symbol": "b1",
+          "amount": "0.20 mmol, 1.0 equiv.",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv."
+        }
+      ],
+      "products": [
+        {
+          "name": "j1",
+          "symbol": "j1",
+          "amount": "12 mg, 0.04 mmol",
+          "resolved_smiles": "CC1(C)CCCC(C)(C)N1OC1(F)Cc2ccccc2C1=O",
+          "resolution_source": "image_symbol_map",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "medium",
+          "resolution_evidence": {
+            "source": "image_reaction",
+            "reaction_id": "b",
+            "field": "products",
+            "item_index": 1,
+            "image_name": "page_7_image_1.png"
+          }
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        },
+        {
+          "name": "(2,2,6,6-tetramethylpiperidin-1-yl)oxyl (TEMPO)",
+          "symbol": "TEMPO",
+          "amount": "0.4 mmol, 2.0 equiv.",
+          "registry_name": "(2,2,6,6-tetramethylpiperidin-1-yl)oxyl",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 °C",
+        "time": "36 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "20%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_9.2.4_j1_TEMPO"
+    },
+    {
+      "id": "GeneralProcedureF-Entry38",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        61
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "α-bromo-α-fluoroketone",
+          "symbol": "b1",
+          "amount": "0.20 mmol, 1.0 equiv.",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv."
+        },
+        {
+          "name": "(1-(2-phenylcyclopropyl)vinyl)benzene",
+          "symbol": "k1",
+          "amount": "0.4 mmol, 2.0 equiv.",
+          "registry_name": "(1-(2-phenylcyclopropyl)vinyl)benzene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "(S)-2-fluoro-2-(phenylethynyl)-2,3-dihydro-1H-inden-1-one",
+          "symbol": "c1",
+          "amount": "12 mg",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 °C",
+        "time": "36 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "24%",
+        "ee": "89%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_9.2.5_c1_radical_clock"
+    },
+    {
+      "id": "GeneralProcedureF-Entry39",
+      "_gp_source": "GeneralProcedureF",
+      "source_pages": [
+        61
+      ],
+      "reaction_type": "Enantioselective alkynylation of α-bromo-α-fluoroketones with terminal alkynes (enantioselective C–C bond formation)",
+      "substrates": [
+        {
+          "name": "α-bromo-α-fluoroketone",
+          "symbol": "b1",
+          "amount": "0.20 mmol, 1.0 equiv.",
+          "registry_name": "2-bromo-2-fluoro-2,3-dihydro-1H-inden-1-one",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        },
+        {
+          "name": "ethynylbenzene",
+          "symbol": null,
+          "amount": "0.2 mmol, 1.0 equiv."
+        },
+        {
+          "name": "(1-(2-phenylcyclopropyl)vinyl)benzene",
+          "symbol": "k1",
+          "amount": "0.4 mmol, 2.0 equiv.",
+          "registry_name": "(1-(2-phenylcyclopropyl)vinyl)benzene",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "l1",
+          "symbol": "l1",
+          "amount": "48 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "CuI",
+          "symbol": null,
+          "amount": "0.02 mmol, 10 mol %"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "L5"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "Cs2CO3",
+          "symbol": null,
+          "amount": "0.3 mmol, 1.5 equiv."
+        }
+      ],
+      "conditions": {
+        "solvent": "anhydrous CH3CN",
+        "solvent_amount": "2.0 mL",
+        "temperature": "25 °C",
+        "time": "36 h",
+        "atmosphere": "N2",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "51%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_9.2.5_l1_radical_clock"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/tetrasubstituted-carbon-stereocenters-via-copper_96f14365.json",
+    "input_sha256": "57888eb08492dde022f62a3dfe064a3fb16625088c03631eee130f4ae3e8f9ee"
+  }
+}

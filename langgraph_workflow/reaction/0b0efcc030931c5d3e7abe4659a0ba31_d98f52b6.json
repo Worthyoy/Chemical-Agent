@@ -1,0 +1,635 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0b0efcc030931c5d3e7abe4659a0ba31.pdf",
+  "paper_key": "0b0efcc030931c5d3e7abe4659a0ba31",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0b0efcc030931c5d3e7abe4659a0ba31.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0b0efcc030931c5d3e7abe4659a0ba31.pdf",
+    "source_mtime_ns": 1782048792000000000,
+    "source_size": 282627,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "two_column",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "0b0efcc030931c5d3e7abe4659a0ba31",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/suzuki_data/0b0efcc030931c5d3e7abe4659a0ba31.pdf"
+  },
+  "extracted_at": "2026-07-18T02:41:30.993743",
+  "total_reactions": 16,
+  "filtered_reactions": 11,
+  "filter_stats": {
+    "input_reactions": 16,
+    "basic_failed": 5,
+    "target_failed": 0,
+    "retained": 11
+  },
+  "reactions": [
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        3,
+        5
+      ],
+      "reaction_type": "coordination",
+      "substrates": [
+        {
+          "name": "zinc acetate",
+          "symbol": null,
+          "amount": "0.020 g, 0.110 mmol"
+        },
+        {
+          "name": "2-[2-hydroxy-5-(2,3,5,6-tetrafluoropyridyl)phenyl]benzothiazole",
+          "symbol": null,
+          "amount": "0.081 g, 0.215 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "Bis{2-[2-hydroxy-5-(2,3,5,6-tetrafluoropyridyl)phenyl]benzothiazolato}zinc(II)",
+          "symbol": "1a",
+          "amount": "0.065 g"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "ethanol",
+        "solvent_amount": "ethanol (2 mL (zinc acetate solution) + 10 mL (ligand solution))",
+        "temperature": "70 °C",
+        "time": "16 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry2",
+      "source_pages": [
+        3,
+        5
+      ],
+      "reaction_type": "coordination",
+      "substrates": [
+        {
+          "name": "zinc acetate",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "2-[2-hydroxy-5-(2,3,4,5,6-pentafluorophenyl)phenyl]benzothiazole",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "Bis{2-[2-hydroxy-5-(2,3,4,5,6-pentafluorophenyl)phenyl]benzothiazolato}zinc(II)",
+          "symbol": "1b",
+          "amount": null
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "ethanol",
+        "solvent_amount": null,
+        "temperature": "70 °C",
+        "time": "22 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "73%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "NonGP-Entry3",
+      "source_pages": [
+        3,
+        5
+      ],
+      "reaction_type": "coordination",
+      "substrates": [
+        {
+          "name": "zinc acetate",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "2-(2-hydroxy-5-phenylphenyl)benzothiazole",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "Bis[2-(2-hydroxy-5-phenylphenyl)benzothiazolato]zinc(II)",
+          "symbol": "1c",
+          "amount": null
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "ethanol",
+        "solvent_amount": null,
+        "temperature": "70 °C",
+        "time": "36 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "71%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "NonGP-Entry4",
+      "source_pages": [
+        3,
+        5
+      ],
+      "reaction_type": "coordination",
+      "substrates": [
+        {
+          "name": "zinc acetate",
+          "symbol": null,
+          "amount": null
+        },
+        {
+          "name": "2-{5-[4-(dimethylamino)phenyl]-2-hydroxyphenyl}benzothiazole",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "products": [
+        {
+          "name": "Bis(2-{5-[4-(dimethylamino)phenyl]-2-hydroxyphenyl}benzothiazolato)zinc(II)",
+          "symbol": "1d",
+          "amount": null
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "ethanol",
+        "solvent_amount": null,
+        "temperature": "70 °C",
+        "time": "48 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "NonGP-Entry5",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "condensation/cyclization",
+      "substrates": [
+        {
+          "name": "5-bromosalicylic acid",
+          "symbol": null,
+          "amount": "0.870 g, 4 mmol"
+        },
+        {
+          "name": "2-aminothiophenol",
+          "symbol": null,
+          "amount": "0.500 g, 4 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "5-Bromo-2-hydroxybenzothiazole",
+          "symbol": "2",
+          "amount": "0.735 g",
+          "registry_name": "2-(5-bromo-2-hydroxyphenyl)benzothiazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "polyphosphoric acid (PPA)",
+          "symbol": null,
+          "amount": "25 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "polyphosphoric acid (reaction medium)",
+        "solvent_amount": "25 mL",
+        "temperature": "140 °C",
+        "time": "24 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "NonGP-Entry6",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "O-alkylation (benzylation)",
+      "substrates": [
+        {
+          "name": "2-(5-bromo-2-hydroxyphenyl)benzothiazole",
+          "symbol": null,
+          "amount": "0.610 g, 1.99 mmol"
+        },
+        {
+          "name": "benzyl bromide",
+          "symbol": null,
+          "amount": "0.376 g, 2.2 mmol"
+        },
+        {
+          "name": "potassium carbonate",
+          "symbol": "K2CO3",
+          "amount": "0.690 g, 5 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(Benzyloxy)-5-bromophenylbenzothiazole",
+          "symbol": "3",
+          "amount": "0.733 g",
+          "registry_name": "2-[5-(benzyloxy)phenyl]benzothiazole",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [],
+      "conditions": {
+        "solvent": "acetone",
+        "solvent_amount": "30 mL",
+        "temperature": "60 °C",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "93%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_6"
+    },
+    {
+      "id": "NonGP-Entry7",
+      "source_pages": [
+        5
+      ],
+      "reaction_type": "Miayura borylation",
+      "substrates": [
+        {
+          "name": "2-[2-(benzyloxy)-5-bromophenyl]benzothiazole",
+          "symbol": null,
+          "amount": "0.200 g, 0.51 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-[2-(Benzyloxy)-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)phenyl]benzothiazole",
+          "symbol": "4",
+          "amount": "0.178 g",
+          "registry_name": "pinacolatoboronate ester",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[PdCl2(dppf)]·CH2Cl2",
+          "symbol": null,
+          "amount": "0.021 g, 0.026 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "potassium acetate",
+          "symbol": "KOAc",
+          "amount": "0.149 g, 1.52 mmol"
+        },
+        {
+          "name": "bis(pinacolato)diboron",
+          "symbol": null,
+          "amount": "0.291 g, 2.28 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "DMSO",
+        "solvent_amount": "5 mL",
+        "temperature": "80 °C",
+        "time": "4 h",
+        "atmosphere": "argon (solution purged 10 min before addition)",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_7"
+    },
+    {
+      "id": "NonGP-Entry9",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Suzuki coupling",
+      "substrates": [
+        {
+          "name": "2-[2-(Benzyloxy)-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)phenyl]benzothiazole",
+          "symbol": null,
+          "amount": "0.400 g, 0.903 mmol"
+        },
+        {
+          "name": "4-bromo-2,3,5,6-tetrafluoropyridine",
+          "symbol": null,
+          "amount": "0.208 g, 0.903 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-[2-(Benzyloxy)-5-(2,3,5,6-tetrafluoropyridyl)phenyl]benzothiazole",
+          "symbol": "6a",
+          "amount": "0.341 g",
+          "registry_name": "benzyl-protected 2-(5-arylphenyl)benzothiazoles",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[PdCl2(dppf)]·CH2Cl2",
+          "symbol": null,
+          "amount": "0.037 g, 0.045 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "tetrabutylammonium chloride",
+          "symbol": null,
+          "amount": "0.025 g, 0.09 mmol"
+        },
+        {
+          "name": "aqueous 1 M potassium carbonate",
+          "symbol": null,
+          "amount": "20 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene and aqueous 1 M potassium carbonate (two-phase)",
+        "solvent_amount": "20 mL and 20 mL",
+        "temperature": "90 °C",
+        "time": "16 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-6a"
+    },
+    {
+      "id": "NonGP-Entry11",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Suzuki coupling",
+      "substrates": [
+        {
+          "name": "2-[2-(Benzyloxy)-5-bromophenyl]benzothiazole",
+          "symbol": null,
+          "amount": "0.400 g, 1.01 mmol"
+        },
+        {
+          "name": "pinacol phenylboronate",
+          "symbol": null,
+          "amount": "0.206 g, 1.01 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-[2-(Benzyloxy)-5-phenylphenyl]benzothiazole",
+          "symbol": "6c",
+          "amount": "0.310 g",
+          "registry_name": "benzyl-protected 2-(5-arylphenyl)benzothiazoles",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "[PdCl2(dppf)]·CH2Cl2",
+          "symbol": null,
+          "amount": "0.041 g, 0.051 mmol"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "tetrabutylammonium chloride",
+          "symbol": null,
+          "amount": "0.028 g, 0.101 mmol"
+        },
+        {
+          "name": "aqueous 1 M potassium carbonate",
+          "symbol": null,
+          "amount": "20 mL"
+        }
+      ],
+      "conditions": {
+        "solvent": "toluene and aqueous 1 M potassium carbonate (two-phase)",
+        "solvent_amount": "20 mL and 20 mL",
+        "temperature": "90 °C",
+        "time": "24 h",
+        "atmosphere": "argon",
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-6c"
+    },
+    {
+      "id": "NonGP-Entry13",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Hydrogenation",
+      "substrates": [
+        {
+          "name": "2-[2-(Benzyloxy)-5-(2,3,5,6-tetrafluoropyridyl)phenyl]benzothiazole",
+          "symbol": null,
+          "amount": "0.320 g, 0.67 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-[2-Hydroxy-5-(2,3,5,6-tetrafluoropyridyl)phenyl]benzothiazole",
+          "symbol": "7a",
+          "amount": "0.207 g",
+          "registry_name": "unprotected benzothiazoles",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "10% Pd/C",
+          "symbol": null,
+          "amount": "0.320 g"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "ammonium formate (aqueous)",
+          "symbol": null,
+          "amount": "2.0 mL, 0.844 g, 13.4 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF",
+        "solvent_amount": "25 mL",
+        "temperature": "reflux",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-7a"
+    },
+    {
+      "id": "NonGP-Entry15",
+      "source_pages": [
+        6
+      ],
+      "reaction_type": "Hydrogenation",
+      "substrates": [
+        {
+          "name": "2-[2-(Benzyloxy)-5-phenylphenyl]benzothiazole",
+          "symbol": null,
+          "amount": "0.130 g, 0.30 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "2-(2-Hydroxy-5-phenylphenyl)benzothiazole",
+          "symbol": "7c",
+          "amount": "0.084 g",
+          "registry_name": "unprotected benzothiazoles",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "10% Pd/C",
+          "symbol": null,
+          "amount": "0.130 g"
+        }
+      ],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "ammonium formate",
+          "symbol": null,
+          "amount": "0.019 g, 0.30 mmol"
+        }
+      ],
+      "conditions": {
+        "solvent": "THF and methanol",
+        "solvent_amount": "15 mL and 15 mL",
+        "temperature": "reflux",
+        "time": "3 h",
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "81%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-7c"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_suzuki/symbol_resolved/text/0b0efcc030931c5d3e7abe4659a0ba31_d98f52b6.json",
+    "input_sha256": "e5f4e844e0e4349d7c7331fcd6a473931448c79c09b9b72d63d6cf3ba007c169"
+  }
+}

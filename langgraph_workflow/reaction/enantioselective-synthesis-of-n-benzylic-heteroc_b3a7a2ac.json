@@ -1,0 +1,3804 @@
+{
+  "source": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-synthesis-of-n-benzylic-heterocycles-by-ni-photoredox-dual-catalysis.pdf",
+  "paper_key": "enantioselective-synthesis-of-n-benzylic-heterocycles-by-ni-photoredox-dual-catalysis",
+  "source_modality": "text",
+  "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-synthesis-of-n-benzylic-heterocycles-by-ni-photoredox-dual-catalysis.pdf",
+  "metadata": {
+    "pipeline_version": "parallel_pdf_v23_mixed_role_first",
+    "source_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-synthesis-of-n-benzylic-heterocycles-by-ni-photoredox-dual-catalysis.pdf",
+    "source_mtime_ns": 1782048616000000000,
+    "source_size": 9672605,
+    "screen_model": "gpt-5-mini",
+    "extract_model": "gpt-5-mini",
+    "split_model": "gpt-5-mini",
+    "chemeagle_role_refinement_model": "gpt-5-mini",
+    "pages_per_chunk": 5,
+    "pdf_text_layout": "single",
+    "pdf_text_x_tolerance": 3.0,
+    "pdf_text_y_tolerance": 5.0,
+    "generic_resolution_batch_size": 10,
+    "stage1_screen_prompt_version": "stage1_screen_prompt_v3_targets_dr",
+    "mixed_reaction_prompt_version": "mixed_reaction_prompt_v5_role_first_precedence",
+    "enable_stage1_page_trimming": false,
+    "enable_stage2_audit": true,
+    "paper_key": "enantioselective-synthesis-of-n-benzylic-heterocycles-by-ni-photoredox-dual-catalysis",
+    "source_modality": "text",
+    "source_pdf": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/si/enantioselective-synthesis-of-n-benzylic-heterocycles-by-ni-photoredox-dual-catalysis.pdf"
+  },
+  "extracted_at": "2026-07-17T07:14:09.949127",
+  "total_reactions": 48,
+  "filtered_reactions": 47,
+  "filter_stats": {
+    "input_reactions": 48,
+    "basic_failed": 0,
+    "target_failed": 1,
+    "retained": 47
+  },
+  "reactions": [
+    {
+      "id": "GeneralProcedureA-Entry1",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "N-alkylation of an N-heterocycle with an iodoalkyl borane to install a boron-containing alkyl handle, followed by conversion of the resulting boronic acid/ester to the corresponding potassium organotrifluoroborate (BF3K)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "methyl 1H-pyrrole-2-carboxylate",
+          "symbol": null,
+          "amount": "1.0 equiv, 6.98 mmol",
+          "step": 1
+        },
+        {
+          "name": "2-(1-iodoethyl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": null,
+          "amount": "2.0 equiv, 13.97 mmol",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "corresponding product SI-1 (mixture of boronic acid and pinacol borane)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Potassium trifluoro(1-(2-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)borate",
+          "symbol": "1a",
+          "amount": "2.6 g",
+          "step": 2,
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.2 equiv, 60 wt. %, 8.38 mmol",
+          "step": 1
+        },
+        {
+          "name": "potassium bifluoride (KHF2)",
+          "symbol": null,
+          "amount": "4.0 equiv, 14.54 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry DMF"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/H2O (2/1)"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.3 M"
+          },
+          {
+            "step": 2,
+            "value": "0.2 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 ºC then rt"
+          },
+          {
+            "step": 2,
+            "value": "rt"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "30-60 min then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r1"
+    },
+    {
+      "id": "GeneralProcedureA-Entry2",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "N-alkylation of an N-heterocycle with an iodoalkyl borane to install a boron-containing alkyl handle, followed by conversion of the resulting boronic acid/ester to the corresponding potassium organotrifluoroborate (BF3K)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "methyl 4-fluoro-1H-pyrrole-2-carboxylate",
+          "symbol": null,
+          "amount": "1.0 equiv, 6.98 mmol",
+          "step": 1
+        },
+        {
+          "name": "2-(1-iodoethyl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": null,
+          "amount": "2.0 equiv, 13.97 mmol",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "corresponding product SI-1 (mixture of boronic acid and pinacol borane)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Potassium trifluoro(1-(4-fluoro-2-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)borate",
+          "symbol": "4a",
+          "amount": "654 mg",
+          "step": 2,
+          "registry_name": "Potassium trifluoro(1-(4-fluoro-2-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)borate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.2 equiv, 60 wt. %, 8.38 mmol",
+          "step": 1
+        },
+        {
+          "name": "potassium bifluoride (KHF2)",
+          "symbol": null,
+          "amount": "4.0 equiv, 14.54 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry DMF"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/H2O (2/1)"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.3 M"
+          },
+          {
+            "step": 2,
+            "value": "0.2 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 ºC then rt"
+          },
+          {
+            "step": 2,
+            "value": "rt"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "30-60 min then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "56%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r2"
+    },
+    {
+      "id": "GeneralProcedureA-Entry3",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        13
+      ],
+      "reaction_type": "N-alkylation of an N-heterocycle with an iodoalkyl borane to install a boron-containing alkyl handle, followed by conversion of the resulting boronic acid/ester to the corresponding potassium organotrifluoroborate (BF3K)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "methyl 4-chloro-1H-pyrrole-2-carboxylate",
+          "symbol": null,
+          "amount": "1.0 equiv, 6.98 mmol",
+          "step": 1
+        },
+        {
+          "name": "2-(1-iodoethyl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": null,
+          "amount": "2.0 equiv, 13.97 mmol",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "corresponding product SI-1 (mixture of boronic acid and pinacol borane)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Potassium (1-(4-chloro-2-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)trifluoroborate",
+          "symbol": "4b",
+          "amount": "390 mg",
+          "step": 2,
+          "registry_name": "Potassium (1-(4-chloro-2-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)trifluoroborate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.2 equiv, 60 wt. %, 8.38 mmol",
+          "step": 1
+        },
+        {
+          "name": "potassium bifluoride (KHF2)",
+          "symbol": null,
+          "amount": "4.0 equiv, 14.54 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry DMF"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/H2O (2/1)"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.3 M"
+          },
+          {
+            "step": 2,
+            "value": "0.2 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 ºC then rt"
+          },
+          {
+            "step": 2,
+            "value": "rt"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "30-60 min then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "74%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r3"
+    },
+    {
+      "id": "GeneralProcedureA-Entry4",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "N-alkylation of an N-heterocycle with an iodoalkyl borane to install a boron-containing alkyl handle, followed by conversion of the resulting boronic acid/ester to the corresponding potassium organotrifluoroborate (BF3K)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "methyl 4-cyclopropyl-1H-pyrrole-2-carboxylate",
+          "symbol": null,
+          "amount": "1.0 equiv, 6.98 mmol",
+          "step": 1
+        },
+        {
+          "name": "2-(1-iodoethyl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": null,
+          "amount": "2.0 equiv, 13.97 mmol",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "corresponding product SI-1 (mixture of boronic acid and pinacol borane)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Potassium (1-(4-cyclopropyl-2-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)trifluoroborate",
+          "symbol": "4c",
+          "amount": "780 mg",
+          "step": 2,
+          "registry_name": "Potassium (1-(4-cyclopropyl-2-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)trifluoroborate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.2 equiv, 60 wt. %, 8.38 mmol",
+          "step": 1
+        },
+        {
+          "name": "potassium bifluoride (KHF2)",
+          "symbol": null,
+          "amount": "4.0 equiv, 14.54 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry DMF"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/H2O (2/1)"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.3 M"
+          },
+          {
+            "step": 2,
+            "value": "0.2 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 ºC then rt"
+          },
+          {
+            "step": 2,
+            "value": "rt"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "30-60 min then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r4"
+    },
+    {
+      "id": "GeneralProcedureA-Entry5",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        14
+      ],
+      "reaction_type": "N-alkylation of an N-heterocycle with an iodoalkyl borane to install a boron-containing alkyl handle, followed by conversion of the resulting boronic acid/ester to the corresponding potassium organotrifluoroborate (BF3K)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "methyl 1H-pyrrole-2-carboxylate",
+          "symbol": null,
+          "amount": "1.0 equiv, 6.98 mmol",
+          "step": 1
+        },
+        {
+          "name": "2-(1-iodoethyl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": null,
+          "amount": "2.0 equiv, 13.97 mmol",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "corresponding product SI-1 (mixture of boronic acid and pinacol borane)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Potassium trifluoro(1-(2-(methoxycarbonyl)-1H-pyrrol-1-yl)propyl)borate",
+          "symbol": "4d",
+          "amount": "480 mg",
+          "step": 2,
+          "registry_name": "Potassium trifluoro(1-(2-(methoxycarbonyl)-1H-pyrrol-1-yl)propyl)borate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.2 equiv, 60 wt. %, 8.38 mmol",
+          "step": 1
+        },
+        {
+          "name": "potassium bifluoride (KHF2)",
+          "symbol": null,
+          "amount": "4.0 equiv, 14.54 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry DMF"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/H2O (2/1)"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.3 M"
+          },
+          {
+            "step": 2,
+            "value": "0.2 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 ºC then rt"
+          },
+          {
+            "step": 2,
+            "value": "rt"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "30-60 min then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r5"
+    },
+    {
+      "id": "GeneralProcedureA-Entry6",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "N-alkylation of an N-heterocycle with an iodoalkyl borane to install a boron-containing alkyl handle, followed by conversion of the resulting boronic acid/ester to the corresponding potassium organotrifluoroborate (BF3K)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "1H-pyrrole-2-carboxylate",
+          "symbol": null,
+          "amount": "1.0 equiv, 6.98 mmol",
+          "step": 1
+        },
+        {
+          "name": "2-(1-iodo-4-methylpentyl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": null,
+          "amount": "2.0 equiv, 13.97 mmol",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "corresponding product SI-1 (mixture of boronic acid and pinacol borane)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Potassium trifluoro((1-(2-(methoxycarbonyl)-1H-pyrrol-1-yl)-4-methylpentyl)borate",
+          "symbol": "4e",
+          "amount": "286 mg",
+          "step": 2,
+          "registry_name": "Potassium trifluoro((1-(2-(methoxycarbonyl)-1H-pyrrol-1-yl)-4-methylpentyl)borate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.2 equiv, 60 wt. %, 8.38 mmol",
+          "step": 1
+        },
+        {
+          "name": "potassium bifluoride (KHF2)",
+          "symbol": null,
+          "amount": "4.0 equiv, 14.54 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry DMF"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/H2O (2/1)"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.3 M"
+          },
+          {
+            "step": 2,
+            "value": "0.2 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 ºC then rt"
+          },
+          {
+            "step": 2,
+            "value": "rt"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "30-60 min then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "45%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r6"
+    },
+    {
+      "id": "GeneralProcedureA-Entry7",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        15
+      ],
+      "reaction_type": "N-alkylation of an N-heterocycle with an iodoalkyl borane to install a boron-containing alkyl handle, followed by conversion of the resulting boronic acid/ester to the corresponding potassium organotrifluoroborate (BF3K)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "methyl 1H-pyrrole-3-carboxylate",
+          "symbol": null,
+          "amount": "1.0 equiv, 6.98 mmol",
+          "step": 1
+        },
+        {
+          "name": "2-(1-iodoethyl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": null,
+          "amount": "2.0 equiv, 13.97 mmol",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "corresponding product SI-1 (mixture of boronic acid and pinacol borane)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Potassium trifluoro(1-(3-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)borate",
+          "symbol": "4f",
+          "amount": "270 mg",
+          "step": 2,
+          "registry_name": "Potassium trifluoro(1-(3-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)borate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.2 equiv, 60 wt. %, 8.38 mmol",
+          "step": 1
+        },
+        {
+          "name": "potassium bifluoride (KHF2)",
+          "symbol": null,
+          "amount": "4.0 equiv, 14.54 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry DMF"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/H2O (2/1)"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.3 M"
+          },
+          {
+            "step": 2,
+            "value": "0.2 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 ºC then rt"
+          },
+          {
+            "step": 2,
+            "value": "rt"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "30-60 min then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "45%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r7"
+    },
+    {
+      "id": "GeneralProcedureA-Entry8",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "N-alkylation of an N-heterocycle with an iodoalkyl borane to install a boron-containing alkyl handle, followed by conversion of the resulting boronic acid/ester to the corresponding potassium organotrifluoroborate (BF3K)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "methyl 1H-pyrrolo[2,3-b]pyridine-5-carboxylate",
+          "symbol": null,
+          "amount": "1.0 equiv, 6.98 mmol",
+          "step": 1
+        },
+        {
+          "name": "2-(1-iodoethyl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": null,
+          "amount": "2.0 equiv, 13.97 mmol",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "corresponding product SI-1 (mixture of boronic acid and pinacol borane)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Potassium trifluoro(1-(5-(methoxycarbonyl)-1H-pyrrolo[2,3-b]pyridin-1-yl)ethyl)borate",
+          "symbol": "4g",
+          "amount": "841 mg",
+          "step": 2,
+          "registry_name": "Potassium trifluoro(1-(5-(methoxycarbonyl)-1H-pyrrolo[2,3-b]pyridin-1-yl)ethyl)borate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.2 equiv, 60 wt. %, 8.38 mmol",
+          "step": 1
+        },
+        {
+          "name": "potassium bifluoride (KHF2)",
+          "symbol": null,
+          "amount": "4.0 equiv, 14.54 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry DMF"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/H2O (2/1)"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.3 M"
+          },
+          {
+            "step": 2,
+            "value": "0.2 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 ºC then rt"
+          },
+          {
+            "step": 2,
+            "value": "rt"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "30-60 min then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "68%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r8"
+    },
+    {
+      "id": "GeneralProcedureA-Entry9",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        16
+      ],
+      "reaction_type": "N-alkylation of an N-heterocycle with an iodoalkyl borane to install a boron-containing alkyl handle, followed by conversion of the resulting boronic acid/ester to the corresponding potassium organotrifluoroborate (BF3K)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "tert-butyl (1H-pyrazol-4-yl)carbamate",
+          "symbol": null,
+          "amount": "1.0 equiv, 6.98 mmol",
+          "step": 1
+        },
+        {
+          "name": "2-(1-iodoethyl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": null,
+          "amount": "2.0 equiv, 13.97 mmol",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "corresponding product SI-1 (mixture of boronic acid and pinacol borane)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Potassium (1-(4-((tert-butoxycarbonyl)amino)-1H-pyrazol-1-yl)ethyl)trifluoroborate",
+          "symbol": "4h",
+          "amount": "4.5 g",
+          "step": 2,
+          "registry_name": "Potassium (1-(4-((tert-butoxycarbonyl)amino)-1H-pyrazol-1-yl)ethyl)trifluoroborate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.2 equiv, 60 wt. %, 8.38 mmol",
+          "step": 1
+        },
+        {
+          "name": "potassium bifluoride (KHF2)",
+          "symbol": null,
+          "amount": "4.0 equiv, 14.54 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry DMF"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/H2O (2/1)"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.3 M"
+          },
+          {
+            "step": 2,
+            "value": "0.2 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 ºC then rt"
+          },
+          {
+            "step": 2,
+            "value": "rt"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "30-60 min then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "76%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r9"
+    },
+    {
+      "id": "GeneralProcedureA-Entry10",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "N-alkylation of an N-heterocycle with an iodoalkyl borane to install a boron-containing alkyl handle, followed by conversion of the resulting boronic acid/ester to the corresponding potassium organotrifluoroborate (BF3K)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "tert-butyl 1H-pyrazole-4-carboxylate",
+          "symbol": null,
+          "amount": "1.0 equiv, 6.98 mmol",
+          "step": 1
+        },
+        {
+          "name": "2-(1-iodoethyl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": null,
+          "amount": "2.0 equiv, 13.97 mmol",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "corresponding product SI-1 (mixture of boronic acid and pinacol borane)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Potassium (1-(4-(tert-butoxycarbonyl)-1H-pyrazol-1-yl)ethyl)trifluoroborate",
+          "symbol": "4i",
+          "amount": "2.8 g",
+          "step": 2,
+          "registry_name": "Potassium (1-(4-(tert-butoxycarbonyl)-1H-pyrazol-1-yl)ethyl)trifluoroborate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.2 equiv, 60 wt. %, 8.38 mmol",
+          "step": 1
+        },
+        {
+          "name": "potassium bifluoride (KHF2)",
+          "symbol": null,
+          "amount": "4.0 equiv, 14.54 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry DMF"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/H2O (2/1)"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.3 M"
+          },
+          {
+            "step": 2,
+            "value": "0.2 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 ºC then rt"
+          },
+          {
+            "step": 2,
+            "value": "rt"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "30-60 min then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "82%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r10"
+    },
+    {
+      "id": "GeneralProcedureA-Entry11",
+      "_gp_source": "GeneralProcedureA",
+      "source_pages": [
+        17
+      ],
+      "reaction_type": "N-alkylation of an N-heterocycle with an iodoalkyl borane to install a boron-containing alkyl handle, followed by conversion of the resulting boronic acid/ester to the corresponding potassium organotrifluoroborate (BF3K)",
+      "step_count": 2,
+      "substrates": [
+        {
+          "name": "isoindoline-1,3-dione",
+          "symbol": null,
+          "amount": "1.0 equiv, 6.98 mmol",
+          "step": 1
+        },
+        {
+          "name": "2-(1-iodoethyl)-4,4,5,5-tetramethyl-1,3,2-dioxaborolane",
+          "symbol": null,
+          "amount": "2.0 equiv, 13.97 mmol",
+          "step": 1
+        }
+      ],
+      "intermediates": [
+        {
+          "name": "corresponding product SI-1 (mixture of boronic acid and pinacol borane)",
+          "symbol": null,
+          "produced_in_step": 1,
+          "consumed_in_step": 2
+        }
+      ],
+      "products": [
+        {
+          "name": "Potassium (1-(1,3-dioxoisoindolin-2-yl)ethyl)trifluoroborate",
+          "symbol": "4j",
+          "amount": "1.1 g",
+          "step": 2,
+          "registry_name": "Potassium (1-(1,3-dioxoisoindolin-2-yl)ethyl)trifluoroborate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [],
+      "other_components": [
+        {
+          "name": "NaH",
+          "symbol": null,
+          "amount": "1.2 equiv, 60 wt. %, 8.38 mmol",
+          "step": 1
+        },
+        {
+          "name": "potassium bifluoride (KHF2)",
+          "symbol": null,
+          "amount": "4.0 equiv, 14.54 mmol",
+          "step": 2
+        }
+      ],
+      "conditions": {
+        "solvent": [
+          {
+            "step": 1,
+            "value": "dry DMF"
+          },
+          {
+            "step": 2,
+            "value": "MeOH/H2O (2/1)"
+          }
+        ],
+        "solvent_amount": [
+          {
+            "step": 1,
+            "value": "0.3 M"
+          },
+          {
+            "step": 2,
+            "value": "0.2 M"
+          }
+        ],
+        "temperature": [
+          {
+            "step": 1,
+            "value": "0 ºC then rt"
+          },
+          {
+            "step": 2,
+            "value": "rt"
+          }
+        ],
+        "time": [
+          {
+            "step": 1,
+            "value": "30-60 min then 2 h then overnight"
+          },
+          {
+            "step": 2,
+            "value": "overnight"
+          }
+        ],
+        "atmosphere": [
+          {
+            "step": 1,
+            "value": "N2"
+          }
+        ],
+        "light_source": [],
+        "wavelength": []
+      },
+      "targets": {
+        "yield": "35%",
+        "ee": null,
+        "er": null,
+        "dr": null
+      },
+      "additives": [],
+      "reagents": [],
+      "_original_id": "r11"
+    },
+    {
+      "id": "GeneralProcedureB-Entry1",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.2 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-chloropyrimidin-5-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3a",
+          "amount": "44.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_1"
+    },
+    {
+      "id": "NonGP-Entry1",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (General Procedure C, 1.0 mmol scale)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "1.0 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-chloropyrimidin-5-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3a",
+          "amount": "158 mg"
+        }
+      ],
+      "catalysts": [],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_2"
+    },
+    {
+      "id": "GeneralProcedureD-Entry1",
+      "_gp_source": "GeneralProcedureD",
+      "source_pages": [
+        21
+      ],
+      "reaction_type": "photoredox/nickel dual-catalyzed cross-coupling of aryl bromide with potassium organotrifluoroborate (BF3K) salt",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "5.0 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": null,
+          "amount": "1.5 equiv, 7.5 mmol",
+          "original_name": "BF3K salt",
+          "resolution_source": "product_name",
+          "resolution_method": "product_name_to_substrate_mapping",
+          "resolution_confidence": "high",
+          "resolution_evidence": {
+            "product_name": "methyl (R)-1-(1-(2-chloropyrimidin-5-yl)ethyl)-1H-pyrrole-2-carboxylate",
+            "product_index": 0,
+            "reason": "Product contains the alkyl fragment derived from a BF3K reagent; the product structure matches those from reactions using potassium methyl 1-(1-(trifluoro‑λ4‑boraneyl)ethyl)-1H-pyrrole-2-carboxylate (symbol 1a). One-to-one mapping of the alkyl fragment supports resolving the generic 'BF3K salt' to the concrete potassium trifluoroborate 1a."
+          }
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-chloropyrimidin-5-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3a",
+          "amount": "1.04 g"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": null,
+          "amount": "0.125 mol%, 6.25 μmol, 6.3 mg"
+        },
+        {
+          "name": "NiCl2·dme",
+          "symbol": null,
+          "amount": "0.1 equiv, 0.5 mmol, 110 mg"
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "anhydrous potassium phosphate monobasic",
+          "symbol": "K2HPO4",
+          "amount": "3 equiv, 15 mmol, 1.94 g",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        }
+      ],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": "100 mL total (90 mL in reaction vessel + 10 mL in catalyst vial), 0.10 M",
+        "temperature": "ambient",
+        "time": "60 h",
+        "atmosphere": "N2 (glovebox)",
+        "light_source": "Kessil LED (PR160-440 nm)",
+        "wavelength": "440 nm"
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry2",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        21,
+        22
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromopyrimidine-2-carbonitrile)",
+      "substrates": [
+        {
+          "name": "5-bromopyrimidine-2-carbonitrile",
+          "symbol": "2b",
+          "amount": "36.8 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-cyanopyrimidin-5-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3b",
+          "amount": "39 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry3",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        22
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-(methylthio)pyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-(methylthio)pyrimidine",
+          "symbol": "2c",
+          "amount": "41.0 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-(methylthio)pyrimidin-5-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3c",
+          "amount": "46.5 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "84%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "reaction_5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry4",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        23
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-methoxypyrimidine",
+          "symbol": "2d",
+          "amount": "37.8 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-methoxypyrimidin-5-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3d",
+          "amount": "33 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry5",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        23,
+        24
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-(trifluoromethyl)pyrimidine",
+          "symbol": "3e",
+          "amount": "45.4 mg, 0.3 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.2 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-(trifluoromethyl)pyrimidin-5-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3e",
+          "amount": "30 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "50%",
+        "ee": "98%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry6",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        24
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-pyridinecarbonitrile",
+          "symbol": "2f",
+          "amount": "36.6 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(6-cyanopyridin-3-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3f",
+          "amount": "39 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "91%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry7",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        25
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloronicotinonitrile",
+          "symbol": "2g",
+          "amount": "43.5 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(6-chloro-5-cyanopyridin-3-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3g",
+          "amount": "44.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry8",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        25,
+        26
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "3-bromo-5-(trifluoromethyl)pyridine",
+          "symbol": "2h",
+          "amount": "45.2 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(5-(trifluoromethyl)pyridin-3-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3h",
+          "amount": "37.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "63%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry9",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        26
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "4-bromopicolinonitrile",
+          "symbol": "2i",
+          "amount": "36.6 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-cyanopyridin-4-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3i",
+          "amount": "39.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "77%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r6"
+    },
+    {
+      "id": "GeneralProcedureB-Entry10",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "4-bromo-2-chloropyridine",
+          "symbol": "2j",
+          "amount": "38.5 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-chloropyridin-4-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3j",
+          "amount": "35.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r7"
+    },
+    {
+      "id": "GeneralProcedureB-Entry11",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        27
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "4-bromo-2-methylpyridine",
+          "symbol": "2k",
+          "amount": "34.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-methylpyridin-4-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3k",
+          "amount": "23.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-heptyl BiOX",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "48%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r8"
+    },
+    {
+      "id": "GeneralProcedureB-Entry12",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        28
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "1-bromo-4-(trifluoromethyl)benzene",
+          "symbol": "2l",
+          "amount": "45.0 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(4-(trifluoromethyl)phenyl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3l",
+          "amount": "21.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-heptyl BiOX",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "36%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry13",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        29
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "3-bromo-5-fluorobenzonitrile",
+          "symbol": "2m",
+          "amount": "40.0 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(3-cyano-5-fluorophenyl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3m",
+          "amount": "43 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "79%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry14",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        30
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-1,3-difluoro-2-(trifluoromethyl)benzene",
+          "symbol": "2n",
+          "amount": "52.2 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(3,5-difluoro-4-(trifluoromethyl)phenyl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3n",
+          "amount": "38.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry15",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        30,
+        31
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "6-bromo-4,4-difluoro-3,4-dihydronaphthalen-1(2H)-one",
+          "symbol": "2o",
+          "amount": "52.2 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(8,8-difluoro-5-oxo-5,6,7,8-tetrahydronaphthalen-2-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3o",
+          "amount": "45.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "69%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-4"
+    },
+    {
+      "id": "GeneralProcedureB-Entry16",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        31
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "bromobenzene",
+          "symbol": "3p",
+          "amount": "31.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-phenylethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3p",
+          "amount": "9.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-heptyl BiOX",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "20%",
+        "ee": "78%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-5"
+    },
+    {
+      "id": "GeneralProcedureB-Entry17",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "(5-bromopyridin-2-yl)(pyrrolidin-1-yl)methanone",
+          "symbol": "2q",
+          "amount": "51 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl 1-(1-(6-(pyrrolidine-1-carbonyl)pyridin-3-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3q",
+          "amount": "35.8 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "heptyl BiOX",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "55%",
+        "ee": "0%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-6"
+    },
+    {
+      "id": "GeneralProcedureB-Entry18",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        32
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "(E)-4-bromobut-3-en-1-yl benzoate",
+          "symbol": "2r",
+          "amount": "51.0 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R,E)-1-(6-(benzoyloxy)hex-3-en-2-yl)-1H-pyrrole-2-carboxylate",
+          "symbol": "3r",
+          "amount": "18.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-heptyl BiOX",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "28%",
+        "ee": "83%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "rxn-7"
+    },
+    {
+      "id": "GeneralProcedureB-Entry19",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        34
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.2 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methyl 4-fluoro-1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "4a",
+          "amount": "83.1 mg, 0.3 mmol",
+          "registry_name": "Potassium trifluoro(1-(4-fluoro-2-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)borate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-chloropyrimidin-5-yl)ethyl)-4-fluoro-1H-pyrrole-2-carboxylate",
+          "symbol": "5a",
+          "amount": "35.4 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "62%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-5a"
+    },
+    {
+      "id": "GeneralProcedureB-Entry20",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        34,
+        35
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.1 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methyl 4-chloro-1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "4b",
+          "amount": "44 mg, 0.15 mmol",
+          "registry_name": "Potassium (1-(4-chloro-2-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)trifluoroborate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-4-chloro-1-(1-(2-chloropyrimidin-5-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "5b",
+          "amount": "11.1 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "i-PrOAc",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "37%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-5b"
+    },
+    {
+      "id": "GeneralProcedureB-Entry21",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        35
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.2 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methyl 4-cyclopropyl-1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "5c",
+          "amount": "89.7 mg, 0.3 mmol"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-chloropyrimidin-5-yl)ethyl)-4-cyclopropyl-1H-pyrrole-2-carboxylate",
+          "symbol": "5c",
+          "amount": "41.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "67%",
+        "ee": "97%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-5c"
+    },
+    {
+      "id": "GeneralProcedureB-Entry22",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        36
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.2 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)propyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "4d",
+          "amount": "81.9 mg, 0.3 mmol",
+          "registry_name": "Potassium trifluoro(1-(2-(methoxycarbonyl)-1H-pyrrol-1-yl)propyl)borate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-chloropyrimidin-5-yl)propyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "5d",
+          "amount": "35.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "64%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-5d"
+    },
+    {
+      "id": "GeneralProcedureB-Entry23",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        36,
+        37
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.2 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methyl 1-(3-methyl-1-(trifluoro-λ4-boraneyl)butyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "4e",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "Potassium trifluoro((1-(2-(methoxycarbonyl)-1H-pyrrol-1-yl)-4-methylpentyl)borate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "Methyl (R)-1-(1-(2-chloropyrimidin-5-yl)-4-methylpentyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "5e",
+          "amount": "36.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "58%",
+        "ee": "88%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-5e"
+    },
+    {
+      "id": "GeneralProcedureB-Entry24",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        37
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.2 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-3-carboxylate, potassium salt",
+          "symbol": "4f",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "Potassium trifluoro(1-(3-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)borate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-chloropyrimidin-5-yl)ethyl)-1H-pyrrole-3-carboxylate",
+          "symbol": "5f",
+          "amount": "41.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-heptyl BiOX",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "78%",
+        "ee": "66%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-5f"
+    },
+    {
+      "id": "GeneralProcedureB-Entry25",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        37,
+        38
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.2 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrolo[2,3-b]pyridine-5-carboxylate, potassium salt",
+          "symbol": "4g",
+          "amount": "93.0 mg, 0.3 mmol",
+          "registry_name": "Potassium trifluoro(1-(5-(methoxycarbonyl)-1H-pyrrolo[2,3-b]pyridin-1-yl)ethyl)borate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-chloropyrimidin-5-yl)ethyl)-1H-pyrrolo[2,3-b]pyridine-5-carboxylate",
+          "symbol": "5g",
+          "amount": "0.9 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-heptyl BiOX",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "1,1,2,2-tetrachloroethane (internal NMR standard)",
+          "symbol": null,
+          "amount": "21.0 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "CPME",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "59%",
+        "ee": "95%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-5g"
+    },
+    {
+      "id": "GeneralProcedureB-Entry26",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        38
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.2 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "tert-butyl (1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrol-3-yl)carbamate, potassium salt",
+          "symbol": "4h",
+          "amount": "95.1 mg, 0.3 mmol",
+          "registry_name": "Potassium (1-(4-((tert-butoxycarbonyl)amino)-1H-pyrazol-1-yl)ethyl)trifluoroborate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-butyl (R)-(1-(1-(2-chloropyrimidin-5-yl)ethyl)-1H-pyrazol-4-yl)carbamate",
+          "symbol": "5h",
+          "amount": "45.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-heptyl BiOX",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "70%",
+        "ee": "80%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-5h"
+    },
+    {
+      "id": "GeneralProcedureB-Entry27",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        41,
+        42
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.2 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "tert-butyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrazole-4-carboxylate, potassium salt",
+          "symbol": "4i",
+          "amount": "90.6 mg, 0.3 mmol",
+          "registry_name": "Potassium (1-(4-(tert-butoxycarbonyl)-1H-pyrazol-1-yl)ethyl)trifluoroborate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-butyl (R)-1-(1-(2-chloropyrimidin-5-yl)ethyl)-1H-pyrazole-4-carboxylate",
+          "symbol": "5i",
+          "amount": "28.3 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-heptyl BiOX",
+          "symbol": "L2"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "CPME",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "46%",
+        "ee": "83%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r1"
+    },
+    {
+      "id": "GeneralProcedureB-Entry28",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        42
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.2 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "2-(1-(trifluoro-λ4-boraneyl)ethyl)isoindoline-1,3-dione, potassium salt",
+          "symbol": "4j",
+          "amount": "84.3 mg, 0.3 mmol",
+          "registry_name": "Potassium (1-(1,3-dioxoisoindolin-2-yl)ethyl)trifluoroborate",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "(R)-2-(1-(2-chloropyrimidin-5-yl)ethyl)isoindoline-1,3-dione",
+          "symbol": "5j",
+          "amount": null
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-Ph BiOX",
+          "symbol": "L1"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "ethylene carbonate",
+          "symbol": null,
+          "amount": "2.0 mg"
+        }
+      ],
+      "conditions": {
+        "solvent": "1,2-DME",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "25%",
+        "ee": "77%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r2"
+    },
+    {
+      "id": "GeneralProcedureB-Entry29",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        43
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-chloropyrimidine",
+          "symbol": "2a",
+          "amount": "38.7 mg, 0.2 mmol",
+          "registry_name": "5-bromo-2-chloropyrimidine",
+          "registry_match_status": "verified"
+        },
+        {
+          "name": "potassium (1-(tert-butoxycarbonyl)pyrrolidin-2-yl)trifluoroborate",
+          "symbol": "4k",
+          "amount": "83 mg, 0.3 mmol",
+          "registry_name": "Potassium (1-(tert-butoxycarbonyl)pyrrolidin-2-yl)trifluoroborate",
+          "registry_match_status": "verified"
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-butyl 2-(2-chloropyrimidin-5-yl)pyrrolidine-1-carboxylate",
+          "symbol": "5k",
+          "amount": "37 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "heptyl BiOX (L2)"
+        }
+      ],
+      "other_components": [
+        {
+          "name": "trifluoroacetic acid (50% v:v aqueous solution)",
+          "symbol": null,
+          "amount": "92 µL, 137 mg, 1.2 mmol (6 equiv)"
+        }
+      ],
+      "conditions": {
+        "solvent": "tert-butyl methyl ether",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "65%",
+        "ee": "92%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "r3"
+    },
+    {
+      "id": "GeneralProcedureB-Entry31",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        47
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "3-bromo-4'-fluoro-1,1'-biphenyl",
+          "symbol": "S1b",
+          "amount": "50.2 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(4'-fluoro-[1,1'-biphenyl]-3-yl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "S2b",
+          "amount": "9.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-PhBiOX (L1)"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "15%",
+        "ee": "83%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-S2b"
+    },
+    {
+      "id": "GeneralProcedureB-Entry32",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        47,
+        48
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "2-bromo-4-methoxybenzonitrile",
+          "symbol": "S1d",
+          "amount": "42.4 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(2-cyano-5-methoxyphenyl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "S2d",
+          "amount": "10.2 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-PhBiOX (L1)"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "18%",
+        "ee": "43%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-S2d"
+    },
+    {
+      "id": "GeneralProcedureB-Entry33",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        48
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "4-((4-bromophenyl)sulfonyl)morpholine",
+          "symbol": "S1e",
+          "amount": "61.2 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(4-(morpholinosulfonyl)phenyl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "S2e",
+          "amount": "13.6 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-PhBiOX (L1)"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "18%",
+        "ee": "93%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-S2e"
+    },
+    {
+      "id": "GeneralProcedureB-Entry34",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        49
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "tert-butyl 4-(4-bromo-2-chlorophenyl)piperazine-1-carboxylate",
+          "symbol": "S1g",
+          "amount": "75.1 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "tert-butyl (R)-4-(2-chloro-4-(1-(2-(methoxycarbonyl)-1H-pyrrol-1-yl)ethyl)phenyl)piperazine-1-carboxylate",
+          "symbol": "S2g",
+          "amount": "9.0 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-PhBiOX (L1)"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "10%",
+        "ee": "94%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-S2g"
+    },
+    {
+      "id": "GeneralProcedureB-Entry35",
+      "_gp_source": "GeneralProcedureB",
+      "source_pages": [
+        49,
+        50
+      ],
+      "reaction_type": "Enantioselective cross-coupling of an aryl/heteroaryl bromide with a potassium alkyltrifluoroborate (enantioselective alkylation of 5-bromo-2-chloropyrimidine)",
+      "substrates": [
+        {
+          "name": "5-bromo-2-fluorobenzonitrile",
+          "symbol": "S1h",
+          "amount": "40.0 mg, 0.2 mmol"
+        },
+        {
+          "name": "methyl 1-(1-(trifluoro-λ4-boraneyl)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "symbol": "1a",
+          "amount": "77.7 mg, 0.3 mmol",
+          "registry_name": "methyl 1-(1-(trifluoroborate)ethyl)-1H-pyrrole-2-carboxylate, potassium salt",
+          "registry_match_status": "conflict",
+          "registry_conflict_reason": "extracted_name_differs_from_registry_symbol_name"
+        }
+      ],
+      "products": [
+        {
+          "name": "methyl (R)-1-(1-(3-cyano-4-fluorophenyl)ethyl)-1H-pyrrole-2-carboxylate",
+          "symbol": "S2h",
+          "amount": "32.7 mg"
+        }
+      ],
+      "catalysts": [
+        {
+          "name": "Ir[dF(CF3)ppy]2(bpy)PF6",
+          "symbol": "[Ir]",
+          "amount": "1.0 mol%",
+          "resolution_source": "name_registry",
+          "resolution_method": "same_paper_symbol",
+          "resolution_confidence": "high"
+        },
+        {
+          "name": "[Ni]",
+          "symbol": null,
+          "amount": null
+        }
+      ],
+      "ligands": [
+        {
+          "name": "4-F-PhBiOX (L1)"
+        }
+      ],
+      "other_components": [],
+      "conditions": {
+        "solvent": "2-MeTHF",
+        "solvent_amount": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "light_source": null,
+        "wavelength": null
+      },
+      "targets": {
+        "yield": "60%",
+        "ee": "96%",
+        "er": null,
+        "dr": null
+      },
+      "_original_id": "GPB-S2h"
+    }
+  ],
+  "filter_provenance": {
+    "schema": "reaction_filter_input_v1",
+    "input_path": "/home/lab730/Desktop/Wenyuan/ChemicalAgent/extract/output_reaction_3/symbol_resolved/text/enantioselective-synthesis-of-n-benzylic-heteroc_b3a7a2ac.json",
+    "input_sha256": "bcc58a0afa9702e27b7ee9320f03e891e7103309504d78361021dbeceb7cefd6"
+  }
+}
